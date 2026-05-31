@@ -1,46 +1,38 @@
 import { auth } from "@/lib/auth";
 import { NextResponse } from "next/server";
+import type { NextRequest } from "next/server";
 
-export default auth((req) => {
-  const { nextUrl, auth: session } = req;
-  const { pathname } = nextUrl;
-
-  // Debug endpoint - return auth state as JSON
-  if (pathname === "/api/debug-auth") {
-    return NextResponse.json({
-      hasSession: !!session,
-      hasUser: !!session?.user,
-      email: session?.user?.email || null,
-      role: session?.user?.role || null,
-      cookies: [...req.cookies.getAll().map(c => c.name)],
-    });
-  }
-
-  const isPublic =
+function isPublicPath(pathname: string) {
+  return (
     pathname === "/" ||
     pathname === "/login" ||
     pathname === "/register" ||
     pathname.startsWith("/api/auth") ||
     pathname.startsWith("/api/health") ||
-    pathname.startsWith("/api/debug");
+    pathname.startsWith("/api/debug")
+  );
+}
 
-  if (isPublic) return NextResponse.next();
+export default auth((req) => {
+  const { nextUrl } = req;
+  const session = req.auth;
+  const { pathname } = nextUrl;
+
+  if (isPublicPath(pathname)) return NextResponse.next();
 
   if (!session?.user) {
-    const loginUrl = new URL("/login", nextUrl);
-    loginUrl.searchParams.set("callbackUrl", pathname);
-    return NextResponse.redirect(loginUrl);
+    const url = new URL("/login", req.url);
+    url.searchParams.set("callbackUrl", pathname);
+    return NextResponse.redirect(url);
   }
 
   if (pathname.startsWith("/admin") && session.user.role !== "ADMIN") {
-    return NextResponse.redirect(new URL("/dashboard", nextUrl));
+    return NextResponse.redirect(new URL("/dashboard", req.url));
   }
 
   return NextResponse.next();
 });
 
 export const config = {
-  matcher: [
-    "/((?!_next/static|_next/image|favicon.ico|public).*)",
-  ],
+  matcher: ["/((?!_next/static|_next/image|favicon.ico|public).*)"],
 };
