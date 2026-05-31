@@ -22,20 +22,5 @@ export const authConfig: NextAuthConfig = {
       }
       return session;
     },
-    authorized({ auth: session, request: { nextUrl } }) {
-      const isLoggedIn = !!session?.user;
-      const isPublic =
-        nextUrl.pathname === "/" ||
-        nextUrl.pathname === "/login" ||
-        nextUrl.pathname === "/register" ||
-        nextUrl.pathname.startsWith("/api/auth");
-
-      if (isPublic) return true;
-      if (!isLoggedIn) return false;
-      if (nextUrl.pathname.startsWith("/admin") && session?.user?.role !== "ADMIN") {
-        return Response.redirect(new URL("/dashboard", nextUrl));
-      }
-      return true;
-    },
   },
 };
