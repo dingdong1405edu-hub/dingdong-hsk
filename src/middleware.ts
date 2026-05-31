@@ -5,12 +5,16 @@ export default auth((req) => {
   const { nextUrl, auth: session } = req;
   const { pathname } = nextUrl;
 
+  // Debug: log session state
+  console.log("[middleware]", pathname, "session:", session?.user?.email || "none");
+
   const isPublic =
     pathname === "/" ||
     pathname === "/login" ||
     pathname === "/register" ||
     pathname.startsWith("/api/auth") ||
-    pathname.startsWith("/api/health");
+    pathname.startsWith("/api/health") ||
+    pathname.startsWith("/api/debug");
 
   if (isPublic) return NextResponse.next();
 
