@@ -1,0 +1,115 @@
+import { db } from "@/lib/db";
+import Link from "next/link";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { hskLevelLabel } from "@/lib/utils";
+import { deleteReadingAction } from "@/server/actions/admin";
+import { revalidatePath } from "next/cache";
+import { db as prisma } from "@/lib/db";
+import { HSKLevel } from "@prisma/client";
+
+async function createReadingAction(fd: FormData): Promise<void> {
+  "use server";
+  await prisma.readingTest.create({
+    data: {
+      title: fd.get("title") as string,
+      titleZh: fd.get("titleZh") as string,
+      hskLevel: fd.get("hskLevel") as HSKLevel,
+      passage: fd.get("passage") as string,
+      passagePinyin: (fd.get("passagePinyin") as string) || undefined,
+      timeLimit: parseInt(fd.get("timeLimit") as string),
+    },
+  });
+  revalidatePath("/admin/reading");
+}
+import { Trash2, Plus, ChevronRight } from "lucide-react";
+
+export default async function AdminReadingPage() {
+  const tests = await db.readingTest.findMany({
+    orderBy: [{ hskLevel: "asc" }, { createdAt: "desc" }],
+    include: { _count: { select: { questions: true } } },
+  });
+
+  return (
+    <div className="space-y-6">
+      <h1 className="text-2xl font-bold">Bài đọc hiểu</h1>
+
+      {/* Create form */}
+      <Card>
+        <CardHeader><CardTitle className="text-base flex items-center gap-2"><Plus className="h-4 w-4" /> Thêm bài đọc mới</CardTitle></CardHeader>
+        <CardContent>
+          <form action={createReadingAction} className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="space-y-1">
+              <Label>Tiêu đề (VI)</Label>
+              <Input name="title" placeholder="Tên bài đọc..." required />
+            </div>
+            <div className="space-y-1">
+              <Label>Tiêu đề (ZH)</Label>
+              <Input name="titleZh" className="font-chinese" placeholder="标题..." required />
+            </div>
+            <div className="space-y-1">
+              <Label>Cấp độ HSK</Label>
+              <select name="hskLevel" className="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-sm" required>
+                {["HSK1","HSK2","HSK3","HSK4","HSK5","HSK6"].map(l => (
+                  <option key={l} value={l}>{l}</option>
+                ))}
+              </select>
+            </div>
+            <div className="space-y-1">
+              <Label>Giới hạn thời gian (giây)</Label>
+              <Input name="timeLimit" type="number" defaultValue="600" required />
+            </div>
+            <div className="space-y-1 md:col-span-2">
+              <Label>Đoạn văn (Hán tự)</Label>
+              <Textarea name="passage" className="font-chinese min-h-32" placeholder="Nội dung đoạn văn..." required />
+            </div>
+            <div className="space-y-1 md:col-span-2">
+              <Label>Pinyin (tùy chọn)</Label>
+              <Textarea name="passagePinyin" className="font-pinyin min-h-20" placeholder="Pinyin tương ứng..." />
+            </div>
+            <div className="md:col-span-2">
+              <Button type="submit">Tạo bài đọc</Button>
+            </div>
+          </form>
+        </CardContent>
+      </Card>
+
+      {/* List */}
+      <div className="space-y-2">
+        {tests.map((test) => (
+          <Card key={test.id}>
+            <CardContent className="p-4 flex items-center justify-between">
+              <div>
+                <div className="flex items-center gap-2">
+                  <span className="font-semibold">{test.title}</span>
+                  <span className="font-chinese text-muted-foreground text-sm">{test.titleZh}</span>
+                </div>
+                <div className="flex items-center gap-2 mt-1">
+                  <Badge variant="outline">{hskLevelLabel(test.hskLevel)}</Badge>
+                  <span className="text-xs text-muted-foreground">{test._count.questions} câu hỏi</span>
+                </div>
+              </div>
+              <div className="flex gap-2">
+                <Link href={`/admin/reading/${test.id}`}>
+                  <Button size="sm" variant="outline">
+                    <ChevronRight className="h-4 w-4" /> Câu hỏi
+                  </Button>
+                </Link>
+                <form action={async () => { "use server"; await deleteReadingAction(test.id); }}>
+                  <Button size="sm" variant="destructive" type="submit">
+                    <Trash2 className="h-4 w-4" />
+                  </Button>
+                </form>
+              </div>
+            </CardContent>
+          </Card>
+        ))}
+      </div>
+    </div>
+  );
+}

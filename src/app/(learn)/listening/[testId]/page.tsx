@@ -1,0 +1,22 @@
+import { auth } from "@/lib/auth";
+import { db } from "@/lib/db";
+import { notFound, redirect } from "next/navigation";
+import { ListeningTestClient } from "./listening-test-client";
+
+interface Props {
+  params: Promise<{ testId: string }>;
+}
+
+export default async function ListeningTestPage({ params }: Props) {
+  const { testId } = await params;
+  const session = await auth();
+  if (!session?.user) redirect("/login");
+
+  const test = await db.listeningTest.findUnique({
+    where: { id: testId },
+    include: { questions: { orderBy: { order: "asc" } } },
+  });
+  if (!test) notFound();
+
+  return <ListeningTestClient test={test} userId={session.user.id} />;
+}
