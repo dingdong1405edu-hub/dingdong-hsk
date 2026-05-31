@@ -5,8 +5,16 @@ export default auth((req) => {
   const { nextUrl, auth: session } = req;
   const { pathname } = nextUrl;
 
-  // Debug: log session state
-  console.log("[middleware]", pathname, "session:", session?.user?.email || "none");
+  // Debug endpoint - return auth state as JSON
+  if (pathname === "/api/debug-auth") {
+    return NextResponse.json({
+      hasSession: !!session,
+      hasUser: !!session?.user,
+      email: session?.user?.email || null,
+      role: session?.user?.role || null,
+      cookies: [...req.cookies.getAll().map(c => c.name)],
+    });
+  }
 
   const isPublic =
     pathname === "/" ||
