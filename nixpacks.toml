@@ -2,4 +2,7 @@
 nixPkgs = ["nodejs_20"]
 
 [phases.install]
-cmds = ["npm install --legacy-peer-deps"]
+# --include=dev: Nixpacks runs the install phase with NODE_ENV=production, which
+# omits devDependencies (typescript, tailwindcss, postcss). next.config.ts needs
+# typescript to load, so force dev deps in.
+cmds = ["npm install --legacy-peer-deps --include=dev"]
