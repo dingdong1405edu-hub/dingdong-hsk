@@ -37,5 +37,7 @@ export default auth((req) => {
 });
 
 export const config = {
-  matcher: ["/((?!_next/static|_next/image|favicon.ico|public).*)"],
+  // Exclude api so the auth middleware doesn't run on API/health routes under
+  // basePath (/zh/api/health must return a clean 200 for the Railway healthcheck).
+  matcher: ["/((?!api|_next/static|_next/image|favicon.ico|public).*)"],
 };
