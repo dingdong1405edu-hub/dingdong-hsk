@@ -20,13 +20,17 @@ export default auth((req) => {
   if (isPublicPath(pathname)) return NextResponse.next();
 
   if (!session?.user) {
-    const url = new URL("/login", req.url);
+    // clone() keeps the basePath (/zh) so the redirect stays inside this zone
+    const url = nextUrl.clone();
+    url.pathname = "/login";
     url.searchParams.set("callbackUrl", pathname);
     return NextResponse.redirect(url);
   }
 
   if (pathname.startsWith("/admin") && session.user.role !== "ADMIN") {
-    return NextResponse.redirect(new URL("/dashboard", req.url));
+    const url = nextUrl.clone();
+    url.pathname = "/dashboard";
+    return NextResponse.redirect(url);
   }
 
   return NextResponse.next();

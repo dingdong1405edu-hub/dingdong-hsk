@@ -94,10 +94,10 @@ async function transcribeAndGrade(
 ): Promise<GradeResult> {
   const fd = new FormData();
   fd.append("audio", blob, "recording.webm");
-  const transcribeRes = await fetch("/api/transcribe", { method: "POST", body: fd });
+  const transcribeRes = await fetch("/zh/api/transcribe", { method: "POST", body: fd });
   const { transcript } = await transcribeRes.json() as { transcript: string };
 
-  const gradeRes = await fetch("/api/grade/speaking", {
+  const gradeRes = await fetch("/zh/api/grade/speaking", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ transcript, referenceText, part, question, hskLevel }),
