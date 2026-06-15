@@ -1,19 +1,20 @@
-# Config-as-code for Railway. Mirrors the service settings applied via API so
-# the deploy is deterministic regardless of which source wins.
+# Config-as-code for Railway (this file is authoritative — Railway reads it as
+# the configFile). NIXPACKS is the builder this project deploys successfully with
+# (RAILPACK fails to schedule on this account); nixpacks.toml defines the install
+# phase (legacy-peer-deps + dev deps), reinforced by .npmrc.
 #
-# Build: RAILPACK auto-detects Next.js. `npm run build` runs after install,
-#   which runs `postinstall` -> `prisma generate`. `.npmrc` forces
-#   legacy-peer-deps + devDependencies so the build has typescript/tailwind.
-# Deploy: push the Prisma schema to the DB (adds any new columns), seed
-#   idempotently (best-effort), then start Next.js. The app is served under
+# Build: Nixpacks builds Next.js (`npm run build`); `postinstall` runs
+#   `prisma generate` during install.
+# Deploy: push the Prisma schema to the DB (adds new columns to existing rows),
+#   seed idempotently (best-effort), then start Next.js. The app is served under
 #   basePath "/zh", so the healthcheck is /zh/api/health.
 
 [build]
-builder = "RAILPACK"
+builder = "NIXPACKS"
 buildCommand = "npm run build"
 
 [deploy]
-startCommand = "npx prisma db push --accept-data-loss && (npm run db:seed || true) && ./node_modules/.bin/next start"
+startCommand = "npx prisma db push --accept-data-loss && (npm run db:seed || true) && npm start"
 healthcheckPath = "/zh/api/health"
 healthcheckTimeout = 300
 restartPolicyType = "ON_FAILURE"
