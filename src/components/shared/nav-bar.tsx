@@ -106,7 +106,7 @@ export function NavBar({ user }: NavBarProps) {
                   </Link>
                 </DropdownMenuItem>
               )}
-              <DropdownMenuItem onClick={() => signOut({ callbackUrl: "/" })}>
+              <DropdownMenuItem onClick={() => signOut({ callbackUrl: "/zh" })}>
                 <LogOut className="h-4 w-4 mr-2" />
                 Đăng xuất
               </DropdownMenuItem>

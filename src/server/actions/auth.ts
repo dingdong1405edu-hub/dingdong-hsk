@@ -52,5 +52,6 @@ export async function loginAction(formData: FormData) {
 }
 
 export async function logoutAction() {
-  await signOut({ redirectTo: "/" });
+  // "/" is a 404 under basePath "/zh"; send users to the public landing.
+  await signOut({ redirectTo: "/zh" });
 }
