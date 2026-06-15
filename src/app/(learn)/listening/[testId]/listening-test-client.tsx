@@ -37,8 +37,12 @@ export function ListeningTestClient({ test, userId }: { test: Test; userId: stri
   const [submitted, setSubmitted] = useState(false);
   const [result, setResult] = useState<{ score: number; details: Record<string, boolean> } | null>(null);
   const [showTranscript, setShowTranscript] = useState(false);
+  const [audioError, setAudioError] = useState(false);
 
   const maxPlays = test.hskLevel === "HSK1" || test.hskLevel === "HSK2" ? 3 : 2;
+  // basePath ("/zh") is NOT auto-applied to raw <audio src>. Prefix local paths;
+  // leave absolute (http) URLs untouched.
+  const audioSrc = test.audioUrl?.startsWith("http") ? test.audioUrl : `/zh${test.audioUrl}`;
 
   function togglePlay() {
     if (!audioRef.current) return;
@@ -61,6 +65,10 @@ export function ListeningTestClient({ test, userId }: { test: Test; userId: stri
   }
 
   async function handleSubmit() {
+    if (test.questions.length > 0 && Object.keys(answers).length < test.questions.length) {
+      toast.error("Hãy trả lời tất cả câu hỏi trước khi nộp");
+      return;
+    }
     const res = await submitListeningAction({ testId: test.id, answers });
     if (res.ok && res.result) {
       setResult(res.result);
@@ -82,9 +90,15 @@ export function ListeningTestClient({ test, userId }: { test: Test; userId: stri
         <CardContent className="p-4">
           <audio
             ref={audioRef}
-            src={test.audioUrl}
+            src={audioSrc}
             onEnded={() => setPlaying(false)}
+            onError={() => { setAudioError(true); setPlaying(false); }}
           />
+          {audioError && (
+            <p className="text-xs text-muted-foreground mb-2">
+              Không tải được audio cho bài này. Bạn vẫn có thể trả lời câu hỏi; transcript sẽ hiện sau khi nộp.
+            </p>
+          )}
           <div className="flex items-center gap-4">
             <Button
               size="icon"

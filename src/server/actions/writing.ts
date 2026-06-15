@@ -2,7 +2,7 @@
 import { auth } from "@/lib/auth";
 import { db } from "@/lib/db";
 import { z } from "zod";
-import { gradeWriting } from "@/lib/claude";
+import { gradeWriting, isGradingConfigured } from "@/lib/claude";
 import { Skill, Prisma } from "@prisma/client";
 
 const schema = z.object({
@@ -14,6 +14,10 @@ const schema = z.object({
 export async function gradeWritingAction(input: z.infer<typeof schema>) {
   const session = await auth();
   if (!session?.user) return { ok: false, error: "Unauthorized" };
+
+  if (!isGradingConfigured()) {
+    return { ok: false, error: "Chức năng chấm điểm AI chưa được cấu hình (thiếu GROQ_API_KEY)." };
+  }
 
   const { taskId, submission, durationSec } = schema.parse(input);
 

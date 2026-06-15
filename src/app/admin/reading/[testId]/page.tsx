@@ -1,4 +1,5 @@
 import { db } from "@/lib/db";
+import { requireAdmin } from "@/lib/admin-guard";
 import { notFound } from "next/navigation";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -12,6 +13,7 @@ import { QuestionType, Prisma } from "@prisma/client";
 
 async function createQuestionAction(fd: FormData): Promise<void> {
   "use server";
+  await requireAdmin();
   const type = fd.get("type") as QuestionType;
   const readingId = fd.get("readingId") as string;
   let options: Prisma.InputJsonValue | undefined = undefined;

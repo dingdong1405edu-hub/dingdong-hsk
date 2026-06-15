@@ -505,6 +505,54 @@ async function main() {
     },
   });
 
+  await prisma.question.createMany({
+    skipDuplicates: true,
+    data: [
+      {
+        id: "lq1-1",
+        type: QuestionType.MCQ,
+        prompt: "女的叫什么名字？",
+        promptPinyin: "Nǚ de jiào shénme míngzi?",
+        options: [
+          { text: "王芳", pinyin: "Wáng Fāng" },
+          { text: "张明", pinyin: "Zhāng Míng" },
+          { text: "李明", pinyin: "Lǐ Míng" },
+          { text: "王明", pinyin: "Wáng Míng" },
+        ],
+        correctAnswer: { index: 0, text: "王芳" },
+        explanation: "她说'我叫王芳'。",
+        listeningId: "listening-hsk1-1",
+        order: 1,
+      },
+      {
+        id: "lq1-2",
+        type: QuestionType.MCQ,
+        prompt: "张明是哪里人？",
+        promptPinyin: "Zhāng Míng shì nǎlǐ rén?",
+        options: [
+          { text: "北京人", pinyin: "Běijīngrén" },
+          { text: "上海人", pinyin: "Shànghǎirén" },
+          { text: "广州人", pinyin: "Guǎngzhōurén" },
+          { text: "南京人", pinyin: "Nánjīngrén" },
+        ],
+        correctAnswer: { index: 1, text: "上海人" },
+        explanation: "张明说'我是上海人'。",
+        listeningId: "listening-hsk1-1",
+        order: 2,
+      },
+      {
+        id: "lq1-3",
+        type: QuestionType.TRUE_FALSE,
+        prompt: "王芳是北京人。",
+        promptPinyin: "Wáng Fāng shì Běijīngrén.",
+        correctAnswer: { value: true },
+        explanation: "王芳说'我是北京人'。",
+        listeningId: "listening-hsk1-1",
+        order: 3,
+      },
+    ],
+  });
+
   // ===== Writing Task =====
   await prisma.writingTask.upsert({
     where: { id: "writing-hsk1-1" },

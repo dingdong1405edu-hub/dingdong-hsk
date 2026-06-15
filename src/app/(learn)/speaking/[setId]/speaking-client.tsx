@@ -95,13 +95,21 @@ async function transcribeAndGrade(
   const fd = new FormData();
   fd.append("audio", blob, "recording.webm");
   const transcribeRes = await fetch("/zh/api/transcribe", { method: "POST", body: fd });
-  const { transcript } = await transcribeRes.json() as { transcript: string };
+  if (!transcribeRes.ok) {
+    const err = (await transcribeRes.json().catch(() => ({}))) as { error?: string };
+    throw new Error(err.error || "Không thể chuyển giọng nói thành văn bản");
+  }
+  const { transcript } = (await transcribeRes.json()) as { transcript: string };
 
   const gradeRes = await fetch("/zh/api/grade/speaking", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ transcript, referenceText, part, question, hskLevel }),
   });
+  if (!gradeRes.ok) {
+    const err = (await gradeRes.json().catch(() => ({}))) as { error?: string };
+    throw new Error(err.error || "Chấm điểm thất bại");
+  }
   return gradeRes.json() as Promise<GradeResult>;
 }
 
@@ -128,8 +136,8 @@ export function SpeakingClient({ set }: { set: SpeakingSetData; userId: string }
     try {
       const res = await transcribeAndGrade(blob, sentences[idx].text, "repeat", null, set.hskLevel);
       setPart1Results((r) => { const n = [...r]; n[idx] = res; return n; });
-    } catch {
-      toast.error("Lỗi chấm điểm");
+    } catch (e) {
+      toast.error(e instanceof Error ? e.message : "Lỗi chấm điểm");
     } finally {
       setPart1Loading((l) => { const n = [...l]; n[idx] = false; return n; });
     }
@@ -140,8 +148,8 @@ export function SpeakingClient({ set }: { set: SpeakingSetData; userId: string }
     try {
       const res = await transcribeAndGrade(blob, passage.text, "read", null, set.hskLevel);
       setPart2Result(res);
-    } catch {
-      toast.error("Lỗi chấm điểm");
+    } catch (e) {
+      toast.error(e instanceof Error ? e.message : "Lỗi chấm điểm");
     } finally {
       setPart2Loading(false);
     }
@@ -152,8 +160,8 @@ export function SpeakingClient({ set }: { set: SpeakingSetData; userId: string }
     try {
       const res = await transcribeAndGrade(blob, null, "answer", questions[idx].question, set.hskLevel);
       setPart3Results((r) => { const n = [...r]; n[idx] = res; return n; });
-    } catch {
-      toast.error("Lỗi chấm điểm");
+    } catch (e) {
+      toast.error(e instanceof Error ? e.message : "Lỗi chấm điểm");
     } finally {
       setPart3Loading((l) => { const n = [...l]; n[idx] = false; return n; });
     }

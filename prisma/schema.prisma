@@ -58,7 +58,7 @@ model User {
   hskLevel      HSKLevel  @default(HSK1)
   lastActiveAt  DateTime?
   createdAt     DateTime  @default(now())
-  updatedAt     DateTime  @updatedAt
+  updatedAt     DateTime  @updatedAt @default(now())
   banned        Boolean   @default(false)
 
   accounts         Account[]
@@ -135,7 +135,7 @@ model VocabProgress {
   completed Boolean     @default(false)
   xpEarned  Int         @default(0)
   createdAt DateTime    @default(now())
-  updatedAt DateTime    @updatedAt
+  updatedAt DateTime    @updatedAt @default(now())
 
   user   User        @relation(fields: [userId], references: [id], onDelete: Cascade)
   lesson VocabLesson @relation(fields: [lessonId], references: [id], onDelete: Cascade)
@@ -174,7 +174,7 @@ model GrammarProgress {
   completed Boolean       @default(false)
   xpEarned  Int           @default(0)
   createdAt DateTime      @default(now())
-  updatedAt DateTime      @updatedAt
+  updatedAt DateTime      @updatedAt @default(now())
 
   user   User          @relation(fields: [userId], references: [id], onDelete: Cascade)
   lesson GrammarLesson @relation(fields: [lessonId], references: [id], onDelete: Cascade)
@@ -203,7 +203,7 @@ model HanziProgress {
   mastered    Boolean        @default(false)
   attempts    Int            @default(0)
   createdAt   DateTime       @default(now())
-  updatedAt   DateTime       @updatedAt
+  updatedAt   DateTime       @updatedAt @default(now())
 
   user      User           @relation(fields: [userId], references: [id], onDelete: Cascade)
   character HanziCharacter @relation(fields: [characterId], references: [id], onDelete: Cascade)
@@ -220,7 +220,7 @@ model ReadingTest {
   passagePinyin String?  @db.Text
   timeLimit     Int
   createdAt     DateTime @default(now())
-  updatedAt     DateTime @updatedAt
+  updatedAt     DateTime @updatedAt @default(now())
 
   questions Question[]
 }
@@ -233,7 +233,7 @@ model ListeningTest {
   transcript String?  @db.Text
   timeLimit  Int      @default(300)
   createdAt  DateTime @default(now())
-  updatedAt  DateTime @updatedAt
+  updatedAt  DateTime @updatedAt @default(now())
 
   questions Question[]
 }
@@ -265,7 +265,7 @@ model WritingTask {
   timeLimit Int
   hskLevel  HSKLevel
   createdAt DateTime        @default(now())
-  updatedAt DateTime        @updatedAt
+  updatedAt DateTime        @updatedAt @default(now())
 }
 
 model SpeakingSet {
@@ -276,7 +276,7 @@ model SpeakingSet {
   part2Passage   Json
   part3Questions Json
   createdAt      DateTime @default(now())
-  updatedAt      DateTime @updatedAt
+  updatedAt      DateTime @updatedAt @default(now())
 }
 
 model Attempt {

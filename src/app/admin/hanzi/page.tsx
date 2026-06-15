@@ -1,4 +1,5 @@
 import { db } from "@/lib/db";
+import { requireAdmin } from "@/lib/admin-guard";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -12,6 +13,7 @@ import { db as prisma } from "@/lib/db";
 
 async function createHanziAction(fd: FormData) {
   "use server";
+  await requireAdmin();
   await prisma.hanziCharacter.create({
     data: {
       character: fd.get("character") as string,
@@ -29,6 +31,7 @@ async function createHanziAction(fd: FormData) {
 
 async function deleteHanziAction(id: string) {
   "use server";
+  await requireAdmin();
   await prisma.hanziCharacter.delete({ where: { id } });
   revalidatePath("/admin/hanzi");
 }

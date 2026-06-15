@@ -51,11 +51,13 @@ export function LessonEngine({
       } else {
         setFeedback("wrong");
         setHearts((h) => Math.max(0, h - 1));
-        setHeartsLost((h) => h + 1);
+        // Cap at the hearts the user actually had so we never report (or send)
+        // more hearts lost than existed. Server also clamps defensively.
+        setHeartsLost((h) => Math.min(initialHearts, h + 1));
         if (answer) setCorrectAnswer(answer);
       }
     },
-    [feedback]
+    [feedback, initialHearts]
   );
 
   function advance() {

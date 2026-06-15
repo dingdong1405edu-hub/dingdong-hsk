@@ -1,4 +1,5 @@
 import { db } from "@/lib/db";
+import { requireAdmin } from "@/lib/admin-guard";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -12,6 +13,7 @@ import { db as prisma } from "@/lib/db";
 
 async function createGrammarUnitAction(fd: FormData) {
   "use server";
+  await requireAdmin();
   const level = fd.get("hskLevel") as HSKLevel;
   const count = await prisma.grammarUnit.count({ where: { hskLevel: level } });
   await prisma.grammarUnit.create({

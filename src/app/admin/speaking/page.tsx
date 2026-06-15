@@ -1,4 +1,5 @@
 import { db } from "@/lib/db";
+import { requireAdmin } from "@/lib/admin-guard";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -13,6 +14,7 @@ import { revalidatePath } from "next/cache";
 
 async function createSpeakingAction(fd: FormData) {
   "use server";
+  await requireAdmin();
   await prisma.speakingSet.create({
     data: {
       title: fd.get("title") as string,

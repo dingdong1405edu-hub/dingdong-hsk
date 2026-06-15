@@ -1,8 +1,22 @@
 import Groq from "groq-sdk";
 
-export const groq = new Groq({
-  apiKey: process.env.GROQ_API_KEY!,
-});
+// Lazily instantiate the Groq client. Instantiating at module load throws when
+// GROQ_API_KEY is absent, which breaks `next build` (page-data collection) and
+// any import of this module. Creating it on first use keeps the build green and
+// lets grading endpoints fail gracefully with a clear error when unconfigured.
+let _groq: Groq | null = null;
+function getGroq(): Groq {
+  const apiKey = process.env.GROQ_API_KEY;
+  if (!apiKey) {
+    throw new Error("GROQ_API_KEY_MISSING");
+  }
+  if (!_groq) _groq = new Groq({ apiKey });
+  return _groq;
+}
+
+export function isGradingConfigured(): boolean {
+  return Boolean(process.env.GROQ_API_KEY);
+}
 
 const WRITING_SYSTEM = `You are a certified HSK Chinese language examiner with expertise in teaching Vietnamese learners. You evaluate Chinese writing submissions with strict rubric scoring. Return ONLY valid JSON, no explanation outside the JSON structure.`;
 
@@ -16,7 +30,7 @@ export async function gradeWriting(params: {
 }): Promise<WritingGradeResult> {
   const { submission, hskLevel, taskPrompt, minChars } = params;
 
-  const response = await groq.chat.completions.create({
+  const response = await getGroq().chat.completions.create({
     model: "llama-3.3-70b-versatile",
     max_tokens: 2048,
     temperature: 0.3,
@@ -71,7 +85,7 @@ export async function gradeSpeaking(params: {
         ? `Part 2 (Reading aloud): Reference text: "${referenceText}"`
         : `Part 3 (Free answer): Question: "${question}"`;
 
-  const response = await groq.chat.completions.create({
+  const response = await getGroq().chat.completions.create({
     model: "llama-3.3-70b-versatile",
     max_tokens: 1536,
     temperature: 0.3,

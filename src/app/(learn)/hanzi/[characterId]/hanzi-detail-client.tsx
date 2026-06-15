@@ -10,6 +10,16 @@ import { toneColor, hskLevelLabel } from "@/lib/utils";
 import { markHanziMasteredAction } from "@/server/actions/hanzi";
 import type { HSKLevel } from "@prisma/client";
 
+// Full, static class strings so Tailwind's JIT actually generates them
+// (interpolated `bg-${color}-100` names are never emitted).
+const TONE_BADGE: Record<number, string> = {
+  1: "bg-red-100 text-red-700",
+  2: "bg-green-100 text-green-700",
+  3: "bg-blue-100 text-blue-700",
+  4: "bg-purple-100 text-purple-700",
+  0: "bg-zinc-100 text-zinc-700",
+};
+
 interface Example {
   sentence: string;
   pinyin: string;
@@ -59,7 +69,7 @@ export function HanziDetailClient({ character, userId }: Props) {
             <div className="flex items-center gap-2 mt-1">
               <Badge variant="outline">{hskLevelLabel(character.hskLevel)}</Badge>
               <Badge variant="secondary">{character.strokeCount} nét</Badge>
-              <Badge className={`bg-${character.tone === 1 ? "red" : character.tone === 2 ? "green" : character.tone === 3 ? "blue" : "purple"}-100 text-${character.tone === 1 ? "red" : character.tone === 2 ? "green" : character.tone === 3 ? "blue" : "purple"}-700 border-0`}>
+              <Badge className={`${TONE_BADGE[character.tone] ?? TONE_BADGE[0]} border-0`}>
                 Thanh {character.tone === 0 ? "nhẹ" : character.tone}
               </Badge>
             </div>

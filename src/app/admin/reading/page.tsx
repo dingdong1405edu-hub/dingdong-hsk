@@ -1,4 +1,5 @@
 import { db } from "@/lib/db";
+import { requireAdmin } from "@/lib/admin-guard";
 import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -15,6 +16,7 @@ import { HSKLevel } from "@prisma/client";
 
 async function createReadingAction(fd: FormData): Promise<void> {
   "use server";
+  await requireAdmin();
   await prisma.readingTest.create({
     data: {
       title: fd.get("title") as string,

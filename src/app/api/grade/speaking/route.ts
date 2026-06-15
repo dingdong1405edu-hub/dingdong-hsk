@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { auth } from "@/lib/auth";
-import { gradeSpeaking } from "@/lib/claude";
+import { gradeSpeaking, isGradingConfigured } from "@/lib/claude";
 import { z } from "zod";
 
 const schema = z.object({
@@ -14,6 +14,13 @@ const schema = z.object({
 export async function POST(req: NextRequest) {
   const session = await auth();
   if (!session?.user) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+
+  if (!isGradingConfigured()) {
+    return NextResponse.json(
+      { error: "Chức năng chấm điểm AI chưa được cấu hình (thiếu GROQ_API_KEY)." },
+      { status: 503 }
+    );
+  }
 
   const body = await req.json();
   const parsed = schema.safeParse(body);

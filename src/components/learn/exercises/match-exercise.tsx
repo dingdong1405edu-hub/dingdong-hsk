@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import type { MatchExercise } from "@/types";
@@ -17,7 +17,12 @@ export function MatchExerciseUI({ exercise, onAnswer, disabled }: Props) {
 
   const pairs = exercise.pairs;
   const zhItems = pairs.map((p) => p.zh);
-  const viItems = [...pairs.map((p) => p.vi)].sort(() => Math.random() - 0.5);
+  // Shuffle once per exercise — computing in the render body reshuffles on every
+  // state change, making the column jump after each tap.
+  const viItems = useMemo(
+    () => [...pairs.map((p) => p.vi)].sort(() => Math.random() - 0.5),
+    [pairs]
+  );
 
   function handleZh(zh: string) {
     if (disabled || matched.has(zh)) return;

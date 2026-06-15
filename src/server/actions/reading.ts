@@ -39,25 +39,32 @@ export async function submitReadingAction(input: z.infer<typeof submitSchema>) {
     if (isCorrect) correct++;
   }
 
-  const score = (correct / test.questions.length) * 100;
+  // Guard divide-by-zero: a test may legitimately have no questions yet.
+  const totalQuestions = test.questions.length;
+  const score = totalQuestions > 0 ? (correct / totalQuestions) * 100 : 0;
   const xpEarned = Math.round(score / 10);
 
-  await db.$transaction([
-    db.attempt.create({
-      data: {
-        userId: session.user.id,
-        skill: Skill.READING,
-        refId: testId,
-        rawAnswer: answers as Prisma.InputJsonValue,
-        score,
-        feedback: { details } as Prisma.InputJsonValue,
-      },
-    }),
-    db.user.update({
-      where: { id: session.user.id },
-      data: { xp: { increment: xpEarned }, lastActiveAt: new Date() },
-    }),
-  ]);
+  try {
+    await db.$transaction([
+      db.attempt.create({
+        data: {
+          userId: session.user.id,
+          skill: Skill.READING,
+          refId: testId,
+          rawAnswer: answers as Prisma.InputJsonValue,
+          score,
+          feedback: { details } as Prisma.InputJsonValue,
+        },
+      }),
+      db.user.update({
+        where: { id: session.user.id },
+        data: { xp: { increment: xpEarned }, lastActiveAt: new Date() },
+      }),
+    ]);
+  } catch (e) {
+    console.error("Reading submit error:", e);
+    return { ok: false, error: "DB error" };
+  }
 
   return { ok: true, result: { score, details } };
 }

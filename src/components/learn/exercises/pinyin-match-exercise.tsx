@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import type { PinyinMatchExercise } from "@/types";
@@ -17,7 +17,12 @@ export function PinyinMatchExerciseUI({ exercise, onAnswer, disabled }: Props) {
   const [wrong, setWrong] = useState<string | null>(null);
 
   const pairs = exercise.pairs;
-  const pinyins = [...pairs.map((p) => p.pinyin)].sort(() => Math.random() - 0.5);
+  // Shuffle once per exercise (see match-exercise.tsx) to stop the column from
+  // re-randomizing on every render.
+  const pinyins = useMemo(
+    () => [...pairs.map((p) => p.pinyin)].sort(() => Math.random() - 0.5),
+    [pairs]
+  );
 
   useEffect(() => {
     if (!selZh || !selPy) return;
