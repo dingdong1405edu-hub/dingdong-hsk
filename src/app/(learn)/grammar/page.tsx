@@ -1,83 +1,78 @@
 import { auth } from "@/lib/auth";
 import { db } from "@/lib/db";
 import { redirect } from "next/navigation";
-import Link from "next/link";
-import { Card, CardContent } from "@/components/ui/card";
-import { Progress } from "@/components/ui/progress";
-import { Badge } from "@/components/ui/badge";
-import { hskLevelLabel } from "@/lib/utils";
-import { HSKLevel } from "@prisma/client";
-import { ChevronRight, Lock } from "lucide-react";
-
-const HSK_LEVELS = Object.values(HSKLevel);
+import { SpellCheck } from "lucide-react";
+import { PracticeHub } from "@/components/learn/practice-hub";
+import { TestCard } from "@/components/learn/test-card";
 
 export default async function GrammarPage() {
   const session = await auth();
   if (!session?.user) redirect("/login");
 
-  const user = await db.user.findUnique({
-    where: { id: session.user.id },
-    select: { hskLevel: true },
-  });
-  if (!user) redirect("/login");
-
   const units = await db.grammarUnit.findMany({
     orderBy: [{ hskLevel: "asc" }, { order: "asc" }],
     include: {
       lessons: {
-        include: {
-          progress: { where: { userId: session.user.id, completed: true } },
-        },
+        include: { progress: { where: { userId: session.user.id, completed: true } } },
+        orderBy: { order: "asc" },
       },
     },
   });
 
-  const userLevelIndex = HSK_LEVELS.indexOf(user.hskLevel);
+  const withStats = units.map((u) => {
+    const total = u.lessons.length;
+    const done = u.lessons.filter((l) => l.progress.length > 0).length;
+    return { ...u, total, done, pct: total > 0 ? Math.round((done / total) * 100) : 0 };
+  });
+
+  const next = withStats.find((u) => u.done < u.total) ?? withStats[0];
+  const randomHref = next ? `/grammar/${next.id}` : undefined;
 
   return (
-    <div className="space-y-6">
-      <h1 className="text-2xl font-bold">Ngữ pháp HSK</h1>
-      {HSK_LEVELS.map((level) => {
-        const levelUnits = units.filter((u) => u.hskLevel === level);
-        if (levelUnits.length === 0) return null;
-        const isUnlocked = HSK_LEVELS.indexOf(level) <= userLevelIndex;
-        return (
-          <div key={level}>
-            <div className="flex items-center gap-2 mb-3">
-              <h2 className="text-lg font-semibold">{hskLevelLabel(level)}</h2>
-              {!isUnlocked && <Lock className="h-4 w-4 text-muted-foreground" />}
-            </div>
-            <div className="space-y-2">
-              {levelUnits.map((unit) => {
-                const total = unit.lessons.length;
-                const done = unit.lessons.filter((l) => l.progress.length > 0).length;
-                const pct = total > 0 ? Math.round((done / total) * 100) : 0;
-                return (
-                  <Card key={unit.id} className={!isUnlocked ? "opacity-50" : "hover:shadow-md transition-shadow"}>
-                    <CardContent className="p-4">
-                      <div className="flex items-center justify-between gap-4">
-                        <div className="flex-1">
-                          <div className="flex items-center gap-2">
-                            <span className="font-semibold">{unit.title}</span>
-                            <span className="font-chinese text-muted-foreground text-sm">{unit.titleZh}</span>
-                          </div>
-                          <div className="text-xs text-muted-foreground mt-1">{done}/{total} bài học</div>
-                          <Progress value={pct} className="h-1.5 mt-2 max-w-xs" />
-                        </div>
-                        {isUnlocked && (
-                          <Link href={`/grammar/${unit.id}`}>
-                            <ChevronRight className="h-5 w-5 text-muted-foreground hover:text-primary" />
-                          </Link>
-                        )}
-                      </div>
-                    </CardContent>
-                  </Card>
-                );
-              })}
-            </div>
-          </div>
-        );
-      })}
+    <PracticeHub
+      accent="violet"
+      icon={<SpellCheck className="h-7 w-7" />}
+      decoChar="语"
+      title="Ngữ pháp"
+      subtitle="Nắm cấu trúc câu tiếng Trung qua các bài tập tương tác ngắn"
+      randomHref={randomHref}
+      randomLabel="Học tiếp bài đang dở"
+      tips={[
+        "Mỗi đơn vị gồm nhiều bài tập: điền chỗ trống, sắp xếp câu, dịch câu.",
+        "Có ví dụ minh hoạ kèm pinyin và nghĩa tiếng Việt.",
+        "Trả lời sai sẽ mất 1 tim ❤️.",
+        "Hoàn thành bài học để cộng XP và mở khoá bài tiếp theo.",
+      ]}
+      gridTitle="Các đơn vị ngữ pháp"
+      gridSubtitle="Nhấn vào một đơn vị để bắt đầu học."
+    >
+      {withStats.length === 0 ? (
+        <EmptyState />
+      ) : (
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+          {withStats.map((u) => (
+            <TestCard
+              key={u.id}
+              href={`/grammar/${u.id}`}
+              title={u.title}
+              level={u.hskLevel}
+              tags={[u.titleZh]}
+              meta={`${u.done}/${u.total} bài học`}
+              score={u.pct}
+              seed={u.id}
+            />
+          ))}
+        </div>
+      )}
+    </PracticeHub>
+  );
+}
+
+function EmptyState() {
+  return (
+    <div className="rounded-2xl border border-dashed py-16 text-center text-muted-foreground">
+      <SpellCheck className="mx-auto mb-3 h-12 w-12 opacity-30" />
+      <p>Chưa có đơn vị ngữ pháp nào.</p>
     </div>
   );
 }

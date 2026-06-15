@@ -8,8 +8,7 @@ import { Badge } from "@/components/ui/badge";
 import { hskLevelLabel } from "@/lib/utils";
 import { HSKLevel } from "@prisma/client";
 import { revalidatePath } from "next/cache";
-import { Plus, Trash2, ChevronRight } from "lucide-react";
-import Link from "next/link";
+import { Plus, Trash2 } from "lucide-react";
 import { db as prisma } from "@/lib/db";
 
 async function createUnitAction(fd: FormData) {
@@ -25,6 +24,13 @@ async function createUnitAction(fd: FormData) {
       order: count + 1,
     },
   });
+  revalidatePath("/admin/vocab");
+}
+
+async function deleteUnitAction(id: string) {
+  "use server";
+  await requireAdmin();
+  await prisma.vocabUnit.delete({ where: { id } });
   revalidatePath("/admin/vocab");
 }
 
@@ -62,7 +68,7 @@ export default async function AdminVocabPage() {
       <div className="space-y-2">
         {units.map((u) => (
           <Card key={u.id}>
-            <CardContent className="p-4 flex items-center justify-between">
+            <CardContent className="p-4 flex items-center justify-between gap-4">
               <div>
                 <span className="font-semibold">{u.title}</span>
                 <span className="font-chinese text-muted-foreground ml-2 text-sm">{u.titleZh}</span>
@@ -71,6 +77,9 @@ export default async function AdminVocabPage() {
                   <span className="text-xs text-muted-foreground">{u._count.lessons} bài học</span>
                 </div>
               </div>
+              <form action={async () => { "use server"; await deleteUnitAction(u.id); }}>
+                <Button size="sm" variant="destructive" type="submit"><Trash2 className="h-4 w-4" /></Button>
+              </form>
             </CardContent>
           </Card>
         ))}

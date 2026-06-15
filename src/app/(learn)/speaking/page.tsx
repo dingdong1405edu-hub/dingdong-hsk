@@ -1,12 +1,9 @@
 import { auth } from "@/lib/auth";
 import { db } from "@/lib/db";
 import { redirect } from "next/navigation";
-import Link from "next/link";
-import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { hskLevelLabel } from "@/lib/utils";
 import { Mic } from "lucide-react";
+import { PracticeHub } from "@/components/learn/practice-hub";
+import { TestCard } from "@/components/learn/test-card";
 
 export default async function SpeakingPage() {
   const session = await auth();
@@ -16,37 +13,67 @@ export default async function SpeakingPage() {
     orderBy: [{ hskLevel: "asc" }, { createdAt: "desc" }],
   });
 
+  const attempts = await db.attempt.findMany({
+    where: { userId: session.user.id, skill: "SPEAKING" },
+    select: { refId: true, score: true },
+  });
+  const countMap = new Map<string, number>();
+  const bestMap = new Map<string, number>();
+  for (const a of attempts) {
+    countMap.set(a.refId, (countMap.get(a.refId) ?? 0) + 1);
+    if (a.score != null) bestMap.set(a.refId, Math.max(bestMap.get(a.refId) ?? 0, a.score));
+  }
+
+  const pool = sets.filter((s) => !countMap.has(s.id));
+  const list = pool.length ? pool : sets;
+  const randomHref = list.length
+    ? `/speaking/${list[Math.floor(Math.random() * list.length)].id}`
+    : undefined;
+
   return (
-    <div className="space-y-6">
-      <h1 className="text-2xl font-bold">Luyện nói HSKK</h1>
-      <p className="text-muted-foreground text-sm">
-        Ba phần: Lặp câu → Đọc đoạn văn → Trả lời câu hỏi. AI chấm phát âm, thanh điệu, lưu loát.
-      </p>
+    <PracticeHub
+      accent="indigo"
+      icon={<Mic className="h-7 w-7" />}
+      decoChar="说"
+      title="Luyện nói HSKK"
+      subtitle="Ghi âm trực tiếp · AI chấm phát âm, thanh điệu và độ lưu loát"
+      randomHref={randomHref}
+      tips={[
+        "Phần 1 — Lặp câu (复述): nghe rồi ghi âm lặp lại.",
+        "Phần 2 — Đọc đoạn văn (朗读): đọc to đoạn văn (có thể bật pinyin).",
+        "Phần 3 — Trả lời câu hỏi (回答问题): suy nghĩ 10s rồi trả lời tự do.",
+        "AI chấm 3 tiêu chí: Phát âm (发音), Thanh điệu (声调), Lưu loát (流利度).",
+      ]}
+      gridTitle="Hoặc tự chọn bộ đề"
+      gridSubtitle="Nhấn vào bộ đề bạn muốn luyện."
+    >
       {sets.length === 0 ? (
-        <div className="text-center py-16 text-muted-foreground">
-          <Mic className="h-12 w-12 mx-auto mb-3 opacity-30" />
-          <p>Chưa có bộ câu nào.</p>
-        </div>
+        <EmptyState />
       ) : (
-        <div className="grid gap-4">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {sets.map((set) => (
-            <Card key={set.id} className="hover:shadow-md transition-shadow">
-              <CardContent className="p-4 flex items-center justify-between">
-                <div>
-                  <div className="flex items-center gap-2 mb-1">
-                    <Mic className="h-4 w-4 text-muted-foreground" />
-                    <h3 className="font-semibold">{set.title || `HSKK Bài ${set.id.slice(-4)}`}</h3>
-                  </div>
-                  <Badge variant="outline">{hskLevelLabel(set.hskLevel)}</Badge>
-                </div>
-                <Link href={`/speaking/${set.id}`}>
-                  <Button size="sm">Luyện tập</Button>
-                </Link>
-              </CardContent>
-            </Card>
+            <TestCard
+              key={set.id}
+              href={`/speaking/${set.id}`}
+              title={set.title || `HSKK · Bộ ${set.id.slice(-4)}`}
+              level={set.hskLevel}
+              tags={["Lặp câu", "Đọc đoạn văn", "Trả lời câu hỏi"]}
+              attempts={countMap.get(set.id) ?? 0}
+              score={bestMap.get(set.id) ?? null}
+              seed={set.id}
+            />
           ))}
         </div>
       )}
+    </PracticeHub>
+  );
+}
+
+function EmptyState() {
+  return (
+    <div className="rounded-2xl border border-dashed py-16 text-center text-muted-foreground">
+      <Mic className="mx-auto mb-3 h-12 w-12 opacity-30" />
+      <p>Chưa có bộ đề nói nào.</p>
     </div>
   );
 }

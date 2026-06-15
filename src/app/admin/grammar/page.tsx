@@ -8,7 +8,7 @@ import { Badge } from "@/components/ui/badge";
 import { hskLevelLabel } from "@/lib/utils";
 import { HSKLevel } from "@prisma/client";
 import { revalidatePath } from "next/cache";
-import { Plus } from "lucide-react";
+import { Plus, Trash2 } from "lucide-react";
 import { db as prisma } from "@/lib/db";
 
 async function createGrammarUnitAction(fd: FormData) {
@@ -24,6 +24,13 @@ async function createGrammarUnitAction(fd: FormData) {
       order: count + 1,
     },
   });
+  revalidatePath("/admin/grammar");
+}
+
+async function deleteGrammarUnitAction(id: string) {
+  "use server";
+  await requireAdmin();
+  await prisma.grammarUnit.delete({ where: { id } });
   revalidatePath("/admin/grammar");
 }
 
@@ -61,7 +68,7 @@ export default async function AdminGrammarPage() {
       <div className="space-y-2">
         {units.map((u) => (
           <Card key={u.id}>
-            <CardContent className="p-3 flex items-center justify-between">
+            <CardContent className="p-3 flex items-center justify-between gap-4">
               <div>
                 <span className="font-semibold">{u.title}</span>
                 <span className="font-chinese text-muted-foreground ml-2 text-sm">{u.titleZh}</span>
@@ -70,6 +77,9 @@ export default async function AdminGrammarPage() {
                   <span className="text-xs text-muted-foreground">{u._count.lessons} bài</span>
                 </div>
               </div>
+              <form action={async () => { "use server"; await deleteGrammarUnitAction(u.id); }}>
+                <Button size="sm" variant="destructive" type="submit"><Trash2 className="h-4 w-4" /></Button>
+              </form>
             </CardContent>
           </Card>
         ))}

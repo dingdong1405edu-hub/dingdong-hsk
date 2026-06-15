@@ -1,12 +1,17 @@
 import { auth } from "@/lib/auth";
 import { db } from "@/lib/db";
 import { redirect } from "next/navigation";
-import Link from "next/link";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { hskLevelLabel } from "@/lib/utils";
-import { Clock, BookOpen } from "lucide-react";
+import { BookText } from "lucide-react";
+import { PracticeHub } from "@/components/learn/practice-hub";
+import { TestCard } from "@/components/learn/test-card";
+
+const QTYPE_LABEL: Record<string, string> = {
+  MCQ: "Trắc nghiệm",
+  FILL_BLANK: "Điền chỗ trống",
+  TRUE_FALSE: "Đúng / Sai / Không đề cập",
+  MATCHING: "Nối tiêu đề",
+  SHORT_ANSWER: "Trả lời ngắn",
+};
 
 export default async function ReadingPage() {
   const session = await auth();
@@ -14,60 +19,74 @@ export default async function ReadingPage() {
 
   const tests = await db.readingTest.findMany({
     orderBy: [{ hskLevel: "asc" }, { createdAt: "desc" }],
-    include: { questions: true },
+    include: { questions: { select: { type: true } } },
   });
 
   const attempts = await db.attempt.findMany({
     where: { userId: session.user.id, skill: "READING" },
     select: { refId: true, score: true },
   });
-  const attemptMap = new Map(attempts.map((a) => [a.refId, a.score]));
+  const countMap = new Map<string, number>();
+  const bestMap = new Map<string, number>();
+  for (const a of attempts) {
+    countMap.set(a.refId, (countMap.get(a.refId) ?? 0) + 1);
+    if (a.score != null) bestMap.set(a.refId, Math.max(bestMap.get(a.refId) ?? 0, a.score));
+  }
+
+  const unattempted = tests.filter((t) => !countMap.has(t.id));
+  const pool = unattempted.length ? unattempted : tests;
+  const randomHref = pool.length
+    ? `/reading/${pool[Math.floor(Math.random() * pool.length)].id}`
+    : undefined;
 
   return (
-    <div className="space-y-6">
-      <h1 className="text-2xl font-bold">Đọc hiểu</h1>
+    <PracticeHub
+      accent="green"
+      icon={<BookText className="h-7 w-7" />}
+      decoChar="读"
+      title="Đọc hiểu"
+      subtitle="1 bài đọc mỗi lần luyện tập · không giới hạn thời gian"
+      randomHref={randomHref}
+      tips={[
+        "Mỗi lần luyện 1 bài đọc với nhiều câu hỏi (Trắc nghiệm / Nối tiêu đề / Điền chỗ trống / Đúng–Sai).",
+        "Không bấm giờ — hệ thống chỉ đếm thời gian bạn đã làm.",
+        "AI ưu tiên bài bạn chưa làm gần đây, tránh trùng lặp.",
+        "Sau khi nộp, hệ thống chấm điểm và hiện đáp án + giải thích từng câu.",
+      ]}
+      gridTitle="Hoặc tự chọn đề"
+      gridSubtitle="Nhấn vào đề bạn muốn làm."
+    >
       {tests.length === 0 ? (
-        <div className="text-center py-16 text-muted-foreground">
-          <BookOpen className="h-12 w-12 mx-auto mb-3 opacity-30" />
-          <p>Chưa có bài đọc nào. Admin sẽ thêm bài sớm!</p>
-        </div>
+        <EmptyState />
       ) : (
-        <div className="grid gap-4">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {tests.map((test) => {
-            const score = attemptMap.get(test.id);
+            const types = [...new Set(test.questions.map((q) => QTYPE_LABEL[q.type] ?? q.type))];
             return (
-              <Card key={test.id} className="hover:shadow-md transition-shadow">
-                <CardContent className="p-4 flex items-center justify-between">
-                  <div className="flex-1">
-                    <div className="flex items-center gap-2 mb-1">
-                      <h3 className="font-semibold">{test.title}</h3>
-                      <span className="font-chinese text-muted-foreground text-sm">{test.titleZh}</span>
-                    </div>
-                    <div className="flex items-center gap-3 text-sm text-muted-foreground">
-                      <Badge variant="outline" className="text-xs">{hskLevelLabel(test.hskLevel)}</Badge>
-                      <span className="flex items-center gap-1">
-                        <Clock className="h-3 w-3" />
-                        {Math.round(test.timeLimit / 60)} phút
-                      </span>
-                      <span>{test.questions.length} câu hỏi</span>
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    {score !== undefined && score !== null && (
-                      <span className="text-sm font-semibold text-muted-foreground">
-                        Điểm: {Math.round(score)}%
-                      </span>
-                    )}
-                    <Link href={`/reading/${test.id}`}>
-                      <Button size="sm">{score !== undefined ? "Làm lại" : "Bắt đầu"}</Button>
-                    </Link>
-                  </div>
-                </CardContent>
-              </Card>
+              <TestCard
+                key={test.id}
+                href={`/reading/${test.id}`}
+                title={test.title}
+                level={test.hskLevel}
+                tags={types}
+                meta={`${test.questions.length} câu hỏi`}
+                attempts={countMap.get(test.id) ?? 0}
+                score={bestMap.get(test.id) ?? null}
+                seed={test.id}
+              />
             );
           })}
         </div>
       )}
+    </PracticeHub>
+  );
+}
+
+function EmptyState() {
+  return (
+    <div className="rounded-2xl border border-dashed py-16 text-center text-muted-foreground">
+      <BookText className="mx-auto mb-3 h-12 w-12 opacity-30" />
+      <p>Chưa có bài đọc nào. Quản trị viên sẽ thêm bài sớm!</p>
     </div>
   );
 }

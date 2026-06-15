@@ -55,3 +55,42 @@ export function xpToLevel(xp: number): { level: number; progress: number; next: 
   const progress = next > current ? Math.round(((xp - current) / (next - current)) * 100) : 100;
   return { level, progress, next };
 }
+
+/** Solid colored badge classes per HSK level (for level chips on cards). */
+export function hskBadgeClass(level: string): string {
+  const map: Record<string, string> = {
+    HSK1: "bg-emerald-500 text-white",
+    HSK2: "bg-teal-500 text-white",
+    HSK3: "bg-sky-500 text-white",
+    HSK4: "bg-violet-500 text-white",
+    HSK5: "bg-orange-500 text-white",
+    HSK6: "bg-rose-600 text-white",
+  };
+  return map[level] ?? "bg-zinc-500 text-white";
+}
+
+// Decorative cover art for cards (we have no uploaded images): a soft gradient
+// plus a large translucent Hán character, picked deterministically from a seed.
+const COVER_GRADIENTS = [
+  "from-rose-400 to-orange-300",
+  "from-emerald-400 to-teal-300",
+  "from-sky-400 to-indigo-300",
+  "from-violet-400 to-fuchsia-300",
+  "from-amber-400 to-rose-300",
+  "from-teal-400 to-cyan-300",
+  "from-indigo-400 to-purple-300",
+  "from-red-400 to-amber-300",
+];
+const COVER_CHARS = ["学", "读", "听", "写", "说", "字", "文", "语", "词", "句", "书", "课", "汉", "中", "习", "好"];
+
+function seedHash(seed: string): number {
+  let h = 0;
+  for (let i = 0; i < seed.length; i++) h = (h * 31 + seed.charCodeAt(i)) >>> 0;
+  return h;
+}
+export function coverGradient(seed: string): string {
+  return COVER_GRADIENTS[seedHash(seed) % COVER_GRADIENTS.length];
+}
+export function coverChar(seed: string): string {
+  return COVER_CHARS[seedHash(seed + "·") % COVER_CHARS.length];
+}

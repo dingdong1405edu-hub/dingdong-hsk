@@ -1,12 +1,17 @@
 import { auth } from "@/lib/auth";
 import { db } from "@/lib/db";
 import { redirect } from "next/navigation";
-import Link from "next/link";
-import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { hskLevelLabel } from "@/lib/utils";
-import { Clock, Headphones } from "lucide-react";
+import { Headphones } from "lucide-react";
+import { PracticeHub } from "@/components/learn/practice-hub";
+import { TestCard } from "@/components/learn/test-card";
+
+const QTYPE_LABEL: Record<string, string> = {
+  MCQ: "Trắc nghiệm",
+  FILL_BLANK: "Điền chỗ trống",
+  TRUE_FALSE: "Đúng / Sai",
+  MATCHING: "Nối",
+  SHORT_ANSWER: "Trả lời ngắn",
+};
 
 export default async function ListeningPage() {
   const session = await auth();
@@ -14,60 +19,74 @@ export default async function ListeningPage() {
 
   const tests = await db.listeningTest.findMany({
     orderBy: [{ hskLevel: "asc" }, { createdAt: "desc" }],
-    include: { questions: true },
+    include: { questions: { select: { type: true } } },
   });
 
   const attempts = await db.attempt.findMany({
     where: { userId: session.user.id, skill: "LISTENING" },
     select: { refId: true, score: true },
   });
-  const attemptMap = new Map(attempts.map((a) => [a.refId, a.score]));
+  const countMap = new Map<string, number>();
+  const bestMap = new Map<string, number>();
+  for (const a of attempts) {
+    countMap.set(a.refId, (countMap.get(a.refId) ?? 0) + 1);
+    if (a.score != null) bestMap.set(a.refId, Math.max(bestMap.get(a.refId) ?? 0, a.score));
+  }
+
+  const unattempted = tests.filter((t) => !countMap.has(t.id));
+  const pool = unattempted.length ? unattempted : tests;
+  const randomHref = pool.length
+    ? `/listening/${pool[Math.floor(Math.random() * pool.length)].id}`
+    : undefined;
 
   return (
-    <div className="space-y-6">
-      <h1 className="text-2xl font-bold">Nghe hiểu</h1>
+    <PracticeHub
+      accent="teal"
+      icon={<Headphones className="h-7 w-7" />}
+      decoChar="听"
+      title="Nghe hiểu"
+      subtitle="Nghe audio tiếng Trung và trả lời câu hỏi theo format HSK"
+      randomHref={randomHref}
+      tips={[
+        "Mỗi bài có audio + câu hỏi. Số lần nghe giới hạn theo cấp độ (HSK1-2: 3 lần, còn lại 2 lần).",
+        "Có thể đổi tốc độ phát 0.75x – 1.5x để luyện dần.",
+        "Transcript chỉ mở sau khi bạn nộp bài.",
+        "AI ưu tiên bài bạn chưa làm gần đây.",
+      ]}
+      gridTitle="Hoặc tự chọn đề"
+      gridSubtitle="Nhấn vào đề bạn muốn làm."
+    >
       {tests.length === 0 ? (
-        <div className="text-center py-16 text-muted-foreground">
-          <Headphones className="h-12 w-12 mx-auto mb-3 opacity-30" />
-          <p>Chưa có bài nghe nào.</p>
-        </div>
+        <EmptyState />
       ) : (
-        <div className="grid gap-4">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {tests.map((test) => {
-            const score = attemptMap.get(test.id);
+            const types = [...new Set(test.questions.map((q) => QTYPE_LABEL[q.type] ?? q.type))];
             return (
-              <Card key={test.id} className="hover:shadow-md transition-shadow">
-                <CardContent className="p-4 flex items-center justify-between">
-                  <div className="flex-1">
-                    <div className="flex items-center gap-2 mb-1">
-                      <Headphones className="h-4 w-4 text-muted-foreground" />
-                      <h3 className="font-semibold">{test.title}</h3>
-                    </div>
-                    <div className="flex items-center gap-3 text-sm text-muted-foreground">
-                      <Badge variant="outline">{hskLevelLabel(test.hskLevel)}</Badge>
-                      <span className="flex items-center gap-1">
-                        <Clock className="h-3 w-3" />
-                        {Math.round(test.timeLimit / 60)} phút
-                      </span>
-                      <span>{test.questions.length} câu hỏi</span>
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    {score !== undefined && score !== null && (
-                      <span className="text-sm font-semibold text-muted-foreground">
-                        {Math.round(score)}%
-                      </span>
-                    )}
-                    <Link href={`/listening/${test.id}`}>
-                      <Button size="sm">{score !== undefined ? "Làm lại" : "Bắt đầu"}</Button>
-                    </Link>
-                  </div>
-                </CardContent>
-              </Card>
+              <TestCard
+                key={test.id}
+                href={`/listening/${test.id}`}
+                title={test.title}
+                level={test.hskLevel}
+                tags={types.length ? types : ["Nghe hiểu"]}
+                meta={`${test.questions.length} câu hỏi`}
+                attempts={countMap.get(test.id) ?? 0}
+                score={bestMap.get(test.id) ?? null}
+                seed={test.id}
+              />
             );
           })}
         </div>
       )}
+    </PracticeHub>
+  );
+}
+
+function EmptyState() {
+  return (
+    <div className="rounded-2xl border border-dashed py-16 text-center text-muted-foreground">
+      <Headphones className="mx-auto mb-3 h-12 w-12 opacity-30" />
+      <p>Chưa có bài nghe nào.</p>
     </div>
   );
 }
