@@ -1,10 +1,10 @@
 import type { NextAuthConfig } from "next-auth";
 
 export const authConfig: NextAuthConfig = {
-  // The app runs under Next.js basePath "/zh", so the Auth.js routes live at
-  // /zh/api/auth (not the default /api/auth). Without this, client signIn() and
-  // the route handler disagree and the session cookie is never set.
-  basePath: "/zh/api/auth",
+  // NOTE: Do NOT set `basePath` here. Next.js strips the app basePath ("/zh")
+  // before the route handler runs, so the server sees /api/auth (the default).
+  // The /zh prefix is only needed on the CLIENT, which is configured via
+  // <SessionProvider basePath="/zh/api/auth"> in src/app/providers.tsx.
   session: { strategy: "jwt" },
   pages: {
     signIn: "/login",
