@@ -94,14 +94,14 @@ async function transcribeAndGrade(
 ): Promise<GradeResult> {
   const fd = new FormData();
   fd.append("audio", blob, "recording.webm");
-  const transcribeRes = await fetch("/zh/api/transcribe", { method: "POST", body: fd });
+  const transcribeRes = await fetch("/api/transcribe", { method: "POST", body: fd });
   if (!transcribeRes.ok) {
     const err = (await transcribeRes.json().catch(() => ({}))) as { error?: string };
     throw new Error(err.error || "Không thể chuyển giọng nói thành văn bản");
   }
   const { transcript } = (await transcribeRes.json()) as { transcript: string };
 
-  const gradeRes = await fetch("/zh/api/grade/speaking", {
+  const gradeRes = await fetch("/api/grade/speaking", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ transcript, referenceText, part, question, hskLevel }),

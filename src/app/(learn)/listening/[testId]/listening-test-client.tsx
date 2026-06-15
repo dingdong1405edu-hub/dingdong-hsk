@@ -40,9 +40,7 @@ export function ListeningTestClient({ test, userId }: { test: Test; userId: stri
   const [audioError, setAudioError] = useState(false);
 
   const maxPlays = test.hskLevel === "HSK1" || test.hskLevel === "HSK2" ? 3 : 2;
-  // basePath ("/zh") is NOT auto-applied to raw <audio src>. Prefix local paths;
-  // leave absolute (http) URLs untouched.
-  const audioSrc = test.audioUrl?.startsWith("http") ? test.audioUrl : `/zh${test.audioUrl}`;
+  const audioSrc = test.audioUrl;
 
   function togglePlay() {
     if (!audioRef.current) return;

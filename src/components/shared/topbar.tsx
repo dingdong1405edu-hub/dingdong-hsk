@@ -1,0 +1,88 @@
+"use client";
+import Link from "next/link";
+import { Menu, Flame, Heart, Star, LogOut, Settings, type LucideIcon } from "lucide-react";
+import { signOut } from "next-auth/react";
+import { Button } from "@/components/ui/button";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { cn } from "@/lib/utils";
+
+interface TopbarUser {
+  name?: string | null;
+  email: string;
+  image?: string | null;
+  xp: number;
+  hearts: number;
+  streakDays: number;
+  role: string;
+}
+
+function Stat({ icon: Icon, value, className }: { icon: LucideIcon; value: number; className: string }) {
+  return (
+    <div className="flex items-center gap-1.5 rounded-full bg-muted px-2.5 py-1 text-sm font-semibold">
+      <Icon className={cn("h-4 w-4", className)} />
+      <span className="tabular-nums">{value}</span>
+    </div>
+  );
+}
+
+export function Topbar({ user, onMenu }: { user: TopbarUser; onMenu: () => void }) {
+  return (
+    <header className="sticky top-0 z-30 flex h-16 items-center gap-3 border-b bg-background/80 px-4 backdrop-blur sm:px-6">
+      <Button variant="ghost" size="icon" className="-ml-2 lg:hidden" onClick={onMenu} aria-label="Mở menu">
+        <Menu className="h-5 w-5" />
+      </Button>
+      <Link href="/dashboard" className="flex items-center gap-2 font-extrabold text-primary lg:hidden">
+        <span className="text-xl">🔔</span>
+        DingDong
+      </Link>
+
+      <div className="flex-1" />
+
+      <div className="flex items-center gap-1.5 sm:gap-2">
+        <Stat icon={Flame} value={user.streakDays} className="text-orange-500 fill-orange-400" />
+        <Stat icon={Heart} value={user.hearts} className="text-rose-500 fill-rose-500" />
+        <Stat icon={Star} value={user.xp} className="text-amber-500 fill-amber-400" />
+      </div>
+
+      <DropdownMenu>
+        <DropdownMenuTrigger asChild>
+          <Button variant="ghost" size="icon" className="rounded-full">
+            <Avatar className="h-9 w-9 border">
+              <AvatarImage src={user.image ?? undefined} />
+              <AvatarFallback className="bg-primary text-sm font-semibold text-primary-foreground">
+                {(user.name?.charAt(0) ?? user.email.charAt(0)).toUpperCase()}
+              </AvatarFallback>
+            </Avatar>
+          </Button>
+        </DropdownMenuTrigger>
+        <DropdownMenuContent align="end" className="w-56">
+          <div className="px-2 py-1.5">
+            <p className="truncate text-sm font-semibold">{user.name ?? "Học viên"}</p>
+            <p className="truncate text-xs text-muted-foreground">{user.email}</p>
+          </div>
+          <DropdownMenuSeparator />
+          {user.role === "ADMIN" && (
+            <DropdownMenuItem asChild>
+              <Link href="/admin">
+                <Settings className="mr-2 h-4 w-4" /> Trang quản trị
+              </Link>
+            </DropdownMenuItem>
+          )}
+          <DropdownMenuItem
+            onClick={() => signOut({ callbackUrl: "/" })}
+            className="text-destructive focus:text-destructive"
+          >
+            <LogOut className="mr-2 h-4 w-4" /> Đăng xuất
+          </DropdownMenuItem>
+        </DropdownMenuContent>
+      </DropdownMenu>
+    </header>
+  );
+}

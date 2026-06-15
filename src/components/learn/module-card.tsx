@@ -1,7 +1,6 @@
 "use client";
 import Link from "next/link";
-import { motion } from "framer-motion";
-import { LucideIcon } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { cn } from "@/lib/utils";
@@ -17,43 +16,55 @@ interface ModuleCardProps {
 }
 
 export function ModuleCard({
-  href, icon, title, subtitle, progress, color, available = true,
+  href,
+  icon,
+  title,
+  subtitle,
+  progress,
+  color,
+  available = true,
 }: ModuleCardProps) {
   if (!available) {
     return (
-      <Card className="opacity-50 cursor-not-allowed">
-        <CardContent className="p-4 flex items-center gap-3">
-          <div className={cn("w-12 h-12 rounded-xl flex items-center justify-center text-2xl", color)}>
+      <Card className="cursor-not-allowed opacity-60">
+        <CardContent className="p-5">
+          <div className={cn("mb-3 flex h-12 w-12 items-center justify-center rounded-2xl text-2xl", color)}>
             {icon}
           </div>
-          <div className="flex-1 min-w-0">
-            <div className="font-semibold">{title}</div>
-            <div className="text-xs text-muted-foreground">{subtitle}</div>
-            <div className="text-xs text-muted-foreground mt-1">Chưa mở khoá</div>
-          </div>
+          <div className="font-semibold">{title}</div>
+          <div className="mt-0.5 text-xs text-muted-foreground">Chưa mở khoá</div>
         </CardContent>
       </Card>
     );
   }
 
   return (
-    <motion.div whileHover={{ scale: 1.01 }} whileTap={{ scale: 0.99 }}>
-      <Link href={href}>
-        <Card className="hover:shadow-md transition-shadow cursor-pointer">
-          <CardContent className="p-4 flex items-center gap-3">
-            <div className={cn("w-12 h-12 rounded-xl flex items-center justify-center text-2xl", color)}>
-              {icon}
+    <Link href={href} className="group block h-full">
+      <Card className="h-full transition-all duration-200 hover:-translate-y-0.5 hover:border-primary/30 hover:shadow-lg">
+        <CardContent className="flex h-full flex-col p-5">
+          <div className={cn("mb-3 flex h-12 w-12 items-center justify-center rounded-2xl text-2xl", color)}>
+            {icon}
+          </div>
+          <div className="font-semibold">{title}</div>
+          <div className="mt-0.5 text-xs text-muted-foreground">{subtitle}</div>
+
+          {progress !== undefined ? (
+            <div className="mt-4">
+              <div className="mb-1 flex items-center justify-between text-[11px] text-muted-foreground">
+                <span>Tiến độ</span>
+                <span className="font-medium">{progress}%</span>
+              </div>
+              <Progress value={progress} className="h-1.5" />
             </div>
-            <div className="flex-1 min-w-0">
-              <div className="font-semibold">{title}</div>
-              <div className="text-xs text-muted-foreground">{subtitle}</div>
-              {progress !== undefined && (
-                <Progress value={progress} className="h-1.5 mt-2" />
-              )}
+          ) : (
+            <div className="mt-auto pt-4">
+              <span className="inline-flex items-center gap-1 text-xs font-medium text-primary opacity-0 transition-opacity group-hover:opacity-100">
+                Bắt đầu <ArrowRight className="h-3.5 w-3.5" />
+              </span>
             </div>
-          </CardContent>
-        </Card>
-      </Link>
-    </motion.div>
+          )}
+        </CardContent>
+      </Card>
+    </Link>
   );
 }
