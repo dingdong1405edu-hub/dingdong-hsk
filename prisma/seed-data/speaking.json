@@ -1,0 +1,166 @@
+{
+  "kind": "speaking",
+  "sets": [
+    {
+      "id": "sp-HSK1-1",
+      "title": "Chào hỏi và làm quen",
+      "hskLevel": "HSK1",
+      "part1Sentences": [
+        { "text": "你好，很高兴认识你。", "pinyin": "Nǐ hǎo, hěn gāoxìng rènshi nǐ." },
+        { "text": "我叫王明，是中国人。", "pinyin": "Wǒ jiào Wáng Míng, shì Zhōngguó rén." },
+        { "text": "你叫什么名字？", "pinyin": "Nǐ jiào shénme míngzi?" },
+        { "text": "今天天气很好。", "pinyin": "Jīntiān tiānqì hěn hǎo." },
+        { "text": "谢谢你，再见！", "pinyin": "Xièxie nǐ, zàijiàn!" }
+      ],
+      "part2Passage": {
+        "text": "你好！我叫李红，今年二十岁。我是学生，我喜欢学习汉语。我家有四个人：爸爸、妈妈、哥哥和我。我很高兴认识你。",
+        "pinyin": "Nǐ hǎo! Wǒ jiào Lǐ Hóng, jīnnián èrshí suì. Wǒ shì xuésheng, wǒ xǐhuan xuéxí Hànyǔ. Wǒ jiā yǒu sì gè rén: bàba, māma, gēge hé wǒ. Wǒ hěn gāoxìng rènshi nǐ."
+      },
+      "part3Questions": [
+        { "question": "你叫什么名字？", "pinyin": "Nǐ jiào shénme míngzi?" },
+        { "question": "你今年多大？", "pinyin": "Nǐ jīnnián duō dà?" },
+        { "question": "你家有几个人？", "pinyin": "Nǐ jiā yǒu jǐ gè rén?" }
+      ]
+    },
+    {
+      "id": "sp-HSK1-2",
+      "title": "Cuộc sống hằng ngày",
+      "hskLevel": "HSK1",
+      "part1Sentences": [
+        { "text": "我每天七点起床。", "pinyin": "Wǒ měitiān qī diǎn qǐchuáng." },
+        { "text": "我喜欢喝茶。", "pinyin": "Wǒ xǐhuan hē chá." },
+        { "text": "现在几点了？", "pinyin": "Xiànzài jǐ diǎn le?" },
+        { "text": "明天我去学校。", "pinyin": "Míngtiān wǒ qù xuéxiào." }
+      ],
+      "part2Passage": {
+        "text": "我叫张飞。我早上八点去工作，中午十二点吃饭。我喜欢吃米饭，也喜欢喝水。晚上我在家看书，十点睡觉。",
+        "pinyin": "Wǒ jiào Zhāng Fēi. Wǒ zǎoshang bā diǎn qù gōngzuò, zhōngwǔ shí'èr diǎn chīfàn. Wǒ xǐhuan chī mǐfàn, yě xǐhuan hē shuǐ. Wǎnshang wǒ zài jiā kàn shū, shí diǎn shuìjiào."
+      },
+      "part3Questions": [
+        { "question": "你几点起床？", "pinyin": "Nǐ jǐ diǎn qǐchuáng?" },
+        { "question": "你喜欢吃什么？", "pinyin": "Nǐ xǐhuan chī shénme?" },
+        { "question": "你今天做什么？", "pinyin": "Nǐ jīntiān zuò shénme?" }
+      ]
+    },
+    {
+      "id": "sp-HSK2-1",
+      "title": "Mua sắm và giá cả",
+      "hskLevel": "HSK2",
+      "part1Sentences": [
+        { "text": "这件衣服多少钱？", "pinyin": "Zhè jiàn yīfu duōshao qián?" },
+        { "text": "我想买一些水果。", "pinyin": "Wǒ xiǎng mǎi yìxiē shuǐguǒ." },
+        { "text": "这个太贵了，便宜一点儿吧。", "pinyin": "Zhège tài guì le, piányi yìdiǎnr ba." },
+        { "text": "你要红色的还是蓝色的？", "pinyin": "Nǐ yào hóngsè de háishi lánsè de?" }
+      ],
+      "part2Passage": {
+        "text": "昨天我和朋友一起去商店买东西。我买了一件衣服和两本书。衣服有点儿贵，但是很漂亮。朋友买了很多水果，因为她喜欢吃苹果。我们在商店玩了两个小时，非常高兴。",
+        "pinyin": "Zuótiān wǒ hé péngyou yìqǐ qù shāngdiàn mǎi dōngxi. Wǒ mǎi le yí jiàn yīfu hé liǎng běn shū. Yīfu yǒudiǎnr guì, dànshì hěn piàoliang. Péngyou mǎi le hěn duō shuǐguǒ, yīnwèi tā xǐhuan chī píngguǒ. Wǒmen zài shāngdiàn wán le liǎng gè xiǎoshí, fēicháng gāoxìng."
+      },
+      "part3Questions": [
+        { "question": "你喜欢买什么东西？", "pinyin": "Nǐ xǐhuan mǎi shénme dōngxi?" },
+        { "question": "你常常去哪儿买东西？", "pinyin": "Nǐ chángcháng qù nǎr mǎi dōngxi?" },
+        { "question": "你觉得买东西的时候要注意什么？", "pinyin": "Nǐ juéde mǎi dōngxi de shíhou yào zhùyì shénme?" }
+      ]
+    },
+    {
+      "id": "sp-HSK2-2",
+      "title": "Thời tiết và sở thích",
+      "hskLevel": "HSK2",
+      "part1Sentences": [
+        { "text": "今天外面在下雨。", "pinyin": "Jīntiān wàimiàn zài xià yǔ." },
+        { "text": "我最喜欢的运动是踢足球。", "pinyin": "Wǒ zuì xǐhuan de yùndòng shì tī zúqiú." },
+        { "text": "周末我们一起去看电影，好吗？", "pinyin": "Zhōumò wǒmen yìqǐ qù kàn diànyǐng, hǎo ma?" },
+        { "text": "天气冷了，你要多穿衣服。", "pinyin": "Tiānqì lěng le, nǐ yào duō chuān yīfu." }
+      ],
+      "part2Passage": {
+        "text": "我很喜欢运动。每天早上我都去公园跑步，跑半个小时。天气好的时候，我和朋友一起打篮球。如果下雨，我就在家看电视或者听音乐。运动让我很快乐，身体也越来越好。",
+        "pinyin": "Wǒ hěn xǐhuan yùndòng. Měitiān zǎoshang wǒ dōu qù gōngyuán pǎobù, pǎo bàn gè xiǎoshí. Tiānqì hǎo de shíhou, wǒ hé péngyou yìqǐ dǎ lánqiú. Rúguǒ xià yǔ, wǒ jiù zài jiā kàn diànshì huòzhě tīng yīnyuè. Yùndòng ràng wǒ hěn kuàilè, shēntǐ yě yuèláiyuè hǎo."
+      },
+      "part3Questions": [
+        { "question": "你喜欢什么运动？", "pinyin": "Nǐ xǐhuan shénme yùndòng?" },
+        { "question": "今天天气怎么样？", "pinyin": "Jīntiān tiānqì zěnmeyàng?" },
+        { "question": "周末你常常做什么？", "pinyin": "Zhōumò nǐ chángcháng zuò shénme?" }
+      ]
+    },
+    {
+      "id": "sp-HSK3-1",
+      "title": "Du lịch và kế hoạch",
+      "hskLevel": "HSK3",
+      "part1Sentences": [
+        { "text": "放假的时候，我打算去南方旅游。", "pinyin": "Fàngjià de shíhou, wǒ dǎsuan qù nánfāng lǚyóu." },
+        { "text": "坐飞机比坐火车快多了。", "pinyin": "Zuò fēijī bǐ zuò huǒchē kuài duō le." },
+        { "text": "请问，去火车站怎么走？", "pinyin": "Qǐngwèn, qù huǒchēzhàn zěnme zǒu?" },
+        { "text": "我已经把房间打扫干净了。", "pinyin": "Wǒ yǐjīng bǎ fángjiān dǎsǎo gānjìng le." }
+      ],
+      "part2Passage": {
+        "text": "去年夏天，我和家人一起去北京旅游。我们先坐飞机到了北京，然后住在一家很方便的宾馆里。第二天，我们参观了长城。虽然爬长城很累，但是风景特别漂亮，我们都觉得这次旅游很有意思。我希望以后还有机会再去一次。",
+        "pinyin": "Qùnián xiàtiān, wǒ hé jiārén yìqǐ qù Běijīng lǚyóu. Wǒmen xiān zuò fēijī dào le Běijīng, ránhòu zhù zài yì jiā hěn fāngbiàn de bīnguǎn lǐ. Dì-èr tiān, wǒmen cānguān le Chángchéng. Suīrán pá Chángchéng hěn lèi, dànshì fēngjǐng tèbié piàoliang, wǒmen dōu juéde zhè cì lǚyóu hěn yǒu yìsi. Wǒ xīwàng yǐhòu hái yǒu jīhuì zài qù yí cì."
+      },
+      "part3Questions": [
+        { "question": "你喜欢去什么地方旅游？为什么？", "pinyin": "Nǐ xǐhuan qù shénme dìfang lǚyóu? Wèishénme?" },
+        { "question": "旅游的时候，你一般做什么准备？", "pinyin": "Lǚyóu de shíhou, nǐ yìbān zuò shénme zhǔnbèi?" },
+        { "question": "你觉得自己去旅游好还是跟朋友一起去好？", "pinyin": "Nǐ juéde zìjǐ qù lǚyóu hǎo háishi gēn péngyou yìqǐ qù hǎo?" }
+      ]
+    },
+    {
+      "id": "sp-HSK4-1",
+      "title": "Học tập và công việc",
+      "hskLevel": "HSK4",
+      "part1Sentences": [
+        { "text": "通过这次考试，我对自己更有信心了。", "pinyin": "Tōngguò zhè cì kǎoshì, wǒ duì zìjǐ gèng yǒu xìnxīn le." },
+        { "text": "无论遇到什么困难，我们都不应该放弃。", "pinyin": "Wúlùn yùdào shénme kùnnan, wǒmen dōu bù yīnggāi fàngqì." },
+        { "text": "他工作非常认真，从来不迟到。", "pinyin": "Tā gōngzuò fēicháng rènzhēn, cónglái bù chídào." },
+        { "text": "为了提高汉语水平，我每天坚持练习。", "pinyin": "Wèile tígāo Hànyǔ shuǐpíng, wǒ měitiān jiānchí liànxí." }
+      ],
+      "part2Passage": {
+        "text": "随着社会的发展，越来越多的人开始重视学习外语。掌握一门外语不仅能帮助我们找到更好的工作，还能让我们了解不同国家的文化。当然，学习外语并不是一件容易的事，需要我们花费大量的时间和精力。不过，只要坚持下去，我们一定能取得满意的结果。",
+        "pinyin": "Suízhe shèhuì de fāzhǎn, yuèláiyuè duō de rén kāishǐ zhòngshì xuéxí wàiyǔ. Zhǎngwò yì mén wàiyǔ bùjǐn néng bāngzhù wǒmen zhǎodào gèng hǎo de gōngzuò, hái néng ràng wǒmen liǎojiě bùtóng guójiā de wénhuà. Dāngrán, xuéxí wàiyǔ bìng bú shì yí jiàn róngyì de shì, xūyào wǒmen huāfèi dàliàng de shíjiān hé jīnglì. Búguò, zhǐyào jiānchí xiàqù, wǒmen yídìng néng qǔdé mǎnyì de jiéguǒ."
+      },
+      "part3Questions": [
+        { "question": "你认为学习外语最重要的方法是什么？", "pinyin": "Nǐ rènwéi xuéxí wàiyǔ zuì zhòngyào de fāngfǎ shì shénme?" },
+        { "question": "在学习或工作中，你是怎么解决困难的？", "pinyin": "Zài xuéxí huò gōngzuò zhōng, nǐ shì zěnme jiějué kùnnan de?" },
+        { "question": "你将来想做什么样的工作？为什么？", "pinyin": "Nǐ jiānglái xiǎng zuò shénmeyàng de gōngzuò? Wèishénme?" }
+      ]
+    },
+    {
+      "id": "sp-HSK5-1",
+      "title": "Khoa học công nghệ và đời sống",
+      "hskLevel": "HSK5",
+      "part1Sentences": [
+        { "text": "互联网的普及彻底改变了人们的生活方式。", "pinyin": "Hùliánwǎng de pǔjí chèdǐ gǎibiàn le rénmen de shēnghuó fāngshì." },
+        { "text": "尽管科技带来了许多便利，但也产生了一些新的问题。", "pinyin": "Jǐnguǎn kējì dàilái le xǔduō biànlì, dàn yě chǎnshēng le yìxiē xīn de wèntí." },
+        { "text": "我们应该合理利用时间，避免浪费。", "pinyin": "Wǒmen yīnggāi hélǐ lìyòng shíjiān, bìmiǎn làngfèi." },
+        { "text": "他凭着自己的努力，终于实现了梦想。", "pinyin": "Tā píngzhe zìjǐ de nǔlì, zhōngyú shíxiàn le mèngxiǎng." }
+      ],
+      "part2Passage": {
+        "text": "近年来，智能手机已经成为人们生活中不可缺少的一部分。无论是购物、付款，还是学习、社交，几乎都可以通过手机来完成。它给我们的生活带来了极大的方便。然而，过度依赖手机也会带来不少负面影响，比如视力下降、人与人之间的交流减少等。因此，我们在享受科技带来好处的同时，也要学会适当地控制自己，把握好使用的度。",
+        "pinyin": "Jìnnián lái, zhìnéng shǒujī yǐjīng chéngwéi rénmen shēnghuó zhōng bùkě quēshǎo de yí bùfen. Wúlùn shì gòuwù, fùkuǎn, háishi xuéxí, shèjiāo, jīhū dōu kěyǐ tōngguò shǒujī lái wánchéng. Tā gěi wǒmen de shēnghuó dàilái le jí dà de fāngbiàn. Rán'ér, guòdù yīlài shǒujī yě huì dàilái bùshǎo fùmiàn yǐngxiǎng, bǐrú shìlì xiàjiàng, rén yǔ rén zhījiān de jiāoliú jiǎnshǎo děng. Yīncǐ, wǒmen zài xiǎngshòu kējì dàilái hǎochù de tóngshí, yě yào xuéhuì shìdàng de kòngzhì zìjǐ, bǎwò hǎo shǐyòng de dù."
+      },
+      "part3Questions": [
+        { "question": "你认为智能手机给生活带来了哪些影响？", "pinyin": "Nǐ rènwéi zhìnéng shǒujī gěi shēnghuó dàilái le nǎxiē yǐngxiǎng?" },
+        { "question": "在现代社会，我们应该如何合理使用科技产品？", "pinyin": "Zài xiàndài shèhuì, wǒmen yīnggāi rúhé hélǐ shǐyòng kējì chǎnpǐn?" },
+        { "question": "你觉得科技的发展会让人与人之间的关系变得更近还是更远？", "pinyin": "Nǐ juéde kējì de fāzhǎn huì ràng rén yǔ rén zhījiān de guānxì biàn de gèng jìn háishi gèng yuǎn?" }
+      ]
+    },
+    {
+      "id": "sp-HSK6-1",
+      "title": "Văn hóa, môi trường và xã hội",
+      "hskLevel": "HSK6",
+      "part1Sentences": [
+        { "text": "面对日益严重的环境问题，每个人都肩负着不可推卸的责任。", "pinyin": "Miànduì rìyì yánzhòng de huánjìng wèntí, měi gè rén dōu jiānfùzhe bùkě tuīxiè de zérèn." },
+        { "text": "传统文化是一个民族的灵魂，理应得到传承与保护。", "pinyin": "Chuántǒng wénhuà shì yí gè mínzú de línghún, lǐyīng dédào chuánchéng yǔ bǎohù." },
+        { "text": "唯有脚踏实地，才能在激烈的竞争中立于不败之地。", "pinyin": "Wéiyǒu jiǎotàshídì, cáinéng zài jīliè de jìngzhēng zhōng lì yú búbài zhī dì." },
+        { "text": "我们不能因为一时的挫折而轻易动摇自己的信念。", "pinyin": "Wǒmen bùnéng yīnwèi yìshí de cuòzhé ér qīngyì dòngyáo zìjǐ de xìnniàn." }
+      ],
+      "part2Passage": {
+        "text": "在全球化不断深入的今天，文化的交流与融合已经成为一种不可逆转的趋势。一方面，外来文化的涌入开阔了人们的视野，丰富了我们的精神生活；另一方面，它也对本民族的传统文化构成了一定的冲击。如何在吸收外来优秀文化的同时，保持自身文化的独特性，是摆在我们面前的一道重要课题。我认为，真正成熟的文化态度，既不是盲目排斥，也不是全盘接受，而是在相互尊重的基础上取长补短，实现共同发展。",
+        "pinyin": "Zài quánqiúhuà bùduàn shēnrù de jīntiān, wénhuà de jiāoliú yǔ rónghé yǐjīng chéngwéi yì zhǒng bùkě nìzhuǎn de qūshì. Yì fāngmiàn, wàilái wénhuà de yǒngrù kāikuò le rénmen de shìyě, fēngfù le wǒmen de jīngshén shēnghuó; lìng yì fāngmiàn, tā yě duì běn mínzú de chuántǒng wénhuà gòuchéng le yídìng de chōngjī. Rúhé zài xīshōu wàilái yōuxiù wénhuà de tóngshí, bǎochí zìshēn wénhuà de dútèxìng, shì bǎi zài wǒmen miànqián de yí dào zhòngyào kètí. Wǒ rènwéi, zhēnzhèng chéngshú de wénhuà tàidù, jì bú shì mángmù páichì, yě bú shì quánpán jiēshòu, érshì zài xiānghù zūnzhòng de jīchǔ shàng qǔchángbǔduǎn, shíxiàn gòngtóng fāzhǎn."
+      },
+      "part3Questions": [
+        { "question": "你认为在全球化的背景下，应该如何保护本民族的传统文化？", "pinyin": "Nǐ rènwéi zài quánqiúhuà de bèijǐng xià, yīnggāi rúhé bǎohù běn mínzú de chuántǒng wénhuà?" },
+        { "question": "面对外来文化与本土文化的冲突，你持什么样的态度？", "pinyin": "Miànduì wàilái wénhuà yǔ běntǔ wénhuà de chōngtū, nǐ chí shénmeyàng de tàidù?" },
+        { "question": "请谈谈个人在解决环境问题方面能够发挥怎样的作用。", "pinyin": "Qǐng tántan gèrén zài jiějué huánjìng wèntí fāngmiàn nénggòu fāhuī zěnyàng de zuòyòng." }
+      ]
+    }
+  ]
+}

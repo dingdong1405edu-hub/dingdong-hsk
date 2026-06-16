@@ -45,6 +45,16 @@ enum WritingTaskType {
   PICTURE_DESCRIPTION
 }
 
+enum MaterialCategory {
+  GRAMMAR
+  VOCABULARY
+  HANZI
+  PRONUNCIATION
+  EXAM_TIPS
+  CULTURE
+  CONVERSATION
+}
+
 model User {
   id            String    @id @default(cuid())
   email         String    @unique
@@ -277,6 +287,27 @@ model SpeakingSet {
   part3Questions Json
   createdAt      DateTime @default(now())
   updatedAt      DateTime @updatedAt @default(now())
+}
+
+/// Tài liệu học tập (study materials / documents). Content is stored as an
+/// array of structured blocks (see prisma/seed.ts and the learner renderer):
+///   heading | paragraph | list | example | vocab | note
+model Material {
+  id          String           @id @default(cuid())
+  title       String
+  titleZh     String?
+  category    MaterialCategory
+  hskLevel    HSKLevel
+  summary     String           @db.Text
+  content     Json
+  tags        Json?
+  readMinutes Int              @default(5)
+  order       Int              @default(0)
+  published   Boolean          @default(true)
+  createdAt   DateTime         @default(now())
+  updatedAt   DateTime         @updatedAt @default(now())
+
+  @@index([hskLevel, category, order])
 }
 
 model Attempt {

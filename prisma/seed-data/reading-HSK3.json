@@ -1,0 +1,254 @@
+{
+  "kind": "reading",
+  "tests": [
+    {
+      "id": "rd-HSK3-1",
+      "title": "Kế hoạch cuối tuần của tôi",
+      "titleZh": "我的周末计划",
+      "hskLevel": "HSK3",
+      "passage": "这个周末我打算去爬山。我和我的同事小李约好了，星期六早上八点在公园门口见面。听天气预报说，这个周末天气很好，不冷也不热，非常适合爬山。我们打算带一些面包、水果和水，中午就在山上吃。爬完山以后，如果还有时间，我们想去附近的小饭馆吃晚饭。我已经很久没有运动了，所以我特别期待这个周末。",
+      "passagePinyin": "Zhège zhōumò wǒ dǎsuàn qù páshān. Wǒ hé wǒ de tóngshì Xiǎo Lǐ yuē hǎo le, xīngqīliù zǎoshang bā diǎn zài gōngyuán ménkǒu jiànmiàn. Tīng tiānqì yùbào shuō, zhège zhōumò tiānqì hěn hǎo, bù lěng yě bú rè, fēicháng shìhé páshān. Wǒmen dǎsuàn dài yìxiē miànbāo, shuǐguǒ hé shuǐ, zhōngwǔ jiù zài shān shàng chī. Pá wán shān yǐhòu, rúguǒ hái yǒu shíjiān, wǒmen xiǎng qù fùjìn de xiǎo fànguǎn chī wǎnfàn. Wǒ yǐjīng hěn jiǔ méiyǒu yùndòng le, suǒyǐ wǒ tèbié qīdài zhège zhōumò.",
+      "timeLimit": 600,
+      "questions": [
+        {
+          "id": "rd-HSK3-1-q1",
+          "type": "MCQ",
+          "prompt": "这个周末他打算做什么？",
+          "promptPinyin": "Zhège zhōumò tā dǎsuàn zuò shénme?",
+          "options": [
+            { "text": "去爬山", "pinyin": "qù páshān" },
+            { "text": "去游泳", "pinyin": "qù yóuyǒng" },
+            { "text": "去上班", "pinyin": "qù shàngbān" },
+            { "text": "在家休息", "pinyin": "zài jiā xiūxi" }
+          ],
+          "correctAnswer": { "index": 0, "text": "去爬山" },
+          "explanation": "Đoạn văn mở đầu nói 这个周末我打算去爬山 (cuối tuần này tôi định đi leo núi). Vậy đáp án đúng là 去爬山.",
+          "order": 1
+        },
+        {
+          "id": "rd-HSK3-1-q2",
+          "type": "MCQ",
+          "prompt": "他们约好几点见面？",
+          "promptPinyin": "Tāmen yuē hǎo jǐ diǎn jiànmiàn?",
+          "options": [
+            { "text": "早上七点", "pinyin": "zǎoshang qī diǎn" },
+            { "text": "早上八点", "pinyin": "zǎoshang bā diǎn" },
+            { "text": "中午十二点", "pinyin": "zhōngwǔ shí'èr diǎn" },
+            { "text": "下午两点", "pinyin": "xiàwǔ liǎng diǎn" }
+          ],
+          "correctAnswer": { "index": 1, "text": "早上八点" },
+          "explanation": "Đoạn văn nói 星期六早上八点在公园门口见面 (tám giờ sáng thứ Bảy gặp nhau ở cổng công viên). Vậy họ hẹn gặp lúc tám giờ sáng.",
+          "order": 2
+        },
+        {
+          "id": "rd-HSK3-1-q3",
+          "type": "MCQ",
+          "prompt": "这个周末的天气怎么样？",
+          "promptPinyin": "Zhège zhōumò de tiānqì zěnmeyàng?",
+          "options": [
+            { "text": "又冷又下雨", "pinyin": "yòu lěng yòu xià yǔ" },
+            { "text": "非常热", "pinyin": "fēicháng rè" },
+            { "text": "不冷也不热，很好", "pinyin": "bù lěng yě bú rè, hěn hǎo" },
+            { "text": "会下雪", "pinyin": "huì xià xuě" }
+          ],
+          "correctAnswer": { "index": 2, "text": "不冷也不热，很好" },
+          "explanation": "Đoạn văn nói 天气很好，不冷也不热 (thời tiết rất tốt, không lạnh cũng không nóng). Vậy đáp án đúng là không lạnh cũng không nóng, rất tốt.",
+          "order": 3
+        },
+        {
+          "id": "rd-HSK3-1-q4",
+          "type": "TRUE_FALSE",
+          "prompt": "他们打算中午在山上吃东西。",
+          "correctAnswer": { "value": true },
+          "explanation": "Đoạn văn nói 带一些面包、水果和水，中午就在山上吃 (mang theo bánh mì, hoa quả và nước, buổi trưa ăn trên núi). Vậy câu này ĐÚNG.",
+          "order": 4
+        }
+      ]
+    },
+    {
+      "id": "rd-HSK3-2",
+      "title": "Học tiếng Trung của Mã Lý",
+      "titleZh": "玛丽学汉语",
+      "hskLevel": "HSK3",
+      "passage": "玛丽是一个外国人，她来中国已经一年了。刚来的时候，她一句汉语也不会说，买东西、问路都很困难。后来她在一所大学开始学习汉语。她的老师很热情，上课的时候经常和大家一起做游戏，所以她觉得学汉语很有意思。现在玛丽不但能听懂别人说话，还能用汉语写简单的句子。她说，虽然汉字有点儿难，但是只要每天努力练习，就一定能学好。",
+      "passagePinyin": "Mǎlì shì yí gè wàiguórén, tā lái Zhōngguó yǐjīng yì nián le. Gāng lái de shíhou, tā yí jù Hànyǔ yě bú huì shuō, mǎi dōngxi, wèn lù dōu hěn kùnnán. Hòulái tā zài yì suǒ dàxué kāishǐ xuéxí Hànyǔ. Tā de lǎoshī hěn rèqíng, shàngkè de shíhou jīngcháng hé dàjiā yìqǐ zuò yóuxì, suǒyǐ tā juéde xué Hànyǔ hěn yǒu yìsi. Xiànzài Mǎlì búdàn néng tīng dǒng biérén shuōhuà, hái néng yòng Hànyǔ xiě jiǎndān de jùzi. Tā shuō, suīrán Hànzì yǒudiǎnr nán, dànshì zhǐyào měitiān nǔlì liànxí, jiù yídìng néng xué hǎo.",
+      "timeLimit": 600,
+      "questions": [
+        {
+          "id": "rd-HSK3-2-q1",
+          "type": "MCQ",
+          "prompt": "玛丽来中国多长时间了？",
+          "promptPinyin": "Mǎlì lái Zhōngguó duō cháng shíjiān le?",
+          "options": [
+            { "text": "一个月", "pinyin": "yí gè yuè" },
+            { "text": "半年", "pinyin": "bàn nián" },
+            { "text": "一年", "pinyin": "yì nián" },
+            { "text": "三年", "pinyin": "sān nián" }
+          ],
+          "correctAnswer": { "index": 2, "text": "一年" },
+          "explanation": "Đoạn văn nói 她来中国已经一年了 (cô ấy đến Trung Quốc đã một năm rồi). Vậy đáp án đúng là một năm.",
+          "order": 1
+        },
+        {
+          "id": "rd-HSK3-2-q2",
+          "type": "MCQ",
+          "prompt": "刚来中国的时候，玛丽遇到了什么困难？",
+          "promptPinyin": "Gāng lái Zhōngguó de shíhou, Mǎlì yùdào le shénme kùnnán?",
+          "options": [
+            { "text": "找不到工作", "pinyin": "zhǎo bú dào gōngzuò" },
+            { "text": "不会说汉语", "pinyin": "bú huì shuō Hànyǔ" },
+            { "text": "没有朋友", "pinyin": "méiyǒu péngyou" },
+            { "text": "身体不好", "pinyin": "shēntǐ bù hǎo" }
+          ],
+          "correctAnswer": { "index": 1, "text": "不会说汉语" },
+          "explanation": "Đoạn văn nói 她一句汉语也不会说，买东西、问路都很困难 (cô ấy một câu tiếng Trung cũng không biết nói, mua đồ và hỏi đường đều rất khó). Vậy khó khăn là không biết nói tiếng Trung.",
+          "order": 2
+        },
+        {
+          "id": "rd-HSK3-2-q3",
+          "type": "MCQ",
+          "prompt": "为什么玛丽觉得学汉语很有意思？",
+          "promptPinyin": "Wèishénme Mǎlì juéde xué Hànyǔ hěn yǒu yìsi?",
+          "options": [
+            { "text": "因为汉语很简单", "pinyin": "yīnwèi Hànyǔ hěn jiǎndān" },
+            { "text": "因为老师热情，常常做游戏", "pinyin": "yīnwèi lǎoshī rèqíng, chángcháng zuò yóuxì" },
+            { "text": "因为同学很多", "pinyin": "yīnwèi tóngxué hěn duō" },
+            { "text": "因为学校很大", "pinyin": "yīnwèi xuéxiào hěn dà" }
+          ],
+          "correctAnswer": { "index": 1, "text": "因为老师热情，常常做游戏" },
+          "explanation": "Đoạn văn nói 她的老师很热情，上课的时候经常和大家一起做游戏，所以她觉得学汉语很有意思 (cô giáo rất nhiệt tình, khi lên lớp thường cùng mọi người chơi trò chơi, nên cô ấy thấy học tiếng Trung rất thú vị).",
+          "order": 3
+        },
+        {
+          "id": "rd-HSK3-2-q4",
+          "type": "TRUE_FALSE",
+          "prompt": "玛丽觉得汉字一点儿也不难。",
+          "correctAnswer": { "value": false },
+          "explanation": "Đoạn văn nói 虽然汉字有点儿难 (tuy chữ Hán hơi khó). Vậy việc nói chữ Hán không hề khó là SAI.",
+          "order": 4
+        }
+      ]
+    },
+    {
+      "id": "rd-HSK3-3",
+      "title": "Một ngày làm việc của ba",
+      "titleZh": "爸爸的一天",
+      "hskLevel": "HSK3",
+      "passage": "我爸爸是一名医生，他工作很忙。每天早上六点半他就起床了，七点半开车去医院。他说早上路上车太多，如果走得晚一点儿，就会迟到。爸爸中午一般在医院吃饭，下午要看很多病人，所以他常常很累。但是他觉得帮助别人是一件很快乐的事情。晚上回到家以后，他喜欢喝一杯茶，看一会儿报纸，然后早点儿睡觉。周末有时候他还要去医院上班，不能在家休息。",
+      "passagePinyin": "Wǒ bàba shì yì míng yīshēng, tā gōngzuò hěn máng. Měitiān zǎoshang liù diǎn bàn tā jiù qǐchuáng le, qī diǎn bàn kāichē qù yīyuàn. Tā shuō zǎoshang lùshàng chē tài duō, rúguǒ zǒu de wǎn yìdiǎnr, jiù huì chídào. Bàba zhōngwǔ yìbān zài yīyuàn chīfàn, xiàwǔ yào kàn hěn duō bìngrén, suǒyǐ tā chángcháng hěn lèi. Dànshì tā juéde bāngzhù biérén shì yí jiàn hěn kuàilè de shìqing. Wǎnshang huí dào jiā yǐhòu, tā xǐhuan hē yì bēi chá, kàn yíhuìr bàozhǐ, ránhòu zǎo diǎnr shuìjiào. Zhōumò yǒu shíhou tā hái yào qù yīyuàn shàngbān, bù néng zài jiā xiūxi.",
+      "timeLimit": 600,
+      "questions": [
+        {
+          "id": "rd-HSK3-3-q1",
+          "type": "MCQ",
+          "prompt": "爸爸做什么工作？",
+          "promptPinyin": "Bàba zuò shénme gōngzuò?",
+          "options": [
+            { "text": "老师", "pinyin": "lǎoshī" },
+            { "text": "医生", "pinyin": "yīshēng" },
+            { "text": "司机", "pinyin": "sījī" },
+            { "text": "经理", "pinyin": "jīnglǐ" }
+          ],
+          "correctAnswer": { "index": 1, "text": "医生" },
+          "explanation": "Đoạn văn nói 我爸爸是一名医生 (ba tôi là một bác sĩ). Vậy đáp án đúng là 医生.",
+          "order": 1
+        },
+        {
+          "id": "rd-HSK3-3-q2",
+          "type": "MCQ",
+          "prompt": "爸爸为什么七点半就开车去医院？",
+          "promptPinyin": "Bàba wèishénme qī diǎn bàn jiù kāichē qù yīyuàn?",
+          "options": [
+            { "text": "因为他想早点儿吃早饭", "pinyin": "yīnwèi tā xiǎng zǎo diǎnr chī zǎofàn" },
+            { "text": "因为走晚了路上车多会迟到", "pinyin": "yīnwèi zǒu wǎn le lùshàng chē duō huì chídào" },
+            { "text": "因为医院很远", "pinyin": "yīnwèi yīyuàn hěn yuǎn" },
+            { "text": "因为他喜欢开车", "pinyin": "yīnwèi tā xǐhuan kāichē" }
+          ],
+          "correctAnswer": { "index": 1, "text": "因为走晚了路上车多会迟到" },
+          "explanation": "Đoạn văn nói 早上路上车太多，如果走得晚一点儿，就会迟到 (buổi sáng trên đường xe quá nhiều, nếu đi muộn một chút sẽ bị trễ). Vậy lý do là đi muộn sẽ bị trễ vì đường đông xe.",
+          "order": 2
+        },
+        {
+          "id": "rd-HSK3-3-q3",
+          "type": "MCQ",
+          "prompt": "晚上回到家以后，爸爸喜欢做什么？",
+          "promptPinyin": "Wǎnshang huí dào jiā yǐhòu, bàba xǐhuan zuò shénme?",
+          "options": [
+            { "text": "喝茶、看报纸", "pinyin": "hē chá, kàn bàozhǐ" },
+            { "text": "看电视", "pinyin": "kàn diànshì" },
+            { "text": "运动", "pinyin": "yùndòng" },
+            { "text": "玩电脑", "pinyin": "wán diànnǎo" }
+          ],
+          "correctAnswer": { "index": 0, "text": "喝茶、看报纸" },
+          "explanation": "Đoạn văn nói 他喜欢喝一杯茶，看一会儿报纸 (ông ấy thích uống một tách trà, đọc báo một lúc). Vậy đáp án là uống trà, đọc báo.",
+          "order": 3
+        },
+        {
+          "id": "rd-HSK3-3-q4",
+          "type": "TRUE_FALSE",
+          "prompt": "爸爸周末一定能在家休息。",
+          "correctAnswer": { "value": false },
+          "explanation": "Đoạn văn nói 周末有时候他还要去医院上班，不能在家休息 (cuối tuần đôi khi ông ấy còn phải đến bệnh viện làm việc, không thể nghỉ ở nhà). Vậy câu này SAI.",
+          "order": 4
+        }
+      ]
+    },
+    {
+      "id": "rd-HSK3-4",
+      "title": "Chuyển đến nhà mới",
+      "titleZh": "搬新家",
+      "hskLevel": "HSK3",
+      "passage": "上个月我们家搬到了一个新地方。以前的房子离我公司很远，每天我要坐一个多小时的公共汽车，又累又花时间。现在的新家就在公司附近，走路十分钟就能到，所以早上我可以多睡一会儿。新家旁边还有一个很大的超市和一家银行，买东西、办事都很方便。虽然新房子比以前的小一点儿，但是我和妻子都很满意。我们打算这个周末请几个朋友来家里吃饭。",
+      "passagePinyin": "Shàng gè yuè wǒmen jiā bān dào le yí gè xīn dìfang. Yǐqián de fángzi lí wǒ gōngsī hěn yuǎn, měitiān wǒ yào zuò yí gè duō xiǎoshí de gōnggòng qìchē, yòu lèi yòu huā shíjiān. Xiànzài de xīn jiā jiù zài gōngsī fùjìn, zǒulù shí fēnzhōng jiù néng dào, suǒyǐ zǎoshang wǒ kěyǐ duō shuì yíhuìr. Xīn jiā pángbiān hái yǒu yí gè hěn dà de chāoshì hé yì jiā yínháng, mǎi dōngxi, bànshì dōu hěn fāngbiàn. Suīrán xīn fángzi bǐ yǐqián de xiǎo yìdiǎnr, dànshì wǒ hé qīzi dōu hěn mǎnyì. Wǒmen dǎsuàn zhège zhōumò qǐng jǐ gè péngyou lái jiā lǐ chīfàn.",
+      "timeLimit": 600,
+      "questions": [
+        {
+          "id": "rd-HSK3-4-q1",
+          "type": "MCQ",
+          "prompt": "以前的房子有什么问题？",
+          "promptPinyin": "Yǐqián de fángzi yǒu shénme wèntí?",
+          "options": [
+            { "text": "太小了", "pinyin": "tài xiǎo le" },
+            { "text": "离公司很远", "pinyin": "lí gōngsī hěn yuǎn" },
+            { "text": "太贵了", "pinyin": "tài guì le" },
+            { "text": "没有超市", "pinyin": "méiyǒu chāoshì" }
+          ],
+          "correctAnswer": { "index": 1, "text": "离公司很远" },
+          "explanation": "Đoạn văn nói 以前的房子离我公司很远 (nhà cũ cách công ty tôi rất xa). Vậy vấn đề là nhà cũ cách công ty rất xa.",
+          "order": 1
+        },
+        {
+          "id": "rd-HSK3-4-q2",
+          "type": "MCQ",
+          "prompt": "从新家走路到公司要多长时间？",
+          "promptPinyin": "Cóng xīn jiā zǒulù dào gōngsī yào duō cháng shíjiān?",
+          "options": [
+            { "text": "十分钟", "pinyin": "shí fēnzhōng" },
+            { "text": "半个小时", "pinyin": "bàn gè xiǎoshí" },
+            { "text": "一个小时", "pinyin": "yí gè xiǎoshí" },
+            { "text": "两个小时", "pinyin": "liǎng gè xiǎoshí" }
+          ],
+          "correctAnswer": { "index": 0, "text": "十分钟" },
+          "explanation": "Đoạn văn nói 走路十分钟就能到 (đi bộ mười phút là đến). Vậy đáp án đúng là mười phút.",
+          "order": 2
+        },
+        {
+          "id": "rd-HSK3-4-q3",
+          "type": "TRUE_FALSE",
+          "prompt": "新家旁边有超市和银行。",
+          "correctAnswer": { "value": true },
+          "explanation": "Đoạn văn nói 新家旁边还有一个很大的超市和一家银行 (cạnh nhà mới còn có một siêu thị rất lớn và một ngân hàng). Vậy câu này ĐÚNG.",
+          "order": 3
+        },
+        {
+          "id": "rd-HSK3-4-q4",
+          "type": "TRUE_FALSE",
+          "prompt": "他和妻子对新房子都不满意。",
+          "correctAnswer": { "value": false },
+          "explanation": "Đoạn văn nói 虽然新房子比以前的小一点儿，但是我和妻子都很满意 (tuy nhà mới nhỏ hơn nhà cũ một chút, nhưng tôi và vợ đều rất hài lòng). Vậy câu này SAI.",
+          "order": 4
+        }
+      ]
+    }
+  ]
+}

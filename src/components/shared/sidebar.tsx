@@ -13,6 +13,7 @@ import {
   PenLine,
   Mic,
   GraduationCap,
+  Library,
   Users2,
   UserRound,
   Crown,
@@ -52,8 +53,11 @@ export const NAV_GROUPS: NavGroup[] = [
     ],
   },
   {
-    title: "Luyện thi",
-    items: [{ href: "/exam", label: "Thi thử", icon: GraduationCap }],
+    title: "Luyện thi & Tài liệu",
+    items: [
+      { href: "/exam", label: "Thi thử", icon: GraduationCap },
+      { href: "/materials", label: "Tài liệu", icon: Library },
+    ],
   },
   {
     title: "Khác",

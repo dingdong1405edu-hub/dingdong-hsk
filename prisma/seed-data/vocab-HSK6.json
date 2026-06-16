@@ -1,0 +1,407 @@
+{
+  "kind": "vocab",
+  "units": [
+    {
+      "id": "v-HSK6-u1",
+      "title": "Xã hội và pháp luật",
+      "titleZh": "社会与法律",
+      "hskLevel": "HSK6",
+      "order": 1,
+      "lessons": [
+        {
+          "id": "v-HSK6-u1-l1",
+          "title": "Hiện tượng và vấn đề xã hội",
+          "order": 1,
+          "exercises": [
+            {
+              "type": "match",
+              "pairs": [
+                { "zh": "舆论", "vi": "Dư luận", "pinyin": "yú lùn" },
+                { "zh": "歧视", "vi": "Kỳ thị, phân biệt đối xử", "pinyin": "qí shì" },
+                { "zh": "贫困", "vi": "Nghèo khó, bần cùng", "pinyin": "pín kùn" },
+                { "zh": "阶层", "vi": "Tầng lớp", "pinyin": "jiē céng" },
+                { "zh": "矛盾", "vi": "Mâu thuẫn", "pinyin": "máo dùn" },
+                { "zh": "趋势", "vi": "Xu thế, xu hướng", "pinyin": "qū shì" }
+              ]
+            },
+            {
+              "type": "translate",
+              "direction": "vi_to_zh",
+              "prompt": "Kỳ thị, phân biệt đối xử",
+              "answer": "歧视",
+              "pinyin": "qí shì",
+              "options": ["歧视", "舆论", "贫困", "矛盾"]
+            },
+            {
+              "type": "toneSelect",
+              "word": "舆论",
+              "pinyin": "yú lùn",
+              "question": "Âm tiết 舆 trong 舆论 có thanh mấy?",
+              "options": ["Thanh 1", "Thanh 2", "Thanh 3", "Thanh 4"],
+              "correct": 1
+            },
+            {
+              "type": "sentenceOrder",
+              "words": ["引起", "这个", "广泛的", "现象", "舆论", "了"],
+              "answer": "这个现象引起了广泛的舆论",
+              "hint": "Hiện tượng này đã gây nên dư luận rộng rãi"
+            }
+          ]
+        },
+        {
+          "id": "v-HSK6-u1-l2",
+          "title": "Pháp luật và công bằng",
+          "order": 2,
+          "exercises": [
+            {
+              "type": "match",
+              "pairs": [
+                { "zh": "法律", "vi": "Pháp luật", "pinyin": "fǎ lǜ" },
+                { "zh": "权益", "vi": "Quyền lợi", "pinyin": "quán yì" },
+                { "zh": "公正", "vi": "Công bằng, công chính", "pinyin": "gōng zhèng" },
+                { "zh": "惩罚", "vi": "Trừng phạt", "pinyin": "chéng fá" },
+                { "zh": "维护", "vi": "Duy trì, bảo vệ", "pinyin": "wéi hù" }
+              ]
+            },
+            {
+              "type": "pinyinMatch",
+              "pairs": [
+                { "zh": "法律", "pinyin": "fǎ lǜ" },
+                { "zh": "权益", "pinyin": "quán yì" },
+                { "zh": "公正", "pinyin": "gōng zhèng" },
+                { "zh": "惩罚", "pinyin": "chéng fá" }
+              ]
+            },
+            {
+              "type": "translate",
+              "direction": "zh_to_vi",
+              "prompt": "法律应当维护每个人的合法权益。",
+              "answer": "Pháp luật cần bảo vệ quyền lợi hợp pháp của mỗi người.",
+              "options": [
+                "Pháp luật cần bảo vệ quyền lợi hợp pháp của mỗi người.",
+                "Tòa án đã đưa ra phán quyết công bằng.",
+                "Hành vi này sẽ bị trừng phạt nghiêm khắc.",
+                "Mọi người đều bình đẳng trước pháp luật."
+              ]
+            },
+            {
+              "type": "toneSelect",
+              "word": "惩罚",
+              "pinyin": "chéng fá",
+              "question": "Âm tiết 罚 trong 惩罚 có thanh mấy?",
+              "options": ["Thanh 1", "Thanh 2", "Thanh 3", "Thanh 4"],
+              "correct": 1
+            }
+          ]
+        },
+        {
+          "id": "v-HSK6-u1-l3",
+          "title": "Đạo đức và trách nhiệm công dân",
+          "order": 3,
+          "exercises": [
+            {
+              "type": "match",
+              "pairs": [
+                { "zh": "道德", "vi": "Đạo đức", "pinyin": "dào dé" },
+                { "zh": "义务", "vi": "Nghĩa vụ", "pinyin": "yì wù" },
+                { "zh": "诚信", "vi": "Trung thực, chữ tín", "pinyin": "chéng xìn" },
+                { "zh": "奉献", "vi": "Cống hiến", "pinyin": "fèng xiàn" },
+                { "zh": "约束", "vi": "Ràng buộc, kiềm chế", "pinyin": "yuē shù" }
+              ]
+            },
+            {
+              "type": "translate",
+              "direction": "vi_to_zh",
+              "prompt": "Cống hiến",
+              "answer": "奉献",
+              "pinyin": "fèng xiàn",
+              "options": ["奉献", "约束", "义务", "诚信"]
+            },
+            {
+              "type": "sentenceOrder",
+              "words": ["每个", "都有", "纳税的", "公民", "义务"],
+              "answer": "每个公民都有纳税的义务",
+              "hint": "Mỗi công dân đều có nghĩa vụ nộp thuế"
+            },
+            {
+              "type": "toneSelect",
+              "word": "道德",
+              "pinyin": "dào dé",
+              "question": "Âm tiết 道 trong 道德 có thanh mấy?",
+              "options": ["Thanh 1", "Thanh 2", "Thanh 3", "Thanh 4"],
+              "correct": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "v-HSK6-u2",
+      "title": "Kinh tế và quản lý",
+      "titleZh": "经济与管理",
+      "hskLevel": "HSK6",
+      "order": 2,
+      "lessons": [
+        {
+          "id": "v-HSK6-u2-l1",
+          "title": "Thị trường và cạnh tranh",
+          "order": 1,
+          "exercises": [
+            {
+              "type": "match",
+              "pairs": [
+                { "zh": "竞争", "vi": "Cạnh tranh", "pinyin": "jìng zhēng" },
+                { "zh": "垄断", "vi": "Độc quyền", "pinyin": "lǒng duàn" },
+                { "zh": "供给", "vi": "Cung cấp, cung ứng", "pinyin": "gōng jǐ" },
+                { "zh": "需求", "vi": "Nhu cầu", "pinyin": "xū qiú" },
+                { "zh": "利润", "vi": "Lợi nhuận", "pinyin": "lì rùn" },
+                { "zh": "波动", "vi": "Biến động, dao động", "pinyin": "bō dòng" }
+              ]
+            },
+            {
+              "type": "translate",
+              "direction": "vi_to_zh",
+              "prompt": "Độc quyền",
+              "answer": "垄断",
+              "pinyin": "lǒng duàn",
+              "options": ["垄断", "竞争", "需求", "利润"]
+            },
+            {
+              "type": "toneSelect",
+              "word": "利润",
+              "pinyin": "lì rùn",
+              "question": "Âm tiết 润 trong 利润 có thanh mấy?",
+              "options": ["Thanh 1", "Thanh 2", "Thanh 3", "Thanh 4"],
+              "correct": 3
+            },
+            {
+              "type": "sentenceOrder",
+              "words": ["市场", "决定", "供给", "由", "和", "价格", "需求"],
+              "answer": "市场价格由供给和需求决定",
+              "hint": "Giá cả thị trường do cung và cầu quyết định"
+            }
+          ]
+        },
+        {
+          "id": "v-HSK6-u2-l2",
+          "title": "Doanh nghiệp và đầu tư",
+          "order": 2,
+          "exercises": [
+            {
+              "type": "match",
+              "pairs": [
+                { "zh": "投资", "vi": "Đầu tư", "pinyin": "tóu zī" },
+                { "zh": "风险", "vi": "Rủi ro", "pinyin": "fēng xiǎn" },
+                { "zh": "资本", "vi": "Tư bản, vốn", "pinyin": "zī běn" },
+                { "zh": "盈利", "vi": "Sinh lời, lãi", "pinyin": "yíng lì" },
+                { "zh": "破产", "vi": "Phá sản", "pinyin": "pò chǎn" }
+              ]
+            },
+            {
+              "type": "pinyinMatch",
+              "pairs": [
+                { "zh": "投资", "pinyin": "tóu zī" },
+                { "zh": "风险", "pinyin": "fēng xiǎn" },
+                { "zh": "资本", "pinyin": "zī běn" },
+                { "zh": "破产", "pinyin": "pò chǎn" }
+              ]
+            },
+            {
+              "type": "translate",
+              "direction": "zh_to_vi",
+              "prompt": "投资总是伴随着一定的风险。",
+              "answer": "Đầu tư luôn đi kèm với một mức độ rủi ro nhất định.",
+              "options": [
+                "Đầu tư luôn đi kèm với một mức độ rủi ro nhất định.",
+                "Công ty này đã tuyên bố phá sản.",
+                "Doanh nghiệp năm nay thu được nhiều lợi nhuận.",
+                "Họ đã huy động được một khoản vốn lớn."
+              ]
+            },
+            {
+              "type": "toneSelect",
+              "word": "破产",
+              "pinyin": "pò chǎn",
+              "question": "Âm tiết 产 trong 破产 có thanh mấy?",
+              "options": ["Thanh 1", "Thanh 2", "Thanh 3", "Thanh 4"],
+              "correct": 2
+            }
+          ]
+        },
+        {
+          "id": "v-HSK6-u2-l3",
+          "title": "Quản lý và điều hành",
+          "order": 3,
+          "exercises": [
+            {
+              "type": "match",
+              "pairs": [
+                { "zh": "决策", "vi": "Quyết sách, ra quyết định", "pinyin": "jué cè" },
+                { "zh": "效率", "vi": "Hiệu suất, hiệu quả", "pinyin": "xiào lǜ" },
+                { "zh": "统筹", "vi": "Quy hoạch tổng thể, sắp xếp chung", "pinyin": "tǒng chóu" },
+                { "zh": "协调", "vi": "Điều phối, phối hợp", "pinyin": "xié tiáo" },
+                { "zh": "落实", "vi": "Thực hiện, triển khai cụ thể", "pinyin": "luò shí" }
+              ]
+            },
+            {
+              "type": "translate",
+              "direction": "vi_to_zh",
+              "prompt": "Hiệu suất, hiệu quả",
+              "answer": "效率",
+              "pinyin": "xiào lǜ",
+              "options": ["效率", "决策", "协调", "落实"]
+            },
+            {
+              "type": "sentenceOrder",
+              "words": ["管理者", "提高", "团队的", "需要", "工作效率"],
+              "answer": "管理者需要提高团队的工作效率",
+              "hint": "Người quản lý cần nâng cao hiệu suất làm việc của nhóm"
+            },
+            {
+              "type": "toneSelect",
+              "word": "协调",
+              "pinyin": "xié tiáo",
+              "question": "Âm tiết 协 trong 协调 có thanh mấy?",
+              "options": ["Thanh 1", "Thanh 2", "Thanh 3", "Thanh 4"],
+              "correct": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "v-HSK6-u3",
+      "title": "Văn hóa và tư duy",
+      "titleZh": "文化与思维",
+      "hskLevel": "HSK6",
+      "order": 3,
+      "lessons": [
+        {
+          "id": "v-HSK6-u3-l1",
+          "title": "Truyền thống và di sản",
+          "order": 1,
+          "exercises": [
+            {
+              "type": "match",
+              "pairs": [
+                { "zh": "传承", "vi": "Kế thừa và truyền lại", "pinyin": "chuán chéng" },
+                { "zh": "遗产", "vi": "Di sản", "pinyin": "yí chǎn" },
+                { "zh": "习俗", "vi": "Phong tục, tập quán", "pinyin": "xí sú" },
+                { "zh": "底蕴", "vi": "Nội hàm, chiều sâu (văn hóa)", "pinyin": "dǐ yùn" },
+                { "zh": "弘扬", "vi": "Phát huy, làm rạng rỡ", "pinyin": "hóng yáng" },
+                { "zh": "濒临", "vi": "Đứng trước nguy cơ, gần kề", "pinyin": "bīn lín" }
+              ]
+            },
+            {
+              "type": "translate",
+              "direction": "vi_to_zh",
+              "prompt": "Di sản",
+              "answer": "遗产",
+              "pinyin": "yí chǎn",
+              "options": ["遗产", "习俗", "传承", "底蕴"]
+            },
+            {
+              "type": "toneSelect",
+              "word": "弘扬",
+              "pinyin": "hóng yáng",
+              "question": "Âm tiết 弘 trong 弘扬 có thanh mấy?",
+              "options": ["Thanh 1", "Thanh 2", "Thanh 3", "Thanh 4"],
+              "correct": 1
+            },
+            {
+              "type": "sentenceOrder",
+              "words": ["我们", "传统", "应该", "优秀的", "弘扬", "文化"],
+              "answer": "我们应该弘扬优秀的传统文化",
+              "hint": "Chúng ta nên phát huy nền văn hóa truyền thống ưu tú"
+            }
+          ]
+        },
+        {
+          "id": "v-HSK6-u3-l2",
+          "title": "Tư duy và nhận thức",
+          "order": 2,
+          "exercises": [
+            {
+              "type": "match",
+              "pairs": [
+                { "zh": "逻辑", "vi": "Logic, lô-gíc", "pinyin": "luó ji" },
+                { "zh": "理性", "vi": "Lý tính, lý trí", "pinyin": "lǐ xìng" },
+                { "zh": "偏见", "vi": "Định kiến", "pinyin": "piān jiàn" },
+                { "zh": "反思", "vi": "Suy ngẫm, tự kiểm điểm", "pinyin": "fǎn sī" },
+                { "zh": "洞察", "vi": "Thấu hiểu, nhìn thấu", "pinyin": "dòng chá" }
+              ]
+            },
+            {
+              "type": "pinyinMatch",
+              "pairs": [
+                { "zh": "逻辑", "pinyin": "luó ji" },
+                { "zh": "理性", "pinyin": "lǐ xìng" },
+                { "zh": "偏见", "pinyin": "piān jiàn" },
+                { "zh": "反思", "pinyin": "fǎn sī" }
+              ]
+            },
+            {
+              "type": "translate",
+              "direction": "zh_to_vi",
+              "prompt": "我们应当用理性的态度看待这个问题。",
+              "answer": "Chúng ta nên nhìn nhận vấn đề này bằng thái độ lý trí.",
+              "options": [
+                "Chúng ta nên nhìn nhận vấn đề này bằng thái độ lý trí.",
+                "Định kiến thường khiến con người phán đoán sai lầm.",
+                "Sự việc này đáng để chúng ta suy ngẫm sâu sắc.",
+                "Bài viết của anh ấy rất có tính logic."
+              ]
+            },
+            {
+              "type": "toneSelect",
+              "word": "偏见",
+              "pinyin": "piān jiàn",
+              "question": "Âm tiết 偏 trong 偏见 có thanh mấy?",
+              "options": ["Thanh 1", "Thanh 2", "Thanh 3", "Thanh 4"],
+              "correct": 0
+            }
+          ]
+        },
+        {
+          "id": "v-HSK6-u3-l3",
+          "title": "Nghệ thuật và thẩm mỹ",
+          "order": 3,
+          "exercises": [
+            {
+              "type": "match",
+              "pairs": [
+                { "zh": "审美", "vi": "Thẩm mỹ", "pinyin": "shěn měi" },
+                { "zh": "意境", "vi": "Ý cảnh, tầng nghĩa nghệ thuật", "pinyin": "yì jìng" },
+                { "zh": "灵感", "vi": "Cảm hứng", "pinyin": "líng gǎn" },
+                { "zh": "细腻", "vi": "Tinh tế, mềm mại", "pinyin": "xì nì" },
+                { "zh": "鉴赏", "vi": "Thưởng thức và đánh giá", "pinyin": "jiàn shǎng" }
+              ]
+            },
+            {
+              "type": "translate",
+              "direction": "vi_to_zh",
+              "prompt": "Cảm hứng",
+              "answer": "灵感",
+              "pinyin": "líng gǎn",
+              "options": ["灵感", "审美", "意境", "鉴赏"]
+            },
+            {
+              "type": "sentenceOrder",
+              "words": ["这幅", "独特的", "画", "意境", "有着"],
+              "answer": "这幅画有着独特的意境",
+              "hint": "Bức tranh này mang một ý cảnh độc đáo"
+            },
+            {
+              "type": "toneSelect",
+              "word": "审美",
+              "pinyin": "shěn měi",
+              "question": "Âm tiết 审 trong 审美 có thanh mấy?",
+              "options": ["Thanh 1", "Thanh 2", "Thanh 3", "Thanh 4"],
+              "correct": 2
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

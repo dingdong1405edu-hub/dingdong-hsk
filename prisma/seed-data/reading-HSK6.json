@@ -1,0 +1,285 @@
+{
+  "kind": "reading",
+  "tests": [
+    {
+      "id": "rd-HSK6-1",
+      "title": "Trí tuệ nhân tạo và tương lai việc làm",
+      "titleZh": "人工智能与未来就业",
+      "hskLevel": "HSK6",
+      "passage": "随着人工智能技术的迅速发展，越来越多的传统岗位正面临被取代的风险。有人对此感到焦虑，担心机器最终会抢走人类的饭碗。然而，许多专家持有不同看法。他们指出，技术革命在历史上从未真正减少就业机会，反而催生了大量前所未有的新职业。与其担忧被淘汰，不如主动提升自身难以被机器替代的能力，例如创造力、沟通技巧以及解决复杂问题的思维。归根结底，人工智能更应被视为辅助人类的工具，而非单纯的竞争对手。能否抓住机遇，关键在于我们是否愿意持续学习、不断适应。",
+      "passagePinyin": "Suízhe réngōng zhìnéng jìshù de xùnsù fāzhǎn, yuèláiyuè duō de chuántǒng gǎngwèi zhèng miànlínzhe bèi qǔdài de fēngxiǎn. Yǒurén duì cǐ gǎndào jiāolǜ, dānxīn jīqì zuìzhōng huì qiǎngzǒu rénlèi de fànwǎn. Rán'ér, xǔduō zhuānjiā chíyǒu bùtóng kànfǎ. Tāmen zhǐchū, jìshù gémìng zài lìshǐ shàng cóngwèi zhēnzhèng jiǎnshǎo jiùyè jīhuì, fǎn'ér cuīshēngle dàliàng qiánsuǒwèiyǒu de xīn zhíyè. Yǔqí dānyōu bèi táotài, bùrú zhǔdòng tíshēng zìshēn nányǐ bèi jīqì tìdài de nénglì, lìrú chuàngzàolì, gōutōng jìqiǎo yǐjí jiějué fùzá wèntí de sīwéi. Guīgēnjiédǐ, réngōng zhìnéng gèng yīng bèi shìwéi fǔzhù rénlèi de gōngjù, ér fēi dānchún de jìngzhēng duìshǒu. Néngfǒu zhuāzhù jīyù, guānjiàn zàiyú wǒmen shìfǒu yuànyì chíxù xuéxí, búduàn shìyìng.",
+      "timeLimit": 600,
+      "questions": [
+        {
+          "id": "rd-HSK6-1-q1",
+          "type": "MCQ",
+          "prompt": "有些人对人工智能的发展感到焦虑，主要是因为什么？",
+          "promptPinyin": "Yǒuxiē rén duì réngōng zhìnéng de fāzhǎn gǎndào jiāolǜ, zhǔyào shì yīnwèi shénme?",
+          "options": [
+            { "text": "担心机器会取代自己的工作", "pinyin": "dānxīn jīqì huì qǔdài zìjǐ de gōngzuò" },
+            { "text": "认为技术发展得太慢", "pinyin": "rènwéi jìshù fāzhǎn de tài màn" },
+            { "text": "觉得机器价格太贵", "pinyin": "juéde jīqì jiàgé tài guì" },
+            { "text": "害怕学习新的知识", "pinyin": "hàipà xuéxí xīn de zhīshi" }
+          ],
+          "correctAnswer": { "index": 0, "text": "担心机器会取代自己的工作" },
+          "explanation": "Đoạn văn viết 担心机器最终会抢走人类的饭碗 (lo rằng máy móc cuối cùng sẽ cướp mất bát cơm của con người), tức là sợ máy móc thay thế công việc của mình.",
+          "order": 1
+        },
+        {
+          "id": "rd-HSK6-1-q2",
+          "type": "MCQ",
+          "prompt": "专家对技术革命与就业的关系持什么看法？",
+          "promptPinyin": "Zhuānjiā duì jìshù gémìng yǔ jiùyè de guānxì chí shénme kànfǎ?",
+          "options": [
+            { "text": "技术革命总是让大量人失业", "pinyin": "jìshù gémìng zǒngshì ràng dàliàng rén shīyè" },
+            { "text": "技术革命从未真正减少就业，还创造了新职业", "pinyin": "jìshù gémìng cóngwèi zhēnzhèng jiǎnshǎo jiùyè, hái chuàngzàole xīn zhíyè" },
+            { "text": "技术革命对就业没有任何影响", "pinyin": "jìshù gémìng duì jiùyè méiyǒu rènhé yǐngxiǎng" },
+            { "text": "技术革命只会减少新职业", "pinyin": "jìshù gémìng zhǐ huì jiǎnshǎo xīn zhíyè" }
+          ],
+          "correctAnswer": { "index": 1, "text": "技术革命从未真正减少就业，还创造了新职业" },
+          "explanation": "Đoạn văn nói 技术革命在历史上从未真正减少就业机会，反而催生了大量前所未有的新职业 (cách mạng công nghệ trong lịch sử chưa từng thực sự làm giảm cơ hội việc làm, ngược lại còn sản sinh ra nhiều ngành nghề mới chưa từng có).",
+          "order": 2
+        },
+        {
+          "id": "rd-HSK6-1-q3",
+          "type": "MCQ",
+          "prompt": "作者建议人们应该怎么做？",
+          "promptPinyin": "Zuòzhě jiànyì rénmen yīnggāi zěnme zuò?",
+          "options": [
+            { "text": "彻底拒绝使用人工智能", "pinyin": "chèdǐ jùjué shǐyòng réngōng zhìnéng" },
+            { "text": "等待政府解决就业问题", "pinyin": "děngdài zhèngfǔ jiějué jiùyè wèntí" },
+            { "text": "主动提升难以被机器替代的能力", "pinyin": "zhǔdòng tíshēng nányǐ bèi jīqì tìdài de nénglì" },
+            { "text": "放弃所有传统岗位", "pinyin": "fàngqì suǒyǒu chuántǒng gǎngwèi" }
+          ],
+          "correctAnswer": { "index": 2, "text": "主动提升难以被机器替代的能力" },
+          "explanation": "Đoạn văn khuyên 与其担忧被淘汰，不如主动提升自身难以被机器替代的能力 (thay vì lo lắng bị đào thải, chi bằng chủ động nâng cao năng lực khó bị máy móc thay thế).",
+          "order": 3
+        },
+        {
+          "id": "rd-HSK6-1-q4",
+          "type": "TRUE_FALSE",
+          "prompt": "作者认为人工智能更应该被看作辅助人类的工具，而不是竞争对手。",
+          "correctAnswer": { "value": true },
+          "explanation": "Đoạn văn nói 人工智能更应被视为辅助人类的工具，而非单纯的竞争对手. Vậy câu này ĐÚNG.",
+          "order": 4
+        },
+        {
+          "id": "rd-HSK6-1-q5",
+          "type": "TRUE_FALSE",
+          "prompt": "作者认为能否抓住机遇与是否持续学习无关。",
+          "correctAnswer": { "value": false },
+          "explanation": "Đoạn văn nói 能否抓住机遇，关键在于我们是否愿意持续学习、不断适应 (có nắm bắt được cơ hội hay không, mấu chốt nằm ở việc chúng ta có sẵn lòng học hỏi liên tục, không ngừng thích nghi hay không). Vậy câu này SAI.",
+          "order": 5
+        }
+      ]
+    },
+    {
+      "id": "rd-HSK6-2",
+      "title": "Sự hồi sinh của thư pháp truyền thống",
+      "titleZh": "传统书法的复兴",
+      "hskLevel": "HSK6",
+      "passage": "在电脑和手机几乎取代手写的今天，书法这门古老的艺术却悄然迎来了新的春天。近年来，越来越多的年轻人重新拿起毛笔，在一笔一画中寻找内心的宁静。一位长期教授书法的老师感慨道，许多学生起初只是出于好奇，可一旦真正沉浸其中，便难以自拔。书法不仅讲究字形的工整，更注重书写者的心境与气韵。练字的过程往往需要极大的耐心，急于求成反而难有进步。在快节奏的现代生活中，这种慢下来、静下心的体验显得尤为珍贵。或许正因如此，这门传统艺术才得以焕发出持久的生命力。",
+      "passagePinyin": "Zài diànnǎo hé shǒujī jīhū qǔdài shǒuxiě de jīntiān, shūfǎ zhè mén gǔlǎo de yìshù què qiǎorán yíngláile xīn de chūntiān. Jìnnián lái, yuèláiyuè duō de niánqīngrén chóngxīn ná qǐ máobǐ, zài yìbǐyìhuà zhōng xúnzhǎo nèixīn de níngjìng. Yí wèi chángqī jiàoshòu shūfǎ de lǎoshī gǎnkǎi dào, xǔduō xuéshēng qǐchū zhǐshì chūyú hàoqí, kě yídàn zhēnzhèng chénjìn qízhōng, biàn nányǐ zìbá. Shūfǎ bùjǐn jiǎngjiu zìxíng de gōngzhěng, gèng zhùzhòng shūxiězhě de xīnjìng yǔ qìyùn. Liànzì de guòchéng wǎngwǎng xūyào jí dà de nàixīn, jíyúqiúchéng fǎn'ér nán yǒu jìnbù. Zài kuài jiézòu de xiàndài shēnghuó zhōng, zhè zhǒng màn xiàlái, jìng xià xīn de tǐyàn xiǎnde yóuwéi zhēnguì. Huòxǔ zhèng yīn rúcǐ, zhè mén chuántǒng yìshù cái déyǐ huànfā chū chíjiǔ de shēngmìnglì.",
+      "timeLimit": 600,
+      "questions": [
+        {
+          "id": "rd-HSK6-2-q1",
+          "type": "MCQ",
+          "prompt": "根据短文，近年来书法这门艺术出现了什么变化？",
+          "promptPinyin": "Gēnjù duǎnwén, jìnnián lái shūfǎ zhè mén yìshù chūxiànle shénme biànhuà?",
+          "options": [
+            { "text": "彻底被电脑取代了", "pinyin": "chèdǐ bèi diànnǎo qǔdàile" },
+            { "text": "越来越多年轻人重新开始学习", "pinyin": "yuèláiyuè duō niánqīngrén chóngxīn kāishǐ xuéxí" },
+            { "text": "只有老人才感兴趣", "pinyin": "zhǐyǒu lǎorén cái gǎn xìngqù" },
+            { "text": "逐渐被人们遗忘", "pinyin": "zhújiàn bèi rénmen yíwàng" }
+          ],
+          "correctAnswer": { "index": 1, "text": "越来越多年轻人重新开始学习" },
+          "explanation": "Đoạn văn nói 越来越多的年轻人重新拿起毛笔 (ngày càng nhiều người trẻ cầm lại bút lông), cho thấy thư pháp hồi sinh nhờ giới trẻ.",
+          "order": 1
+        },
+        {
+          "id": "rd-HSK6-2-q2",
+          "type": "MCQ",
+          "prompt": "那位老师说，许多学生学书法的过程是怎样的？",
+          "promptPinyin": "Nà wèi lǎoshī shuō, xǔduō xuéshēng xué shūfǎ de guòchéng shì zěnyàng de?",
+          "options": [
+            { "text": "起初出于好奇，后来难以自拔", "pinyin": "qǐchū chūyú hàoqí, hòulái nányǐ zìbá" },
+            { "text": "一开始就非常认真", "pinyin": "yì kāishǐ jiù fēicháng rènzhēn" },
+            { "text": "学了几天就放弃了", "pinyin": "xuéle jǐ tiān jiù fàngqìle" },
+            { "text": "只是为了考试才学", "pinyin": "zhǐshì wèile kǎoshì cái xué" }
+          ],
+          "correctAnswer": { "index": 0, "text": "起初出于好奇，后来难以自拔" },
+          "explanation": "Đoạn văn nói 许多学生起初只是出于好奇，可一旦真正沉浸其中，便难以自拔 (nhiều học sinh ban đầu chỉ vì tò mò, nhưng một khi thực sự đắm chìm vào thì khó mà dứt ra).",
+          "order": 2
+        },
+        {
+          "id": "rd-HSK6-2-q3",
+          "type": "MCQ",
+          "prompt": "根据短文，练习书法时最不可取的态度是什么？",
+          "promptPinyin": "Gēnjù duǎnwén, liànxí shūfǎ shí zuì bùkěqǔ de tàidù shì shénme?",
+          "options": [
+            { "text": "保持耐心", "pinyin": "bǎochí nàixīn" },
+            { "text": "注重心境", "pinyin": "zhùzhòng xīnjìng" },
+            { "text": "急于求成", "pinyin": "jíyúqiúchéng" },
+            { "text": "讲究字形工整", "pinyin": "jiǎngjiu zìxíng gōngzhěng" }
+          ],
+          "correctAnswer": { "index": 2, "text": "急于求成" },
+          "explanation": "Đoạn văn nói 练字的过程往往需要极大的耐心，急于求成反而难有进步 (quá trình luyện chữ thường cần sự kiên nhẫn rất lớn, nóng vội muốn thành công ngay lại khó tiến bộ).",
+          "order": 3
+        },
+        {
+          "id": "rd-HSK6-2-q4",
+          "type": "TRUE_FALSE",
+          "prompt": "作者认为书法只讲究字形工整，不在乎书写者的心境。",
+          "correctAnswer": { "value": false },
+          "explanation": "Đoạn văn nói 书法不仅讲究字形的工整，更注重书写者的心境与气韵 (thư pháp không chỉ chú trọng nét chữ ngay ngắn, mà còn coi trọng tâm cảnh và khí vận của người viết). Vậy câu này SAI.",
+          "order": 4
+        }
+      ]
+    },
+    {
+      "id": "rd-HSK6-3",
+      "title": "Lợi và hại của du lịch đại chúng",
+      "titleZh": "大众旅游的利与弊",
+      "hskLevel": "HSK6",
+      "passage": "随着生活水平的提高和交通的日益便利，旅游已成为许多人不可或缺的生活方式。它不仅能让人开阔眼界、缓解压力，还能带动当地经济的发展，为不少偏远地区创造了就业机会。然而，旅游业的迅猛扩张也带来了一系列不容忽视的问题。每逢节假日，热门景点便人满为患，垃圾遍地，宁静的自然环境受到严重破坏。一些古老的村落在过度商业化之后，渐渐失去了原有的风貌与韵味。因此，如何在发展旅游与保护环境、传承文化之间找到平衡，已成为当今社会亟待解决的重要课题。",
+      "passagePinyin": "Suízhe shēnghuó shuǐpíng de tígāo hé jiāotōng de rìyì biànlì, lǚyóu yǐ chéngwéi xǔduō rén bùkě huòquē de shēnghuó fāngshì. Tā bùjǐn néng ràng rén kāikuò yǎnjiè, huǎnjiě yālì, hái néng dàidòng dāngdì jīngjì de fāzhǎn, wèi bùshǎo piānyuǎn dìqū chuàngzàole jiùyè jīhuì. Rán'ér, lǚyóuyè de xùnměng kuòzhāng yě dàiláile yíxìliè bùróng hūshì de wèntí. Měi féng jiéjiàrì, rèmén jǐngdiǎn biàn rénmǎnwéihuàn, lèsè biàndì, níngjìng de zìrán huánjìng shòudào yánzhòng pòhuài. Yìxiē gǔlǎo de cūnluò zài guòdù shāngyèhuà zhīhòu, jiànjiàn shīqùle yuányǒu de fēngmào yǔ yùnwèi. Yīncǐ, rúhé zài fāzhǎn lǚyóu yǔ bǎohù huánjìng, chuánchéng wénhuà zhījiān zhǎodào pínghéng, yǐ chéngwéi dāngjīn shèhuì jídài jiějué de zhòngyào kètí.",
+      "timeLimit": 600,
+      "questions": [
+        {
+          "id": "rd-HSK6-3-q1",
+          "type": "MCQ",
+          "prompt": "根据短文，旅游给偏远地区带来的好处之一是什么？",
+          "promptPinyin": "Gēnjù duǎnwén, lǚyóu gěi piānyuǎn dìqū dàilái de hǎochù zhīyī shì shénme?",
+          "options": [
+            { "text": "创造了就业机会", "pinyin": "chuàngzàole jiùyè jīhuì" },
+            { "text": "减少了当地人口", "pinyin": "jiǎnshǎole dāngdì rénkǒu" },
+            { "text": "降低了物价", "pinyin": "jiàngdīle wùjià" },
+            { "text": "增加了垃圾", "pinyin": "zēngjiāle lèsè" }
+          ],
+          "correctAnswer": { "index": 0, "text": "创造了就业机会" },
+          "explanation": "Đoạn văn nói 为不少偏远地区创造了就业机会 (tạo ra cơ hội việc làm cho không ít vùng xa xôi).",
+          "order": 1
+        },
+        {
+          "id": "rd-HSK6-3-q2",
+          "type": "MCQ",
+          "prompt": "节假日热门景点常常出现什么情况？",
+          "promptPinyin": "Jiéjiàrì rèmén jǐngdiǎn chángcháng chūxiàn shénme qíngkuàng?",
+          "options": [
+            { "text": "游客很少，非常安静", "pinyin": "yóukè hěn shǎo, fēicháng ānjìng" },
+            { "text": "人满为患，垃圾遍地", "pinyin": "rénmǎnwéihuàn, lèsè biàndì" },
+            { "text": "门票免费", "pinyin": "ménpiào miǎnfèi" },
+            { "text": "天气总是很好", "pinyin": "tiānqì zǒngshì hěn hǎo" }
+          ],
+          "correctAnswer": { "index": 1, "text": "人满为患，垃圾遍地" },
+          "explanation": "Đoạn văn nói 每逢节假日，热门景点便人满为患，垃圾遍地 (mỗi dịp lễ tết, các điểm du lịch nổi tiếng đông nghẹt người, rác vứt khắp nơi).",
+          "order": 2
+        },
+        {
+          "id": "rd-HSK6-3-q3",
+          "type": "MCQ",
+          "prompt": "一些古老村落过度商业化后产生了什么后果？",
+          "promptPinyin": "Yìxiē gǔlǎo cūnluò guòdù shāngyèhuà hòu chǎnshēngle shénme hòuguǒ?",
+          "options": [
+            { "text": "变得更加繁荣富裕", "pinyin": "biànde gèngjiā fánróng fùyù" },
+            { "text": "吸引了更多年轻人定居", "pinyin": "xīyǐnle gèng duō niánqīngrén dìngjū" },
+            { "text": "渐渐失去了原有的风貌与韵味", "pinyin": "jiànjiàn shīqùle yuányǒu de fēngmào yǔ yùnwèi" },
+            { "text": "彻底恢复了传统文化", "pinyin": "chèdǐ huīfùle chuántǒng wénhuà" }
+          ],
+          "correctAnswer": { "index": 2, "text": "渐渐失去了原有的风貌与韵味" },
+          "explanation": "Đoạn văn nói 一些古老的村落在过度商业化之后，渐渐失去了原有的风貌与韵味 (một số làng cổ sau khi bị thương mại hóa quá mức đã dần mất đi diện mạo và phong vị vốn có).",
+          "order": 3
+        },
+        {
+          "id": "rd-HSK6-3-q4",
+          "type": "TRUE_FALSE",
+          "prompt": "作者认为旅游业的发展只有好处，没有任何问题。",
+          "correctAnswer": { "value": false },
+          "explanation": "Đoạn văn nói 旅游业的迅猛扩张也带来了一系列不容忽视的问题 (sự mở rộng nhanh chóng của ngành du lịch cũng mang lại hàng loạt vấn đề không thể xem nhẹ). Vậy câu này SAI.",
+          "order": 4
+        },
+        {
+          "id": "rd-HSK6-3-q5",
+          "type": "TRUE_FALSE",
+          "prompt": "作者认为在发展旅游与保护环境、传承文化之间找到平衡是一个重要课题。",
+          "correctAnswer": { "value": true },
+          "explanation": "Đoạn văn kết luận 如何在发展旅游与保护环境、传承文化之间找到平衡，已成为当今社会亟待解决的重要课题. Vậy câu này ĐÚNG.",
+          "order": 5
+        }
+      ]
+    },
+    {
+      "id": "rd-HSK6-4",
+      "title": "Câu chuyện chàng trai trẻ bỏ phố về quê",
+      "titleZh": "返乡创业的年轻人",
+      "hskLevel": "HSK6",
+      "passage": "大学毕业后，张伟原本在大城市的一家公司有着稳定的工作和不错的收入。然而，几年下来，他却始终感到内心空虚，总觉得那不是自己真正想要的生活。一次回乡探亲时，他发现家乡的水果品质优良，却因交通不便而卖不出好价钱，乡亲们辛苦一年往往所得无几。这让他下定决心辞职返乡。起初，父母极力反对，认为他放弃城市的机会十分可惜。但张伟没有动摇，他利用网络平台把家乡的水果销往全国各地。如今，他不仅自己事业有成，还带动了整个村子共同致富，乡亲们提起他无不竖起大拇指。",
+      "passagePinyin": "Dàxué bìyè hòu, Zhāng Wěi yuánběn zài dà chéngshì de yì jiā gōngsī yǒuzhe wěndìng de gōngzuò hé búcuò de shōurù. Rán'ér, jǐ nián xiàlái, tā què shǐzhōng gǎndào nèixīn kōngxū, zǒng juéde nà búshì zìjǐ zhēnzhèng xiǎngyào de shēnghuó. Yí cì huíxiāng tànqīn shí, tā fāxiàn jiāxiāng de shuǐguǒ pǐnzhì yōuliáng, què yīn jiāotōng búbiàn ér mài bù chū hǎo jiàqián, xiāngqīnmen xīnkǔ yì nián wǎngwǎng suǒdé wújǐ. Zhè ràng tā xiàdìng juéxīn cízhí fǎnxiāng. Qǐchū, fùmǔ jílì fǎnduì, rènwéi tā fàngqì chéngshì de jīhuì shífēn kěxī. Dàn Zhāng Wěi méiyǒu dòngyáo, tā lìyòng wǎngluò píngtái bǎ jiāxiāng de shuǐguǒ xiāo wǎng quánguó gèdì. Rújīn, tā bùjǐn zìjǐ shìyè yǒuchéng, hái dàidòngle zhěnggè cūnzi gòngtóng zhìfù, xiāngqīnmen tíqǐ tā wúbù shùqǐ dà mǔzhǐ.",
+      "timeLimit": 600,
+      "questions": [
+        {
+          "id": "rd-HSK6-4-q1",
+          "type": "MCQ",
+          "prompt": "张伟在大城市工作时，内心有什么感受？",
+          "promptPinyin": "Zhāng Wěi zài dà chéngshì gōngzuò shí, nèixīn yǒu shénme gǎnshòu?",
+          "options": [
+            { "text": "感到非常满足和快乐", "pinyin": "gǎndào fēicháng mǎnzú hé kuàilè" },
+            { "text": "始终感到内心空虚", "pinyin": "shǐzhōng gǎndào nèixīn kōngxū" },
+            { "text": "对收入很不满意", "pinyin": "duì shōurù hěn bù mǎnyì" },
+            { "text": "想换一家更大的公司", "pinyin": "xiǎng huàn yì jiā gèng dà de gōngsī" }
+          ],
+          "correctAnswer": { "index": 1, "text": "始终感到内心空虚" },
+          "explanation": "Đoạn văn nói 他却始终感到内心空虚，总觉得那不是自己真正想要的生活 (anh ấy luôn cảm thấy trong lòng trống rỗng, luôn thấy đó không phải cuộc sống mình thực sự muốn).",
+          "order": 1
+        },
+        {
+          "id": "rd-HSK6-4-q2",
+          "type": "MCQ",
+          "prompt": "家乡的水果为什么卖不出好价钱？",
+          "promptPinyin": "Jiāxiāng de shuǐguǒ wèishénme mài bù chū hǎo jiàqián?",
+          "options": [
+            { "text": "因为品质太差", "pinyin": "yīnwèi pǐnzhì tài chà" },
+            { "text": "因为产量太少", "pinyin": "yīnwèi chǎnliàng tài shǎo" },
+            { "text": "因为交通不便", "pinyin": "yīnwèi jiāotōng búbiàn" },
+            { "text": "因为没有人种水果", "pinyin": "yīnwèi méiyǒu rén zhòng shuǐguǒ" }
+          ],
+          "correctAnswer": { "index": 2, "text": "因为交通不便" },
+          "explanation": "Đoạn văn nói 家乡的水果品质优良，却因交通不便而卖不出好价钱 (trái cây quê hương chất lượng tốt, nhưng vì giao thông bất tiện mà không bán được giá cao).",
+          "order": 2
+        },
+        {
+          "id": "rd-HSK6-4-q3",
+          "type": "MCQ",
+          "prompt": "张伟是用什么办法把家乡的水果卖到全国各地的？",
+          "promptPinyin": "Zhāng Wěi shì yòng shénme bànfǎ bǎ jiāxiāng de shuǐguǒ mài dào quánguó gèdì de?",
+          "options": [
+            { "text": "在城市开了一家水果店", "pinyin": "zài chéngshì kāile yì jiā shuǐguǒ diàn" },
+            { "text": "利用网络平台销售", "pinyin": "lìyòng wǎngluò píngtái xiāoshòu" },
+            { "text": "请别人帮忙运输", "pinyin": "qǐng biérén bāngmáng yùnshū" },
+            { "text": "修建了一条新公路", "pinyin": "xiūjiànle yì tiáo xīn gōnglù" }
+          ],
+          "correctAnswer": { "index": 1, "text": "利用网络平台销售" },
+          "explanation": "Đoạn văn nói 他利用网络平台把家乡的水果销往全国各地 (anh ấy lợi dụng nền tảng mạng để bán trái cây quê hương đi khắp cả nước).",
+          "order": 3
+        },
+        {
+          "id": "rd-HSK6-4-q4",
+          "type": "TRUE_FALSE",
+          "prompt": "张伟决定返乡时，他的父母一开始是支持的。",
+          "correctAnswer": { "value": false },
+          "explanation": "Đoạn văn nói 起初，父母极力反对 (ban đầu, cha mẹ ra sức phản đối). Vậy câu này SAI.",
+          "order": 4
+        },
+        {
+          "id": "rd-HSK6-4-q5",
+          "type": "TRUE_FALSE",
+          "prompt": "如今张伟不仅自己事业有成，还帮助整个村子一起致富。",
+          "correctAnswer": { "value": true },
+          "explanation": "Đoạn văn nói 他不仅自己事业有成，还带动了整个村子共同致富. Vậy câu này ĐÚNG.",
+          "order": 5
+        }
+      ]
+    }
+  ]
+}

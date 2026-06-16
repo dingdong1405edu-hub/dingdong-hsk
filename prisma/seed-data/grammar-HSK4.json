@@ -1,0 +1,227 @@
+{
+  "kind": "grammar",
+  "units": [
+    {
+      "id": "gr-HSK4-u1",
+      "title": "Câu chữ 把 và câu bị động",
+      "titleZh": "把字句与被动句",
+      "hskLevel": "HSK4",
+      "order": 1,
+      "lessons": [
+        {
+          "id": "gr-HSK4-u1-l1",
+          "title": "Câu chữ 把 (bǎ) nhấn mạnh sự xử lý đối tượng",
+          "order": 1,
+          "exercises": [
+            {
+              "type": "fill_blank",
+              "sentence": "请你___门关上。",
+              "blank": "把",
+              "options": ["把", "被", "比", "对"],
+              "hint": "Giới từ 把 (bǎ) đưa tân ngữ lên trước động từ để nhấn mạnh sự xử lý"
+            },
+            {
+              "type": "fill_blank",
+              "sentence": "他把作业做___了。",
+              "blank": "完",
+              "options": ["完", "吗", "吧", "呢"],
+              "hint": "Câu chữ 把 thường có bổ ngữ sau động từ, ở đây là 完 (wán) chỉ sự hoàn thành"
+            },
+            {
+              "type": "sentence_order",
+              "words": ["把", "我", "喝完了", "咖啡"],
+              "answer": "我把咖啡喝完了",
+              "meaning": "Tôi đã uống hết cà phê rồi"
+            },
+            {
+              "type": "translate",
+              "direction": "vi_to_zh",
+              "prompt": "Xin hãy đặt cuốn sách lên bàn.",
+              "answer": "请把书放在桌子上。",
+              "options": ["请把书放在桌子上。", "请把书放在椅子上。", "请把笔放在桌子上。", "请被书放在桌子上。"]
+            }
+          ]
+        },
+        {
+          "id": "gr-HSK4-u1-l2",
+          "title": "Câu bị động với 被 (bèi)",
+          "order": 2,
+          "exercises": [
+            {
+              "type": "fill_blank",
+              "sentence": "我的手机___小偷偷走了。",
+              "blank": "被",
+              "options": ["被", "把", "让", "比"],
+              "hint": "Giới từ 被 (bèi) tạo câu bị động, chủ ngữ là đối tượng chịu tác động"
+            },
+            {
+              "type": "fill_blank",
+              "sentence": "杯子被弟弟打___了。",
+              "blank": "破",
+              "options": ["破", "了", "吗", "的"],
+              "hint": "Sau động từ trong câu bị động thường có bổ ngữ kết quả, 破 (pò) nghĩa là vỡ"
+            },
+            {
+              "type": "sentence_order",
+              "words": ["被", "吃完了", "蛋糕", "他"],
+              "answer": "蛋糕被他吃完了",
+              "meaning": "Cái bánh đã bị anh ấy ăn hết rồi"
+            },
+            {
+              "type": "translate",
+              "direction": "vi_to_zh",
+              "prompt": "Cánh cửa bị gió thổi mở ra.",
+              "answer": "门被风吹开了。",
+              "options": ["门被风吹开了。", "门把风吹开了。", "窗户被风吹开了。", "门被风关上了。"]
+            }
+          ]
+        },
+        {
+          "id": "gr-HSK4-u1-l3",
+          "title": "Cấu trúc nhấn mạnh 是 ... 的 (shì ... de)",
+          "order": 3,
+          "exercises": [
+            {
+              "type": "fill_blank",
+              "sentence": "我___昨天来的。",
+              "blank": "是",
+              "options": ["是", "在", "把", "被"],
+              "hint": "Cấu trúc 是 ... 的 nhấn mạnh thời gian, địa điểm hay cách thức của hành động đã xảy ra"
+            },
+            {
+              "type": "fill_blank",
+              "sentence": "他是坐飞机来___。",
+              "blank": "的",
+              "options": ["的", "了", "吗", "呢"],
+              "hint": "Cấu trúc 是 ... 的 kết thúc bằng 的 (de) để nhấn mạnh cách thức"
+            },
+            {
+              "type": "sentence_order",
+              "words": ["是", "的", "我", "在北京", "学的"],
+              "answer": "我是在北京学的",
+              "meaning": "Tôi học ở Bắc Kinh"
+            },
+            {
+              "type": "translate",
+              "direction": "vi_to_zh",
+              "prompt": "Cô ấy đến từ Việt Nam.",
+              "answer": "她是从越南来的。",
+              "options": ["她是从越南来的。", "他是从越南来的。", "她是从中国来的。", "她从越南来。"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gr-HSK4-u2",
+      "title": "Liên từ và cách diễn đạt mức độ",
+      "titleZh": "连词与程度表达",
+      "hskLevel": "HSK4",
+      "order": 2,
+      "lessons": [
+        {
+          "id": "gr-HSK4-u2-l1",
+          "title": "Cấu trúc 不但 ... 而且 ... (búdàn ... érqiě ...) không những ... mà còn",
+          "order": 1,
+          "exercises": [
+            {
+              "type": "fill_blank",
+              "sentence": "她___会说汉语，而且说得很好。",
+              "blank": "不但",
+              "options": ["不但", "因为", "虽然", "如果"],
+              "hint": "Cấu trúc 不但 ... 而且 ... diễn tả ý không những ... mà còn ..."
+            },
+            {
+              "type": "fill_blank",
+              "sentence": "这家餐厅的菜不但好吃，___很便宜。",
+              "blank": "而且",
+              "options": ["而且", "但是", "所以", "因为"],
+              "hint": "Vế thứ hai dùng 而且 (érqiě) để bổ sung thêm thông tin tăng tiến"
+            },
+            {
+              "type": "sentence_order",
+              "words": ["不但", "聪明", "而且", "他", "努力", "很"],
+              "answer": "他不但聪明而且很努力",
+              "meaning": "Anh ấy không những thông minh mà còn rất chăm chỉ"
+            },
+            {
+              "type": "translate",
+              "direction": "vi_to_zh",
+              "prompt": "Căn phòng này không những lớn mà còn rất sáng.",
+              "answer": "这个房间不但大，而且很亮。",
+              "options": ["这个房间不但大，而且很亮。", "这个房间不但大，但是很亮。", "这个房间不但小，而且很亮。", "这个房间虽然大，而且很亮。"]
+            }
+          ]
+        },
+        {
+          "id": "gr-HSK4-u2-l2",
+          "title": "Cấu trúc 越 ... 越 ... (yuè ... yuè ...) càng ... càng",
+          "order": 2,
+          "exercises": [
+            {
+              "type": "fill_blank",
+              "sentence": "雨___下越大。",
+              "blank": "越",
+              "options": ["越", "更", "最", "太"],
+              "hint": "Cấu trúc 越 ... 越 ... diễn tả mức độ tăng theo nhau, càng ... càng ..."
+            },
+            {
+              "type": "fill_blank",
+              "sentence": "天气___来越冷了。",
+              "blank": "越",
+              "options": ["越", "更", "很", "比"],
+              "hint": "越来越 (yuè lái yuè) nghĩa là ngày càng, dùng cho biến đổi theo thời gian"
+            },
+            {
+              "type": "sentence_order",
+              "words": ["越", "汉语", "越", "他", "说", "好", "得"],
+              "answer": "他汉语说得越来越好",
+              "meaning": "Tiếng Hán của anh ấy nói ngày càng tốt"
+            },
+            {
+              "type": "translate",
+              "direction": "vi_to_zh",
+              "prompt": "Tôi càng học càng thích.",
+              "answer": "我越学越喜欢。",
+              "options": ["我越学越喜欢。", "我越学越累。", "他越学越喜欢。", "我更学更喜欢。"]
+            }
+          ]
+        },
+        {
+          "id": "gr-HSK4-u2-l3",
+          "title": "Cấu trúc 一边 ... 一边 ... (yìbiān ... yìbiān ...) vừa ... vừa",
+          "order": 3,
+          "exercises": [
+            {
+              "type": "fill_blank",
+              "sentence": "他喜欢___吃饭一边看电视。",
+              "blank": "一边",
+              "options": ["一边", "一点", "一起", "一样"],
+              "hint": "Cấu trúc 一边 ... 一边 ... diễn tả hai hành động xảy ra đồng thời"
+            },
+            {
+              "type": "fill_blank",
+              "sentence": "我们一边走___聊天。",
+              "blank": "一边",
+              "options": ["一边", "一直", "一定", "一会儿"],
+              "hint": "Vế thứ hai cũng dùng 一边 (yìbiān) để chỉ hành động song song"
+            },
+            {
+              "type": "sentence_order",
+              "words": ["一边", "一边", "她", "听音乐", "学习"],
+              "answer": "她一边听音乐一边学习",
+              "meaning": "Cô ấy vừa nghe nhạc vừa học bài"
+            },
+            {
+              "type": "translate",
+              "direction": "vi_to_zh",
+              "prompt": "Anh ấy vừa lái xe vừa nghe nhạc.",
+              "answer": "他一边开车一边听音乐。",
+              "options": ["他一边开车一边听音乐。", "他一边走路一边听音乐。", "她一边开车一边听音乐。", "他一起开车一起听音乐。"]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

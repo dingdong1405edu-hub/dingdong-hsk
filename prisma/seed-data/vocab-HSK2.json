@@ -1,0 +1,406 @@
+{
+  "kind": "vocab",
+  "units": [
+    {
+      "id": "v-HSK2-u1",
+      "title": "Cuộc sống hằng ngày",
+      "titleZh": "日常生活",
+      "hskLevel": "HSK2",
+      "order": 1,
+      "lessons": [
+        {
+          "id": "v-HSK2-u1-l1",
+          "title": "Thời gian và ngày tháng",
+          "order": 1,
+          "exercises": [
+            {
+              "type": "match",
+              "pairs": [
+                { "zh": "时间", "vi": "Thời gian", "pinyin": "shí jiān" },
+                { "zh": "小时", "vi": "Giờ (tiếng đồng hồ)", "pinyin": "xiǎo shí" },
+                { "zh": "分钟", "vi": "Phút", "pinyin": "fēn zhōng" },
+                { "zh": "今天", "vi": "Hôm nay", "pinyin": "jīn tiān" },
+                { "zh": "昨天", "vi": "Hôm qua", "pinyin": "zuó tiān" },
+                { "zh": "明天", "vi": "Ngày mai", "pinyin": "míng tiān" }
+              ]
+            },
+            {
+              "type": "translate",
+              "direction": "vi_to_zh",
+              "prompt": "Buổi sáng",
+              "answer": "早上",
+              "pinyin": "zǎo shang",
+              "options": ["早上", "晚上", "中午", "下午"]
+            },
+            {
+              "type": "toneSelect",
+              "word": "分钟",
+              "pinyin": "fēn zhōng",
+              "question": "Âm tiết đầu 分 trong 分钟 có thanh mấy?",
+              "options": ["Thanh 1", "Thanh 2", "Thanh 3", "Thanh 4"],
+              "correct": 0
+            },
+            {
+              "type": "sentenceOrder",
+              "words": ["明天", "去", "我", "学校"],
+              "answer": "我明天去学校",
+              "hint": "Ngày mai tôi đi đến trường"
+            }
+          ]
+        },
+        {
+          "id": "v-HSK2-u1-l2",
+          "title": "Hoạt động trong ngày",
+          "order": 2,
+          "exercises": [
+            {
+              "type": "match",
+              "pairs": [
+                { "zh": "起床", "vi": "Thức dậy", "pinyin": "qǐ chuáng" },
+                { "zh": "睡觉", "vi": "Đi ngủ", "pinyin": "shuì jiào" },
+                { "zh": "上班", "vi": "Đi làm", "pinyin": "shàng bān" },
+                { "zh": "休息", "vi": "Nghỉ ngơi", "pinyin": "xiū xi" },
+                { "zh": "运动", "vi": "Vận động, tập thể dục", "pinyin": "yùn dòng" }
+              ]
+            },
+            {
+              "type": "pinyinMatch",
+              "pairs": [
+                { "zh": "起床", "pinyin": "qǐ chuáng" },
+                { "zh": "睡觉", "pinyin": "shuì jiào" },
+                { "zh": "休息", "pinyin": "xiū xi" },
+                { "zh": "运动", "pinyin": "yùn dòng" }
+              ]
+            },
+            {
+              "type": "translate",
+              "direction": "zh_to_vi",
+              "prompt": "我每天运动。",
+              "answer": "Tôi tập thể dục mỗi ngày.",
+              "options": [
+                "Tôi tập thể dục mỗi ngày.",
+                "Tôi đi ngủ mỗi ngày.",
+                "Anh ấy đi làm mỗi ngày.",
+                "Tôi nghỉ ngơi mỗi ngày."
+              ]
+            },
+            {
+              "type": "toneSelect",
+              "word": "睡觉",
+              "pinyin": "shuì jiào",
+              "question": "Âm tiết 觉 trong 睡觉 có thanh mấy?",
+              "options": ["Thanh 1", "Thanh 2", "Thanh 3", "Thanh 4"],
+              "correct": 3
+            }
+          ]
+        },
+        {
+          "id": "v-HSK2-u1-l3",
+          "title": "Nhà cửa và đồ vật",
+          "order": 3,
+          "exercises": [
+            {
+              "type": "match",
+              "pairs": [
+                { "zh": "房间", "vi": "Căn phòng", "pinyin": "fáng jiān" },
+                { "zh": "桌子", "vi": "Cái bàn", "pinyin": "zhuō zi" },
+                { "zh": "椅子", "vi": "Cái ghế", "pinyin": "yǐ zi" },
+                { "zh": "手机", "vi": "Điện thoại di động", "pinyin": "shǒu jī" },
+                { "zh": "手表", "vi": "Đồng hồ đeo tay", "pinyin": "shǒu biǎo" }
+              ]
+            },
+            {
+              "type": "translate",
+              "direction": "vi_to_zh",
+              "prompt": "Cái bàn",
+              "answer": "桌子",
+              "pinyin": "zhuō zi",
+              "options": ["桌子", "椅子", "房间", "手机"]
+            },
+            {
+              "type": "sentenceOrder",
+              "words": ["上", "桌子", "手机", "在"],
+              "answer": "手机在桌子上",
+              "hint": "Điện thoại ở trên bàn"
+            },
+            {
+              "type": "toneSelect",
+              "word": "椅子",
+              "pinyin": "yǐ zi",
+              "question": "Âm tiết 椅 trong 椅子 có thanh mấy?",
+              "options": ["Thanh 1", "Thanh 2", "Thanh 3", "Thanh 4"],
+              "correct": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "v-HSK2-u2",
+      "title": "Ăn uống và mua sắm",
+      "titleZh": "饮食与购物",
+      "hskLevel": "HSK2",
+      "order": 2,
+      "lessons": [
+        {
+          "id": "v-HSK2-u2-l1",
+          "title": "Món ăn và đồ uống",
+          "order": 1,
+          "exercises": [
+            {
+              "type": "match",
+              "pairs": [
+                { "zh": "鸡蛋", "vi": "Trứng gà", "pinyin": "jī dàn" },
+                { "zh": "羊肉", "vi": "Thịt cừu, thịt dê", "pinyin": "yáng ròu" },
+                { "zh": "牛奶", "vi": "Sữa bò", "pinyin": "niú nǎi" },
+                { "zh": "西瓜", "vi": "Dưa hấu", "pinyin": "xī guā" },
+                { "zh": "咖啡", "vi": "Cà phê", "pinyin": "kā fēi" },
+                { "zh": "面条", "vi": "Mì sợi", "pinyin": "miàn tiáo" }
+              ]
+            },
+            {
+              "type": "translate",
+              "direction": "vi_to_zh",
+              "prompt": "Sữa bò",
+              "answer": "牛奶",
+              "pinyin": "niú nǎi",
+              "options": ["牛奶", "鸡蛋", "咖啡", "西瓜"]
+            },
+            {
+              "type": "toneSelect",
+              "word": "鸡蛋",
+              "pinyin": "jī dàn",
+              "question": "Âm tiết 蛋 trong 鸡蛋 có thanh mấy?",
+              "options": ["Thanh 1", "Thanh 2", "Thanh 3", "Thanh 4"],
+              "correct": 3
+            },
+            {
+              "type": "sentenceOrder",
+              "words": ["喝", "我", "想", "咖啡"],
+              "answer": "我想喝咖啡",
+              "hint": "Tôi muốn uống cà phê"
+            }
+          ]
+        },
+        {
+          "id": "v-HSK2-u2-l2",
+          "title": "Đi mua sắm",
+          "order": 2,
+          "exercises": [
+            {
+              "type": "match",
+              "pairs": [
+                { "zh": "商店", "vi": "Cửa hàng", "pinyin": "shāng diàn" },
+                { "zh": "便宜", "vi": "Rẻ", "pinyin": "pián yi" },
+                { "zh": "贵", "vi": "Đắt", "pinyin": "guì" },
+                { "zh": "卖", "vi": "Bán", "pinyin": "mài" },
+                { "zh": "钱", "vi": "Tiền", "pinyin": "qián" }
+              ]
+            },
+            {
+              "type": "pinyinMatch",
+              "pairs": [
+                { "zh": "商店", "pinyin": "shāng diàn" },
+                { "zh": "便宜", "pinyin": "pián yi" },
+                { "zh": "贵", "pinyin": "guì" },
+                { "zh": "钱", "pinyin": "qián" }
+              ]
+            },
+            {
+              "type": "translate",
+              "direction": "zh_to_vi",
+              "prompt": "这件衣服很便宜。",
+              "answer": "Bộ quần áo này rất rẻ.",
+              "options": [
+                "Bộ quần áo này rất rẻ.",
+                "Bộ quần áo này rất đắt.",
+                "Cửa hàng này rất lớn.",
+                "Cái này không bán."
+              ]
+            },
+            {
+              "type": "toneSelect",
+              "word": "贵",
+              "pinyin": "guì",
+              "question": "Từ 贵 có thanh mấy?",
+              "options": ["Thanh 1", "Thanh 2", "Thanh 3", "Thanh 4"],
+              "correct": 3
+            }
+          ]
+        },
+        {
+          "id": "v-HSK2-u2-l3",
+          "title": "Ở nhà hàng",
+          "order": 3,
+          "exercises": [
+            {
+              "type": "match",
+              "pairs": [
+                { "zh": "服务员", "vi": "Nhân viên phục vụ", "pinyin": "fú wù yuán" },
+                { "zh": "菜", "vi": "Món ăn, rau", "pinyin": "cài" },
+                { "zh": "好吃", "vi": "Ngon (đồ ăn)", "pinyin": "hǎo chī" },
+                { "zh": "饭馆", "vi": "Quán ăn, nhà hàng", "pinyin": "fàn guǎn" },
+                { "zh": "鱼", "vi": "Cá", "pinyin": "yú" }
+              ]
+            },
+            {
+              "type": "translate",
+              "direction": "vi_to_zh",
+              "prompt": "Ngon",
+              "answer": "好吃",
+              "pinyin": "hǎo chī",
+              "options": ["好吃", "好喝", "便宜", "好看"]
+            },
+            {
+              "type": "sentenceOrder",
+              "words": ["菜", "这个", "好吃", "很"],
+              "answer": "这个菜很好吃",
+              "hint": "Món ăn này rất ngon"
+            },
+            {
+              "type": "toneSelect",
+              "word": "服务员",
+              "pinyin": "fú wù yuán",
+              "question": "Âm tiết 务 trong 服务员 có thanh mấy?",
+              "options": ["Thanh 1", "Thanh 2", "Thanh 3", "Thanh 4"],
+              "correct": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "v-HSK2-u3",
+      "title": "Đi lại và thời tiết",
+      "titleZh": "出行与天气",
+      "hskLevel": "HSK2",
+      "order": 3,
+      "lessons": [
+        {
+          "id": "v-HSK2-u3-l1",
+          "title": "Phương tiện giao thông",
+          "order": 1,
+          "exercises": [
+            {
+              "type": "match",
+              "pairs": [
+                { "zh": "公共汽车", "vi": "Xe buýt", "pinyin": "gōng gòng qì chē" },
+                { "zh": "火车", "vi": "Tàu hỏa", "pinyin": "huǒ chē" },
+                { "zh": "飞机", "vi": "Máy bay", "pinyin": "fēi jī" },
+                { "zh": "出租车", "vi": "Taxi", "pinyin": "chū zū chē" },
+                { "zh": "自行车", "vi": "Xe đạp", "pinyin": "zì xíng chē" }
+              ]
+            },
+            {
+              "type": "translate",
+              "direction": "vi_to_zh",
+              "prompt": "Máy bay",
+              "answer": "飞机",
+              "pinyin": "fēi jī",
+              "options": ["飞机", "火车", "出租车", "自行车"]
+            },
+            {
+              "type": "toneSelect",
+              "word": "火车",
+              "pinyin": "huǒ chē",
+              "question": "Âm tiết 火 trong 火车 có thanh mấy?",
+              "options": ["Thanh 1", "Thanh 2", "Thanh 3", "Thanh 4"],
+              "correct": 2
+            },
+            {
+              "type": "sentenceOrder",
+              "words": ["坐", "去", "飞机", "我"],
+              "answer": "我坐飞机去",
+              "hint": "Tôi đi bằng máy bay"
+            }
+          ]
+        },
+        {
+          "id": "v-HSK2-u3-l2",
+          "title": "Thời tiết",
+          "order": 2,
+          "exercises": [
+            {
+              "type": "match",
+              "pairs": [
+                { "zh": "天气", "vi": "Thời tiết", "pinyin": "tiān qì" },
+                { "zh": "下雨", "vi": "Mưa", "pinyin": "xià yǔ" },
+                { "zh": "晴", "vi": "Trời nắng, quang đãng", "pinyin": "qíng" },
+                { "zh": "阴", "vi": "Trời âm u", "pinyin": "yīn" },
+                { "zh": "雪", "vi": "Tuyết", "pinyin": "xuě" }
+              ]
+            },
+            {
+              "type": "pinyinMatch",
+              "pairs": [
+                { "zh": "天气", "pinyin": "tiān qì" },
+                { "zh": "下雨", "pinyin": "xià yǔ" },
+                { "zh": "晴", "pinyin": "qíng" },
+                { "zh": "雪", "pinyin": "xuě" }
+              ]
+            },
+            {
+              "type": "translate",
+              "direction": "zh_to_vi",
+              "prompt": "今天下雨了。",
+              "answer": "Hôm nay trời mưa rồi.",
+              "options": [
+                "Hôm nay trời mưa rồi.",
+                "Hôm nay trời nắng.",
+                "Ngày mai có tuyết.",
+                "Hôm qua trời âm u."
+              ]
+            },
+            {
+              "type": "toneSelect",
+              "word": "下雨",
+              "pinyin": "xià yǔ",
+              "question": "Âm tiết 雨 trong 下雨 có thanh mấy?",
+              "options": ["Thanh 1", "Thanh 2", "Thanh 3", "Thanh 4"],
+              "correct": 2
+            }
+          ]
+        },
+        {
+          "id": "v-HSK2-u3-l3",
+          "title": "Phương hướng và địa điểm",
+          "order": 3,
+          "exercises": [
+            {
+              "type": "match",
+              "pairs": [
+                { "zh": "左边", "vi": "Bên trái", "pinyin": "zuǒ biān" },
+                { "zh": "右边", "vi": "Bên phải", "pinyin": "yòu biān" },
+                { "zh": "旁边", "vi": "Bên cạnh", "pinyin": "páng biān" },
+                { "zh": "机场", "vi": "Sân bay", "pinyin": "jī chǎng" },
+                { "zh": "路", "vi": "Đường", "pinyin": "lù" }
+              ]
+            },
+            {
+              "type": "translate",
+              "direction": "vi_to_zh",
+              "prompt": "Bên trái",
+              "answer": "左边",
+              "pinyin": "zuǒ biān",
+              "options": ["左边", "右边", "旁边", "上边"]
+            },
+            {
+              "type": "sentenceOrder",
+              "words": ["在", "右边", "商店", "学校的"],
+              "answer": "商店在学校的右边",
+              "hint": "Cửa hàng ở bên phải trường học"
+            },
+            {
+              "type": "toneSelect",
+              "word": "左边",
+              "pinyin": "zuǒ biān",
+              "question": "Âm tiết 左 trong 左边 có thanh mấy?",
+              "options": ["Thanh 1", "Thanh 2", "Thanh 3", "Thanh 4"],
+              "correct": 2
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

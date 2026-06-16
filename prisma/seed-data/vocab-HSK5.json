@@ -1,0 +1,407 @@
+{
+  "kind": "vocab",
+  "units": [
+    {
+      "id": "v-HSK5-u1",
+      "title": "Sự nghiệp và phát triển bản thân",
+      "titleZh": "事业与个人发展",
+      "hskLevel": "HSK5",
+      "order": 1,
+      "lessons": [
+        {
+          "id": "v-HSK5-u1-l1",
+          "title": "Công việc và nghề nghiệp",
+          "order": 1,
+          "exercises": [
+            {
+              "type": "match",
+              "pairs": [
+                { "zh": "职业", "vi": "Nghề nghiệp", "pinyin": "zhí yè" },
+                { "zh": "应聘", "vi": "Ứng tuyển", "pinyin": "yìng pìn" },
+                { "zh": "简历", "vi": "Sơ yếu lý lịch", "pinyin": "jiǎn lì" },
+                { "zh": "薪水", "vi": "Tiền lương", "pinyin": "xīn shuǐ" },
+                { "zh": "面试", "vi": "Phỏng vấn", "pinyin": "miàn shì" },
+                { "zh": "录取", "vi": "Tuyển dụng, nhận vào", "pinyin": "lù qǔ" }
+              ]
+            },
+            {
+              "type": "translate",
+              "direction": "vi_to_zh",
+              "prompt": "Sơ yếu lý lịch",
+              "answer": "简历",
+              "pinyin": "jiǎn lì",
+              "options": ["简历", "经历", "履历", "简单"]
+            },
+            {
+              "type": "toneSelect",
+              "word": "薪",
+              "pinyin": "xīn",
+              "question": "Từ 薪 có thanh mấy?",
+              "options": ["Thanh 1", "Thanh 2", "Thanh 3", "Thanh 4"],
+              "correct": 0
+            },
+            {
+              "type": "sentenceOrder",
+              "words": ["参加", "明天", "我", "面试", "去"],
+              "answer": "明天我去参加面试",
+              "hint": "Ngày mai tôi đi tham gia phỏng vấn"
+            }
+          ]
+        },
+        {
+          "id": "v-HSK5-u1-l2",
+          "title": "Học tập và kỹ năng",
+          "order": 2,
+          "exercises": [
+            {
+              "type": "match",
+              "pairs": [
+                { "zh": "培养", "vi": "Bồi dưỡng, nuôi dưỡng", "pinyin": "péi yǎng" },
+                { "zh": "能力", "vi": "Năng lực", "pinyin": "néng lì" },
+                { "zh": "掌握", "vi": "Nắm vững", "pinyin": "zhǎng wò" },
+                { "zh": "知识", "vi": "Kiến thức", "pinyin": "zhī shi" },
+                { "zh": "经验", "vi": "Kinh nghiệm", "pinyin": "jīng yàn" }
+              ]
+            },
+            {
+              "type": "pinyinMatch",
+              "pairs": [
+                { "zh": "培养", "pinyin": "péi yǎng" },
+                { "zh": "掌握", "pinyin": "zhǎng wò" },
+                { "zh": "能力", "pinyin": "néng lì" },
+                { "zh": "经验", "pinyin": "jīng yàn" }
+              ]
+            },
+            {
+              "type": "translate",
+              "direction": "zh_to_vi",
+              "prompt": "他已经掌握了这门技术。",
+              "answer": "Anh ấy đã nắm vững kỹ thuật này.",
+              "options": [
+                "Anh ấy đã nắm vững kỹ thuật này.",
+                "Anh ấy muốn học kỹ thuật này.",
+                "Cô ấy đã quên kỹ thuật này.",
+                "Tôi đang học kỹ thuật này."
+              ]
+            },
+            {
+              "type": "toneSelect",
+              "word": "培",
+              "pinyin": "péi",
+              "question": "Từ 培 có thanh mấy?",
+              "options": ["Thanh 1", "Thanh 2", "Thanh 3", "Thanh 4"],
+              "correct": 1
+            }
+          ]
+        },
+        {
+          "id": "v-HSK5-u1-l3",
+          "title": "Mục tiêu và thành công",
+          "order": 3,
+          "exercises": [
+            {
+              "type": "match",
+              "pairs": [
+                { "zh": "目标", "vi": "Mục tiêu", "pinyin": "mù biāo" },
+                { "zh": "成就", "vi": "Thành tựu", "pinyin": "chéng jiù" },
+                { "zh": "努力", "vi": "Nỗ lực", "pinyin": "nǔ lì" },
+                { "zh": "坚持", "vi": "Kiên trì", "pinyin": "jiān chí" },
+                { "zh": "实现", "vi": "Thực hiện, đạt được", "pinyin": "shí xiàn" }
+              ]
+            },
+            {
+              "type": "translate",
+              "direction": "vi_to_zh",
+              "prompt": "Kiên trì",
+              "answer": "坚持",
+              "pinyin": "jiān chí",
+              "options": ["坚持", "支持", "坚强", "保持"]
+            },
+            {
+              "type": "sentenceOrder",
+              "words": ["实现", "终于", "他", "了", "梦想"],
+              "answer": "他终于实现了梦想",
+              "hint": "Cuối cùng anh ấy đã thực hiện được ước mơ"
+            },
+            {
+              "type": "toneSelect",
+              "word": "目",
+              "pinyin": "mù",
+              "question": "Từ 目 có thanh mấy?",
+              "options": ["Thanh 1", "Thanh 2", "Thanh 3", "Thanh 4"],
+              "correct": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "v-HSK5-u2",
+      "title": "Xã hội và môi trường",
+      "titleZh": "社会与环境",
+      "hskLevel": "HSK5",
+      "order": 2,
+      "lessons": [
+        {
+          "id": "v-HSK5-u2-l1",
+          "title": "Bảo vệ môi trường",
+          "order": 1,
+          "exercises": [
+            {
+              "type": "match",
+              "pairs": [
+                { "zh": "污染", "vi": "Ô nhiễm", "pinyin": "wū rǎn" },
+                { "zh": "环境", "vi": "Môi trường", "pinyin": "huán jìng" },
+                { "zh": "保护", "vi": "Bảo vệ", "pinyin": "bǎo hù" },
+                { "zh": "资源", "vi": "Tài nguyên", "pinyin": "zī yuán" },
+                { "zh": "破坏", "vi": "Phá hoại", "pinyin": "pò huài" },
+                { "zh": "节约", "vi": "Tiết kiệm", "pinyin": "jié yuē" }
+              ]
+            },
+            {
+              "type": "translate",
+              "direction": "vi_to_zh",
+              "prompt": "Ô nhiễm",
+              "answer": "污染",
+              "pinyin": "wū rǎn",
+              "options": ["污染", "污水", "感染", "传染"]
+            },
+            {
+              "type": "toneSelect",
+              "word": "染",
+              "pinyin": "rǎn",
+              "question": "Từ 染 có thanh mấy?",
+              "options": ["Thanh 1", "Thanh 2", "Thanh 3", "Thanh 4"],
+              "correct": 2
+            },
+            {
+              "type": "sentenceOrder",
+              "words": ["保护", "我们", "环境", "应该"],
+              "answer": "我们应该保护环境",
+              "hint": "Chúng ta nên bảo vệ môi trường"
+            }
+          ]
+        },
+        {
+          "id": "v-HSK5-u2-l2",
+          "title": "Đời sống đô thị",
+          "order": 2,
+          "exercises": [
+            {
+              "type": "match",
+              "pairs": [
+                { "zh": "人口", "vi": "Dân số", "pinyin": "rén kǒu" },
+                { "zh": "交通", "vi": "Giao thông", "pinyin": "jiāo tōng" },
+                { "zh": "拥挤", "vi": "Chen chúc, đông đúc", "pinyin": "yōng jǐ" },
+                { "zh": "城市", "vi": "Thành phố", "pinyin": "chéng shì" },
+                { "zh": "设施", "vi": "Cơ sở vật chất", "pinyin": "shè shī" }
+              ]
+            },
+            {
+              "type": "pinyinMatch",
+              "pairs": [
+                { "zh": "人口", "pinyin": "rén kǒu" },
+                { "zh": "拥挤", "pinyin": "yōng jǐ" },
+                { "zh": "交通", "pinyin": "jiāo tōng" },
+                { "zh": "设施", "pinyin": "shè shī" }
+              ]
+            },
+            {
+              "type": "translate",
+              "direction": "zh_to_vi",
+              "prompt": "这座城市的交通很拥挤。",
+              "answer": "Giao thông của thành phố này rất đông đúc.",
+              "options": [
+                "Giao thông của thành phố này rất đông đúc.",
+                "Thành phố này rất sạch sẽ.",
+                "Dân số thành phố này rất ít.",
+                "Cơ sở vật chất của thành phố rất tốt."
+              ]
+            },
+            {
+              "type": "toneSelect",
+              "word": "挤",
+              "pinyin": "jǐ",
+              "question": "Từ 挤 có thanh mấy?",
+              "options": ["Thanh 1", "Thanh 2", "Thanh 3", "Thanh 4"],
+              "correct": 2
+            }
+          ]
+        },
+        {
+          "id": "v-HSK5-u2-l3",
+          "title": "Khoa học và công nghệ",
+          "order": 3,
+          "exercises": [
+            {
+              "type": "match",
+              "pairs": [
+                { "zh": "科技", "vi": "Khoa học công nghệ", "pinyin": "kē jì" },
+                { "zh": "发展", "vi": "Phát triển", "pinyin": "fā zhǎn" },
+                { "zh": "网络", "vi": "Mạng (internet)", "pinyin": "wǎng luò" },
+                { "zh": "数据", "vi": "Dữ liệu", "pinyin": "shù jù" },
+                { "zh": "智能", "vi": "Trí tuệ, thông minh", "pinyin": "zhì néng" }
+              ]
+            },
+            {
+              "type": "translate",
+              "direction": "vi_to_zh",
+              "prompt": "Phát triển",
+              "answer": "发展",
+              "pinyin": "fā zhǎn",
+              "options": ["发展", "发现", "展开", "发明"]
+            },
+            {
+              "type": "sentenceOrder",
+              "words": ["科技", "发展", "得", "现代", "很快"],
+              "answer": "现代科技发展得很快",
+              "hint": "Khoa học công nghệ hiện đại phát triển rất nhanh"
+            },
+            {
+              "type": "toneSelect",
+              "word": "络",
+              "pinyin": "luò",
+              "question": "Từ 络 có thanh mấy?",
+              "options": ["Thanh 1", "Thanh 2", "Thanh 3", "Thanh 4"],
+              "correct": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "v-HSK5-u3",
+      "title": "Cảm xúc và quan hệ con người",
+      "titleZh": "情感与人际关系",
+      "hskLevel": "HSK5",
+      "order": 3,
+      "lessons": [
+        {
+          "id": "v-HSK5-u3-l1",
+          "title": "Tình cảm và tâm trạng",
+          "order": 1,
+          "exercises": [
+            {
+              "type": "match",
+              "pairs": [
+                { "zh": "感动", "vi": "Cảm động", "pinyin": "gǎn dòng" },
+                { "zh": "激动", "vi": "Xúc động, kích động", "pinyin": "jī dòng" },
+                { "zh": "失望", "vi": "Thất vọng", "pinyin": "shī wàng" },
+                { "zh": "情绪", "vi": "Tâm trạng, cảm xúc", "pinyin": "qíng xù" },
+                { "zh": "痛苦", "vi": "Đau khổ", "pinyin": "tòng kǔ" },
+                { "zh": "幸福", "vi": "Hạnh phúc", "pinyin": "xìng fú" }
+              ]
+            },
+            {
+              "type": "translate",
+              "direction": "vi_to_zh",
+              "prompt": "Thất vọng",
+              "answer": "失望",
+              "pinyin": "shī wàng",
+              "options": ["失望", "希望", "失去", "绝望"]
+            },
+            {
+              "type": "toneSelect",
+              "word": "幸",
+              "pinyin": "xìng",
+              "question": "Từ 幸 có thanh mấy?",
+              "options": ["Thanh 1", "Thanh 2", "Thanh 3", "Thanh 4"],
+              "correct": 3
+            },
+            {
+              "type": "sentenceOrder",
+              "words": ["感动", "我", "非常", "故事", "这个", "让"],
+              "answer": "这个故事让我非常感动",
+              "hint": "Câu chuyện này khiến tôi vô cùng cảm động"
+            }
+          ]
+        },
+        {
+          "id": "v-HSK5-u3-l2",
+          "title": "Giao tiếp và quan hệ",
+          "order": 2,
+          "exercises": [
+            {
+              "type": "match",
+              "pairs": [
+                { "zh": "交流", "vi": "Giao lưu, trao đổi", "pinyin": "jiāo liú" },
+                { "zh": "信任", "vi": "Tin tưởng", "pinyin": "xìn rèn" },
+                { "zh": "理解", "vi": "Thấu hiểu", "pinyin": "lǐ jiě" },
+                { "zh": "尊重", "vi": "Tôn trọng", "pinyin": "zūn zhòng" },
+                { "zh": "误会", "vi": "Hiểu lầm", "pinyin": "wù huì" }
+              ]
+            },
+            {
+              "type": "pinyinMatch",
+              "pairs": [
+                { "zh": "交流", "pinyin": "jiāo liú" },
+                { "zh": "信任", "pinyin": "xìn rèn" },
+                { "zh": "尊重", "pinyin": "zūn zhòng" },
+                { "zh": "误会", "pinyin": "wù huì" }
+              ]
+            },
+            {
+              "type": "translate",
+              "direction": "zh_to_vi",
+              "prompt": "朋友之间应该互相信任。",
+              "answer": "Bạn bè nên tin tưởng lẫn nhau.",
+              "options": [
+                "Bạn bè nên tin tưởng lẫn nhau.",
+                "Bạn bè nên giúp đỡ lẫn nhau.",
+                "Đồng nghiệp nên tôn trọng lẫn nhau.",
+                "Chúng ta nên hiểu lầm lẫn nhau."
+              ]
+            },
+            {
+              "type": "toneSelect",
+              "word": "误",
+              "pinyin": "wù",
+              "question": "Từ 误 có thanh mấy?",
+              "options": ["Thanh 1", "Thanh 2", "Thanh 3", "Thanh 4"],
+              "correct": 3
+            }
+          ]
+        },
+        {
+          "id": "v-HSK5-u3-l3",
+          "title": "Tính cách con người",
+          "order": 3,
+          "exercises": [
+            {
+              "type": "match",
+              "pairs": [
+                { "zh": "性格", "vi": "Tính cách", "pinyin": "xìng gé" },
+                { "zh": "诚实", "vi": "Thành thật", "pinyin": "chéng shí" },
+                { "zh": "热情", "vi": "Nhiệt tình", "pinyin": "rè qíng" },
+                { "zh": "谦虚", "vi": "Khiêm tốn", "pinyin": "qiān xū" },
+                { "zh": "耐心", "vi": "Kiên nhẫn", "pinyin": "nài xīn" }
+              ]
+            },
+            {
+              "type": "translate",
+              "direction": "vi_to_zh",
+              "prompt": "Khiêm tốn",
+              "answer": "谦虚",
+              "pinyin": "qiān xū",
+              "options": ["谦虚", "虚心", "骄傲", "谦让"]
+            },
+            {
+              "type": "sentenceOrder",
+              "words": ["性格", "她", "热情", "的", "很"],
+              "answer": "她的性格很热情",
+              "hint": "Tính cách của cô ấy rất nhiệt tình"
+            },
+            {
+              "type": "toneSelect",
+              "word": "谦",
+              "pinyin": "qiān",
+              "question": "Từ 谦 có thanh mấy?",
+              "options": ["Thanh 1", "Thanh 2", "Thanh 3", "Thanh 4"],
+              "correct": 0
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

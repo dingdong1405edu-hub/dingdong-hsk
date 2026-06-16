@@ -1,0 +1,197 @@
+{
+  "kind": "hanzi",
+  "characters": [
+    {
+      "id": "hz-HSK6-1",
+      "character": "辉",
+      "pinyin": "huī",
+      "tone": 1,
+      "meaning": "Ánh sáng rực rỡ, huy hoàng",
+      "hskLevel": "HSK6",
+      "strokeCount": 12,
+      "examples": [
+        { "sentence": "辉煌", "pinyin": "huī huáng", "meaning": "Huy hoàng, rực rỡ" }
+      ]
+    },
+    {
+      "id": "hz-HSK6-2",
+      "character": "蓬",
+      "pinyin": "péng",
+      "tone": 2,
+      "meaning": "Tươi tốt, sum suê; rậm rạp",
+      "hskLevel": "HSK6",
+      "strokeCount": 13,
+      "examples": [
+        { "sentence": "蓬勃发展", "pinyin": "péng bó fā zhǎn", "meaning": "Phát triển mạnh mẽ" }
+      ]
+    },
+    {
+      "id": "hz-HSK6-3",
+      "character": "携",
+      "pinyin": "xié",
+      "tone": 2,
+      "meaning": "Mang theo, cầm theo, dắt tay",
+      "hskLevel": "HSK6",
+      "strokeCount": 13,
+      "examples": [
+        { "sentence": "携带行李", "pinyin": "xié dài xíng li", "meaning": "Mang theo hành lý" }
+      ]
+    },
+    {
+      "id": "hz-HSK6-4",
+      "character": "崭",
+      "pinyin": "zhǎn",
+      "tone": 3,
+      "meaning": "Cao vượt, nổi bật (崭新: mới toanh)",
+      "hskLevel": "HSK6",
+      "strokeCount": 11,
+      "examples": [
+        { "sentence": "崭新", "pinyin": "zhǎn xīn", "meaning": "Mới tinh, mới toanh" }
+      ]
+    },
+    {
+      "id": "hz-HSK6-5",
+      "character": "蕴",
+      "pinyin": "yùn",
+      "tone": 4,
+      "meaning": "Hàm chứa, ẩn chứa, tích chứa",
+      "hskLevel": "HSK6",
+      "strokeCount": 15,
+      "examples": [
+        { "sentence": "蕴含深意", "pinyin": "yùn hán shēn yì", "meaning": "Ẩn chứa ý nghĩa sâu sắc" }
+      ]
+    },
+    {
+      "id": "hz-HSK6-6",
+      "character": "翘",
+      "pinyin": "qiào",
+      "tone": 4,
+      "meaning": "Vểnh lên, cong lên, ngẩng lên",
+      "hskLevel": "HSK6",
+      "strokeCount": 12,
+      "examples": [
+        { "sentence": "翘起尾巴", "pinyin": "qiào qǐ wěi ba", "meaning": "Vểnh đuôi lên" }
+      ]
+    },
+    {
+      "id": "hz-HSK6-7",
+      "character": "罕",
+      "pinyin": "hǎn",
+      "tone": 3,
+      "meaning": "Hiếm có, ít gặp",
+      "hskLevel": "HSK6",
+      "strokeCount": 7,
+      "examples": [
+        { "sentence": "罕见的现象", "pinyin": "hǎn jiàn de xiàn xiàng", "meaning": "Hiện tượng hiếm thấy" }
+      ]
+    },
+    {
+      "id": "hz-HSK6-8",
+      "character": "舆",
+      "pinyin": "yú",
+      "tone": 2,
+      "meaning": "Công chúng, dư luận; xe cộ",
+      "hskLevel": "HSK6",
+      "strokeCount": 14,
+      "examples": [
+        { "sentence": "舆论压力", "pinyin": "yú lùn yā lì", "meaning": "Áp lực dư luận" }
+      ]
+    },
+    {
+      "id": "hz-HSK6-9",
+      "character": "斟",
+      "pinyin": "zhēn",
+      "tone": 1,
+      "meaning": "Rót (rượu, trà); cân nhắc",
+      "hskLevel": "HSK6",
+      "strokeCount": 13,
+      "examples": [
+        { "sentence": "斟酌再三", "pinyin": "zhēn zhuó zài sān", "meaning": "Cân nhắc kỹ lưỡng" }
+      ]
+    },
+    {
+      "id": "hz-HSK6-10",
+      "character": "屉",
+      "pinyin": "tì",
+      "tone": 4,
+      "meaning": "Ngăn kéo (抽屉)",
+      "hskLevel": "HSK6",
+      "strokeCount": 10,
+      "examples": [
+        { "sentence": "抽屉里有钥匙", "pinyin": "chōu ti lǐ yǒu yào shi", "meaning": "Trong ngăn kéo có chìa khóa" }
+      ]
+    },
+    {
+      "id": "hz-HSK6-11",
+      "character": "媚",
+      "pinyin": "mèi",
+      "tone": 4,
+      "meaning": "Quyến rũ, làm đẹp lòng; nịnh nọt",
+      "hskLevel": "HSK6",
+      "strokeCount": 12,
+      "examples": [
+        { "sentence": "春光明媚", "pinyin": "chūn guāng míng mèi", "meaning": "Cảnh xuân tươi đẹp rạng rỡ" }
+      ]
+    },
+    {
+      "id": "hz-HSK6-12",
+      "character": "炽",
+      "pinyin": "chì",
+      "tone": 4,
+      "meaning": "Cháy rực, nóng bỏng, mãnh liệt",
+      "hskLevel": "HSK6",
+      "strokeCount": 9,
+      "examples": [
+        { "sentence": "炽热的阳光", "pinyin": "chì rè de yáng guāng", "meaning": "Ánh nắng nóng bỏng" }
+      ]
+    },
+    {
+      "id": "hz-HSK6-13",
+      "character": "贬",
+      "pinyin": "biǎn",
+      "tone": 3,
+      "meaning": "Hạ thấp, chê bai; giáng chức",
+      "hskLevel": "HSK6",
+      "strokeCount": 8,
+      "examples": [
+        { "sentence": "贬低别人", "pinyin": "biǎn dī bié rén", "meaning": "Hạ thấp người khác" }
+      ]
+    },
+    {
+      "id": "hz-HSK6-14",
+      "character": "酿",
+      "pinyin": "niàng",
+      "tone": 4,
+      "meaning": "Ủ, lên men (rượu); dần hình thành",
+      "hskLevel": "HSK6",
+      "strokeCount": 14,
+      "examples": [
+        { "sentence": "酿造葡萄酒", "pinyin": "niàng zào pú tao jiǔ", "meaning": "Ủ rượu vang" }
+      ]
+    },
+    {
+      "id": "hz-HSK6-15",
+      "character": "缚",
+      "pinyin": "fù",
+      "tone": 4,
+      "meaning": "Trói, buộc; ràng buộc",
+      "hskLevel": "HSK6",
+      "strokeCount": 13,
+      "examples": [
+        { "sentence": "束缚自由", "pinyin": "shù fù zì yóu", "meaning": "Trói buộc tự do" }
+      ]
+    },
+    {
+      "id": "hz-HSK6-16",
+      "character": "瞩",
+      "pinyin": "zhǔ",
+      "tone": 3,
+      "meaning": "Nhìn chăm chú, dõi theo",
+      "hskLevel": "HSK6",
+      "strokeCount": 18,
+      "examples": [
+        { "sentence": "举世瞩目", "pinyin": "jǔ shì zhǔ mù", "meaning": "Cả thế giới chú ý dõi theo" }
+      ]
+    }
+  ]
+}

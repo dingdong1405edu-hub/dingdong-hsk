@@ -1,0 +1,201 @@
+{
+  "kind": "materials",
+  "materials": [
+    {
+      "id": "mt-HANZI-1",
+      "title": "Quy tắc thứ tự nét cơ bản trong chữ Hán",
+      "titleZh": "汉字基本笔顺规则",
+      "category": "HANZI",
+      "hskLevel": "HSK1",
+      "summary": "Giới thiệu các nét cơ bản và quy tắc thứ tự viết nét (笔顺) giúp người mới bắt đầu viết chữ Hán đúng và đẹp ngay từ đầu.",
+      "readMinutes": 6,
+      "order": 1,
+      "tags": ["bút thuận", "thứ tự nét", "HSK1", "viết chữ"],
+      "content": [
+        { "type": "heading", "text": "Vì sao phải học thứ tự nét?", "zh": "为什么要学笔顺" },
+        { "type": "paragraph", "text": "Mỗi chữ Hán được tạo thành từ những nét (笔画) viết theo một thứ tự cố định gọi là 笔顺 (bǐshùn). Viết đúng thứ tự nét giúp chữ cân đối, viết nhanh hơn và dễ tra từ điển hơn. Người mới học nên luyện thứ tự nét ngay từ những chữ đầu tiên." },
+        { "type": "heading", "text": "Các nét cơ bản", "zh": "基本笔画" },
+        { "type": "list", "items": [
+          "横 (héng): nét ngang, viết từ trái sang phải, ví dụ chữ 一",
+          "竖 (shù): nét sổ thẳng, viết từ trên xuống dưới, ví dụ chữ 十",
+          "撇 (piě): nét phẩy, viết từ trên phải xuống dưới trái",
+          "捺 (nà): nét mác, viết từ trên trái xuống dưới phải, ví dụ chữ 八",
+          "点 (diǎn): nét chấm, viết một cái nhỏ và nhanh"
+        ] },
+        { "type": "heading", "text": "Sáu quy tắc thứ tự nét quan trọng nhất", "zh": "六条基本规则" },
+        { "type": "list", "items": [
+          "Ngang trước sổ sau: viết nét ngang rồi mới đến nét sổ, như chữ 十",
+          "Phẩy trước mác sau: viết nét phẩy rồi mới đến nét mác, như chữ 人",
+          "Trên trước dưới sau: viết phần trên trước, như chữ 三",
+          "Trái trước phải sau: viết phần bên trái trước, như chữ 你",
+          "Ngoài trước trong sau: viết khung bao bên ngoài trước, như chữ 月",
+          "Vào nhà trước, đóng cửa sau: với chữ có khung kín, viết nét bao quanh rồi viết phần trong, cuối cùng mới đóng đáy, như chữ 国"
+        ] },
+        { "type": "example", "zh": "十", "pinyin": "shí", "vi": "Mười (viết nét ngang trước, nét sổ sau)" },
+        { "type": "example", "zh": "人", "pinyin": "rén", "vi": "Người (viết nét phẩy trước, nét mác sau)" },
+        { "type": "example", "zh": "三", "pinyin": "sān", "vi": "Ba (viết ba nét ngang từ trên xuống dưới)" },
+        { "type": "vocab", "items": [
+          { "zh": "一", "pinyin": "yī", "vi": "Một (một nét ngang)" },
+          { "zh": "八", "pinyin": "bā", "vi": "Tám (nét phẩy trước, nét mác sau)" },
+          { "zh": "口", "pinyin": "kǒu", "vi": "Miệng (viết khung trước, đóng đáy sau cùng)" },
+          { "zh": "大", "pinyin": "dà", "vi": "To, lớn" }
+        ] },
+        { "type": "note", "text": "Lỗi thường gặp: nhiều bạn viết chữ 口 bằng cách đóng đáy trước. Hãy nhớ luôn đóng nét đáy CUỐI CÙNG. Hãy dùng giấy ô vuông (田字格) để canh tỉ lệ chữ khi mới luyện." }
+      ]
+    },
+    {
+      "id": "mt-HANZI-2",
+      "title": "Bộ thủ thông dụng và ý nghĩa của chúng",
+      "titleZh": "常用部首与含义",
+      "category": "HANZI",
+      "hskLevel": "HSK2",
+      "summary": "Tìm hiểu các bộ thủ (部首) hay gặp và cách chúng gợi ý nghĩa của chữ, giúp đoán nghĩa và ghi nhớ chữ Hán hiệu quả hơn.",
+      "readMinutes": 7,
+      "order": 2,
+      "tags": ["bộ thủ", "ý nghĩa", "HSK2", "tra từ điển"],
+      "content": [
+        { "type": "heading", "text": "Bộ thủ là gì?", "zh": "什么是部首" },
+        { "type": "paragraph", "text": "Bộ thủ (部首 bùshǒu) là thành phần dùng để phân loại và tra cứu chữ Hán trong từ điển. Nhiều bộ thủ còn gợi ý nghĩa của chữ. Khi nhìn thấy bộ thủ, bạn thường có thể đoán được chữ đó liên quan đến lĩnh vực gì." },
+        { "type": "heading", "text": "Một số bộ thủ liên quan đến con người và hành động", "zh": "与人和动作有关的部首" },
+        { "type": "list", "items": [
+          "亻 (bộ Nhân đứng): liên quan đến con người, xuất hiện trong 你, 他, 们",
+          "扌 (bộ Thủ, tay): liên quan đến hành động của tay, xuất hiện trong 打, 找, 拿",
+          "口 (bộ Khẩu, miệng): liên quan đến miệng và lời nói, xuất hiện trong 吃, 喝, 叫",
+          "心 / 忄 (bộ Tâm): liên quan đến tình cảm, suy nghĩ, xuất hiện trong 想, 忙, 快"
+        ] },
+        { "type": "heading", "text": "Bộ thủ liên quan đến tự nhiên", "zh": "与自然有关的部首" },
+        { "type": "list", "items": [
+          "氵 (bộ Thủy, nước): liên quan đến nước, xuất hiện trong 河, 海, 洗",
+          "木 (bộ Mộc, cây): liên quan đến cây cối, gỗ, xuất hiện trong 林, 树, 椅",
+          "日 (bộ Nhật, mặt trời): liên quan đến thời gian, ánh sáng, xuất hiện trong 时, 明, 晚",
+          "女 (bộ Nữ): liên quan đến nữ giới, xuất hiện trong 妈, 姐, 好"
+        ] },
+        { "type": "example", "zh": "他在河边洗手", "pinyin": "tā zài hé biān xǐ shǒu", "vi": "Anh ấy rửa tay bên bờ sông (河 và 洗 đều có bộ Thủy 氵)" },
+        { "type": "example", "zh": "妈妈很忙", "pinyin": "māma hěn máng", "vi": "Mẹ rất bận (妈 có bộ Nữ 女, 忙 có bộ Tâm 忄)" },
+        { "type": "vocab", "items": [
+          { "zh": "吃", "pinyin": "chī", "vi": "Ăn (bộ Khẩu 口)" },
+          { "zh": "打", "pinyin": "dǎ", "vi": "Đánh, gọi (bộ Thủ 扌)" },
+          { "zh": "海", "pinyin": "hǎi", "vi": "Biển (bộ Thủy 氵)" },
+          { "zh": "明", "pinyin": "míng", "vi": "Sáng (bộ Nhật 日 và 月)" }
+        ] },
+        { "type": "note", "text": "Mẹo: khi gặp chữ mới, hãy thử nhận diện bộ thủ trước. Ví dụ thấy 氵 thì khả năng cao chữ đó liên quan đến nước hoặc chất lỏng. Cách này giúp đoán nghĩa và ghi nhớ nhanh hơn nhiều." }
+      ]
+    },
+    {
+      "id": "mt-HANZI-3",
+      "title": "Các chữ Hán gần giống nhau dễ nhầm lẫn",
+      "titleZh": "容易混淆的形近字",
+      "category": "HANZI",
+      "hskLevel": "HSK3",
+      "summary": "Phân biệt các cặp chữ Hán có hình dạng gần giống nhau (形近字) thường gây nhầm lẫn, kèm cách ghi nhớ và ví dụ trong câu.",
+      "readMinutes": 8,
+      "order": 3,
+      "tags": ["chữ gần giống", "phân biệt", "HSK3", "dễ nhầm"],
+      "content": [
+        { "type": "heading", "text": "Hiện tượng chữ gần giống nhau", "zh": "形近字现象" },
+        { "type": "paragraph", "text": "Trong tiếng Trung có nhiều chữ chỉ khác nhau một nét hoặc một thành phần nhỏ nhưng nghĩa và cách đọc hoàn toàn khác. Những chữ này gọi là 形近字 (xíngjìnzì). Học cách phân biệt chúng giúp bạn tránh viết sai và đọc sai." },
+        { "type": "heading", "text": "Khác nhau một nét", "zh": "只差一笔" },
+        { "type": "list", "items": [
+          "大 (dà, to) và 太 (tài, quá): 太 có thêm một nét chấm bên dưới",
+          "天 (tiān, trời) và 夫 (fū, chồng): 夫 có nét ngang trên dài hơn và nhô lên",
+          "土 (tǔ, đất) và 士 (shì, kẻ sĩ): với 土 nét ngang dưới dài hơn, với 士 nét ngang trên dài hơn",
+          "买 (mǎi, mua) và 卖 (mài, bán): 卖 có thêm bộ 十 ở phía trên"
+        ] },
+        { "type": "heading", "text": "Khác nhau ở bộ thủ", "zh": "部首不同" },
+        { "type": "list", "items": [
+          "请 (qǐng, mời) và 清 (qīng, trong sạch): 请 có bộ Ngôn 讠, 清 có bộ Thủy 氵",
+          "他 (tā, anh ấy) và 地 (dì, đất): 他 có bộ Nhân 亻, 地 có bộ Thổ 土",
+          "近 (jìn, gần) và 进 (jìn, đi vào): khác nhau ở phần bên trong bộ Sước 辶"
+        ] },
+        { "type": "example", "zh": "今天天气太好了", "pinyin": "jīntiān tiānqì tài hǎo le", "vi": "Hôm nay thời tiết quá đẹp (chú ý phân biệt 天 và 太)" },
+        { "type": "example", "zh": "请喝一杯清水", "pinyin": "qǐng hē yì bēi qīng shuǐ", "vi": "Mời uống một cốc nước trong (请 với 清)" },
+        { "type": "example", "zh": "我想买东西", "pinyin": "wǒ xiǎng mǎi dōngxi", "vi": "Tôi muốn mua đồ (买 chứ không phải 卖)" },
+        { "type": "vocab", "items": [
+          { "zh": "太", "pinyin": "tài", "vi": "Quá, rất" },
+          { "zh": "卖", "pinyin": "mài", "vi": "Bán" },
+          { "zh": "清", "pinyin": "qīng", "vi": "Trong, sạch" },
+          { "zh": "进", "pinyin": "jìn", "vi": "Đi vào, tiến vào" }
+        ] },
+        { "type": "note", "text": "Mẹo ghi nhớ 买 và 卖: người 'bán' (卖) phải có hàng (十) bày ở trên, nên 卖 có thêm nét. Liên hệ ý nghĩa với hình chữ sẽ giúp bạn nhớ lâu hơn." }
+      ]
+    },
+    {
+      "id": "mt-HANZI-4",
+      "title": "Chữ hình thanh: bộ phận biểu nghĩa và biểu âm",
+      "titleZh": "形声字：形旁与声旁",
+      "category": "HANZI",
+      "hskLevel": "HSK4",
+      "summary": "Giải thích nguyên tắc cấu tạo chữ hình thanh (形声字) gồm phần biểu nghĩa và phần biểu âm, chiếm phần lớn chữ Hán hiện đại.",
+      "readMinutes": 9,
+      "order": 4,
+      "tags": ["hình thanh", "biểu âm", "biểu nghĩa", "HSK4", "cấu tạo chữ"],
+      "content": [
+        { "type": "heading", "text": "Sáu phép cấu tạo chữ Hán", "zh": "六书" },
+        { "type": "paragraph", "text": "Chữ Hán được tạo theo sáu phép gọi là 六书 (liù shū): tượng hình, chỉ sự, hội ý, hình thanh, chuyển chú và giả tá. Trong đó, chữ hình thanh (形声字 xíngshēngzì) chiếm khoảng 80% tổng số chữ Hán hiện đại, nên hiểu rõ loại này rất quan trọng." },
+        { "type": "heading", "text": "Cấu trúc của chữ hình thanh", "zh": "形声字的结构" },
+        { "type": "paragraph", "text": "Một chữ hình thanh gồm hai phần: 形旁 (xíngpáng) là phần biểu nghĩa, cho biết chữ liên quan đến lĩnh vực gì; và 声旁 (shēngpáng) là phần biểu âm, gợi ý cách phát âm. Ví dụ chữ 妈 (mā) gồm bộ Nữ 女 biểu nghĩa và 马 (mǎ) biểu âm." },
+        { "type": "list", "items": [
+          "形旁 (phần biểu nghĩa): thường là bộ thủ, gợi ý nghĩa của chữ",
+          "声旁 (phần biểu âm): gợi ý âm đọc, nhưng có thể khác thanh điệu",
+          "Vị trí có thể là trái-phải, trên-dưới, hoặc trong-ngoài"
+        ] },
+        { "type": "heading", "text": "Ví dụ cùng một phần biểu âm", "zh": "相同声旁的例子" },
+        { "type": "list", "items": [
+          "Phần biểu âm 青 (qīng): 清 (qīng, trong), 请 (qǐng, mời), 晴 (qíng, nắng), 情 (qíng, tình cảm)",
+          "Phần biểu âm 马 (mǎ): 妈 (mā, mẹ), 吗 (ma, từ nghi vấn), 骂 (mà, mắng)",
+          "Phần biểu âm 工 (gōng): 红 (hóng, đỏ), 江 (jiāng, sông), 空 (kōng, trống)"
+        ] },
+        { "type": "example", "zh": "天晴了，心情很好", "pinyin": "tiān qíng le, xīnqíng hěn hǎo", "vi": "Trời nắng rồi, tâm trạng rất vui (晴 và 情 cùng phần biểu âm 青)" },
+        { "type": "example", "zh": "妈妈问我去不去", "pinyin": "māma wèn wǒ qù bú qù", "vi": "Mẹ hỏi tôi có đi hay không (妈 và 吗 cùng phần biểu âm 马)" },
+        { "type": "vocab", "items": [
+          { "zh": "晴", "pinyin": "qíng", "vi": "Trời nắng, trời quang (bộ Nhật 日 + 青)" },
+          { "zh": "情", "pinyin": "qíng", "vi": "Tình cảm (bộ Tâm 忄 + 青)" },
+          { "zh": "江", "pinyin": "jiāng", "vi": "Sông lớn (bộ Thủy 氵 + 工)" },
+          { "zh": "骂", "pinyin": "mà", "vi": "Mắng, chửi (bộ Khẩu kép + 马)" }
+        ] },
+        { "type": "note", "text": "Lưu ý: phần biểu âm chỉ GỢI Ý âm đọc chứ không phải lúc nào cũng chính xác. Ví dụ 青 đọc qīng nhưng 请 đọc qǐng (khác thanh điệu) và 猜 đọc cāi (khác hẳn). Đừng dựa hoàn toàn vào phần biểu âm để đoán cách đọc." }
+      ]
+    },
+    {
+      "id": "mt-HANZI-5",
+      "title": "Thành phần chữ và cách phân tích chữ phức tạp",
+      "titleZh": "部件与复杂汉字的拆分",
+      "category": "HANZI",
+      "hskLevel": "HSK5",
+      "summary": "Học cách phân tích chữ Hán phức tạp thành các thành phần (部件), nhận diện hội ý và áp dụng để ghi nhớ chữ nhiều nét một cách có hệ thống.",
+      "readMinutes": 10,
+      "order": 5,
+      "tags": ["thành phần chữ", "hội ý", "phân tích chữ", "HSK5", "chữ phức tạp"],
+      "content": [
+        { "type": "heading", "text": "Thành phần chữ là gì?", "zh": "什么是部件" },
+        { "type": "paragraph", "text": "部件 (bùjiàn) là các 'khối xây dựng' tạo nên chữ Hán, lớn hơn nét nhưng nhỏ hơn nguyên một chữ. Một chữ phức tạp có thể được tách thành nhiều thành phần đã biết, giúp việc ghi nhớ trở nên có hệ thống thay vì học thuộc lòng từng nét." },
+        { "type": "heading", "text": "Chữ hội ý: ghép nghĩa để tạo nghĩa mới", "zh": "会意字" },
+        { "type": "paragraph", "text": "Chữ hội ý (会意字 huìyìzì) được tạo bằng cách ghép hai hoặc nhiều thành phần lại, dùng ý nghĩa của chúng để tạo ra nghĩa mới. Đây là cách ghi nhớ rất trực quan và thú vị." },
+        { "type": "list", "items": [
+          "明 (míng, sáng) = 日 (mặt trời) + 月 (mặt trăng): hai nguồn sáng ghép lại thành 'sáng'",
+          "休 (xiū, nghỉ ngơi) = 亻(người) + 木 (cây): người dựa vào gốc cây để nghỉ",
+          "森 (sēn, rừng rậm) = ba chữ 木 (cây): nhiều cây tạo thành rừng",
+          "众 (zhòng, đám đông) = ba chữ 人 (người): nhiều người tụ lại",
+          "尖 (jiān, nhọn) = 小 (nhỏ) ở trên + 大 (to) ở dưới: trên nhỏ dưới to thì nhọn"
+        ] },
+        { "type": "heading", "text": "Chiến lược phân tích chữ phức tạp", "zh": "拆分复杂汉字的策略" },
+        { "type": "list", "items": [
+          "Tách chữ thành các thành phần lớn theo cấu trúc trái-phải hoặc trên-dưới trước",
+          "Nhận diện phần biểu nghĩa (bộ thủ) và phần còn lại",
+          "Liên hệ thành phần đã biết với chữ mới để tạo câu chuyện ghi nhớ",
+          "So sánh với các chữ cùng thành phần để củng cố trí nhớ"
+        ] },
+        { "type": "example", "zh": "树林里很安静", "pinyin": "shùlín lǐ hěn ānjìng", "vi": "Trong rừng cây rất yên tĩnh (林 gồm hai chữ 木)" },
+        { "type": "example", "zh": "众人拾柴火焰高", "pinyin": "zhòngrén shí chái huǒyàn gāo", "vi": "Nhiều người góp củi thì ngọn lửa cao (众 gồm ba chữ 人)" },
+        { "type": "example", "zh": "他坐在树下休息", "pinyin": "tā zuò zài shù xià xiūxi", "vi": "Anh ấy ngồi dưới gốc cây nghỉ ngơi (休 gồm 亻 và 木)" },
+        { "type": "vocab", "items": [
+          { "zh": "森林", "pinyin": "sēnlín", "vi": "Rừng (森 ba cây, 林 hai cây)" },
+          { "zh": "休息", "pinyin": "xiūxi", "vi": "Nghỉ ngơi" },
+          { "zh": "尖", "pinyin": "jiān", "vi": "Nhọn, sắc" },
+          { "zh": "安静", "pinyin": "ānjìng", "vi": "Yên tĩnh (安 gồm bộ Miên 宀 và 女)" }
+        ] },
+        { "type": "note", "text": "Phương pháp hiệu quả: với mỗi chữ HSK5 nhiều nét, hãy dành một phút tách nó thành các thành phần đã biết và tự đặt một câu chuyện nhỏ. Não bộ ghi nhớ hình ảnh và câu chuyện tốt hơn nhiều so với việc lặp lại nét một cách máy móc." }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,197 @@
+{
+  "kind": "hanzi",
+  "characters": [
+    {
+      "id": "hz-HSK2-1",
+      "character": "贵",
+      "pinyin": "guì",
+      "tone": 4,
+      "meaning": "Đắt; quý",
+      "hskLevel": "HSK2",
+      "strokeCount": 9,
+      "examples": [
+        { "sentence": "太贵了", "pinyin": "tài guì le", "meaning": "Đắt quá" }
+      ]
+    },
+    {
+      "id": "hz-HSK2-2",
+      "character": "便",
+      "pinyin": "pián",
+      "tone": 2,
+      "meaning": "Rẻ (trong 便宜)",
+      "hskLevel": "HSK2",
+      "strokeCount": 9,
+      "examples": [
+        { "sentence": "便宜", "pinyin": "pián yi", "meaning": "Rẻ" }
+      ]
+    },
+    {
+      "id": "hz-HSK2-3",
+      "character": "宜",
+      "pinyin": "yí",
+      "tone": 2,
+      "meaning": "Thích hợp; rẻ (trong 便宜)",
+      "hskLevel": "HSK2",
+      "strokeCount": 8,
+      "examples": [
+        { "sentence": "这件衣服很便宜", "pinyin": "zhè jiàn yī fu hěn pián yi", "meaning": "Bộ quần áo này rất rẻ" }
+      ]
+    },
+    {
+      "id": "hz-HSK2-4",
+      "character": "时",
+      "pinyin": "shí",
+      "tone": 2,
+      "meaning": "Thời gian; giờ",
+      "hskLevel": "HSK2",
+      "strokeCount": 7,
+      "examples": [
+        { "sentence": "时间", "pinyin": "shí jiān", "meaning": "Thời gian" }
+      ]
+    },
+    {
+      "id": "hz-HSK2-5",
+      "character": "间",
+      "pinyin": "jiān",
+      "tone": 1,
+      "meaning": "Khoảng; gian (phòng)",
+      "hskLevel": "HSK2",
+      "strokeCount": 7,
+      "examples": [
+        { "sentence": "房间", "pinyin": "fáng jiān", "meaning": "Căn phòng" }
+      ]
+    },
+    {
+      "id": "hz-HSK2-6",
+      "character": "颜",
+      "pinyin": "yán",
+      "tone": 2,
+      "meaning": "Màu (trong 颜色); khuôn mặt",
+      "hskLevel": "HSK2",
+      "strokeCount": 15,
+      "examples": [
+        { "sentence": "颜色", "pinyin": "yán sè", "meaning": "Màu sắc" }
+      ]
+    },
+    {
+      "id": "hz-HSK2-7",
+      "character": "色",
+      "pinyin": "sè",
+      "tone": 4,
+      "meaning": "Màu sắc",
+      "hskLevel": "HSK2",
+      "strokeCount": 6,
+      "examples": [
+        { "sentence": "红色", "pinyin": "hóng sè", "meaning": "Màu đỏ" }
+      ]
+    },
+    {
+      "id": "hz-HSK2-8",
+      "character": "白",
+      "pinyin": "bái",
+      "tone": 2,
+      "meaning": "Màu trắng",
+      "hskLevel": "HSK2",
+      "strokeCount": 5,
+      "examples": [
+        { "sentence": "白色", "pinyin": "bái sè", "meaning": "Màu trắng" }
+      ]
+    },
+    {
+      "id": "hz-HSK2-9",
+      "character": "黑",
+      "pinyin": "hēi",
+      "tone": 1,
+      "meaning": "Màu đen",
+      "hskLevel": "HSK2",
+      "strokeCount": 12,
+      "examples": [
+        { "sentence": "黑色", "pinyin": "hēi sè", "meaning": "Màu đen" }
+      ]
+    },
+    {
+      "id": "hz-HSK2-10",
+      "character": "红",
+      "pinyin": "hóng",
+      "tone": 2,
+      "meaning": "Màu đỏ",
+      "hskLevel": "HSK2",
+      "strokeCount": 6,
+      "examples": [
+        { "sentence": "红茶", "pinyin": "hóng chá", "meaning": "Hồng trà" }
+      ]
+    },
+    {
+      "id": "hz-HSK2-11",
+      "character": "快",
+      "pinyin": "kuài",
+      "tone": 4,
+      "meaning": "Nhanh; vui",
+      "hskLevel": "HSK2",
+      "strokeCount": 7,
+      "examples": [
+        { "sentence": "快乐", "pinyin": "kuài lè", "meaning": "Vui vẻ" }
+      ]
+    },
+    {
+      "id": "hz-HSK2-12",
+      "character": "乐",
+      "pinyin": "lè",
+      "tone": 4,
+      "meaning": "Vui vẻ; niềm vui",
+      "hskLevel": "HSK2",
+      "strokeCount": 5,
+      "examples": [
+        { "sentence": "快乐", "pinyin": "kuài lè", "meaning": "Vui vẻ" }
+      ]
+    },
+    {
+      "id": "hz-HSK2-13",
+      "character": "累",
+      "pinyin": "lèi",
+      "tone": 4,
+      "meaning": "Mệt",
+      "hskLevel": "HSK2",
+      "strokeCount": 11,
+      "examples": [
+        { "sentence": "我很累", "pinyin": "wǒ hěn lèi", "meaning": "Tôi rất mệt" }
+      ]
+    },
+    {
+      "id": "hz-HSK2-14",
+      "character": "忙",
+      "pinyin": "máng",
+      "tone": 2,
+      "meaning": "Bận rộn",
+      "hskLevel": "HSK2",
+      "strokeCount": 6,
+      "examples": [
+        { "sentence": "你忙吗", "pinyin": "nǐ máng ma", "meaning": "Bạn có bận không" }
+      ]
+    },
+    {
+      "id": "hz-HSK2-15",
+      "character": "病",
+      "pinyin": "bìng",
+      "tone": 4,
+      "meaning": "Bệnh; ốm",
+      "hskLevel": "HSK2",
+      "strokeCount": 10,
+      "examples": [
+        { "sentence": "生病", "pinyin": "shēng bìng", "meaning": "Bị ốm" }
+      ]
+    },
+    {
+      "id": "hz-HSK2-16",
+      "character": "药",
+      "pinyin": "yào",
+      "tone": 4,
+      "meaning": "Thuốc",
+      "hskLevel": "HSK2",
+      "strokeCount": 9,
+      "examples": [
+        { "sentence": "吃药", "pinyin": "chī yào", "meaning": "Uống thuốc" }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,149 @@
+{
+  "kind": "listening",
+  "tests": [
+    {
+      "id": "ls-HSK1-1",
+      "title": "Chào hỏi và làm quen",
+      "hskLevel": "HSK1",
+      "audioUrl": "",
+      "transcript": "A: 你好！\nB: 你好！你叫什么名字？\nA: 我叫王芳。你呢？\nB: 我叫李明。认识你很高兴。\nA: 认识你我也很高兴。",
+      "timeLimit": 300,
+      "questions": [
+        {
+          "id": "ls-HSK1-1-q1",
+          "type": "MCQ",
+          "prompt": "女的叫什么名字？",
+          "promptPinyin": "Nǚ de jiào shénme míngzi?",
+          "options": [
+            { "text": "王芳", "pinyin": "Wáng Fāng" },
+            { "text": "李明", "pinyin": "Lǐ Míng" },
+            { "text": "王明", "pinyin": "Wáng Míng" },
+            { "text": "李芳", "pinyin": "Lǐ Fāng" }
+          ],
+          "correctAnswer": { "index": 0 },
+          "explanation": "Trong đoạn hội thoại, người nói A tự giới thiệu '我叫王芳' (Tôi tên là Vương Phương). Đây là giọng nữ, nên đáp án đúng là Vương Phương.",
+          "order": 1
+        },
+        {
+          "id": "ls-HSK1-1-q2",
+          "type": "MCQ",
+          "prompt": "男的叫什么名字？",
+          "promptPinyin": "Nán de jiào shénme míngzi?",
+          "options": [
+            { "text": "李明", "pinyin": "Lǐ Míng" },
+            { "text": "王芳", "pinyin": "Wáng Fāng" },
+            { "text": "李芳", "pinyin": "Lǐ Fāng" },
+            { "text": "王明", "pinyin": "Wáng Míng" }
+          ],
+          "correctAnswer": { "index": 0 },
+          "explanation": "Người nói B nói '我叫李明' (Tôi tên là Lý Minh). Đây là người nam, nên đáp án đúng là Lý Minh.",
+          "order": 2
+        },
+        {
+          "id": "ls-HSK1-1-q3",
+          "type": "TRUE_FALSE",
+          "prompt": "他们认识很高兴。",
+          "correctAnswer": { "value": true },
+          "explanation": "Cả hai người đều nói '认识你很高兴' (Rất vui được làm quen với bạn), vì vậy câu này đúng.",
+          "order": 3
+        }
+      ]
+    },
+    {
+      "id": "ls-HSK1-2",
+      "title": "Gia đình của tôi",
+      "hskLevel": "HSK1",
+      "audioUrl": "",
+      "transcript": "我家有四个人：爸爸、妈妈、姐姐和我。我爸爸是医生，我妈妈是老师。我姐姐是学生，今年二十岁。我也是学生。我们都很爱我们的家。",
+      "timeLimit": 300,
+      "questions": [
+        {
+          "id": "ls-HSK1-2-q1",
+          "type": "MCQ",
+          "prompt": "他家有几个人？",
+          "promptPinyin": "Tā jiā yǒu jǐ ge rén?",
+          "options": [
+            { "text": "三个人", "pinyin": "sān ge rén" },
+            { "text": "四个人", "pinyin": "sì ge rén" },
+            { "text": "五个人", "pinyin": "wǔ ge rén" },
+            { "text": "两个人", "pinyin": "liǎng ge rén" }
+          ],
+          "correctAnswer": { "index": 1 },
+          "explanation": "Đoạn văn nói '我家有四个人' (Nhà tôi có bốn người): bố, mẹ, chị gái và tôi. Vậy đáp án là bốn người.",
+          "order": 1
+        },
+        {
+          "id": "ls-HSK1-2-q2",
+          "type": "MCQ",
+          "prompt": "他爸爸做什么工作？",
+          "promptPinyin": "Tā bàba zuò shénme gōngzuò?",
+          "options": [
+            { "text": "老师", "pinyin": "lǎoshī" },
+            { "text": "学生", "pinyin": "xuésheng" },
+            { "text": "医生", "pinyin": "yīshēng" },
+            { "text": "中国人", "pinyin": "Zhōngguó rén" }
+          ],
+          "correctAnswer": { "index": 2 },
+          "explanation": "Đoạn văn nói '我爸爸是医生' (Bố tôi là bác sĩ). Vậy đáp án là bác sĩ.",
+          "order": 2
+        },
+        {
+          "id": "ls-HSK1-2-q3",
+          "type": "TRUE_FALSE",
+          "prompt": "他姐姐今年二十岁。",
+          "correctAnswer": { "value": true },
+          "explanation": "Đoạn văn nói '我姐姐是学生，今年二十岁' (Chị gái tôi là học sinh, năm nay hai mươi tuổi). Vậy câu này đúng.",
+          "order": 3
+        }
+      ]
+    },
+    {
+      "id": "ls-HSK1-3",
+      "title": "Mua đồ ở cửa hàng",
+      "hskLevel": "HSK1",
+      "audioUrl": "",
+      "transcript": "A: 你好，我想买苹果。\nB: 好的，你要几个？\nA: 我要三个。多少钱？\nB: 九块钱。\nA: 给你钱。谢谢！\nB: 不客气，再见！",
+      "timeLimit": 300,
+      "questions": [
+        {
+          "id": "ls-HSK1-3-q1",
+          "type": "MCQ",
+          "prompt": "她想买什么？",
+          "promptPinyin": "Tā xiǎng mǎi shénme?",
+          "options": [
+            { "text": "苹果", "pinyin": "píngguǒ" },
+            { "text": "米饭", "pinyin": "mǐfàn" },
+            { "text": "水", "pinyin": "shuǐ" },
+            { "text": "茶", "pinyin": "chá" }
+          ],
+          "correctAnswer": { "index": 0 },
+          "explanation": "Người mua nói '我想买苹果' (Tôi muốn mua táo). Vậy đáp án là táo.",
+          "order": 1
+        },
+        {
+          "id": "ls-HSK1-3-q2",
+          "type": "MCQ",
+          "prompt": "她要买几个？",
+          "promptPinyin": "Tā yào mǎi jǐ ge?",
+          "options": [
+            { "text": "一个", "pinyin": "yí ge" },
+            { "text": "两个", "pinyin": "liǎng ge" },
+            { "text": "三个", "pinyin": "sān ge" },
+            { "text": "九个", "pinyin": "jiǔ ge" }
+          ],
+          "correctAnswer": { "index": 2 },
+          "explanation": "Người mua nói '我要三个' (Tôi muốn ba quả). Vậy đáp án là ba quả.",
+          "order": 2
+        },
+        {
+          "id": "ls-HSK1-3-q3",
+          "type": "TRUE_FALSE",
+          "prompt": "苹果一共九块钱。",
+          "correctAnswer": { "value": true },
+          "explanation": "Người bán nói '九块钱' (Chín đồng) khi được hỏi giá tiền. Vậy câu này đúng.",
+          "order": 3
+        }
+      ]
+    }
+  ]
+}

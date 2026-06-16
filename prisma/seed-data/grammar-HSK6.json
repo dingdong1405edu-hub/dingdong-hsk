@@ -1,0 +1,227 @@
+{
+  "kind": "grammar",
+  "units": [
+    {
+      "id": "gr-HSK6-u1",
+      "title": "Liên từ và cấu trúc nhượng bộ nâng cao",
+      "titleZh": "高级连词与让步结构",
+      "hskLevel": "HSK6",
+      "order": 1,
+      "lessons": [
+        {
+          "id": "gr-HSK6-u1-l1",
+          "title": "Cấu trúc 哪怕...也... (dù cho... vẫn...)",
+          "order": 1,
+          "exercises": [
+            {
+              "type": "fill_blank",
+              "sentence": "___只有百分之一的希望，我们也要尽全力。",
+              "blank": "哪怕",
+              "options": ["哪怕", "因为", "尽管", "既然"],
+              "hint": "哪怕 (nǎpà): dù cho, biểu thị giả thiết nhượng bộ cực đoan, thường đi với 也"
+            },
+            {
+              "type": "fill_blank",
+              "sentence": "哪怕再困难，他___从不放弃自己的理想。",
+              "blank": "也",
+              "options": ["也", "就", "才", "却"],
+              "hint": "哪怕 thường kết hợp với 也 (yě) ở vế sau"
+            },
+            {
+              "type": "sentence_order",
+              "words": ["哪怕", "失败", "我", "也", "要", "尝试"],
+              "answer": "哪怕失败我也要尝试",
+              "meaning": "Dù cho thất bại tôi vẫn muốn thử"
+            },
+            {
+              "type": "translate",
+              "direction": "vi_to_zh",
+              "prompt": "Dù cho chỉ còn một phút, chúng tôi cũng không từ bỏ.",
+              "answer": "哪怕只剩一分钟，我们也不放弃。",
+              "options": ["哪怕只剩一分钟，我们也不放弃。", "因为只剩一分钟，所以我们放弃了。", "如果只剩一分钟，我们就放弃。", "虽然只剩一分钟，但是我们放弃了。"]
+            }
+          ]
+        },
+        {
+          "id": "gr-HSK6-u1-l2",
+          "title": "Cấu trúc 与其...不如... (thay vì... chi bằng...)",
+          "order": 2,
+          "exercises": [
+            {
+              "type": "fill_blank",
+              "sentence": "___在家发愁，不如出去走走散散心。",
+              "blank": "与其",
+              "options": ["与其", "尽管", "无论", "即便"],
+              "hint": "与其 (yǔqí): thay vì, dùng để so sánh hai lựa chọn, đi với 不如"
+            },
+            {
+              "type": "fill_blank",
+              "sentence": "与其等别人帮忙，___自己动手解决。",
+              "blank": "不如",
+              "options": ["不如", "何况", "不止", "不料"],
+              "hint": "与其 kết hợp với 不如 (bùrú) để biểu thị 'chi bằng', chọn vế sau"
+            },
+            {
+              "type": "sentence_order",
+              "words": ["与其", "抱怨", "不如", "想", "办法"],
+              "answer": "与其抱怨不如想办法",
+              "meaning": "Thay vì than phiền chi bằng nghĩ cách"
+            },
+            {
+              "type": "translate",
+              "direction": "vi_to_zh",
+              "prompt": "Thay vì mua mới, chi bằng sửa cái cũ.",
+              "answer": "与其买新的，不如修旧的。",
+              "options": ["与其买新的，不如修旧的。", "因为买新的，所以修旧的。", "虽然买新的，但是修旧的。", "如果买新的，就修旧的。"]
+            }
+          ]
+        },
+        {
+          "id": "gr-HSK6-u1-l3",
+          "title": "Cấu trúc 之所以...是因为... (sở dĩ... là vì...)",
+          "order": 3,
+          "exercises": [
+            {
+              "type": "fill_blank",
+              "sentence": "他___能成功，是因为他付出了别人看不到的努力。",
+              "blank": "之所以",
+              "options": ["之所以", "尽管如此", "不仅如此", "总而言之"],
+              "hint": "之所以 (zhīsuǒyǐ): sở dĩ, đặt trước kết quả, đi với 是因为"
+            },
+            {
+              "type": "fill_blank",
+              "sentence": "我之所以迟到，___路上堵车堵得厉害。",
+              "blank": "是因为",
+              "options": ["是因为", "于是", "因此", "结果"],
+              "hint": "之所以 kết hợp với 是因为 (shì yīnwèi) để nêu nguyên nhân ở vế sau"
+            },
+            {
+              "type": "sentence_order",
+              "words": ["他", "之所以", "进步", "快", "是因为", "勤奋"],
+              "answer": "他之所以进步快是因为勤奋",
+              "meaning": "Sở dĩ anh ấy tiến bộ nhanh là vì siêng năng"
+            },
+            {
+              "type": "translate",
+              "direction": "vi_to_zh",
+              "prompt": "Sở dĩ tôi thích thành phố này là vì ở đây rất yên tĩnh.",
+              "answer": "我之所以喜欢这座城市，是因为这里很安静。",
+              "options": ["我之所以喜欢这座城市，是因为这里很安静。", "我虽然喜欢这座城市，但是这里很吵。", "我如果喜欢这座城市，就因为这里很安静。", "我不但喜欢这座城市，而且这里很安静。"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gr-HSK6-u2",
+      "title": "Cấu trúc nhấn mạnh và thành ngữ thư diện",
+      "titleZh": "强调结构与书面表达",
+      "hskLevel": "HSK6",
+      "order": 2,
+      "lessons": [
+        {
+          "id": "gr-HSK6-u2-l1",
+          "title": "Cấu trúc nhấn mạnh 是...的 với thành phần nhấn mạnh",
+          "order": 1,
+          "exercises": [
+            {
+              "type": "fill_blank",
+              "sentence": "这个决定___经过反复讨论才做出的。",
+              "blank": "是",
+              "options": ["是", "被", "把", "让"],
+              "hint": "Cấu trúc 是...的 dùng để nhấn mạnh thời gian, địa điểm, cách thức; 是 đặt trước thành phần nhấn mạnh"
+            },
+            {
+              "type": "fill_blank",
+              "sentence": "他是去年从国外回来___。",
+              "blank": "的",
+              "options": ["的", "了", "过", "着"],
+              "hint": "Cấu trúc 是...的 kết thúc bằng 的 (de), nhấn mạnh hành động đã xảy ra trong quá khứ"
+            },
+            {
+              "type": "sentence_order",
+              "words": ["这", "幅", "画", "是", "他", "画", "的"],
+              "answer": "这幅画是他画的",
+              "meaning": "Bức tranh này là do anh ấy vẽ"
+            },
+            {
+              "type": "translate",
+              "direction": "vi_to_zh",
+              "prompt": "Tôi đến đây bằng tàu cao tốc.",
+              "answer": "我是坐高铁来的。",
+              "options": ["我是坐高铁来的。", "我坐高铁来了。", "我被高铁来的。", "我把高铁坐来的。"]
+            }
+          ]
+        },
+        {
+          "id": "gr-HSK6-u2-l2",
+          "title": "Cấu trúc 一...就... và 越...越... mở rộng",
+          "order": 2,
+          "exercises": [
+            {
+              "type": "fill_blank",
+              "sentence": "他这个人很敏感，别人___说他几句，他就受不了。",
+              "blank": "一",
+              "options": ["一", "再", "刚", "才"],
+              "hint": "Cấu trúc 一...就... (yī...jiù...): vừa... liền..., biểu thị hai việc xảy ra liền nhau"
+            },
+            {
+              "type": "fill_blank",
+              "sentence": "这件事越想___复杂，干脆别想了。",
+              "blank": "越",
+              "options": ["越", "更", "最", "太"],
+              "hint": "Cấu trúc 越...越... (yuè...yuè...): càng... càng..., biểu thị mức độ tăng theo nhau"
+            },
+            {
+              "type": "sentence_order",
+              "words": ["雨", "越", "下", "越", "大", "了"],
+              "answer": "雨越下越大了",
+              "meaning": "Mưa càng lúc càng to"
+            },
+            {
+              "type": "translate",
+              "direction": "vi_to_zh",
+              "prompt": "Anh ấy vừa nghe xong liền hiểu ngay.",
+              "answer": "他一听就明白了。",
+              "options": ["他一听就明白了。", "他越听越明白了。", "他一听才明白了。", "他刚听就不明白了。"]
+            }
+          ]
+        },
+        {
+          "id": "gr-HSK6-u2-l3",
+          "title": "Cấu trúc 无论...都/也... (bất kể... đều...)",
+          "order": 3,
+          "exercises": [
+            {
+              "type": "fill_blank",
+              "sentence": "___遇到什么困难，他都能冷静地面对。",
+              "blank": "无论",
+              "options": ["无论", "因为", "由于", "既然"],
+              "hint": "无论 (wúlùn): bất kể, biểu thị điều kiện không thay đổi kết quả, đi với 都 hoặc 也"
+            },
+            {
+              "type": "fill_blank",
+              "sentence": "无论你怎么劝，他___不会改变主意。",
+              "blank": "都",
+              "options": ["都", "就", "才", "再"],
+              "hint": "无论 thường kết hợp với 都 (dōu) hoặc 也 ở vế sau"
+            },
+            {
+              "type": "sentence_order",
+              "words": ["无论", "多", "晚", "他", "都", "会", "回家"],
+              "answer": "无论多晚他都会回家",
+              "meaning": "Bất kể muộn thế nào anh ấy đều sẽ về nhà"
+            },
+            {
+              "type": "translate",
+              "direction": "vi_to_zh",
+              "prompt": "Bất kể là ai, đều phải tuân thủ quy định.",
+              "answer": "无论是谁，都得遵守规定。",
+              "options": ["无论是谁，都得遵守规定。", "因为是谁，所以遵守规定。", "如果是谁，就遵守规定。", "虽然是谁，但是遵守规定。"]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

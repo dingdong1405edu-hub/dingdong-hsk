@@ -1,0 +1,198 @@
+{
+  "kind": "hanzi",
+  "characters": [
+    {
+      "id": "hz-HSK5-1",
+      "character": "鼓",
+      "pinyin": "gǔ",
+      "tone": 3,
+      "meaning": "Cái trống; cổ vũ",
+      "hskLevel": "HSK5",
+      "strokeCount": 13,
+      "examples": [
+        { "sentence": "鼓励", "pinyin": "gǔ lì", "meaning": "Cổ vũ, khuyến khích" },
+        { "sentence": "打鼓", "pinyin": "dǎ gǔ", "meaning": "Đánh trống" }
+      ]
+    },
+    {
+      "id": "hz-HSK5-2",
+      "character": "研",
+      "pinyin": "yán",
+      "tone": 2,
+      "meaning": "Nghiên cứu",
+      "hskLevel": "HSK5",
+      "strokeCount": 9,
+      "examples": [
+        { "sentence": "研究", "pinyin": "yán jiū", "meaning": "Nghiên cứu" }
+      ]
+    },
+    {
+      "id": "hz-HSK5-3",
+      "character": "察",
+      "pinyin": "chá",
+      "tone": 2,
+      "meaning": "Quan sát, xem xét",
+      "hskLevel": "HSK5",
+      "strokeCount": 14,
+      "examples": [
+        { "sentence": "观察", "pinyin": "guān chá", "meaning": "Quan sát" }
+      ]
+    },
+    {
+      "id": "hz-HSK5-4",
+      "character": "估",
+      "pinyin": "gū",
+      "tone": 1,
+      "meaning": "Ước lượng, đánh giá",
+      "hskLevel": "HSK5",
+      "strokeCount": 7,
+      "examples": [
+        { "sentence": "估计", "pinyin": "gū jì", "meaning": "Ước tính, dự đoán" }
+      ]
+    },
+    {
+      "id": "hz-HSK5-5",
+      "character": "操",
+      "pinyin": "cāo",
+      "tone": 1,
+      "meaning": "Thao tác, vận hành",
+      "hskLevel": "HSK5",
+      "strokeCount": 16,
+      "examples": [
+        { "sentence": "操作", "pinyin": "cāo zuò", "meaning": "Thao tác, vận hành" }
+      ]
+    },
+    {
+      "id": "hz-HSK5-6",
+      "character": "派",
+      "pinyin": "pài",
+      "tone": 4,
+      "meaning": "Phái, cử đi; phe phái",
+      "hskLevel": "HSK5",
+      "strokeCount": 9,
+      "examples": [
+        { "sentence": "派出", "pinyin": "pài chū", "meaning": "Cử đi, phái đi" }
+      ]
+    },
+    {
+      "id": "hz-HSK5-7",
+      "character": "论",
+      "pinyin": "lùn",
+      "tone": 4,
+      "meaning": "Bàn luận, lý luận",
+      "hskLevel": "HSK5",
+      "strokeCount": 6,
+      "examples": [
+        { "sentence": "讨论", "pinyin": "tǎo lùn", "meaning": "Thảo luận" }
+      ]
+    },
+    {
+      "id": "hz-HSK5-8",
+      "character": "络",
+      "pinyin": "luò",
+      "tone": 4,
+      "meaning": "Mạng, mạng lưới",
+      "hskLevel": "HSK5",
+      "strokeCount": 9,
+      "examples": [
+        { "sentence": "网络", "pinyin": "wǎng luò", "meaning": "Mạng, internet" }
+      ]
+    },
+    {
+      "id": "hz-HSK5-9",
+      "character": "促",
+      "pinyin": "cù",
+      "tone": 4,
+      "meaning": "Thúc đẩy, đôn đốc",
+      "hskLevel": "HSK5",
+      "strokeCount": 9,
+      "examples": [
+        { "sentence": "促进", "pinyin": "cù jìn", "meaning": "Thúc đẩy" }
+      ]
+    },
+    {
+      "id": "hz-HSK5-10",
+      "character": "缺",
+      "pinyin": "quē",
+      "tone": 1,
+      "meaning": "Thiếu, khuyết",
+      "hskLevel": "HSK5",
+      "strokeCount": 10,
+      "examples": [
+        { "sentence": "缺点", "pinyin": "quē diǎn", "meaning": "Khuyết điểm, nhược điểm" }
+      ]
+    },
+    {
+      "id": "hz-HSK5-11",
+      "character": "羡",
+      "pinyin": "xiàn",
+      "tone": 4,
+      "meaning": "Ngưỡng mộ, ghen tị",
+      "hskLevel": "HSK5",
+      "strokeCount": 12,
+      "examples": [
+        { "sentence": "羡慕", "pinyin": "xiàn mù", "meaning": "Ngưỡng mộ, hâm mộ" }
+      ]
+    },
+    {
+      "id": "hz-HSK5-12",
+      "character": "蹈",
+      "pinyin": "dǎo",
+      "tone": 3,
+      "meaning": "Nhảy, múa",
+      "hskLevel": "HSK5",
+      "strokeCount": 17,
+      "examples": [
+        { "sentence": "舞蹈", "pinyin": "wǔ dǎo", "meaning": "Vũ đạo, múa" }
+      ]
+    },
+    {
+      "id": "hz-HSK5-13",
+      "character": "宝",
+      "pinyin": "bǎo",
+      "tone": 3,
+      "meaning": "Báu vật, quý giá",
+      "hskLevel": "HSK5",
+      "strokeCount": 8,
+      "examples": [
+        { "sentence": "宝贵", "pinyin": "bǎo guì", "meaning": "Quý báu" }
+      ]
+    },
+    {
+      "id": "hz-HSK5-14",
+      "character": "考",
+      "pinyin": "kǎo",
+      "tone": 3,
+      "meaning": "Tham khảo, khảo cứu; thi",
+      "hskLevel": "HSK5",
+      "strokeCount": 6,
+      "examples": [
+        { "sentence": "参考", "pinyin": "cān kǎo", "meaning": "Tham khảo" }
+      ]
+    },
+    {
+      "id": "hz-HSK5-15",
+      "character": "辑",
+      "pinyin": "jí",
+      "tone": 2,
+      "meaning": "Biên tập, tập hợp",
+      "hskLevel": "HSK5",
+      "strokeCount": 16,
+      "examples": [
+        { "sentence": "编辑", "pinyin": "biān jí", "meaning": "Biên tập" }
+      ]
+    },
+    {
+      "id": "hz-HSK5-16",
+      "character": "措",
+      "pinyin": "cuò",
+      "tone": 4,
+      "meaning": "Sắp xếp, biện pháp",
+      "hskLevel": "HSK5",
+      "strokeCount": 11,
+      "examples": [
+        { "sentence": "措施", "pinyin": "cuò shī", "meaning": "Biện pháp" }
+      ]
+    }
+  ]
+}

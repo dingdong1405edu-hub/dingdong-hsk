@@ -1,0 +1,197 @@
+{
+  "kind": "hanzi",
+  "characters": [
+    {
+      "id": "hz-HSK3-1",
+      "character": "比",
+      "pinyin": "bǐ",
+      "tone": 3,
+      "meaning": "So sánh; so với",
+      "hskLevel": "HSK3",
+      "strokeCount": 4,
+      "examples": [
+        { "sentence": "我比你高", "pinyin": "wǒ bǐ nǐ gāo", "meaning": "Tôi cao hơn bạn" }
+      ]
+    },
+    {
+      "id": "hz-HSK3-2",
+      "character": "完",
+      "pinyin": "wán",
+      "tone": 2,
+      "meaning": "Xong; hoàn thành; hết",
+      "hskLevel": "HSK3",
+      "strokeCount": 7,
+      "examples": [
+        { "sentence": "我吃完了", "pinyin": "wǒ chī wán le", "meaning": "Tôi ăn xong rồi" }
+      ]
+    },
+    {
+      "id": "hz-HSK3-3",
+      "character": "新",
+      "pinyin": "xīn",
+      "tone": 1,
+      "meaning": "Mới",
+      "hskLevel": "HSK3",
+      "strokeCount": 13,
+      "examples": [
+        { "sentence": "新衣服", "pinyin": "xīn yī fu", "meaning": "Quần áo mới" }
+      ]
+    },
+    {
+      "id": "hz-HSK3-4",
+      "character": "短",
+      "pinyin": "duǎn",
+      "tone": 3,
+      "meaning": "Ngắn",
+      "hskLevel": "HSK3",
+      "strokeCount": 12,
+      "examples": [
+        { "sentence": "这条路很短", "pinyin": "zhè tiáo lù hěn duǎn", "meaning": "Con đường này rất ngắn" }
+      ]
+    },
+    {
+      "id": "hz-HSK3-5",
+      "character": "城",
+      "pinyin": "chéng",
+      "tone": 2,
+      "meaning": "Thành; thành phố",
+      "hskLevel": "HSK3",
+      "strokeCount": 9,
+      "examples": [
+        { "sentence": "城市很大", "pinyin": "chéng shì hěn dà", "meaning": "Thành phố rất lớn" }
+      ]
+    },
+    {
+      "id": "hz-HSK3-6",
+      "character": "晴",
+      "pinyin": "qíng",
+      "tone": 2,
+      "meaning": "Trời quang; nắng ráo",
+      "hskLevel": "HSK3",
+      "strokeCount": 12,
+      "examples": [
+        { "sentence": "今天天晴", "pinyin": "jīn tiān tiān qíng", "meaning": "Hôm nay trời nắng đẹp" }
+      ]
+    },
+    {
+      "id": "hz-HSK3-7",
+      "character": "经",
+      "pinyin": "jīng",
+      "tone": 1,
+      "meaning": "Trải qua; (đã) từng",
+      "hskLevel": "HSK3",
+      "strokeCount": 8,
+      "examples": [
+        { "sentence": "我已经知道了", "pinyin": "wǒ yǐ jīng zhī dào le", "meaning": "Tôi đã biết rồi" }
+      ]
+    },
+    {
+      "id": "hz-HSK3-8",
+      "character": "向",
+      "pinyin": "xiàng",
+      "tone": 4,
+      "meaning": "Hướng về; về phía",
+      "hskLevel": "HSK3",
+      "strokeCount": 6,
+      "examples": [
+        { "sentence": "向左走", "pinyin": "xiàng zuǒ zǒu", "meaning": "Đi về bên trái" }
+      ]
+    },
+    {
+      "id": "hz-HSK3-9",
+      "character": "季",
+      "pinyin": "jì",
+      "tone": 4,
+      "meaning": "Mùa; quý (thời gian)",
+      "hskLevel": "HSK3",
+      "strokeCount": 8,
+      "examples": [
+        { "sentence": "春季很暖和", "pinyin": "chūn jì hěn nuǎn huo", "meaning": "Mùa xuân rất ấm áp" }
+      ]
+    },
+    {
+      "id": "hz-HSK3-10",
+      "character": "图",
+      "pinyin": "tú",
+      "tone": 2,
+      "meaning": "Bản đồ; hình vẽ",
+      "hskLevel": "HSK3",
+      "strokeCount": 8,
+      "examples": [
+        { "sentence": "图书馆", "pinyin": "tú shū guǎn", "meaning": "Thư viện" }
+      ]
+    },
+    {
+      "id": "hz-HSK3-11",
+      "character": "关",
+      "pinyin": "guān",
+      "tone": 1,
+      "meaning": "Đóng; tắt; liên quan",
+      "hskLevel": "HSK3",
+      "strokeCount": 6,
+      "examples": [
+        { "sentence": "请关门", "pinyin": "qǐng guān mén", "meaning": "Xin hãy đóng cửa" }
+      ]
+    },
+    {
+      "id": "hz-HSK3-12",
+      "character": "需",
+      "pinyin": "xū",
+      "tone": 1,
+      "meaning": "Cần; cần thiết",
+      "hskLevel": "HSK3",
+      "strokeCount": 14,
+      "examples": [
+        { "sentence": "我需要帮助", "pinyin": "wǒ xū yào bāng zhù", "meaning": "Tôi cần sự giúp đỡ" }
+      ]
+    },
+    {
+      "id": "hz-HSK3-13",
+      "character": "节",
+      "pinyin": "jié",
+      "tone": 2,
+      "meaning": "Ngày lễ; tiết (mục)",
+      "hskLevel": "HSK3",
+      "strokeCount": 5,
+      "examples": [
+        { "sentence": "春节快乐", "pinyin": "chūn jié kuài lè", "meaning": "Chúc mừng năm mới" }
+      ]
+    },
+    {
+      "id": "hz-HSK3-14",
+      "character": "选",
+      "pinyin": "xuǎn",
+      "tone": 3,
+      "meaning": "Chọn; lựa chọn",
+      "hskLevel": "HSK3",
+      "strokeCount": 9,
+      "examples": [
+        { "sentence": "请选一个", "pinyin": "qǐng xuǎn yí gè", "meaning": "Xin hãy chọn một cái" }
+      ]
+    },
+    {
+      "id": "hz-HSK3-15",
+      "character": "近",
+      "pinyin": "jìn",
+      "tone": 4,
+      "meaning": "Gần",
+      "hskLevel": "HSK3",
+      "strokeCount": 7,
+      "examples": [
+        { "sentence": "我家很近", "pinyin": "wǒ jiā hěn jìn", "meaning": "Nhà tôi rất gần" }
+      ]
+    },
+    {
+      "id": "hz-HSK3-16",
+      "character": "界",
+      "pinyin": "jiè",
+      "tone": 4,
+      "meaning": "Giới; ranh giới (thế giới)",
+      "hskLevel": "HSK3",
+      "strokeCount": 9,
+      "examples": [
+        { "sentence": "世界很大", "pinyin": "shì jiè hěn dà", "meaning": "Thế giới rất rộng lớn" }
+      ]
+    }
+  ]
+}

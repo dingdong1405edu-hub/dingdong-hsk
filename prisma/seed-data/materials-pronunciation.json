@@ -1,0 +1,383 @@
+{
+  "kind": "materials",
+  "materials": [
+    {
+      "id": "mt-PRONUNCIATION-1",
+      "title": "Bốn thanh điệu trong tiếng Trung cho người mới bắt đầu",
+      "titleZh": "汉语四声入门",
+      "category": "PRONUNCIATION",
+      "hskLevel": "HSK1",
+      "summary": "Giới thiệu bốn thanh điệu cơ bản của tiếng phổ thông, cách đọc và những lỗi thường gặp ở người Việt mới học.",
+      "readMinutes": 6,
+      "order": 1,
+      "tags": ["thanh điệu", "pinyin", "HSK1"],
+      "content": [
+        {
+          "type": "heading",
+          "text": "Tiếng Trung có mấy thanh điệu?",
+          "zh": "汉语有几个声调？"
+        },
+        {
+          "type": "paragraph",
+          "text": "Tiếng phổ thông Trung Quốc có bốn thanh điệu chính cộng thêm một thanh nhẹ (thanh số 0). Khác với tiếng Việt có sáu thanh, thanh điệu tiếng Trung được đánh dấu ngay trên nguyên âm chính của âm tiết. Đọc đúng thanh điệu là điều bắt buộc, vì cùng một âm nhưng thanh khác nhau sẽ mang nghĩa hoàn toàn khác."
+        },
+        {
+          "type": "list",
+          "items": [
+            "Thanh 1 (¯): cao và bằng phẳng, giữ đều giọng từ đầu đến cuối.",
+            "Thanh 2 (´): đi lên, giống như khi ta hỏi lại 'Hả?' bằng giọng đi lên.",
+            "Thanh 3 (ˇ): xuống rồi lên, giọng trầm hẳn xuống đáy rồi nhích lên.",
+            "Thanh 4 (`): đi xuống dứt khoát, giống như ra lệnh hoặc khi nói 'Không!'."
+          ]
+        },
+        {
+          "type": "example",
+          "zh": "妈",
+          "pinyin": "mā",
+          "vi": "mẹ (thanh 1, cao bằng)"
+        },
+        {
+          "type": "example",
+          "zh": "麻",
+          "pinyin": "má",
+          "vi": "cây gai / tê (thanh 2, đi lên)"
+        },
+        {
+          "type": "example",
+          "zh": "马",
+          "pinyin": "mǎ",
+          "vi": "con ngựa (thanh 3, xuống rồi lên)"
+        },
+        {
+          "type": "example",
+          "zh": "骂",
+          "pinyin": "mà",
+          "vi": "mắng, chửi (thanh 4, đi xuống)"
+        },
+        {
+          "type": "vocab",
+          "items": [
+            { "zh": "你好", "pinyin": "nǐ hǎo", "vi": "Xin chào" },
+            { "zh": "谢谢", "pinyin": "xièxie", "vi": "Cảm ơn" },
+            { "zh": "老师", "pinyin": "lǎoshī", "vi": "Giáo viên" }
+          ]
+        },
+        {
+          "type": "note",
+          "text": "Lỗi phổ biến của người Việt: đọc thanh 1 không đủ cao và đủ bằng, thường bị hạ giọng ở cuối. Hãy giữ giọng cao và đều như khi hát một nốt nhạc kéo dài."
+        },
+        {
+          "type": "note",
+          "text": "Đừng nhầm thanh 3 với thanh hỏi tiếng Việt. Thanh 3 tiếng Trung phải xuống thật sâu trước rồi mới nhích lên, không phải chỉ gãy nhẹ ở giữa."
+        }
+      ]
+    },
+    {
+      "id": "mt-PRONUNCIATION-2",
+      "title": "Phụ âm đầu và vần: làm chủ pinyin",
+      "titleZh": "声母和韵母",
+      "category": "PRONUNCIATION",
+      "hskLevel": "HSK2",
+      "summary": "Phân biệt phụ âm đầu (thanh mẫu) và vần (vận mẫu), tập trung vào các cặp âm dễ lẫn với người Việt.",
+      "readMinutes": 7,
+      "order": 2,
+      "tags": ["phụ âm đầu", "vần", "pinyin", "HSK2"],
+      "content": [
+        {
+          "type": "heading",
+          "text": "Cấu trúc một âm tiết tiếng Trung",
+          "zh": "汉语音节的结构"
+        },
+        {
+          "type": "paragraph",
+          "text": "Mỗi âm tiết tiếng Trung thường gồm ba phần: phụ âm đầu (thanh mẫu), vần (vận mẫu) và thanh điệu. Ví dụ trong từ 'hǎo', 'h' là phụ âm đầu, 'ao' là vần, và dấu ˇ là thanh điệu. Có những âm tiết không có phụ âm đầu, chỉ gồm vần, ví dụ 'ài' (爱)."
+        },
+        {
+          "type": "heading",
+          "text": "Các cặp phụ âm đầu dễ nhầm",
+          "zh": "容易混淆的声母"
+        },
+        {
+          "type": "list",
+          "items": [
+            "b / p: 'b' không bật hơi (giống 'p' tiếng Việt nhẹ), 'p' bật hơi mạnh.",
+            "d / t: 'd' không bật hơi, 't' bật hơi mạnh.",
+            "g / k: 'g' không bật hơi, 'k' bật hơi mạnh.",
+            "z / c / s: âm uốn lưỡi phẳng, 'c' bật hơi mạnh.",
+            "zh / ch / sh / r: âm cong lưỡi, đầu lưỡi cuốn lên vòm miệng."
+          ]
+        },
+        {
+          "type": "example",
+          "zh": "爸爸",
+          "pinyin": "bàba",
+          "vi": "Bố (b không bật hơi)"
+        },
+        {
+          "type": "example",
+          "zh": "漂亮",
+          "pinyin": "piàoliang",
+          "vi": "Đẹp (p bật hơi mạnh)"
+        },
+        {
+          "type": "example",
+          "zh": "中国",
+          "pinyin": "zhōngguó",
+          "vi": "Trung Quốc (zh cong lưỡi)"
+        },
+        {
+          "type": "vocab",
+          "items": [
+            { "zh": "吃饭", "pinyin": "chīfàn", "vi": "Ăn cơm" },
+            { "zh": "时间", "pinyin": "shíjiān", "vi": "Thời gian" },
+            { "zh": "知道", "pinyin": "zhīdào", "vi": "Biết" }
+          ]
+        },
+        {
+          "type": "note",
+          "text": "Người Việt thường phát âm zh, ch, sh giống z, c, s vì tiếng Việt không có âm cong lưỡi. Hãy cuốn nhẹ đầu lưỡi ra sau, không chạm răng, để tạo âm 'zh/ch/sh'."
+        },
+        {
+          "type": "note",
+          "text": "Phân biệt bật hơi rất quan trọng: 'b' và 'p' không khác nhau ở việc đục hay trong, mà ở luồng hơi. Đặt tờ giấy trước miệng, khi đọc 'p' giấy phải rung, khi đọc 'b' thì không."
+        }
+      ]
+    },
+    {
+      "id": "mt-PRONUNCIATION-3",
+      "title": "Biến điệu của thanh 3 và quy tắc của 不, 一",
+      "titleZh": "三声变调与不、一的变调",
+      "category": "PRONUNCIATION",
+      "hskLevel": "HSK3",
+      "summary": "Giải thích hiện tượng biến điệu (tone sandhi) khi hai thanh 3 đứng cạnh nhau và quy tắc đổi thanh của 不 và 一.",
+      "readMinutes": 8,
+      "order": 3,
+      "tags": ["biến điệu", "tone sandhi", "thanh 3", "HSK3"],
+      "content": [
+        {
+          "type": "heading",
+          "text": "Biến điệu là gì?",
+          "zh": "什么是变调？"
+        },
+        {
+          "type": "paragraph",
+          "text": "Biến điệu (tone sandhi) là hiện tượng thanh điệu của một chữ thay đổi khi đặt cạnh chữ khác, để câu nói trôi chảy hơn. Thanh điệu trong từ điển vẫn giữ nguyên, nhưng khi đọc thực tế ta phải đổi. Đây là điểm mà nhiều người học bỏ qua nên nói nghe rất cứng."
+        },
+        {
+          "type": "heading",
+          "text": "Hai thanh 3 đứng cạnh nhau",
+          "zh": "两个三声相连"
+        },
+        {
+          "type": "paragraph",
+          "text": "Khi hai âm tiết thanh 3 đứng liền nhau, âm tiết thứ nhất đọc thành thanh 2. Ví dụ 'nǐ hǎo' khi nói thực tế phát âm gần như 'ní hǎo'. Cách viết pinyin vẫn giữ hai dấu thanh 3, chỉ riêng cách đọc thay đổi."
+        },
+        {
+          "type": "example",
+          "zh": "你好",
+          "pinyin": "nǐ hǎo",
+          "vi": "Xin chào (đọc thành 'ní hǎo')"
+        },
+        {
+          "type": "example",
+          "zh": "很好",
+          "pinyin": "hěn hǎo",
+          "vi": "Rất tốt (đọc thành 'hén hǎo')"
+        },
+        {
+          "type": "heading",
+          "text": "Biến điệu của 不 (bù)",
+          "zh": "不的变调"
+        },
+        {
+          "type": "list",
+          "items": [
+            "不 đọc là 'bù' (thanh 4) khi đứng trước thanh 1, 2, 3.",
+            "不 đổi thành 'bú' (thanh 2) khi đứng trước một âm tiết thanh 4."
+          ]
+        },
+        {
+          "type": "example",
+          "zh": "不是",
+          "pinyin": "bú shì",
+          "vi": "Không phải (不 đổi thành thanh 2 trước thanh 4)"
+        },
+        {
+          "type": "example",
+          "zh": "一个",
+          "pinyin": "yí ge",
+          "vi": "Một cái (一 đổi thành thanh 2 trước thanh 4)"
+        },
+        {
+          "type": "list",
+          "items": [
+            "一 đọc là 'yī' (thanh 1) khi đứng riêng hoặc đọc số đếm.",
+            "一 đổi thành 'yí' (thanh 2) khi đứng trước âm tiết thanh 4.",
+            "一 đổi thành 'yì' (thanh 4) khi đứng trước thanh 1, 2, 3."
+          ]
+        },
+        {
+          "type": "note",
+          "text": "Mẹo nhớ: cả 不 và 一 đều 'né' thanh 4 của chữ phía sau bằng cách tự đổi thành thanh 2. Riêng 一 còn đổi thành thanh 4 trước các thanh khác để câu nghe rõ ràng hơn."
+        }
+      ]
+    },
+    {
+      "id": "mt-PRONUNCIATION-4",
+      "title": "Thanh nhẹ và hiện tượng 儿化",
+      "titleZh": "轻声与儿化",
+      "category": "PRONUNCIATION",
+      "hskLevel": "HSK4",
+      "summary": "Tìm hiểu thanh nhẹ (khinh thanh) và hiện tượng uốn lưỡi 儿化, hai đặc trưng quan trọng của tiếng phổ thông chuẩn Bắc Kinh.",
+      "readMinutes": 8,
+      "order": 4,
+      "tags": ["thanh nhẹ", "儿化", "phát âm", "HSK4"],
+      "content": [
+        {
+          "type": "heading",
+          "text": "Thanh nhẹ (khinh thanh)",
+          "zh": "轻声"
+        },
+        {
+          "type": "paragraph",
+          "text": "Thanh nhẹ là âm tiết được đọc ngắn, nhẹ và không có thanh điệu rõ ràng. Trong pinyin, thanh nhẹ không mang dấu thanh. Độ cao của thanh nhẹ phụ thuộc vào thanh điệu của âm tiết đứng trước nó. Nhiều trợ từ, âm tiết lặp lại và một số hậu tố thường đọc thanh nhẹ."
+        },
+        {
+          "type": "list",
+          "items": [
+            "Trợ từ ngữ khí: 吗 (ma), 呢 (ne), 吧 (ba).",
+            "Trợ từ kết cấu: 的 (de), 了 (le), 地 (de), 得 (de).",
+            "Âm tiết thứ hai trong từ lặp: 妈妈 (māma), 谢谢 (xièxie).",
+            "Một số hậu tố: 子 trong 桌子 (zhuōzi), 头 trong 木头 (mùtou)."
+          ]
+        },
+        {
+          "type": "example",
+          "zh": "他是学生吗？",
+          "pinyin": "tā shì xuésheng ma?",
+          "vi": "Anh ấy là học sinh à? (吗 đọc thanh nhẹ)"
+        },
+        {
+          "type": "example",
+          "zh": "我吃了",
+          "pinyin": "wǒ chī le",
+          "vi": "Tôi ăn rồi (了 đọc thanh nhẹ)"
+        },
+        {
+          "type": "heading",
+          "text": "Hiện tượng 儿化 (nhi hóa)",
+          "zh": "儿化"
+        },
+        {
+          "type": "paragraph",
+          "text": "儿化 là hiện tượng thêm âm uốn lưỡi 'r' vào cuối âm tiết, thường mang sắc thái thân mật, nhỏ bé hoặc khẩu ngữ. Trong pinyin ta thêm 'r' vào cuối, ví dụ 'huā' thành 'huār'. Khi đọc, đầu lưỡi cuốn lên ở cuối âm tiết, đôi khi một số phụ âm cuối hoặc nguyên âm bị lược đi."
+        },
+        {
+          "type": "vocab",
+          "items": [
+            { "zh": "一点儿", "pinyin": "yìdiǎnr", "vi": "Một chút" },
+            { "zh": "玩儿", "pinyin": "wánr", "vi": "Chơi" },
+            { "zh": "这儿", "pinyin": "zhèr", "vi": "Ở đây" },
+            { "zh": "哪儿", "pinyin": "nǎr", "vi": "Ở đâu" }
+          ]
+        },
+        {
+          "type": "note",
+          "text": "儿化 phổ biến ở giọng Bắc Kinh và miền Bắc. Người miền Nam Trung Quốc dùng ít hơn. Người học không bắt buộc dùng 儿化 ở mọi nơi, nhưng cần nghe hiểu vì nó xuất hiện rất nhiều trong khẩu ngữ và phim ảnh."
+        },
+        {
+          "type": "note",
+          "text": "Lưu ý: 'r' trong 儿化 không phát âm tách rời thành một âm tiết riêng. Nó hòa vào âm tiết phía trước, ví dụ 'wánr' chỉ là một âm tiết chứ không phải 'wán-er'."
+        }
+      ]
+    },
+    {
+      "id": "mt-PRONUNCIATION-5",
+      "title": "Những lỗi phát âm điển hình của người Việt và cách sửa",
+      "titleZh": "越南学习者常见发音错误及纠正",
+      "category": "PRONUNCIATION",
+      "hskLevel": "HSK5",
+      "summary": "Phân tích sâu các lỗi phát âm mang tính hệ thống của người Việt và đưa ra phương pháp luyện tập để đạt phát âm chuẩn.",
+      "readMinutes": 9,
+      "order": 5,
+      "tags": ["lỗi phát âm", "luyện âm", "người Việt", "HSK5"],
+      "content": [
+        {
+          "type": "heading",
+          "text": "Vì sao người Việt hay mắc lỗi cố định?",
+          "zh": "为什么越南学习者常有固定错误？"
+        },
+        {
+          "type": "paragraph",
+          "text": "Tiếng Việt và tiếng Trung đều có thanh điệu, điều này giúp người Việt học thanh điệu nhanh hơn người dùng ngôn ngữ không có thanh. Tuy nhiên chính sự giống nhau lại gây ra lỗi 'chuyển di tiêu cực': người học vô thức áp dụng thói quen âm vị tiếng Việt vào tiếng Trung, dẫn đến những lỗi cố định khó sửa nếu không chú ý."
+        },
+        {
+          "type": "heading",
+          "text": "Lỗi 1: Âm cong lưỡi và âm phẳng",
+          "zh": "错误一：翘舌音和平舌音"
+        },
+        {
+          "type": "paragraph",
+          "text": "Tiếng Việt không có loạt âm cong lưỡi zh, ch, sh, r nên người học thường thay bằng âm gần giống của tiếng Việt. Kết quả là 'shì' (是) bị đọc thành âm giống 'x_' hoặc 's' phẳng, làm người nghe khó phân biệt với 'sì' (四)."
+        },
+        {
+          "type": "example",
+          "zh": "四是四，十是十",
+          "pinyin": "sì shì sì, shí shì shí",
+          "vi": "Bốn là bốn, mười là mười (bài luyện phân biệt s và sh)"
+        },
+        {
+          "type": "heading",
+          "text": "Lỗi 2: Phụ âm cuối -n và -ng",
+          "zh": "错误二：前鼻音和后鼻音"
+        },
+        {
+          "type": "paragraph",
+          "text": "Tiếng Việt có phân biệt -n và -ng nhưng cách cấu âm hơi khác. Người học cần chú ý: với -n đầu lưỡi chạm lợi trên, miệng khép hơn; với -ng gốc lưỡi nâng lên vòm mềm, miệng mở hơn. Đọc sai sẽ biến 'xīn' (新, mới) thành 'xīng' (星, sao)."
+        },
+        {
+          "type": "vocab",
+          "items": [
+            { "zh": "新", "pinyin": "xīn", "vi": "Mới (vần -n)" },
+            { "zh": "星", "pinyin": "xīng", "vi": "Sao (vần -ng)" },
+            { "zh": "因", "pinyin": "yīn", "vi": "Nguyên nhân (vần -n)" },
+            { "zh": "应", "pinyin": "yīng", "vi": "Nên (vần -ng)" }
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Lỗi 3: Vần ü và sự lẫn lộn với u",
+          "zh": "错误三：ü 和 u 的混淆"
+        },
+        {
+          "type": "paragraph",
+          "text": "Âm 'ü' đọc bằng cách giữ lưỡi ở vị trí 'i' nhưng tròn môi như khi đọc 'u'. Người Việt hay đọc 'ü' thành 'u' bình thường. Cần nhớ sau j, q, x thì 'u' viết không có hai chấm vẫn đọc là 'ü', ví dụ 'jú', 'qù', 'xū'."
+        },
+        {
+          "type": "example",
+          "zh": "下雨了",
+          "pinyin": "xià yǔ le",
+          "vi": "Trời mưa rồi (yǔ chứa âm ü)"
+        },
+        {
+          "type": "heading",
+          "text": "Phương pháp luyện tập",
+          "zh": "练习方法"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Ghi âm giọng mình rồi so sánh với người bản xứ để phát hiện lỗi.",
+            "Luyện các cặp âm tối thiểu (minimal pairs) như sì/shì, xīn/xīng mỗi ngày.",
+            "Đọc chậm và phóng đại khẩu hình trước, sau đó tăng tốc dần.",
+            "Học theo cụm từ và câu, chú ý cả biến điệu chứ không chỉ từng chữ rời."
+          ]
+        },
+        {
+          "type": "note",
+          "text": "Phát âm chuẩn là kỹ năng vận động cơ miệng, không thể chỉ học bằng mắt. Hãy luyện nói thành tiếng mỗi ngày ít nhất 10 phút và nhờ người bản xứ hoặc giáo viên sửa định kỳ."
+        }
+      ]
+    }
+  ]
+}

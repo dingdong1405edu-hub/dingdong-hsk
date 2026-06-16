@@ -1,0 +1,149 @@
+{
+  "kind": "listening",
+  "tests": [
+    {
+      "id": "ls-HSK5-1",
+      "title": "Phỏng vấn xin việc",
+      "hskLevel": "HSK5",
+      "audioUrl": "",
+      "transcript": "A: 张先生，请先简单介绍一下您之前的工作经验吧。\nB: 好的。我大学毕业以后在一家广告公司工作了五年，主要负责市场推广和客户沟通。后来公司业务调整，我才决定换一个新的环境。\nA: 那您觉得自己最大的优点是什么？\nB: 我最大的优点是责任心强。无论遇到多大的压力，我都会想办法按时完成任务，而不是找借口推给别人。\nA: 我们这个岗位经常需要加班，有时候周末也得来公司，您能接受吗？\nB: 说实话，偶尔加班我完全可以接受，毕竟工作总有忙的时候。不过我希望公司能合理安排，把效率放在第一位，而不是单纯地比谁待得晚。\nA: 您的回答很坦率，我很欣赏。那么关于工资方面，您有什么期望吗？\nB: 我相信贵公司会根据我的能力和市场情况给出一个公平的待遇，所以这方面我并不太担心。",
+      "timeLimit": 300,
+      "questions": [
+        {
+          "id": "ls-HSK5-1-q1",
+          "type": "MCQ",
+          "prompt": "张先生大学毕业以后做了什么工作？",
+          "promptPinyin": "Zhāng xiānsheng dàxué bìyè yǐhòu zuò le shénme gōngzuò?",
+          "options": [
+            { "text": "在广告公司负责市场推广", "pinyin": "zài guǎnggào gōngsī fùzé shìchǎng tuīguǎng" },
+            { "text": "在学校当老师", "pinyin": "zài xuéxiào dāng lǎoshī" },
+            { "text": "在银行做客户服务", "pinyin": "zài yínháng zuò kèhù fúwù" },
+            { "text": "自己开了一家公司", "pinyin": "zìjǐ kāi le yì jiā gōngsī" }
+          ],
+          "correctAnswer": { "index": 0 },
+          "explanation": "Ông Trương nói 在一家广告公司工作了五年，主要负责市场推广和客户沟通 (làm việc năm năm ở một công ty quảng cáo, chủ yếu phụ trách quảng bá thị trường và giao tiếp khách hàng). Vậy đáp án là 在广告公司负责市场推广.",
+          "order": 1
+        },
+        {
+          "id": "ls-HSK5-1-q2",
+          "type": "MCQ",
+          "prompt": "张先生认为自己最大的优点是什么？",
+          "promptPinyin": "Zhāng xiānsheng rènwéi zìjǐ zuì dà de yōudiǎn shì shénme?",
+          "options": [
+            { "text": "外语水平很高", "pinyin": "wàiyǔ shuǐpíng hěn gāo" },
+            { "text": "责任心强，会按时完成任务", "pinyin": "zérènxīn qiáng, huì ànshí wánchéng rènwù" },
+            { "text": "很会跟客户聊天", "pinyin": "hěn huì gēn kèhù liáotiān" },
+            { "text": "从来不需要加班", "pinyin": "cónglái bù xūyào jiābān" }
+          ],
+          "correctAnswer": { "index": 1 },
+          "explanation": "Ông Trương nói 我最大的优点是责任心强……我都会想办法按时完成任务 (ưu điểm lớn nhất của tôi là tinh thần trách nhiệm cao, tôi đều sẽ tìm cách hoàn thành nhiệm vụ đúng hạn). Vậy đáp án là 责任心强，会按时完成任务.",
+          "order": 2
+        },
+        {
+          "id": "ls-HSK5-1-q3",
+          "type": "TRUE_FALSE",
+          "prompt": "张先生完全不能接受加班。",
+          "correctAnswer": { "value": false },
+          "explanation": "Ông Trương nói 偶尔加班我完全可以接受 (thỉnh thoảng tăng ca tôi hoàn toàn có thể chấp nhận). Ông ấy CÓ thể chấp nhận tăng ca, chỉ mong sắp xếp hợp lý, nên câu nói 'hoàn toàn không thể chấp nhận' là SAI.",
+          "order": 3
+        }
+      ]
+    },
+    {
+      "id": "ls-HSK5-2",
+      "title": "Tranh luận về mua nhà hay thuê nhà",
+      "hskLevel": "HSK5",
+      "audioUrl": "",
+      "transcript": "A: 小王，听说你最近一直在看房子，是打算买房吗？\nB: 是啊，租房住了这么多年，总觉得不踏实，房东随时可能让我搬走。\nA: 我倒觉得，现在房价这么高，与其把所有积蓄都拿去付首付，不如先把钱投资到别的地方。\nB: 你说得有道理，但是买了自己的房子，心里会更有安全感，而且每个月还的是自己的房贷，不是给别人交租金。\nA: 话是这么说，可是一旦买了房，你就被绑在一个城市了。如果将来有更好的工作机会在外地，搬家就没那么自由了。\nB: 这一点我也考虑过。不过我父母年纪大了，我本来也不打算离开这座城市，所以对我来说，稳定比自由更重要。\nA: 既然你想清楚了，那我支持你。买房毕竟是大事，可一定要量力而行，别让自己压力太大。",
+      "timeLimit": 300,
+      "questions": [
+        {
+          "id": "ls-HSK5-2-q1",
+          "type": "MCQ",
+          "prompt": "小王为什么想买房？",
+          "promptPinyin": "Xiǎo Wáng wèishénme xiǎng mǎi fáng?",
+          "options": [
+            { "text": "因为房价马上要涨", "pinyin": "yīnwèi fángjià mǎshàng yào zhǎng" },
+            { "text": "因为租房不踏实，想要更有安全感", "pinyin": "yīnwèi zū fáng bù tāshi, xiǎng yào gèng yǒu ānquángǎn" },
+            { "text": "因为朋友都买了房", "pinyin": "yīnwèi péngyou dōu mǎi le fáng" },
+            { "text": "因为想搬到别的城市", "pinyin": "yīnwèi xiǎng bān dào bié de chéngshì" }
+          ],
+          "correctAnswer": { "index": 1 },
+          "explanation": "Tiểu Vương nói 租房住了这么多年，总觉得不踏实 và 买了自己的房子，心里会更有安全感 (thuê nhà bao nhiêu năm luôn thấy không yên tâm; có nhà riêng thì trong lòng sẽ có cảm giác an toàn hơn). Vậy đáp án là 因为租房不踏实，想要更有安全感.",
+          "order": 1
+        },
+        {
+          "id": "ls-HSK5-2-q2",
+          "type": "MCQ",
+          "prompt": "A 觉得买房有什么缺点？",
+          "promptPinyin": "A juéde mǎi fáng yǒu shénme quēdiǎn?",
+          "options": [
+            { "text": "房子质量不好", "pinyin": "fángzi zhìliàng bù hǎo" },
+            { "text": "会被绑在一个城市，搬家不自由", "pinyin": "huì bèi bǎng zài yí gè chéngshì, bānjiā bú zìyóu" },
+            { "text": "需要交很多税", "pinyin": "xūyào jiāo hěn duō shuì" },
+            { "text": "父母不同意", "pinyin": "fùmǔ bù tóngyì" }
+          ],
+          "correctAnswer": { "index": 1 },
+          "explanation": "A nói 一旦买了房，你就被绑在一个城市了……搬家就没那么自由了 (một khi mua nhà, bạn sẽ bị trói vào một thành phố, chuyển nhà không còn tự do như vậy). Vậy đáp án là 会被绑在一个城市，搬家不自由.",
+          "order": 2
+        },
+        {
+          "id": "ls-HSK5-2-q3",
+          "type": "TRUE_FALSE",
+          "prompt": "小王打算离开现在这座城市去外地工作。",
+          "correctAnswer": { "value": false },
+          "explanation": "Tiểu Vương nói 我父母年纪大了，我本来也不打算离开这座城市 (bố mẹ tôi tuổi đã cao, vốn dĩ tôi cũng không định rời khỏi thành phố này). Vậy câu nói anh ấy định rời đi nơi khác là SAI.",
+          "order": 3
+        }
+      ]
+    },
+    {
+      "id": "ls-HSK5-3",
+      "title": "Bài nói về tác động của điện thoại thông minh",
+      "hskLevel": "HSK5",
+      "audioUrl": "",
+      "transcript": "各位听众，大家好。今天我想跟大家聊一聊智能手机给我们的生活带来的影响。不可否认，手机让我们的生活变得越来越方便。无论是购物、付款，还是查地图、订车票，几乎所有的事情都能在手机上轻松完成。然而，凡事都有两面性。越来越多的人养成了一种习惯：吃饭时看手机，走路时看手机，甚至睡觉前还要刷一会儿才能放下。这样不仅伤害了我们的眼睛和身体，还在不知不觉中减少了我们和家人面对面交流的时间。有研究表明，长时间盯着屏幕，会让人变得焦虑，注意力也很难集中。因此，我建议大家给自己定个规矩，比如吃饭和睡觉前的一个小时不碰手机。学会放下手机，我们才能真正享受身边的生活。谢谢大家。",
+      "timeLimit": 300,
+      "questions": [
+        {
+          "id": "ls-HSK5-3-q1",
+          "type": "MCQ",
+          "prompt": "说话人认为智能手机有什么好处？",
+          "promptPinyin": "Shuōhuàrén rènwéi zhìnéng shǒujī yǒu shénme hǎochù?",
+          "options": [
+            { "text": "能让人睡得更好", "pinyin": "néng ràng rén shuì de gèng hǎo" },
+            { "text": "让购物、付款等事情变得方便", "pinyin": "ràng gòuwù, fùkuǎn děng shìqing biàn de fāngbiàn" },
+            { "text": "能帮助人减少压力", "pinyin": "néng bāngzhù rén jiǎnshǎo yālì" },
+            { "text": "让人更愿意跟家人聊天", "pinyin": "ràng rén gèng yuànyì gēn jiārén liáotiān" }
+          ],
+          "correctAnswer": { "index": 1 },
+          "explanation": "Người nói nói 无论是购物、付款，还是查地图、订车票……都能在手机上轻松完成 (dù là mua sắm, thanh toán hay tra bản đồ, đặt vé xe đều có thể hoàn thành dễ dàng trên điện thoại). Vậy đáp án là 让购物、付款等事情变得方便.",
+          "order": 1
+        },
+        {
+          "id": "ls-HSK5-3-q2",
+          "type": "MCQ",
+          "prompt": "根据这段话，长时间看手机屏幕会有什么坏处？",
+          "promptPinyin": "Gēnjù zhè duàn huà, cháng shíjiān kàn shǒujī píngmù huì yǒu shénme huàichu?",
+          "options": [
+            { "text": "让人变得焦虑，注意力难集中", "pinyin": "ràng rén biàn de jiāolǜ, zhùyìlì nán jízhōng" },
+            { "text": "让人花更多的钱", "pinyin": "ràng rén huā gèng duō de qián" },
+            { "text": "让人忘记买东西", "pinyin": "ràng rén wàngjì mǎi dōngxi" },
+            { "text": "让人更喜欢运动", "pinyin": "ràng rén gèng xǐhuan yùndòng" }
+          ],
+          "correctAnswer": { "index": 0 },
+          "explanation": "Người nói nói 长时间盯着屏幕，会让人变得焦虑，注意力也很难集中 (nhìn màn hình thời gian dài sẽ khiến người ta lo âu, khó tập trung). Vậy đáp án là 让人变得焦虑，注意力难集中.",
+          "order": 2
+        },
+        {
+          "id": "ls-HSK5-3-q3",
+          "type": "TRUE_FALSE",
+          "prompt": "说话人建议吃饭和睡觉前的一个小时不要碰手机。",
+          "correctAnswer": { "value": true },
+          "explanation": "Người nói đề nghị 给自己定个规矩，比如吃饭和睡觉前的一个小时不碰手机 (đặt ra quy tắc cho mình, ví dụ một tiếng trước khi ăn cơm và đi ngủ thì không động đến điện thoại). Vậy câu này ĐÚNG.",
+          "order": 3
+        }
+      ]
+    }
+  ]
+}

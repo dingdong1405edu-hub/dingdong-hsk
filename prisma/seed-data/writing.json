@@ -1,0 +1,113 @@
+{
+  "kind": "writing",
+  "tasks": [
+    {
+      "id": "wr-HSK1-1",
+      "taskType": "FREE",
+      "prompt": "Hãy viết một đoạn ngắn tự giới thiệu về bản thân bằng tiếng Trung. Bạn nên nói tên mình (我叫……), bạn đến từ đâu (我是……人) và một thông tin đơn giản như tuổi hoặc gia đình. Chỉ dùng những chữ Hán đã học ở trình độ HSK1, ví dụ: 你好 (nǐ hǎo), 我 (wǒ), 叫 (jiào), 是 (shì), 人 (rén). Viết tối thiểu 40 chữ Hán.",
+      "promptZh": "请用中文写一段简短的自我介绍。说一说你叫什么名字、你是哪国人，再加上一个简单的信息，比如年龄或家人。",
+      "minChars": 40,
+      "timeLimit": 900,
+      "hskLevel": "HSK1"
+    },
+    {
+      "id": "wr-HSK1-2",
+      "taskType": "PICTURE_DESCRIPTION",
+      "prompt": "Hãy tưởng tượng một bức tranh về gia đình bạn đang ngồi ăn cơm ở nhà. Dùng tiếng Trung mô tả bức tranh đó: trong tranh có ai (爸爸 bàba, 妈妈 māma, 我 wǒ), họ đang làm gì (吃饭 chī fàn), và đó là buổi nào trong ngày. Chỉ dùng từ vựng HSK1. Viết tối thiểu 40 chữ Hán.",
+      "promptZh": "请想象一张你们一家人在家里吃饭的图片，用中文描述这张图片：图中有谁、他们在做什么、是什么时候。",
+      "minChars": 40,
+      "timeLimit": 900,
+      "hskLevel": "HSK1"
+    },
+    {
+      "id": "wr-HSK2-1",
+      "taskType": "GUIDED",
+      "prompt": "Hãy viết một đoạn văn ngắn kể về một ngày của bạn. Trả lời lần lượt các câu hỏi gợi ý sau bằng tiếng Trung: (1) Buổi sáng bạn mấy giờ thức dậy? (你几点起床？) (2) Bạn ăn sáng gì? (3) Buổi chiều bạn làm gì? (4) Buổi tối bạn thường làm gì? Dùng từ vựng HSK2. Viết tối thiểu 60 chữ Hán.",
+      "promptZh": "请用中文写一段话，介绍你的一天。请按顺序回答下面的问题：你早上几点起床？你吃什么早饭？你下午做什么？你晚上常常做什么？",
+      "minChars": 60,
+      "timeLimit": 1000,
+      "hskLevel": "HSK2"
+    },
+    {
+      "id": "wr-HSK2-2",
+      "taskType": "FREE",
+      "prompt": "Hãy viết một đoạn văn ngắn giới thiệu về thời tiết và sở thích của bạn. Bạn có thể nói hôm nay thời tiết thế nào (今天天气怎么样？), bạn thích thời tiết nào, và khi trời đẹp bạn thích làm gì. Dùng từ vựng HSK2 như 天气 (tiānqì), 喜欢 (xǐhuan), 热 (rè), 冷 (lěng). Viết tối thiểu 60 chữ Hán.",
+      "promptZh": "请用中文写一段话，介绍天气和你的爱好。你可以说说今天天气怎么样、你喜欢什么样的天气，以及天气好的时候你喜欢做什么。",
+      "minChars": 60,
+      "timeLimit": 1000,
+      "hskLevel": "HSK2"
+    },
+    {
+      "id": "wr-HSK3-1",
+      "taskType": "GUIDED",
+      "prompt": "Hãy viết một đoạn văn kể về một chuyến đi du lịch hoặc một lần đi chơi mà bạn nhớ. Theo các gợi ý sau: (1) Bạn đã đi đâu, đi với ai? (2) Bạn đi bằng phương tiện gì (坐火车 zuò huǒchē / 坐飞机 zuò fēijī)? (3) Ở đó bạn đã làm gì và thấy gì thú vị? (4) Cảm nghĩ của bạn về chuyến đi. Dùng từ vựng HSK3. Viết tối thiểu 100 chữ Hán.",
+      "promptZh": "请用中文写一段话，介绍一次让你印象深刻的旅行或外出游玩。请参考下面的提示：你去了哪里、和谁一起去？你是怎么去的？你在那里做了什么、看到了什么有意思的东西？你对这次旅行有什么感受？",
+      "minChars": 100,
+      "timeLimit": 1200,
+      "hskLevel": "HSK3"
+    },
+    {
+      "id": "wr-HSK3-2",
+      "taskType": "PICTURE_DESCRIPTION",
+      "prompt": "Hãy tưởng tượng một bức tranh về một công viên vào cuối tuần: có người chơi thể thao, có trẻ em chơi đùa, có người ngồi nghỉ. Dùng tiếng Trung mô tả chi tiết: trong tranh có những ai, họ đang làm gì, thời tiết ra sao, và bạn cảm thấy thế nào khi nhìn cảnh này. Dùng từ vựng HSK3 như 公园 (gōngyuán), 运动 (yùndòng), 锻炼 (duànliàn). Viết tối thiểu 100 chữ Hán.",
+      "promptZh": "请想象一张周末公园的图片：有人在运动，有小孩在玩，有人在休息。请用中文详细描述：图中有哪些人、他们在做什么、天气怎么样，以及你看到这个场景时有什么感受。",
+      "minChars": 100,
+      "timeLimit": 1200,
+      "hskLevel": "HSK3"
+    },
+    {
+      "id": "wr-HSK4-1",
+      "taskType": "FREE",
+      "prompt": "Hãy viết một đoạn văn trình bày quan điểm của bạn về việc học một ngoại ngữ. Bạn có thể nói: vì sao học ngoại ngữ lại quan trọng, bạn gặp những khó khăn gì khi học, và bạn dùng phương pháp nào để học hiệu quả. Hãy đưa ra ví dụ cụ thể và dùng từ nối như 因为……所以…… (yīnwèi…suǒyǐ), 虽然……但是…… (suīrán…dànshì). Dùng từ vựng HSK4. Viết tối thiểu 150 chữ Hán.",
+      "promptZh": "请用中文写一段话，谈谈你对学习一门外语的看法。你可以说一说：为什么学外语很重要、你在学习中遇到了哪些困难，以及你用什么方法学习更有效。请举出具体的例子。",
+      "minChars": 150,
+      "timeLimit": 1400,
+      "hskLevel": "HSK4"
+    },
+    {
+      "id": "wr-HSK4-2",
+      "taskType": "GUIDED",
+      "prompt": "Hãy viết một bức thư điện tử (email) cho một người bạn để mời họ đến thăm thành phố của bạn. Theo các gợi ý: (1) Lời chào và lý do viết thư. (2) Giới thiệu vài địa điểm hoặc món ăn đặc sắc của thành phố. (3) Đề nghị thời gian và cách sắp xếp. (4) Lời kết và mong đợi. Chú ý cách xưng hô và bố cục một lá thư. Dùng từ vựng HSK4. Viết tối thiểu 150 chữ Hán.",
+      "promptZh": "请用中文写一封电子邮件给一位朋友，邀请他来你所在的城市游玩。请参考提示：问候并说明写信的原因；介绍城市里有特色的地方或美食；提出时间和安排的建议；写上结尾和你的期待。注意书信的称呼和格式。",
+      "minChars": 150,
+      "timeLimit": 1400,
+      "hskLevel": "HSK4"
+    },
+    {
+      "id": "wr-HSK5-1",
+      "taskType": "FREE",
+      "prompt": "Hãy viết một bài nghị luận ngắn về chủ đề: 'Mạng xã hội ảnh hưởng thế nào đến cuộc sống của giới trẻ'. Bạn cần nêu rõ quan điểm của mình, phân tích cả mặt tích cực lẫn tiêu cực, đưa ra dẫn chứng thuyết phục và kết luận hợp lý. Khuyến khích dùng các thành ngữ hoặc cách diễn đạt trang trọng phù hợp trình độ HSK5. Viết tối thiểu 220 chữ Hán.",
+      "promptZh": "请用中文写一篇短小的议论文，题目是《社交媒体对年轻人生活的影响》。请明确表达你的观点，分析它积极和消极两方面的影响，举出有说服力的例子，并给出合理的结论。鼓励使用符合HSK5水平的正式表达。",
+      "minChars": 220,
+      "timeLimit": 1600,
+      "hskLevel": "HSK5"
+    },
+    {
+      "id": "wr-HSK5-2",
+      "taskType": "PICTURE_DESCRIPTION",
+      "prompt": "Hãy tưởng tượng một bức ảnh chụp cảnh giờ cao điểm ở một thành phố lớn: đường phố đông đúc, nhiều người vội vã, xe cộ chen chúc. Dựa vào hình ảnh đó, viết một đoạn văn vừa miêu tả cảnh tượng vừa bàn luận về nhịp sống đô thị hiện đại: nó mang lại điều gì và khiến con người phải đánh đổi gì. Dùng từ vựng và cấu trúc HSK5. Viết tối thiểu 220 chữ Hán.",
+      "promptZh": "请想象一张大城市上下班高峰时段的照片：街道拥挤，人们行色匆匆，车辆密集。请根据这张照片写一段话，既描写画面，又讨论现代都市的生活节奏：它带来了什么，又让人付出了什么代价。请使用HSK5的词汇和句式。",
+      "minChars": 220,
+      "timeLimit": 1600,
+      "hskLevel": "HSK5"
+    },
+    {
+      "id": "wr-HSK6-1",
+      "taskType": "FREE",
+      "prompt": "Hãy viết một bài luận hoàn chỉnh bàn về chủ đề: 'Trong thời đại trí tuệ nhân tạo phát triển nhanh chóng, con người nên giữ gìn và phát huy những giá trị nào'. Yêu cầu: lập luận chặt chẽ, có mở bài - thân bài - kết bài rõ ràng, biết phản biện quan điểm trái chiều, sử dụng thành ngữ và cách diễn đạt phong phú, sâu sắc ở trình độ HSK6. Viết tối thiểu 300 chữ Hán.",
+      "promptZh": "请用中文写一篇完整的文章，讨论这样一个题目：《在人工智能飞速发展的时代，人类应当坚守和发扬哪些价值》。要求：论证严密，有清晰的开头、主体和结尾，能够反驳相反的观点，运用丰富、有深度的成语和表达，达到HSK6水平。",
+      "minChars": 300,
+      "timeLimit": 1800,
+      "hskLevel": "HSK6"
+    },
+    {
+      "id": "wr-HSK6-2",
+      "taskType": "GUIDED",
+      "prompt": "Hãy viết một bài bình luận xã hội về hiện tượng 'nội cuốn' (内卷 nèijuǎn) - sự cạnh tranh quá mức trong học tập và công việc. Theo dàn ý: (1) Nêu hiện tượng và bối cảnh xuất hiện. (2) Phân tích nguyên nhân sâu xa từ góc độ xã hội, kinh tế và tâm lý. (3) Chỉ ra hậu quả đối với cá nhân và xã hội. (4) Đề xuất giải pháp và nêu suy nghĩ của bạn. Yêu cầu lập luận sắc bén, ngôn ngữ trang trọng, dùng từ vựng và cấu trúc HSK6. Viết tối thiểu 300 chữ Hán.",
+      "promptZh": "请用中文写一篇社会评论，谈谈“内卷”现象——也就是学习和工作中过度的竞争。请按提纲展开：指出这一现象及其出现的背景；从社会、经济和心理角度分析深层原因；说明它对个人和社会的后果；提出对策并表达你的思考。要求论证犀利、语言正式，使用HSK6的词汇和句式。",
+      "minChars": 300,
+      "timeLimit": 1800,
+      "hskLevel": "HSK6"
+    }
+  ]
+}

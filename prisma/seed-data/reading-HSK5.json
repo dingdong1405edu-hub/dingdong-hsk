@@ -1,0 +1,289 @@
+{
+  "kind": "reading",
+  "tests": [
+    {
+      "id": "rd-HSK5-1",
+      "title": "Áp lực và sự cân bằng trong cuộc sống",
+      "titleZh": "压力与生活的平衡",
+      "hskLevel": "HSK5",
+      "passage": "随着社会竞争越来越激烈，许多年轻人感到压力很大。他们一方面要努力工作，另一方面还要照顾家庭，常常忙得没有时间休息。专家指出，长期处于紧张状态对身体和心理都有害。其实，适当的压力能够让人更有动力，但过大的压力却会影响健康。因此，学会放松和调整自己的心态非常重要。我们可以通过运动、听音乐或者和朋友聊天来减轻压力，让生活变得更加轻松愉快。只有保持身心的平衡，才能真正享受美好的生活。",
+      "passagePinyin": "Suízhe shèhuì jìngzhēng yuèláiyuè jīliè, xǔduō niánqīngrén gǎndào yālì hěn dà. Tāmen yìfāngmiàn yào nǔlì gōngzuò, lìng yìfāngmiàn hái yào zhàogù jiātíng, chángcháng máng de méiyǒu shíjiān xiūxi. Zhuānjiā zhǐchū, chángqī chǔyú jǐnzhāng zhuàngtài duì shēntǐ hé xīnlǐ dōu yǒuhài. Qíshí, shìdàng de yālì nénggòu ràng rén gèng yǒu dònglì, dàn guò dà de yālì què huì yǐngxiǎng jiànkāng. Yīncǐ, xuéhuì fàngsōng hé tiáozhěng zìjǐ de xīntài fēicháng zhòngyào. Wǒmen kěyǐ tōngguò yùndòng, tīng yīnyuè huòzhě hé péngyou liáotiān lái jiǎnqīng yālì, ràng shēnghuó biàn de gèngjiā qīngsōng yúkuài. Zhǐyǒu bǎochí shēnxīn de pínghéng, cáinéng zhēnzhèng xiǎngshòu měihǎo de shēnghuó.",
+      "timeLimit": 600,
+      "questions": [
+        {
+          "id": "rd-HSK5-1-q1",
+          "type": "MCQ",
+          "prompt": "许多年轻人为什么感到压力大？",
+          "promptPinyin": "Xǔduō niánqīngrén wèishénme gǎndào yālì dà?",
+          "options": [
+            { "text": "既要工作又要照顾家庭", "pinyin": "jì yào gōngzuò yòu yào zhàogù jiātíng" },
+            { "text": "因为他们不喜欢运动", "pinyin": "yīnwèi tāmen bù xǐhuān yùndòng" },
+            { "text": "因为他们没有朋友", "pinyin": "yīnwèi tāmen méiyǒu péngyou" },
+            { "text": "因为他们睡得太多", "pinyin": "yīnwèi tāmen shuì de tài duō" }
+          ],
+          "correctAnswer": { "index": 0, "text": "既要工作又要照顾家庭" },
+          "explanation": "Bài đọc viết '一方面要努力工作，另一方面还要照顾家庭', tức là vừa phải làm việc vừa phải chăm sóc gia đình.",
+          "order": 1
+        },
+        {
+          "id": "rd-HSK5-1-q2",
+          "type": "MCQ",
+          "prompt": "专家认为长期处于紧张状态会怎么样？",
+          "promptPinyin": "Zhuānjiā rènwéi chángqī chǔyú jǐnzhāng zhuàngtài huì zěnmeyàng?",
+          "options": [
+            { "text": "让人更有动力", "pinyin": "ràng rén gèng yǒu dònglì" },
+            { "text": "对身体和心理都有害", "pinyin": "duì shēntǐ hé xīnlǐ dōu yǒuhài" },
+            { "text": "使工作更顺利", "pinyin": "shǐ gōngzuò gèng shùnlì" },
+            { "text": "让人变得更聪明", "pinyin": "ràng rén biàn de gèng cōngming" }
+          ],
+          "correctAnswer": { "index": 1, "text": "对身体和心理都有害" },
+          "explanation": "Bài đọc viết '长期处于紧张状态对身体和心理都有害', nghĩa là việc ở trong trạng thái căng thẳng lâu dài có hại cho cả cơ thể lẫn tâm lý.",
+          "order": 2
+        },
+        {
+          "id": "rd-HSK5-1-q3",
+          "type": "MCQ",
+          "prompt": "根据短文，下面哪个不是减轻压力的方法？",
+          "promptPinyin": "Gēnjù duǎnwén, xiàmiàn nǎge bú shì jiǎnqīng yālì de fāngfǎ?",
+          "options": [
+            { "text": "运动", "pinyin": "yùndòng" },
+            { "text": "听音乐", "pinyin": "tīng yīnyuè" },
+            { "text": "和朋友聊天", "pinyin": "hé péngyou liáotiān" },
+            { "text": "努力加班", "pinyin": "nǔlì jiābān" }
+          ],
+          "correctAnswer": { "index": 3, "text": "努力加班" },
+          "explanation": "Bài đọc nêu ba cách giảm áp lực là vận động, nghe nhạc và trò chuyện với bạn bè ('通过运动、听音乐或者和朋友聊天来减轻压力'). 'Cố gắng tăng ca' không được nhắc tới.",
+          "order": 3
+        },
+        {
+          "id": "rd-HSK5-1-q4",
+          "type": "TRUE_FALSE",
+          "prompt": "适当的压力对人完全没有好处。",
+          "promptPinyin": "Shìdàng de yālì duì rén wánquán méiyǒu hǎochù.",
+          "correctAnswer": { "value": false },
+          "explanation": "Bài đọc viết '适当的压力能够让人更有动力', tức áp lực vừa phải có thể khiến người ta có động lực hơn. Vậy câu này sai.",
+          "order": 4
+        }
+      ]
+    },
+    {
+      "id": "rd-HSK5-2",
+      "title": "Sự thay đổi của thành phố quê hương",
+      "titleZh": "家乡的变化",
+      "hskLevel": "HSK5",
+      "passage": "我离开家乡已经十年了。上个月，我终于有机会回去看看。一下火车，我几乎认不出这个地方了。以前那条又窄又脏的小路，现在变成了宽阔的大马路，两边种满了绿树。过去人们出门只能骑自行车，如今家家户户都买了汽车。最让我吃惊的是，村子里建起了一座现代化的图书馆，孩子们放学后都喜欢去那里看书。听说，这些变化都是因为政府这几年大力发展经济，改善了人们的生活条件。看着家乡一天天变好，我心里充满了骄傲和希望。",
+      "passagePinyin": "Wǒ líkāi jiāxiāng yǐjīng shí nián le. Shàng ge yuè, wǒ zhōngyú yǒu jīhuì huíqù kànkan. Yí xià huǒchē, wǒ jīhū rèn bù chū zhège dìfang le. Yǐqián nà tiáo yòu zhǎi yòu zāng de xiǎolù, xiànzài biànchéngle kuānkuò de dà mǎlù, liǎngbiān zhòngmǎnle lǜshù. Guòqù rénmen chūmén zhǐ néng qí zìxíngchē, rújīn jiājiāhùhù dōu mǎile qìchē. Zuì ràng wǒ chījīng de shì, cūnzi lǐ jiànqǐle yí zuò xiàndàihuà de túshūguǎn, háizimen fàngxué hòu dōu xǐhuān qù nàlǐ kàn shū. Tīngshuō, zhèxiē biànhuà dōu shì yīnwèi zhèngfǔ zhè jǐ nián dàlì fāzhǎn jīngjì, gǎishànle rénmen de shēnghuó tiáojiàn. Kànzhe jiāxiāng yìtiāntiān biàn hǎo, wǒ xīnlǐ chōngmǎnle jiāo'ào hé xīwàng.",
+      "timeLimit": 600,
+      "questions": [
+        {
+          "id": "rd-HSK5-2-q1",
+          "type": "MCQ",
+          "prompt": "作者离开家乡多长时间了？",
+          "promptPinyin": "Zuòzhě líkāi jiāxiāng duō cháng shíjiān le?",
+          "options": [
+            { "text": "五年", "pinyin": "wǔ nián" },
+            { "text": "十年", "pinyin": "shí nián" },
+            { "text": "二十年", "pinyin": "èrshí nián" },
+            { "text": "三年", "pinyin": "sān nián" }
+          ],
+          "correctAnswer": { "index": 1, "text": "十年" },
+          "explanation": "Bài đọc mở đầu bằng '我离开家乡已经十年了' (Tôi rời xa quê hương đã mười năm).",
+          "order": 1
+        },
+        {
+          "id": "rd-HSK5-2-q2",
+          "type": "MCQ",
+          "prompt": "以前那条小路现在变成了什么样？",
+          "promptPinyin": "Yǐqián nà tiáo xiǎolù xiànzài biànchéngle shénmeyàng?",
+          "options": [
+            { "text": "更窄更脏了", "pinyin": "gèng zhǎi gèng zāng le" },
+            { "text": "宽阔的大马路", "pinyin": "kuānkuò de dà mǎlù" },
+            { "text": "一条小河", "pinyin": "yì tiáo xiǎohé" },
+            { "text": "一个公园", "pinyin": "yí ge gōngyuán" }
+          ],
+          "correctAnswer": { "index": 1, "text": "宽阔的大马路" },
+          "explanation": "Bài đọc viết '以前那条又窄又脏的小路，现在变成了宽阔的大马路', con đường nhỏ trước đây nay đã thành đại lộ rộng.",
+          "order": 2
+        },
+        {
+          "id": "rd-HSK5-2-q3",
+          "type": "MCQ",
+          "prompt": "最让作者吃惊的变化是什么？",
+          "promptPinyin": "Zuì ràng zuòzhě chījīng de biànhuà shì shénme?",
+          "options": [
+            { "text": "村子里建了图书馆", "pinyin": "cūnzi lǐ jiànle túshūguǎn" },
+            { "text": "家家户户买了汽车", "pinyin": "jiājiāhùhù mǎile qìchē" },
+            { "text": "路边种满了绿树", "pinyin": "lùbiān zhòngmǎnle lǜshù" },
+            { "text": "火车站变大了", "pinyin": "huǒchēzhàn biàn dà le" }
+          ],
+          "correctAnswer": { "index": 0, "text": "村子里建了图书馆" },
+          "explanation": "Bài đọc viết '最让我吃惊的是，村子里建起了一座现代化的图书馆', điều khiến tác giả kinh ngạc nhất là thư viện hiện đại được xây trong làng.",
+          "order": 3
+        },
+        {
+          "id": "rd-HSK5-2-q4",
+          "type": "TRUE_FALSE",
+          "prompt": "家乡的变化是因为政府大力发展经济。",
+          "promptPinyin": "Jiāxiāng de biànhuà shì yīnwèi zhèngfǔ dàlì fāzhǎn jīngjì.",
+          "correctAnswer": { "value": true },
+          "explanation": "Bài đọc viết '这些变化都是因为政府这几年大力发展经济', nên câu này đúng.",
+          "order": 4
+        },
+        {
+          "id": "rd-HSK5-2-q5",
+          "type": "TRUE_FALSE",
+          "prompt": "现在家乡的人出门还是只能骑自行车。",
+          "promptPinyin": "Xiànzài jiāxiāng de rén chūmén háishì zhǐ néng qí zìxíngchē.",
+          "correctAnswer": { "value": false },
+          "explanation": "Bài đọc viết '过去人们出门只能骑自行车，如今家家户户都买了汽车', nay nhà nào cũng mua ô tô nên câu này sai.",
+          "order": 5
+        }
+      ]
+    },
+    {
+      "id": "rd-HSK5-3",
+      "title": "Lợi ích và thách thức của làm việc từ xa",
+      "titleZh": "远程办公的利与弊",
+      "hskLevel": "HSK5",
+      "passage": "近年来，越来越多的公司开始允许员工在家远程办公。这种工作方式有不少好处：员工不用每天花时间挤公共汽车上下班，可以更自由地安排自己的时间，工作效率有时反而更高。不过，远程办公也带来了一些挑战。有的人在家容易受到各种干扰，很难集中精力；还有的人因为很少和同事见面，渐渐感到孤独。专家建议，无论在哪里工作，都应该制定合理的计划，给自己规定明确的工作时间，并且坚持锻炼身体。这样才能在享受自由的同时，保证良好的工作状态。",
+      "passagePinyin": "Jìnnián lái, yuèláiyuè duō de gōngsī kāishǐ yǔnxǔ yuángōng zàijiā yuǎnchéng bàngōng. Zhè zhǒng gōngzuò fāngshì yǒu bùshǎo hǎochù: yuángōng búyòng měitiān huā shíjiān jǐ gōnggòng qìchē shàngxiàbān, kěyǐ gèng zìyóu de ānpái zìjǐ de shíjiān, gōngzuò xiàolǜ yǒushí fǎn'ér gèng gāo. Búguò, yuǎnchéng bàngōng yě dàiláile yìxiē tiǎozhàn. Yǒu de rén zàijiā róngyì shòudào gèzhǒng gānrǎo, hěn nán jízhōng jīnglì; háiyǒu de rén yīnwèi hěn shǎo hé tóngshì jiànmiàn, jiànjiàn gǎndào gūdú. Zhuānjiā jiànyì, wúlùn zài nǎlǐ gōngzuò, dōu yīnggāi zhìdìng hélǐ de jìhuà, gěi zìjǐ guīdìng míngquè de gōngzuò shíjiān, bìngqiě jiānchí duànliàn shēntǐ. Zhèyàng cáinéng zài xiǎngshòu zìyóu de tóngshí, bǎozhèng liánghǎo de gōngzuò zhuàngtài.",
+      "timeLimit": 600,
+      "questions": [
+        {
+          "id": "rd-HSK5-3-q1",
+          "type": "MCQ",
+          "prompt": "远程办公的一个好处是什么？",
+          "promptPinyin": "Yuǎnchéng bàngōng de yí ge hǎochù shì shénme?",
+          "options": [
+            { "text": "不用挤公共汽车上下班", "pinyin": "búyòng jǐ gōnggòng qìchē shàngxiàbān" },
+            { "text": "可以经常见到同事", "pinyin": "kěyǐ jīngcháng jiàndào tóngshì" },
+            { "text": "工资会变得更高", "pinyin": "gōngzī huì biàn de gèng gāo" },
+            { "text": "不用做任何工作", "pinyin": "búyòng zuò rènhé gōngzuò" }
+          ],
+          "correctAnswer": { "index": 0, "text": "不用挤公共汽车上下班" },
+          "explanation": "Bài đọc viết '员工不用每天花时间挤公共汽车上下班', nhân viên không phải chen xe buýt đi làm mỗi ngày.",
+          "order": 1
+        },
+        {
+          "id": "rd-HSK5-3-q2",
+          "type": "MCQ",
+          "prompt": "远程办公给一些人带来了什么挑战？",
+          "promptPinyin": "Yuǎnchéng bàngōng gěi yìxiē rén dàiláile shénme tiǎozhàn?",
+          "options": [
+            { "text": "工资减少", "pinyin": "gōngzī jiǎnshǎo" },
+            { "text": "容易受到干扰、感到孤独", "pinyin": "róngyì shòudào gānrǎo, gǎndào gūdú" },
+            { "text": "上下班时间太长", "pinyin": "shàngxiàbān shíjiān tài cháng" },
+            { "text": "公司离家太远", "pinyin": "gōngsī lí jiā tài yuǎn" }
+          ],
+          "correctAnswer": { "index": 1, "text": "容易受到干扰、感到孤独" },
+          "explanation": "Bài đọc viết '容易受到各种干扰' và '渐渐感到孤独', dễ bị quấy nhiễu và dần cảm thấy cô đơn.",
+          "order": 2
+        },
+        {
+          "id": "rd-HSK5-3-q3",
+          "type": "MCQ",
+          "prompt": "专家给了什么建议？",
+          "promptPinyin": "Zhuānjiā gěile shénme jiànyì?",
+          "options": [
+            { "text": "尽量不要工作", "pinyin": "jǐnliàng búyào gōngzuò" },
+            { "text": "制定合理的计划并坚持锻炼", "pinyin": "zhìdìng hélǐ de jìhuà bìng jiānchí duànliàn" },
+            { "text": "每天和同事聊天", "pinyin": "měitiān hé tóngshì liáotiān" },
+            { "text": "搬到公司附近住", "pinyin": "bāndào gōngsī fùjìn zhù" }
+          ],
+          "correctAnswer": { "index": 1, "text": "制定合理的计划并坚持锻炼" },
+          "explanation": "Bài đọc viết '应该制定合理的计划……并且坚持锻炼身体', nên lập kế hoạch hợp lý và kiên trì rèn luyện cơ thể.",
+          "order": 3
+        },
+        {
+          "id": "rd-HSK5-3-q4",
+          "type": "TRUE_FALSE",
+          "prompt": "远程办公的工作效率有时反而更高。",
+          "promptPinyin": "Yuǎnchéng bàngōng de gōngzuò xiàolǜ yǒushí fǎn'ér gèng gāo.",
+          "correctAnswer": { "value": true },
+          "explanation": "Bài đọc viết '工作效率有时反而更高', hiệu suất làm việc đôi khi lại cao hơn. Câu này đúng.",
+          "order": 4
+        }
+      ]
+    },
+    {
+      "id": "rd-HSK5-4",
+      "title": "Câu chuyện về lòng kiên trì",
+      "titleZh": "关于坚持的故事",
+      "hskLevel": "HSK5",
+      "passage": "小李从小就梦想成为一名画家，可是他的家庭条件并不好，父母希望他将来找一份稳定的工作。尽管如此，小李从来没有放弃过自己的爱好。白天他在工厂努力工作，晚上回到家后，再累也要坚持画上两个小时。一开始，他的画并不好看，还常常被人笑话。但是他相信，只要不断练习，总有一天会成功。就这样，他坚持了整整八年。后来，他的作品在一次比赛中获得了第一名，许多人开始注意到这位年轻的画家。小李用自己的经历告诉我们：成功的路上没有捷径，只有坚持才能让梦想变成现实。",
+      "passagePinyin": "Xiǎo Lǐ cóngxiǎo jiù mèngxiǎng chéngwéi yì míng huàjiā, kěshì tā de jiātíng tiáojiàn bìng bù hǎo, fùmǔ xīwàng tā jiānglái zhǎo yí fèn wěndìng de gōngzuò. Jǐnguǎn rúcǐ, Xiǎo Lǐ cónglái méiyǒu fàngqìguò zìjǐ de àihào. Báitiān tā zài gōngchǎng nǔlì gōngzuò, wǎnshang huídào jiā hòu, zài lèi yě yào jiānchí huà shàng liǎng ge xiǎoshí. Yì kāishǐ, tā de huà bìng bù hǎokàn, hái chángcháng bèi rén xiàohua. Dànshì tā xiāngxìn, zhǐyào búduàn liànxí, zǒng yǒu yìtiān huì chénggōng. Jiù zhèyàng, tā jiānchíle zhěngzhěng bā nián. Hòulái, tā de zuòpǐn zài yí cì bǐsài zhōng huòdéle dì-yī míng, xǔduō rén kāishǐ zhùyì dào zhè wèi niánqīng de huàjiā. Xiǎo Lǐ yòng zìjǐ de jīnglì gàosu wǒmen: chénggōng de lùshang méiyǒu jiéjìng, zhǐyǒu jiānchí cáinéng ràng mèngxiǎng biànchéng xiànshí.",
+      "timeLimit": 600,
+      "questions": [
+        {
+          "id": "rd-HSK5-4-q1",
+          "type": "MCQ",
+          "prompt": "小李从小的梦想是什么？",
+          "promptPinyin": "Xiǎo Lǐ cóngxiǎo de mèngxiǎng shì shénme?",
+          "options": [
+            { "text": "成为一名画家", "pinyin": "chéngwéi yì míng huàjiā" },
+            { "text": "成为一名医生", "pinyin": "chéngwéi yì míng yīshēng" },
+            { "text": "成为一名老师", "pinyin": "chéngwéi yì míng lǎoshī" },
+            { "text": "成为一名工人", "pinyin": "chéngwéi yì míng gōngrén" }
+          ],
+          "correctAnswer": { "index": 0, "text": "成为一名画家" },
+          "explanation": "Bài đọc viết '小李从小就梦想成为一名画家', Tiểu Lý từ nhỏ đã mơ ước trở thành họa sĩ.",
+          "order": 1
+        },
+        {
+          "id": "rd-HSK5-4-q2",
+          "type": "MCQ",
+          "prompt": "小李的父母希望他做什么？",
+          "promptPinyin": "Xiǎo Lǐ de fùmǔ xīwàng tā zuò shénme?",
+          "options": [
+            { "text": "找一份稳定的工作", "pinyin": "zhǎo yí fèn wěndìng de gōngzuò" },
+            { "text": "去外国留学", "pinyin": "qù wàiguó liúxué" },
+            { "text": "当一名画家", "pinyin": "dāng yì míng huàjiā" },
+            { "text": "在家照顾父母", "pinyin": "zàijiā zhàogù fùmǔ" }
+          ],
+          "correctAnswer": { "index": 0, "text": "找一份稳定的工作" },
+          "explanation": "Bài đọc viết '父母希望他将来找一份稳定的工作', bố mẹ mong cậu tìm một công việc ổn định.",
+          "order": 2
+        },
+        {
+          "id": "rd-HSK5-4-q3",
+          "type": "MCQ",
+          "prompt": "小李坚持画画坚持了多少年？",
+          "promptPinyin": "Xiǎo Lǐ jiānchí huàhuà jiānchíle duōshǎo nián?",
+          "options": [
+            { "text": "三年", "pinyin": "sān nián" },
+            { "text": "五年", "pinyin": "wǔ nián" },
+            { "text": "八年", "pinyin": "bā nián" },
+            { "text": "十年", "pinyin": "shí nián" }
+          ],
+          "correctAnswer": { "index": 2, "text": "八年" },
+          "explanation": "Bài đọc viết '他坚持了整整八年', cậu đã kiên trì suốt tám năm tròn.",
+          "order": 3
+        },
+        {
+          "id": "rd-HSK5-4-q4",
+          "type": "MCQ",
+          "prompt": "这个故事主要告诉我们什么道理？",
+          "promptPinyin": "Zhège gùshi zhǔyào gàosu wǒmen shénme dàolǐ?",
+          "options": [
+            { "text": "只有坚持才能让梦想变成现实", "pinyin": "zhǐyǒu jiānchí cáinéng ràng mèngxiǎng biànchéng xiànshí" },
+            { "text": "成功有很多捷径", "pinyin": "chénggōng yǒu hěn duō jiéjìng" },
+            { "text": "画画是最容易的事", "pinyin": "huàhuà shì zuì róngyì de shì" },
+            { "text": "应该听父母的话", "pinyin": "yīnggāi tīng fùmǔ de huà" }
+          ],
+          "correctAnswer": { "index": 0, "text": "只有坚持才能让梦想变成现实" },
+          "explanation": "Câu cuối bài đọc viết '成功的路上没有捷径，只有坚持才能让梦想变成现实', trên con đường thành công không có đường tắt, chỉ có kiên trì mới biến ước mơ thành hiện thực.",
+          "order": 4
+        },
+        {
+          "id": "rd-HSK5-4-q5",
+          "type": "TRUE_FALSE",
+          "prompt": "小李一开始画的画就很受人欢迎。",
+          "promptPinyin": "Xiǎo Lǐ yì kāishǐ huà de huà jiù hěn shòu rén huānyíng.",
+          "correctAnswer": { "value": false },
+          "explanation": "Bài đọc viết '一开始，他的画并不好看，还常常被人笑话', lúc đầu tranh của cậu không đẹp và còn thường bị người ta chê cười. Câu này sai.",
+          "order": 5
+        }
+      ]
+    }
+  ]
+}

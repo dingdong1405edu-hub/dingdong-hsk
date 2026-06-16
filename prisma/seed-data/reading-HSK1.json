@@ -1,0 +1,274 @@
+{
+  "kind": "reading",
+  "tests": [
+    {
+      "id": "rd-HSK1-1",
+      "title": "Giới thiệu bản thân",
+      "titleZh": "自我介绍",
+      "hskLevel": "HSK1",
+      "passage": "你好！我叫李月，我是中国人。我今年二十岁。我是学生，我喜欢看书。",
+      "passagePinyin": "Nǐ hǎo! Wǒ jiào Lǐ Yuè, wǒ shì Zhōngguórén. Wǒ jīnnián èrshí suì. Wǒ shì xuésheng, wǒ xǐhuan kàn shū.",
+      "timeLimit": 600,
+      "questions": [
+        {
+          "id": "rd-HSK1-1-q1",
+          "type": "MCQ",
+          "prompt": "她叫什么名字？",
+          "promptPinyin": "Tā jiào shénme míngzi?",
+          "options": [
+            { "text": "李月", "pinyin": "Lǐ Yuè" },
+            { "text": "王月", "pinyin": "Wáng Yuè" },
+            { "text": "李雪", "pinyin": "Lǐ Xuě" },
+            { "text": "李明", "pinyin": "Lǐ Míng" }
+          ],
+          "correctAnswer": { "index": 0, "text": "李月" },
+          "explanation": "Trong bài đọc có câu '我叫李月' (Tôi tên là Lý Nguyệt), nên đáp án đúng là 李月.",
+          "order": 1
+        },
+        {
+          "id": "rd-HSK1-1-q2",
+          "type": "MCQ",
+          "prompt": "她是哪国人？",
+          "promptPinyin": "Tā shì nǎ guó rén?",
+          "options": [
+            { "text": "中国人", "pinyin": "Zhōngguórén" },
+            { "text": "越南人", "pinyin": "Yuènánrén" },
+            { "text": "日本人", "pinyin": "Rìběnrén" },
+            { "text": "韩国人", "pinyin": "Hánguórén" }
+          ],
+          "correctAnswer": { "index": 0, "text": "中国人" },
+          "explanation": "Bài đọc viết '我是中国人' (Tôi là người Trung Quốc), nên đáp án là 中国人.",
+          "order": 2
+        },
+        {
+          "id": "rd-HSK1-1-q3",
+          "type": "MCQ",
+          "prompt": "她今年多大？",
+          "promptPinyin": "Tā jīnnián duō dà?",
+          "options": [
+            { "text": "二十岁", "pinyin": "èrshí suì" },
+            { "text": "十二岁", "pinyin": "shí'èr suì" },
+            { "text": "三十岁", "pinyin": "sānshí suì" },
+            { "text": "二十一岁", "pinyin": "èrshíyī suì" }
+          ],
+          "correctAnswer": { "index": 0, "text": "二十岁" },
+          "explanation": "Bài đọc nói '我今年二十岁' (Năm nay tôi 20 tuổi), nên đáp án là 二十岁.",
+          "order": 3
+        },
+        {
+          "id": "rd-HSK1-1-q4",
+          "type": "TRUE_FALSE",
+          "prompt": "她喜欢看书。",
+          "promptPinyin": "Tā xǐhuan kàn shū.",
+          "correctAnswer": { "value": true },
+          "explanation": "Bài đọc có câu '我喜欢看书' (Tôi thích đọc sách), nên câu này đúng.",
+          "order": 4
+        }
+      ]
+    },
+    {
+      "id": "rd-HSK1-2",
+      "title": "Gia đình của tôi",
+      "titleZh": "我的家",
+      "hskLevel": "HSK1",
+      "passage": "我家有四个人：爸爸、妈妈、哥哥和我。爸爸是医生，妈妈是老师。我们都很高兴。",
+      "passagePinyin": "Wǒ jiā yǒu sì ge rén: bàba, māma, gēge hé wǒ. Bàba shì yīshēng, māma shì lǎoshī. Wǒmen dōu hěn gāoxìng.",
+      "timeLimit": 600,
+      "questions": [
+        {
+          "id": "rd-HSK1-2-q1",
+          "type": "MCQ",
+          "prompt": "他家有几个人？",
+          "promptPinyin": "Tā jiā yǒu jǐ ge rén?",
+          "options": [
+            { "text": "四个人", "pinyin": "sì ge rén" },
+            { "text": "三个人", "pinyin": "sān ge rén" },
+            { "text": "五个人", "pinyin": "wǔ ge rén" },
+            { "text": "两个人", "pinyin": "liǎng ge rén" }
+          ],
+          "correctAnswer": { "index": 0, "text": "四个人" },
+          "explanation": "Bài đọc nói '我家有四个人' (Nhà tôi có bốn người), nên đáp án là 四个人.",
+          "order": 1
+        },
+        {
+          "id": "rd-HSK1-2-q2",
+          "type": "MCQ",
+          "prompt": "爸爸做什么工作？",
+          "promptPinyin": "Bàba zuò shénme gōngzuò?",
+          "options": [
+            { "text": "医生", "pinyin": "yīshēng" },
+            { "text": "老师", "pinyin": "lǎoshī" },
+            { "text": "学生", "pinyin": "xuésheng" },
+            { "text": "司机", "pinyin": "sījī" }
+          ],
+          "correctAnswer": { "index": 0, "text": "医生" },
+          "explanation": "Bài đọc viết '爸爸是医生' (Bố là bác sĩ), nên đáp án là 医生.",
+          "order": 2
+        },
+        {
+          "id": "rd-HSK1-2-q3",
+          "type": "MCQ",
+          "prompt": "妈妈做什么工作？",
+          "promptPinyin": "Māma zuò shénme gōngzuò?",
+          "options": [
+            { "text": "老师", "pinyin": "lǎoshī" },
+            { "text": "医生", "pinyin": "yīshēng" },
+            { "text": "学生", "pinyin": "xuésheng" },
+            { "text": "工人", "pinyin": "gōngrén" }
+          ],
+          "correctAnswer": { "index": 0, "text": "老师" },
+          "explanation": "Bài đọc viết '妈妈是老师' (Mẹ là giáo viên), nên đáp án là 老师.",
+          "order": 3
+        },
+        {
+          "id": "rd-HSK1-2-q4",
+          "type": "TRUE_FALSE",
+          "prompt": "他有一个姐姐。",
+          "promptPinyin": "Tā yǒu yí ge jiějie.",
+          "correctAnswer": { "value": false },
+          "explanation": "Bài đọc nói nhà có 哥哥 (anh trai) chứ không phải 姐姐 (chị gái), nên câu này sai.",
+          "order": 4
+        }
+      ]
+    },
+    {
+      "id": "rd-HSK1-3",
+      "title": "Một ngày của tôi",
+      "titleZh": "我的一天",
+      "hskLevel": "HSK1",
+      "passage": "今天是星期一。早上我去学校学习汉语。中午我在饭店吃饭。下午我和朋友打电话。",
+      "passagePinyin": "Jīntiān shì xīngqīyī. Zǎoshang wǒ qù xuéxiào xuéxí Hànyǔ. Zhōngwǔ wǒ zài fàndiàn chī fàn. Xiàwǔ wǒ hé péngyou dǎ diànhuà.",
+      "timeLimit": 600,
+      "questions": [
+        {
+          "id": "rd-HSK1-3-q1",
+          "type": "MCQ",
+          "prompt": "今天是星期几？",
+          "promptPinyin": "Jīntiān shì xīngqī jǐ?",
+          "options": [
+            { "text": "星期一", "pinyin": "xīngqīyī" },
+            { "text": "星期二", "pinyin": "xīngqī'èr" },
+            { "text": "星期天", "pinyin": "xīngqītiān" },
+            { "text": "星期五", "pinyin": "xīngqīwǔ" }
+          ],
+          "correctAnswer": { "index": 0, "text": "星期一" },
+          "explanation": "Bài đọc mở đầu bằng '今天是星期一' (Hôm nay là thứ Hai), nên đáp án là 星期一.",
+          "order": 1
+        },
+        {
+          "id": "rd-HSK1-3-q2",
+          "type": "MCQ",
+          "prompt": "早上他去哪儿？",
+          "promptPinyin": "Zǎoshang tā qù nǎr?",
+          "options": [
+            { "text": "学校", "pinyin": "xuéxiào" },
+            { "text": "饭店", "pinyin": "fàndiàn" },
+            { "text": "医院", "pinyin": "yīyuàn" },
+            { "text": "商店", "pinyin": "shāngdiàn" }
+          ],
+          "correctAnswer": { "index": 0, "text": "学校" },
+          "explanation": "Bài đọc nói '早上我去学校学习汉语' (Buổi sáng tôi đến trường học tiếng Trung), nên đáp án là 学校.",
+          "order": 2
+        },
+        {
+          "id": "rd-HSK1-3-q3",
+          "type": "MCQ",
+          "prompt": "他在学校学习什么？",
+          "promptPinyin": "Tā zài xuéxiào xuéxí shénme?",
+          "options": [
+            { "text": "汉语", "pinyin": "Hànyǔ" },
+            { "text": "英语", "pinyin": "Yīngyǔ" },
+            { "text": "数学", "pinyin": "shùxué" },
+            { "text": "音乐", "pinyin": "yīnyuè" }
+          ],
+          "correctAnswer": { "index": 0, "text": "汉语" },
+          "explanation": "Bài đọc viết '学习汉语' (học tiếng Trung), nên đáp án là 汉语.",
+          "order": 3
+        },
+        {
+          "id": "rd-HSK1-3-q4",
+          "type": "TRUE_FALSE",
+          "prompt": "中午他在家吃饭。",
+          "promptPinyin": "Zhōngwǔ tā zài jiā chī fàn.",
+          "correctAnswer": { "value": false },
+          "explanation": "Bài đọc nói '中午我在饭店吃饭' (Buổi trưa tôi ăn cơm ở nhà hàng), không phải ở nhà, nên câu này sai.",
+          "order": 4
+        },
+        {
+          "id": "rd-HSK1-3-q5",
+          "type": "TRUE_FALSE",
+          "prompt": "下午他和朋友打电话。",
+          "promptPinyin": "Xiàwǔ tā hé péngyou dǎ diànhuà.",
+          "correctAnswer": { "value": true },
+          "explanation": "Bài đọc viết '下午我和朋友打电话' (Buổi chiều tôi gọi điện thoại với bạn), nên câu này đúng.",
+          "order": 5
+        }
+      ]
+    },
+    {
+      "id": "rd-HSK1-4",
+      "title": "Đi mua sắm",
+      "titleZh": "买东西",
+      "hskLevel": "HSK1",
+      "passage": "今天天气很好。我和妈妈去商店买东西。我买了三个苹果和一些水。苹果很好吃。",
+      "passagePinyin": "Jīntiān tiānqì hěn hǎo. Wǒ hé māma qù shāngdiàn mǎi dōngxi. Wǒ mǎi le sān ge píngguǒ hé yìxiē shuǐ. Píngguǒ hěn hǎochī.",
+      "timeLimit": 600,
+      "questions": [
+        {
+          "id": "rd-HSK1-4-q1",
+          "type": "MCQ",
+          "prompt": "今天天气怎么样？",
+          "promptPinyin": "Jīntiān tiānqì zěnmeyàng?",
+          "options": [
+            { "text": "很好", "pinyin": "hěn hǎo" },
+            { "text": "不好", "pinyin": "bù hǎo" },
+            { "text": "很冷", "pinyin": "hěn lěng" },
+            { "text": "下雨", "pinyin": "xià yǔ" }
+          ],
+          "correctAnswer": { "index": 0, "text": "很好" },
+          "explanation": "Bài đọc mở đầu bằng '今天天气很好' (Hôm nay thời tiết rất đẹp), nên đáp án là 很好.",
+          "order": 1
+        },
+        {
+          "id": "rd-HSK1-4-q2",
+          "type": "MCQ",
+          "prompt": "他和谁去商店？",
+          "promptPinyin": "Tā hé shéi qù shāngdiàn?",
+          "options": [
+            { "text": "妈妈", "pinyin": "māma" },
+            { "text": "爸爸", "pinyin": "bàba" },
+            { "text": "朋友", "pinyin": "péngyou" },
+            { "text": "老师", "pinyin": "lǎoshī" }
+          ],
+          "correctAnswer": { "index": 0, "text": "妈妈" },
+          "explanation": "Bài đọc nói '我和妈妈去商店' (Tôi và mẹ đi đến cửa hàng), nên đáp án là 妈妈.",
+          "order": 2
+        },
+        {
+          "id": "rd-HSK1-4-q3",
+          "type": "MCQ",
+          "prompt": "他买了几个苹果？",
+          "promptPinyin": "Tā mǎi le jǐ ge píngguǒ?",
+          "options": [
+            { "text": "三个", "pinyin": "sān ge" },
+            { "text": "两个", "pinyin": "liǎng ge" },
+            { "text": "四个", "pinyin": "sì ge" },
+            { "text": "五个", "pinyin": "wǔ ge" }
+          ],
+          "correctAnswer": { "index": 0, "text": "三个" },
+          "explanation": "Bài đọc viết '我买了三个苹果' (Tôi mua ba quả táo), nên đáp án là 三个.",
+          "order": 3
+        },
+        {
+          "id": "rd-HSK1-4-q4",
+          "type": "TRUE_FALSE",
+          "prompt": "苹果很好吃。",
+          "promptPinyin": "Píngguǒ hěn hǎochī.",
+          "correctAnswer": { "value": true },
+          "explanation": "Bài đọc kết thúc bằng '苹果很好吃' (Táo rất ngon), nên câu này đúng.",
+          "order": 4
+        }
+      ]
+    }
+  ]
+}

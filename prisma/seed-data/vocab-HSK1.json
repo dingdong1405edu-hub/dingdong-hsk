@@ -1,0 +1,394 @@
+{
+  "kind": "vocab",
+  "units": [
+    {
+      "id": "v-HSK1-u1",
+      "title": "Chào hỏi và xưng hô",
+      "titleZh": "问候与称呼",
+      "hskLevel": "HSK1",
+      "order": 1,
+      "lessons": [
+        {
+          "id": "v-HSK1-u1-l1",
+          "title": "Lời chào cơ bản",
+          "order": 1,
+          "exercises": [
+            {
+              "type": "match",
+              "pairs": [
+                { "zh": "你好", "vi": "Xin chào", "pinyin": "nǐ hǎo" },
+                { "zh": "再见", "vi": "Tạm biệt", "pinyin": "zài jiàn" },
+                { "zh": "谢谢", "vi": "Cảm ơn", "pinyin": "xiè xie" },
+                { "zh": "不客气", "vi": "Không có gì", "pinyin": "bú kè qi" },
+                { "zh": "对不起", "vi": "Xin lỗi", "pinyin": "duì bu qǐ" }
+              ]
+            },
+            {
+              "type": "translate",
+              "direction": "vi_to_zh",
+              "prompt": "Tạm biệt",
+              "answer": "再见",
+              "pinyin": "zài jiàn",
+              "options": ["再见", "你好", "谢谢", "对不起"]
+            },
+            {
+              "type": "toneSelect",
+              "word": "好",
+              "pinyin": "hǎo",
+              "question": "Từ 好 có thanh mấy?",
+              "options": ["Thanh 1", "Thanh 2", "Thanh 3", "Thanh 4"],
+              "correct": 2
+            },
+            {
+              "type": "pinyinMatch",
+              "pairs": [
+                { "zh": "你好", "pinyin": "nǐ hǎo" },
+                { "zh": "再见", "pinyin": "zài jiàn" },
+                { "zh": "谢谢", "pinyin": "xiè xie" },
+                { "zh": "对不起", "pinyin": "duì bu qǐ" }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "v-HSK1-u1-l2",
+          "title": "Đại từ nhân xưng",
+          "order": 2,
+          "exercises": [
+            {
+              "type": "match",
+              "pairs": [
+                { "zh": "我", "vi": "Tôi", "pinyin": "wǒ" },
+                { "zh": "你", "vi": "Bạn", "pinyin": "nǐ" },
+                { "zh": "他", "vi": "Anh ấy", "pinyin": "tā" },
+                { "zh": "她", "vi": "Cô ấy", "pinyin": "tā" },
+                { "zh": "我们", "vi": "Chúng tôi", "pinyin": "wǒ men" }
+              ]
+            },
+            {
+              "type": "translate",
+              "direction": "zh_to_vi",
+              "prompt": "她是医生。",
+              "answer": "Cô ấy là bác sĩ.",
+              "options": ["Cô ấy là bác sĩ.", "Anh ấy là học sinh.", "Tôi là giáo viên.", "Bạn là bác sĩ."]
+            },
+            {
+              "type": "toneSelect",
+              "word": "我",
+              "pinyin": "wǒ",
+              "question": "Từ 我 có thanh mấy?",
+              "options": ["Thanh 1", "Thanh 2", "Thanh 3", "Thanh 4"],
+              "correct": 2
+            },
+            {
+              "type": "sentenceOrder",
+              "words": ["是", "我", "学生"],
+              "answer": "我是学生",
+              "hint": "Tôi là học sinh"
+            }
+          ]
+        },
+        {
+          "id": "v-HSK1-u1-l3",
+          "title": "Giới thiệu bản thân",
+          "order": 3,
+          "exercises": [
+            {
+              "type": "match",
+              "pairs": [
+                { "zh": "名字", "vi": "Tên", "pinyin": "míng zi" },
+                { "zh": "叫", "vi": "Gọi là", "pinyin": "jiào" },
+                { "zh": "是", "vi": "Là", "pinyin": "shì" },
+                { "zh": "认识", "vi": "Quen biết", "pinyin": "rèn shi" },
+                { "zh": "高兴", "vi": "Vui mừng", "pinyin": "gāo xìng" }
+              ]
+            },
+            {
+              "type": "translate",
+              "direction": "vi_to_zh",
+              "prompt": "Tên",
+              "answer": "名字",
+              "pinyin": "míng zi",
+              "options": ["名字", "认识", "高兴", "医生"]
+            },
+            {
+              "type": "toneSelect",
+              "word": "叫",
+              "pinyin": "jiào",
+              "question": "Từ 叫 có thanh mấy?",
+              "options": ["Thanh 1", "Thanh 2", "Thanh 3", "Thanh 4"],
+              "correct": 3
+            },
+            {
+              "type": "sentenceOrder",
+              "words": ["叫", "我", "王明"],
+              "answer": "我叫王明",
+              "hint": "Tôi tên là Vương Minh"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "v-HSK1-u2",
+      "title": "Số đếm và thời gian",
+      "titleZh": "数字与时间",
+      "hskLevel": "HSK1",
+      "order": 2,
+      "lessons": [
+        {
+          "id": "v-HSK1-u2-l1",
+          "title": "Số từ 1 đến 10",
+          "order": 1,
+          "exercises": [
+            {
+              "type": "match",
+              "pairs": [
+                { "zh": "一", "vi": "Một", "pinyin": "yī" },
+                { "zh": "二", "vi": "Hai", "pinyin": "èr" },
+                { "zh": "三", "vi": "Ba", "pinyin": "sān" },
+                { "zh": "四", "vi": "Bốn", "pinyin": "sì" },
+                { "zh": "五", "vi": "Năm", "pinyin": "wǔ" },
+                { "zh": "十", "vi": "Mười", "pinyin": "shí" }
+              ]
+            },
+            {
+              "type": "translate",
+              "direction": "vi_to_zh",
+              "prompt": "Ba",
+              "answer": "三",
+              "pinyin": "sān",
+              "options": ["三", "二", "四", "十"]
+            },
+            {
+              "type": "toneSelect",
+              "word": "四",
+              "pinyin": "sì",
+              "question": "Từ 四 có thanh mấy?",
+              "options": ["Thanh 1", "Thanh 2", "Thanh 3", "Thanh 4"],
+              "correct": 3
+            },
+            {
+              "type": "pinyinMatch",
+              "pairs": [
+                { "zh": "一", "pinyin": "yī" },
+                { "zh": "二", "pinyin": "èr" },
+                { "zh": "五", "pinyin": "wǔ" },
+                { "zh": "十", "pinyin": "shí" }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "v-HSK1-u2-l2",
+          "title": "Ngày tháng",
+          "order": 2,
+          "exercises": [
+            {
+              "type": "match",
+              "pairs": [
+                { "zh": "年", "vi": "Năm", "pinyin": "nián" },
+                { "zh": "月", "vi": "Tháng", "pinyin": "yuè" },
+                { "zh": "日", "vi": "Ngày", "pinyin": "rì" },
+                { "zh": "今天", "vi": "Hôm nay", "pinyin": "jīn tiān" },
+                { "zh": "明天", "vi": "Ngày mai", "pinyin": "míng tiān" },
+                { "zh": "昨天", "vi": "Hôm qua", "pinyin": "zuó tiān" }
+              ]
+            },
+            {
+              "type": "translate",
+              "direction": "zh_to_vi",
+              "prompt": "今天是星期一。",
+              "answer": "Hôm nay là thứ Hai.",
+              "options": ["Hôm nay là thứ Hai.", "Ngày mai là thứ Ba.", "Hôm qua là thứ Tư.", "Hôm nay là thứ Năm."]
+            },
+            {
+              "type": "toneSelect",
+              "word": "月",
+              "pinyin": "yuè",
+              "question": "Từ 月 có thanh mấy?",
+              "options": ["Thanh 1", "Thanh 2", "Thanh 3", "Thanh 4"],
+              "correct": 3
+            },
+            {
+              "type": "sentenceOrder",
+              "words": ["今天", "星期", "是", "一"],
+              "answer": "今天是星期一",
+              "hint": "Hôm nay là thứ Hai"
+            }
+          ]
+        },
+        {
+          "id": "v-HSK1-u2-l3",
+          "title": "Giờ giấc",
+          "order": 3,
+          "exercises": [
+            {
+              "type": "match",
+              "pairs": [
+                { "zh": "点", "vi": "Giờ", "pinyin": "diǎn" },
+                { "zh": "分", "vi": "Phút", "pinyin": "fēn" },
+                { "zh": "现在", "vi": "Bây giờ", "pinyin": "xiàn zài" },
+                { "zh": "上午", "vi": "Buổi sáng", "pinyin": "shàng wǔ" },
+                { "zh": "下午", "vi": "Buổi chiều", "pinyin": "xià wǔ" }
+              ]
+            },
+            {
+              "type": "translate",
+              "direction": "vi_to_zh",
+              "prompt": "Bây giờ",
+              "answer": "现在",
+              "pinyin": "xiàn zài",
+              "options": ["现在", "上午", "下午", "今天"]
+            },
+            {
+              "type": "toneSelect",
+              "word": "点",
+              "pinyin": "diǎn",
+              "question": "Từ 点 có thanh mấy?",
+              "options": ["Thanh 1", "Thanh 2", "Thanh 3", "Thanh 4"],
+              "correct": 2
+            },
+            {
+              "type": "pinyinMatch",
+              "pairs": [
+                { "zh": "现在", "pinyin": "xiàn zài" },
+                { "zh": "上午", "pinyin": "shàng wǔ" },
+                { "zh": "下午", "pinyin": "xià wǔ" },
+                { "zh": "分", "pinyin": "fēn" }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "v-HSK1-u3",
+      "title": "Đồ ăn và gia đình",
+      "titleZh": "食物与家庭",
+      "hskLevel": "HSK1",
+      "order": 3,
+      "lessons": [
+        {
+          "id": "v-HSK1-u3-l1",
+          "title": "Đồ ăn và thức uống",
+          "order": 1,
+          "exercises": [
+            {
+              "type": "match",
+              "pairs": [
+                { "zh": "米饭", "vi": "Cơm", "pinyin": "mǐ fàn" },
+                { "zh": "菜", "vi": "Món ăn", "pinyin": "cài" },
+                { "zh": "水", "vi": "Nước", "pinyin": "shuǐ" },
+                { "zh": "茶", "vi": "Trà", "pinyin": "chá" },
+                { "zh": "水果", "vi": "Hoa quả", "pinyin": "shuǐ guǒ" }
+              ]
+            },
+            {
+              "type": "translate",
+              "direction": "vi_to_zh",
+              "prompt": "Nước",
+              "answer": "水",
+              "pinyin": "shuǐ",
+              "options": ["水", "茶", "菜", "米饭"]
+            },
+            {
+              "type": "toneSelect",
+              "word": "茶",
+              "pinyin": "chá",
+              "question": "Từ 茶 có thanh mấy?",
+              "options": ["Thanh 1", "Thanh 2", "Thanh 3", "Thanh 4"],
+              "correct": 1
+            },
+            {
+              "type": "sentenceOrder",
+              "words": ["我", "喝", "茶"],
+              "answer": "我喝茶",
+              "hint": "Tôi uống trà"
+            }
+          ]
+        },
+        {
+          "id": "v-HSK1-u3-l2",
+          "title": "Động từ ăn uống",
+          "order": 2,
+          "exercises": [
+            {
+              "type": "match",
+              "pairs": [
+                { "zh": "吃", "vi": "Ăn", "pinyin": "chī" },
+                { "zh": "喝", "vi": "Uống", "pinyin": "hē" },
+                { "zh": "买", "vi": "Mua", "pinyin": "mǎi" },
+                { "zh": "做", "vi": "Làm", "pinyin": "zuò" },
+                { "zh": "想", "vi": "Muốn", "pinyin": "xiǎng" }
+              ]
+            },
+            {
+              "type": "translate",
+              "direction": "zh_to_vi",
+              "prompt": "我想吃米饭。",
+              "answer": "Tôi muốn ăn cơm.",
+              "options": ["Tôi muốn ăn cơm.", "Tôi muốn uống trà.", "Cô ấy muốn mua hoa quả.", "Bạn muốn ăn rau."]
+            },
+            {
+              "type": "toneSelect",
+              "word": "买",
+              "pinyin": "mǎi",
+              "question": "Từ 买 có thanh mấy?",
+              "options": ["Thanh 1", "Thanh 2", "Thanh 3", "Thanh 4"],
+              "correct": 2
+            },
+            {
+              "type": "pinyinMatch",
+              "pairs": [
+                { "zh": "吃", "pinyin": "chī" },
+                { "zh": "喝", "pinyin": "hē" },
+                { "zh": "买", "pinyin": "mǎi" },
+                { "zh": "想", "pinyin": "xiǎng" }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "v-HSK1-u3-l3",
+          "title": "Thành viên gia đình",
+          "order": 3,
+          "exercises": [
+            {
+              "type": "match",
+              "pairs": [
+                { "zh": "爸爸", "vi": "Bố", "pinyin": "bà ba" },
+                { "zh": "妈妈", "vi": "Mẹ", "pinyin": "mā ma" },
+                { "zh": "儿子", "vi": "Con trai", "pinyin": "ér zi" },
+                { "zh": "女儿", "vi": "Con gái", "pinyin": "nǚ ér" },
+                { "zh": "家", "vi": "Nhà", "pinyin": "jiā" }
+              ]
+            },
+            {
+              "type": "translate",
+              "direction": "vi_to_zh",
+              "prompt": "Mẹ",
+              "answer": "妈妈",
+              "pinyin": "mā ma",
+              "options": ["妈妈", "爸爸", "儿子", "女儿"]
+            },
+            {
+              "type": "toneSelect",
+              "word": "家",
+              "pinyin": "jiā",
+              "question": "Từ 家 có thanh mấy?",
+              "options": ["Thanh 1", "Thanh 2", "Thanh 3", "Thanh 4"],
+              "correct": 0
+            },
+            {
+              "type": "sentenceOrder",
+              "words": ["这", "是", "我", "爸爸"],
+              "answer": "这是我爸爸",
+              "hint": "Đây là bố tôi"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

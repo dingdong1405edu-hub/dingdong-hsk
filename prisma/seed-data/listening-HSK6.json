@@ -1,0 +1,149 @@
+{
+  "kind": "listening",
+  "tests": [
+    {
+      "id": "ls-HSK6-1",
+      "title": "Bài nghe 1: Tranh luận về làm việc từ xa",
+      "hskLevel": "HSK6",
+      "audioUrl": "",
+      "transcript": "A: 自从公司推行了远程办公的政策，我觉得工作效率反而提高了，再也不用每天花两个小时在路上奔波了。\nB: 你说得有道理，不过我倒觉得有利也有弊。在家工作虽然灵活，但同事之间的沟通明显不如以前顺畅，很多问题本来当面几句话就能解决。\nA: 这确实是个问题。我们部门后来规定每周三必须到公司开会，把需要面对面讨论的事情都集中在那一天处理，这样既保留了远程办公的便利，又弥补了沟通上的不足。\nB: 这个折中的办法听起来不错。说到底，关键还是看每个人能不能自觉，要是缺乏自律，在家很容易分心，效率自然就下降了。\nA: 没错，归根结底，远程办公考验的是一个人的自我管理能力。",
+      "timeLimit": 300,
+      "questions": [
+        {
+          "id": "ls-HSK6-1-q1",
+          "type": "MCQ",
+          "prompt": "男的认为远程办公的最大好处是什么？",
+          "promptPinyin": "Nán de rènwéi yuǎnchéng bàngōng de zuìdà hǎochù shì shénme?",
+          "options": [
+            { "text": "可以多睡觉", "pinyin": "kěyǐ duō shuìjiào" },
+            { "text": "节省了通勤时间，提高了效率", "pinyin": "jiéshěng le tōngqín shíjiān, tígāo le xiàolǜ" },
+            { "text": "能少开会", "pinyin": "néng shǎo kāihuì" },
+            { "text": "工资变高了", "pinyin": "gōngzī biàn gāo le" }
+          ],
+          "correctAnswer": { "index": 1 },
+          "explanation": "Người nam nói nhờ làm việc từ xa mà hiệu suất tăng lên và không còn phải mất hai tiếng đi lại mỗi ngày, nên đáp án đúng là tiết kiệm thời gian di chuyển và nâng cao hiệu suất.",
+          "order": 1
+        },
+        {
+          "id": "ls-HSK6-1-q2",
+          "type": "MCQ",
+          "prompt": "女的对远程办公持什么态度？",
+          "promptPinyin": "Nǚ de duì yuǎnchéng bàngōng chí shénme tàidù?",
+          "options": [
+            { "text": "完全反对", "pinyin": "wánquán fǎnduì" },
+            { "text": "认为有利也有弊", "pinyin": "rènwéi yǒu lì yě yǒu bì" },
+            { "text": "毫不在乎", "pinyin": "háo bù zàihu" },
+            { "text": "非常推崇", "pinyin": "fēicháng tuīchóng" }
+          ],
+          "correctAnswer": { "index": 1 },
+          "explanation": "Người nữ nói rõ rằng làm việc từ xa vừa có lợi vừa có hại, linh hoạt nhưng giao tiếp giữa đồng nghiệp kém thông suốt hơn trước, thể hiện thái độ cho rằng có lợi cũng có hại.",
+          "order": 2
+        },
+        {
+          "id": "ls-HSK6-1-q3",
+          "type": "TRUE_FALSE",
+          "prompt": "男的部门规定每周三必须到公司集中处理需要面对面讨论的事情。",
+          "correctAnswer": { "value": true },
+          "explanation": "Trong đoạn hội thoại, người nam nói bộ phận của mình quy định mỗi thứ Tư phải đến công ty, gom những việc cần thảo luận trực tiếp xử lý trong ngày đó, nên nhận định này đúng.",
+          "order": 3
+        }
+      ]
+    },
+    {
+      "id": "ls-HSK6-2",
+      "title": "Bài nghe 2: Bài nói về sự phát triển của thành phố",
+      "hskLevel": "HSK6",
+      "audioUrl": "",
+      "transcript": "各位听众朋友，大家好。今天我想和大家聊聊我家乡这座小城的变迁。十年前，这里还是一个默默无闻的小县城，街道狭窄，交通闭塞，年轻人纷纷外出打工，很少有人愿意留下来。然而，随着高速铁路的开通，这座城市仿佛一夜之间被唤醒了。便利的交通不仅吸引了大量游客，也让不少在外打拼的人重新看到了回乡创业的希望。如今，古老的街区被精心修缮，既保留了传统的韵味，又融入了现代的元素。更可贵的是，当地政府并没有一味追求经济增长而忽视环境保护，反而把绿色发展放在了首位。可以说，这座小城用实际行动证明了，发展与保护并非不可兼得。",
+      "timeLimit": 300,
+      "questions": [
+        {
+          "id": "ls-HSK6-2-q1",
+          "type": "MCQ",
+          "prompt": "十年前这座小城是什么样子？",
+          "promptPinyin": "Shí nián qián zhè zuò xiǎo chéng shì shénme yàngzi?",
+          "options": [
+            { "text": "繁华热闹，游客众多", "pinyin": "fánhuá rènao, yóukè zhòngduō" },
+            { "text": "默默无闻，交通闭塞", "pinyin": "mòmò wúwén, jiāotōng bìsè" },
+            { "text": "工厂林立，污染严重", "pinyin": "gōngchǎng línlì, wūrǎn yánzhòng" },
+            { "text": "高楼大厦遍布", "pinyin": "gāolóu dàshà biànbù" }
+          ],
+          "correctAnswer": { "index": 1 },
+          "explanation": "Bài nói cho biết mười năm trước nơi đây là một huyện lỵ nhỏ vô danh, đường phố chật hẹp, giao thông bế tắc, nên đáp án đúng là vô danh, giao thông bế tắc.",
+          "order": 1
+        },
+        {
+          "id": "ls-HSK6-2-q2",
+          "type": "MCQ",
+          "prompt": "是什么让这座城市发生了巨大变化？",
+          "promptPinyin": "Shì shénme ràng zhè zuò chéngshì fāshēng le jùdà biànhuà?",
+          "options": [
+            { "text": "发现了矿产", "pinyin": "fāxiàn le kuàngchǎn" },
+            { "text": "高速铁路的开通", "pinyin": "gāosù tiělù de kāitōng" },
+            { "text": "举办了运动会", "pinyin": "jǔbàn le yùndònghuì" },
+            { "text": "建了一所大学", "pinyin": "jiàn le yì suǒ dàxué" }
+          ],
+          "correctAnswer": { "index": 1 },
+          "explanation": "Người nói nhấn mạnh rằng cùng với việc thông tuyến đường sắt cao tốc, thành phố như được đánh thức, vậy nên đáp án đúng là việc thông tuyến đường sắt cao tốc.",
+          "order": 2
+        },
+        {
+          "id": "ls-HSK6-2-q3",
+          "type": "TRUE_FALSE",
+          "prompt": "当地政府为了经济增长而忽视了环境保护。",
+          "correctAnswer": { "value": false },
+          "explanation": "Bài nói nêu rõ chính quyền địa phương không vì theo đuổi tăng trưởng kinh tế mà bỏ qua bảo vệ môi trường, trái lại đặt phát triển xanh lên hàng đầu, nên nhận định này sai.",
+          "order": 3
+        }
+      ]
+    },
+    {
+      "id": "ls-HSK6-3",
+      "title": "Bài nghe 3: Trao đổi về việc chọn nghề nghiệp",
+      "hskLevel": "HSK6",
+      "audioUrl": "",
+      "transcript": "A: 听说你拒绝了那家大公司的录用通知，放弃了那么优厚的待遇，真是让人意外。你不后悔吗？\nB: 一开始我也犹豫了很久，毕竟那份工作薪水可观，前途也被普遍看好。但是仔细想想，那个岗位每天都要应付各种应酬，几乎没有属于自己的时间，长此以往，恐怕身心都会被掏空。\nA: 可是现在工作这么难找，能进那样的企业，多少人求之不得啊。\nB: 我明白你的顾虑。不过我现在加入的这家初创公司虽然规模小，待遇也比不上从前，但工作内容正是我热爱的领域，团队氛围也很融洽。对我来说，能做自己真正感兴趣的事，远比一份高薪更有意义。\nA: 看来你是经过深思熟虑才做出这个决定的。希望你不会辜负自己的选择。\nB: 谢谢你的祝福。人生苦短，与其勉强自己迎合别人的期待，不如听从内心的声音。",
+      "timeLimit": 300,
+      "questions": [
+        {
+          "id": "ls-HSK6-3-q1",
+          "type": "MCQ",
+          "prompt": "男的做出了什么决定？",
+          "promptPinyin": "Nán de zuòchū le shénme juédìng?",
+          "options": [
+            { "text": "接受了大公司的工作", "pinyin": "jiēshòu le dà gōngsī de gōngzuò" },
+            { "text": "拒绝大公司，加入了一家初创公司", "pinyin": "jùjué dà gōngsī, jiārù le yì jiā chūchuàng gōngsī" },
+            { "text": "决定出国留学", "pinyin": "juédìng chūguó liúxué" },
+            { "text": "打算自己创业", "pinyin": "dǎsuàn zìjǐ chuàngyè" }
+          ],
+          "correctAnswer": { "index": 1 },
+          "explanation": "Người nam đã từ chối thông báo tuyển dụng của công ty lớn và gia nhập một công ty khởi nghiệp, nên đáp án đúng là từ chối công ty lớn để vào công ty khởi nghiệp.",
+          "order": 1
+        },
+        {
+          "id": "ls-HSK6-3-q2",
+          "type": "MCQ",
+          "prompt": "男的为什么放弃大公司的工作？",
+          "promptPinyin": "Nán de wèishénme fàngqì dà gōngsī de gōngzuò?",
+          "options": [
+            { "text": "薪水太低", "pinyin": "xīnshuǐ tài dī" },
+            { "text": "那个岗位应酬多，没有自己的时间，工作内容也不是他热爱的", "pinyin": "nàge gǎngwèi yìngchou duō, méiyǒu zìjǐ de shíjiān, gōngzuò nèiróng yě bú shì tā rè'ài de" },
+            { "text": "公司离家太远", "pinyin": "gōngsī lí jiā tài yuǎn" },
+            { "text": "和同事关系不好", "pinyin": "hé tóngshì guānxì bù hǎo" }
+          ],
+          "correctAnswer": { "index": 1 },
+          "explanation": "Người nam giải thích vị trí đó mỗi ngày phải lo đủ kiểu giao tế tiếp khách, gần như không có thời gian riêng, còn công việc mới mới đúng lĩnh vực anh yêu thích, nên đáp án đúng là vị trí cũ nhiều tiệc tùng, không có thời gian riêng và không phải việc anh yêu thích.",
+          "order": 2
+        },
+        {
+          "id": "ls-HSK6-3-q3",
+          "type": "TRUE_FALSE",
+          "prompt": "男的认为高薪比做自己感兴趣的事更有意义。",
+          "correctAnswer": { "value": false },
+          "explanation": "Người nam nói rõ với anh, được làm điều mình thực sự yêu thích còn ý nghĩa hơn nhiều so với mức lương cao, nên nhận định cho rằng lương cao ý nghĩa hơn là sai.",
+          "order": 3
+        }
+      ]
+    }
+  ]
+}

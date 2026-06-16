@@ -1,7 +1,169 @@
-import { PrismaClient, HSKLevel, QuestionType, WritingTaskType } from "@prisma/client";
+import { PrismaClient, HSKLevel, QuestionType, WritingTaskType, MaterialCategory, Prisma } from "@prisma/client";
 import bcrypt from "bcryptjs";
+import fs from "fs";
+import path from "path";
 
 const prisma = new PrismaClient();
+
+/* eslint-disable @typescript-eslint/no-explicit-any */
+type SeedDoc = Record<string, any>;
+
+/**
+ * Read every JSON file in prisma/seed-data/ (bulk content authored in batch).
+ * Malformed files are skipped with a warning so one bad file never aborts the
+ * whole seed (the deploy runs `db:seed || true`, but we still want max coverage).
+ */
+function readSeedDocs(): SeedDoc[] {
+  const dir = path.join(process.cwd(), "prisma", "seed-data");
+  if (!fs.existsSync(dir)) {
+    console.log("[seed-data] no seed-data/ directory, skipping bulk content");
+    return [];
+  }
+  const out: SeedDoc[] = [];
+  for (const file of fs.readdirSync(dir).filter((f) => f.endsWith(".json"))) {
+    try {
+      const json = JSON.parse(fs.readFileSync(path.join(dir, file), "utf-8"));
+      out.push({ __file: file, ...json });
+    } catch (e) {
+      console.error(`[seed-data] SKIP ${file}: ${(e as Error).message}`);
+    }
+  }
+  return out;
+}
+
+async function upsertQuestion(q: any, link: { readingId?: string; listeningId?: string }, fallbackOrder: number) {
+  const data = {
+    type: q.type as QuestionType,
+    prompt: String(q.prompt),
+    promptPinyin: q.promptPinyin ?? null,
+    options: (q.options ?? Prisma.JsonNull) as Prisma.InputJsonValue,
+    correctAnswer: q.correctAnswer as Prisma.InputJsonValue,
+    explanation: q.explanation ?? null,
+    order: typeof q.order === "number" ? q.order : fallbackOrder,
+    ...link,
+  };
+  await prisma.question.upsert({ where: { id: String(q.id) }, update: data, create: { id: String(q.id), ...data } });
+}
+
+async function loadSeedData() {
+  const docs = readSeedDocs();
+  const counts: Record<string, number> = {
+    vocab: 0, grammar: 0, hanzi: 0, reading: 0, listening: 0, writing: 0, speaking: 0, materials: 0, questions: 0,
+  };
+
+  for (const doc of docs) {
+    try {
+      switch (doc.kind) {
+        case "vocab":
+        case "grammar": {
+          const isGrammar = doc.kind === "grammar";
+          const unitModel = isGrammar ? prisma.grammarUnit : prisma.vocabUnit;
+          const lessonModel = isGrammar ? prisma.grammarLesson : prisma.vocabLesson;
+          for (const u of doc.units ?? []) {
+            const unitData = { title: u.title, titleZh: u.titleZh, hskLevel: u.hskLevel as HSKLevel, order: u.order ?? 1 };
+            await (unitModel as any).upsert({ where: { id: u.id }, update: unitData, create: { id: u.id, ...unitData } });
+            for (const l of u.lessons ?? []) {
+              const lessonData = { title: l.title ?? "", order: l.order ?? 1, exercises: l.exercises as Prisma.InputJsonValue };
+              await (lessonModel as any).upsert({
+                where: { id: l.id },
+                update: lessonData,
+                create: { id: l.id, unitId: u.id, ...lessonData },
+              });
+            }
+            counts[doc.kind]++;
+          }
+          break;
+        }
+        case "hanzi": {
+          for (const c of doc.characters ?? []) {
+            const data = {
+              pinyin: c.pinyin, tone: c.tone ?? 0, meaning: c.meaning, hskLevel: c.hskLevel as HSKLevel,
+              strokeCount: c.strokeCount ?? 0,
+              strokeOrder: (c.strokeOrder ?? { strokes: c.strokeCount ?? 0 }) as Prisma.InputJsonValue,
+              examples: (c.examples ?? []) as Prisma.InputJsonValue,
+            };
+            // Upsert by the natural unique key (character) so overlapping files merge cleanly.
+            await prisma.hanziCharacter.upsert({
+              where: { character: c.character },
+              update: data,
+              create: { id: c.id, character: c.character, ...data },
+            });
+            counts.hanzi++;
+          }
+          break;
+        }
+        case "reading": {
+          for (const t of doc.tests ?? []) {
+            const data = {
+              title: t.title, titleZh: t.titleZh, hskLevel: t.hskLevel as HSKLevel,
+              passage: t.passage, passagePinyin: t.passagePinyin ?? null, timeLimit: t.timeLimit ?? 600,
+            };
+            await prisma.readingTest.upsert({ where: { id: t.id }, update: data, create: { id: t.id, ...data } });
+            let i = 0;
+            for (const q of t.questions ?? []) await upsertQuestion(q, { readingId: t.id }, ++i), counts.questions++;
+            counts.reading++;
+          }
+          break;
+        }
+        case "listening": {
+          for (const t of doc.tests ?? []) {
+            const data = {
+              title: t.title, hskLevel: t.hskLevel as HSKLevel, audioUrl: t.audioUrl ?? "",
+              transcript: t.transcript ?? null, timeLimit: t.timeLimit ?? 300,
+            };
+            await prisma.listeningTest.upsert({ where: { id: t.id }, update: data, create: { id: t.id, ...data } });
+            let i = 0;
+            for (const q of t.questions ?? []) await upsertQuestion(q, { listeningId: t.id }, ++i), counts.questions++;
+            counts.listening++;
+          }
+          break;
+        }
+        case "writing": {
+          for (const w of doc.tasks ?? []) {
+            const data = {
+              taskType: w.taskType as WritingTaskType, prompt: w.prompt, promptZh: w.promptZh ?? null,
+              minChars: w.minChars ?? 50, timeLimit: w.timeLimit ?? 900, hskLevel: w.hskLevel as HSKLevel,
+            };
+            await prisma.writingTask.upsert({ where: { id: w.id }, update: data, create: { id: w.id, ...data } });
+            counts.writing++;
+          }
+          break;
+        }
+        case "speaking": {
+          for (const s of doc.sets ?? []) {
+            const data = {
+              title: s.title ?? "", hskLevel: s.hskLevel as HSKLevel,
+              part1Sentences: s.part1Sentences as Prisma.InputJsonValue,
+              part2Passage: s.part2Passage as Prisma.InputJsonValue,
+              part3Questions: s.part3Questions as Prisma.InputJsonValue,
+            };
+            await prisma.speakingSet.upsert({ where: { id: s.id }, update: data, create: { id: s.id, ...data } });
+            counts.speaking++;
+          }
+          break;
+        }
+        case "materials": {
+          for (const m of doc.materials ?? []) {
+            const data = {
+              title: m.title, titleZh: m.titleZh ?? null, category: m.category as MaterialCategory,
+              hskLevel: m.hskLevel as HSKLevel, summary: m.summary, content: m.content as Prisma.InputJsonValue,
+              tags: (m.tags ?? []) as Prisma.InputJsonValue, readMinutes: m.readMinutes ?? 5,
+              order: m.order ?? 0, published: m.published ?? true,
+            };
+            await prisma.material.upsert({ where: { id: m.id }, update: data, create: { id: m.id, ...data } });
+            counts.materials++;
+          }
+          break;
+        }
+        default:
+          console.warn(`[seed-data] ${doc.__file}: unknown kind "${doc.kind}"`);
+      }
+    } catch (e) {
+      console.error(`[seed-data] ERROR in ${doc.__file}: ${(e as Error).message}`);
+    }
+  }
+  console.log("[seed-data] loaded:", JSON.stringify(counts));
+}
 
 async function main() {
   console.log("Seeding database...");
@@ -592,6 +754,9 @@ async function main() {
       ],
     },
   });
+
+  // ===== Bulk content authored in batch (prisma/seed-data/*.json) =====
+  await loadSeedData();
 
   console.log("Seeding completed!");
 }

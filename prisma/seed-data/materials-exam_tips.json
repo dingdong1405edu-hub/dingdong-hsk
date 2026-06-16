@@ -1,0 +1,373 @@
+{
+  "kind": "materials",
+  "materials": [
+    {
+      "id": "mt-EXAM_TIPS-1",
+      "title": "Chiến lược thi HSK 1: Hiểu đề thi và làm bài hiệu quả",
+      "titleZh": "HSK一级考试攻略",
+      "category": "EXAM_TIPS",
+      "hskLevel": "HSK1",
+      "summary": "Tổng quan cấu trúc đề thi HSK 1, cách phân bổ thời gian và mẹo làm phần nghe, phần đọc cho người mới bắt đầu.",
+      "readMinutes": 6,
+      "order": 1,
+      "tags": ["HSK1", "cấu trúc đề", "quản lý thời gian", "người mới bắt đầu"],
+      "content": [
+        {
+          "type": "heading",
+          "text": "Đề thi HSK 1 gồm những gì?",
+          "zh": "HSK一级考试结构"
+        },
+        {
+          "type": "paragraph",
+          "text": "HSK 1 là cấp độ thấp nhất, kiểm tra khoảng 150 từ vựng cơ bản. Toàn bộ phần thi gồm 40 câu, chia làm hai phần: Nghe (听力) và Đọc (阅读). Không có phần viết và phần nói trong HSK 1 dạng giấy. Tổng thời gian khoảng 40 phút, bao gồm cả thời gian điền thông tin cá nhân."
+        },
+        {
+          "type": "list",
+          "items": [
+            "Phần Nghe (听力): 20 câu, khoảng 15 phút. Mỗi đoạn được phát hai lần.",
+            "Phần Đọc (阅读): 20 câu, khoảng 17 phút.",
+            "Cuối phần Nghe có 3 phút để chép đáp án vào phiếu trả lời.",
+            "Điểm tối đa 200 (Nghe 100 + Đọc 100); đạt 120 điểm là qua."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Mẹo làm phần Nghe",
+          "zh": "听力技巧"
+        },
+        {
+          "type": "paragraph",
+          "text": "Vì mỗi đoạn được phát hai lần, lần nghe đầu tiên hãy nắm ý chính, lần thứ hai xác nhận đáp án. Nhiều câu HSK 1 đi kèm hình ảnh, nên hãy nhìn trước hình trong lúc chờ băng phát để đoán nội dung."
+        },
+        {
+          "type": "example",
+          "zh": "这是我的老师。",
+          "pinyin": "zhè shì wǒ de lǎoshī.",
+          "vi": "Đây là giáo viên của tôi."
+        },
+        {
+          "type": "vocab",
+          "items": [
+            { "zh": "听力", "pinyin": "tīnglì", "vi": "phần nghe / kỹ năng nghe" },
+            { "zh": "阅读", "pinyin": "yuèdú", "vi": "phần đọc / đọc hiểu" },
+            { "zh": "答案", "pinyin": "dá'àn", "vi": "đáp án" }
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Mẹo làm phần Đọc",
+          "zh": "阅读技巧"
+        },
+        {
+          "type": "paragraph",
+          "text": "Phần Đọc HSK 1 thường ghép hình với câu, hoặc chọn câu trả lời phù hợp. Hãy đọc kỹ chữ Hán quen thuộc và dựa vào pinyin (HSK 1 có ghi pinyin trên chữ) để nhận diện từ. Nếu không chắc, loại trừ những phương án rõ ràng sai trước."
+        },
+        {
+          "type": "note",
+          "text": "Lỗi thường gặp: bỏ trống câu khó. HSK không trừ điểm câu sai, vì vậy hãy luôn chọn một đáp án cho mọi câu, kể cả khi phải đoán."
+        }
+      ]
+    },
+    {
+      "id": "mt-EXAM_TIPS-2",
+      "title": "HSK 2: Quản lý thời gian và cách đăng ký thi",
+      "titleZh": "HSK二级时间管理与报名",
+      "category": "EXAM_TIPS",
+      "hskLevel": "HSK2",
+      "summary": "Hướng dẫn phân bổ thời gian cho 60 câu của HSK 2, mẹo phần nghe đúng/sai và quy trình đăng ký thi trực tuyến.",
+      "readMinutes": 7,
+      "order": 2,
+      "tags": ["HSK2", "đăng ký thi", "quản lý thời gian", "phần nghe"],
+      "content": [
+        {
+          "type": "heading",
+          "text": "Cấu trúc đề HSK 2",
+          "zh": "HSK二级考试结构"
+        },
+        {
+          "type": "paragraph",
+          "text": "HSK 2 kiểm tra khoảng 300 từ vựng. Đề gồm 60 câu chia thành phần Nghe (35 câu) và phần Đọc (25 câu). Tổng thời gian khoảng 55 phút. Giống HSK 1, đề có pinyin và mỗi đoạn nghe phát hai lần."
+        },
+        {
+          "type": "list",
+          "items": [
+            "Phần Nghe (听力): 35 câu, khoảng 25 phút, gồm câu đúng/sai và chọn hình/đáp án.",
+            "Phần Đọc (阅读): 25 câu, khoảng 22 phút.",
+            "Có 3 phút chép đáp án sau phần Nghe.",
+            "Điểm tối đa 200; cần đạt 120 điểm để qua."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Mẹo phần Nghe đúng/sai",
+          "zh": "判断对错技巧"
+        },
+        {
+          "type": "paragraph",
+          "text": "Phần đầu của Nghe HSK 2 là dạng đúng (✓) / sai (✗) đối chiếu với hình. Hãy chú ý các từ khóa chỉ thời gian, số lượng và địa điểm, vì băng thường cố tình thay đổi một chi tiết nhỏ so với hình."
+        },
+        {
+          "type": "example",
+          "zh": "现在是八点。",
+          "pinyin": "xiànzài shì bā diǎn.",
+          "vi": "Bây giờ là tám giờ."
+        },
+        {
+          "type": "example",
+          "zh": "他想喝一杯茶。",
+          "pinyin": "tā xiǎng hē yì bēi chá.",
+          "vi": "Anh ấy muốn uống một cốc trà."
+        },
+        {
+          "type": "heading",
+          "text": "Cách đăng ký thi HSK",
+          "zh": "如何报名"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Truy cập trang đăng ký chính thức của Hán ngữ Quốc tế (Chinese Test, www.chinesetest.cn).",
+            "Tạo tài khoản, tải ảnh thẻ đúng chuẩn (nền trắng, rõ mặt).",
+            "Chọn cấp độ (HSK 2), địa điểm và ngày thi, rồi đóng lệ phí trực tuyến.",
+            "In phiếu dự thi (准考证) sau khi được duyệt và mang theo cùng giấy tờ tùy thân khi đi thi."
+          ]
+        },
+        {
+          "type": "vocab",
+          "items": [
+            { "zh": "报名", "pinyin": "bàomíng", "vi": "đăng ký (dự thi)" },
+            { "zh": "准考证", "pinyin": "zhǔnkǎozhèng", "vi": "phiếu dự thi" },
+            { "zh": "考试", "pinyin": "kǎoshì", "vi": "kỳ thi / thi" }
+          ]
+        },
+        {
+          "type": "note",
+          "text": "Hãy đăng ký trước ngày thi ít nhất 3-4 tuần. Nhiều điểm thi đóng cổng đăng ký sớm khi đủ số lượng thí sinh."
+        }
+      ]
+    },
+    {
+      "id": "mt-EXAM_TIPS-3",
+      "title": "HSK 3: Chiến thuật đọc hiểu và sắp xếp câu",
+      "titleZh": "HSK三级阅读与排序策略",
+      "category": "EXAM_TIPS",
+      "hskLevel": "HSK3",
+      "summary": "Phân tích cấu trúc HSK 3 với phần viết mới xuất hiện, mẹo làm dạng sắp xếp câu và cách phân bổ thời gian cho 80 câu hỏi.",
+      "readMinutes": 8,
+      "order": 3,
+      "tags": ["HSK3", "đọc hiểu", "sắp xếp câu", "phần viết"],
+      "content": [
+        {
+          "type": "heading",
+          "text": "HSK 3 có gì mới?",
+          "zh": "HSK三级新变化"
+        },
+        {
+          "type": "paragraph",
+          "text": "HSK 3 là bước ngoặt: lần đầu xuất hiện phần Viết (书写) và đề không còn ghi pinyin trên chữ Hán. Cấp độ này yêu cầu khoảng 600 từ. Đề gồm 80 câu, ba phần Nghe, Đọc, Viết, tổng thời gian khoảng 90 phút."
+        },
+        {
+          "type": "list",
+          "items": [
+            "Phần Nghe (听力): 40 câu, khoảng 35 phút.",
+            "Phần Đọc (阅读): 30 câu, khoảng 30 phút.",
+            "Phần Viết (书写): 10 câu, khoảng 15 phút.",
+            "Điểm tối đa 300 (mỗi phần 100); cần đạt 180 điểm để qua."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Dạng sắp xếp câu trong phần Đọc",
+          "zh": "排列顺序题"
+        },
+        {
+          "type": "paragraph",
+          "text": "Một dạng khó của Đọc HSK 3 là sắp xếp ba câu A, B, C thành đoạn văn hợp lý. Hãy tìm câu mở đầu: thường là câu giới thiệu chủ đề, không chứa đại từ thay thế như 他 (tā), 这 (zhè), 那 (nà). Các câu chứa đại từ chỉ lại thường đứng sau."
+        },
+        {
+          "type": "example",
+          "zh": "昨天我买了一本书。",
+          "pinyin": "zuótiān wǒ mǎile yì běn shū.",
+          "vi": "Hôm qua tôi đã mua một quyển sách."
+        },
+        {
+          "type": "example",
+          "zh": "这本书非常有意思。",
+          "pinyin": "zhè běn shū fēicháng yǒu yìsi.",
+          "vi": "Quyển sách này rất thú vị."
+        },
+        {
+          "type": "heading",
+          "text": "Mẹo phần Viết",
+          "zh": "书写技巧"
+        },
+        {
+          "type": "paragraph",
+          "text": "Phần Viết HSK 3 gồm hai dạng: sắp xếp các từ cho sẵn thành câu đúng, và điền chữ Hán dựa vào pinyin gợi ý. Với dạng sắp xếp, hãy xác định động từ chính trước, rồi đặt chủ ngữ lên đầu và tân ngữ sau động từ theo trật tự Chủ - Vị - Tân."
+        },
+        {
+          "type": "vocab",
+          "items": [
+            { "zh": "书写", "pinyin": "shūxiě", "vi": "phần viết" },
+            { "zh": "顺序", "pinyin": "shùnxù", "vi": "thứ tự / trình tự" },
+            { "zh": "句子", "pinyin": "jùzi", "vi": "câu" }
+          ]
+        },
+        {
+          "type": "note",
+          "text": "Lỗi thường gặp ở phần Viết: viết sai nét hoặc thiếu nét chữ Hán. Hãy luyện viết tay đều đặn, vì từ HSK 3 trở đi không còn pinyin để dựa vào khi đọc đề."
+        }
+      ]
+    },
+    {
+      "id": "mt-EXAM_TIPS-4",
+      "title": "HSK 4: Quản lý thời gian và mẹo nghe tốc độ nhanh",
+      "titleZh": "HSK四级时间管理与听力技巧",
+      "category": "EXAM_TIPS",
+      "hskLevel": "HSK4",
+      "summary": "Cách xử lý áp lực thời gian ở HSK 4, mẹo nghe khi băng chỉ phát một lần và chiến thuật viết đoạn theo từ khóa.",
+      "readMinutes": 8,
+      "order": 4,
+      "tags": ["HSK4", "quản lý thời gian", "phần nghe", "phần viết"],
+      "content": [
+        {
+          "type": "heading",
+          "text": "Cấu trúc và độ khó HSK 4",
+          "zh": "HSK四级结构与难度"
+        },
+        {
+          "type": "paragraph",
+          "text": "HSK 4 yêu cầu khoảng 1200 từ và là cấp độ nhiều thí sinh nhắm tới cho mục đích học tập, làm việc. Đề gồm 100 câu trong ba phần Nghe, Đọc, Viết, tổng thời gian khoảng 105 phút. Điểm khác biệt lớn: các đoạn nghe chỉ được phát một lần."
+        },
+        {
+          "type": "list",
+          "items": [
+            "Phần Nghe (听力): 45 câu, khoảng 30 phút, phát một lần duy nhất.",
+            "Phần Đọc (阅读): 40 câu, khoảng 40 phút.",
+            "Phần Viết (书写): 15 câu, khoảng 25 phút.",
+            "Điểm tối đa 300; cần đạt 180 điểm để qua."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Mẹo nghe khi chỉ phát một lần",
+          "zh": "一次播放的听力技巧"
+        },
+        {
+          "type": "paragraph",
+          "text": "Vì băng chỉ phát một lần, hãy đọc trước các phương án trả lời trong lúc chờ. Tập trung nghe phần đầu và phần cuối của đoạn hội thoại, nơi thường chứa thông tin then chốt. Nếu lỡ một câu, bỏ qua ngay và tập trung vào câu kế tiếp, đừng để mất luôn câu sau."
+        },
+        {
+          "type": "example",
+          "zh": "会议改到下午三点开始。",
+          "pinyin": "huìyì gǎi dào xiàwǔ sān diǎn kāishǐ.",
+          "vi": "Cuộc họp đổi sang ba giờ chiều bắt đầu."
+        },
+        {
+          "type": "heading",
+          "text": "Chiến thuật phần Viết",
+          "zh": "书写策略"
+        },
+        {
+          "type": "paragraph",
+          "text": "Phần Viết HSK 4 có dạng nhìn tranh và dùng một từ cho sẵn để đặt câu. Hãy đặt câu đơn giản, đúng ngữ pháp thay vì cầu kỳ dễ sai. Mỗi câu nên có đủ chủ ngữ, động từ và một bổ ngữ ngắn liên quan đến tranh."
+        },
+        {
+          "type": "example",
+          "zh": "她正在认真地复习。",
+          "pinyin": "tā zhèngzài rènzhēn de fùxí.",
+          "vi": "Cô ấy đang ôn tập một cách chăm chỉ."
+        },
+        {
+          "type": "vocab",
+          "items": [
+            { "zh": "会议", "pinyin": "huìyì", "vi": "cuộc họp / hội nghị" },
+            { "zh": "复习", "pinyin": "fùxí", "vi": "ôn tập" },
+            { "zh": "时间", "pinyin": "shíjiān", "vi": "thời gian" }
+          ]
+        },
+        {
+          "type": "note",
+          "text": "Quản lý thời gian phần Đọc rất quan trọng: với 40 câu trong 40 phút, mỗi câu chỉ có khoảng 1 phút. Đừng dừng quá lâu ở một câu khó; đánh dấu lại và quay về sau nếu còn giờ."
+        }
+      ]
+    },
+    {
+      "id": "mt-EXAM_TIPS-5",
+      "title": "HSK 5: Cách tính điểm, chiến thuật đọc nhanh và viết luận",
+      "titleZh": "HSK五级评分与应试策略",
+      "category": "EXAM_TIPS",
+      "hskLevel": "HSK5",
+      "summary": "Giải thích cách chấm điểm HSK 5, kỹ thuật đọc lướt cho đoạn văn dài và cách triển khai bài viết 80 chữ trong phần viết.",
+      "readMinutes": 9,
+      "order": 5,
+      "tags": ["HSK5", "cách tính điểm", "đọc lướt", "viết luận"],
+      "content": [
+        {
+          "type": "heading",
+          "text": "Tổng quan đề thi HSK 5",
+          "zh": "HSK五级考试概览"
+        },
+        {
+          "type": "paragraph",
+          "text": "HSK 5 yêu cầu khoảng 2500 từ, đủ để đọc báo, tạp chí và xem chương trình truyền hình tiếng Trung. Đề gồm 100 câu trong ba phần Nghe, Đọc, Viết, tổng thời gian khoảng 125 phút. Các đoạn nghe phát một lần và văn bản đọc dài hơn hẳn so với HSK 4."
+        },
+        {
+          "type": "list",
+          "items": [
+            "Phần Nghe (听力): 45 câu, khoảng 30 phút.",
+            "Phần Đọc (阅读): 45 câu, khoảng 45 phút.",
+            "Phần Viết (书写): 10 câu, khoảng 40 phút.",
+            "Điểm tối đa 300 (mỗi phần 100); cần đạt 180 điểm để qua."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Cách tính điểm và chứng chỉ",
+          "zh": "评分与证书"
+        },
+        {
+          "type": "paragraph",
+          "text": "Mỗi phần được quy về thang 100 điểm, cộng lại tối đa 300. Kết quả thường có sau khoảng một tháng và tải được trên trang chủ. Chứng chỉ HSK trước đây có giá trị hai năm cho mục đích du học, nên hãy thi gần thời điểm bạn cần dùng."
+        },
+        {
+          "type": "heading",
+          "text": "Kỹ thuật đọc lướt đoạn văn dài",
+          "zh": "略读长文技巧"
+        },
+        {
+          "type": "paragraph",
+          "text": "Phần Đọc cuối HSK 5 có những đoạn văn dài kèm nhiều câu hỏi. Hãy đọc câu hỏi trước để biết cần tìm thông tin gì, sau đó quét (扫读) văn bản tìm từ khóa thay vì đọc từng chữ. Chú ý câu đầu mỗi đoạn vì thường nêu ý chính."
+        },
+        {
+          "type": "example",
+          "zh": "随着科技的发展，人们的生活越来越方便。",
+          "pinyin": "suízhe kējì de fāzhǎn, rénmen de shēnghuó yuè lái yuè fāngbiàn.",
+          "vi": "Cùng với sự phát triển của khoa học công nghệ, cuộc sống của con người ngày càng tiện lợi."
+        },
+        {
+          "type": "heading",
+          "text": "Viết đoạn 80 chữ ở phần Viết",
+          "zh": "写80字短文"
+        },
+        {
+          "type": "paragraph",
+          "text": "Phần Viết HSK 5 yêu cầu dùng 5 từ cho sẵn để viết một đoạn khoảng 80 chữ, hoặc nhìn tranh và viết đoạn 80 chữ. Hãy lập dàn ý nhanh: câu mở đề, hai đến ba câu thân bài dùng hết các từ cho sẵn, và một câu kết. Ưu tiên câu đúng ngữ pháp và liên kết bằng các từ nối như 因为 (yīnwèi), 所以 (suǒyǐ)."
+        },
+        {
+          "type": "vocab",
+          "items": [
+            { "zh": "评分", "pinyin": "píngfēn", "vi": "chấm điểm / tính điểm" },
+            { "zh": "证书", "pinyin": "zhèngshū", "vi": "chứng chỉ" },
+            { "zh": "短文", "pinyin": "duǎnwén", "vi": "đoạn văn ngắn" },
+            { "zh": "略读", "pinyin": "lüèdú", "vi": "đọc lướt / đọc nhanh" }
+          ]
+        },
+        {
+          "type": "note",
+          "text": "Lỗi thường gặp ở phần Viết: viết quá ngắn hoặc bỏ sót từ cho sẵn. Hãy đếm đủ số từ phải dùng và giữ độ dài quanh mức 80 chữ; viết quá ngắn sẽ bị trừ điểm."
+        }
+      ]
+    }
+  ]
+}

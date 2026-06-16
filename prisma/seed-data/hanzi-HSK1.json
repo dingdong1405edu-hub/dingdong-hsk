@@ -1,0 +1,198 @@
+{
+  "kind": "hanzi",
+  "characters": [
+    {
+      "id": "hz-HSK1-1",
+      "character": "你",
+      "pinyin": "nǐ",
+      "tone": 3,
+      "meaning": "Bạn (ngôi 2)",
+      "hskLevel": "HSK1",
+      "strokeCount": 7,
+      "examples": [
+        { "sentence": "你好", "pinyin": "nǐ hǎo", "meaning": "Xin chào" },
+        { "sentence": "你是谁", "pinyin": "nǐ shì shéi", "meaning": "Bạn là ai" }
+      ]
+    },
+    {
+      "id": "hz-HSK1-2",
+      "character": "我",
+      "pinyin": "wǒ",
+      "tone": 3,
+      "meaning": "Tôi, tớ",
+      "hskLevel": "HSK1",
+      "strokeCount": 7,
+      "examples": [
+        { "sentence": "我是学生", "pinyin": "wǒ shì xué sheng", "meaning": "Tôi là học sinh" }
+      ]
+    },
+    {
+      "id": "hz-HSK1-3",
+      "character": "好",
+      "pinyin": "hǎo",
+      "tone": 3,
+      "meaning": "Tốt, hay",
+      "hskLevel": "HSK1",
+      "strokeCount": 6,
+      "examples": [
+        { "sentence": "很好", "pinyin": "hěn hǎo", "meaning": "Rất tốt" }
+      ]
+    },
+    {
+      "id": "hz-HSK1-4",
+      "character": "是",
+      "pinyin": "shì",
+      "tone": 4,
+      "meaning": "Là, đúng",
+      "hskLevel": "HSK1",
+      "strokeCount": 9,
+      "examples": [
+        { "sentence": "我是老师", "pinyin": "wǒ shì lǎo shī", "meaning": "Tôi là giáo viên" }
+      ]
+    },
+    {
+      "id": "hz-HSK1-5",
+      "character": "不",
+      "pinyin": "bù",
+      "tone": 4,
+      "meaning": "Không (phủ định)",
+      "hskLevel": "HSK1",
+      "strokeCount": 4,
+      "examples": [
+        { "sentence": "不是", "pinyin": "bú shì", "meaning": "Không phải" }
+      ]
+    },
+    {
+      "id": "hz-HSK1-6",
+      "character": "人",
+      "pinyin": "rén",
+      "tone": 2,
+      "meaning": "Người",
+      "hskLevel": "HSK1",
+      "strokeCount": 2,
+      "examples": [
+        { "sentence": "中国人", "pinyin": "zhōng guó rén", "meaning": "Người Trung Quốc" }
+      ]
+    },
+    {
+      "id": "hz-HSK1-7",
+      "character": "大",
+      "pinyin": "dà",
+      "tone": 4,
+      "meaning": "To, lớn",
+      "hskLevel": "HSK1",
+      "strokeCount": 3,
+      "examples": [
+        { "sentence": "大家", "pinyin": "dà jiā", "meaning": "Mọi người" }
+      ]
+    },
+    {
+      "id": "hz-HSK1-8",
+      "character": "小",
+      "pinyin": "xiǎo",
+      "tone": 3,
+      "meaning": "Nhỏ, bé",
+      "hskLevel": "HSK1",
+      "strokeCount": 3,
+      "examples": [
+        { "sentence": "小狗", "pinyin": "xiǎo gǒu", "meaning": "Chó con" }
+      ]
+    },
+    {
+      "id": "hz-HSK1-9",
+      "character": "中",
+      "pinyin": "zhōng",
+      "tone": 1,
+      "meaning": "Giữa, trung",
+      "hskLevel": "HSK1",
+      "strokeCount": 4,
+      "examples": [
+        { "sentence": "中国", "pinyin": "zhōng guó", "meaning": "Trung Quốc" }
+      ]
+    },
+    {
+      "id": "hz-HSK1-10",
+      "character": "国",
+      "pinyin": "guó",
+      "tone": 2,
+      "meaning": "Nước, quốc gia",
+      "hskLevel": "HSK1",
+      "strokeCount": 8,
+      "examples": [
+        { "sentence": "中国", "pinyin": "zhōng guó", "meaning": "Trung Quốc" }
+      ]
+    },
+    {
+      "id": "hz-HSK1-11",
+      "character": "爱",
+      "pinyin": "ài",
+      "tone": 4,
+      "meaning": "Yêu, thương",
+      "hskLevel": "HSK1",
+      "strokeCount": 10,
+      "examples": [
+        { "sentence": "我爱你", "pinyin": "wǒ ài nǐ", "meaning": "Tôi yêu bạn" }
+      ]
+    },
+    {
+      "id": "hz-HSK1-12",
+      "character": "水",
+      "pinyin": "shuǐ",
+      "tone": 3,
+      "meaning": "Nước (uống)",
+      "hskLevel": "HSK1",
+      "strokeCount": 4,
+      "examples": [
+        { "sentence": "喝水", "pinyin": "hē shuǐ", "meaning": "Uống nước" }
+      ]
+    },
+    {
+      "id": "hz-HSK1-13",
+      "character": "茶",
+      "pinyin": "chá",
+      "tone": 2,
+      "meaning": "Trà",
+      "hskLevel": "HSK1",
+      "strokeCount": 9,
+      "examples": [
+        { "sentence": "喝茶", "pinyin": "hē chá", "meaning": "Uống trà" }
+      ]
+    },
+    {
+      "id": "hz-HSK1-14",
+      "character": "月",
+      "pinyin": "yuè",
+      "tone": 4,
+      "meaning": "Tháng, mặt trăng",
+      "hskLevel": "HSK1",
+      "strokeCount": 4,
+      "examples": [
+        { "sentence": "一月", "pinyin": "yī yuè", "meaning": "Tháng Một" }
+      ]
+    },
+    {
+      "id": "hz-HSK1-15",
+      "character": "日",
+      "pinyin": "rì",
+      "tone": 4,
+      "meaning": "Ngày, mặt trời",
+      "hskLevel": "HSK1",
+      "strokeCount": 4,
+      "examples": [
+        { "sentence": "生日", "pinyin": "shēng rì", "meaning": "Sinh nhật" }
+      ]
+    },
+    {
+      "id": "hz-HSK1-16",
+      "character": "天",
+      "pinyin": "tiān",
+      "tone": 1,
+      "meaning": "Trời, ngày",
+      "hskLevel": "HSK1",
+      "strokeCount": 4,
+      "examples": [
+        { "sentence": "今天", "pinyin": "jīn tiān", "meaning": "Hôm nay" }
+      ]
+    }
+  ]
+}

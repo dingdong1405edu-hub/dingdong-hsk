@@ -1,0 +1,227 @@
+{
+  "kind": "grammar",
+  "units": [
+    {
+      "id": "gr-HSK1-u1",
+      "title": "Câu cơ bản với động từ",
+      "titleZh": "基本动词句",
+      "hskLevel": "HSK1",
+      "order": 1,
+      "lessons": [
+        {
+          "id": "gr-HSK1-u1-l1",
+          "title": "Động từ 是 (shì) - là",
+          "order": 1,
+          "exercises": [
+            {
+              "type": "fill_blank",
+              "sentence": "我___学生。",
+              "blank": "是",
+              "options": ["是", "有", "在", "叫"],
+              "hint": "Động từ 是 (shì) nghĩa là 'là', dùng để nối chủ ngữ với danh từ."
+            },
+            {
+              "type": "fill_blank",
+              "sentence": "他___老师。",
+              "blank": "是",
+              "options": ["是", "很", "也", "不"],
+              "hint": "Dùng 是 (shì) để nói 'Anh ấy là giáo viên'."
+            },
+            {
+              "type": "sentence_order",
+              "words": ["老师", "是", "他"],
+              "answer": "他是老师",
+              "meaning": "Anh ấy là giáo viên."
+            },
+            {
+              "type": "translate",
+              "direction": "vi_to_zh",
+              "prompt": "Cô ấy là bác sĩ.",
+              "answer": "她是医生。",
+              "options": ["她是医生。", "他是老师。", "我是学生。", "你是医生。"]
+            }
+          ]
+        },
+        {
+          "id": "gr-HSK1-u1-l2",
+          "title": "Động từ 有 (yǒu) - có",
+          "order": 2,
+          "exercises": [
+            {
+              "type": "fill_blank",
+              "sentence": "我___一个朋友。",
+              "blank": "有",
+              "options": ["有", "是", "在", "做"],
+              "hint": "Động từ 有 (yǒu) nghĩa là 'có', diễn tả sự sở hữu."
+            },
+            {
+              "type": "fill_blank",
+              "sentence": "他___三本书。",
+              "blank": "有",
+              "options": ["有", "是", "看", "买"],
+              "hint": "Dùng 有 (yǒu) để nói 'Anh ấy có ba quyển sách'."
+            },
+            {
+              "type": "sentence_order",
+              "words": ["有", "我", "一个", "女儿"],
+              "answer": "我有一个女儿",
+              "meaning": "Tôi có một con gái."
+            },
+            {
+              "type": "translate",
+              "direction": "vi_to_zh",
+              "prompt": "Tôi có một con mèo.",
+              "answer": "我有一只猫。",
+              "options": ["我有一只猫。", "我有一只狗。", "他有一只猫。", "我是一只猫。"]
+            }
+          ]
+        },
+        {
+          "id": "gr-HSK1-u1-l3",
+          "title": "Phủ định với 不 (bù) và 没 (méi)",
+          "order": 3,
+          "exercises": [
+            {
+              "type": "fill_blank",
+              "sentence": "我___是老师。",
+              "blank": "不",
+              "options": ["不", "没", "很", "也"],
+              "hint": "Dùng 不 (bù) để phủ định động từ thường và 是 (shì)."
+            },
+            {
+              "type": "fill_blank",
+              "sentence": "我___有钱。",
+              "blank": "没",
+              "options": ["没", "不", "是", "很"],
+              "hint": "Động từ 有 (yǒu) phải phủ định bằng 没 (méi), không dùng 不."
+            },
+            {
+              "type": "sentence_order",
+              "words": ["不", "他", "去", "学校"],
+              "answer": "他不去学校",
+              "meaning": "Anh ấy không đi đến trường."
+            },
+            {
+              "type": "translate",
+              "direction": "vi_to_zh",
+              "prompt": "Tôi không phải là học sinh.",
+              "answer": "我不是学生。",
+              "options": ["我不是学生。", "我没是学生。", "我不有学生。", "我是不学生。"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gr-HSK1-u2",
+      "title": "Câu hỏi và phó từ cơ bản",
+      "titleZh": "疑问句和基本副词",
+      "hskLevel": "HSK1",
+      "order": 2,
+      "lessons": [
+        {
+          "id": "gr-HSK1-u2-l1",
+          "title": "Câu hỏi với 吗 (ma)",
+          "order": 1,
+          "exercises": [
+            {
+              "type": "fill_blank",
+              "sentence": "你是中国人___？",
+              "blank": "吗",
+              "options": ["吗", "呢", "了", "的"],
+              "hint": "Thêm 吗 (ma) ở cuối câu trần thuật để tạo câu hỏi có/không."
+            },
+            {
+              "type": "fill_blank",
+              "sentence": "他是老师___？",
+              "blank": "吗",
+              "options": ["吗", "不", "很", "也"],
+              "hint": "Dùng 吗 (ma) cuối câu để hỏi 'Anh ấy là giáo viên phải không?'."
+            },
+            {
+              "type": "sentence_order",
+              "words": ["吗", "学生", "你", "是"],
+              "answer": "你是学生吗",
+              "meaning": "Bạn là học sinh phải không?"
+            },
+            {
+              "type": "translate",
+              "direction": "vi_to_zh",
+              "prompt": "Bạn có sách không?",
+              "answer": "你有书吗？",
+              "options": ["你有书吗？", "你是书吗？", "你有书呢？", "你有书吧？"]
+            }
+          ]
+        },
+        {
+          "id": "gr-HSK1-u2-l2",
+          "title": "Đại từ nghi vấn 什么 (shénme) - gì",
+          "order": 2,
+          "exercises": [
+            {
+              "type": "fill_blank",
+              "sentence": "这是___？",
+              "blank": "什么",
+              "options": ["什么", "谁", "哪", "几"],
+              "hint": "什么 (shénme) nghĩa là 'cái gì', dùng để hỏi về sự vật."
+            },
+            {
+              "type": "fill_blank",
+              "sentence": "你叫___名字？",
+              "blank": "什么",
+              "options": ["什么", "谁", "多少", "怎么"],
+              "hint": "Dùng 什么 (shénme) để hỏi 'Bạn tên là gì?'."
+            },
+            {
+              "type": "sentence_order",
+              "words": ["什么", "吃", "你", "想"],
+              "answer": "你想吃什么",
+              "meaning": "Bạn muốn ăn gì?"
+            },
+            {
+              "type": "translate",
+              "direction": "vi_to_zh",
+              "prompt": "Đây là cái gì?",
+              "answer": "这是什么？",
+              "options": ["这是什么？", "那是谁？", "这是谁？", "你是什么？"]
+            }
+          ]
+        },
+        {
+          "id": "gr-HSK1-u2-l3",
+          "title": "Phó từ 很 (hěn) và 也 (yě)",
+          "order": 3,
+          "exercises": [
+            {
+              "type": "fill_blank",
+              "sentence": "我___高兴。",
+              "blank": "很",
+              "options": ["很", "是", "有", "吗"],
+              "hint": "很 (hěn) là phó từ mức độ, đặt trước tính từ: 'rất'."
+            },
+            {
+              "type": "fill_blank",
+              "sentence": "我是学生，他___是学生。",
+              "blank": "也",
+              "options": ["也", "很", "不", "是"],
+              "hint": "也 (yě) nghĩa là 'cũng', đặt trước động từ."
+            },
+            {
+              "type": "sentence_order",
+              "words": ["很", "今天", "热", "天气"],
+              "answer": "今天天气很热",
+              "meaning": "Thời tiết hôm nay rất nóng."
+            },
+            {
+              "type": "translate",
+              "direction": "vi_to_zh",
+              "prompt": "Tôi cũng rất vui.",
+              "answer": "我也很高兴。",
+              "options": ["我也很高兴。", "我很高兴。", "他也很高兴。", "我也是高兴。"]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

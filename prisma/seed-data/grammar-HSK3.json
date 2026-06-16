@@ -1,0 +1,227 @@
+{
+  "kind": "grammar",
+  "units": [
+    {
+      "id": "gr-HSK3-u1",
+      "title": "Câu chữ 把 và bổ ngữ kết quả",
+      "titleZh": "把字句与结果补语",
+      "hskLevel": "HSK3",
+      "order": 1,
+      "lessons": [
+        {
+          "id": "gr-HSK3-u1-l1",
+          "title": "Câu chữ 把 (bǎ) diễn tả sự xử lý tân ngữ",
+          "order": 1,
+          "exercises": [
+            {
+              "type": "fill_blank",
+              "sentence": "请你___门关上。",
+              "blank": "把",
+              "options": ["把", "被", "比", "在"],
+              "hint": "Giới từ 把 (bǎ) đưa tân ngữ lên trước động từ để nhấn mạnh sự xử lý"
+            },
+            {
+              "type": "fill_blank",
+              "sentence": "我把作业___完了。",
+              "blank": "做",
+              "options": ["做", "是", "有", "很"],
+              "hint": "Trong câu chữ 把, sau tân ngữ phải có động từ kèm thành phần bổ sung"
+            },
+            {
+              "type": "sentence_order",
+              "words": ["把", "我", "吃", "苹果", "了"],
+              "answer": "我把苹果吃了",
+              "meaning": "Tôi đã ăn quả táo rồi"
+            },
+            {
+              "type": "translate",
+              "direction": "vi_to_zh",
+              "prompt": "Anh ấy đã đặt cuốn sách lên bàn.",
+              "answer": "他把书放在桌子上了。",
+              "options": ["他把书放在桌子上了。", "他把书放在椅子上了。", "我把书放在桌子上了。", "他把笔放在桌子上了。"]
+            }
+          ]
+        },
+        {
+          "id": "gr-HSK3-u1-l2",
+          "title": "Bổ ngữ kết quả 完 (wán) và 好 (hǎo)",
+          "order": 2,
+          "exercises": [
+            {
+              "type": "fill_blank",
+              "sentence": "我已经吃___饭了。",
+              "blank": "完",
+              "options": ["完", "在", "着", "过"],
+              "hint": "Bổ ngữ kết quả 完 (wán) đặt sau động từ chỉ hành động đã hoàn tất"
+            },
+            {
+              "type": "fill_blank",
+              "sentence": "这件事情我们已经准备___了。",
+              "blank": "好",
+              "options": ["好", "完", "到", "见"],
+              "hint": "Bổ ngữ kết quả 好 (hǎo) chỉ việc làm xong đạt trạng thái tốt, sẵn sàng"
+            },
+            {
+              "type": "sentence_order",
+              "words": ["看完", "我", "这本书", "了"],
+              "answer": "我看完这本书了",
+              "meaning": "Tôi đã đọc xong cuốn sách này"
+            },
+            {
+              "type": "translate",
+              "direction": "vi_to_zh",
+              "prompt": "Tôi đã làm xong bài tập rồi.",
+              "answer": "我做完作业了。",
+              "options": ["我做完作业了。", "我做好作业了。", "他做完作业了。", "我看完作业了。"]
+            }
+          ]
+        },
+        {
+          "id": "gr-HSK3-u1-l3",
+          "title": "Bổ ngữ kết quả 到 (dào) và 见 (jiàn)",
+          "order": 3,
+          "exercises": [
+            {
+              "type": "fill_blank",
+              "sentence": "我找___我的手机了。",
+              "blank": "到",
+              "options": ["到", "完", "好", "在"],
+              "hint": "Bổ ngữ kết quả 到 (dào) chỉ kết quả đạt được mục đích của hành động"
+            },
+            {
+              "type": "fill_blank",
+              "sentence": "你听___老师说的话了吗？",
+              "blank": "见",
+              "options": ["见", "完", "好", "过"],
+              "hint": "Bổ ngữ kết quả 见 (jiàn) thường dùng với 看, 听 chỉ tri giác được"
+            },
+            {
+              "type": "sentence_order",
+              "words": ["看见", "我", "了", "他"],
+              "answer": "我看见他了",
+              "meaning": "Tôi đã nhìn thấy anh ấy rồi"
+            },
+            {
+              "type": "translate",
+              "direction": "vi_to_zh",
+              "prompt": "Tôi đã nghe thấy tiếng của cô ấy.",
+              "answer": "我听见她的声音了。",
+              "options": ["我听见她的声音了。", "我看见她的声音了。", "我听见他的声音了。", "我找到她的声音了。"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gr-HSK3-u2",
+      "title": "Câu phức và liên từ",
+      "titleZh": "复句与关联词",
+      "hskLevel": "HSK3",
+      "order": 2,
+      "lessons": [
+        {
+          "id": "gr-HSK3-u2-l1",
+          "title": "Cấu trúc 因为 (yīnwèi) ... 所以 (suǒyǐ) chỉ nguyên nhân kết quả",
+          "order": 1,
+          "exercises": [
+            {
+              "type": "fill_blank",
+              "sentence": "___下雨，所以我没去公园。",
+              "blank": "因为",
+              "options": ["因为", "虽然", "如果", "但是"],
+              "hint": "因为 (yīnwèi) đặt ở vế chỉ nguyên nhân, nghĩa là vì, bởi vì"
+            },
+            {
+              "type": "fill_blank",
+              "sentence": "因为他生病了，___没来上课。",
+              "blank": "所以",
+              "options": ["所以", "因为", "可是", "还是"],
+              "hint": "所以 (suǒyǐ) đặt ở vế chỉ kết quả, nghĩa là cho nên, vì vậy"
+            },
+            {
+              "type": "sentence_order",
+              "words": ["因为", "所以", "很累", "他", "睡觉了", "早早"],
+              "answer": "因为很累，所以他早早睡觉了",
+              "meaning": "Vì rất mệt nên anh ấy đã đi ngủ sớm"
+            },
+            {
+              "type": "translate",
+              "direction": "vi_to_zh",
+              "prompt": "Vì hôm nay rất nóng nên tôi không muốn đi ra ngoài.",
+              "answer": "因为今天很热，所以我不想出去。",
+              "options": ["因为今天很热，所以我不想出去。", "虽然今天很热，但是我想出去。", "因为今天很冷，所以我不想出去。", "因为今天很热，所以他不想出去。"]
+            }
+          ]
+        },
+        {
+          "id": "gr-HSK3-u2-l2",
+          "title": "Cấu trúc 虽然 (suīrán) ... 但是 (dànshì) chỉ sự nhượng bộ",
+          "order": 2,
+          "exercises": [
+            {
+              "type": "fill_blank",
+              "sentence": "___这个工作很累，但是我很喜欢。",
+              "blank": "虽然",
+              "options": ["虽然", "因为", "所以", "如果"],
+              "hint": "虽然 (suīrán) nghĩa là mặc dù, tuy rằng, đặt ở vế đầu"
+            },
+            {
+              "type": "fill_blank",
+              "sentence": "虽然他很忙，___每天都锻炼身体。",
+              "blank": "但是",
+              "options": ["但是", "所以", "因为", "或者"],
+              "hint": "但是 (dànshì) nghĩa là nhưng, đặt ở vế sau biểu thị sự trái ngược"
+            },
+            {
+              "type": "sentence_order",
+              "words": ["虽然", "但是", "很贵", "这个手机", "很好用"],
+              "answer": "这个手机虽然很贵，但是很好用",
+              "meaning": "Chiếc điện thoại này tuy đắt nhưng rất dễ dùng"
+            },
+            {
+              "type": "translate",
+              "direction": "vi_to_zh",
+              "prompt": "Mặc dù trời mưa nhưng anh ấy vẫn đi làm.",
+              "answer": "虽然下雨了，但是他还是去上班了。",
+              "options": ["虽然下雨了，但是他还是去上班了。", "因为下雨了，所以他没去上班。", "虽然下雪了，但是他还是去上班了。", "虽然下雨了，但是我还是去上班了。"]
+            }
+          ]
+        },
+        {
+          "id": "gr-HSK3-u2-l3",
+          "title": "Cấu trúc 一边 (yìbiān) ... 一边 (yìbiān) chỉ hai hành động đồng thời",
+          "order": 3,
+          "exercises": [
+            {
+              "type": "fill_blank",
+              "sentence": "他___走___打电话。",
+              "blank": "一边",
+              "options": ["一边", "一点", "一些", "一直"],
+              "hint": "一边 (yìbiān) ... 一边 (yìbiān) diễn tả hai hành động xảy ra cùng lúc"
+            },
+            {
+              "type": "fill_blank",
+              "sentence": "我喜欢一边吃饭___看电视。",
+              "blank": "一边",
+              "options": ["一边", "一定", "已经", "正在"],
+              "hint": "Vế thứ hai của cấu trúc cũng dùng 一边 (yìbiān) trước động từ"
+            },
+            {
+              "type": "sentence_order",
+              "words": ["一边", "一边", "听音乐", "他", "学习"],
+              "answer": "他一边听音乐一边学习",
+              "meaning": "Anh ấy vừa nghe nhạc vừa học bài"
+            },
+            {
+              "type": "translate",
+              "direction": "vi_to_zh",
+              "prompt": "Cô ấy vừa hát vừa nhảy.",
+              "answer": "她一边唱歌一边跳舞。",
+              "options": ["她一边唱歌一边跳舞。", "她一边吃饭一边跳舞。", "他一边唱歌一边跳舞。", "她一直唱歌一直跳舞。"]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

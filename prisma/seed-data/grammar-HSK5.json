@@ -1,0 +1,227 @@
+{
+  "kind": "grammar",
+  "units": [
+    {
+      "id": "gr-HSK5-u1",
+      "title": "Câu phức và liên từ nâng cao",
+      "titleZh": "复句与高级连词",
+      "hskLevel": "HSK5",
+      "order": 1,
+      "lessons": [
+        {
+          "id": "gr-HSK5-u1-l1",
+          "title": "Cấu trúc 即使...也... (cho dù... vẫn...)",
+          "order": 1,
+          "exercises": [
+            {
+              "type": "fill_blank",
+              "sentence": "___下雨，我也要去爬山。",
+              "blank": "即使",
+              "options": ["即使", "因为", "如果", "虽然"],
+              "hint": "即使 (jíshǐ): cho dù, biểu thị giả thiết nhượng bộ, đi với 也"
+            },
+            {
+              "type": "fill_blank",
+              "sentence": "即使工作再忙，他___会抽时间锻炼身体。",
+              "blank": "也",
+              "options": ["也", "就", "才", "都"],
+              "hint": "即使 thường kết hợp với 也 (yě) ở vế sau"
+            },
+            {
+              "type": "sentence_order",
+              "words": ["即使", "很贵", "我", "也", "要", "买"],
+              "answer": "即使很贵我也要买",
+              "meaning": "Cho dù rất đắt tôi vẫn muốn mua"
+            },
+            {
+              "type": "translate",
+              "direction": "vi_to_zh",
+              "prompt": "Cho dù khó khăn, chúng tôi cũng không bỏ cuộc.",
+              "answer": "即使有困难，我们也不放弃。",
+              "options": ["即使有困难，我们也不放弃。", "因为有困难，我们就放弃了。", "如果有困难，我们会放弃。", "虽然有困难，但是我们放弃了。"]
+            }
+          ]
+        },
+        {
+          "id": "gr-HSK5-u1-l2",
+          "title": "Cấu trúc 不但不/没...反而... (không những không... mà ngược lại...)",
+          "order": 2,
+          "exercises": [
+            {
+              "type": "fill_blank",
+              "sentence": "吃了药以后，他的病不但没好，___更严重了。",
+              "blank": "反而",
+              "options": ["反而", "而且", "并且", "然后"],
+              "hint": "反而 (fǎn'ér): mà ngược lại, biểu thị kết quả trái với mong đợi"
+            },
+            {
+              "type": "fill_blank",
+              "sentence": "天气预报说会下雨，可是今天___一片云都没有。",
+              "blank": "反而",
+              "options": ["反而", "因此", "于是", "结果"],
+              "hint": "反而 nhấn mạnh tình huống đi ngược lại dự đoán"
+            },
+            {
+              "type": "sentence_order",
+              "words": ["他", "不但", "不", "生气", "反而", "笑了"],
+              "answer": "他不但不生气反而笑了",
+              "meaning": "Anh ấy không những không tức giận mà ngược lại còn cười"
+            },
+            {
+              "type": "translate",
+              "direction": "vi_to_zh",
+              "prompt": "Cô ấy không những không cảm ơn tôi, mà ngược lại còn trách tôi.",
+              "answer": "她不但不感谢我，反而责怪我。",
+              "options": ["她不但不感谢我，反而责怪我。", "她不但感谢我，而且帮助我。", "她因为感谢我，所以责怪我。", "她虽然感谢我，但是责怪我。"]
+            }
+          ]
+        },
+        {
+          "id": "gr-HSK5-u1-l3",
+          "title": "Cấu trúc 宁可...也不... (thà... chứ không...)",
+          "order": 3,
+          "exercises": [
+            {
+              "type": "fill_blank",
+              "sentence": "他___站着，也不愿意坐在他旁边。",
+              "blank": "宁可",
+              "options": ["宁可", "尽管", "无论", "不管"],
+              "hint": "宁可 (nìngkě): thà, biểu thị sự lựa chọn sau khi cân nhắc, đi với 也不"
+            },
+            {
+              "type": "fill_blank",
+              "sentence": "我宁可自己辛苦一点，___不想麻烦别人。",
+              "blank": "也",
+              "options": ["也", "却", "再", "更"],
+              "hint": "宁可 kết hợp với 也不 hoặc 也 để biểu thị 'thà... chứ không'"
+            },
+            {
+              "type": "sentence_order",
+              "words": ["我", "宁可", "走路", "也不", "坐", "他的车"],
+              "answer": "我宁可走路也不坐他的车",
+              "meaning": "Tôi thà đi bộ chứ không ngồi xe của anh ấy"
+            },
+            {
+              "type": "translate",
+              "direction": "vi_to_zh",
+              "prompt": "Tôi thà nói thật chứ không muốn nói dối.",
+              "answer": "我宁可说实话，也不愿意说谎。",
+              "options": ["我宁可说实话，也不愿意说谎。", "我虽然说实话，但是说谎了。", "我因为说实话，所以说谎。", "我不但说实话，而且说谎。"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gr-HSK5-u2",
+      "title": "Cấu trúc đặc biệt và bổ ngữ nâng cao",
+      "titleZh": "特殊结构与高级补语",
+      "hskLevel": "HSK5",
+      "order": 2,
+      "lessons": [
+        {
+          "id": "gr-HSK5-u2-l1",
+          "title": "Câu chữ 把 nâng cao với bổ ngữ kết quả",
+          "order": 1,
+          "exercises": [
+            {
+              "type": "fill_blank",
+              "sentence": "请你___这些文件放在桌子上。",
+              "blank": "把",
+              "options": ["把", "被", "让", "给"],
+              "hint": "把 (bǎ): đưa tân ngữ lên trước động từ, nhấn mạnh sự xử lý đối với tân ngữ"
+            },
+            {
+              "type": "fill_blank",
+              "sentence": "他不小心把杯子___了。",
+              "blank": "打破",
+              "options": ["打破", "打开", "打算", "打听"],
+              "hint": "Sau 把 + tân ngữ, động từ phải có thành phần khác (ở đây là bổ ngữ kết quả 破)"
+            },
+            {
+              "type": "sentence_order",
+              "words": ["我", "把", "作业", "做", "完", "了"],
+              "answer": "我把作业做完了",
+              "meaning": "Tôi đã làm xong bài tập"
+            },
+            {
+              "type": "translate",
+              "direction": "vi_to_zh",
+              "prompt": "Xin hãy đóng cửa lại.",
+              "answer": "请把门关上。",
+              "options": ["请把门关上。", "请把门打开。", "请被门关上。", "请让门关上。"]
+            }
+          ]
+        },
+        {
+          "id": "gr-HSK5-u2-l2",
+          "title": "Câu bị động với 被/让/叫 và tác nhân",
+          "order": 2,
+          "exercises": [
+            {
+              "type": "fill_blank",
+              "sentence": "我的自行车___人偷走了。",
+              "blank": "被",
+              "options": ["被", "把", "向", "对"],
+              "hint": "被 (bèi): biểu thị bị động, chủ ngữ là đối tượng chịu tác động"
+            },
+            {
+              "type": "fill_blank",
+              "sentence": "那本书已经被他___了。",
+              "blank": "借走",
+              "options": ["借走", "借给", "借口", "借钱"],
+              "hint": "Sau câu bị động, động từ thường mang bổ ngữ; 借走 = mượn đi"
+            },
+            {
+              "type": "sentence_order",
+              "words": ["蛋糕", "被", "弟弟", "吃", "完", "了"],
+              "answer": "蛋糕被弟弟吃完了",
+              "meaning": "Bánh ngọt đã bị em trai ăn hết"
+            },
+            {
+              "type": "translate",
+              "direction": "vi_to_zh",
+              "prompt": "Chiếc kính của tôi bị em trai làm vỡ rồi.",
+              "answer": "我的眼镜被弟弟弄坏了。",
+              "options": ["我的眼镜被弟弟弄坏了。", "我的眼镜把弟弟弄坏了。", "我的眼镜让眼镜弄坏了。", "我的眼镜被弟弟修好了。"]
+            }
+          ]
+        },
+        {
+          "id": "gr-HSK5-u2-l3",
+          "title": "Bổ ngữ khả năng với 得/不 (V得/不+kết quả)",
+          "order": 3,
+          "exercises": [
+            {
+              "type": "fill_blank",
+              "sentence": "这些字太小了，我看___清楚。",
+              "blank": "不",
+              "options": ["不", "得", "了", "完"],
+              "hint": "看不清楚: không nhìn rõ được, dùng 不 cho bổ ngữ khả năng phủ định"
+            },
+            {
+              "type": "fill_blank",
+              "sentence": "这么多菜，我们三个人吃___完吗？",
+              "blank": "得",
+              "options": ["得", "不", "了", "过"],
+              "hint": "吃得完: ăn hết nổi, dùng 得 cho bổ ngữ khả năng khẳng định"
+            },
+            {
+              "type": "sentence_order",
+              "words": ["这个", "问题", "我", "回答", "得", "出来"],
+              "answer": "这个问题我回答得出来",
+              "meaning": "Câu hỏi này tôi trả lời được"
+            },
+            {
+              "type": "translate",
+              "direction": "vi_to_zh",
+              "prompt": "Tiếng quá ồn, tôi nghe không rõ bạn nói gì.",
+              "answer": "声音太吵了，我听不清楚你说什么。",
+              "options": ["声音太吵了，我听不清楚你说什么。", "声音太吵了，我听得清楚你说什么。", "声音太吵了，我看不清楚你说什么。", "声音太大了，我听得见你说什么。"]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

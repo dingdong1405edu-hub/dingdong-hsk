@@ -11,6 +11,7 @@ import {
   Headphones,
   PenLine,
   Mic,
+  Library,
   Activity,
   ArrowRight,
   type LucideIcon,
@@ -26,6 +27,7 @@ export default async function AdminPage() {
     listeningCount,
     writingCount,
     speakingCount,
+    materialCount,
     attemptCount,
     recentUsers,
   ] = await Promise.all([
@@ -37,6 +39,7 @@ export default async function AdminPage() {
     db.listeningTest.count(),
     db.writingTask.count(),
     db.speakingSet.count(),
+    db.material.count(),
     db.attempt.count(),
     db.user.findMany({
       orderBy: { createdAt: "desc" },
@@ -53,6 +56,7 @@ export default async function AdminPage() {
     { href: "/admin/listening", label: "Nghe hiểu", icon: Headphones, count: listeningCount, cls: "bg-teal-100 text-teal-600" },
     { href: "/admin/writing", label: "Viết luận", icon: PenLine, count: writingCount, cls: "bg-rose-100 text-rose-600" },
     { href: "/admin/speaking", label: "Luyện nói", icon: Mic, count: speakingCount, cls: "bg-indigo-100 text-indigo-600" },
+    { href: "/admin/materials", label: "Tài liệu", icon: Library, count: materialCount, cls: "bg-fuchsia-100 text-fuchsia-600" },
     { href: "/admin/users", label: "Người dùng", icon: Users, count: userCount, cls: "bg-sky-100 text-sky-600" },
   ];
 

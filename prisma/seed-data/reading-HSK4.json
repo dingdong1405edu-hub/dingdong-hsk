@@ -1,0 +1,307 @@
+{
+  "kind": "reading",
+  "tests": [
+    {
+      "id": "rd-HSK4-1",
+      "title": "Kế hoạch du lịch của tôi",
+      "titleZh": "我的旅行计划",
+      "hskLevel": "HSK4",
+      "passage": "下个月我打算和几个朋友一起去云南旅行。我们已经计划了很长时间，这是我第一次去那么远的地方。听说云南的风景非常美丽，那里的天气也比较舒服，不冷也不热。为了这次旅行，我专门买了一个新的照相机，希望能拍下很多漂亮的照片。我们准备先坐飞机到昆明，然后再坐火车去别的城市。虽然旅行可能会有点儿累，但是我相信这一定是一次让人难忘的经历。",
+      "passagePinyin": "Xià ge yuè wǒ dǎsuàn hé jǐ ge péngyou yìqǐ qù Yúnnán lǚxíng. Wǒmen yǐjīng jìhuàle hěn cháng shíjiān, zhè shì wǒ dì yī cì qù nàme yuǎn de dìfang. Tīngshuō Yúnnán de fēngjǐng fēicháng měilì, nàlǐ de tiānqì yě bǐjiào shūfu, bù lěng yě bú rè. Wèile zhè cì lǚxíng, wǒ zhuānmén mǎile yí ge xīn de zhàoxiàngjī, xīwàng néng pāixià hěn duō piàoliang de zhàopiàn. Wǒmen zhǔnbèi xiān zuò fēijī dào Kūnmíng, ránhòu zài zuò huǒchē qù bié de chéngshì. Suīrán lǚxíng kěnéng huì yǒudiǎnr lèi, dànshì wǒ xiāngxìn zhè yídìng shì yí cì ràng rén nánwàng de jīnglì.",
+      "timeLimit": 600,
+      "questions": [
+        {
+          "id": "rd-HSK4-1-q1",
+          "type": "MCQ",
+          "prompt": "作者打算什么时候去旅行？",
+          "promptPinyin": "Zuòzhě dǎsuàn shénme shíhou qù lǚxíng?",
+          "options": [
+            { "text": "这个星期", "pinyin": "zhè ge xīngqī" },
+            { "text": "下个月", "pinyin": "xià ge yuè" },
+            { "text": "明年", "pinyin": "míngnián" },
+            { "text": "今天", "pinyin": "jīntiān" }
+          ],
+          "correctAnswer": { "index": 1, "text": "下个月" },
+          "explanation": "Bài đọc viết '下个月我打算和几个朋友一起去云南旅行' (Tháng sau tôi dự định cùng vài người bạn đi du lịch Vân Nam).",
+          "order": 1
+        },
+        {
+          "id": "rd-HSK4-1-q2",
+          "type": "MCQ",
+          "prompt": "作者为这次旅行买了什么？",
+          "promptPinyin": "Zuòzhě wèi zhè cì lǚxíng mǎile shénme?",
+          "options": [
+            { "text": "一双鞋", "pinyin": "yì shuāng xié" },
+            { "text": "一个照相机", "pinyin": "yí ge zhàoxiàngjī" },
+            { "text": "一件衣服", "pinyin": "yí jiàn yīfu" },
+            { "text": "一个电脑", "pinyin": "yí ge diànnǎo" }
+          ],
+          "correctAnswer": { "index": 1, "text": "一个照相机" },
+          "explanation": "Bài đọc viết '我专门买了一个新的照相机' (Tôi đã mua riêng một chiếc máy ảnh mới).",
+          "order": 2
+        },
+        {
+          "id": "rd-HSK4-1-q3",
+          "type": "MCQ",
+          "prompt": "关于云南的天气，下面哪个是对的？",
+          "promptPinyin": "Guānyú Yúnnán de tiānqì, xiàmiàn nǎge shì duì de?",
+          "options": [
+            { "text": "很冷", "pinyin": "hěn lěng" },
+            { "text": "很热", "pinyin": "hěn rè" },
+            { "text": "不冷也不热", "pinyin": "bù lěng yě bú rè" },
+            { "text": "经常下雨", "pinyin": "jīngcháng xià yǔ" }
+          ],
+          "correctAnswer": { "index": 2, "text": "不冷也不热" },
+          "explanation": "Bài đọc viết '那里的天气也比较舒服，不冷也不热' (Thời tiết ở đó cũng khá dễ chịu, không lạnh cũng không nóng).",
+          "order": 3
+        },
+        {
+          "id": "rd-HSK4-1-q4",
+          "type": "TRUE_FALSE",
+          "prompt": "这是作者第一次去那么远的地方。",
+          "promptPinyin": "Zhè shì zuòzhě dì yī cì qù nàme yuǎn de dìfang.",
+          "correctAnswer": { "value": true },
+          "explanation": "Bài đọc viết '这是我第一次去那么远的地方' (Đây là lần đầu tiên tôi đi đến nơi xa như vậy). Đúng.",
+          "order": 4
+        },
+        {
+          "id": "rd-HSK4-1-q5",
+          "type": "TRUE_FALSE",
+          "prompt": "他们准备先坐火车去昆明。",
+          "promptPinyin": "Tāmen zhǔnbèi xiān zuò huǒchē qù Kūnmíng.",
+          "correctAnswer": { "value": false },
+          "explanation": "Bài đọc viết '先坐飞机到昆明，然后再坐火车去别的城市' (Trước tiên đi máy bay đến Côn Minh, sau đó mới đi tàu hỏa đến thành phố khác). Đến Côn Minh bằng máy bay, không phải tàu hỏa. Sai.",
+          "order": 5
+        }
+      ]
+    },
+    {
+      "id": "rd-HSK4-2",
+      "title": "Thói quen vận động của tôi",
+      "titleZh": "我的运动习惯",
+      "hskLevel": "HSK4",
+      "passage": "以前我的身体不太好，经常感冒，做事也没有精神。后来医生建议我应该多运动。从那以后，我养成了每天早上跑步的习惯。刚开始的时候，跑五分钟就觉得很累，但是我没有放弃，慢慢地坚持了下来。现在我每天能跑半个小时，身体比以前健康多了，心情也变得越来越好。我觉得运动不但能让人更健康，而且能帮助我们减轻压力。所以我打算把这个好习惯一直保持下去。",
+      "passagePinyin": "Yǐqián wǒ de shēntǐ bú tài hǎo, jīngcháng gǎnmào, zuò shì yě méiyǒu jīngshén. Hòulái yīshēng jiànyì wǒ yīnggāi duō yùndòng. Cóng nà yǐhòu, wǒ yǎngchéngle měitiān zǎoshang pǎobù de xíguàn. Gāng kāishǐ de shíhou, pǎo wǔ fēnzhōng jiù juéde hěn lèi, dànshì wǒ méiyǒu fàngqì, mànmàn de jiānchíle xiàlái. Xiànzài wǒ měitiān néng pǎo bàn ge xiǎoshí, shēntǐ bǐ yǐqián jiànkāng duō le, xīnqíng yě biàn de yuèláiyuè hǎo. Wǒ juéde yùndòng búdàn néng ràng rén gèng jiànkāng, érqiě néng bāngzhù wǒmen jiǎnqīng yālì. Suǒyǐ wǒ dǎsuàn bǎ zhège hǎo xíguàn yìzhí bǎochí xiàqù.",
+      "timeLimit": 600,
+      "questions": [
+        {
+          "id": "rd-HSK4-2-q1",
+          "type": "MCQ",
+          "prompt": "以前作者的身体怎么样？",
+          "promptPinyin": "Yǐqián zuòzhě de shēntǐ zěnmeyàng?",
+          "options": [
+            { "text": "非常健康", "pinyin": "fēicháng jiànkāng" },
+            { "text": "不太好，经常感冒", "pinyin": "bú tài hǎo, jīngcháng gǎnmào" },
+            { "text": "很有精神", "pinyin": "hěn yǒu jīngshén" },
+            { "text": "从来不生病", "pinyin": "cónglái bù shēngbìng" }
+          ],
+          "correctAnswer": { "index": 1, "text": "不太好，经常感冒" },
+          "explanation": "Bài đọc viết '以前我的身体不太好，经常感冒' (Trước đây sức khỏe của tôi không tốt lắm, thường hay bị cảm).",
+          "order": 1
+        },
+        {
+          "id": "rd-HSK4-2-q2",
+          "type": "MCQ",
+          "prompt": "是谁建议作者多运动？",
+          "promptPinyin": "Shì shéi jiànyì zuòzhě duō yùndòng?",
+          "options": [
+            { "text": "老师", "pinyin": "lǎoshī" },
+            { "text": "妈妈", "pinyin": "māma" },
+            { "text": "医生", "pinyin": "yīshēng" },
+            { "text": "朋友", "pinyin": "péngyou" }
+          ],
+          "correctAnswer": { "index": 2, "text": "医生" },
+          "explanation": "Bài đọc viết '后来医生建议我应该多运动' (Sau đó bác sĩ khuyên tôi nên vận động nhiều hơn).",
+          "order": 2
+        },
+        {
+          "id": "rd-HSK4-2-q3",
+          "type": "MCQ",
+          "prompt": "现在作者每天能跑多长时间？",
+          "promptPinyin": "Xiànzài zuòzhě měitiān néng pǎo duō cháng shíjiān?",
+          "options": [
+            { "text": "五分钟", "pinyin": "wǔ fēnzhōng" },
+            { "text": "十分钟", "pinyin": "shí fēnzhōng" },
+            { "text": "半个小时", "pinyin": "bàn ge xiǎoshí" },
+            { "text": "两个小时", "pinyin": "liǎng ge xiǎoshí" }
+          ],
+          "correctAnswer": { "index": 2, "text": "半个小时" },
+          "explanation": "Bài đọc viết '现在我每天能跑半个小时' (Bây giờ mỗi ngày tôi có thể chạy nửa tiếng).",
+          "order": 3
+        },
+        {
+          "id": "rd-HSK4-2-q4",
+          "type": "MCQ",
+          "prompt": "作者觉得运动有什么好处？",
+          "promptPinyin": "Zuòzhě juéde yùndòng yǒu shénme hǎochù?",
+          "options": [
+            { "text": "能让人更健康，还能减轻压力", "pinyin": "néng ràng rén gèng jiànkāng, hái néng jiǎnqīng yālì" },
+            { "text": "能让人变得更有钱", "pinyin": "néng ràng rén biàn de gèng yǒu qián" },
+            { "text": "能让人睡得更晚", "pinyin": "néng ràng rén shuì de gèng wǎn" },
+            { "text": "能让人吃得更多", "pinyin": "néng ràng rén chī de gèng duō" }
+          ],
+          "correctAnswer": { "index": 0, "text": "能让人更健康，还能减轻压力" },
+          "explanation": "Bài đọc viết '运动不但能让人更健康，而且能帮助我们减轻压力' (Vận động không những giúp con người khỏe mạnh hơn mà còn giúp giảm bớt áp lực).",
+          "order": 4
+        },
+        {
+          "id": "rd-HSK4-2-q5",
+          "type": "TRUE_FALSE",
+          "prompt": "刚开始跑步的时候，作者很快就放弃了。",
+          "promptPinyin": "Gāng kāishǐ pǎobù de shíhou, zuòzhě hěn kuài jiù fàngqì le.",
+          "correctAnswer": { "value": false },
+          "explanation": "Bài đọc viết '我没有放弃，慢慢地坚持了下来' (Tôi đã không bỏ cuộc, dần dần kiên trì được). Tác giả không bỏ cuộc. Sai.",
+          "order": 5
+        }
+      ]
+    },
+    {
+      "id": "rd-HSK4-3",
+      "title": "Buổi phỏng vấn xin việc",
+      "titleZh": "一次面试",
+      "hskLevel": "HSK4",
+      "passage": "上个星期，我去一家公司参加了一次面试。那天我特意起得很早，穿上了最正式的衣服，还提前半个小时就到了公司。面试的时候，经理问了我很多问题，比如我以前的工作经验，还有我为什么想来这家公司。一开始我有些紧张，说话的声音都有点儿小。后来我慢慢冷静下来，认真地回答了每一个问题。经理对我的回答很满意，告诉我下个星期一就可以来上班了。我听了非常高兴，因为这是我一直想做的工作。",
+      "passagePinyin": "Shàng ge xīngqī, wǒ qù yì jiā gōngsī cānjiāle yí cì miànshì. Nà tiān wǒ tèyì qǐ de hěn zǎo, chuān shàngle zuì zhèngshì de yīfu, hái tíqián bàn ge xiǎoshí jiù dàole gōngsī. Miànshì de shíhou, jīnglǐ wènle wǒ hěn duō wèntí, bǐrú wǒ yǐqián de gōngzuò jīngyàn, hái yǒu wǒ wèishénme xiǎng lái zhè jiā gōngsī. Yì kāishǐ wǒ yǒuxiē jǐnzhāng, shuōhuà de shēngyīn dōu yǒudiǎnr xiǎo. Hòulái wǒ mànmàn lěngjìng xiàlái, rènzhēn de huídále měi yí ge wèntí. Jīnglǐ duì wǒ de huídá hěn mǎnyì, gàosu wǒ xià ge xīngqīyī jiù kěyǐ lái shàngbān le. Wǒ tīngle fēicháng gāoxìng, yīnwèi zhè shì wǒ yìzhí xiǎng zuò de gōngzuò.",
+      "timeLimit": 600,
+      "questions": [
+        {
+          "id": "rd-HSK4-3-q1",
+          "type": "MCQ",
+          "prompt": "作者那天为什么提前到公司？",
+          "promptPinyin": "Zuòzhě nà tiān wèishénme tíqián dào gōngsī?",
+          "options": [
+            { "text": "去买东西", "pinyin": "qù mǎi dōngxi" },
+            { "text": "去参加面试", "pinyin": "qù cānjiā miànshì" },
+            { "text": "去看朋友", "pinyin": "qù kàn péngyou" },
+            { "text": "去吃午饭", "pinyin": "qù chī wǔfàn" }
+          ],
+          "correctAnswer": { "index": 1, "text": "去参加面试" },
+          "explanation": "Bài đọc viết '我去一家公司参加了一次面试' (Tôi đến một công ty tham gia phỏng vấn).",
+          "order": 1
+        },
+        {
+          "id": "rd-HSK4-3-q2",
+          "type": "MCQ",
+          "prompt": "面试一开始，作者的心情怎么样？",
+          "promptPinyin": "Miànshì yì kāishǐ, zuòzhě de xīnqíng zěnmeyàng?",
+          "options": [
+            { "text": "很生气", "pinyin": "hěn shēngqì" },
+            { "text": "很高兴", "pinyin": "hěn gāoxìng" },
+            { "text": "有些紧张", "pinyin": "yǒuxiē jǐnzhāng" },
+            { "text": "很无聊", "pinyin": "hěn wúliáo" }
+          ],
+          "correctAnswer": { "index": 2, "text": "有些紧张" },
+          "explanation": "Bài đọc viết '一开始我有些紧张，说话的声音都有点儿小' (Lúc đầu tôi hơi căng thẳng, giọng nói có chút nhỏ).",
+          "order": 2
+        },
+        {
+          "id": "rd-HSK4-3-q3",
+          "type": "MCQ",
+          "prompt": "经理告诉作者什么时候可以来上班？",
+          "promptPinyin": "Jīnglǐ gàosu zuòzhě shénme shíhou kěyǐ lái shàngbān?",
+          "options": [
+            { "text": "今天", "pinyin": "jīntiān" },
+            { "text": "明天", "pinyin": "míngtiān" },
+            { "text": "下个星期一", "pinyin": "xià ge xīngqīyī" },
+            { "text": "下个月", "pinyin": "xià ge yuè" }
+          ],
+          "correctAnswer": { "index": 2, "text": "下个星期一" },
+          "explanation": "Bài đọc viết '告诉我下个星期一就可以来上班了' (Nói với tôi thứ Hai tuần sau là có thể đến đi làm).",
+          "order": 3
+        },
+        {
+          "id": "rd-HSK4-3-q4",
+          "type": "TRUE_FALSE",
+          "prompt": "面试那天作者起得很晚。",
+          "promptPinyin": "Miànshì nà tiān zuòzhě qǐ de hěn wǎn.",
+          "correctAnswer": { "value": false },
+          "explanation": "Bài đọc viết '那天我特意起得很早' (Hôm đó tôi cố ý dậy rất sớm), không phải dậy muộn. Sai.",
+          "order": 4
+        },
+        {
+          "id": "rd-HSK4-3-q5",
+          "type": "TRUE_FALSE",
+          "prompt": "经理对作者的回答很满意。",
+          "promptPinyin": "Jīnglǐ duì zuòzhě de huídá hěn mǎnyì.",
+          "correctAnswer": { "value": true },
+          "explanation": "Bài đọc viết '经理对我的回答很满意' (Giám đốc rất hài lòng với câu trả lời của tôi). Đúng.",
+          "order": 5
+        }
+      ]
+    },
+    {
+      "id": "rd-HSK4-4",
+      "title": "Người bạn cùng phòng của tôi",
+      "titleZh": "我的同屋",
+      "hskLevel": "HSK4",
+      "passage": "我的同屋叫小李，我们一起住了快两年了。她是一个很热情的人，对人总是笑着，所以大家都很喜欢她。虽然我们的性格不太一样，我比较安静，她却很活泼，但是我们从来没有吵过架。她做菜做得特别好，每个周末都会给我做一顿饭，味道好极了。有时候我遇到困难，心里很难过，她总是耐心地听我说，还会给我一些建议。能认识这样的朋友，我觉得自己很幸运。我希望我们以后还能一直做好朋友。",
+      "passagePinyin": "Wǒ de tóngwū jiào Xiǎo Lǐ, wǒmen yìqǐ zhùle kuài liǎng nián le. Tā shì yí ge hěn rèqíng de rén, duì rén zǒngshì xiào zhe, suǒyǐ dàjiā dōu hěn xǐhuān tā. Suīrán wǒmen de xìnggé bú tài yíyàng, wǒ bǐjiào ānjìng, tā què hěn huópo, dànshì wǒmen cónglái méiyǒu chǎoguo jià. Tā zuò cài zuò de tèbié hǎo, měi ge zhōumò dōu huì gěi wǒ zuò yí dùn fàn, wèidào hǎo jíle. Yǒu shíhou wǒ yùdào kùnnan, xīnlǐ hěn nánguò, tā zǒngshì nàixīn de tīng wǒ shuō, hái huì gěi wǒ yìxiē jiànyì. Néng rènshi zhèyàng de péngyou, wǒ juéde zìjǐ hěn xìngyùn. Wǒ xīwàng wǒmen yǐhòu hái néng yìzhí zuò hǎo péngyou.",
+      "timeLimit": 600,
+      "questions": [
+        {
+          "id": "rd-HSK4-4-q1",
+          "type": "MCQ",
+          "prompt": "作者和小李一起住了多长时间？",
+          "promptPinyin": "Zuòzhě hé Xiǎo Lǐ yìqǐ zhùle duō cháng shíjiān?",
+          "options": [
+            { "text": "快一年了", "pinyin": "kuài yì nián le" },
+            { "text": "快两年了", "pinyin": "kuài liǎng nián le" },
+            { "text": "三年了", "pinyin": "sān nián le" },
+            { "text": "几个月", "pinyin": "jǐ ge yuè" }
+          ],
+          "correctAnswer": { "index": 1, "text": "快两年了" },
+          "explanation": "Bài đọc viết '我们一起住了快两年了' (Chúng tôi đã ở cùng nhau gần hai năm).",
+          "order": 1
+        },
+        {
+          "id": "rd-HSK4-4-q2",
+          "type": "MCQ",
+          "prompt": "小李是一个什么样的人？",
+          "promptPinyin": "Xiǎo Lǐ shì yí ge shénmeyàng de rén?",
+          "options": [
+            { "text": "很安静", "pinyin": "hěn ānjìng" },
+            { "text": "很热情、很活泼", "pinyin": "hěn rèqíng, hěn huópo" },
+            { "text": "很懒", "pinyin": "hěn lǎn" },
+            { "text": "很马虎", "pinyin": "hěn mǎhu" }
+          ],
+          "correctAnswer": { "index": 1, "text": "很热情、很活泼" },
+          "explanation": "Bài đọc viết '她是一个很热情的人' và '她却很活泼' (Cô ấy là người rất nhiệt tình và rất hoạt bát).",
+          "order": 2
+        },
+        {
+          "id": "rd-HSK4-4-q3",
+          "type": "MCQ",
+          "prompt": "小李每个周末会为作者做什么？",
+          "promptPinyin": "Xiǎo Lǐ měi ge zhōumò huì wèi zuòzhě zuò shénme?",
+          "options": [
+            { "text": "打扫房间", "pinyin": "dǎsǎo fángjiān" },
+            { "text": "做一顿饭", "pinyin": "zuò yí dùn fàn" },
+            { "text": "买衣服", "pinyin": "mǎi yīfu" },
+            { "text": "洗衣服", "pinyin": "xǐ yīfu" }
+          ],
+          "correctAnswer": { "index": 1, "text": "做一顿饭" },
+          "explanation": "Bài đọc viết '每个周末都会给我做一顿饭' (Mỗi cuối tuần đều nấu cho tôi một bữa cơm).",
+          "order": 3
+        },
+        {
+          "id": "rd-HSK4-4-q4",
+          "type": "TRUE_FALSE",
+          "prompt": "作者和小李经常吵架。",
+          "promptPinyin": "Zuòzhě hé Xiǎo Lǐ jīngcháng chǎojià.",
+          "correctAnswer": { "value": false },
+          "explanation": "Bài đọc viết '我们从来没有吵过架' (Chúng tôi chưa bao giờ cãi nhau). Sai.",
+          "order": 4
+        },
+        {
+          "id": "rd-HSK4-4-q5",
+          "type": "TRUE_FALSE",
+          "prompt": "作者觉得能认识小李这样的朋友很幸运。",
+          "promptPinyin": "Zuòzhě juéde néng rènshi Xiǎo Lǐ zhèyàng de péngyou hěn xìngyùn.",
+          "correctAnswer": { "value": true },
+          "explanation": "Bài đọc viết '能认识这样的朋友，我觉得自己很幸运' (Có thể quen được người bạn như vậy, tôi cảm thấy mình rất may mắn). Đúng.",
+          "order": 5
+        }
+      ]
+    }
+  ]
+}

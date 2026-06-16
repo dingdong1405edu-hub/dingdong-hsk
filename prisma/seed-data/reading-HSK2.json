@@ -1,0 +1,268 @@
+{
+  "kind": "reading",
+  "tests": [
+    {
+      "id": "rd-HSK2-1",
+      "title": "Gia đình của tôi",
+      "titleZh": "我的家",
+      "hskLevel": "HSK2",
+      "passage": "我家有四个人，爸爸、妈妈、姐姐和我。我的爸爸是医生，他每天去医院工作。我的妈妈是老师，她很喜欢看书。我的姐姐今年二十岁，她是大学生。我今年十五岁，我喜欢踢足球。我们都很爱这个家。",
+      "passagePinyin": "Wǒ jiā yǒu sì ge rén, bàba, māma, jiějie hé wǒ. Wǒ de bàba shì yīshēng, tā měitiān qù yīyuàn gōngzuò. Wǒ de māma shì lǎoshī, tā hěn xǐhuān kàn shū. Wǒ de jiějie jīnnián èrshí suì, tā shì dàxuéshēng. Wǒ jīnnián shíwǔ suì, wǒ xǐhuān tī zúqiú. Wǒmen dōu hěn ài zhè ge jiā.",
+      "timeLimit": 600,
+      "questions": [
+        {
+          "id": "rd-HSK2-1-q1",
+          "type": "MCQ",
+          "prompt": "我家有几个人？",
+          "promptPinyin": "Wǒ jiā yǒu jǐ ge rén?",
+          "options": [
+            { "text": "三个人", "pinyin": "sān ge rén" },
+            { "text": "四个人", "pinyin": "sì ge rén" },
+            { "text": "五个人", "pinyin": "wǔ ge rén" },
+            { "text": "六个人", "pinyin": "liù ge rén" }
+          ],
+          "correctAnswer": { "index": 1, "text": "四个人" },
+          "explanation": "Bài đọc viết '我家有四个人' (Nhà tôi có bốn người).",
+          "order": 1
+        },
+        {
+          "id": "rd-HSK2-1-q2",
+          "type": "MCQ",
+          "prompt": "爸爸做什么工作？",
+          "promptPinyin": "Bàba zuò shénme gōngzuò?",
+          "options": [
+            { "text": "老师", "pinyin": "lǎoshī" },
+            { "text": "医生", "pinyin": "yīshēng" },
+            { "text": "学生", "pinyin": "xuéshēng" },
+            { "text": "工人", "pinyin": "gōngrén" }
+          ],
+          "correctAnswer": { "index": 1, "text": "医生" },
+          "explanation": "Bài đọc viết '我的爸爸是医生' (Bố tôi là bác sĩ).",
+          "order": 2
+        },
+        {
+          "id": "rd-HSK2-1-q3",
+          "type": "TRUE_FALSE",
+          "prompt": "姐姐今年二十岁。",
+          "promptPinyin": "Jiějie jīnnián èrshí suì.",
+          "correctAnswer": { "value": true },
+          "explanation": "Bài đọc viết '我的姐姐今年二十岁' (Chị tôi năm nay hai mươi tuổi). Đúng.",
+          "order": 3
+        },
+        {
+          "id": "rd-HSK2-1-q4",
+          "type": "TRUE_FALSE",
+          "prompt": "我喜欢看书。",
+          "promptPinyin": "Wǒ xǐhuān kàn shū.",
+          "correctAnswer": { "value": false },
+          "explanation": "Người thích đọc sách là mẹ ('妈妈很喜欢看书'), còn tôi thì thích đá bóng ('我喜欢踢足球'). Sai.",
+          "order": 4
+        }
+      ]
+    },
+    {
+      "id": "rd-HSK2-2",
+      "title": "Một ngày của Tiểu Vương",
+      "titleZh": "小王的一天",
+      "hskLevel": "HSK2",
+      "passage": "小王每天早上六点半起床。起床以后，他先吃早饭，然后坐公共汽车去公司。他的公司离家很远，要坐一个小时的车。中午十二点，他和同事一起吃午饭。下午下班以后，他喜欢去商店买东西。晚上他在家看电视，十一点睡觉。",
+      "passagePinyin": "Xiǎo Wáng měitiān zǎoshang liù diǎn bàn qǐchuáng. Qǐchuáng yǐhòu, tā xiān chī zǎofàn, ránhòu zuò gōnggòng qìchē qù gōngsī. Tā de gōngsī lí jiā hěn yuǎn, yào zuò yí ge xiǎoshí de chē. Zhōngwǔ shí'èr diǎn, tā hé tóngshì yìqǐ chī wǔfàn. Xiàwǔ xiàbān yǐhòu, tā xǐhuān qù shāngdiàn mǎi dōngxi. Wǎnshang tā zài jiā kàn diànshì, shíyī diǎn shuìjiào.",
+      "timeLimit": 600,
+      "questions": [
+        {
+          "id": "rd-HSK2-2-q1",
+          "type": "MCQ",
+          "prompt": "小王每天几点起床？",
+          "promptPinyin": "Xiǎo Wáng měitiān jǐ diǎn qǐchuáng?",
+          "options": [
+            { "text": "六点", "pinyin": "liù diǎn" },
+            { "text": "六点半", "pinyin": "liù diǎn bàn" },
+            { "text": "七点", "pinyin": "qī diǎn" },
+            { "text": "七点半", "pinyin": "qī diǎn bàn" }
+          ],
+          "correctAnswer": { "index": 1, "text": "六点半" },
+          "explanation": "Bài đọc viết '每天早上六点半起床' (Mỗi sáng dậy lúc sáu giờ rưỡi).",
+          "order": 1
+        },
+        {
+          "id": "rd-HSK2-2-q2",
+          "type": "MCQ",
+          "prompt": "小王怎么去公司？",
+          "promptPinyin": "Xiǎo Wáng zěnme qù gōngsī?",
+          "options": [
+            { "text": "坐公共汽车", "pinyin": "zuò gōnggòng qìchē" },
+            { "text": "坐飞机", "pinyin": "zuò fēijī" },
+            { "text": "走路", "pinyin": "zǒulù" },
+            { "text": "坐火车", "pinyin": "zuò huǒchē" }
+          ],
+          "correctAnswer": { "index": 0, "text": "坐公共汽车" },
+          "explanation": "Bài đọc viết '坐公共汽车去公司' (Đi xe buýt đến công ty).",
+          "order": 2
+        },
+        {
+          "id": "rd-HSK2-2-q3",
+          "type": "MCQ",
+          "prompt": "从家到公司要坐多长时间的车？",
+          "promptPinyin": "Cóng jiā dào gōngsī yào zuò duō cháng shíjiān de chē?",
+          "options": [
+            { "text": "半个小时", "pinyin": "bàn ge xiǎoshí" },
+            { "text": "一个小时", "pinyin": "yí ge xiǎoshí" },
+            { "text": "两个小时", "pinyin": "liǎng ge xiǎoshí" },
+            { "text": "三个小时", "pinyin": "sān ge xiǎoshí" }
+          ],
+          "correctAnswer": { "index": 1, "text": "一个小时" },
+          "explanation": "Bài đọc viết '要坐一个小时的车' (Phải ngồi xe một tiếng đồng hồ).",
+          "order": 3
+        },
+        {
+          "id": "rd-HSK2-2-q4",
+          "type": "TRUE_FALSE",
+          "prompt": "小王晚上十一点睡觉。",
+          "promptPinyin": "Xiǎo Wáng wǎnshang shíyī diǎn shuìjiào.",
+          "correctAnswer": { "value": true },
+          "explanation": "Bài đọc viết '十一点睡觉' (Mười một giờ đi ngủ). Đúng.",
+          "order": 4
+        }
+      ]
+    },
+    {
+      "id": "rd-HSK2-3",
+      "title": "Đi mua sắm",
+      "titleZh": "去买东西",
+      "hskLevel": "HSK2",
+      "passage": "今天是星期天，天气很好。我和我的朋友一起去商店买衣服。商店里的衣服很多，也很漂亮。我买了一件红色的衣服，花了一百块钱。我的朋友买了一双黑色的鞋，那双鞋很便宜。买完东西以后，我们一起去饭馆吃了饭，我们都很高兴。",
+      "passagePinyin": "Jīntiān shì xīngqītiān, tiānqì hěn hǎo. Wǒ hé wǒ de péngyou yìqǐ qù shāngdiàn mǎi yīfu. Shāngdiàn lǐ de yīfu hěn duō, yě hěn piàoliang. Wǒ mǎile yí jiàn hóngsè de yīfu, huāle yìbǎi kuài qián. Wǒ de péngyou mǎile yì shuāng hēisè de xié, nà shuāng xié hěn piányi. Mǎi wán dōngxi yǐhòu, wǒmen yìqǐ qù fànguǎn chīle fàn, wǒmen dōu hěn gāoxìng.",
+      "timeLimit": 600,
+      "questions": [
+        {
+          "id": "rd-HSK2-3-q1",
+          "type": "MCQ",
+          "prompt": "今天是星期几？",
+          "promptPinyin": "Jīntiān shì xīngqī jǐ?",
+          "options": [
+            { "text": "星期一", "pinyin": "xīngqīyī" },
+            { "text": "星期五", "pinyin": "xīngqīwǔ" },
+            { "text": "星期六", "pinyin": "xīngqīliù" },
+            { "text": "星期天", "pinyin": "xīngqītiān" }
+          ],
+          "correctAnswer": { "index": 3, "text": "星期天" },
+          "explanation": "Bài đọc viết '今天是星期天' (Hôm nay là Chủ nhật).",
+          "order": 1
+        },
+        {
+          "id": "rd-HSK2-3-q2",
+          "type": "MCQ",
+          "prompt": "我买的衣服是什么颜色的？",
+          "promptPinyin": "Wǒ mǎi de yīfu shì shénme yánsè de?",
+          "options": [
+            { "text": "红色", "pinyin": "hóngsè" },
+            { "text": "黑色", "pinyin": "hēisè" },
+            { "text": "白色", "pinyin": "báisè" },
+            { "text": "蓝色", "pinyin": "lánsè" }
+          ],
+          "correctAnswer": { "index": 0, "text": "红色" },
+          "explanation": "Bài đọc viết '我买了一件红色的衣服' (Tôi mua một cái áo màu đỏ).",
+          "order": 2
+        },
+        {
+          "id": "rd-HSK2-3-q3",
+          "type": "MCQ",
+          "prompt": "那件衣服花了多少钱？",
+          "promptPinyin": "Nà jiàn yīfu huāle duōshǎo qián?",
+          "options": [
+            { "text": "十块钱", "pinyin": "shí kuài qián" },
+            { "text": "五十块钱", "pinyin": "wǔshí kuài qián" },
+            { "text": "一百块钱", "pinyin": "yìbǎi kuài qián" },
+            { "text": "两百块钱", "pinyin": "liǎngbǎi kuài qián" }
+          ],
+          "correctAnswer": { "index": 2, "text": "一百块钱" },
+          "explanation": "Bài đọc viết '花了一百块钱' (Tốn một trăm tệ).",
+          "order": 3
+        },
+        {
+          "id": "rd-HSK2-3-q4",
+          "type": "TRUE_FALSE",
+          "prompt": "买完东西以后，他们去饭馆吃饭了。",
+          "promptPinyin": "Mǎi wán dōngxi yǐhòu, tāmen qù fànguǎn chī fàn le.",
+          "correctAnswer": { "value": true },
+          "explanation": "Bài đọc viết '买完东西以后，我们一起去饭馆吃了饭' (Sau khi mua xong, chúng tôi cùng đi nhà hàng ăn cơm). Đúng.",
+          "order": 4
+        },
+        {
+          "id": "rd-HSK2-3-q5",
+          "type": "TRUE_FALSE",
+          "prompt": "我的朋友买的鞋很贵。",
+          "promptPinyin": "Wǒ de péngyou mǎi de xié hěn guì.",
+          "correctAnswer": { "value": false },
+          "explanation": "Bài đọc viết '那双鞋很便宜' (Đôi giày đó rất rẻ), không phải đắt. Sai.",
+          "order": 5
+        }
+      ]
+    },
+    {
+      "id": "rd-HSK2-4",
+      "title": "Học tiếng Trung",
+      "titleZh": "学习汉语",
+      "hskLevel": "HSK2",
+      "passage": "我叫阮明，是越南人。我现在在北京的一所大学学习汉语。我学习汉语已经一年了。汉语很有意思，但是很难，写汉字最难。我每天早上都听老师说汉语，下午做练习。我有很多中国朋友，他们常常帮助我学习。我希望以后能说很好的汉语。",
+      "passagePinyin": "Wǒ jiào Ruǎn Míng, shì Yuènánrén. Wǒ xiànzài zài Běijīng de yì suǒ dàxué xuéxí Hànyǔ. Wǒ xuéxí Hànyǔ yǐjīng yì nián le. Hànyǔ hěn yǒu yìsi, dànshì hěn nán, xiě Hànzì zuì nán. Wǒ měitiān zǎoshang dōu tīng lǎoshī shuō Hànyǔ, xiàwǔ zuò liànxí. Wǒ yǒu hěn duō Zhōngguó péngyou, tāmen chángcháng bāngzhù wǒ xuéxí. Wǒ xīwàng yǐhòu néng shuō hěn hǎo de Hànyǔ.",
+      "timeLimit": 600,
+      "questions": [
+        {
+          "id": "rd-HSK2-4-q1",
+          "type": "MCQ",
+          "prompt": "阮明是哪国人？",
+          "promptPinyin": "Ruǎn Míng shì nǎ guó rén?",
+          "options": [
+            { "text": "中国人", "pinyin": "Zhōngguórén" },
+            { "text": "越南人", "pinyin": "Yuènánrén" },
+            { "text": "日本人", "pinyin": "Rìběnrén" },
+            { "text": "韩国人", "pinyin": "Hánguórén" }
+          ],
+          "correctAnswer": { "index": 1, "text": "越南人" },
+          "explanation": "Bài đọc viết '我叫阮明，是越南人' (Tôi tên là Nguyễn Minh, là người Việt Nam).",
+          "order": 1
+        },
+        {
+          "id": "rd-HSK2-4-q2",
+          "type": "MCQ",
+          "prompt": "他学习汉语多长时间了？",
+          "promptPinyin": "Tā xuéxí Hànyǔ duō cháng shíjiān le?",
+          "options": [
+            { "text": "一个月", "pinyin": "yí ge yuè" },
+            { "text": "半年", "pinyin": "bàn nián" },
+            { "text": "一年", "pinyin": "yì nián" },
+            { "text": "两年", "pinyin": "liǎng nián" }
+          ],
+          "correctAnswer": { "index": 2, "text": "一年" },
+          "explanation": "Bài đọc viết '我学习汉语已经一年了' (Tôi học tiếng Trung đã được một năm).",
+          "order": 2
+        },
+        {
+          "id": "rd-HSK2-4-q3",
+          "type": "MCQ",
+          "prompt": "对阮明来说，学汉语什么最难？",
+          "promptPinyin": "Duì Ruǎn Míng lái shuō, xué Hànyǔ shénme zuì nán?",
+          "options": [
+            { "text": "听汉语", "pinyin": "tīng Hànyǔ" },
+            { "text": "说汉语", "pinyin": "shuō Hànyǔ" },
+            { "text": "写汉字", "pinyin": "xiě Hànzì" },
+            { "text": "做练习", "pinyin": "zuò liànxí" }
+          ],
+          "correctAnswer": { "index": 2, "text": "写汉字" },
+          "explanation": "Bài đọc viết '写汉字最难' (Viết chữ Hán là khó nhất).",
+          "order": 3
+        },
+        {
+          "id": "rd-HSK2-4-q4",
+          "type": "TRUE_FALSE",
+          "prompt": "阮明在北京的大学学习汉语。",
+          "promptPinyin": "Ruǎn Míng zài Běijīng de dàxué xuéxí Hànyǔ.",
+          "correctAnswer": { "value": true },
+          "explanation": "Bài đọc viết '我现在在北京的一所大学学习汉语' (Tôi hiện đang học tiếng Trung tại một trường đại học ở Bắc Kinh). Đúng.",
+          "order": 4
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,546 @@
+{
+  "kind": "materials",
+  "materials": [
+    {
+      "id": "mt-CONVERSATION-1",
+      "title": "Chào hỏi và giới thiệu bản thân cơ bản",
+      "titleZh": "基本问候与自我介绍",
+      "category": "CONVERSATION",
+      "hskLevel": "HSK1",
+      "summary": "Hướng dẫn những câu chào hỏi và giới thiệu bản thân đơn giản nhất, kèm hội thoại mẫu để người mới bắt đầu có thể giao tiếp ngay.",
+      "readMinutes": 6,
+      "order": 1,
+      "tags": ["chào hỏi", "giới thiệu bản thân", "HSK1", "giao tiếp cơ bản"],
+      "content": [
+        {
+          "type": "heading",
+          "text": "Chào hỏi và giới thiệu bản thân",
+          "zh": "问候与自我介绍"
+        },
+        {
+          "type": "paragraph",
+          "text": "Khi mới học tiếng Trung, điều đầu tiên bạn cần là biết cách chào hỏi và nói tên mình. Những câu dưới đây rất ngắn, dễ nhớ và dùng được trong hầu hết các tình huống hằng ngày."
+        },
+        {
+          "type": "vocab",
+          "items": [
+            { "zh": "你好", "pinyin": "nǐ hǎo", "vi": "Xin chào" },
+            { "zh": "您好", "pinyin": "nín hǎo", "vi": "Xin chào (lịch sự, với người lớn tuổi)" },
+            { "zh": "谢谢", "pinyin": "xièxie", "vi": "Cảm ơn" },
+            { "zh": "再见", "pinyin": "zàijiàn", "vi": "Tạm biệt" },
+            { "zh": "我", "pinyin": "wǒ", "vi": "Tôi" },
+            { "zh": "叫", "pinyin": "jiào", "vi": "Gọi là, tên là" }
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Những câu chào hỏi thông dụng"
+        },
+        {
+          "type": "example",
+          "zh": "你好！",
+          "pinyin": "nǐ hǎo!",
+          "vi": "Xin chào!"
+        },
+        {
+          "type": "example",
+          "zh": "你好吗？",
+          "pinyin": "nǐ hǎo ma?",
+          "vi": "Bạn có khỏe không?"
+        },
+        {
+          "type": "example",
+          "zh": "我很好，谢谢。",
+          "pinyin": "wǒ hěn hǎo, xièxie.",
+          "vi": "Tôi khỏe, cảm ơn."
+        },
+        {
+          "type": "heading",
+          "text": "Giới thiệu tên của bạn"
+        },
+        {
+          "type": "paragraph",
+          "text": "Để nói tên mình, bạn dùng mẫu câu 我叫 + tên. Nếu muốn hỏi tên người khác, dùng 你叫什么名字？"
+        },
+        {
+          "type": "example",
+          "zh": "我叫小明。",
+          "pinyin": "wǒ jiào Xiǎomíng.",
+          "vi": "Tôi tên là Tiểu Minh."
+        },
+        {
+          "type": "example",
+          "zh": "你叫什么名字？",
+          "pinyin": "nǐ jiào shénme míngzi?",
+          "vi": "Bạn tên là gì?"
+        },
+        {
+          "type": "heading",
+          "text": "Hội thoại mẫu"
+        },
+        {
+          "type": "example",
+          "zh": "A：你好！我叫王力。",
+          "pinyin": "A: nǐ hǎo! wǒ jiào Wáng Lì.",
+          "vi": "A: Xin chào! Tôi tên là Vương Lực."
+        },
+        {
+          "type": "example",
+          "zh": "B：你好！我叫李美。认识你很高兴。",
+          "pinyin": "B: nǐ hǎo! wǒ jiào Lǐ Měi. rènshi nǐ hěn gāoxìng.",
+          "vi": "B: Xin chào! Tôi tên là Lý Mỹ. Rất vui được làm quen với bạn."
+        },
+        {
+          "type": "note",
+          "text": "Lưu ý: 你好 không thay đổi theo buổi sáng/chiều/tối như tiếng Việt. Buổi sáng có thể nói 早上好 (zǎoshang hǎo). Người Trung Quốc rất hay dùng 你好 trong lần gặp đầu tiên."
+        }
+      ]
+    },
+    {
+      "id": "mt-CONVERSATION-2",
+      "title": "Gọi món và ăn uống ở nhà hàng",
+      "titleZh": "在餐厅点菜",
+      "category": "CONVERSATION",
+      "hskLevel": "HSK2",
+      "summary": "Các mẫu câu cần thiết khi đi ăn nhà hàng: gọi món, hỏi giá, gọi nước và thanh toán, kèm hội thoại thực tế.",
+      "readMinutes": 7,
+      "order": 2,
+      "tags": ["gọi món", "nhà hàng", "ăn uống", "HSK2"],
+      "content": [
+        {
+          "type": "heading",
+          "text": "Gọi món ở nhà hàng",
+          "zh": "在餐厅点菜"
+        },
+        {
+          "type": "paragraph",
+          "text": "Khi đi ăn ở Trung Quốc, bạn sẽ cần biết cách gọi món, hỏi giá và thanh toán. Phần này tổng hợp các câu thường dùng nhất để bạn tự tin gọi món."
+        },
+        {
+          "type": "vocab",
+          "items": [
+            { "zh": "服务员", "pinyin": "fúwùyuán", "vi": "Nhân viên phục vụ" },
+            { "zh": "菜单", "pinyin": "càidān", "vi": "Thực đơn" },
+            { "zh": "点菜", "pinyin": "diǎn cài", "vi": "Gọi món" },
+            { "zh": "好吃", "pinyin": "hǎochī", "vi": "Ngon (đồ ăn)" },
+            { "zh": "米饭", "pinyin": "mǐfàn", "vi": "Cơm" },
+            { "zh": "买单", "pinyin": "mǎidān", "vi": "Thanh toán, tính tiền" }
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Gọi nhân viên và xem thực đơn"
+        },
+        {
+          "type": "example",
+          "zh": "服务员，请给我菜单。",
+          "pinyin": "fúwùyuán, qǐng gěi wǒ càidān.",
+          "vi": "Phục vụ ơi, làm ơn cho tôi xem thực đơn."
+        },
+        {
+          "type": "example",
+          "zh": "我想点菜。",
+          "pinyin": "wǒ xiǎng diǎn cài.",
+          "vi": "Tôi muốn gọi món."
+        },
+        {
+          "type": "heading",
+          "text": "Gọi món và hỏi giá"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Muốn gọi một món: 我要一个 + tên món",
+            "Hỏi giá: 这个多少钱？ (Cái này bao nhiêu tiền?)",
+            "Gọi đồ uống: 我要一杯 + tên đồ uống",
+            "Hỏi món có cay không: 这个辣不辣？"
+          ]
+        },
+        {
+          "type": "example",
+          "zh": "我要一个鸡蛋炒饭和一杯茶。",
+          "pinyin": "wǒ yào yí ge jīdàn chǎofàn hé yì bēi chá.",
+          "vi": "Tôi muốn một phần cơm chiên trứng và một cốc trà."
+        },
+        {
+          "type": "example",
+          "zh": "这个菜多少钱？",
+          "pinyin": "zhège cài duōshao qián?",
+          "vi": "Món này bao nhiêu tiền?"
+        },
+        {
+          "type": "heading",
+          "text": "Hội thoại mẫu"
+        },
+        {
+          "type": "example",
+          "zh": "顾客：服务员，我想点菜。有什么好吃的？",
+          "pinyin": "gùkè: fúwùyuán, wǒ xiǎng diǎn cài. yǒu shénme hǎochī de?",
+          "vi": "Khách: Phục vụ ơi, tôi muốn gọi món. Có gì ngon không?"
+        },
+        {
+          "type": "example",
+          "zh": "服务员：我们的牛肉面很好吃，您要不要试试？",
+          "pinyin": "fúwùyuán: wǒmen de niúròu miàn hěn hǎochī, nín yào bú yào shìshi?",
+          "vi": "Phục vụ: Mì bò của chúng tôi rất ngon, quý khách có muốn thử không?"
+        },
+        {
+          "type": "example",
+          "zh": "顾客：好，我要一碗牛肉面，再要一杯水。",
+          "pinyin": "gùkè: hǎo, wǒ yào yì wǎn niúròu miàn, zài yào yì bēi shuǐ.",
+          "vi": "Khách: Được, cho tôi một bát mì bò, thêm một cốc nước nữa."
+        },
+        {
+          "type": "example",
+          "zh": "顾客：服务员，买单！",
+          "pinyin": "gùkè: fúwùyuán, mǎidān!",
+          "vi": "Khách: Phục vụ ơi, tính tiền!"
+        },
+        {
+          "type": "note",
+          "text": "Mẹo: Người Trung Quốc dùng lượng từ khác nhau cho mỗi loại đồ: 一碗面 (một bát mì), 一杯茶 (một cốc trà), 一个菜 (một món). Học đúng lượng từ sẽ giúp câu của bạn tự nhiên hơn nhiều."
+        }
+      ]
+    },
+    {
+      "id": "mt-CONVERSATION-3",
+      "title": "Mua sắm và mặc cả",
+      "titleZh": "购物与讨价还价",
+      "category": "CONVERSATION",
+      "hskLevel": "HSK3",
+      "summary": "Mẫu câu mua sắm thực tế: hỏi giá, hỏi màu sắc và kích cỡ, đặc biệt là cách mặc cả khéo léo ở chợ Trung Quốc.",
+      "readMinutes": 8,
+      "order": 3,
+      "tags": ["mua sắm", "mặc cả", "chợ", "HSK3"],
+      "content": [
+        {
+          "type": "heading",
+          "text": "Mua sắm và mặc cả",
+          "zh": "购物与讨价还价"
+        },
+        {
+          "type": "paragraph",
+          "text": "Ở các khu chợ và cửa hàng nhỏ tại Trung Quốc, mặc cả là chuyện rất bình thường. Biết một vài câu mặc cả sẽ giúp bạn mua được giá tốt hơn và tạo không khí vui vẻ với người bán."
+        },
+        {
+          "type": "vocab",
+          "items": [
+            { "zh": "多少钱", "pinyin": "duōshao qián", "vi": "Bao nhiêu tiền" },
+            { "zh": "贵", "pinyin": "guì", "vi": "Đắt" },
+            { "zh": "便宜", "pinyin": "piányi", "vi": "Rẻ" },
+            { "zh": "打折", "pinyin": "dǎzhé", "vi": "Giảm giá, bớt giá" },
+            { "zh": "颜色", "pinyin": "yánsè", "vi": "Màu sắc" },
+            { "zh": "试", "pinyin": "shì", "vi": "Thử (mặc, dùng)" }
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Hỏi giá và thông tin sản phẩm"
+        },
+        {
+          "type": "example",
+          "zh": "这件衣服多少钱？",
+          "pinyin": "zhè jiàn yīfu duōshao qián?",
+          "vi": "Cái áo này bao nhiêu tiền?"
+        },
+        {
+          "type": "example",
+          "zh": "有没有别的颜色？",
+          "pinyin": "yǒu méiyǒu bié de yánsè?",
+          "vi": "Có màu khác không?"
+        },
+        {
+          "type": "example",
+          "zh": "我可以试一下吗？",
+          "pinyin": "wǒ kěyǐ shì yíxià ma?",
+          "vi": "Tôi thử một chút được không?"
+        },
+        {
+          "type": "heading",
+          "text": "Các câu mặc cả"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Chê đắt: 太贵了！ (Đắt quá!)",
+            "Xin bớt giá: 能不能便宜一点？ (Có thể rẻ hơn một chút không?)",
+            "Đề nghị giá cụ thể: 五十块，可以吗？ (Năm mươi tệ, được không?)",
+            "Dứt điểm: 算了，便宜点我就买。 (Thôi, bớt chút tôi sẽ mua.)"
+          ]
+        },
+        {
+          "type": "example",
+          "zh": "太贵了，能便宜一点吗？",
+          "pinyin": "tài guì le, néng piányi yìdiǎn ma?",
+          "vi": "Đắt quá, bớt một chút được không?"
+        },
+        {
+          "type": "heading",
+          "text": "Hội thoại mẫu ở chợ"
+        },
+        {
+          "type": "example",
+          "zh": "顾客：老板，这条裤子怎么卖？",
+          "pinyin": "gùkè: lǎobǎn, zhè tiáo kùzi zěnme mài?",
+          "vi": "Khách: Ông chủ ơi, cái quần này bán thế nào?"
+        },
+        {
+          "type": "example",
+          "zh": "老板：一百二十块。",
+          "pinyin": "lǎobǎn: yìbǎi èrshí kuài.",
+          "vi": "Chủ: Một trăm hai mươi tệ."
+        },
+        {
+          "type": "example",
+          "zh": "顾客：太贵了！一百块吧，可以的话我马上买。",
+          "pinyin": "gùkè: tài guì le! yìbǎi kuài ba, kěyǐ de huà wǒ mǎshàng mǎi.",
+          "vi": "Khách: Đắt quá! Một trăm tệ nhé, được thì tôi mua ngay."
+        },
+        {
+          "type": "example",
+          "zh": "老板：好吧，一百块卖给你，交个朋友。",
+          "pinyin": "lǎobǎn: hǎo ba, yìbǎi kuài mài gěi nǐ, jiāo ge péngyou.",
+          "vi": "Chủ: Được rồi, một trăm tệ bán cho bạn, làm quen kết bạn."
+        },
+        {
+          "type": "note",
+          "text": "Lưu ý văn hóa: 块 (kuài) là cách nói khẩu ngữ của 元 (yuán). Khi mặc cả, đừng trả giá quá thấp một cách thô lỗ; nụ cười và thái độ vui vẻ thường giúp bạn được giá tốt hơn."
+        }
+      ]
+    },
+    {
+      "id": "mt-CONVERSATION-4",
+      "title": "Hỏi đường và chỉ đường",
+      "titleZh": "问路与指路",
+      "category": "CONVERSATION",
+      "hskLevel": "HSK4",
+      "summary": "Cách hỏi đường lịch sự và hiểu được lời chỉ đường, gồm từ vựng phương hướng, phương tiện giao thông và hội thoại tình huống.",
+      "readMinutes": 8,
+      "order": 4,
+      "tags": ["hỏi đường", "phương hướng", "giao thông", "HSK4"],
+      "content": [
+        {
+          "type": "heading",
+          "text": "Hỏi đường và chỉ đường",
+          "zh": "问路与指路"
+        },
+        {
+          "type": "paragraph",
+          "text": "Khi đi du lịch hoặc sống ở Trung Quốc, kỹ năng hỏi đường rất quan trọng. Bạn cần biết cách mở lời lịch sự, hỏi rõ vị trí và hiểu được những từ chỉ phương hướng khi người khác trả lời."
+        },
+        {
+          "type": "vocab",
+          "items": [
+            { "zh": "请问", "pinyin": "qǐngwèn", "vi": "Xin hỏi (mở lời lịch sự)" },
+            { "zh": "怎么走", "pinyin": "zěnme zǒu", "vi": "Đi như thế nào" },
+            { "zh": "往", "pinyin": "wǎng", "vi": "Về phía, hướng về" },
+            { "zh": "拐", "pinyin": "guǎi", "vi": "Rẽ, quẹo" },
+            { "zh": "一直", "pinyin": "yìzhí", "vi": "Thẳng, liên tục" },
+            { "zh": "附近", "pinyin": "fùjìn", "vi": "Gần đây, lân cận" }
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Từ vựng phương hướng"
+        },
+        {
+          "type": "list",
+          "items": [
+            "左边 (zuǒbian) - bên trái",
+            "右边 (yòubian) - bên phải",
+            "前面 (qiánmiàn) - phía trước",
+            "后面 (hòumiàn) - phía sau",
+            "对面 (duìmiàn) - phía đối diện",
+            "旁边 (pángbiān) - bên cạnh"
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Cách hỏi đường"
+        },
+        {
+          "type": "example",
+          "zh": "请问，地铁站怎么走？",
+          "pinyin": "qǐngwèn, dìtiě zhàn zěnme zǒu?",
+          "vi": "Xin hỏi, ga tàu điện ngầm đi như thế nào?"
+        },
+        {
+          "type": "example",
+          "zh": "请问，这附近有银行吗？",
+          "pinyin": "qǐngwèn, zhè fùjìn yǒu yínháng ma?",
+          "vi": "Xin hỏi, gần đây có ngân hàng không?"
+        },
+        {
+          "type": "example",
+          "zh": "从这儿到火车站要多长时间？",
+          "pinyin": "cóng zhèr dào huǒchē zhàn yào duō cháng shíjiān?",
+          "vi": "Từ đây đến ga tàu hỏa mất bao lâu?"
+        },
+        {
+          "type": "heading",
+          "text": "Cách chỉ đường"
+        },
+        {
+          "type": "example",
+          "zh": "你一直往前走，到红绿灯往右拐。",
+          "pinyin": "nǐ yìzhí wǎng qián zǒu, dào hónglǜdēng wǎng yòu guǎi.",
+          "vi": "Bạn cứ đi thẳng về phía trước, đến đèn giao thông thì rẽ phải."
+        },
+        {
+          "type": "example",
+          "zh": "银行就在书店对面，很好找。",
+          "pinyin": "yínháng jiù zài shūdiàn duìmiàn, hěn hǎo zhǎo.",
+          "vi": "Ngân hàng ở ngay đối diện hiệu sách, rất dễ tìm."
+        },
+        {
+          "type": "heading",
+          "text": "Hội thoại mẫu"
+        },
+        {
+          "type": "example",
+          "zh": "游客：请问，去人民公园怎么走？",
+          "pinyin": "yóukè: qǐngwèn, qù Rénmín Gōngyuán zěnme zǒu?",
+          "vi": "Du khách: Xin hỏi, đi đến công viên Nhân Dân như thế nào?"
+        },
+        {
+          "type": "example",
+          "zh": "路人：你往前走两百米，然后过马路就到了。",
+          "pinyin": "lùrén: nǐ wǎng qián zǒu liǎngbǎi mǐ, ránhòu guò mǎlù jiù dào le.",
+          "vi": "Người qua đường: Bạn đi thẳng hai trăm mét, rồi qua đường là tới."
+        },
+        {
+          "type": "example",
+          "zh": "游客：走路远吗？还是坐公交车比较好？",
+          "pinyin": "yóukè: zǒulù yuǎn ma? háishi zuò gōngjiāo chē bǐjiào hǎo?",
+          "vi": "Du khách: Đi bộ có xa không? Hay đi xe buýt thì tốt hơn?"
+        },
+        {
+          "type": "example",
+          "zh": "路人：不远，走路十分钟就到，不用坐车。",
+          "pinyin": "lùrén: bù yuǎn, zǒulù shí fēnzhōng jiù dào, búyòng zuò chē.",
+          "vi": "Người qua đường: Không xa, đi bộ mười phút là tới, không cần đi xe."
+        },
+        {
+          "type": "note",
+          "text": "Mẹo: Luôn mở đầu bằng 请问 để tỏ ra lịch sự. Nếu không nghe rõ, bạn có thể nói 不好意思，能再说一遍吗？ (bù hǎoyìsi, néng zài shuō yí biàn ma? - Xin lỗi, bạn có thể nói lại một lần nữa không?)."
+        }
+      ]
+    },
+    {
+      "id": "mt-CONVERSATION-5",
+      "title": "Gọi điện thoại và kết bạn",
+      "titleZh": "打电话与交朋友",
+      "category": "CONVERSATION",
+      "hskLevel": "HSK5",
+      "summary": "Kỹ năng giao tiếp nâng cao: gọi điện lịch sự, để lại lời nhắn, và những cách mở lời tự nhiên để làm quen, kết bạn mới.",
+      "readMinutes": 9,
+      "order": 5,
+      "tags": ["gọi điện", "kết bạn", "giao tiếp xã hội", "HSK5"],
+      "content": [
+        {
+          "type": "heading",
+          "text": "Gọi điện thoại và kết bạn",
+          "zh": "打电话与交朋友"
+        },
+        {
+          "type": "paragraph",
+          "text": "Ở trình độ này, bạn cần giao tiếp linh hoạt hơn trong các tình huống xã hội như gọi điện công việc, nhắn lại tin và chủ động làm quen với người mới. Cách diễn đạt lịch sự, tự nhiên sẽ giúp bạn để lại ấn tượng tốt."
+        },
+        {
+          "type": "vocab",
+          "items": [
+            { "zh": "喂", "pinyin": "wéi", "vi": "A lô (khi nghe điện thoại)" },
+            { "zh": "稍等", "pinyin": "shāo děng", "vi": "Chờ một chút" },
+            { "zh": "留言", "pinyin": "liúyán", "vi": "Để lại lời nhắn" },
+            { "zh": "方便", "pinyin": "fāngbiàn", "vi": "Tiện, thuận tiện" },
+            { "zh": "联系", "pinyin": "liánxì", "vi": "Liên hệ, liên lạc" },
+            { "zh": "缘分", "pinyin": "yuánfèn", "vi": "Duyên phận, cơ duyên" }
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Mở đầu và xác nhận khi gọi điện"
+        },
+        {
+          "type": "example",
+          "zh": "喂，您好，请问王经理在吗？",
+          "pinyin": "wéi, nín hǎo, qǐngwèn Wáng jīnglǐ zài ma?",
+          "vi": "A lô, xin chào, cho hỏi giám đốc Vương có ở đó không ạ?"
+        },
+        {
+          "type": "example",
+          "zh": "请问您现在方便接电话吗？",
+          "pinyin": "qǐngwèn nín xiànzài fāngbiàn jiē diànhuà ma?",
+          "vi": "Cho hỏi bây giờ anh/chị có tiện nghe điện thoại không ạ?"
+        },
+        {
+          "type": "heading",
+          "text": "Để lại lời nhắn và kết thúc cuộc gọi"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Người cần gặp vắng: 他现在不在，您要不要留言？",
+            "Nhờ gọi lại: 麻烦您让他给我回个电话，好吗？",
+            "Xác nhận số: 我的电话是…，您记一下。",
+            "Kết thúc lịch sự: 那不打扰您了，再见。"
+          ]
+        },
+        {
+          "type": "example",
+          "zh": "他正在开会，您方便的话可以留个言。",
+          "pinyin": "tā zhèngzài kāihuì, nín fāngbiàn de huà kěyǐ liú ge yán.",
+          "vi": "Anh ấy đang họp, nếu tiện anh/chị có thể để lại lời nhắn."
+        },
+        {
+          "type": "heading",
+          "text": "Mở lời làm quen, kết bạn"
+        },
+        {
+          "type": "example",
+          "zh": "你好，我们好像在哪儿见过，你也是来参加活动的吗？",
+          "pinyin": "nǐ hǎo, wǒmen hǎoxiàng zài nǎr jiàn guo, nǐ yě shì lái cānjiā huódòng de ma?",
+          "vi": "Chào bạn, hình như chúng ta đã gặp nhau ở đâu đó, bạn cũng đến tham gia hoạt động à?"
+        },
+        {
+          "type": "example",
+          "zh": "认识你真高兴，以后可以多联系。",
+          "pinyin": "rènshi nǐ zhēn gāoxìng, yǐhòu kěyǐ duō liánxì.",
+          "vi": "Rất vui được làm quen với bạn, sau này chúng ta giữ liên lạc nhiều nhé."
+        },
+        {
+          "type": "example",
+          "zh": "我们加个微信吧，方便以后联系。",
+          "pinyin": "wǒmen jiā ge wēixìn ba, fāngbiàn yǐhòu liánxì.",
+          "vi": "Chúng ta kết bạn WeChat nhé, để sau này tiện liên lạc."
+        },
+        {
+          "type": "heading",
+          "text": "Hội thoại mẫu"
+        },
+        {
+          "type": "example",
+          "zh": "小李：你好，刚才你的发言很有意思，我很认同你的看法。",
+          "pinyin": "Xiǎo Lǐ: nǐ hǎo, gāngcái nǐ de fāyán hěn yǒu yìsi, wǒ hěn rèntóng nǐ de kànfǎ.",
+          "vi": "Tiểu Lý: Chào bạn, vừa nãy phần phát biểu của bạn rất thú vị, tôi rất đồng tình với quan điểm của bạn."
+        },
+        {
+          "type": "example",
+          "zh": "小张：谢谢，能遇到你这样的同行真是缘分。",
+          "pinyin": "Xiǎo Zhāng: xièxie, néng yùdào nǐ zhèyàng de tóngháng zhēnshi yuánfèn.",
+          "vi": "Tiểu Trương: Cảm ơn, gặp được đồng nghiệp như bạn thật là có duyên."
+        },
+        {
+          "type": "example",
+          "zh": "小李：那我们交换一下联系方式，以后常联系。",
+          "pinyin": "Xiǎo Lǐ: nà wǒmen jiāohuàn yíxià liánxì fāngshì, yǐhòu cháng liánxì.",
+          "vi": "Tiểu Lý: Vậy chúng ta trao đổi thông tin liên lạc đi, sau này thường xuyên giữ liên lạc."
+        },
+        {
+          "type": "note",
+          "text": "Lưu ý: Khi nghe điện thoại, người Trung Quốc nói 喂 với thanh hai (wéi), khác với 喂 thanh bốn (wèi) nghĩa là 'cho ăn'. Trong giao tiếp xã hội, việc chủ động đề nghị 加微信 (kết bạn WeChat) là cách kết nối rất phổ biến và tự nhiên ở Trung Quốc."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,149 @@
+{
+  "kind": "listening",
+  "tests": [
+    {
+      "id": "ls-HSK4-1",
+      "title": "Phỏng vấn xin việc",
+      "hskLevel": "HSK4",
+      "audioUrl": "",
+      "transcript": "A: 你好，请坐。我看了你的简历，你以前在一家广告公司工作，对吗？\nB: 是的，我在那儿工作了三年，主要负责和客户联系，安排会议。\nA: 那你为什么想换工作呢？\nB: 因为我觉得自己应该接受更大的挑战，也希望能有更多机会提高自己的能力。\nA: 我们公司的工作压力比较大，经常需要加班，你能接受吗？\nB: 没问题，我相信只要努力，再难的工作也能做好。\nA: 很好。如果通过这次面试，你下个月就可以来上班了。",
+      "timeLimit": 300,
+      "questions": [
+        {
+          "id": "ls-HSK4-1-q1",
+          "type": "MCQ",
+          "prompt": "男的以前在什么公司工作？",
+          "promptPinyin": "Nán de yǐqián zài shénme gōngsī gōngzuò?",
+          "options": [
+            { "text": "广告公司", "pinyin": "guǎnggào gōngsī" },
+            { "text": "电脑公司", "pinyin": "diànnǎo gōngsī" },
+            { "text": "旅行公司", "pinyin": "lǚxíng gōngsī" },
+            { "text": "汽车公司", "pinyin": "qìchē gōngsī" }
+          ],
+          "correctAnswer": { "index": 0 },
+          "explanation": "Người phỏng vấn nói 你以前在一家广告公司工作 (trước đây bạn làm việc ở một công ty quảng cáo) và ứng viên xác nhận 是的. Vậy đáp án đúng là công ty quảng cáo.",
+          "order": 1
+        },
+        {
+          "id": "ls-HSK4-1-q2",
+          "type": "MCQ",
+          "prompt": "男的为什么想换工作？",
+          "promptPinyin": "Nán de wèishénme xiǎng huàn gōngzuò?",
+          "options": [
+            { "text": "因为工资太低", "pinyin": "yīnwèi gōngzī tài dī" },
+            { "text": "因为想接受更大的挑战", "pinyin": "yīnwèi xiǎng jiēshòu gèng dà de tiǎozhàn" },
+            { "text": "因为离家太远", "pinyin": "yīnwèi lí jiā tài yuǎn" },
+            { "text": "因为和同事关系不好", "pinyin": "yīnwèi hé tóngshì guānxi bù hǎo" }
+          ],
+          "correctAnswer": { "index": 1 },
+          "explanation": "Ứng viên giải thích 我觉得自己应该接受更大的挑战 (tôi nghĩ mình nên đón nhận thử thách lớn hơn). Vậy lý do là muốn đón nhận thử thách lớn hơn.",
+          "order": 2
+        },
+        {
+          "id": "ls-HSK4-1-q3",
+          "type": "TRUE_FALSE",
+          "prompt": "这家公司的工作几乎不需要加班。",
+          "correctAnswer": { "value": false },
+          "explanation": "Người phỏng vấn nói 经常需要加班 (thường xuyên phải tăng ca), trái ngược với câu hỏi nói gần như không cần tăng ca. Vậy câu này SAI.",
+          "order": 3
+        }
+      ]
+    },
+    {
+      "id": "ls-HSK4-2",
+      "title": "Đổi kế hoạch du lịch",
+      "hskLevel": "HSK4",
+      "audioUrl": "",
+      "transcript": "A: 小李，我们原来打算这个周末去爬山，可是天气预报说星期六会下大雨。\nB: 真的吗？那爬山就太危险了，我们最好改一下计划。\nA: 我也是这么想的。要不我们去参观那个新开的艺术博物馆怎么样？\nB: 这个主意不错！我一直想去看看。听说里面有很多有名的画。\nA: 对，而且博物馆离地铁站很近，交通很方便，我们不用开车。\nB: 太好了。那我们星期六上午九点在地铁站门口见，好不好？\nA: 没问题，到时候见。",
+      "timeLimit": 300,
+      "questions": [
+        {
+          "id": "ls-HSK4-2-q1",
+          "type": "MCQ",
+          "prompt": "他们原来打算周末做什么？",
+          "promptPinyin": "Tāmen yuánlái dǎsuàn zhōumò zuò shénme?",
+          "options": [
+            { "text": "去爬山", "pinyin": "qù pá shān" },
+            { "text": "去博物馆", "pinyin": "qù bówùguǎn" },
+            { "text": "去看电影", "pinyin": "qù kàn diànyǐng" },
+            { "text": "在家休息", "pinyin": "zài jiā xiūxi" }
+          ],
+          "correctAnswer": { "index": 0 },
+          "explanation": "Người A nói 我们原来打算这个周末去爬山 (vốn dĩ cuối tuần này chúng ta định đi leo núi). Vậy kế hoạch ban đầu là đi leo núi.",
+          "order": 1
+        },
+        {
+          "id": "ls-HSK4-2-q2",
+          "type": "MCQ",
+          "prompt": "他们为什么改变了计划？",
+          "promptPinyin": "Tāmen wèishénme gǎibiàn le jìhuà?",
+          "options": [
+            { "text": "因为没有时间", "pinyin": "yīnwèi méiyǒu shíjiān" },
+            { "text": "因为星期六会下大雨", "pinyin": "yīnwèi xīngqīliù huì xià dàyǔ" },
+            { "text": "因为山太高了", "pinyin": "yīnwèi shān tài gāo le" },
+            { "text": "因为车坏了", "pinyin": "yīnwèi chē huài le" }
+          ],
+          "correctAnswer": { "index": 1 },
+          "explanation": "Người A nói 天气预报说星期六会下大雨 (dự báo thời tiết nói thứ Bảy sẽ mưa to), nên họ thấy leo núi nguy hiểm và đổi kế hoạch.",
+          "order": 2
+        },
+        {
+          "id": "ls-HSK4-2-q3",
+          "type": "TRUE_FALSE",
+          "prompt": "博物馆离地铁站很近，交通很方便。",
+          "correctAnswer": { "value": true },
+          "explanation": "Người A nói 博物馆离地铁站很近，交通很方便 (bảo tàng gần ga tàu điện ngầm, giao thông rất thuận tiện). Vậy câu này ĐÚNG.",
+          "order": 3
+        }
+      ]
+    },
+    {
+      "id": "ls-HSK4-3",
+      "title": "Thói quen học tiếng Trung",
+      "hskLevel": "HSK4",
+      "audioUrl": "",
+      "transcript": "我学习汉语已经两年了。刚开始的时候，我觉得最难的是发音和声调，常常说错。后来我每天早上都坚持听一段中文广播，又跟着老师大声读课文，慢慢地就有了进步。我发现，学语言最重要的不是聪明，而是坚持和不怕犯错误。现在我不但能和中国朋友轻松地聊天，还能看懂简单的中文报纸。我打算明年去中国留学，一边学习，一边了解那里的文化。",
+      "timeLimit": 300,
+      "questions": [
+        {
+          "id": "ls-HSK4-3-q1",
+          "type": "MCQ",
+          "prompt": "说话人觉得刚开始学汉语时最难的是什么？",
+          "promptPinyin": "Shuōhuà rén juéde gāng kāishǐ xué Hànyǔ shí zuì nán de shì shénme?",
+          "options": [
+            { "text": "写汉字", "pinyin": "xiě Hànzì" },
+            { "text": "发音和声调", "pinyin": "fāyīn hé shēngdiào" },
+            { "text": "语法", "pinyin": "yǔfǎ" },
+            { "text": "听力", "pinyin": "tīnglì" }
+          ],
+          "correctAnswer": { "index": 1 },
+          "explanation": "Người nói cho biết 最难的是发音和声调 (khó nhất là phát âm và thanh điệu). Vậy đáp án đúng là phát âm và thanh điệu.",
+          "order": 1
+        },
+        {
+          "id": "ls-HSK4-3-q2",
+          "type": "MCQ",
+          "prompt": "根据这段话，学语言最重要的是什么？",
+          "promptPinyin": "Gēnjù zhè duàn huà, xué yǔyán zuì zhòngyào de shì shénme?",
+          "options": [
+            { "text": "很聪明", "pinyin": "hěn cōngmíng" },
+            { "text": "有很多钱", "pinyin": "yǒu hěn duō qián" },
+            { "text": "坚持和不怕犯错误", "pinyin": "jiānchí hé bú pà fàn cuòwù" },
+            { "text": "去外国留学", "pinyin": "qù wàiguó liúxué" }
+          ],
+          "correctAnswer": { "index": 2 },
+          "explanation": "Người nói nhấn mạnh 学语言最重要的不是聪明，而是坚持和不怕犯错误 (học ngôn ngữ quan trọng nhất không phải là thông minh, mà là kiên trì và không sợ mắc lỗi). Vậy đáp án là kiên trì và không sợ mắc lỗi.",
+          "order": 2
+        },
+        {
+          "id": "ls-HSK4-3-q3",
+          "type": "TRUE_FALSE",
+          "prompt": "说话人打算明年去中国留学。",
+          "correctAnswer": { "value": true },
+          "explanation": "Người nói cho biết 我打算明年去中国留学 (tôi dự định năm sau sẽ đi du học Trung Quốc). Vậy câu này ĐÚNG.",
+          "order": 3
+        }
+      ]
+    }
+  ]
+}

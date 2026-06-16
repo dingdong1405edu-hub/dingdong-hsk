@@ -1,0 +1,149 @@
+{
+  "kind": "listening",
+  "tests": [
+    {
+      "id": "ls-HSK2-1",
+      "title": "Mua sắm ở siêu thị",
+      "hskLevel": "HSK2",
+      "audioUrl": "",
+      "transcript": "A: 你好，请问鸡蛋多少钱一斤？\nB: 五块钱一斤。\nA: 我要两斤鸡蛋，再要三个苹果。\nB: 好的，一共二十块。\nA: 给你钱。\nB: 谢谢，欢迎下次再来。",
+      "timeLimit": 300,
+      "questions": [
+        {
+          "id": "ls-HSK2-1-q1",
+          "type": "MCQ",
+          "prompt": "鸡蛋多少钱一斤？",
+          "promptPinyin": "Jīdàn duōshao qián yì jīn?",
+          "options": [
+            { "text": "三块钱", "pinyin": "sān kuài qián" },
+            { "text": "五块钱", "pinyin": "wǔ kuài qián" },
+            { "text": "十块钱", "pinyin": "shí kuài qián" },
+            { "text": "二十块钱", "pinyin": "èrshí kuài qián" }
+          ],
+          "correctAnswer": { "index": 1 },
+          "explanation": "Người bán nói rõ: 五块钱一斤 (năm tệ một cân). Vậy đáp án đúng là 五块钱.",
+          "order": 1
+        },
+        {
+          "id": "ls-HSK2-1-q2",
+          "type": "MCQ",
+          "prompt": "她买了几个苹果？",
+          "promptPinyin": "Tā mǎi le jǐ gè píngguǒ?",
+          "options": [
+            { "text": "两个", "pinyin": "liǎng gè" },
+            { "text": "三个", "pinyin": "sān gè" },
+            { "text": "五个", "pinyin": "wǔ gè" },
+            { "text": "二十个", "pinyin": "èrshí gè" }
+          ],
+          "correctAnswer": { "index": 1 },
+          "explanation": "Người mua nói 再要三个苹果 (lấy thêm ba quả táo). Vậy cô ấy mua ba quả táo.",
+          "order": 2
+        },
+        {
+          "id": "ls-HSK2-1-q3",
+          "type": "TRUE_FALSE",
+          "prompt": "她一共要付二十块钱。",
+          "correctAnswer": { "value": true },
+          "explanation": "Người bán nói 一共二十块 (tổng cộng hai mươi tệ), nên câu này ĐÚNG.",
+          "order": 3
+        }
+      ]
+    },
+    {
+      "id": "ls-HSK2-2",
+      "title": "Hẹn đi xem phim",
+      "hskLevel": "HSK2",
+      "audioUrl": "",
+      "transcript": "A: 喂，小红，明天你有时间吗？我们一起去看电影，好吗？\nB: 好啊！明天是星期六，我没有工作。几点的电影？\nA: 下午三点。我们两点半在电影院门口见面。\nB: 没问题。我坐公共汽车去，可能会晚一点儿。\nA: 没关系，我等你。",
+      "timeLimit": 300,
+      "questions": [
+        {
+          "id": "ls-HSK2-2-q1",
+          "type": "MCQ",
+          "prompt": "他们明天要一起做什么？",
+          "promptPinyin": "Tāmen míngtiān yào yìqǐ zuò shénme?",
+          "options": [
+            { "text": "看电影", "pinyin": "kàn diànyǐng" },
+            { "text": "去工作", "pinyin": "qù gōngzuò" },
+            { "text": "去买东西", "pinyin": "qù mǎi dōngxi" },
+            { "text": "在家休息", "pinyin": "zài jiā xiūxi" }
+          ],
+          "correctAnswer": { "index": 0 },
+          "explanation": "Người A nói 我们一起去看电影 (chúng ta cùng đi xem phim). Vậy họ đi xem phim.",
+          "order": 1
+        },
+        {
+          "id": "ls-HSK2-2-q2",
+          "type": "MCQ",
+          "prompt": "他们几点见面？",
+          "promptPinyin": "Tāmen jǐ diǎn jiànmiàn?",
+          "options": [
+            { "text": "两点", "pinyin": "liǎng diǎn" },
+            { "text": "两点半", "pinyin": "liǎng diǎn bàn" },
+            { "text": "三点", "pinyin": "sān diǎn" },
+            { "text": "三点半", "pinyin": "sān diǎn bàn" }
+          ],
+          "correctAnswer": { "index": 1 },
+          "explanation": "Người A nói 我们两点半在电影院门口见面 (chúng ta gặp nhau lúc hai giờ rưỡi). Phim chiếu lúc ba giờ, còn họ gặp nhau lúc hai giờ rưỡi.",
+          "order": 2
+        },
+        {
+          "id": "ls-HSK2-2-q3",
+          "type": "TRUE_FALSE",
+          "prompt": "小红明天要去工作。",
+          "correctAnswer": { "value": false },
+          "explanation": "Tiểu Hồng nói 明天是星期六，我没有工作 (ngày mai là thứ Bảy, tôi không phải đi làm). Vậy câu này SAI.",
+          "order": 3
+        }
+      ]
+    },
+    {
+      "id": "ls-HSK2-3",
+      "title": "Nói về thời tiết và sức khỏe",
+      "hskLevel": "HSK2",
+      "audioUrl": "",
+      "transcript": "今天天气很冷，还下雪了。我的女儿生病了，她有点儿发烧，所以今天没去学校。早上我带她去了医院，医生说她要多喝热水，多休息几天就好了。现在她在家睡觉，我做了鸡蛋汤给她吃。",
+      "timeLimit": 300,
+      "questions": [
+        {
+          "id": "ls-HSK2-3-q1",
+          "type": "MCQ",
+          "prompt": "今天天气怎么样？",
+          "promptPinyin": "Jīntiān tiānqì zěnmeyàng?",
+          "options": [
+            { "text": "很热", "pinyin": "hěn rè" },
+            { "text": "很冷，还下雪", "pinyin": "hěn lěng, hái xià xuě" },
+            { "text": "下雨", "pinyin": "xià yǔ" },
+            { "text": "很好，有太阳", "pinyin": "hěn hǎo, yǒu tàiyáng" }
+          ],
+          "correctAnswer": { "index": 1 },
+          "explanation": "Đoạn văn nói 今天天气很冷，还下雪了 (hôm nay trời rất lạnh, lại còn có tuyết rơi). Vậy đáp án là 很冷，还下雪.",
+          "order": 1
+        },
+        {
+          "id": "ls-HSK2-3-q2",
+          "type": "MCQ",
+          "prompt": "女儿今天为什么没去学校？",
+          "promptPinyin": "Nǚ'ér jīntiān wèishénme méi qù xuéxiào?",
+          "options": [
+            { "text": "因为她生病了", "pinyin": "yīnwèi tā shēngbìng le" },
+            { "text": "因为下雪", "pinyin": "yīnwèi xià xuě" },
+            { "text": "因为没有课", "pinyin": "yīnwèi méiyǒu kè" },
+            { "text": "因为她想睡觉", "pinyin": "yīnwèi tā xiǎng shuìjiào" }
+          ],
+          "correctAnswer": { "index": 0 },
+          "explanation": "Đoạn văn nói 我的女儿生病了，她有点儿发烧，所以今天没去学校 (con gái tôi bị ốm, hơi sốt, nên hôm nay không đi học). Vậy lý do là vì cô bé bị ốm.",
+          "order": 2
+        },
+        {
+          "id": "ls-HSK2-3-q3",
+          "type": "TRUE_FALSE",
+          "prompt": "医生说女儿要多喝热水。",
+          "correctAnswer": { "value": true },
+          "explanation": "Đoạn văn nói 医生说她要多喝热水 (bác sĩ nói cô bé phải uống nhiều nước nóng). Vậy câu này ĐÚNG.",
+          "order": 3
+        }
+      ]
+    }
+  ]
+}

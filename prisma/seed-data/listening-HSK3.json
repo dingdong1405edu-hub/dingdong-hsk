@@ -1,0 +1,149 @@
+{
+  "kind": "listening",
+  "tests": [
+    {
+      "id": "ls-HSK3-1",
+      "title": "Lên kế hoạch cho kỳ nghỉ",
+      "hskLevel": "HSK3",
+      "audioUrl": "",
+      "transcript": "A: 小李，下个月就是暑假了，你有什么打算？\nB: 我打算和家人一起去上海旅游，听说那儿的夜景特别漂亮。\nA: 真不错！你们准备坐飞机还是坐火车去？\nB: 我们决定坐火车去，虽然慢一点儿，但是比飞机便宜很多，还能看看路上的风景。\nA: 你们要去几天？\nB: 一个星期。我已经在网上订好了宾馆，离地铁站很近，又干净又安静。\nA: 听起来很方便。希望你们玩得开心！",
+      "timeLimit": 300,
+      "questions": [
+        {
+          "id": "ls-HSK3-1-q1",
+          "type": "MCQ",
+          "prompt": "小李打算去哪里旅游？",
+          "promptPinyin": "Xiǎo Lǐ dǎsuàn qù nǎlǐ lǚyóu?",
+          "options": [
+            { "text": "北京", "pinyin": "Běijīng" },
+            { "text": "上海", "pinyin": "Shànghǎi" },
+            { "text": "南京", "pinyin": "Nánjīng" },
+            { "text": "香港", "pinyin": "Xiānggǎng" }
+          ],
+          "correctAnswer": { "index": 1 },
+          "explanation": "Tiểu Lý nói 我打算和家人一起去上海旅游 (tôi định cùng gia đình đi du lịch Thượng Hải). Vậy đáp án đúng là 上海.",
+          "order": 1
+        },
+        {
+          "id": "ls-HSK3-1-q2",
+          "type": "MCQ",
+          "prompt": "他们为什么决定坐火车去？",
+          "promptPinyin": "Tāmen wèishénme juédìng zuò huǒchē qù?",
+          "options": [
+            { "text": "因为火车比飞机快", "pinyin": "yīnwèi huǒchē bǐ fēijī kuài" },
+            { "text": "因为火车比飞机便宜，还能看风景", "pinyin": "yīnwèi huǒchē bǐ fēijī piányi, hái néng kàn fēngjǐng" },
+            { "text": "因为没有飞机票", "pinyin": "yīnwèi méiyǒu fēijī piào" },
+            { "text": "因为他们害怕坐飞机", "pinyin": "yīnwèi tāmen hàipà zuò fēijī" }
+          ],
+          "correctAnswer": { "index": 1 },
+          "explanation": "Tiểu Lý nói 虽然慢一点儿，但是比飞机便宜很多，还能看看路上的风景 (tuy chậm hơn một chút, nhưng rẻ hơn máy bay nhiều, lại còn ngắm được cảnh dọc đường). Vậy lý do là vì rẻ hơn và ngắm được cảnh.",
+          "order": 2
+        },
+        {
+          "id": "ls-HSK3-1-q3",
+          "type": "TRUE_FALSE",
+          "prompt": "小李订的宾馆离地铁站很远。",
+          "correctAnswer": { "value": false },
+          "explanation": "Tiểu Lý nói 离地铁站很近，又干净又安静 (cách ga tàu điện ngầm rất gần, vừa sạch vừa yên tĩnh). Khách sạn ở rất GẦN ga, nên câu nói 'rất xa' là SAI.",
+          "order": 3
+        }
+      ]
+    },
+    {
+      "id": "ls-HSK3-2",
+      "title": "Cuộc gọi đến nhà hàng",
+      "hskLevel": "HSK3",
+      "audioUrl": "",
+      "transcript": "A: 喂，您好，是阳光饭店吗？我想订一个晚上的位子。\nB: 您好，是的。请问您几位，什么时候来？\nA: 我们一共六个人，今天晚上七点。\nB: 好的。请问您需要一个安静一点儿的房间吗？我们二楼有，旁边就是窗户，可以看见外面的花园。\nA: 太好了，就要那个房间吧。对了，我朋友不吃辣的，菜可以少放点儿辣吗？\nB: 没问题，我会告诉厨房的。请问怎么称呼您？\nA: 我姓张，电话是13900001234。\nB: 好的，张先生，今晚七点见。",
+      "timeLimit": 300,
+      "questions": [
+        {
+          "id": "ls-HSK3-2-q1",
+          "type": "MCQ",
+          "prompt": "张先生一共订了几个人的位子？",
+          "promptPinyin": "Zhāng xiānsheng yígòng dìng le jǐ gè rén de wèizi?",
+          "options": [
+            { "text": "三个人", "pinyin": "sān gè rén" },
+            { "text": "四个人", "pinyin": "sì gè rén" },
+            { "text": "六个人", "pinyin": "liù gè rén" },
+            { "text": "七个人", "pinyin": "qī gè rén" }
+          ],
+          "correctAnswer": { "index": 2 },
+          "explanation": "Ông Trương nói 我们一共六个人 (chúng tôi tổng cộng sáu người). Số 七 (bảy) là giờ ăn tối, không phải số người. Vậy đáp án là 六个人.",
+          "order": 1
+        },
+        {
+          "id": "ls-HSK3-2-q2",
+          "type": "MCQ",
+          "prompt": "二楼的房间有什么特点？",
+          "promptPinyin": "Èr lóu de fángjiān yǒu shénme tèdiǎn?",
+          "options": [
+            { "text": "可以看见外面的花园", "pinyin": "kěyǐ kànjiàn wàimiàn de huāyuán" },
+            { "text": "可以看见大海", "pinyin": "kěyǐ kànjiàn dàhǎi" },
+            { "text": "离厨房很近", "pinyin": "lí chúfáng hěn jìn" },
+            { "text": "里面有电视", "pinyin": "lǐmiàn yǒu diànshì" }
+          ],
+          "correctAnswer": { "index": 0 },
+          "explanation": "Nhân viên nói 旁边就是窗户，可以看见外面的花园 (bên cạnh là cửa sổ, có thể nhìn thấy khu vườn bên ngoài). Vậy đáp án là 可以看见外面的花园.",
+          "order": 2
+        },
+        {
+          "id": "ls-HSK3-2-q3",
+          "type": "TRUE_FALSE",
+          "prompt": "张先生的朋友喜欢吃很辣的菜。",
+          "correctAnswer": { "value": false },
+          "explanation": "Ông Trương nói 我朋友不吃辣的，菜可以少放点儿辣吗 (bạn tôi không ăn cay, có thể cho ít cay hơn không). Bạn của ông KHÔNG ăn cay, nên câu này SAI.",
+          "order": 3
+        }
+      ]
+    },
+    {
+      "id": "ls-HSK3-3",
+      "title": "Thói quen học tập của tôi",
+      "hskLevel": "HSK3",
+      "audioUrl": "",
+      "transcript": "我叫王芳，今年二十岁，是一名大学生。我学习汉语已经两年了。我觉得汉语虽然很难，但是非常有意思。为了把汉语学好，我每天早上六点半起床，先听半个小时的中文广播，然后大声地读课文。我发现这个办法对提高听力和口语都很有用。除了上课以外，我还喜欢看中国电影，因为电影里的句子比书上的更有意思，也更容易记住。我希望明年能去中国留学，亲眼看看那个美丽的国家。",
+      "timeLimit": 300,
+      "questions": [
+        {
+          "id": "ls-HSK3-3-q1",
+          "type": "MCQ",
+          "prompt": "王芳学习汉语多长时间了？",
+          "promptPinyin": "Wáng Fāng xuéxí Hànyǔ duō cháng shíjiān le?",
+          "options": [
+            { "text": "半年", "pinyin": "bàn nián" },
+            { "text": "一年", "pinyin": "yì nián" },
+            { "text": "两年", "pinyin": "liǎng nián" },
+            { "text": "三年", "pinyin": "sān nián" }
+          ],
+          "correctAnswer": { "index": 2 },
+          "explanation": "Vương Phương nói 我学习汉语已经两年了 (tôi đã học tiếng Hán được hai năm rồi). Vậy đáp án là 两年.",
+          "order": 1
+        },
+        {
+          "id": "ls-HSK3-3-q2",
+          "type": "MCQ",
+          "prompt": "王芳每天早上做什么来学习汉语？",
+          "promptPinyin": "Wáng Fāng měi tiān zǎoshang zuò shénme lái xuéxí Hànyǔ?",
+          "options": [
+            { "text": "听中文广播，大声读课文", "pinyin": "tīng zhōngwén guǎngbō, dàshēng dú kèwén" },
+            { "text": "看中国电视新闻", "pinyin": "kàn Zhōngguó diànshì xīnwén" },
+            { "text": "和中国朋友聊天", "pinyin": "hé Zhōngguó péngyou liáotiān" },
+            { "text": "写汉字和做练习", "pinyin": "xiě Hànzì hé zuò liànxí" }
+          ],
+          "correctAnswer": { "index": 0 },
+          "explanation": "Vương Phương nói 先听半个小时的中文广播，然后大声地读课文 (trước tiên nghe ba mươi phút phát thanh tiếng Trung, sau đó đọc to bài khóa). Vậy đáp án là 听中文广播，大声读课文.",
+          "order": 2
+        },
+        {
+          "id": "ls-HSK3-3-q3",
+          "type": "TRUE_FALSE",
+          "prompt": "王芳希望明年去中国留学。",
+          "correctAnswer": { "value": true },
+          "explanation": "Vương Phương nói 我希望明年能去中国留学，亲眼看看那个美丽的国家 (tôi hy vọng năm sau có thể đi du học Trung Quốc, tận mắt ngắm đất nước xinh đẹp ấy). Vậy câu này ĐÚNG.",
+          "order": 3
+        }
+      ]
+    }
+  ]
+}

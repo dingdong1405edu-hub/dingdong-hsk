@@ -1,0 +1,411 @@
+{
+  "kind": "vocab",
+  "units": [
+    {
+      "id": "v-HSK3-u1",
+      "title": "Cuộc sống thường ngày",
+      "titleZh": "日常生活",
+      "hskLevel": "HSK3",
+      "order": 1,
+      "lessons": [
+        {
+          "id": "v-HSK3-u1-l1",
+          "title": "Thời gian và lịch trình",
+          "order": 1,
+          "exercises": [
+            {
+              "type": "match",
+              "pairs": [
+                { "zh": "已经", "vi": "Đã, rồi", "pinyin": "yǐ jīng" },
+                { "zh": "总是", "vi": "Luôn luôn", "pinyin": "zǒng shì" },
+                { "zh": "一会儿", "vi": "Một lát, chốc lát", "pinyin": "yí huìr" },
+                { "zh": "后来", "vi": "Về sau, sau đó", "pinyin": "hòu lái" },
+                { "zh": "周末", "vi": "Cuối tuần", "pinyin": "zhōu mò" }
+              ]
+            },
+            {
+              "type": "translate",
+              "direction": "vi_to_zh",
+              "prompt": "Cuối tuần",
+              "answer": "周末",
+              "pinyin": "zhōu mò",
+              "options": ["周末", "周年", "末班", "周围"]
+            },
+            {
+              "type": "toneSelect",
+              "word": "总",
+              "pinyin": "zǒng",
+              "question": "Từ 总 có thanh mấy?",
+              "options": ["Thanh 1", "Thanh 2", "Thanh 3", "Thanh 4"],
+              "correct": 2
+            },
+            {
+              "type": "sentenceOrder",
+              "words": ["已经", "他", "回家", "了"],
+              "answer": "他已经回家了",
+              "hint": "Anh ấy đã về nhà rồi"
+            }
+          ]
+        },
+        {
+          "id": "v-HSK3-u1-l2",
+          "title": "Việc nhà và thói quen",
+          "order": 2,
+          "exercises": [
+            {
+              "type": "match",
+              "pairs": [
+                { "zh": "打扫", "vi": "Quét dọn, lau dọn", "pinyin": "dǎ sǎo" },
+                { "zh": "洗澡", "vi": "Tắm rửa", "pinyin": "xǐ zǎo" },
+                { "zh": "刷牙", "vi": "Đánh răng", "pinyin": "shuā yá" },
+                { "zh": "搬", "vi": "Khuân, dọn (đồ)", "pinyin": "bān" },
+                { "zh": "干净", "vi": "Sạch sẽ", "pinyin": "gān jìng" }
+              ]
+            },
+            {
+              "type": "pinyinMatch",
+              "pairs": [
+                { "zh": "打扫", "pinyin": "dǎ sǎo" },
+                { "zh": "洗澡", "pinyin": "xǐ zǎo" },
+                { "zh": "刷牙", "pinyin": "shuā yá" },
+                { "zh": "干净", "pinyin": "gān jìng" }
+              ]
+            },
+            {
+              "type": "translate",
+              "direction": "zh_to_vi",
+              "prompt": "我每天早上刷牙。",
+              "answer": "Mỗi sáng tôi đánh răng.",
+              "options": [
+                "Mỗi sáng tôi đánh răng.",
+                "Mỗi tối tôi tắm rửa.",
+                "Mỗi ngày tôi quét nhà.",
+                "Mỗi sáng tôi rửa mặt."
+              ]
+            },
+            {
+              "type": "toneSelect",
+              "word": "净",
+              "pinyin": "jìng",
+              "question": "Từ 净 có thanh mấy?",
+              "options": ["Thanh 1", "Thanh 2", "Thanh 3", "Thanh 4"],
+              "correct": 3
+            }
+          ]
+        },
+        {
+          "id": "v-HSK3-u1-l3",
+          "title": "Mua sắm và tiền bạc",
+          "order": 3,
+          "exercises": [
+            {
+              "type": "match",
+              "pairs": [
+                { "zh": "便宜", "vi": "Rẻ", "pinyin": "pián yi" },
+                { "zh": "贵", "vi": "Đắt", "pinyin": "guì" },
+                { "zh": "花", "vi": "Tiêu, tốn (tiền)", "pinyin": "huā" },
+                { "zh": "元", "vi": "Đồng (tiền)", "pinyin": "yuán" },
+                { "zh": "超市", "vi": "Siêu thị", "pinyin": "chāo shì" }
+              ]
+            },
+            {
+              "type": "translate",
+              "direction": "vi_to_zh",
+              "prompt": "Rẻ",
+              "answer": "便宜",
+              "pinyin": "pián yi",
+              "options": ["便宜", "贵", "新鲜", "方便"]
+            },
+            {
+              "type": "sentenceOrder",
+              "words": ["这", "件", "衣服", "很", "便宜"],
+              "answer": "这件衣服很便宜",
+              "hint": "Bộ quần áo này rất rẻ"
+            },
+            {
+              "type": "toneSelect",
+              "word": "贵",
+              "pinyin": "guì",
+              "question": "Từ 贵 có thanh mấy?",
+              "options": ["Thanh 1", "Thanh 2", "Thanh 3", "Thanh 4"],
+              "correct": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "v-HSK3-u2",
+      "title": "Học tập và công việc",
+      "titleZh": "学习与工作",
+      "hskLevel": "HSK3",
+      "order": 2,
+      "lessons": [
+        {
+          "id": "v-HSK3-u2-l1",
+          "title": "Ở trường học",
+          "order": 1,
+          "exercises": [
+            {
+              "type": "match",
+              "pairs": [
+                { "zh": "成绩", "vi": "Thành tích, điểm số", "pinyin": "chéng jì" },
+                { "zh": "练习", "vi": "Luyện tập", "pinyin": "liàn xí" },
+                { "zh": "复习", "vi": "Ôn tập", "pinyin": "fù xí" },
+                { "zh": "数学", "vi": "Toán học", "pinyin": "shù xué" },
+                { "zh": "校长", "vi": "Hiệu trưởng", "pinyin": "xiào zhǎng" }
+              ]
+            },
+            {
+              "type": "pinyinMatch",
+              "pairs": [
+                { "zh": "成绩", "pinyin": "chéng jì" },
+                { "zh": "练习", "pinyin": "liàn xí" },
+                { "zh": "复习", "pinyin": "fù xí" },
+                { "zh": "数学", "pinyin": "shù xué" }
+              ]
+            },
+            {
+              "type": "translate",
+              "direction": "zh_to_vi",
+              "prompt": "我的数学成绩很好。",
+              "answer": "Điểm toán của tôi rất tốt.",
+              "options": [
+                "Điểm toán của tôi rất tốt.",
+                "Điểm toán của tôi rất kém.",
+                "Tôi rất thích học toán.",
+                "Thầy giáo dạy toán rất giỏi."
+              ]
+            },
+            {
+              "type": "toneSelect",
+              "word": "复",
+              "pinyin": "fù",
+              "question": "Từ 复 có thanh mấy?",
+              "options": ["Thanh 1", "Thanh 2", "Thanh 3", "Thanh 4"],
+              "correct": 3
+            }
+          ]
+        },
+        {
+          "id": "v-HSK3-u2-l2",
+          "title": "Công việc và đồng nghiệp",
+          "order": 2,
+          "exercises": [
+            {
+              "type": "match",
+              "pairs": [
+                { "zh": "工作", "vi": "Công việc, làm việc", "pinyin": "gōng zuò" },
+                { "zh": "经理", "vi": "Giám đốc, quản lý", "pinyin": "jīng lǐ" },
+                { "zh": "会议", "vi": "Cuộc họp", "pinyin": "huì yì" },
+                { "zh": "办公室", "vi": "Văn phòng", "pinyin": "bàn gōng shì" },
+                { "zh": "同事", "vi": "Đồng nghiệp", "pinyin": "tóng shì" }
+              ]
+            },
+            {
+              "type": "translate",
+              "direction": "vi_to_zh",
+              "prompt": "Cuộc họp",
+              "answer": "会议",
+              "pinyin": "huì yì",
+              "options": ["会议", "经理", "同事", "办公室"]
+            },
+            {
+              "type": "sentenceOrder",
+              "words": ["经理", "在", "办公室", "开会"],
+              "answer": "经理在办公室开会",
+              "hint": "Giám đốc đang họp trong văn phòng"
+            },
+            {
+              "type": "toneSelect",
+              "word": "议",
+              "pinyin": "yì",
+              "question": "Từ 议 có thanh mấy?",
+              "options": ["Thanh 1", "Thanh 2", "Thanh 3", "Thanh 4"],
+              "correct": 3
+            }
+          ]
+        },
+        {
+          "id": "v-HSK3-u2-l3",
+          "title": "Kế hoạch và mục tiêu",
+          "order": 3,
+          "exercises": [
+            {
+              "type": "match",
+              "pairs": [
+                { "zh": "计划", "vi": "Kế hoạch", "pinyin": "jì huà" },
+                { "zh": "决定", "vi": "Quyết định", "pinyin": "jué dìng" },
+                { "zh": "选择", "vi": "Lựa chọn", "pinyin": "xuǎn zé" },
+                { "zh": "重要", "vi": "Quan trọng", "pinyin": "zhòng yào" },
+                { "zh": "努力", "vi": "Cố gắng, nỗ lực", "pinyin": "nǔ lì" }
+              ]
+            },
+            {
+              "type": "pinyinMatch",
+              "pairs": [
+                { "zh": "计划", "pinyin": "jì huà" },
+                { "zh": "决定", "pinyin": "jué dìng" },
+                { "zh": "选择", "pinyin": "xuǎn zé" },
+                { "zh": "努力", "pinyin": "nǔ lì" }
+              ]
+            },
+            {
+              "type": "translate",
+              "direction": "zh_to_vi",
+              "prompt": "学习汉语很重要。",
+              "answer": "Học tiếng Trung rất quan trọng.",
+              "options": [
+                "Học tiếng Trung rất quan trọng.",
+                "Học tiếng Anh rất khó.",
+                "Học tiếng Trung rất thú vị.",
+                "Nói tiếng Trung rất quan trọng."
+              ]
+            },
+            {
+              "type": "toneSelect",
+              "word": "努",
+              "pinyin": "nǔ",
+              "question": "Từ 努 có thanh mấy?",
+              "options": ["Thanh 1", "Thanh 2", "Thanh 3", "Thanh 4"],
+              "correct": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "v-HSK3-u3",
+      "title": "Sức khỏe và đi lại",
+      "titleZh": "健康与出行",
+      "hskLevel": "HSK3",
+      "order": 3,
+      "lessons": [
+        {
+          "id": "v-HSK3-u3-l1",
+          "title": "Cơ thể và bệnh tật",
+          "order": 1,
+          "exercises": [
+            {
+              "type": "match",
+              "pairs": [
+                { "zh": "健康", "vi": "Sức khỏe, khỏe mạnh", "pinyin": "jiàn kāng" },
+                { "zh": "发烧", "vi": "Sốt", "pinyin": "fā shāo" },
+                { "zh": "感冒", "vi": "Cảm cúm", "pinyin": "gǎn mào" },
+                { "zh": "药", "vi": "Thuốc", "pinyin": "yào" },
+                { "zh": "锻炼", "vi": "Rèn luyện, tập thể dục", "pinyin": "duàn liàn" }
+              ]
+            },
+            {
+              "type": "translate",
+              "direction": "vi_to_zh",
+              "prompt": "Cảm cúm",
+              "answer": "感冒",
+              "pinyin": "gǎn mào",
+              "options": ["感冒", "发烧", "健康", "锻炼"]
+            },
+            {
+              "type": "sentenceOrder",
+              "words": ["我", "今天", "有点儿", "发烧"],
+              "answer": "我今天有点儿发烧",
+              "hint": "Hôm nay tôi hơi sốt"
+            },
+            {
+              "type": "toneSelect",
+              "word": "健",
+              "pinyin": "jiàn",
+              "question": "Từ 健 có thanh mấy?",
+              "options": ["Thanh 1", "Thanh 2", "Thanh 3", "Thanh 4"],
+              "correct": 3
+            }
+          ]
+        },
+        {
+          "id": "v-HSK3-u3-l2",
+          "title": "Giao thông và phương tiện",
+          "order": 2,
+          "exercises": [
+            {
+              "type": "match",
+              "pairs": [
+                { "zh": "地铁", "vi": "Tàu điện ngầm", "pinyin": "dì tiě" },
+                { "zh": "出租车", "vi": "Xe taxi", "pinyin": "chū zū chē" },
+                { "zh": "飞机", "vi": "Máy bay", "pinyin": "fēi jī" },
+                { "zh": "司机", "vi": "Tài xế", "pinyin": "sī jī" },
+                { "zh": "公园", "vi": "Công viên", "pinyin": "gōng yuán" }
+              ]
+            },
+            {
+              "type": "pinyinMatch",
+              "pairs": [
+                { "zh": "地铁", "pinyin": "dì tiě" },
+                { "zh": "出租车", "pinyin": "chū zū chē" },
+                { "zh": "飞机", "pinyin": "fēi jī" },
+                { "zh": "司机", "pinyin": "sī jī" }
+              ]
+            },
+            {
+              "type": "translate",
+              "direction": "zh_to_vi",
+              "prompt": "我坐地铁去上班。",
+              "answer": "Tôi đi tàu điện ngầm để đi làm.",
+              "options": [
+                "Tôi đi tàu điện ngầm để đi làm.",
+                "Tôi đi taxi để đi làm.",
+                "Tôi đi tàu điện ngầm để đi học.",
+                "Tôi đi xe buýt để đi làm."
+              ]
+            },
+            {
+              "type": "toneSelect",
+              "word": "铁",
+              "pinyin": "tiě",
+              "question": "Từ 铁 có thanh mấy?",
+              "options": ["Thanh 1", "Thanh 2", "Thanh 3", "Thanh 4"],
+              "correct": 2
+            }
+          ]
+        },
+        {
+          "id": "v-HSK3-u3-l3",
+          "title": "Du lịch và thời tiết",
+          "order": 3,
+          "exercises": [
+            {
+              "type": "match",
+              "pairs": [
+                { "zh": "旅游", "vi": "Du lịch", "pinyin": "lǚ yóu" },
+                { "zh": "护照", "vi": "Hộ chiếu", "pinyin": "hù zhào" },
+                { "zh": "宾馆", "vi": "Khách sạn", "pinyin": "bīn guǎn" },
+                { "zh": "刮风", "vi": "Nổi gió, gió thổi", "pinyin": "guā fēng" },
+                { "zh": "季节", "vi": "Mùa", "pinyin": "jì jié" }
+              ]
+            },
+            {
+              "type": "translate",
+              "direction": "vi_to_zh",
+              "prompt": "Hộ chiếu",
+              "answer": "护照",
+              "pinyin": "hù zhào",
+              "options": ["护照", "宾馆", "旅游", "行李"]
+            },
+            {
+              "type": "sentenceOrder",
+              "words": ["我", "想", "去", "中国", "旅游"],
+              "answer": "我想去中国旅游",
+              "hint": "Tôi muốn đi du lịch Trung Quốc"
+            },
+            {
+              "type": "toneSelect",
+              "word": "旅",
+              "pinyin": "lǚ",
+              "question": "Từ 旅 có thanh mấy?",
+              "options": ["Thanh 1", "Thanh 2", "Thanh 3", "Thanh 4"],
+              "correct": 2
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

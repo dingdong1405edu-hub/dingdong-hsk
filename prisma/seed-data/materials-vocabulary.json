@@ -1,0 +1,213 @@
+{
+  "kind": "materials",
+  "materials": [
+    {
+      "id": "mt-VOCABULARY-1",
+      "title": "Từ vựng chủ đề Gia đình (HSK1)",
+      "titleZh": "家庭主题词汇",
+      "category": "VOCABULARY",
+      "hskLevel": "HSK1",
+      "summary": "Danh sách từ vựng cơ bản về các thành viên trong gia đình ở trình độ HSK1, kèm bảng từ, ví dụ và mẫu câu giới thiệu người thân.",
+      "readMinutes": 6,
+      "order": 1,
+      "tags": ["gia đình", "HSK1", "thành viên"],
+      "content": [
+        { "type": "heading", "text": "Từ vựng về gia đình", "zh": "家庭词汇" },
+        { "type": "paragraph", "text": "Chủ đề gia đình là một trong những chủ đề đầu tiên mà người học tiếng Trung gặp phải. Ở trình độ HSK1, bạn chỉ cần nắm vững một số từ chỉ thành viên cơ bản và cách giới thiệu họ." },
+        { "type": "vocab", "items": [
+          { "zh": "家", "pinyin": "jiā", "vi": "Nhà, gia đình" },
+          { "zh": "爸爸", "pinyin": "bàba", "vi": "Bố" },
+          { "zh": "妈妈", "pinyin": "māma", "vi": "Mẹ" },
+          { "zh": "儿子", "pinyin": "érzi", "vi": "Con trai" },
+          { "zh": "女儿", "pinyin": "nǚ'ér", "vi": "Con gái" }
+        ] },
+        { "type": "paragraph", "text": "Hai từ 爸爸 và 妈妈 đều có âm tiết thứ hai đọc nhẹ (khinh thanh), tức là không có dấu thanh. Đây là điểm cần chú ý khi phát âm." },
+        { "type": "vocab", "items": [
+          { "zh": "哥哥", "pinyin": "gēge", "vi": "Anh trai" },
+          { "zh": "姐姐", "pinyin": "jiějie", "vi": "Chị gái" },
+          { "zh": "弟弟", "pinyin": "dìdi", "vi": "Em trai" },
+          { "zh": "妹妹", "pinyin": "mèimei", "vi": "Em gái" }
+        ] },
+        { "type": "heading", "text": "Mẫu câu thường dùng", "zh": "常用句型" },
+        { "type": "example", "zh": "这是我爸爸。", "pinyin": "zhè shì wǒ bàba.", "vi": "Đây là bố tôi." },
+        { "type": "example", "zh": "我家有四口人。", "pinyin": "wǒ jiā yǒu sì kǒu rén.", "vi": "Nhà tôi có bốn người." },
+        { "type": "example", "zh": "我有一个姐姐。", "pinyin": "wǒ yǒu yí gè jiějie.", "vi": "Tôi có một người chị gái." },
+        { "type": "list", "items": [
+          "Dùng 这是… (zhè shì…) để giới thiệu 'Đây là…'",
+          "Dùng động từ 有 (yǒu) để nói 'có' người thân",
+          "Lượng từ đếm người trong gia đình thường là 口 (kǒu) hoặc 个 (gè)"
+        ] },
+        { "type": "note", "text": "Lỗi thường gặp: nhiều người Việt đọc 哥哥 thành 'cô cô'. Hãy nhớ 哥 đọc là gē (thanh 1), không phải kē." }
+      ]
+    },
+    {
+      "id": "mt-VOCABULARY-2",
+      "title": "Từ vựng chủ đề Đồ ăn và đồ uống (HSK2)",
+      "titleZh": "饮食主题词汇",
+      "category": "VOCABULARY",
+      "hskLevel": "HSK2",
+      "summary": "Tổng hợp từ vựng về món ăn, đồ uống và hành động ăn uống ở trình độ HSK2, kèm mẫu câu gọi món và hỏi giá trong nhà hàng.",
+      "readMinutes": 7,
+      "order": 2,
+      "tags": ["đồ ăn", "HSK2", "nhà hàng"],
+      "content": [
+        { "type": "heading", "text": "Từ vựng về đồ ăn và đồ uống", "zh": "饮食词汇" },
+        { "type": "paragraph", "text": "Khi đi du lịch hoặc sinh sống ở Trung Quốc, từ vựng về ăn uống cực kỳ hữu ích. Dưới đây là các từ phổ biến nhất ở trình độ HSK2." },
+        { "type": "vocab", "items": [
+          { "zh": "米饭", "pinyin": "mǐfàn", "vi": "Cơm" },
+          { "zh": "面条", "pinyin": "miàntiáo", "vi": "Mì sợi" },
+          { "zh": "鸡蛋", "pinyin": "jīdàn", "vi": "Trứng gà" },
+          { "zh": "牛奶", "pinyin": "niúnǎi", "vi": "Sữa bò" },
+          { "zh": "羊肉", "pinyin": "yángròu", "vi": "Thịt cừu" },
+          { "zh": "鱼", "pinyin": "yú", "vi": "Cá" }
+        ] },
+        { "type": "vocab", "items": [
+          { "zh": "茶", "pinyin": "chá", "vi": "Trà" },
+          { "zh": "咖啡", "pinyin": "kāfēi", "vi": "Cà phê" },
+          { "zh": "西瓜", "pinyin": "xīguā", "vi": "Dưa hấu" },
+          { "zh": "苹果", "pinyin": "píngguǒ", "vi": "Táo" }
+        ] },
+        { "type": "heading", "text": "Động từ và cụm từ liên quan", "zh": "相关动词" },
+        { "type": "vocab", "items": [
+          { "zh": "吃", "pinyin": "chī", "vi": "Ăn" },
+          { "zh": "喝", "pinyin": "hē", "vi": "Uống" },
+          { "zh": "点", "pinyin": "diǎn", "vi": "Gọi món" },
+          { "zh": "好吃", "pinyin": "hǎochī", "vi": "Ngon (đồ ăn)" },
+          { "zh": "好喝", "pinyin": "hǎohē", "vi": "Ngon (đồ uống)" }
+        ] },
+        { "type": "example", "zh": "我想喝一杯咖啡。", "pinyin": "wǒ xiǎng hē yì bēi kāfēi.", "vi": "Tôi muốn uống một cốc cà phê." },
+        { "type": "example", "zh": "这个面条很好吃。", "pinyin": "zhège miàntiáo hěn hǎochī.", "vi": "Món mì này rất ngon." },
+        { "type": "example", "zh": "请问，米饭多少钱？", "pinyin": "qǐngwèn, mǐfàn duōshǎo qián?", "vi": "Cho hỏi, cơm bao nhiêu tiền?" },
+        { "type": "note", "text": "Phân biệt 好吃 (hǎochī) và 好喝 (hǎohē): 好吃 dùng cho đồ ăn nhai được, 好喝 dùng cho đồ uống. Đừng nói 'kāfēi hǎochī'." }
+      ]
+    },
+    {
+      "id": "mt-VOCABULARY-3",
+      "title": "Từ vựng chủ đề Du lịch và phương tiện (HSK3)",
+      "titleZh": "旅行与交通词汇",
+      "category": "VOCABULARY",
+      "hskLevel": "HSK3",
+      "summary": "Bộ từ vựng về du lịch, đặt phòng và phương tiện giao thông ở trình độ HSK3, kèm các mẫu câu hỏi đường và mua vé.",
+      "readMinutes": 8,
+      "order": 3,
+      "tags": ["du lịch", "HSK3", "giao thông"],
+      "content": [
+        { "type": "heading", "text": "Từ vựng về du lịch", "zh": "旅行词汇" },
+        { "type": "paragraph", "text": "Ở trình độ HSK3, bạn bắt đầu có thể tự lên kế hoạch cho một chuyến đi đơn giản: đặt vé, tìm khách sạn và hỏi đường. Hãy ghi nhớ các từ then chốt dưới đây." },
+        { "type": "vocab", "items": [
+          { "zh": "旅游", "pinyin": "lǚyóu", "vi": "Du lịch" },
+          { "zh": "护照", "pinyin": "hùzhào", "vi": "Hộ chiếu" },
+          { "zh": "行李", "pinyin": "xíngli", "vi": "Hành lý" },
+          { "zh": "宾馆", "pinyin": "bīnguǎn", "vi": "Khách sạn" },
+          { "zh": "地图", "pinyin": "dìtú", "vi": "Bản đồ" },
+          { "zh": "机场", "pinyin": "jīchǎng", "vi": "Sân bay" }
+        ] },
+        { "type": "heading", "text": "Phương tiện giao thông", "zh": "交通工具" },
+        { "type": "vocab", "items": [
+          { "zh": "飞机", "pinyin": "fēijī", "vi": "Máy bay" },
+          { "zh": "火车", "pinyin": "huǒchē", "vi": "Tàu hỏa" },
+          { "zh": "地铁", "pinyin": "dìtiě", "vi": "Tàu điện ngầm" },
+          { "zh": "出租车", "pinyin": "chūzūchē", "vi": "Taxi" },
+          { "zh": "公共汽车", "pinyin": "gōnggòng qìchē", "vi": "Xe buýt" }
+        ] },
+        { "type": "paragraph", "text": "Để nói 'đi bằng phương tiện gì', người Trung dùng cấu trúc 坐 (zuò) + phương tiện, ví dụ 坐飞机 (đi máy bay), 坐地铁 (đi tàu điện ngầm). Riêng xe đạp và xe máy thì dùng 骑 (qí)." },
+        { "type": "example", "zh": "我打算坐火车去上海。", "pinyin": "wǒ dǎsuàn zuò huǒchē qù Shànghǎi.", "vi": "Tôi dự định đi tàu hỏa đến Thượng Hải." },
+        { "type": "example", "zh": "请问，去机场怎么走？", "pinyin": "qǐngwèn, qù jīchǎng zěnme zǒu?", "vi": "Cho hỏi, đi đến sân bay đi thế nào?" },
+        { "type": "example", "zh": "这个宾馆离地铁站很近。", "pinyin": "zhège bīnguǎn lí dìtiě zhàn hěn jìn.", "vi": "Khách sạn này gần ga tàu điện ngầm." },
+        { "type": "list", "items": [
+          "坐 (zuò) dùng cho phương tiện ngồi vào trong: tàu, máy bay, xe buýt",
+          "骑 (qí) dùng cho phương tiện cưỡi lên: xe đạp, xe máy, ngựa",
+          "Hỏi đường: …怎么走？ (…zěnme zǒu?) nghĩa là 'đi đến… thế nào?'"
+        ] },
+        { "type": "note", "text": "Đừng nhầm 离 (lí - cách, khoảng cách) với 里 (lǐ - bên trong). 'A 离 B 很近' nghĩa là 'A cách B rất gần'." }
+      ]
+    },
+    {
+      "id": "mt-VOCABULARY-4",
+      "title": "Từ vựng chủ đề Công việc và thời tiết (HSK4)",
+      "titleZh": "工作与天气词汇",
+      "category": "VOCABULARY",
+      "hskLevel": "HSK4",
+      "summary": "Từ vựng nâng cao về môi trường công việc, nghề nghiệp và thời tiết ở trình độ HSK4, kèm mẫu câu dùng trong giao tiếp công sở và mô tả thời tiết.",
+      "readMinutes": 8,
+      "order": 4,
+      "tags": ["công việc", "HSK4", "thời tiết"],
+      "content": [
+        { "type": "heading", "text": "Từ vựng về công việc", "zh": "工作词汇" },
+        { "type": "paragraph", "text": "Đến trình độ HSK4, bạn cần diễn đạt được những tình huống công sở như họp hành, gửi báo cáo, tăng lương. Đây là nhóm từ rất hữu ích cho người đi làm." },
+        { "type": "vocab", "items": [
+          { "zh": "工作", "pinyin": "gōngzuò", "vi": "Công việc, làm việc" },
+          { "zh": "经理", "pinyin": "jīnglǐ", "vi": "Giám đốc, quản lý" },
+          { "zh": "同事", "pinyin": "tóngshì", "vi": "Đồng nghiệp" },
+          { "zh": "会议", "pinyin": "huìyì", "vi": "Cuộc họp" },
+          { "zh": "工资", "pinyin": "gōngzī", "vi": "Tiền lương" },
+          { "zh": "加班", "pinyin": "jiābān", "vi": "Tăng ca, làm thêm giờ" },
+          { "zh": "任务", "pinyin": "rènwù", "vi": "Nhiệm vụ" }
+        ] },
+        { "type": "example", "zh": "经理让我准备明天的会议。", "pinyin": "jīnglǐ ràng wǒ zhǔnbèi míngtiān de huìyì.", "vi": "Giám đốc bảo tôi chuẩn bị cho cuộc họp ngày mai." },
+        { "type": "example", "zh": "这个月我加了很多班。", "pinyin": "zhège yuè wǒ jiā le hěn duō bān.", "vi": "Tháng này tôi đã tăng ca rất nhiều." },
+        { "type": "heading", "text": "Từ vựng về thời tiết", "zh": "天气词汇" },
+        { "type": "vocab", "items": [
+          { "zh": "天气", "pinyin": "tiānqì", "vi": "Thời tiết" },
+          { "zh": "气温", "pinyin": "qìwēn", "vi": "Nhiệt độ không khí" },
+          { "zh": "刮风", "pinyin": "guāfēng", "vi": "Có gió, nổi gió" },
+          { "zh": "下雪", "pinyin": "xiàxuě", "vi": "Tuyết rơi" },
+          { "zh": "晴", "pinyin": "qíng", "vi": "Nắng, trời quang" },
+          { "zh": "阴", "pinyin": "yīn", "vi": "Âm u, nhiều mây" }
+        ] },
+        { "type": "paragraph", "text": "Lưu ý từ 加班 (jiābān) là một động từ ly hợp (động từ tách rời). Khi chia thì hay thêm bổ ngữ, ta phải tách 加 và 班 ra, ví dụ 加了很多班 chứ không nói 加班了很多." },
+        { "type": "example", "zh": "明天天气怎么样？", "pinyin": "míngtiān tiānqì zěnmeyàng?", "vi": "Thời tiết ngày mai thế nào?" },
+        { "type": "example", "zh": "今天刮风，气温有点儿低。", "pinyin": "jīntiān guāfēng, qìwēn yǒudiǎnr dī.", "vi": "Hôm nay có gió, nhiệt độ hơi thấp." },
+        { "type": "note", "text": "Phân biệt 晴 (qíng - trời nắng/quang) với 清 (qīng - trong, sạch) và 请 (qǐng - xin, mời). Ba chữ này khác nhau cả về thanh điệu lẫn nghĩa." }
+      ]
+    },
+    {
+      "id": "mt-VOCABULARY-5",
+      "title": "Từ vựng chủ đề Mua sắm, thời gian và cảm xúc (HSK5)",
+      "titleZh": "购物、时间与情感词汇",
+      "category": "VOCABULARY",
+      "hskLevel": "HSK5",
+      "summary": "Bộ từ vựng nâng cao về mua sắm, cách diễn đạt thời gian và biểu lộ cảm xúc ở trình độ HSK5, kèm thành ngữ và mẫu câu giàu sắc thái.",
+      "readMinutes": 9,
+      "order": 5,
+      "tags": ["mua sắm", "HSK5", "cảm xúc"],
+      "content": [
+        { "type": "heading", "text": "Từ vựng về mua sắm", "zh": "购物词汇" },
+        { "type": "paragraph", "text": "Ở trình độ HSK5, từ vựng mua sắm không chỉ dừng ở 'mua' và 'bán' mà còn bao gồm các khái niệm như giảm giá, mặc cả, hoàn tiền và chất lượng. Những từ này thường xuất hiện trong văn nói lẫn văn viết." },
+        { "type": "vocab", "items": [
+          { "zh": "打折", "pinyin": "dǎzhé", "vi": "Giảm giá, hạ giá" },
+          { "zh": "讨价还价", "pinyin": "tǎojià huánjià", "vi": "Mặc cả, trả giá" },
+          { "zh": "退货", "pinyin": "tuìhuò", "vi": "Trả lại hàng" },
+          { "zh": "质量", "pinyin": "zhìliàng", "vi": "Chất lượng" },
+          { "zh": "划算", "pinyin": "huásuàn", "vi": "Đáng tiền, hời" },
+          { "zh": "结账", "pinyin": "jiézhàng", "vi": "Thanh toán, tính tiền" }
+        ] },
+        { "type": "example", "zh": "这件衣服打八折，挺划算的。", "pinyin": "zhè jiàn yīfu dǎ bā zhé, tǐng huásuàn de.", "vi": "Chiếc áo này giảm 20%, khá là hời." },
+        { "type": "note", "text": "Lưu ý cách nói phần trăm giảm giá: 打八折 (dǎ bā zhé) nghĩa là bán với 80% giá gốc, tức GIẢM 20%, chứ không phải giảm 80%. Đây là điểm rất dễ hiểu nhầm." },
+        { "type": "heading", "text": "Từ vựng về thời gian", "zh": "时间词汇" },
+        { "type": "vocab", "items": [
+          { "zh": "及时", "pinyin": "jíshí", "vi": "Kịp thời, đúng lúc" },
+          { "zh": "曾经", "pinyin": "céngjīng", "vi": "Đã từng (trong quá khứ)" },
+          { "zh": "暂时", "pinyin": "zànshí", "vi": "Tạm thời" },
+          { "zh": "随时", "pinyin": "suíshí", "vi": "Bất cứ lúc nào" },
+          { "zh": "如今", "pinyin": "rújīn", "vi": "Ngày nay, hiện nay" }
+        ] },
+        { "type": "example", "zh": "你随时可以来找我。", "pinyin": "nǐ suíshí kěyǐ lái zhǎo wǒ.", "vi": "Bạn có thể đến tìm tôi bất cứ lúc nào." },
+        { "type": "heading", "text": "Từ vựng về cảm xúc", "zh": "情感词汇" },
+        { "type": "vocab", "items": [
+          { "zh": "激动", "pinyin": "jīdòng", "vi": "Xúc động, kích động" },
+          { "zh": "失望", "pinyin": "shīwàng", "vi": "Thất vọng" },
+          { "zh": "羡慕", "pinyin": "xiànmù", "vi": "Ngưỡng mộ, ghen tị (tích cực)" },
+          { "zh": "委屈", "pinyin": "wěiqu", "vi": "Tủi thân, ấm ức" },
+          { "zh": "佩服", "pinyin": "pèifú", "vi": "Khâm phục, nể phục" }
+        ] },
+        { "type": "example", "zh": "听到这个好消息，我激动得说不出话来。", "pinyin": "tīngdào zhège hǎo xiāoxi, wǒ jīdòng de shuō bù chū huà lái.", "vi": "Nghe được tin vui này, tôi xúc động đến nỗi nói không nên lời." },
+        { "type": "list", "items": [
+          "羡慕 (xiànmù) mang sắc thái tích cực, khác với 嫉妒 (jídù - đố kỵ) mang sắc thái tiêu cực",
+          "委屈 (wěiqu) chỉ cảm giác bị đối xử bất công mà phải chịu đựng",
+          "Dùng bổ ngữ trạng thái …得… để diễn tả mức độ cảm xúc, ví dụ 激动得说不出话来"
+        ] }
+      ]
+    }
+  ]
+}

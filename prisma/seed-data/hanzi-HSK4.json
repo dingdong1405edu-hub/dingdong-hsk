@@ -1,0 +1,201 @@
+{
+  "kind": "hanzi",
+  "characters": [
+    {
+      "id": "hz-HSK4-1",
+      "character": "经",
+      "pinyin": "jīng",
+      "tone": 1,
+      "meaning": "Trải qua, kinh (kinh tế, kinh nghiệm)",
+      "hskLevel": "HSK4",
+      "strokeCount": 8,
+      "examples": [
+        { "sentence": "经验", "pinyin": "jīng yàn", "meaning": "Kinh nghiệm" },
+        { "sentence": "已经", "pinyin": "yǐ jīng", "meaning": "Đã, đã rồi" }
+      ]
+    },
+    {
+      "id": "hz-HSK4-2",
+      "character": "济",
+      "pinyin": "jì",
+      "tone": 4,
+      "meaning": "Cứu giúp, tế (kinh tế)",
+      "hskLevel": "HSK4",
+      "strokeCount": 9,
+      "examples": [
+        { "sentence": "经济", "pinyin": "jīng jì", "meaning": "Kinh tế" }
+      ]
+    },
+    {
+      "id": "hz-HSK4-3",
+      "character": "解",
+      "pinyin": "jiě",
+      "tone": 3,
+      "meaning": "Giải thích, cởi, giải quyết",
+      "hskLevel": "HSK4",
+      "strokeCount": 13,
+      "examples": [
+        { "sentence": "解决", "pinyin": "jiě jué", "meaning": "Giải quyết" },
+        { "sentence": "了解", "pinyin": "liǎo jiě", "meaning": "Hiểu rõ, tìm hiểu" }
+      ]
+    },
+    {
+      "id": "hz-HSK4-4",
+      "character": "决",
+      "pinyin": "jué",
+      "tone": 2,
+      "meaning": "Quyết định, quyết",
+      "hskLevel": "HSK4",
+      "strokeCount": 6,
+      "examples": [
+        { "sentence": "决定", "pinyin": "jué dìng", "meaning": "Quyết định" }
+      ]
+    },
+    {
+      "id": "hz-HSK4-5",
+      "character": "受",
+      "pinyin": "shòu",
+      "tone": 4,
+      "meaning": "Nhận, chịu, chịu đựng",
+      "hskLevel": "HSK4",
+      "strokeCount": 8,
+      "examples": [
+        { "sentence": "接受", "pinyin": "jiē shòu", "meaning": "Tiếp nhận, chấp nhận" },
+        { "sentence": "受到", "pinyin": "shòu dào", "meaning": "Nhận được, chịu" }
+      ]
+    },
+    {
+      "id": "hz-HSK4-6",
+      "character": "调",
+      "pinyin": "tiáo",
+      "tone": 2,
+      "meaning": "Điều chỉnh, điều hòa",
+      "hskLevel": "HSK4",
+      "strokeCount": 10,
+      "examples": [
+        { "sentence": "空调", "pinyin": "kōng tiáo", "meaning": "Điều hòa nhiệt độ" }
+      ]
+    },
+    {
+      "id": "hz-HSK4-7",
+      "character": "验",
+      "pinyin": "yàn",
+      "tone": 4,
+      "meaning": "Trải nghiệm, nghiệm (kiểm nghiệm)",
+      "hskLevel": "HSK4",
+      "strokeCount": 10,
+      "examples": [
+        { "sentence": "验证", "pinyin": "yàn zhèng", "meaning": "Xác minh, kiểm chứng" }
+      ]
+    },
+    {
+      "id": "hz-HSK4-8",
+      "character": "改",
+      "pinyin": "gǎi",
+      "tone": 3,
+      "meaning": "Sửa, thay đổi, cải",
+      "hskLevel": "HSK4",
+      "strokeCount": 7,
+      "examples": [
+        { "sentence": "改变", "pinyin": "gǎi biàn", "meaning": "Thay đổi" }
+      ]
+    },
+    {
+      "id": "hz-HSK4-9",
+      "character": "变",
+      "pinyin": "biàn",
+      "tone": 4,
+      "meaning": "Biến đổi, thay đổi",
+      "hskLevel": "HSK4",
+      "strokeCount": 8,
+      "examples": [
+        { "sentence": "变化", "pinyin": "biàn huà", "meaning": "Biến hóa, sự thay đổi" }
+      ]
+    },
+    {
+      "id": "hz-HSK4-10",
+      "character": "护",
+      "pinyin": "hù",
+      "tone": 4,
+      "meaning": "Bảo vệ, hộ",
+      "hskLevel": "HSK4",
+      "strokeCount": 7,
+      "examples": [
+        { "sentence": "保护", "pinyin": "bǎo hù", "meaning": "Bảo vệ" }
+      ]
+    },
+    {
+      "id": "hz-HSK4-11",
+      "character": "推",
+      "pinyin": "tuī",
+      "tone": 1,
+      "meaning": "Đẩy, thúc đẩy",
+      "hskLevel": "HSK4",
+      "strokeCount": 11,
+      "examples": [
+        { "sentence": "推荐", "pinyin": "tuī jiàn", "meaning": "Giới thiệu, đề cử" }
+      ]
+    },
+    {
+      "id": "hz-HSK4-12",
+      "character": "标",
+      "pinyin": "biāo",
+      "tone": 1,
+      "meaning": "Tiêu chuẩn, dấu hiệu, mục tiêu",
+      "hskLevel": "HSK4",
+      "strokeCount": 9,
+      "examples": [
+        { "sentence": "标准", "pinyin": "biāo zhǔn", "meaning": "Tiêu chuẩn" },
+        { "sentence": "目标", "pinyin": "mù biāo", "meaning": "Mục tiêu" }
+      ]
+    },
+    {
+      "id": "hz-HSK4-13",
+      "character": "准",
+      "pinyin": "zhǔn",
+      "tone": 3,
+      "meaning": "Chuẩn, chính xác, cho phép",
+      "hskLevel": "HSK4",
+      "strokeCount": 10,
+      "examples": [
+        { "sentence": "准备", "pinyin": "zhǔn bèi", "meaning": "Chuẩn bị" }
+      ]
+    },
+    {
+      "id": "hz-HSK4-14",
+      "character": "够",
+      "pinyin": "gòu",
+      "tone": 4,
+      "meaning": "Đủ, đầy đủ",
+      "hskLevel": "HSK4",
+      "strokeCount": 11,
+      "examples": [
+        { "sentence": "足够", "pinyin": "zú gòu", "meaning": "Đầy đủ, đủ" }
+      ]
+    },
+    {
+      "id": "hz-HSK4-15",
+      "character": "份",
+      "pinyin": "fèn",
+      "tone": 4,
+      "meaning": "Phần, suất (lượng từ)",
+      "hskLevel": "HSK4",
+      "strokeCount": 6,
+      "examples": [
+        { "sentence": "一份", "pinyin": "yí fèn", "meaning": "Một phần, một suất" }
+      ]
+    },
+    {
+      "id": "hz-HSK4-16",
+      "character": "级",
+      "pinyin": "jí",
+      "tone": 2,
+      "meaning": "Cấp bậc, mức độ",
+      "hskLevel": "HSK4",
+      "strokeCount": 6,
+      "examples": [
+        { "sentence": "级别", "pinyin": "jí bié", "meaning": "Cấp bậc, mức độ" }
+      ]
+    }
+  ]
+}

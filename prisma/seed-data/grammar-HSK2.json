@@ -1,0 +1,227 @@
+{
+  "kind": "grammar",
+  "units": [
+    {
+      "id": "gr-HSK2-u1",
+      "title": "Trợ từ trạng thái và mức độ",
+      "titleZh": "状态助词与程度",
+      "hskLevel": "HSK2",
+      "order": 1,
+      "lessons": [
+        {
+          "id": "gr-HSK2-u1-l1",
+          "title": "Trợ từ động thái 了 (le) diễn tả hành động đã xảy ra",
+          "order": 1,
+          "exercises": [
+            {
+              "type": "fill_blank",
+              "sentence": "我昨天买___一本书。",
+              "blank": "了",
+              "options": ["了", "的", "得", "着"],
+              "hint": "Trợ từ 了 (le) đặt sau động từ diễn tả hành động đã hoàn thành"
+            },
+            {
+              "type": "fill_blank",
+              "sentence": "他吃___饭就去工作了。",
+              "blank": "了",
+              "options": ["了", "在", "和", "对"],
+              "hint": "Hành động ăn cơm đã xong, dùng 了 (le)"
+            },
+            {
+              "type": "sentence_order",
+              "words": ["了", "我", "他", "看见"],
+              "answer": "我看见他了",
+              "meaning": "Tôi đã nhìn thấy anh ấy rồi"
+            },
+            {
+              "type": "translate",
+              "direction": "vi_to_zh",
+              "prompt": "Hôm qua tôi đã mua một chiếc áo.",
+              "answer": "昨天我买了一件衣服。",
+              "options": ["昨天我买了一件衣服。", "昨天我买一件衣服。", "明天我买一件衣服。", "昨天他买了一件衣服。"]
+            }
+          ]
+        },
+        {
+          "id": "gr-HSK2-u1-l2",
+          "title": "Phó từ 太 ... 了 (tài ... le) diễn tả mức độ quá",
+          "order": 2,
+          "exercises": [
+            {
+              "type": "fill_blank",
+              "sentence": "今天___冷了！",
+              "blank": "太",
+              "options": ["太", "很", "都", "也"],
+              "hint": "Cấu trúc 太 ... 了 (tài ... le) nghĩa là quá, rất"
+            },
+            {
+              "type": "fill_blank",
+              "sentence": "这个菜太好吃___！",
+              "blank": "了",
+              "options": ["了", "的", "吗", "呢"],
+              "hint": "Cấu trúc 太 ... 了 cần 了 (le) ở cuối"
+            },
+            {
+              "type": "sentence_order",
+              "words": ["太", "贵", "了", "这", "件", "衣服"],
+              "answer": "这件衣服太贵了",
+              "meaning": "Chiếc áo này quá đắt"
+            },
+            {
+              "type": "translate",
+              "direction": "vi_to_zh",
+              "prompt": "Hôm nay nóng quá!",
+              "answer": "今天太热了！",
+              "options": ["今天太热了！", "今天很热。", "今天太冷了！", "明天太热了！"]
+            }
+          ]
+        },
+        {
+          "id": "gr-HSK2-u1-l3",
+          "title": "Trợ từ ngữ khí 吧 (ba) diễn tả đề nghị, suy đoán",
+          "order": 3,
+          "exercises": [
+            {
+              "type": "fill_blank",
+              "sentence": "我们一起去___！",
+              "blank": "吧",
+              "options": ["吧", "吗", "呢", "了"],
+              "hint": "Trợ từ 吧 (ba) cuối câu diễn tả đề nghị, rủ rê"
+            },
+            {
+              "type": "fill_blank",
+              "sentence": "他是你的老师___？",
+              "blank": "吧",
+              "options": ["吧", "的", "得", "在"],
+              "hint": "吧 (ba) ở đây diễn tả sự suy đoán phải không"
+            },
+            {
+              "type": "sentence_order",
+              "words": ["吧", "我们", "吃饭", "去"],
+              "answer": "我们去吃饭吧",
+              "meaning": "Chúng ta đi ăn cơm thôi"
+            },
+            {
+              "type": "translate",
+              "direction": "vi_to_zh",
+              "prompt": "Bạn nghỉ ngơi một chút đi!",
+              "answer": "你休息一下吧！",
+              "options": ["你休息一下吧！", "你休息一下吗？", "我休息一下吧！", "你工作一下吧！"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gr-HSK2-u2",
+      "title": "So sánh và bổ ngữ",
+      "titleZh": "比较与补语",
+      "hskLevel": "HSK2",
+      "order": 2,
+      "lessons": [
+        {
+          "id": "gr-HSK2-u2-l1",
+          "title": "Câu so sánh với 比 (bǐ)",
+          "order": 1,
+          "exercises": [
+            {
+              "type": "fill_blank",
+              "sentence": "我___他高。",
+              "blank": "比",
+              "options": ["比", "和", "跟", "在"],
+              "hint": "Giới từ 比 (bǐ) dùng để so sánh hai đối tượng"
+            },
+            {
+              "type": "fill_blank",
+              "sentence": "今天比昨天___。",
+              "blank": "热",
+              "options": ["热", "热吗", "很热", "太热"],
+              "hint": "Câu so sánh với 比 không dùng 很, 太 trước tính từ"
+            },
+            {
+              "type": "sentence_order",
+              "words": ["比", "弟弟", "哥哥", "大"],
+              "answer": "哥哥比弟弟大",
+              "meaning": "Anh trai lớn tuổi hơn em trai"
+            },
+            {
+              "type": "translate",
+              "direction": "vi_to_zh",
+              "prompt": "Cái này đắt hơn cái kia.",
+              "answer": "这个比那个贵。",
+              "options": ["这个比那个贵。", "这个和那个贵。", "那个比这个贵。", "这个比那个便宜。"]
+            }
+          ]
+        },
+        {
+          "id": "gr-HSK2-u2-l2",
+          "title": "Bổ ngữ trình độ với 得 (de)",
+          "order": 2,
+          "exercises": [
+            {
+              "type": "fill_blank",
+              "sentence": "他跑___很快。",
+              "blank": "得",
+              "options": ["得", "了", "的", "地"],
+              "hint": "Trợ từ 得 (de) nối động từ với bổ ngữ trình độ"
+            },
+            {
+              "type": "fill_blank",
+              "sentence": "她说汉语说___很好。",
+              "blank": "得",
+              "options": ["得", "了", "着", "在"],
+              "hint": "Cấu trúc động từ + 得 (de) + bổ ngữ chỉ mức độ"
+            },
+            {
+              "type": "sentence_order",
+              "words": ["得", "好", "他", "唱", "很"],
+              "answer": "他唱得很好",
+              "meaning": "Anh ấy hát rất hay"
+            },
+            {
+              "type": "translate",
+              "direction": "vi_to_zh",
+              "prompt": "Cô ấy viết chữ rất đẹp.",
+              "answer": "她写字写得很漂亮。",
+              "options": ["她写字写得很漂亮。", "她写字写得很快。", "他写字写得很漂亮。", "她说话说得很漂亮。"]
+            }
+          ]
+        },
+        {
+          "id": "gr-HSK2-u2-l3",
+          "title": "Diễn tả tiếp diễn với 正在 (zhèngzài) ... 呢 (ne)",
+          "order": 3,
+          "exercises": [
+            {
+              "type": "fill_blank",
+              "sentence": "他___吃饭呢。",
+              "blank": "正在",
+              "options": ["正在", "已经", "还是", "应该"],
+              "hint": "正在 (zhèngzài) diễn tả hành động đang diễn ra"
+            },
+            {
+              "type": "fill_blank",
+              "sentence": "妈妈正在做饭___。",
+              "blank": "呢",
+              "options": ["呢", "了", "吗", "吧"],
+              "hint": "Trợ từ 呢 (ne) cuối câu nhấn mạnh hành động đang tiếp diễn"
+            },
+            {
+              "type": "sentence_order",
+              "words": ["正在", "呢", "看书", "我"],
+              "answer": "我正在看书呢",
+              "meaning": "Tôi đang đọc sách"
+            },
+            {
+              "type": "translate",
+              "direction": "vi_to_zh",
+              "prompt": "Họ đang xem ti vi.",
+              "answer": "他们正在看电视呢。",
+              "options": ["他们正在看电视呢。", "他们正在睡觉呢。", "我们正在看电视呢。", "他们已经看电视了。"]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

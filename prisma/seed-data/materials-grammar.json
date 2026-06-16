@@ -1,0 +1,172 @@
+{
+  "kind": "materials",
+  "materials": [
+    {
+      "id": "mt-GRAMMAR-1",
+      "title": "Trợ từ 是…的: nhấn mạnh thời gian, nơi chốn, cách thức",
+      "titleZh": "“是……的”结构",
+      "category": "GRAMMAR",
+      "hskLevel": "HSK1",
+      "summary": "Cấu trúc 是…的 dùng để nhấn mạnh thông tin về thời gian, địa điểm, phương thức của một hành động đã xảy ra. Bài này trình bày quy tắc, ví dụ và lỗi thường gặp.",
+      "readMinutes": 6,
+      "order": 1,
+      "tags": ["是的", "nhấn mạnh", "thì quá khứ"],
+      "content": [
+        { "type": "heading", "text": "Cấu trúc 是…的", "zh": "“是……的”结构" },
+        { "type": "paragraph", "text": "Khi một hành động đã chắc chắn xảy ra trong quá khứ và người nói muốn nhấn mạnh thông tin xoay quanh hành động đó (xảy ra khi nào, ở đâu, bằng cách nào, với ai), tiếng Trung dùng cấu trúc 是…的. Phần cần nhấn mạnh được đặt giữa 是 và 的." },
+        { "type": "list", "items": [
+          "Công thức cơ bản: Chủ ngữ + 是 + (thông tin nhấn mạnh) + động từ + 的.",
+          "Thường nhấn mạnh: thời gian, địa điểm, phương tiện, mục đích, người thực hiện.",
+          "Hành động phải đã hoàn thành, người nghe đã biết việc đó xảy ra rồi."
+        ] },
+        { "type": "example", "zh": "我是昨天来的。", "pinyin": "wǒ shì zuótiān lái de.", "vi": "Tôi đến (vào) hôm qua. (nhấn mạnh thời gian)" },
+        { "type": "example", "zh": "他是坐飞机去的。", "pinyin": "tā shì zuò fēijī qù de.", "vi": "Anh ấy đi bằng máy bay. (nhấn mạnh phương tiện)" },
+        { "type": "example", "zh": "你是在哪儿买的？", "pinyin": "nǐ shì zài nǎr mǎi de?", "vi": "Bạn mua ở đâu vậy? (nhấn mạnh địa điểm)" },
+        { "type": "paragraph", "text": "Trong câu khẳng định, 是 có thể được lược bỏ, nhưng 的 thì bắt buộc phải giữ lại. Trong câu phủ định, dùng 不是…的 và không được lược bỏ 是." },
+        { "type": "example", "zh": "我（是）一个人来的。", "pinyin": "wǒ (shì) yí gè rén lái de.", "vi": "Tôi đến một mình. (có thể bỏ 是)" },
+        { "type": "example", "zh": "我不是坐车来的。", "pinyin": "wǒ bú shì zuò chē lái de.", "vi": "Tôi không phải đến bằng xe." },
+        { "type": "vocab", "items": [
+          { "zh": "昨天", "pinyin": "zuótiān", "vi": "hôm qua" },
+          { "zh": "飞机", "pinyin": "fēijī", "vi": "máy bay" },
+          { "zh": "哪儿", "pinyin": "nǎr", "vi": "ở đâu" }
+        ] },
+        { "type": "note", "text": "Lỗi thường gặp: quên 的 ở cuối câu. Câu “我昨天来” chỉ kể lại sự việc, còn “我是昨天来的” mới nhấn mạnh rằng chính HÔM QUA tôi đến chứ không phải ngày khác." }
+      ]
+    },
+    {
+      "id": "mt-GRAMMAR-2",
+      "title": "Trợ từ 了: diễn tả hành động hoàn thành và thay đổi",
+      "titleZh": "助词“了”的用法",
+      "category": "GRAMMAR",
+      "hskLevel": "HSK2",
+      "summary": "了 có hai chức năng chính: đứng sau động từ chỉ hành động đã hoàn thành, và đứng cuối câu chỉ sự thay đổi tình huống. Bài này phân biệt rõ hai loại và các lỗi hay mắc.",
+      "readMinutes": 7,
+      "order": 2,
+      "tags": ["了", "hoàn thành", "thay đổi"],
+      "content": [
+        { "type": "heading", "text": "Hai cách dùng của 了", "zh": "助词“了”的用法" },
+        { "type": "paragraph", "text": "了 là một trong những trợ từ quan trọng và dễ nhầm nhất. Cần phân biệt 了 sau động từ (了₁ chỉ hành động hoàn thành) và 了 cuối câu (了₂ chỉ sự thay đổi hoặc tình huống mới)." },
+        { "type": "heading", "text": "1. 了 sau động từ — hành động đã hoàn thành" },
+        { "type": "paragraph", "text": "Đặt 了 ngay sau động từ để cho biết hành động đã xảy ra và hoàn tất. Tân ngữ thường có số lượng hoặc định ngữ đi kèm." },
+        { "type": "example", "zh": "我买了三本书。", "pinyin": "wǒ mǎi le sān běn shū.", "vi": "Tôi đã mua ba quyển sách." },
+        { "type": "example", "zh": "他吃了一个苹果。", "pinyin": "tā chī le yí gè píngguǒ.", "vi": "Anh ấy đã ăn một quả táo." },
+        { "type": "heading", "text": "2. 了 cuối câu — tình huống thay đổi" },
+        { "type": "paragraph", "text": "Đặt 了 ở cuối câu để báo rằng có sự thay đổi so với trước, hoặc một tình huống mới đã xuất hiện." },
+        { "type": "example", "zh": "天气冷了。", "pinyin": "tiānqì lěng le.", "vi": "Trời đã lạnh rồi. (trước đó không lạnh)" },
+        { "type": "example", "zh": "我会说汉语了。", "pinyin": "wǒ huì shuō hànyǔ le.", "vi": "Tôi đã biết nói tiếng Trung rồi." },
+        { "type": "list", "items": [
+          "Phủ định hành động quá khứ dùng 没(有) và BỎ 了: 我没买书。",
+          "Câu có 没 thì không dùng 了.",
+          "了 cuối câu thường dịch là 'rồi', diễn tả thay đổi trạng thái."
+        ] },
+        { "type": "vocab", "items": [
+          { "zh": "苹果", "pinyin": "píngguǒ", "vi": "quả táo" },
+          { "zh": "天气", "pinyin": "tiānqì", "vi": "thời tiết" },
+          { "zh": "汉语", "pinyin": "hànyǔ", "vi": "tiếng Hán / tiếng Trung" }
+        ] },
+        { "type": "note", "text": "Lỗi thường gặp: dùng đồng thời 没 và 了, ví dụ sai 我没买了书. Đúng phải là 我没买书 (Tôi đã không mua sách)." }
+      ]
+    },
+    {
+      "id": "mt-GRAMMAR-3",
+      "title": "So sánh với 比: cách diễn đạt hơn — kém",
+      "titleZh": "用“比”表示比较",
+      "category": "GRAMMAR",
+      "hskLevel": "HSK3",
+      "summary": "Giới từ 比 dùng để so sánh hai đối tượng. Bài này trình bày công thức cơ bản, cách thêm mức độ chênh lệch, dạng phủ định và lỗi đặt 很 sai chỗ.",
+      "readMinutes": 7,
+      "order": 3,
+      "tags": ["比", "so sánh", "tính từ"],
+      "content": [
+        { "type": "heading", "text": "Câu so sánh với 比", "zh": "用“比”表示比较" },
+        { "type": "paragraph", "text": "Để so sánh hai sự vật về một đặc điểm nào đó, tiếng Trung dùng giới từ 比. Công thức: A + 比 + B + tính từ, nghĩa là 'A … hơn B'." },
+        { "type": "example", "zh": "今天比昨天热。", "pinyin": "jīntiān bǐ zuótiān rè.", "vi": "Hôm nay nóng hơn hôm qua." },
+        { "type": "example", "zh": "他比我高。", "pinyin": "tā bǐ wǒ gāo.", "vi": "Anh ấy cao hơn tôi." },
+        { "type": "paragraph", "text": "Muốn nói rõ mức độ chênh lệch, đặt cụm chỉ mức độ SAU tính từ: A 比 B + tính từ + (một chút / rất nhiều / số lượng cụ thể)." },
+        { "type": "example", "zh": "他比我高一点儿。", "pinyin": "tā bǐ wǒ gāo yìdiǎnr.", "vi": "Anh ấy cao hơn tôi một chút." },
+        { "type": "example", "zh": "今天比昨天热得多。", "pinyin": "jīntiān bǐ zuótiān rè de duō.", "vi": "Hôm nay nóng hơn hôm qua nhiều." },
+        { "type": "example", "zh": "他比我大三岁。", "pinyin": "tā bǐ wǒ dà sān suì.", "vi": "Anh ấy lớn hơn tôi ba tuổi." },
+        { "type": "paragraph", "text": "Dạng phủ định thường dùng A 没有 B + tính từ, nghĩa là 'A không bằng B'. Có thể dùng 不比 nhưng mang sắc thái phản bác." },
+        { "type": "example", "zh": "我没有他高。", "pinyin": "wǒ méiyǒu tā gāo.", "vi": "Tôi không cao bằng anh ấy." },
+        { "type": "list", "items": [
+          "Tuyệt đối KHÔNG dùng 很/非常 trước tính từ trong câu 比.",
+          "Sai: 他比我很高. Đúng: 他比我高得多.",
+          "Mức độ chênh lệch luôn đứng sau tính từ, không đứng trước."
+        ] },
+        { "type": "vocab", "items": [
+          { "zh": "热", "pinyin": "rè", "vi": "nóng" },
+          { "zh": "高", "pinyin": "gāo", "vi": "cao" },
+          { "zh": "一点儿", "pinyin": "yìdiǎnr", "vi": "một chút" }
+        ] },
+        { "type": "note", "text": "Lỗi thường gặp: chèn 很 vào câu so sánh. 'A 比 B + 很 + adj' luôn sai. Nếu muốn nhấn mạnh, dùng …得多 hoặc 多了 đặt sau tính từ." }
+      ]
+    },
+    {
+      "id": "mt-GRAMMAR-4",
+      "title": "Câu chữ 把: nhấn mạnh sự xử lý đối tượng",
+      "titleZh": "“把”字句",
+      "category": "GRAMMAR",
+      "hskLevel": "HSK4",
+      "summary": "Câu chữ 把 đưa tân ngữ lên trước động từ để nhấn mạnh kết quả tác động lên đối tượng đó. Bài này giải thích công thức, điều kiện sử dụng và lỗi thường gặp.",
+      "readMinutes": 8,
+      "order": 4,
+      "tags": ["把", "xử lý đối tượng", "kết quả"],
+      "content": [
+        { "type": "heading", "text": "Câu chữ 把", "zh": "“把”字句" },
+        { "type": "paragraph", "text": "Câu chữ 把 dùng khi muốn nhấn mạnh việc chủ thể tác động lên một đối tượng cụ thể và làm cho đối tượng đó thay đổi, di chuyển hoặc đạt kết quả. Tân ngữ được đưa lên trước động từ nhờ giới từ 把." },
+        { "type": "paragraph", "text": "Công thức: Chủ ngữ + 把 + tân ngữ + động từ + thành phần khác. Sau động từ bắt buộc phải có thêm thành phần (bổ ngữ, 了, sự lặp lại…), không thể đứng trơ một mình." },
+        { "type": "example", "zh": "我把作业做完了。", "pinyin": "wǒ bǎ zuòyè zuò wán le.", "vi": "Tôi đã làm xong bài tập." },
+        { "type": "example", "zh": "请把门关上。", "pinyin": "qǐng bǎ mén guān shàng.", "vi": "Xin hãy đóng cửa lại." },
+        { "type": "example", "zh": "他把书放在桌子上。", "pinyin": "tā bǎ shū fàng zài zhuōzi shàng.", "vi": "Anh ấy đặt sách lên bàn." },
+        { "type": "list", "items": [
+          "Tân ngữ sau 把 phải là đối tượng xác định, người nghe đã biết.",
+          "Sau động từ phải có thành phần bổ sung kết quả (了, 完, 在…, 给… v.v.).",
+          "Từ phủ định 不/没 và động từ năng nguyện (要, 想, 能) đặt TRƯỚC 把.",
+          "Các động từ không tạo tác động (是, 有, 知道, 喜欢) không dùng được với 把."
+        ] },
+        { "type": "example", "zh": "我没把钱带来。", "pinyin": "wǒ méi bǎ qián dài lái.", "vi": "Tôi đã không mang tiền theo." },
+        { "type": "example", "zh": "你应该把这件事告诉他。", "pinyin": "nǐ yīnggāi bǎ zhè jiàn shì gàosu tā.", "vi": "Bạn nên kể chuyện này cho anh ấy." },
+        { "type": "vocab", "items": [
+          { "zh": "作业", "pinyin": "zuòyè", "vi": "bài tập" },
+          { "zh": "关", "pinyin": "guān", "vi": "đóng (cửa)" },
+          { "zh": "放", "pinyin": "fàng", "vi": "đặt, để" }
+        ] },
+        { "type": "note", "text": "Lỗi thường gặp: để động từ đứng trơ trọi sau tân ngữ. Sai: 我把作业做. Đúng: 我把作业做完了 — bắt buộc có thành phần chỉ kết quả phía sau." }
+      ]
+    },
+    {
+      "id": "mt-GRAMMAR-5",
+      "title": "Câu bị động với 被 và lựa chọn 让 / 叫",
+      "titleZh": "“被”字句与被动表达",
+      "category": "GRAMMAR",
+      "hskLevel": "HSK5",
+      "summary": "Câu chữ 被 diễn tả ý bị động, trong đó đối tượng chịu tác động được đặt làm chủ ngữ. Bài này so sánh 被 với 让 / 叫, nêu sắc thái và các lỗi phổ biến.",
+      "readMinutes": 8,
+      "order": 5,
+      "tags": ["被", "bị động", "让叫"],
+      "content": [
+        { "type": "heading", "text": "Câu bị động với 被", "zh": "“被”字句与被动表达" },
+        { "type": "paragraph", "text": "Câu chữ 被 diễn tả ý bị động: chủ ngữ là đối tượng chịu tác động chứ không phải người thực hiện hành động. Trong văn nói và văn viết tiếng Trung, 被 thường mang sắc thái việc xảy ra ngoài ý muốn hoặc không như mong đợi." },
+        { "type": "paragraph", "text": "Công thức: Đối tượng chịu tác động + 被 + (người thực hiện) + động từ + thành phần khác. Người thực hiện có thể được lược bỏ; sau động từ vẫn cần thành phần bổ sung như câu chữ 把." },
+        { "type": "example", "zh": "我的自行车被人偷了。", "pinyin": "wǒ de zìxíngchē bèi rén tōu le.", "vi": "Xe đạp của tôi bị người ta lấy trộm rồi." },
+        { "type": "example", "zh": "杯子被弟弟打破了。", "pinyin": "bēizi bèi dìdi dǎpò le.", "vi": "Cái cốc bị em trai làm vỡ rồi." },
+        { "type": "example", "zh": "作业还没被检查。", "pinyin": "zuòyè hái méi bèi jiǎnchá.", "vi": "Bài tập vẫn chưa bị/được kiểm tra." },
+        { "type": "paragraph", "text": "Trong khẩu ngữ, 让 và 叫 cũng diễn đạt ý bị động và thường tự nhiên hơn 被. Khác biệt là khi dùng 让 / 叫 thì người thực hiện hành động thường KHÔNG được lược bỏ." },
+        { "type": "example", "zh": "我的伞让他拿走了。", "pinyin": "wǒ de sǎn ràng tā ná zǒu le.", "vi": "Cái ô của tôi bị anh ấy cầm đi mất rồi." },
+        { "type": "example", "zh": "蛋糕叫孩子吃光了。", "pinyin": "dàngāo jiào háizi chī guāng le.", "vi": "Bánh kem bị bọn trẻ ăn sạch rồi." },
+        { "type": "list", "items": [
+          "被 có thể lược bỏ người thực hiện: 被偷了; 让 / 叫 thì thường phải nêu rõ.",
+          "Từ phủ định 没 và phó từ thời gian đặt TRƯỚC 被.",
+          "Sau động từ cần có bổ ngữ hoặc 了, không để động từ đứng một mình.",
+          "被 thiên về văn viết và sắc thái bất lợi; 让 / 叫 thiên về khẩu ngữ."
+        ] },
+        { "type": "vocab", "items": [
+          { "zh": "自行车", "pinyin": "zìxíngchē", "vi": "xe đạp" },
+          { "zh": "偷", "pinyin": "tōu", "vi": "trộm, ăn cắp" },
+          { "zh": "打破", "pinyin": "dǎpò", "vi": "làm vỡ" }
+        ] },
+        { "type": "note", "text": "Lỗi thường gặp: đặt 没 sai vị trí. Sai: 我的车被没偷. Đúng: 我的车没被偷 — phó từ phủ định luôn đứng trước 被." }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,422 @@
+{
+  "kind": "materials",
+  "materials": [
+    {
+      "id": "mt-CULTURE-1",
+      "title": "Tết Nguyên Đán Trung Quốc (Xuân Tiết) cho người mới bắt đầu",
+      "titleZh": "春节",
+      "category": "CULTURE",
+      "hskLevel": "HSK1",
+      "summary": "Giới thiệu lễ hội quan trọng nhất của Trung Quốc là Tết (Xuân Tiết) với những từ và câu chúc đơn giản nhất ở trình độ HSK1.",
+      "readMinutes": 6,
+      "order": 1,
+      "tags": ["lễ hội", "Tết", "HSK1", "văn hóa"],
+      "content": [
+        {
+          "type": "heading",
+          "text": "Tết Nguyên Đán Trung Quốc",
+          "zh": "春节"
+        },
+        {
+          "type": "paragraph",
+          "text": "春节 (Xuân Tiết) là Tết Nguyên Đán, lễ hội lớn nhất và quan trọng nhất trong năm của người Trung Quốc. Giống như Tết của Việt Nam, đây là dịp cả gia đình đoàn tụ, ăn cơm cùng nhau và chúc nhau những điều tốt đẹp."
+        },
+        {
+          "type": "paragraph",
+          "text": "Vào dịp này người ta thường nghỉ làm, về quê thăm gia đình. Màu đỏ được coi là màu may mắn, nên khắp nơi đều treo đèn lồng đỏ và dán câu đối đỏ."
+        },
+        {
+          "type": "heading",
+          "text": "Từ vựng cơ bản",
+          "zh": "生词"
+        },
+        {
+          "type": "vocab",
+          "items": [
+            { "zh": "春节", "pinyin": "Chūn Jié", "vi": "Tết, Tết Nguyên Đán (Xuân Tiết)" },
+            { "zh": "新年", "pinyin": "xīn nián", "vi": "năm mới" },
+            { "zh": "快乐", "pinyin": "kuài lè", "vi": "vui vẻ, hạnh phúc" },
+            { "zh": "红", "pinyin": "hóng", "vi": "(màu) đỏ" },
+            { "zh": "钱", "pinyin": "qián", "vi": "tiền" },
+            { "zh": "家", "pinyin": "jiā", "vi": "nhà, gia đình" },
+            { "zh": "吃", "pinyin": "chī", "vi": "ăn" },
+            { "zh": "饭", "pinyin": "fàn", "vi": "cơm" }
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Câu chúc đơn giản",
+          "zh": "祝福语"
+        },
+        {
+          "type": "example",
+          "zh": "新年快乐！",
+          "pinyin": "Xīn nián kuài lè!",
+          "vi": "Chúc mừng năm mới!"
+        },
+        {
+          "type": "example",
+          "zh": "我爱我的家。",
+          "pinyin": "Wǒ ài wǒ de jiā.",
+          "vi": "Tôi yêu gia đình của tôi."
+        },
+        {
+          "type": "example",
+          "zh": "我们一起吃饭。",
+          "pinyin": "Wǒmen yìqǐ chī fàn.",
+          "vi": "Chúng tôi cùng nhau ăn cơm."
+        },
+        {
+          "type": "list",
+          "items": [
+            "Trẻ em nhận được 红包 (hóng bāo) - phong bao lì xì màu đỏ có tiền bên trong.",
+            "Cả nhà cùng ăn bữa cơm tất niên vào đêm giao thừa.",
+            "Người ta nói những lời chúc tốt đẹp, tránh nói những từ không may mắn."
+          ]
+        },
+        {
+          "type": "note",
+          "text": "Mẹo: Câu chúc 新年快乐 (Xīn nián kuài lè) rất dễ nhớ. Hãy chú ý 快乐 đọc là 'kuài lè' (thanh 4 + thanh 4), không phải 'kuai le' không dấu."
+        }
+      ]
+    },
+    {
+      "id": "mt-CULTURE-2",
+      "title": "Tết Trung Thu và bánh trung thu",
+      "titleZh": "中秋节和月饼",
+      "category": "CULTURE",
+      "hskLevel": "HSK2",
+      "summary": "Tìm hiểu về Tết Trung Thu của Trung Quốc, phong tục ngắm trăng và ăn bánh trung thu, kèm từ vựng và mẫu câu trình độ HSK2.",
+      "readMinutes": 7,
+      "order": 2,
+      "tags": ["lễ hội", "Trung Thu", "HSK2", "văn hóa"],
+      "content": [
+        {
+          "type": "heading",
+          "text": "Tết Trung Thu",
+          "zh": "中秋节"
+        },
+        {
+          "type": "paragraph",
+          "text": "中秋节 (Trung Thu) là một trong những lễ hội truyền thống quan trọng của Trung Quốc, thường rơi vào tháng 8 âm lịch, khi trăng tròn và sáng nhất. Đây là dịp gia đình quây quần bên nhau."
+        },
+        {
+          "type": "paragraph",
+          "text": "Trong đêm Trung Thu, mọi người cùng nhau ngắm trăng (赏月) và ăn bánh trung thu (月饼). Trăng tròn tượng trưng cho sự đoàn viên, nên những người ở xa cũng nhớ về gia đình."
+        },
+        {
+          "type": "heading",
+          "text": "Từ vựng",
+          "zh": "生词"
+        },
+        {
+          "type": "vocab",
+          "items": [
+            { "zh": "中秋节", "pinyin": "Zhōng qiū jié", "vi": "Tết Trung Thu" },
+            { "zh": "月亮", "pinyin": "yuè liang", "vi": "mặt trăng" },
+            { "zh": "月饼", "pinyin": "yuè bǐng", "vi": "bánh trung thu" },
+            { "zh": "圆", "pinyin": "yuán", "vi": "tròn" },
+            { "zh": "送", "pinyin": "sòng", "vi": "tặng, biếu" },
+            { "zh": "礼物", "pinyin": "lǐ wù", "vi": "quà tặng" },
+            { "zh": "团圆", "pinyin": "tuán yuán", "vi": "đoàn viên, sum họp" },
+            { "zh": "晚上", "pinyin": "wǎn shang", "vi": "buổi tối" }
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Mẫu câu thường dùng",
+          "zh": "常用句子"
+        },
+        {
+          "type": "example",
+          "zh": "今天晚上的月亮很圆。",
+          "pinyin": "Jīntiān wǎnshang de yuèliang hěn yuán.",
+          "vi": "Mặt trăng tối nay rất tròn."
+        },
+        {
+          "type": "example",
+          "zh": "我们一起吃月饼，看月亮。",
+          "pinyin": "Wǒmen yìqǐ chī yuèbǐng, kàn yuèliang.",
+          "vi": "Chúng tôi cùng nhau ăn bánh trung thu, ngắm trăng."
+        },
+        {
+          "type": "example",
+          "zh": "我想送给妈妈一些月饼。",
+          "pinyin": "Wǒ xiǎng sòng gěi māma yìxiē yuèbǐng.",
+          "vi": "Tôi muốn tặng mẹ một ít bánh trung thu."
+        },
+        {
+          "type": "list",
+          "items": [
+            "月饼 có nhiều loại nhân khác nhau: đậu đỏ, hạt sen, trứng muối, ngũ nhân.",
+            "Người ta thường tặng bánh trung thu cho bạn bè và người thân để tỏ lòng quan tâm.",
+            "Tết Trung Thu còn được gọi là 'Tết đoàn viên' vì ý nghĩa sum họp gia đình."
+          ]
+        },
+        {
+          "type": "note",
+          "text": "Lưu ý: 月亮 (yuè liang) có âm tiết thứ hai đọc nhẹ (khinh thanh), không nhấn mạnh. Đừng nhầm với 月 (yuè) nghĩa là 'tháng' khi đứng riêng."
+        }
+      ]
+    },
+    {
+      "id": "mt-CULTURE-3",
+      "title": "Văn hóa trà của người Trung Quốc",
+      "titleZh": "中国的茶文化",
+      "category": "CULTURE",
+      "hskLevel": "HSK3",
+      "summary": "Khám phá văn hóa thưởng trà của Trung Quốc, các loại trà phổ biến và phép lịch sự khi mời trà, kèm từ vựng và mẫu câu trình độ HSK3.",
+      "readMinutes": 8,
+      "order": 3,
+      "tags": ["trà", "văn hóa", "HSK3", "lễ nghi"],
+      "content": [
+        {
+          "type": "heading",
+          "text": "Văn hóa trà",
+          "zh": "茶文化"
+        },
+        {
+          "type": "paragraph",
+          "text": "Trung Quốc là quê hương của trà và có lịch sử uống trà hàng nghìn năm. Đối với người Trung Quốc, uống trà không chỉ là giải khát mà còn là một cách thư giãn, tiếp đãi khách và thể hiện sự tôn trọng."
+        },
+        {
+          "type": "paragraph",
+          "text": "Khi khách đến nhà, chủ nhà thường rót một tách trà nóng mời khách. Đây là một phép lịch sự rất quan trọng trong văn hóa giao tiếp của người Trung Quốc."
+        },
+        {
+          "type": "heading",
+          "text": "Các loại trà phổ biến",
+          "zh": "常见的茶"
+        },
+        {
+          "type": "list",
+          "items": [
+            "绿茶 (lǜ chá) - trà xanh, vị thanh mát, phổ biến nhất.",
+            "红茶 (hóng chá) - hồng trà (trà đen theo cách gọi phương Tây).",
+            "乌龙茶 (wū lóng chá) - trà ô long, vị đậm đà.",
+            "花茶 (huā chá) - trà hoa, ví dụ trà hoa nhài."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Từ vựng",
+          "zh": "生词"
+        },
+        {
+          "type": "vocab",
+          "items": [
+            { "zh": "茶", "pinyin": "chá", "vi": "trà" },
+            { "zh": "文化", "pinyin": "wén huà", "vi": "văn hóa" },
+            { "zh": "客人", "pinyin": "kè rén", "vi": "khách" },
+            { "zh": "杯", "pinyin": "bēi", "vi": "tách, cốc (lượng từ)" },
+            { "zh": "热", "pinyin": "rè", "vi": "nóng" },
+            { "zh": "习惯", "pinyin": "xí guàn", "vi": "thói quen; quen với" },
+            { "zh": "健康", "pinyin": "jiàn kāng", "vi": "sức khỏe; khỏe mạnh" },
+            { "zh": "礼貌", "pinyin": "lǐ mào", "vi": "lễ phép, lịch sự" }
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Mẫu câu",
+          "zh": "句子"
+        },
+        {
+          "type": "example",
+          "zh": "请喝茶，这是刚泡好的绿茶。",
+          "pinyin": "Qǐng hē chá, zhè shì gāng pào hǎo de lǜ chá.",
+          "vi": "Mời uống trà, đây là trà xanh vừa mới pha xong."
+        },
+        {
+          "type": "example",
+          "zh": "中国人习惯用茶招待客人。",
+          "pinyin": "Zhōngguó rén xíguàn yòng chá zhāodài kèrén.",
+          "vi": "Người Trung Quốc có thói quen dùng trà để tiếp đãi khách."
+        },
+        {
+          "type": "example",
+          "zh": "多喝茶对身体健康有好处。",
+          "pinyin": "Duō hē chá duì shēntǐ jiànkāng yǒu hǎochù.",
+          "vi": "Uống nhiều trà có lợi cho sức khỏe."
+        },
+        {
+          "type": "note",
+          "text": "Phép lịch sự: Khi người khác rót trà cho bạn, ở miền Nam Trung Quốc người ta thường gõ nhẹ hai ngón tay xuống bàn để cảm ơn. Chú ý phân biệt 茶 (chá, trà) và 查 (chá, tra cứu) - cùng âm nhưng khác chữ và nghĩa."
+        }
+      ]
+    },
+    {
+      "id": "mt-CULTURE-4",
+      "title": "Phép lịch sự trên bàn ăn của người Trung Quốc",
+      "titleZh": "中国的餐桌礼仪",
+      "category": "CULTURE",
+      "hskLevel": "HSK4",
+      "summary": "Tìm hiểu các quy tắc ứng xử trên bàn ăn của người Trung Quốc, cách dùng đũa và những điều nên tránh, kèm từ vựng và mẫu câu trình độ HSK4.",
+      "readMinutes": 9,
+      "order": 4,
+      "tags": ["lễ nghi", "ẩm thực", "HSK4", "văn hóa"],
+      "content": [
+        {
+          "type": "heading",
+          "text": "Lễ nghi trên bàn ăn",
+          "zh": "餐桌礼仪"
+        },
+        {
+          "type": "paragraph",
+          "text": "Trong văn hóa Trung Quốc, bữa ăn không chỉ là chuyện ăn uống mà còn là dịp thể hiện sự tôn trọng và tình cảm giữa mọi người. Vì vậy, nắm được các phép lịch sự trên bàn ăn sẽ giúp bạn để lại ấn tượng tốt và tránh những hiểu lầm không đáng có."
+        },
+        {
+          "type": "paragraph",
+          "text": "Người Trung Quốc thường ăn theo kiểu chung mâm: các món được đặt ở giữa bàn và mọi người cùng gắp. Người lớn tuổi hoặc khách quý thường được mời cầm đũa trước, sau đó những người khác mới bắt đầu ăn."
+        },
+        {
+          "type": "heading",
+          "text": "Những quy tắc nên nhớ",
+          "zh": "应该注意的规矩"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Mời người lớn tuổi và khách ăn trước rồi mình mới bắt đầu.",
+            "Không cắm thẳng đũa vào bát cơm, vì hình ảnh đó gợi đến việc cúng người đã khuất.",
+            "Khi gắp thức ăn cho người khác để tỏ lòng hiếu khách, nên dùng đũa hoặc thìa chung nếu có.",
+            "Chủ nhà thường liên tục mời khách ăn thêm; đó là biểu hiện của sự nhiệt tình."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Từ vựng",
+          "zh": "生词"
+        },
+        {
+          "type": "vocab",
+          "items": [
+            { "zh": "礼仪", "pinyin": "lǐ yí", "vi": "lễ nghi, phép tắc" },
+            { "zh": "筷子", "pinyin": "kuài zi", "vi": "đôi đũa" },
+            { "zh": "餐桌", "pinyin": "cān zhuō", "vi": "bàn ăn" },
+            { "zh": "尊重", "pinyin": "zūn zhòng", "vi": "tôn trọng" },
+            { "zh": "长辈", "pinyin": "zhǎng bèi", "vi": "bậc trưởng bối, người lớn tuổi" },
+            { "zh": "敬酒", "pinyin": "jìng jiǔ", "vi": "mời rượu, kính rượu" },
+            { "zh": "热情", "pinyin": "rè qíng", "vi": "nhiệt tình, niềm nở" },
+            { "zh": "规矩", "pinyin": "guī ju", "vi": "quy tắc, phép tắc" }
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Mẫu câu",
+          "zh": "句子"
+        },
+        {
+          "type": "example",
+          "zh": "吃饭的时候，应该先请长辈动筷子。",
+          "pinyin": "Chī fàn de shíhou, yīnggāi xiān qǐng zhǎngbèi dòng kuàizi.",
+          "vi": "Khi ăn cơm, nên mời người lớn tuổi cầm đũa trước."
+        },
+        {
+          "type": "example",
+          "zh": "在中国，主人常常给客人敬酒，表示热情。",
+          "pinyin": "Zài Zhōngguó, zhǔrén chángcháng gěi kèrén jìng jiǔ, biǎoshì rèqíng.",
+          "vi": "Ở Trung Quốc, chủ nhà thường mời rượu khách để thể hiện sự nhiệt tình."
+        },
+        {
+          "type": "example",
+          "zh": "了解餐桌礼仪能让你更尊重别人的文化。",
+          "pinyin": "Liǎojiě cānzhuō lǐyí néng ràng nǐ gèng zūnzhòng biérén de wénhuà.",
+          "vi": "Hiểu được lễ nghi trên bàn ăn giúp bạn tôn trọng hơn văn hóa của người khác."
+        },
+        {
+          "type": "note",
+          "text": "Lỗi thường gặp: Nhiều người học nhầm 筷子 (kuài zi, đũa) với 块 (kuài, đồng/cục). Âm 'kuài' giống nhau nhưng chữ và nghĩa hoàn toàn khác. Ngoài ra, không nên dùng đũa gõ vào bát vì bị coi là bất lịch sự."
+        }
+      ]
+    },
+    {
+      "id": "mt-CULTURE-5",
+      "title": "Câu chuyện thành ngữ: Khắc thuyền tìm gươm (Khắc chu cầu kiếm)",
+      "titleZh": "成语故事：刻舟求剑",
+      "category": "CULTURE",
+      "hskLevel": "HSK5",
+      "summary": "Học thành ngữ 刻舟求剑 qua câu chuyện cổ và hiểu ý nghĩa về sự cứng nhắc, không biết thay đổi theo hoàn cảnh, kèm từ vựng và mẫu câu trình độ HSK5.",
+      "readMinutes": 10,
+      "order": 5,
+      "tags": ["thành ngữ", "成语", "HSK5", "văn hóa", "câu chuyện"],
+      "content": [
+        {
+          "type": "heading",
+          "text": "Thành ngữ và câu chuyện đằng sau",
+          "zh": "成语故事：刻舟求剑"
+        },
+        {
+          "type": "paragraph",
+          "text": "成语 (thành ngữ) là một phần đặc sắc của tiếng Trung, thường gồm bốn chữ và ẩn chứa một câu chuyện hoặc bài học sâu sắc. Hôm nay chúng ta tìm hiểu thành ngữ 刻舟求剑 (kè zhōu qiú jiàn), nghĩa đen là 'khắc dấu lên thuyền để tìm gươm'."
+        },
+        {
+          "type": "heading",
+          "text": "Câu chuyện",
+          "zh": "故事"
+        },
+        {
+          "type": "paragraph",
+          "text": "Thời Chiến Quốc, có một người nước Sở ngồi thuyền qua sông. Giữa đường, thanh gươm của ông ta vô tình rơi xuống nước. Ông ta không vội nhảy xuống tìm, mà bình tĩnh lấy dao khắc một dấu lên mạn thuyền ngay chỗ gươm rơi, rồi nói: 'Gươm của ta rơi từ chỗ này.'"
+        },
+        {
+          "type": "paragraph",
+          "text": "Khi thuyền cập bến, ông ta theo dấu khắc trên thuyền nhảy xuống nước tìm gươm. Nhưng thuyền đã đi xa, còn thanh gươm vẫn nằm yên dưới đáy sông ở chỗ cũ. Đương nhiên ông ta không thể nào tìm thấy."
+        },
+        {
+          "type": "heading",
+          "text": "Ý nghĩa",
+          "zh": "含义"
+        },
+        {
+          "type": "paragraph",
+          "text": "Thành ngữ này châm biếm những người cứng nhắc, máy móc, không biết rằng hoàn cảnh đã thay đổi mà vẫn làm theo cách cũ. Nó nhắc nhở chúng ta phải biết linh hoạt, thích ứng với sự thay đổi của thực tế."
+        },
+        {
+          "type": "heading",
+          "text": "Từ vựng",
+          "zh": "生词"
+        },
+        {
+          "type": "vocab",
+          "items": [
+            { "zh": "成语", "pinyin": "chéng yǔ", "vi": "thành ngữ" },
+            { "zh": "刻", "pinyin": "kè", "vi": "khắc, chạm" },
+            { "zh": "舟", "pinyin": "zhōu", "vi": "con thuyền (văn ngôn)" },
+            { "zh": "剑", "pinyin": "jiàn", "vi": "thanh gươm, kiếm" },
+            { "zh": "灵活", "pinyin": "líng huó", "vi": "linh hoạt, nhanh nhạy" },
+            { "zh": "变化", "pinyin": "biàn huà", "vi": "sự biến đổi, thay đổi" },
+            { "zh": "道理", "pinyin": "dào lǐ", "vi": "đạo lý, lẽ phải" },
+            { "zh": "讽刺", "pinyin": "fěng cì", "vi": "châm biếm, mỉa mai" }
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Mẫu câu vận dụng",
+          "zh": "例句"
+        },
+        {
+          "type": "example",
+          "zh": "情况已经变了，你还用老办法，简直是刻舟求剑。",
+          "pinyin": "Qíngkuàng yǐjīng biàn le, nǐ hái yòng lǎo bànfǎ, jiǎnzhí shì kè zhōu qiú jiàn.",
+          "vi": "Tình hình đã thay đổi rồi mà bạn còn dùng cách cũ, đúng là 'khắc thuyền tìm gươm'."
+        },
+        {
+          "type": "example",
+          "zh": "这个成语告诉我们做事要灵活，不能死板。",
+          "pinyin": "Zhège chéngyǔ gàosu wǒmen zuòshì yào línghuó, bùnéng sǐbǎn.",
+          "vi": "Thành ngữ này dạy chúng ta làm việc phải linh hoạt, không được cứng nhắc."
+        },
+        {
+          "type": "example",
+          "zh": "我们应该根据实际情况的变化来调整计划。",
+          "pinyin": "Wǒmen yīnggāi gēnjù shíjì qíngkuàng de biànhuà lái tiáozhěng jìhuà.",
+          "vi": "Chúng ta nên điều chỉnh kế hoạch dựa theo sự thay đổi của tình hình thực tế."
+        },
+        {
+          "type": "note",
+          "text": "Mẹo ghi nhớ: 刻舟求剑 có cấu trúc động-tân lặp lại (khắc thuyền + tìm gươm). Khi dùng trong câu, thành ngữ này thường đứng sau 是 hoặc làm vị ngữ để chê hành động máy móc. Đừng nhầm 剑 (jiàn, gươm, bộ đao) với 件 (jiàn, lượng từ cho đồ vật/sự việc)."
+        }
+      ]
+    }
+  ]
+}
