@@ -100,7 +100,7 @@ export default async function MaterialsPage({
             const tags = Array.isArray(m.tags) ? (m.tags as string[]) : [];
             return (
               <Link key={m.id} href={`/materials/${m.id}`} className="group">
-                <article className="flex h-full flex-col rounded-2xl border bg-card p-5 transition-all hover:-translate-y-0.5 hover:border-primary/30 hover:shadow-md">
+                <article className="flex h-full flex-col rounded-2xl border border-border/60 bg-card shadow-soft transition-all hover:-translate-y-1 hover:border-primary/30 hover:shadow-soft-lg">
                   {m.imageUrl && (
                     <>
                       {/* eslint-disable-next-line @next/next/no-img-element */}

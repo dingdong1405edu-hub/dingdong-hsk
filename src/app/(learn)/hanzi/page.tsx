@@ -60,7 +60,7 @@ export default async function HanziPage() {
                     const mastered = char.progress.some((p) => p.mastered);
                     return (
                       <Link key={char.id} href={`/hanzi/${char.id}`} className="group">
-                        <div className="relative rounded-2xl border bg-card p-3 text-center transition-all hover:-translate-y-0.5 hover:border-primary/30 hover:shadow-md">
+                        <div className="relative rounded-2xl border border-border/60 bg-card p-3 text-center transition-all hover:-translate-y-0.5 hover:border-primary/30 hover:shadow-soft">
                           {char.imageUrl && (
                             <>
                               {/* eslint-disable-next-line @next/next/no-img-element */}

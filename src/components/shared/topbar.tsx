@@ -38,9 +38,11 @@ export function Topbar({ user, onMenu }: { user: TopbarUser; onMenu: () => void 
       <Button variant="ghost" size="icon" className="-ml-2 lg:hidden" onClick={onMenu} aria-label="Mở menu">
         <Menu className="h-5 w-5" />
       </Button>
-      <Link href="/dashboard" className="flex items-center gap-2 font-extrabold text-primary lg:hidden">
-        <span className="text-xl">🔔</span>
-        DingDong
+      <Link href="/dashboard" className="flex items-center gap-2 lg:hidden">
+        <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary font-chinese text-sm font-bold text-primary-foreground">
+          中
+        </span>
+        <span className="font-extrabold tracking-tight">DingDong</span>
       </Link>
 
       <div className="flex-1" />

@@ -91,7 +91,7 @@ export default async function AdminPage() {
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {sections.map((s) => (
             <Link key={s.href} href={s.href} className="group">
-              <Card className="h-full transition-all hover:-translate-y-0.5 hover:border-primary/30 hover:shadow-md">
+              <Card className="h-full transition-all hover:-translate-y-1 hover:border-primary/30 hover:shadow-soft-lg">
                 <CardContent className="flex items-center gap-3 p-4">
                   <div className={cn("flex h-11 w-11 shrink-0 items-center justify-center rounded-xl", s.cls)}>
                     <s.icon className="h-5 w-5" />

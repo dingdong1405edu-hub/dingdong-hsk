@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Nunito:wght@600;700;800&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=Nunito:wght@700;800&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif:wght@400;600;700&display=swap');
 
 @layer base {
   :root {
@@ -25,7 +25,7 @@
     --border: 120 14% 88%;
     --input: 120 14% 88%;
     --ring: 130 52% 38%;
-    --radius: 0.5rem;
+    --radius: 0.625rem;
   }
 
   .dark {
@@ -55,9 +55,26 @@
   * {
     @apply border-border;
   }
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
   body {
     @apply bg-background text-foreground;
-    font-family: 'Inter', 'Noto Sans SC', sans-serif;
+    font-family: 'Inter', 'Noto Sans SC', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    font-feature-settings: 'cv05', 'cv11';
+  }
+  /* Display typeface for headings — Plus Jakarta Sans, tightened tracking */
+  h1, h2, h3, h4, h5, h6, .font-display {
+    font-family: 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.021em;
+  }
+  h1, h2 {
+    letter-spacing: -0.032em;
   }
   .font-chinese {
     font-family: 'Noto Sans SC', sans-serif;
@@ -65,8 +82,8 @@
   .font-pinyin {
     font-family: 'Noto Serif', serif;
   }
-  .font-display {
-    font-family: 'Nunito', 'Inter', system-ui, sans-serif;
+  ::selection {
+    background-color: hsl(130 52% 38% / 0.16);
   }
 }
 

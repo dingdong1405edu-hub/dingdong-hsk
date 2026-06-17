@@ -40,7 +40,7 @@ export function ModuleCard({
 
   return (
     <Link href={href} className="group block h-full">
-      <Card className="h-full transition-all duration-200 hover:-translate-y-0.5 hover:border-primary/30 hover:shadow-lg">
+      <Card className="h-full transition-all duration-200 hover:-translate-y-1 hover:border-primary/30 hover:shadow-soft-lg">
         <CardContent className="flex h-full flex-col p-5">
           <div className={cn("mb-3 flex h-12 w-12 items-center justify-center rounded-2xl text-2xl", color)}>
             {icon}

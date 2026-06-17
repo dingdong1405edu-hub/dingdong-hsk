@@ -24,7 +24,7 @@ export function TestCard({ href, title, level, tags, attempts, score, meta, seed
 
   return (
     <Link href={href} className="group block">
-      <div className="h-full overflow-hidden rounded-2xl border bg-card transition-all duration-200 hover:-translate-y-1 hover:border-primary/30 hover:shadow-lg">
+      <div className="h-full overflow-hidden rounded-2xl border border-border/60 bg-card shadow-soft transition-all duration-200 hover:-translate-y-1 hover:border-primary/30 hover:shadow-soft-lg">
         {/* Cover */}
         <div className={cn("relative h-28 bg-gradient-to-br", grad)}>
           {imageUrl ? (
