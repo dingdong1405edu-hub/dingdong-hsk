@@ -68,7 +68,7 @@ export default async function DashboardPage() {
   return (
     <div className="space-y-6">
       {/* Hero */}
-      <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-primary to-red-700 p-6 text-primary-foreground shadow-sm sm:p-8">
+      <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-primary to-green-700 p-6 text-primary-foreground shadow-sm sm:p-8">
         <div className="relative z-10 max-w-xl">
           <h1 className="text-2xl font-bold sm:text-3xl">Xin chào, {firstName} 👋</h1>
           <p className="mt-1.5 text-sm text-primary-foreground/85">

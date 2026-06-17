@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Nunito:wght@600;700;800&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif:wght@400;700&display=swap');
 
 @layer base {
   :root {
@@ -12,19 +12,19 @@
     --card-foreground: 240 10% 3.9%;
     --popover: 0 0% 100%;
     --popover-foreground: 240 10% 3.9%;
-    --primary: 0 72% 51%;
-    --primary-foreground: 0 0% 98%;
-    --secondary: 240 4.8% 95.9%;
-    --secondary-foreground: 240 5.9% 10%;
-    --muted: 240 4.8% 95.9%;
-    --muted-foreground: 240 3.8% 46.1%;
-    --accent: 240 4.8% 95.9%;
-    --accent-foreground: 240 5.9% 10%;
+    --primary: 130 52% 38%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 96 30% 95%;
+    --secondary-foreground: 130 25% 18%;
+    --muted: 96 24% 95.5%;
+    --muted-foreground: 130 8% 42%;
+    --accent: 96 38% 93%;
+    --accent-foreground: 130 35% 22%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
-    --border: 240 5.9% 90%;
-    --input: 240 5.9% 90%;
-    --ring: 0 72% 51%;
+    --border: 120 14% 88%;
+    --input: 120 14% 88%;
+    --ring: 130 52% 38%;
     --radius: 0.5rem;
   }
 
@@ -35,19 +35,19 @@
     --card-foreground: 0 0% 98%;
     --popover: 240 10% 3.9%;
     --popover-foreground: 0 0% 98%;
-    --primary: 0 72% 51%;
-    --primary-foreground: 0 0% 98%;
-    --secondary: 240 3.7% 15.9%;
+    --primary: 130 48% 46%;
+    --primary-foreground: 130 30% 8%;
+    --secondary: 130 8% 16%;
     --secondary-foreground: 0 0% 98%;
-    --muted: 240 3.7% 15.9%;
-    --muted-foreground: 240 5% 64.9%;
-    --accent: 240 3.7% 15.9%;
+    --muted: 130 8% 16%;
+    --muted-foreground: 120 6% 64%;
+    --accent: 130 10% 18%;
     --accent-foreground: 0 0% 98%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
-    --border: 240 3.7% 15.9%;
-    --input: 240 3.7% 15.9%;
-    --ring: 0 72% 51%;
+    --border: 130 8% 18%;
+    --input: 130 8% 18%;
+    --ring: 130 48% 46%;
   }
 }
 
@@ -65,6 +65,18 @@
   .font-pinyin {
     font-family: 'Noto Serif', serif;
   }
+  .font-display {
+    font-family: 'Nunito', 'Inter', system-ui, sans-serif;
+  }
+}
+
+/* Light-green grid backdrop (hero / feature sections) */
+.hero-grid {
+  background-color: #f1f8ea;
+  background-image:
+    linear-gradient(rgba(76, 120, 50, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(76, 120, 50, 0.07) 1px, transparent 1px);
+  background-size: 46px 46px;
 }
 
 /* Tone colors */

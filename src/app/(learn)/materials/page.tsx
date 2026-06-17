@@ -43,7 +43,7 @@ export default async function MaterialsPage({
   return (
     <div className="space-y-6">
       {/* Header */}
-      <div className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-primary to-rose-500 p-6 text-white sm:p-8">
+      <div className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-primary to-green-700 p-6 text-white sm:p-8">
         <span className="font-chinese pointer-events-none absolute -right-2 -top-4 select-none text-[7rem] font-bold leading-none text-white/10">
           书
         </span>

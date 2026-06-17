@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils";
 export type Accent = "red" | "green" | "blue" | "amber" | "teal" | "rose" | "indigo" | "violet";
 
 const ACCENTS: Record<Accent, { text: string; iconBg: string; btn: string; banner: string }> = {
-  red: { text: "text-primary", iconBg: "bg-primary/10 text-primary", btn: "bg-primary hover:bg-primary/90", banner: "border-rose-100 from-rose-50 to-white" },
+  red: { text: "text-primary", iconBg: "bg-primary/10 text-primary", btn: "bg-primary hover:bg-primary/90", banner: "border-green-100 from-green-50 to-white" },
   green: { text: "text-emerald-600", iconBg: "bg-emerald-100 text-emerald-700", btn: "bg-emerald-600 hover:bg-emerald-700", banner: "border-emerald-100 from-emerald-50 to-white" },
   blue: { text: "text-sky-600", iconBg: "bg-sky-100 text-sky-700", btn: "bg-sky-600 hover:bg-sky-700", banner: "border-sky-100 from-sky-50 to-white" },
   amber: { text: "text-amber-600", iconBg: "bg-amber-100 text-amber-700", btn: "bg-amber-500 hover:bg-amber-600", banner: "border-amber-100 from-amber-50 to-white" },

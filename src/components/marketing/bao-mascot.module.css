@@ -1,0 +1,306 @@
+/* Bánh bao mascot — ported from the standalone banh-bao.html, scoped as a module. */
+
+.wrap {
+  --green: #5d7740;
+  --bun: #fff7ec;
+  --bun-sh: #f1e3cc;
+  --ink: #2a2f45;
+  --rose: #ff9fb0;
+  --rose-d: #ff7d95;
+  --bamboo: #d6a45f;
+  --bamboo-d: #bd8a45;
+  --spark: #ffe27a;
+  --orange: #f5a623;
+
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Nunito", system-ui, "Segoe UI", sans-serif;
+}
+
+/* Olive-green grid stage (the panel backdrop) */
+.panel {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 1.75rem;
+  background-color: var(--green);
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+  background-size: 50px 50px;
+  box-shadow: 0 24px 60px -20px rgba(45, 60, 25, 0.55);
+}
+
+/* ===== Speech bubble ===== */
+.bubble {
+  position: absolute;
+  top: 9%;
+  left: 50%;
+  transform: translateX(-50%) rotate(5deg);
+  z-index: 30;
+  max-width: 220px;
+  background: #fff;
+  color: #2b3350;
+  font-weight: 800;
+  font-size: 17px;
+  line-height: 1.4;
+  letter-spacing: 0.04em;
+  text-align: center;
+  padding: 12px 20px;
+  border-radius: 22px;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.18);
+  animation: floaty 3.2s ease-in-out infinite;
+}
+.bubble b {
+  color: var(--orange);
+}
+.bubble::after {
+  content: "";
+  position: absolute;
+  bottom: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-left: 13px solid transparent;
+  border-right: 13px solid transparent;
+  border-top: 14px solid #fff;
+}
+@keyframes floaty {
+  0%, 100% { transform: translateX(-50%) rotate(5deg) translateY(0); }
+  50%      { transform: translateX(-50%) rotate(5deg) translateY(-8px); }
+}
+
+/* ===== Stage ===== */
+.stage {
+  position: relative;
+  width: clamp(220px, 70%, 340px);
+  aspect-ratio: 1 / 1.2;
+}
+
+/* --- Steam --- */
+.steam {
+  position: absolute;
+  top: -2%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 30%;
+  z-index: 1;
+}
+.wisp {
+  position: absolute;
+  bottom: 0;
+  width: 16px;
+  height: 100%;
+  stroke: rgba(255, 255, 255, 0.85);
+  stroke-width: 7;
+  stroke-linecap: round;
+  fill: none;
+  opacity: 0;
+  animation: rise 3.2s ease-in-out infinite;
+}
+.a { left: 24%; animation-delay: 0s; }
+.b { left: 48%; animation-delay: 1s; height: 115%; }
+.c { left: 70%; animation-delay: 2s; }
+@keyframes rise {
+  0%   { opacity: 0;   transform: translateY(20%) scale(0.7); }
+  25%  { opacity: 0.8; }
+  70%  { opacity: 0.5; }
+  100% { opacity: 0;   transform: translateY(-70%) scale(1.15); }
+}
+
+/* --- Bamboo steamer --- */
+.steamer {
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 94%;
+  height: 16%;
+  background: repeating-linear-gradient(var(--bamboo) 0 9px, var(--bamboo-d) 9px 12px);
+  border: 4px solid var(--ink);
+  border-radius: 14px;
+  z-index: 1;
+}
+.steamer::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: -2%;
+  width: 104%;
+  height: 16px;
+  background: var(--bamboo);
+  border: 4px solid var(--ink);
+  border-radius: 10px;
+}
+.ground {
+  position: absolute;
+  bottom: 2%;
+  left: 50%;
+  width: 66%;
+  height: 3%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.18);
+  border-radius: 50%;
+  filter: blur(3px);
+  z-index: 0;
+}
+
+/* --- Bun --- */
+.baoPos {
+  position: absolute;
+  left: 50%;
+  bottom: 14%;
+  width: 82%;
+  transform: translateX(-50%);
+  z-index: 3;
+}
+.bounce { animation: bounce 1.8s cubic-bezier(0.5, 0, 0.5, 1) infinite; }
+.wobble { animation: wobble 5s ease-in-out infinite; transform-origin: 50% 92%; }
+.squish { animation: breathe 2.6s ease-in-out infinite; transform-origin: 50% 100%; position: relative; }
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-22px); }
+}
+@keyframes wobble  { 0%, 100% { transform: rotate(-2.5deg); } 50% { transform: rotate(2.5deg); } }
+@keyframes breathe { 0%, 100% { transform: scale(1, 1); }     50% { transform: scale(1.05, 0.95); } }
+
+.bunSvg { width: 100%; display: block; overflow: visible; position: relative; z-index: 2; }
+.bunBody { fill: var(--bun); stroke: var(--ink); stroke-width: 5; stroke-linejoin: round; }
+.bunShadow { fill: var(--bun-sh); opacity: 0.55; }
+.bunHi { fill: #fff; opacity: 0.55; }
+.bunKnob { fill: var(--bun); stroke: var(--ink); stroke-width: 4; stroke-linejoin: round; }
+
+/* face */
+.face { position: absolute; inset: 0; z-index: 3; }
+
+.eye {
+  position: absolute;
+  top: 47%;
+  width: 13%;
+  height: 15%;
+  background: var(--ink);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  will-change: transform;
+}
+.l { left: 39%; }
+.r { left: 61%; }
+.eye::after {
+  content: "";
+  position: absolute;
+  top: 14%;
+  left: 16%;
+  width: 38%;
+  height: 38%;
+  background: #fff;
+  border-radius: 50%;
+}
+.eye::before {
+  content: "";
+  position: absolute;
+  bottom: 18%;
+  right: 18%;
+  width: 17%;
+  height: 17%;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 50%;
+}
+.blinking .eye { animation: blink 0.22s ease; }
+@keyframes blink { 0%, 100% { height: 15%; } 50% { height: 2%; } }
+
+.cheek {
+  position: absolute;
+  top: 57%;
+  width: 14%;
+  aspect-ratio: 1;
+  background: radial-gradient(circle at 38% 35%, var(--rose), var(--rose-d));
+  border-radius: 50%;
+  opacity: 0.9;
+  filter: blur(0.4px);
+  animation: cheekPulse 2.6s ease-in-out infinite;
+}
+.cheek::after {
+  content: "";
+  position: absolute;
+  top: 20%;
+  left: 24%;
+  width: 26%;
+  height: 26%;
+  background: rgba(255, 255, 255, 0.55);
+  border-radius: 50%;
+}
+.cheek.l { left: 21%; }
+.cheek.r { right: 21%; left: auto; }
+@keyframes cheekPulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.12); } }
+
+/* smile (default) */
+.smile {
+  position: absolute;
+  top: 59%;
+  left: 50%;
+  width: 15%;
+  height: 7%;
+  transform: translateX(-50%);
+  border-bottom: 4px solid var(--ink);
+  border-radius: 0 0 90px 90px;
+  transition: opacity 0.18s ease, transform 0.18s ease;
+}
+/* open smile (on hover near) */
+.mouthOpen {
+  position: absolute;
+  top: 56%;
+  left: 50%;
+  width: 13%;
+  height: 9%;
+  transform: translateX(-50%) scaleY(0);
+  transform-origin: 50% 0%;
+  background: var(--ink);
+  border-radius: 0 0 100px 100px;
+  overflow: hidden;
+  opacity: 0;
+  transition: transform 0.24s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.16s ease;
+}
+.tongue {
+  position: absolute;
+  bottom: -32%;
+  left: 50%;
+  width: 62%;
+  aspect-ratio: 1;
+  transform: translateX(-50%);
+  background: var(--rose-d);
+  border-radius: 50%;
+}
+.happy .smile     { opacity: 0; transform: translateX(-50%) scaleY(0.3); }
+.happy .mouthOpen { opacity: 1; transform: translateX(-50%) scaleY(1); }
+
+/* --- Sparkles --- */
+.spark {
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  background: var(--spark);
+  clip-path: polygon(50% 0, 60% 40%, 100% 50%, 60% 60%, 50% 100%, 40% 60%, 0 50%, 40% 40%);
+  opacity: 0;
+  z-index: 5;
+  animation: twinkle 2.6s ease-in-out infinite;
+}
+.s1 { top: 16%; left: 4%;   animation-delay: 0s; }
+.s2 { top: 28%; right: 2%;  animation-delay: 0.8s; }
+.s3 { top: 58%; left: 0%;   animation-delay: 1.4s; width: 18px; height: 18px; }
+.s4 { top: 10%; right: 14%; animation-delay: 2s; width: 20px; height: 20px; }
+@keyframes twinkle {
+  0%, 100% { opacity: 0; transform: scale(0) rotate(0deg); }
+  50%      { opacity: 1; transform: scale(1) rotate(45deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bubble, .wisp, .bounce, .wobble, .squish, .cheek, .spark { animation: none; }
+}

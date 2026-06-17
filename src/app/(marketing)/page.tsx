@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Star, Flame, Heart, ChevronRight, Sparkles } from "lucide-react";
+import { BaoMascot } from "@/components/marketing/bao-mascot";
 
 const features = [
   {
@@ -43,13 +44,6 @@ const features = [
   },
 ];
 
-const FLOATERS = [
-  { t: "你好", p: "nǐ hǎo", cls: "left-6 top-10 rotate-[-6deg]" },
-  { t: "学习", p: "xué xí", cls: "right-8 top-20 rotate-[5deg]" },
-  { t: "中文", p: "zhōng wén", cls: "left-12 bottom-12 rotate-[3deg]" },
-  { t: "加油", p: "jiā yóu", cls: "right-10 bottom-8 rotate-[-4deg]" },
-];
-
 export default function LandingPage() {
   return (
     <div className="min-h-screen">
@@ -77,8 +71,9 @@ export default function LandingPage() {
       </header>
 
       {/* Hero */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-rose-50 via-white to-white">
-        <div className="container grid items-center gap-10 py-16 lg:grid-cols-2 lg:py-24">
+      <section className="relative overflow-hidden hero-grid">
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-b from-transparent to-background" />
+        <div className="container relative grid items-center gap-10 py-16 lg:grid-cols-2 lg:py-24">
           {/* Left */}
           <div>
             <Badge className="mb-4 border-primary/20 bg-primary/10 text-primary hover:bg-primary/15">
@@ -118,22 +113,9 @@ export default function LandingPage() {
             </div>
           </div>
 
-          {/* Right — decorative Chinese panel */}
-          <div className="relative">
-            <div className="relative mx-auto aspect-square w-full max-w-md overflow-hidden rounded-3xl bg-gradient-to-br from-primary to-red-700 shadow-2xl">
-              <span className="absolute inset-0 flex select-none items-center justify-center font-chinese text-[260px] leading-none text-white/10">
-                学
-              </span>
-              {FLOATERS.map((f) => (
-                <div
-                  key={f.t}
-                  className={`absolute ${f.cls} rounded-2xl bg-white/95 px-4 py-2.5 text-center shadow-lg`}
-                >
-                  <div className="font-chinese text-2xl font-bold text-primary">{f.t}</div>
-                  <div className="font-pinyin text-xs text-muted-foreground">{f.p}</div>
-                </div>
-              ))}
-            </div>
+          {/* Right — linh vật bánh bao */}
+          <div className="relative mx-auto w-full max-w-md">
+            <BaoMascot />
           </div>
         </div>
       </section>
@@ -183,7 +165,7 @@ export default function LandingPage() {
 
       {/* CTA */}
       <section className="container py-16 text-center">
-        <div className="relative mx-auto max-w-2xl overflow-hidden rounded-3xl bg-gradient-to-br from-primary to-red-700 p-10 text-primary-foreground">
+        <div className="relative mx-auto max-w-2xl overflow-hidden rounded-3xl bg-gradient-to-br from-primary to-green-800 p-10 text-primary-foreground">
           <span className="pointer-events-none absolute -right-4 -top-8 select-none font-chinese text-[140px] leading-none text-white/10">
             梦
           </span>

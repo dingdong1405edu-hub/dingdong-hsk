@@ -53,7 +53,7 @@ export default async function ProfilePage() {
   return (
     <div className="space-y-6">
       {/* Header */}
-      <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-primary to-red-700 p-6 text-primary-foreground">
+      <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-primary to-green-700 p-6 text-primary-foreground">
         <div className="relative z-10 flex items-center gap-4">
           <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-white/15 text-2xl font-bold backdrop-blur">
             {display.charAt(0).toUpperCase()}

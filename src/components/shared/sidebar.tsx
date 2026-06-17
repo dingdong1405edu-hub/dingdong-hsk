@@ -174,7 +174,7 @@ function NavContent({ user, onNavigate }: { user: SidebarUser; onNavigate?: () =
             <div className="text-[10px] text-amber-700/70">Mở khoá toàn bộ bài học</div>
           </div>
         </div>
-        <div className="flex items-center gap-3 rounded-xl bg-gradient-to-br from-primary/10 to-rose-100/50 p-2.5">
+        <div className="flex items-center gap-3 rounded-xl bg-gradient-to-br from-primary/10 to-green-100/60 p-2.5">
           <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-white text-base shadow-sm">🎓</div>
           <div className="leading-tight">
             <div className="text-[10px] text-muted-foreground">Cấp độ mục tiêu</div>
