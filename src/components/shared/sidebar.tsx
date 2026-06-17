@@ -22,6 +22,7 @@ import {
   type LucideIcon,
 } from "lucide-react";
 import { cn, hskLevelLabel } from "@/lib/utils";
+import { Logo } from "@/components/shared/logo";
 
 interface NavItem {
   href: string;
@@ -122,9 +123,7 @@ function NavContent({ user, onNavigate }: { user: SidebarUser; onNavigate?: () =
     <div className="flex h-full flex-col">
       {/* Brand */}
       <Link href="/dashboard" className="flex h-16 items-center gap-2.5 border-b px-5">
-        <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-primary text-base font-extrabold text-primary-foreground shadow-sm">
-          中
-        </div>
+        <Logo className="h-9 w-9" />
         <div className="leading-tight">
           <div className="text-[15px] font-extrabold text-primary">DingDong HSK</div>
           <div className="text-[10px] font-semibold uppercase tracking-[0.18em] text-muted-foreground">

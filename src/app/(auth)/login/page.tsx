@@ -5,6 +5,7 @@ import { signIn } from "next-auth/react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Ambient } from "@/components/motion/ambient";
+import { Logo } from "@/components/shared/logo";
 
 export default function LoginPage() {
   const [loading, setLoading] = useState(false);
@@ -20,10 +21,8 @@ export default function LoginPage() {
       <Ambient />
       <div className="animate-fade-up relative w-full max-w-md">
         <div className="mb-6 flex justify-center">
-          <Link href="/" className="flex items-center gap-2.5">
-            <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary font-chinese text-lg font-bold text-primary-foreground shadow-soft-primary">
-              中
-            </span>
+          <Link href="/" className="flex items-center gap-2">
+            <Logo className="h-11 w-11" />
             <span className="text-lg font-extrabold tracking-tight">
               DingDong <span className="text-primary">HSK</span>
             </span>

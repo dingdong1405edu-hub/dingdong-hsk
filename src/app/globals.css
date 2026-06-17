@@ -12,19 +12,19 @@
     --card-foreground: 240 10% 3.9%;
     --popover: 0 0% 100%;
     --popover-foreground: 240 10% 3.9%;
-    --primary: 130 52% 38%;
+    --primary: 156 41% 32%;
     --primary-foreground: 0 0% 100%;
-    --secondary: 96 30% 95%;
-    --secondary-foreground: 130 25% 18%;
-    --muted: 96 24% 95.5%;
-    --muted-foreground: 130 8% 42%;
-    --accent: 96 38% 93%;
-    --accent-foreground: 130 35% 22%;
+    --secondary: 150 26% 95%;
+    --secondary-foreground: 156 28% 17%;
+    --muted: 150 20% 95.5%;
+    --muted-foreground: 152 9% 41%;
+    --accent: 152 32% 93%;
+    --accent-foreground: 156 35% 21%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
-    --border: 120 14% 88%;
-    --input: 120 14% 88%;
-    --ring: 130 52% 38%;
+    --border: 150 15% 88%;
+    --input: 150 15% 88%;
+    --ring: 156 41% 32%;
     --radius: 0.625rem;
   }
 
@@ -35,19 +35,19 @@
     --card-foreground: 0 0% 98%;
     --popover: 240 10% 3.9%;
     --popover-foreground: 0 0% 98%;
-    --primary: 130 48% 46%;
-    --primary-foreground: 130 30% 8%;
-    --secondary: 130 8% 16%;
+    --primary: 156 38% 43%;
+    --primary-foreground: 156 30% 8%;
+    --secondary: 156 8% 16%;
     --secondary-foreground: 0 0% 98%;
-    --muted: 130 8% 16%;
-    --muted-foreground: 120 6% 64%;
-    --accent: 130 10% 18%;
+    --muted: 156 8% 16%;
+    --muted-foreground: 150 6% 64%;
+    --accent: 156 10% 18%;
     --accent-foreground: 0 0% 98%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
-    --border: 130 8% 18%;
-    --input: 130 8% 18%;
-    --ring: 130 48% 46%;
+    --border: 156 8% 18%;
+    --input: 156 8% 18%;
+    --ring: 156 38% 43%;
   }
 }
 
@@ -101,17 +101,17 @@
 /* Calm layered green aurora — slowly pans for a living, peaceful feel */
 .aurora-bg {
   background:
-    radial-gradient(48% 55% at 18% 22%, hsl(130 52% 38% / 0.18), transparent 60%),
-    radial-gradient(42% 50% at 82% 18%, hsl(150 55% 45% / 0.16), transparent 60%),
-    radial-gradient(55% 60% at 50% 95%, hsl(96 50% 55% / 0.16), transparent 62%),
-    linear-gradient(180deg, #f4faee 0%, #eaf6e0 100%);
+    radial-gradient(48% 55% at 18% 22%, hsl(156 44% 40% / 0.16), transparent 60%),
+    radial-gradient(42% 50% at 82% 18%, hsl(170 42% 44% / 0.14), transparent 60%),
+    radial-gradient(55% 60% at 50% 95%, hsl(150 40% 48% / 0.13), transparent 62%),
+    linear-gradient(180deg, #f1f8f4 0%, #e3f1ea 100%);
   background-size: 160% 160%, 160% 160%, 160% 160%, 100% 100%;
   animation: auroraPan 22s ease-in-out infinite;
 }
 .peaceful-bg {
   background:
-    radial-gradient(40% 45% at 12% 8%, hsl(130 52% 42% / 0.10), transparent 60%),
-    radial-gradient(36% 42% at 90% 6%, hsl(150 50% 48% / 0.09), transparent 60%),
+    radial-gradient(40% 45% at 12% 8%, hsl(156 44% 40% / 0.09), transparent 60%),
+    radial-gradient(36% 42% at 90% 6%, hsl(170 40% 44% / 0.08), transparent 60%),
     hsl(var(--background));
 }
 
@@ -140,7 +140,7 @@
 
 /* Green gradient text (on light bg) */
 .text-gradient-green {
-  background: linear-gradient(105deg, hsl(130 55% 34%), hsl(150 60% 42%) 55%, hsl(96 55% 45%));
+  background: linear-gradient(105deg, hsl(156 48% 29%), hsl(168 46% 37%) 55%, hsl(150 44% 40%));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -148,19 +148,19 @@
 
 /* Light/mint gradient text (on dark-green bg) */
 .text-gradient-mint {
-  background: linear-gradient(100deg, #ffffff, #d8ffc2 52%, #aef3cf);
+  background: linear-gradient(100deg, #ffffff, #c9f7df 52%, #a2efd6);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
 
-/* Rich, living green hero background — fully green section */
+/* Calm, scholarly green hero background — fully green section */
 .hero-green {
   background:
-    radial-gradient(48% 55% at 16% 18%, hsl(140 62% 52% / 0.55), transparent 60%),
-    radial-gradient(45% 50% at 86% 14%, hsl(96 62% 56% / 0.45), transparent 60%),
-    radial-gradient(62% 72% at 50% 112%, hsl(162 65% 32% / 0.6), transparent 66%),
-    linear-gradient(160deg, hsl(142 58% 38%), hsl(152 64% 25%));
+    radial-gradient(48% 55% at 16% 18%, hsl(156 46% 44% / 0.5), transparent 60%),
+    radial-gradient(45% 50% at 86% 14%, hsl(172 44% 46% / 0.42), transparent 60%),
+    radial-gradient(62% 72% at 50% 112%, hsl(158 50% 22% / 0.62), transparent 66%),
+    linear-gradient(160deg, hsl(157 44% 30%), hsl(162 52% 20%));
   background-size: 170% 170%, 170% 170%, 170% 170%, 100% 100%;
   animation: auroraPan 24s ease-in-out infinite;
 }

@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Star, Flame, Heart, ChevronRight, Sparkles } from "lucide-react";
 import { BaoMascot } from "@/components/marketing/bao-mascot";
+import { Logo } from "@/components/shared/logo";
 import { Reveal } from "@/components/motion/reveal";
 import { Ambient } from "@/components/motion/ambient";
 import { AnimatedNumber } from "@/components/motion/animated-number";
@@ -72,10 +73,8 @@ export default function LandingPage() {
       {/* Header */}
       <header className="sticky top-0 z-50 border-b border-border/60 bg-background/70 backdrop-blur-xl">
         <div className="container flex h-16 items-center justify-between">
-          <Link href="/" className="flex items-center gap-2.5">
-            <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-primary font-chinese text-base font-bold text-primary-foreground shadow-soft-primary">
-              中
-            </span>
+          <Link href="/" className="flex items-center gap-2">
+            <Logo className="h-10 w-10" />
             <span className="text-[17px] font-extrabold tracking-tight">
               DingDong <span className="text-primary">HSK</span>
             </span>
@@ -115,8 +114,6 @@ export default function LandingPage() {
             {f.c}
           </span>
         ))}
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-b from-transparent to-background" />
-
         <div className="container relative grid items-center gap-10 py-14 sm:py-16 lg:grid-cols-2 lg:gap-12 lg:py-24">
           {/* Left */}
           <div className="text-center lg:text-left">
@@ -188,9 +185,11 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* Stats band */}
-      <section className="border-y border-border/60 bg-muted/30">
-        <div className="container grid grid-cols-3 gap-4 py-10 text-center">
+      {/* Stats band — divider connects hero down to the content */}
+      <section className="relative border-b border-border/60 bg-muted/30">
+        <div className="pointer-events-none absolute inset-x-0 top-0 h-0.5 bg-gradient-to-r from-transparent via-primary to-transparent" />
+        <div className="pointer-events-none absolute inset-x-0 top-0 h-10 bg-gradient-to-b from-primary/10 to-transparent" />
+        <div className="container relative z-10 grid grid-cols-3 gap-4 py-10 text-center">
           {stats.map((s, i) => (
             <Reveal key={s.label} delay={i * 0.1}>
               <div className="text-3xl font-extrabold text-primary sm:text-4xl">
@@ -284,9 +283,7 @@ export default function LandingPage() {
       <footer className="border-t border-border/60 py-10">
         <div className="container flex flex-col items-center justify-between gap-4 text-sm text-muted-foreground sm:flex-row">
           <div className="flex items-center gap-2 font-semibold text-foreground">
-            <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-primary font-chinese text-xs font-bold text-primary-foreground">
-              中
-            </span>
+            <Logo className="h-8 w-8" />
             DingDong HSK
           </div>
           <p>© 2026 DingDong HSK · dingdong1405edu@gmail.com</p>

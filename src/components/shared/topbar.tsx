@@ -12,6 +12,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { cn } from "@/lib/utils";
+import { Logo } from "@/components/shared/logo";
 
 interface TopbarUser {
   name?: string | null;
@@ -39,9 +40,7 @@ export function Topbar({ user, onMenu }: { user: TopbarUser; onMenu: () => void 
         <Menu className="h-5 w-5" />
       </Button>
       <Link href="/dashboard" className="flex items-center gap-2 lg:hidden">
-        <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary font-chinese text-sm font-bold text-primary-foreground">
-          中
-        </span>
+        <Logo className="h-8 w-8" />
         <span className="font-extrabold tracking-tight">DingDong</span>
       </Link>
 
