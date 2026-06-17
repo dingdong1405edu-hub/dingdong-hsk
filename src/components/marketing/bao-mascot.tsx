@@ -8,7 +8,7 @@ import styles from "./bao-mascot.module.css";
  * Mắt dõi theo con trỏ, cười mở khi con trỏ lại gần, chớp mắt định kỳ.
  * Toàn bộ animation nền chạy bằng CSS; chỉ phần tương tác con trỏ dùng JS.
  */
-export function BaoMascot() {
+export function BaoMascot({ transparent = false }: { transparent?: boolean }) {
   const panelRef = useRef<HTMLDivElement>(null);
   const squishRef = useRef<HTMLDivElement>(null);
   const eyeLRef = useRef<HTMLDivElement>(null);
@@ -88,7 +88,7 @@ export function BaoMascot() {
 
   return (
     <div className={styles.wrap}>
-      <div ref={panelRef} className={styles.panel}>
+      <div ref={panelRef} className={`${styles.panel}${transparent ? ` ${styles.bare}` : ""}`}>
         <div className={styles.bubble}>
           NǏ HǍO <b>🥟</b>
         </div>

@@ -138,12 +138,31 @@
   border: 1px solid hsl(130 40% 80% / 0.45);
 }
 
-/* Green gradient text */
+/* Green gradient text (on light bg) */
 .text-gradient-green {
   background: linear-gradient(105deg, hsl(130 55% 34%), hsl(150 60% 42%) 55%, hsl(96 55% 45%));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+}
+
+/* Light/mint gradient text (on dark-green bg) */
+.text-gradient-mint {
+  background: linear-gradient(100deg, #ffffff, #d8ffc2 52%, #aef3cf);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Rich, living green hero background — fully green section */
+.hero-green {
+  background:
+    radial-gradient(48% 55% at 16% 18%, hsl(140 62% 52% / 0.55), transparent 60%),
+    radial-gradient(45% 50% at 86% 14%, hsl(96 62% 56% / 0.45), transparent 60%),
+    radial-gradient(62% 72% at 50% 112%, hsl(162 65% 32% / 0.6), transparent 66%),
+    linear-gradient(160deg, hsl(142 58% 38%), hsl(152 64% 25%));
+  background-size: 170% 170%, 170% 170%, 170% 170%, 100% 100%;
+  animation: auroraPan 24s ease-in-out infinite;
 }
 
 /* Sheen sweep used on hero CTA */

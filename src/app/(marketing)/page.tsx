@@ -81,7 +81,7 @@ export default function LandingPage() {
             </span>
           </Link>
           <div className="flex items-center gap-1.5 sm:gap-2">
-            <Link href="/login">
+            <Link href="/login" className="hidden sm:block">
               <Button variant="ghost" size="sm">
                 Đăng nhập
               </Button>
@@ -95,74 +95,81 @@ export default function LandingPage() {
         </div>
       </header>
 
-      {/* Hero */}
-      <section className="relative overflow-hidden">
-        <div className="absolute inset-0 aurora-bg" />
-        <Ambient />
+      {/* Hero — fully green section */}
+      <section className="relative overflow-hidden text-white">
+        <div className="absolute inset-0 hero-green" />
+        <Ambient variant="glow" />
         <div
           className="pointer-events-none absolute inset-0"
           style={{
             backgroundImage:
-              "linear-gradient(rgba(76,120,50,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(76,120,50,0.05) 1px, transparent 1px)",
-            backgroundSize: "46px 46px",
+              "linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px)",
+            backgroundSize: "44px 44px",
           }}
         />
         {floatHanzi.map((f) => (
           <span
             key={f.c}
-            className={`pointer-events-none absolute select-none font-chinese text-primary/10 ${f.cls} ${f.anim}`}
+            className={`pointer-events-none absolute hidden select-none font-chinese text-white/10 md:block ${f.cls} ${f.anim}`}
           >
             {f.c}
           </span>
         ))}
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-28 bg-gradient-to-b from-transparent to-background" />
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-b from-transparent to-background" />
 
-        <div className="container relative grid items-center gap-12 py-16 lg:grid-cols-2 lg:py-28">
+        <div className="container relative grid items-center gap-10 py-14 sm:py-16 lg:grid-cols-2 lg:gap-12 lg:py-24">
           {/* Left */}
-          <div>
+          <div className="text-center lg:text-left">
             <span
-              className="animate-fade-up inline-flex items-center gap-1.5 rounded-full border border-primary/20 bg-primary/10 px-3 py-1 text-[13px] font-semibold text-primary backdrop-blur"
+              className="animate-fade-up inline-flex items-center gap-1.5 rounded-full border border-white/25 bg-white/15 px-3 py-1 text-[13px] font-semibold text-white backdrop-blur"
               style={{ animationDelay: "0s" }}
             >
               <Sparkles className="h-3.5 w-3.5" /> HSK 1–6 + HSKK · Học bằng tiếng Việt
             </span>
             <h1
-              className="animate-fade-up mt-5 text-[2.6rem] font-extrabold leading-[1.05] sm:text-6xl"
+              className="animate-fade-up mt-5 text-4xl font-extrabold leading-[1.08] sm:text-5xl lg:text-6xl"
               style={{ animationDelay: "0.08s" }}
             >
               Học tiếng Trung{" "}
-              <span className="text-gradient-green">dễ như trò chuyện</span>
+              <span className="text-gradient-mint">dễ như trò chuyện</span>
             </h1>
             <p
-              className="animate-fade-up mt-5 max-w-lg text-lg leading-relaxed text-muted-foreground"
+              className="animate-fade-up mx-auto mt-5 max-w-lg text-base leading-relaxed text-white/85 sm:text-lg lg:mx-0"
               style={{ animationDelay: "0.16s" }}
             >
               Nền tảng học tiếng Trung toàn diện cho người Việt: từ vựng, ngữ pháp, chữ Hán, đọc – nghe –
               viết – nói, được AI chấm điểm và đồng hành mỗi ngày.
             </p>
             <div
-              className="animate-fade-up mt-8 flex flex-col gap-3 sm:flex-row"
+              className="animate-fade-up mt-8 flex flex-col gap-3 sm:flex-row sm:justify-center lg:justify-start"
               style={{ animationDelay: "0.24s" }}
             >
-              <Link href="/register">
-                <Button size="lg" className="sheen w-full shadow-soft-primary sm:w-auto">
+              <Link href="/register" className="w-full sm:w-auto">
+                <Button
+                  size="lg"
+                  className="sheen w-full bg-white text-primary shadow-soft-lg hover:bg-white sm:w-auto"
+                >
                   Bắt đầu học miễn phí <ChevronRight className="ml-1 h-4 w-4" />
                 </Button>
               </Link>
-              <Link href="/login">
-                <Button size="lg" variant="outline" className="w-full bg-background/60 backdrop-blur sm:w-auto">
+              <Link href="/login" className="w-full sm:w-auto">
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="w-full border-white/40 bg-white/10 text-white backdrop-blur hover:border-white/60 hover:bg-white/20 hover:text-white sm:w-auto"
+                >
                   Tôi đã có tài khoản
                 </Button>
               </Link>
             </div>
             <div
-              className="animate-fade-up mt-9 flex flex-wrap items-center gap-2.5"
+              className="animate-fade-up mt-9 flex flex-wrap items-center justify-center gap-2.5 lg:justify-start"
               style={{ animationDelay: "0.32s" }}
             >
               {trust.map((t) => (
                 <span
                   key={t.label}
-                  className="glass inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-sm font-medium shadow-soft"
+                  className="inline-flex items-center gap-1.5 rounded-full border border-white/20 bg-white/15 px-3 py-1.5 text-sm font-medium text-white backdrop-blur"
                 >
                   <t.icon className={`h-4 w-4 ${t.cls}`} /> {t.label}
                 </span>
@@ -170,13 +177,13 @@ export default function LandingPage() {
             </div>
           </div>
 
-          {/* Right — linh vật bánh bao */}
+          {/* Right — chỉ linh vật bánh bao (nền trong suốt) */}
           <div
-            className="animate-fade-up relative mx-auto w-full max-w-md"
+            className="animate-fade-up relative mx-auto w-full max-w-[17rem] sm:max-w-sm lg:max-w-md"
             style={{ animationDelay: "0.2s" }}
           >
-            <div className="animate-breathe absolute inset-6 -z-10 rounded-[2.5rem] bg-primary/25 blur-3xl" />
-            <BaoMascot />
+            <div className="animate-breathe absolute inset-8 -z-10 rounded-full bg-white/20 blur-3xl" />
+            <BaoMascot transparent />
           </div>
         </div>
       </section>

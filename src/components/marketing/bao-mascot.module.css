@@ -38,6 +38,13 @@
   box-shadow: 0 24px 60px -20px rgba(45, 60, 25, 0.55);
 }
 
+/* Bare mode — only the mascot, no boxed olive-grid backdrop */
+.panel.bare {
+  background: none;
+  box-shadow: none;
+  border-radius: 0;
+}
+
 /* ===== Speech bubble ===== */
 .bubble {
   position: absolute;
