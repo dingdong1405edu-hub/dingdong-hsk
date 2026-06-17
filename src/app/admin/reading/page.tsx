@@ -24,6 +24,7 @@ async function createReadingAction(fd: FormData): Promise<void> {
       hskLevel: fd.get("hskLevel") as HSKLevel,
       passage: fd.get("passage") as string,
       passagePinyin: (fd.get("passagePinyin") as string) || undefined,
+      imageUrl: (fd.get("imageUrl") as string) || undefined,
       timeLimit: parseInt(fd.get("timeLimit") as string),
     },
   });
@@ -67,6 +68,10 @@ export default async function AdminReadingPage() {
               <Input name="timeLimit" type="number" defaultValue="600" required />
             </div>
             <div className="space-y-1 md:col-span-2">
+              <Label>Hình minh hoạ (URL)</Label>
+              <Input name="imageUrl" placeholder="https://... hoặc /images/..." />
+            </div>
+            <div className="space-y-1 md:col-span-2">
               <Label>Đoạn văn (Hán tự)</Label>
               <Textarea name="passage" className="font-chinese min-h-32" placeholder="Nội dung đoạn văn..." required />
             </div>
@@ -86,14 +91,22 @@ export default async function AdminReadingPage() {
         {tests.map((test) => (
           <Card key={test.id}>
             <CardContent className="p-4 flex items-center justify-between">
-              <div>
-                <div className="flex items-center gap-2">
-                  <span className="font-semibold">{test.title}</span>
-                  <span className="font-chinese text-muted-foreground text-sm">{test.titleZh}</span>
-                </div>
-                <div className="flex items-center gap-2 mt-1">
-                  <Badge variant="outline">{hskLevelLabel(test.hskLevel)}</Badge>
-                  <span className="text-xs text-muted-foreground">{test._count.questions} câu hỏi</span>
+              <div className="flex items-center gap-3">
+                {test.imageUrl && (
+                  <>
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={test.imageUrl} alt="" className="h-12 w-12 shrink-0 rounded-lg object-cover" />
+                  </>
+                )}
+                <div>
+                  <div className="flex items-center gap-2">
+                    <span className="font-semibold">{test.title}</span>
+                    <span className="font-chinese text-muted-foreground text-sm">{test.titleZh}</span>
+                  </div>
+                  <div className="flex items-center gap-2 mt-1">
+                    <Badge variant="outline">{hskLevelLabel(test.hskLevel)}</Badge>
+                    <span className="text-xs text-muted-foreground">{test._count.questions} câu hỏi</span>
+                  </div>
                 </div>
               </div>
               <div className="flex gap-2">

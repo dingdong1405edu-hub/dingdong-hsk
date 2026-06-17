@@ -60,6 +60,7 @@ export default async function GrammarPage() {
               meta={`${u.done}/${u.total} bài học`}
               score={u.pct}
               seed={u.id}
+              imageUrl={u.imageUrl}
             />
           ))}
         </div>

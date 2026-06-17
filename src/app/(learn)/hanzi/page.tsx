@@ -61,6 +61,12 @@ export default async function HanziPage() {
                     return (
                       <Link key={char.id} href={`/hanzi/${char.id}`} className="group">
                         <div className="relative rounded-2xl border bg-card p-3 text-center transition-all hover:-translate-y-0.5 hover:border-primary/30 hover:shadow-md">
+                          {char.imageUrl && (
+                            <>
+                              {/* eslint-disable-next-line @next/next/no-img-element */}
+                              <img src={char.imageUrl} alt={char.character} loading="lazy" className="mb-2 h-12 w-full rounded-lg object-cover" />
+                            </>
+                          )}
                           {mastered && (
                             <CheckCircle2 className="absolute right-1.5 top-1.5 h-4 w-4 text-emerald-500" />
                           )}

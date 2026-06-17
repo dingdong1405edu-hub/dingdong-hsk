@@ -61,6 +61,7 @@ export default async function SpeakingPage() {
               attempts={countMap.get(set.id) ?? 0}
               score={bestMap.get(set.id) ?? null}
               seed={set.id}
+              imageUrl={set.imageUrl}
             />
           ))}
         </div>

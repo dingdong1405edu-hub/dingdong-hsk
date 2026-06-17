@@ -21,6 +21,7 @@ async function createGrammarUnitAction(fd: FormData) {
       title: fd.get("title") as string,
       titleZh: fd.get("titleZh") as string,
       hskLevel: level,
+      imageUrl: (fd.get("imageUrl") as string) || undefined,
       order: count + 1,
     },
   });
@@ -61,6 +62,10 @@ export default async function AdminGrammarPage() {
                 {["HSK1","HSK2","HSK3","HSK4","HSK5","HSK6"].map(l => <option key={l} value={l}>{l}</option>)}
               </select>
             </div>
+            <div className="space-y-1">
+              <Label>Hình minh hoạ (URL)</Label>
+              <Input name="imageUrl" placeholder="https://... hoặc /images/..." />
+            </div>
             <Button type="submit">Tạo</Button>
           </form>
         </CardContent>
@@ -69,12 +74,20 @@ export default async function AdminGrammarPage() {
         {units.map((u) => (
           <Card key={u.id}>
             <CardContent className="p-3 flex items-center justify-between gap-4">
-              <div>
-                <span className="font-semibold">{u.title}</span>
-                <span className="font-chinese text-muted-foreground ml-2 text-sm">{u.titleZh}</span>
-                <div className="flex items-center gap-2 mt-1">
-                  <Badge variant="outline">{hskLevelLabel(u.hskLevel)}</Badge>
-                  <span className="text-xs text-muted-foreground">{u._count.lessons} bài</span>
+              <div className="flex items-center gap-3">
+                {u.imageUrl && (
+                  <>
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={u.imageUrl} alt="" className="h-12 w-12 shrink-0 rounded-lg object-cover" />
+                  </>
+                )}
+                <div>
+                  <span className="font-semibold">{u.title}</span>
+                  <span className="font-chinese text-muted-foreground ml-2 text-sm">{u.titleZh}</span>
+                  <div className="flex items-center gap-2 mt-1">
+                    <Badge variant="outline">{hskLevelLabel(u.hskLevel)}</Badge>
+                    <span className="text-xs text-muted-foreground">{u._count.lessons} bài</span>
+                  </div>
                 </div>
               </div>
               <form action={async () => { "use server"; await deleteGrammarUnitAction(u.id); }}>

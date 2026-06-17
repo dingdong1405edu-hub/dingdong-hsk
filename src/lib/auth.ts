@@ -1,62 +1,37 @@
 import NextAuth from "next-auth";
 import { PrismaAdapter } from "@auth/prisma-adapter";
 import Google from "next-auth/providers/google";
-import Credentials from "next-auth/providers/credentials";
-import bcrypt from "bcryptjs";
 import { db } from "@/lib/db";
-import { z } from "zod";
 import { authConfig } from "@/lib/auth.config";
 
-const credentialsSchema = z.object({
-  email: z.string().email(),
-  password: z.string().min(6),
-});
-
+// Google is the ONLY sign-in method. Email/password (Credentials) has been
+// removed by request — accounts are created automatically on first Google
+// sign-in via the Prisma adapter.
+//
+// REQUIRED env in every environment: AUTH_GOOGLE_ID + AUTH_GOOGLE_SECRET.
+// Without them no provider is registered and nobody can sign in.
 export const { handlers, auth, signIn, signOut } = NextAuth({
   ...authConfig,
   adapter: PrismaAdapter(db),
   providers: [
-    // Only register Google when credentials exist, otherwise the provider is a
-    // dead end (production currently has no AUTH_GOOGLE_ID/SECRET).
-    ...(process.env.AUTH_GOOGLE_ID && process.env.AUTH_GOOGLE_SECRET
-      ? [
-          Google({
-            clientId: process.env.AUTH_GOOGLE_ID,
-            clientSecret: process.env.AUTH_GOOGLE_SECRET,
-            // Google verifies email ownership, so it is safe to link a Google
-            // login to an existing email/password account with the same email
-            // (e.g. the admin's Gmail). Without this, such a sign-in fails with
-            // OAuthAccountNotLinked.
-            allowDangerousEmailAccountLinking: true,
-          }),
-        ]
-      : []),
-    Credentials({
-      name: "credentials",
-      credentials: {
-        email: { label: "Email", type: "email" },
-        password: { label: "Password", type: "password" },
-      },
-      async authorize(credentials) {
-        const parsed = credentialsSchema.safeParse(credentials);
-        if (!parsed.success) return null;
-
-        const { email, password } = parsed.data;
-        const user = await db.user.findUnique({ where: { email } });
-        if (!user || !user.passwordHash) return null;
-        if (user.banned) return null;
-
-        const valid = await bcrypt.compare(password, user.passwordHash);
-        if (!valid) return null;
-
-        return {
-          id: user.id,
-          email: user.email,
-          name: user.name,
-          image: user.image,
-          role: user.role,
-        };
-      },
+    Google({
+      clientId: process.env.AUTH_GOOGLE_ID,
+      clientSecret: process.env.AUTH_GOOGLE_SECRET,
+      // Google verifies email ownership, so it is safe to link a Google login to
+      // an existing account with the same email (e.g. the admin's Gmail that was
+      // previously created with email/password). Without this, such a sign-in
+      // fails with OAuthAccountNotLinked.
+      allowDangerousEmailAccountLinking: true,
     }),
   ],
+  callbacks: {
+    ...authConfig.callbacks,
+    // Block banned users from completing sign-in.
+    async signIn({ user }) {
+      if (!user?.email) return true;
+      const existing = await db.user.findUnique({ where: { email: user.email } });
+      if (existing?.banned) return false;
+      return true;
+    },
+  },
 });

@@ -73,6 +73,7 @@ export default async function ReadingPage() {
                 attempts={countMap.get(test.id) ?? 0}
                 score={bestMap.get(test.id) ?? null}
                 seed={test.id}
+                imageUrl={test.imageUrl}
               />
             );
           })}

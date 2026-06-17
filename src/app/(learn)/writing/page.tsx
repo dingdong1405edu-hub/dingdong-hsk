@@ -68,6 +68,7 @@ export default async function WritingPage() {
               attempts={countMap.get(task.id) ?? 0}
               score={bestMap.get(task.id) ?? null}
               seed={task.id}
+              imageUrl={task.imageUrl}
             />
           ))}
         </div>

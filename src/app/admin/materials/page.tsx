@@ -31,6 +31,7 @@ async function createMaterialAction(fd: FormData): Promise<void> {
       category,
       hskLevel,
       summary: fd.get("summary") as string,
+      imageUrl: (fd.get("imageUrl") as string) || undefined,
       content: blocks as unknown as Prisma.InputJsonValue,
       tags: tags as unknown as Prisma.InputJsonValue,
       readMinutes: parseInt(fd.get("readMinutes") as string) || 5,
@@ -109,6 +110,10 @@ export default async function AdminMaterialsPage() {
               <Input name="tags" placeholder="ngữ pháp, 了, trợ từ" />
             </div>
             <div className="space-y-1 md:col-span-2">
+              <Label>Hình minh hoạ (URL)</Label>
+              <Input name="imageUrl" placeholder="https://... hoặc /images/..." />
+            </div>
+            <div className="space-y-1 md:col-span-2">
               <Label>Tóm tắt</Label>
               <Textarea name="summary" className="min-h-16" placeholder="Mô tả ngắn gọn nội dung tài liệu..." required />
             </div>
@@ -141,6 +146,12 @@ export default async function AdminMaterialsPage() {
             <Card key={m.id}>
               <CardContent className="flex items-center justify-between gap-4 p-4">
                 <div className="flex min-w-0 items-start gap-3">
+                  {m.imageUrl && (
+                    <>
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img src={m.imageUrl} alt="" className="h-12 w-12 shrink-0 rounded-lg object-cover" />
+                    </>
+                  )}
                   <div className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl ${meta.color}`}>
                     <Icon className="h-5 w-5" />
                   </div>

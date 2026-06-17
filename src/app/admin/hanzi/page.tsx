@@ -24,6 +24,7 @@ async function createHanziAction(fd: FormData) {
       strokeCount: parseInt(fd.get("strokeCount") as string),
       strokeOrder: {},
       examples: [],
+      imageUrl: (fd.get("imageUrl") as string) || undefined,
     },
   });
   revalidatePath("/admin/hanzi");
@@ -72,6 +73,10 @@ export default async function AdminHanziPage() {
               <Label>Số nét</Label>
               <Input name="strokeCount" type="number" defaultValue="5" required />
             </div>
+            <div className="space-y-1">
+              <Label>Hình minh hoạ (URL)</Label>
+              <Input name="imageUrl" placeholder="https://... hoặc /images/..." />
+            </div>
             <div className="col-span-2 sm:col-span-2">
               <Button type="submit" className="w-full">Thêm chữ</Button>
             </div>
@@ -81,6 +86,12 @@ export default async function AdminHanziPage() {
       <div className="grid grid-cols-4 sm:grid-cols-8 gap-2">
         {chars.map((c) => (
           <div key={c.id} className="border rounded-lg p-2 text-center group relative">
+            {c.imageUrl && (
+              <>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={c.imageUrl} alt={c.character} className="mb-1 h-10 w-full rounded object-cover" />
+              </>
+            )}
             <div className={`text-2xl font-chinese font-bold ${toneColor(c.tone)}`}>{c.character}</div>
             <div className="text-xs font-pinyin text-muted-foreground">{c.pinyin}</div>
             <form action={async () => { "use server"; await deleteHanziAction(c.id); }}

@@ -13,9 +13,11 @@ interface TestCardProps {
   score?: number | null;
   meta?: string;
   seed?: string;
+  /** Illustration image for the lesson. Falls back to a gradient + Hán char cover when empty. */
+  imageUrl?: string | null;
 }
 
-export function TestCard({ href, title, level, tags, attempts, score, meta, seed }: TestCardProps) {
+export function TestCard({ href, title, level, tags, attempts, score, meta, seed, imageUrl }: TestCardProps) {
   const s = seed ?? href;
   const grad = coverGradient(s);
   const ch = coverChar(s);
@@ -25,9 +27,21 @@ export function TestCard({ href, title, level, tags, attempts, score, meta, seed
       <div className="h-full overflow-hidden rounded-2xl border bg-card transition-all duration-200 hover:-translate-y-1 hover:border-primary/30 hover:shadow-lg">
         {/* Cover */}
         <div className={cn("relative h-28 bg-gradient-to-br", grad)}>
-          <span className="pointer-events-none absolute inset-0 flex select-none items-center justify-center font-chinese text-7xl text-white/25">
-            {ch}
-          </span>
+          {imageUrl ? (
+            // Uploaded illustration. Plain <img> (not next/image) so any admin-entered
+            // URL works without configuring remotePatterns.
+            // eslint-disable-next-line @next/next/no-img-element
+            <img
+              src={imageUrl}
+              alt={title}
+              loading="lazy"
+              className="absolute inset-0 h-full w-full object-cover transition-transform duration-200 group-hover:scale-105"
+            />
+          ) : (
+            <span className="pointer-events-none absolute inset-0 flex select-none items-center justify-center font-chinese text-7xl text-white/25">
+              {ch}
+            </span>
+          )}
           {typeof attempts === "number" && (
             <span className="absolute left-2 top-2 inline-flex items-center gap-1 rounded-full bg-black/40 px-2 py-0.5 text-[11px] font-medium text-white backdrop-blur">
               <Users className="h-3 w-3" /> {attempts} lượt làm

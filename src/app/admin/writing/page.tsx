@@ -23,6 +23,7 @@ async function createWritingAction(fd: FormData): Promise<void> {
       minChars: parseInt(fd.get("minChars") as string) || 50,
       timeLimit: parseInt(fd.get("timeLimit") as string) || 900,
       hskLevel: fd.get("hskLevel") as HSKLevel,
+      imageUrl: (fd.get("imageUrl") as string) || undefined,
     },
   });
   revalidatePath("/admin/writing");
@@ -56,6 +57,10 @@ export default async function AdminWritingPage() {
               </select>
             </div>
             <div className="space-y-1 md:col-span-2">
+              <Label>Hình minh hoạ (URL)</Label>
+              <Input name="imageUrl" placeholder="https://... hoặc /images/..." />
+            </div>
+            <div className="space-y-1 md:col-span-2">
               <Label>Đề bài (VI)</Label>
               <Textarea name="prompt" required />
             </div>
@@ -79,12 +84,20 @@ export default async function AdminWritingPage() {
         {tasks.map((task) => (
           <Card key={task.id}>
             <CardContent className="p-4 flex items-start justify-between gap-4">
-              <div className="flex-1">
-                <div className="flex items-center gap-2 mb-1">
-                  <Badge variant="outline">{hskLevelLabel(task.hskLevel)}</Badge>
-                  <Badge variant="secondary">{typeLabel[task.taskType]}</Badge>
+              <div className="flex flex-1 items-start gap-3">
+                {task.imageUrl && (
+                  <>
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={task.imageUrl} alt="" className="h-12 w-12 shrink-0 rounded-lg object-cover" />
+                  </>
+                )}
+                <div className="flex-1">
+                  <div className="flex items-center gap-2 mb-1">
+                    <Badge variant="outline">{hskLevelLabel(task.hskLevel)}</Badge>
+                    <Badge variant="secondary">{typeLabel[task.taskType]}</Badge>
+                  </div>
+                  <p className="text-sm">{task.prompt}</p>
                 </div>
-                <p className="text-sm">{task.prompt}</p>
               </div>
               <form action={async () => { "use server"; await deleteWritingAction(task.id); }}>
                 <Button size="sm" variant="destructive" type="submit"><Trash2 className="h-4 w-4" /></Button>

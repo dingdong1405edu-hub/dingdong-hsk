@@ -39,6 +39,7 @@ const readingSchema = z.object({
   passage: z.string().min(1),
   passagePinyin: z.string().optional(),
   timeLimit: z.coerce.number().min(60),
+  imageUrl: z.string().optional(),
 });
 
 export async function createReadingAction(fd: FormData) {
@@ -66,6 +67,7 @@ export async function createListeningAction(fd: FormData) {
       audioUrl: fd.get("audioUrl") as string,
       transcript: (fd.get("transcript") as string) || undefined,
       timeLimit: parseInt(fd.get("timeLimit") as string) || 300,
+      imageUrl: (fd.get("imageUrl") as string) || undefined,
     },
   });
   revalidatePath("/admin/listening");
@@ -90,6 +92,7 @@ export async function createWritingAction(fd: FormData) {
       minChars: parseInt(fd.get("minChars") as string) || 50,
       timeLimit: parseInt(fd.get("timeLimit") as string) || 900,
       hskLevel: fd.get("hskLevel") as HSKLevel,
+      imageUrl: (fd.get("imageUrl") as string) || undefined,
     },
   });
   revalidatePath("/admin/writing");

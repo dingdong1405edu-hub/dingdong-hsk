@@ -19,6 +19,7 @@ async function createSpeakingAction(fd: FormData) {
     data: {
       title: fd.get("title") as string,
       hskLevel: fd.get("hskLevel") as HSKLevel,
+      imageUrl: (fd.get("imageUrl") as string) || undefined,
       part1Sentences: JSON.parse(fd.get("part1Sentences") as string),
       part2Passage: JSON.parse(fd.get("part2Passage") as string),
       part3Questions: JSON.parse(fd.get("part3Questions") as string),
@@ -47,6 +48,10 @@ export default async function AdminSpeakingPage() {
                 <select name="hskLevel" className="flex h-9 w-full rounded-md border px-3 py-1 text-sm">
                   {["HSK1","HSK2","HSK3","HSK4","HSK5","HSK6"].map(l => <option key={l} value={l}>{l}</option>)}
                 </select>
+              </div>
+              <div className="space-y-1 col-span-2">
+                <Label>Hình minh hoạ (URL)</Label>
+                <Input name="imageUrl" placeholder="https://... hoặc /images/..." />
               </div>
             </div>
             <div className="space-y-1">
@@ -84,9 +89,17 @@ export default async function AdminSpeakingPage() {
         {sets.map((set) => (
           <Card key={set.id}>
             <CardContent className="p-4 flex items-center justify-between">
-              <div>
-                <div className="font-semibold">{set.title || set.id}</div>
-                <Badge variant="outline" className="mt-1">{hskLevelLabel(set.hskLevel)}</Badge>
+              <div className="flex items-center gap-3">
+                {set.imageUrl && (
+                  <>
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={set.imageUrl} alt="" className="h-12 w-12 shrink-0 rounded-lg object-cover" />
+                  </>
+                )}
+                <div>
+                  <div className="font-semibold">{set.title || set.id}</div>
+                  <Badge variant="outline" className="mt-1">{hskLevelLabel(set.hskLevel)}</Badge>
+                </div>
               </div>
               <form action={async () => { "use server"; await deleteSpeakingAction(set.id); }}>
                 <Button size="sm" variant="destructive" type="submit"><Trash2 className="h-4 w-4" /></Button>

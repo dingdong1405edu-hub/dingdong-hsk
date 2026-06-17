@@ -120,6 +120,7 @@ model VocabUnit {
   titleZh  String
   hskLevel HSKLevel
   order    Int
+  imageUrl String?
   lessons  VocabLesson[]
 
   @@index([hskLevel, order])
@@ -159,6 +160,7 @@ model GrammarUnit {
   titleZh  String
   hskLevel HSKLevel
   order    Int
+  imageUrl String?
   lessons  GrammarLesson[]
 
   @@index([hskLevel, order])
@@ -202,6 +204,7 @@ model HanziCharacter {
   strokeCount Int
   strokeOrder Json
   examples    Json
+  imageUrl    String?
 
   progress HanziProgress[]
 }
@@ -228,6 +231,7 @@ model ReadingTest {
   hskLevel      HSKLevel
   passage       String   @db.Text
   passagePinyin String?  @db.Text
+  imageUrl      String?
   timeLimit     Int
   createdAt     DateTime @default(now())
   updatedAt     DateTime @updatedAt @default(now())
@@ -241,6 +245,7 @@ model ListeningTest {
   hskLevel   HSKLevel
   audioUrl   String
   transcript String?  @db.Text
+  imageUrl   String?
   timeLimit  Int      @default(300)
   createdAt  DateTime @default(now())
   updatedAt  DateTime @updatedAt @default(now())
@@ -282,6 +287,7 @@ model SpeakingSet {
   id             String   @id @default(cuid())
   title          String   @default("")
   hskLevel       HSKLevel
+  imageUrl       String?
   part1Sentences Json
   part2Passage   Json
   part3Questions Json
@@ -299,6 +305,7 @@ model Material {
   category    MaterialCategory
   hskLevel    HSKLevel
   summary     String           @db.Text
+  imageUrl    String?
   content     Json
   tags        Json?
   readMinutes Int              @default(5)

@@ -20,6 +20,7 @@ async function createListeningAction(fd: FormData): Promise<void> {
       title: fd.get("title") as string,
       hskLevel: fd.get("hskLevel") as HSKLevel,
       audioUrl: fd.get("audioUrl") as string,
+      imageUrl: (fd.get("imageUrl") as string) || undefined,
       transcript: (fd.get("transcript") as string) || undefined,
       timeLimit: parseInt(fd.get("timeLimit") as string) || 300,
     },
@@ -50,6 +51,10 @@ export default async function AdminListeningPage() {
               <Input name="audioUrl" placeholder="/audio/hsk1-test.mp3" required />
             </div>
             <div className="space-y-1">
+              <Label>Hình minh hoạ (URL)</Label>
+              <Input name="imageUrl" placeholder="https://... hoặc /images/..." />
+            </div>
+            <div className="space-y-1">
               <Label>Cấp độ HSK</Label>
               <select name="hskLevel" className="flex h-9 w-full rounded-md border px-3 py-1 text-sm">
                 {["HSK1","HSK2","HSK3","HSK4","HSK5","HSK6"].map(l => <option key={l} value={l}>{l}</option>)}
@@ -71,11 +76,19 @@ export default async function AdminListeningPage() {
         {tests.map((test) => (
           <Card key={test.id}>
             <CardContent className="p-4 flex items-center justify-between">
-              <div>
-                <div className="font-semibold">{test.title}</div>
-                <div className="flex items-center gap-2 mt-1">
-                  <Badge variant="outline">{hskLevelLabel(test.hskLevel)}</Badge>
-                  <span className="text-xs text-muted-foreground">{test._count.questions} câu hỏi</span>
+              <div className="flex items-center gap-3">
+                {test.imageUrl && (
+                  <>
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={test.imageUrl} alt="" className="h-12 w-12 shrink-0 rounded-lg object-cover" />
+                  </>
+                )}
+                <div>
+                  <div className="font-semibold">{test.title}</div>
+                  <div className="flex items-center gap-2 mt-1">
+                    <Badge variant="outline">{hskLevelLabel(test.hskLevel)}</Badge>
+                    <span className="text-xs text-muted-foreground">{test._count.questions} câu hỏi</span>
+                  </div>
                 </div>
               </div>
               <form action={async () => { "use server"; await deleteListeningAction(test.id); }}>

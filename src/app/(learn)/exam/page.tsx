@@ -55,6 +55,7 @@ export default async function ExamPage() {
             level: t.hskLevel,
             count: t.questions.length,
             score: bestMap.get(t.id) ?? null,
+            imageUrl: t.imageUrl,
           }))}
         />
         <ExamGroup
@@ -68,6 +69,7 @@ export default async function ExamPage() {
             level: t.hskLevel,
             count: t.questions.length,
             score: bestMap.get(t.id) ?? null,
+            imageUrl: t.imageUrl,
           }))}
         />
       </div>
@@ -84,7 +86,7 @@ function ExamGroup({
   title: string;
   icon: React.ReactNode;
   empty: string;
-  items: { id: string; href: string; title: string; level: string; count: number; score: number | null }[];
+  items: { id: string; href: string; title: string; level: string; count: number; score: number | null; imageUrl?: string | null }[];
 }) {
   return (
     <div>
@@ -105,6 +107,7 @@ function ExamGroup({
               score={it.score}
               tags={["Thi thử"]}
               seed={it.id}
+              imageUrl={it.imageUrl}
             />
           ))}
         </div>

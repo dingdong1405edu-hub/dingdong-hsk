@@ -101,6 +101,12 @@ export default async function MaterialsPage({
             return (
               <Link key={m.id} href={`/materials/${m.id}`} className="group">
                 <article className="flex h-full flex-col rounded-2xl border bg-card p-5 transition-all hover:-translate-y-0.5 hover:border-primary/30 hover:shadow-md">
+                  {m.imageUrl && (
+                    <>
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img src={m.imageUrl} alt={m.title} loading="lazy" className="mb-3 h-32 w-full rounded-xl object-cover" />
+                    </>
+                  )}
                   <div className="flex items-center justify-between">
                     <div className={cn("flex h-10 w-10 items-center justify-center rounded-xl", meta.color)}>
                       <Icon className="h-5 w-5" />
