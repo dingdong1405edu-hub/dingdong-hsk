@@ -5,6 +5,8 @@ import { ModuleCard } from "@/components/learn/module-card";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { cn, hskLevelLabel, xpToLevel } from "@/lib/utils";
 import { Flame, Heart, Star, Trophy, GraduationCap, type LucideIcon } from "lucide-react";
+import { AnimatedNumber } from "@/components/motion/animated-number";
+import { Ambient } from "@/components/motion/ambient";
 
 function StatCard({
   icon: Icon,
@@ -31,7 +33,7 @@ function StatCard({
           <div className="text-xs text-muted-foreground">{label}</div>
           <div className="text-xl font-bold leading-tight">
             {prefix && <span className="mr-1 text-sm font-medium text-muted-foreground">{prefix}</span>}
-            {value}
+            {typeof value === "number" ? <AnimatedNumber value={value} /> : value}
             {suffix && <span className="ml-1 text-xs font-normal text-muted-foreground">{suffix}</span>}
           </div>
         </div>
@@ -69,6 +71,7 @@ export default async function DashboardPage() {
     <div className="space-y-6">
       {/* Hero */}
       <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-primary to-green-700 p-6 text-primary-foreground shadow-soft-lg sm:p-8">
+        <Ambient variant="calm" className="opacity-50" />
         <div className="relative z-10 max-w-xl">
           <h1 className="text-2xl font-bold sm:text-3xl">Xin chào, {firstName} 👋</h1>
           <p className="mt-1.5 text-sm text-primary-foreground/85">

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { signIn } from "next-auth/react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Ambient } from "@/components/motion/ambient";
 
 export default function RegisterPage() {
   const [loading, setLoading] = useState(false);
@@ -14,9 +15,10 @@ export default function RegisterPage() {
   }
 
   return (
-    <div className="relative flex min-h-screen items-center justify-center overflow-hidden bg-gradient-to-br from-green-50 via-background to-background px-4">
-      <div className="pointer-events-none absolute -top-24 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-primary/15 blur-3xl" />
-      <div className="relative w-full max-w-md">
+    <div className="relative flex min-h-screen items-center justify-center overflow-hidden px-4">
+      <div className="absolute inset-0 aurora-bg" />
+      <Ambient />
+      <div className="animate-fade-up relative w-full max-w-md">
         <div className="mb-6 flex justify-center">
           <Link href="/" className="flex items-center gap-2.5">
             <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary font-chinese text-lg font-bold text-primary-foreground shadow-soft-primary">

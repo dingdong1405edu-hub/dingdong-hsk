@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { motion, LayoutGroup } from "framer-motion";
 import {
   X,
   Home,
@@ -88,17 +89,26 @@ function NavLink({
       href={item.href}
       onClick={onNavigate}
       className={cn(
-        "relative flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium transition-colors",
-        active
-          ? "bg-primary/10 text-primary"
-          : "text-muted-foreground hover:bg-muted hover:text-foreground"
+        "group relative flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium transition-colors",
+        active ? "text-primary" : "text-muted-foreground hover:bg-muted hover:text-foreground"
       )}
     >
       {active && (
-        <span className="absolute left-0 top-1/2 h-5 w-1 -translate-y-1/2 rounded-r-full bg-primary" />
+        <>
+          <motion.span
+            layoutId="nav-active"
+            transition={{ type: "spring", stiffness: 400, damping: 34 }}
+            className="absolute inset-0 rounded-lg bg-primary/10"
+          />
+          <motion.span
+            layoutId="nav-active-bar"
+            transition={{ type: "spring", stiffness: 400, damping: 34 }}
+            className="absolute left-0 top-1/2 h-5 w-1 -translate-y-1/2 rounded-r-full bg-primary"
+          />
+        </>
       )}
-      <Icon className="h-[18px] w-[18px] shrink-0" />
-      {item.label}
+      <Icon className="relative z-10 h-[18px] w-[18px] shrink-0 transition-transform group-hover:scale-110" />
+      <span className="relative z-10">{item.label}</span>
     </Link>
   );
 }
@@ -147,17 +157,28 @@ function NavContent({ user, onNavigate }: { user: SidebarUser; onNavigate?: () =
               href="/admin"
               onClick={onNavigate}
               className={cn(
-                "relative flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium transition-colors",
+                "group relative flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium transition-colors",
                 pathname.startsWith("/admin")
-                  ? "bg-primary/10 text-primary"
+                  ? "text-primary"
                   : "text-muted-foreground hover:bg-muted hover:text-foreground"
               )}
             >
               {pathname.startsWith("/admin") && (
-                <span className="absolute left-0 top-1/2 h-5 w-1 -translate-y-1/2 rounded-r-full bg-primary" />
+                <>
+                  <motion.span
+                    layoutId="nav-active"
+                    transition={{ type: "spring", stiffness: 400, damping: 34 }}
+                    className="absolute inset-0 rounded-lg bg-primary/10"
+                  />
+                  <motion.span
+                    layoutId="nav-active-bar"
+                    transition={{ type: "spring", stiffness: 400, damping: 34 }}
+                    className="absolute left-0 top-1/2 h-5 w-1 -translate-y-1/2 rounded-r-full bg-primary"
+                  />
+                </>
               )}
-              <Shield className="h-[18px] w-[18px] shrink-0" />
-              Trang quản trị
+              <Shield className="relative z-10 h-[18px] w-[18px] shrink-0 transition-transform group-hover:scale-110" />
+              <span className="relative z-10">Trang quản trị</span>
             </Link>
           </div>
         )}
@@ -198,15 +219,17 @@ export function Sidebar({
   return (
     <>
       {/* Desktop: fixed sidebar */}
-      <aside className="hidden border-r bg-card lg:fixed lg:inset-y-0 lg:left-0 lg:z-40 lg:block lg:w-64">
-        <NavContent user={user} />
+      <aside className="hidden border-r bg-card/80 backdrop-blur-xl lg:fixed lg:inset-y-0 lg:left-0 lg:z-40 lg:block lg:w-64">
+        <LayoutGroup id="sb-desktop">
+          <NavContent user={user} />
+        </LayoutGroup>
       </aside>
 
       {/* Mobile: slide-over drawer */}
       {mobileOpen && (
         <div className="fixed inset-0 z-50 lg:hidden">
-          <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" onClick={onClose} />
-          <aside className="absolute inset-y-0 left-0 w-72 max-w-[82%] bg-card shadow-2xl">
+          <div className="animate-fade-in absolute inset-0 bg-black/50 backdrop-blur-sm" onClick={onClose} />
+          <aside className="animate-fade-up absolute inset-y-0 left-0 w-72 max-w-[82%] bg-card shadow-2xl">
             <button
               onClick={onClose}
               aria-label="Đóng menu"
@@ -214,7 +237,9 @@ export function Sidebar({
             >
               <X className="h-5 w-5" />
             </button>
-            <NavContent user={user} onNavigate={onClose} />
+            <LayoutGroup id="sb-mobile">
+              <NavContent user={user} onNavigate={onClose} />
+            </LayoutGroup>
           </aside>
         </div>
       )}

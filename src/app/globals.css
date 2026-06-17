@@ -91,9 +91,110 @@
 .hero-grid {
   background-color: #f1f8ea;
   background-image:
-    linear-gradient(rgba(76, 120, 50, 0.07) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(76, 120, 50, 0.07) 1px, transparent 1px);
+    linear-gradient(rgba(76, 120, 50, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(76, 120, 50, 0.06) 1px, transparent 1px);
   background-size: 46px 46px;
+}
+
+/* ===== Peaceful green design system — backgrounds, glass, gradients, effects ===== */
+
+/* Calm layered green aurora — slowly pans for a living, peaceful feel */
+.aurora-bg {
+  background:
+    radial-gradient(48% 55% at 18% 22%, hsl(130 52% 38% / 0.18), transparent 60%),
+    radial-gradient(42% 50% at 82% 18%, hsl(150 55% 45% / 0.16), transparent 60%),
+    radial-gradient(55% 60% at 50% 95%, hsl(96 50% 55% / 0.16), transparent 62%),
+    linear-gradient(180deg, #f4faee 0%, #eaf6e0 100%);
+  background-size: 160% 160%, 160% 160%, 160% 160%, 100% 100%;
+  animation: auroraPan 22s ease-in-out infinite;
+}
+.peaceful-bg {
+  background:
+    radial-gradient(40% 45% at 12% 8%, hsl(130 52% 42% / 0.10), transparent 60%),
+    radial-gradient(36% 42% at 90% 6%, hsl(150 50% 48% / 0.09), transparent 60%),
+    hsl(var(--background));
+}
+
+/* Soft blurred ambient orb */
+.orb {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(46px);
+  will-change: transform;
+  pointer-events: none;
+}
+
+/* Frosted-glass surface (peaceful, airy cards) */
+.glass {
+  background: hsl(0 0% 100% / 0.62);
+  backdrop-filter: blur(14px) saturate(1.4);
+  -webkit-backdrop-filter: blur(14px) saturate(1.4);
+  border: 1px solid hsl(0 0% 100% / 0.55);
+}
+.glass-green {
+  background: linear-gradient(150deg, hsl(110 45% 96% / 0.85), hsl(130 40% 92% / 0.7));
+  backdrop-filter: blur(14px) saturate(1.4);
+  -webkit-backdrop-filter: blur(14px) saturate(1.4);
+  border: 1px solid hsl(130 40% 80% / 0.45);
+}
+
+/* Green gradient text */
+.text-gradient-green {
+  background: linear-gradient(105deg, hsl(130 55% 34%), hsl(150 60% 42%) 55%, hsl(96 55% 45%));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Sheen sweep used on hero CTA */
+.sheen {
+  position: relative;
+  overflow: hidden;
+}
+.sheen::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -60%;
+  width: 45%;
+  height: 100%;
+  background: linear-gradient(100deg, transparent, hsl(0 0% 100% / 0.45), transparent);
+  transform: skewX(-18deg);
+  animation: sheenSweep 3.6s ease-in-out infinite;
+}
+
+/* ===== Keyframes ===== */
+@keyframes auroraPan {
+  0%, 100% { background-position: 0% 50%, 100% 50%, 50% 100%, 0 0; }
+  50%      { background-position: 100% 50%, 0% 50%, 50% 0%, 0 0; }
+}
+@keyframes floatY  { 0%, 100% { transform: translateY(0); }  50% { transform: translateY(-18px); } }
+@keyframes floatY2 { 0%, 100% { transform: translateY(0); }  50% { transform: translateY(16px); } }
+@keyframes drift   { 0%, 100% { transform: translate(0, 0); } 50% { transform: translate(22px, -18px); } }
+@keyframes breathe { 0%, 100% { opacity: 0.45; transform: scale(1); } 50% { opacity: 0.8; transform: scale(1.08); } }
+@keyframes fadeUp  { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes fadeIn  { from { opacity: 0; } to { opacity: 1; } }
+@keyframes hanziDrift { 0%, 100% { transform: translateY(0) rotate(0deg); } 50% { transform: translateY(-20px) rotate(6deg); } }
+@keyframes spinSlow { to { transform: rotate(360deg); } }
+@keyframes sheenSweep { 0% { left: -60%; } 60%, 100% { left: 130%; } }
+
+/* ===== Animation utilities ===== */
+.animate-aurora     { animation: auroraPan 22s ease-in-out infinite; }
+.animate-float-y    { animation: floatY 6.5s ease-in-out infinite; }
+.animate-float-y2   { animation: floatY2 7.5s ease-in-out infinite; }
+.animate-drift      { animation: drift 17s ease-in-out infinite; }
+.animate-breathe    { animation: breathe 7s ease-in-out infinite; }
+.animate-fade-up    { animation: fadeUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) both; }
+.animate-fade-in    { animation: fadeIn 0.8s ease both; }
+.animate-hanzi      { animation: hanziDrift 9s ease-in-out infinite; }
+.animate-spin-slow  { animation: spinSlow 30s linear infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  .aurora-bg, .sheen::after,
+  .animate-aurora, .animate-float-y, .animate-float-y2, .animate-drift,
+  .animate-breathe, .animate-fade-up, .animate-fade-in, .animate-hanzi, .animate-spin-slow {
+    animation: none !important;
+  }
 }
 
 /* Tone colors */
