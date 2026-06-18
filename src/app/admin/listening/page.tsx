@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { db } from "@/lib/db";
 import { requireAdmin } from "@/lib/admin-guard";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -27,7 +28,7 @@ async function createListeningAction(fd: FormData): Promise<void> {
   });
   revalidatePath("/admin/listening");
 }
-import { Trash2, Plus } from "lucide-react";
+import { Trash2, Plus, ChevronRight } from "lucide-react";
 
 export default async function AdminListeningPage() {
   const tests = await db.listeningTest.findMany({
@@ -91,9 +92,16 @@ export default async function AdminListeningPage() {
                   </div>
                 </div>
               </div>
-              <form action={async () => { "use server"; await deleteListeningAction(test.id); }}>
-                <Button size="sm" variant="destructive" type="submit"><Trash2 className="h-4 w-4" /></Button>
-              </form>
+              <div className="flex shrink-0 gap-2">
+                <Link href={`/admin/listening/${test.id}`}>
+                  <Button size="sm" variant="outline">
+                    <ChevronRight className="h-4 w-4" /> Câu hỏi
+                  </Button>
+                </Link>
+                <form action={async () => { "use server"; await deleteListeningAction(test.id); }}>
+                  <Button size="sm" variant="destructive" type="submit"><Trash2 className="h-4 w-4" /></Button>
+                </form>
+              </div>
             </CardContent>
           </Card>
         ))}

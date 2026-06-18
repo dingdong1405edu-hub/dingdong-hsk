@@ -148,3 +148,106 @@ export async function createQuestionAction(fd: FormData) {
   if (listeningId) revalidatePath(`/admin/listening/${listeningId}`);
   return { ok: true };
 }
+
+export async function deleteQuestionAction(
+  questionId: string,
+  ref: { readingId?: string; listeningId?: string }
+) {
+  await requireAdmin();
+  await db.question.delete({ where: { id: questionId } });
+  if (ref.readingId) revalidatePath(`/admin/reading/${ref.readingId}`);
+  if (ref.listeningId) revalidatePath(`/admin/listening/${ref.listeningId}`);
+  return { ok: true };
+}
+
+// ===== Vocab / Grammar lessons =====
+// Lessons store their drills in `exercises` (JSON array). Vocab & Grammar share
+// the exact same shape, so the admin tooling is unified by a `skill` discriminator.
+const KNOWN_EXERCISE_TYPES = [
+  "match",
+  "translate",
+  "toneSelect",
+  "hanziInput",
+  "sentenceOrder",
+  "sentence_order",
+  "pinyinMatch",
+  "fill_blank",
+];
+
+type LessonSkill = "vocab" | "grammar";
+
+// Validate the admin-entered exercises JSON. Throws a Vietnamese Error message
+// (surfaced inline by the LessonEditor) so malformed content never reaches the DB.
+function parseExercises(raw: string): Prisma.InputJsonValue {
+  let parsed: unknown;
+  try {
+    parsed = JSON.parse(raw);
+  } catch {
+    throw new Error("Nội dung bài tập không phải JSON hợp lệ.");
+  }
+  if (!Array.isArray(parsed) || parsed.length === 0) {
+    throw new Error("Bài tập phải là một mảng JSON có ít nhất 1 phần tử.");
+  }
+  parsed.forEach((ex, i) => {
+    if (typeof ex !== "object" || ex === null || Array.isArray(ex)) {
+      throw new Error(`Phần tử #${i + 1} phải là một object { "type": ... }.`);
+    }
+    const t = (ex as { type?: unknown }).type;
+    if (typeof t !== "string" || !KNOWN_EXERCISE_TYPES.includes(t)) {
+      throw new Error(
+        `Phần tử #${i + 1} có "type" không hợp lệ: ${JSON.stringify(t)}. ` +
+          `Cho phép: ${KNOWN_EXERCISE_TYPES.join(", ")}.`
+      );
+    }
+  });
+  return parsed as Prisma.InputJsonValue;
+}
+
+// Create (no lessonId) or update (lessonId present) a lesson. Returns a result
+// object so the client form can show validation errors inline via useActionState.
+export async function saveLessonAction(
+  _prev: { ok: boolean; error?: string },
+  fd: FormData
+): Promise<{ ok: boolean; error?: string }> {
+  try {
+    await requireAdmin();
+    const skill = fd.get("skill") as LessonSkill;
+    const unitId = fd.get("unitId") as string;
+    const lessonId = (fd.get("lessonId") as string) || "";
+    const title = ((fd.get("title") as string) || "").trim();
+    const exercises = parseExercises(fd.get("exercises") as string);
+
+    if (skill === "vocab") {
+      if (lessonId) {
+        await db.vocabLesson.update({ where: { id: lessonId }, data: { title, exercises } });
+      } else {
+        const count = await db.vocabLesson.count({ where: { unitId } });
+        await db.vocabLesson.create({ data: { unitId, title, order: count + 1, exercises } });
+      }
+      revalidatePath(`/admin/vocab/${unitId}`);
+    } else {
+      if (lessonId) {
+        await db.grammarLesson.update({ where: { id: lessonId }, data: { title, exercises } });
+      } else {
+        const count = await db.grammarLesson.count({ where: { unitId } });
+        await db.grammarLesson.create({ data: { unitId, title, order: count + 1, exercises } });
+      }
+      revalidatePath(`/admin/grammar/${unitId}`);
+    }
+    return { ok: true };
+  } catch (e) {
+    return { ok: false, error: e instanceof Error ? e.message : "Lỗi không xác định." };
+  }
+}
+
+export async function deleteLessonAction(skill: LessonSkill, lessonId: string, unitId: string) {
+  await requireAdmin();
+  if (skill === "vocab") {
+    await db.vocabLesson.delete({ where: { id: lessonId } });
+    revalidatePath(`/admin/vocab/${unitId}`);
+  } else {
+    await db.grammarLesson.delete({ where: { id: lessonId } });
+    revalidatePath(`/admin/grammar/${unitId}`);
+  }
+  return { ok: true };
+}

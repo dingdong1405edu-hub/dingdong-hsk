@@ -60,6 +60,7 @@ model User {
   email         String    @unique
   name          String?
   image         String?
+  emailVerified DateTime?
   passwordHash  String?
   role          Role      @default(LEARNER)
   xp            Int       @default(0)

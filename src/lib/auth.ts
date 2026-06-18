@@ -27,10 +27,22 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
   callbacks: {
     ...authConfig.callbacks,
     // Block banned users from completing sign-in.
+    //
+    // IMPORTANT: this must FAIL-OPEN. If the DB lookup throws (cold start, brief
+    // connection drop, schema not yet pushed) we must NOT block the sign-in —
+    // otherwise a transient DB error locks *everyone* out of Google login. The
+    // only thing we deliberately reject is a confirmed `banned` user.
     async signIn({ user }) {
       if (!user?.email) return true;
-      const existing = await db.user.findUnique({ where: { email: user.email } });
-      if (existing?.banned) return false;
+      try {
+        const existing = await db.user.findUnique({
+          where: { email: user.email },
+          select: { banned: true },
+        });
+        if (existing?.banned) return false;
+      } catch (err) {
+        console.error("[auth] signIn ban-check failed, allowing sign-in:", err);
+      }
       return true;
     },
   },

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { db } from "@/lib/db";
 import { requireAdmin } from "@/lib/admin-guard";
 import { notFound } from "next/navigation";
@@ -39,7 +40,8 @@ async function createQuestionAction(fd: FormData): Promise<void> {
   });
   revalidatePath(`/admin/reading/${readingId}`);
 }
-import { Plus, Trash2 } from "lucide-react";
+import { Plus, ArrowLeft, Trash2 } from "lucide-react";
+import { deleteQuestionAction } from "@/server/actions/admin";
 
 interface Props { params: Promise<{ testId: string }> }
 
@@ -53,6 +55,12 @@ export default async function AdminReadingDetailPage({ params }: Props) {
 
   return (
     <div className="space-y-6">
+      <Link
+        href="/admin/reading"
+        className="inline-flex items-center gap-1.5 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+      >
+        <ArrowLeft className="h-4 w-4" /> Quay lại danh sách đề đọc
+      </Link>
       <div>
         <h1 className="text-xl font-bold">{test.title}</h1>
         <p className="font-chinese text-muted-foreground">{test.titleZh}</p>
@@ -106,7 +114,7 @@ export default async function AdminReadingDetailPage({ params }: Props) {
         {test.questions.map((q, idx) => (
           <Card key={q.id}>
             <CardContent className="p-3">
-              <div className="flex items-start justify-between">
+              <div className="flex items-start justify-between gap-3">
                 <div className="flex-1">
                   <span className="text-xs font-semibold text-muted-foreground">{idx + 1}. </span>
                   <span className="font-chinese text-sm">{q.prompt}</span>
@@ -114,6 +122,11 @@ export default async function AdminReadingDetailPage({ params }: Props) {
                     <Badge variant="secondary" className="text-xs">{q.type}</Badge>
                   </div>
                 </div>
+                <form action={async () => { "use server"; await deleteQuestionAction(q.id, { readingId: test.id }); }}>
+                  <Button size="sm" variant="ghost" type="submit" className="text-destructive">
+                    <Trash2 className="h-4 w-4" />
+                  </Button>
+                </form>
               </div>
             </CardContent>
           </Card>

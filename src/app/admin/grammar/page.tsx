@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { db } from "@/lib/db";
 import { requireAdmin } from "@/lib/admin-guard";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -8,7 +9,7 @@ import { Badge } from "@/components/ui/badge";
 import { hskLevelLabel } from "@/lib/utils";
 import { HSKLevel } from "@prisma/client";
 import { revalidatePath } from "next/cache";
-import { Plus, Trash2 } from "lucide-react";
+import { Plus, Trash2, ChevronRight } from "lucide-react";
 import { db as prisma } from "@/lib/db";
 
 async function createGrammarUnitAction(fd: FormData) {
@@ -90,9 +91,16 @@ export default async function AdminGrammarPage() {
                   </div>
                 </div>
               </div>
-              <form action={async () => { "use server"; await deleteGrammarUnitAction(u.id); }}>
-                <Button size="sm" variant="destructive" type="submit"><Trash2 className="h-4 w-4" /></Button>
-              </form>
+              <div className="flex shrink-0 gap-2">
+                <Link href={`/admin/grammar/${u.id}`}>
+                  <Button size="sm" variant="outline">
+                    <ChevronRight className="h-4 w-4" /> Bài học
+                  </Button>
+                </Link>
+                <form action={async () => { "use server"; await deleteGrammarUnitAction(u.id); }}>
+                  <Button size="sm" variant="destructive" type="submit"><Trash2 className="h-4 w-4" /></Button>
+                </form>
+              </div>
             </CardContent>
           </Card>
         ))}
