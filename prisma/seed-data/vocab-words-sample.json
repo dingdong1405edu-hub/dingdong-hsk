@@ -1,0 +1,288 @@
+{
+  "kind": "vocab",
+  "units": [
+    {
+      "id": "vu-sample-hsk1",
+      "title": "Bài mẫu — Từ vựng HSK1",
+      "titleZh": "示例词汇",
+      "hskLevel": "HSK1",
+      "order": 1,
+      "lessons": [
+        {
+          "id": "vl-sample-1",
+          "order": 1,
+          "title": "Bài 1 · Chào hỏi",
+          "exercises": [],
+          "words": [
+            {
+              "id": "vw-s1-1",
+              "hanzi": "你好",
+              "pinyin": "nǐ hǎo",
+              "meaning": "Xin chào",
+              "examples": [
+                { "hanzi": "你好！", "pinyin": "Nǐ hǎo!", "meaning": "Xin chào!" },
+                { "hanzi": "你好吗？", "pinyin": "Nǐ hǎo ma?", "meaning": "Bạn khỏe không?" }
+              ]
+            },
+            {
+              "id": "vw-s1-2",
+              "hanzi": "谢谢",
+              "pinyin": "xièxie",
+              "meaning": "Cảm ơn",
+              "examples": [
+                { "hanzi": "谢谢你。", "pinyin": "Xièxie nǐ.", "meaning": "Cảm ơn bạn." },
+                { "hanzi": "谢谢大家。", "pinyin": "Xièxie dàjiā.", "meaning": "Cảm ơn mọi người." }
+              ]
+            },
+            {
+              "id": "vw-s1-3",
+              "hanzi": "再见",
+              "pinyin": "zàijiàn",
+              "meaning": "Tạm biệt",
+              "examples": [
+                { "hanzi": "老师，再见！", "pinyin": "Lǎoshī, zàijiàn!", "meaning": "Tạm biệt thầy/cô!" },
+                { "hanzi": "明天见，再见。", "pinyin": "Míngtiān jiàn, zàijiàn.", "meaning": "Mai gặp, tạm biệt." }
+              ]
+            },
+            {
+              "id": "vw-s1-4",
+              "hanzi": "对不起",
+              "pinyin": "duìbuqǐ",
+              "meaning": "Xin lỗi",
+              "examples": [
+                { "hanzi": "对不起，我迟到了。", "pinyin": "Duìbuqǐ, wǒ chídào le.", "meaning": "Xin lỗi, tôi đến muộn." }
+              ]
+            },
+            {
+              "id": "vw-s1-5",
+              "hanzi": "请",
+              "pinyin": "qǐng",
+              "meaning": "Mời; xin",
+              "examples": [
+                { "hanzi": "请进。", "pinyin": "Qǐng jìn.", "meaning": "Mời vào." },
+                { "hanzi": "请坐。", "pinyin": "Qǐng zuò.", "meaning": "Mời ngồi." }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "vl-sample-2",
+          "order": 2,
+          "title": "Bài 2 · Số đếm 1–5",
+          "exercises": [],
+          "words": [
+            {
+              "id": "vw-s2-1",
+              "hanzi": "一",
+              "pinyin": "yī",
+              "meaning": "Một (số 1)",
+              "examples": [
+                { "hanzi": "一个人", "pinyin": "yī gè rén", "meaning": "một người" },
+                { "hanzi": "我有一本书。", "pinyin": "Wǒ yǒu yī běn shū.", "meaning": "Tôi có một quyển sách." }
+              ]
+            },
+            {
+              "id": "vw-s2-2",
+              "hanzi": "二",
+              "pinyin": "èr",
+              "meaning": "Hai (số 2)",
+              "examples": [
+                { "hanzi": "二十", "pinyin": "èrshí", "meaning": "hai mươi" },
+                { "hanzi": "二号", "pinyin": "èr hào", "meaning": "ngày mùng 2" }
+              ]
+            },
+            {
+              "id": "vw-s2-3",
+              "hanzi": "三",
+              "pinyin": "sān",
+              "meaning": "Ba (số 3)",
+              "examples": [
+                { "hanzi": "三个苹果", "pinyin": "sān gè píngguǒ", "meaning": "ba quả táo" }
+              ]
+            },
+            {
+              "id": "vw-s2-4",
+              "hanzi": "四",
+              "pinyin": "sì",
+              "meaning": "Bốn (số 4)",
+              "examples": [
+                { "hanzi": "四点", "pinyin": "sì diǎn", "meaning": "4 giờ" },
+                { "hanzi": "四个人", "pinyin": "sì gè rén", "meaning": "bốn người" }
+              ]
+            },
+            {
+              "id": "vw-s2-5",
+              "hanzi": "五",
+              "pinyin": "wǔ",
+              "meaning": "Năm (số 5)",
+              "examples": [
+                { "hanzi": "五十", "pinyin": "wǔshí", "meaning": "năm mươi" },
+                { "hanzi": "五个学生", "pinyin": "wǔ gè xuéshēng", "meaning": "năm học sinh" }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "vl-sample-3",
+          "order": 3,
+          "title": "Bài 3 · Gia đình",
+          "exercises": [],
+          "words": [
+            {
+              "id": "vw-s3-1",
+              "hanzi": "爸爸",
+              "pinyin": "bàba",
+              "meaning": "Bố",
+              "examples": [
+                { "hanzi": "我爸爸是医生。", "pinyin": "Wǒ bàba shì yīshēng.", "meaning": "Bố tôi là bác sĩ." }
+              ]
+            },
+            {
+              "id": "vw-s3-2",
+              "hanzi": "妈妈",
+              "pinyin": "māma",
+              "meaning": "Mẹ",
+              "examples": [
+                { "hanzi": "妈妈在家。", "pinyin": "Māma zài jiā.", "meaning": "Mẹ ở nhà." }
+              ]
+            },
+            {
+              "id": "vw-s3-3",
+              "hanzi": "哥哥",
+              "pinyin": "gēge",
+              "meaning": "Anh trai",
+              "examples": [
+                { "hanzi": "我有一个哥哥。", "pinyin": "Wǒ yǒu yī gè gēge.", "meaning": "Tôi có một anh trai." }
+              ]
+            },
+            {
+              "id": "vw-s3-4",
+              "hanzi": "妹妹",
+              "pinyin": "mèimei",
+              "meaning": "Em gái",
+              "examples": [
+                { "hanzi": "她是我妹妹。", "pinyin": "Tā shì wǒ mèimei.", "meaning": "Cô ấy là em gái tôi." }
+              ]
+            },
+            {
+              "id": "vw-s3-5",
+              "hanzi": "家",
+              "pinyin": "jiā",
+              "meaning": "Nhà; gia đình",
+              "examples": [
+                { "hanzi": "我家有四口人。", "pinyin": "Wǒ jiā yǒu sì kǒu rén.", "meaning": "Nhà tôi có bốn người." }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "vl-sample-4",
+          "order": 4,
+          "title": "Bài 4 · Ăn uống",
+          "exercises": [],
+          "words": [
+            {
+              "id": "vw-s4-1",
+              "hanzi": "吃",
+              "pinyin": "chī",
+              "meaning": "Ăn",
+              "examples": [
+                { "hanzi": "我喜欢吃米饭。", "pinyin": "Wǒ xǐhuān chī mǐfàn.", "meaning": "Tôi thích ăn cơm." }
+              ]
+            },
+            {
+              "id": "vw-s4-2",
+              "hanzi": "喝",
+              "pinyin": "hē",
+              "meaning": "Uống",
+              "examples": [
+                { "hanzi": "你喝茶吗？", "pinyin": "Nǐ hē chá ma?", "meaning": "Bạn uống trà không?" }
+              ]
+            },
+            {
+              "id": "vw-s4-3",
+              "hanzi": "水",
+              "pinyin": "shuǐ",
+              "meaning": "Nước",
+              "examples": [
+                { "hanzi": "我想喝水。", "pinyin": "Wǒ xiǎng hē shuǐ.", "meaning": "Tôi muốn uống nước." }
+              ]
+            },
+            {
+              "id": "vw-s4-4",
+              "hanzi": "茶",
+              "pinyin": "chá",
+              "meaning": "Trà",
+              "examples": [
+                { "hanzi": "这是中国茶。", "pinyin": "Zhè shì Zhōngguó chá.", "meaning": "Đây là trà Trung Quốc." }
+              ]
+            },
+            {
+              "id": "vw-s4-5",
+              "hanzi": "饭",
+              "pinyin": "fàn",
+              "meaning": "Cơm; bữa ăn",
+              "examples": [
+                { "hanzi": "我们吃饭吧。", "pinyin": "Wǒmen chī fàn ba.", "meaning": "Chúng ta ăn cơm nào." }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "vl-sample-5",
+          "order": 5,
+          "title": "Bài 5 · Thời gian",
+          "exercises": [],
+          "words": [
+            {
+              "id": "vw-s5-1",
+              "hanzi": "今天",
+              "pinyin": "jīntiān",
+              "meaning": "Hôm nay",
+              "examples": [
+                { "hanzi": "今天天气很好。", "pinyin": "Jīntiān tiānqì hěn hǎo.", "meaning": "Hôm nay thời tiết rất đẹp." }
+              ]
+            },
+            {
+              "id": "vw-s5-2",
+              "hanzi": "明天",
+              "pinyin": "míngtiān",
+              "meaning": "Ngày mai",
+              "examples": [
+                { "hanzi": "明天见。", "pinyin": "Míngtiān jiàn.", "meaning": "Hẹn gặp ngày mai." }
+              ]
+            },
+            {
+              "id": "vw-s5-3",
+              "hanzi": "昨天",
+              "pinyin": "zuótiān",
+              "meaning": "Hôm qua",
+              "examples": [
+                { "hanzi": "昨天我很忙。", "pinyin": "Zuótiān wǒ hěn máng.", "meaning": "Hôm qua tôi rất bận." }
+              ]
+            },
+            {
+              "id": "vw-s5-4",
+              "hanzi": "现在",
+              "pinyin": "xiànzài",
+              "meaning": "Bây giờ",
+              "examples": [
+                { "hanzi": "现在几点？", "pinyin": "Xiànzài jǐ diǎn?", "meaning": "Bây giờ mấy giờ?" }
+              ]
+            },
+            {
+              "id": "vw-s5-5",
+              "hanzi": "月",
+              "pinyin": "yuè",
+              "meaning": "Tháng",
+              "examples": [
+                { "hanzi": "一月", "pinyin": "yī yuè", "meaning": "tháng Một" },
+                { "hanzi": "这个月", "pinyin": "zhège yuè", "meaning": "tháng này" }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

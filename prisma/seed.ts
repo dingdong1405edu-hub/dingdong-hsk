@@ -63,12 +63,33 @@ async function loadSeedData() {
             const unitData = { title: u.title, titleZh: u.titleZh, hskLevel: u.hskLevel as HSKLevel, order: u.order ?? 1 };
             await (unitModel as any).upsert({ where: { id: u.id }, update: unitData, create: { id: u.id, ...unitData } });
             for (const l of u.lessons ?? []) {
-              const lessonData = { title: l.title ?? "", order: l.order ?? 1, exercises: l.exercises as Prisma.InputJsonValue };
+              const lessonData = { title: l.title ?? "", order: l.order ?? 1, exercises: (l.exercises ?? []) as Prisma.InputJsonValue };
               await (lessonModel as any).upsert({
                 where: { id: l.id },
                 update: lessonData,
                 create: { id: l.id, unitId: u.id, ...lessonData },
               });
+              // Vocab-only: per-word content driving the show → trace → write →
+              // flashcard learner flow. Upsert by stable id so re-seeding merges.
+              if (!isGrammar && Array.isArray(l.words)) {
+                let wOrder = 0;
+                for (const w of l.words) {
+                  wOrder++;
+                  const wordData = {
+                    order: w.order ?? wOrder,
+                    hanzi: w.hanzi,
+                    pinyin: w.pinyin,
+                    meaning: w.meaning,
+                    examples: (w.examples ?? []) as Prisma.InputJsonValue,
+                    audioUrl: w.audioUrl ?? null,
+                  };
+                  await prisma.vocabWord.upsert({
+                    where: { id: w.id },
+                    update: wordData,
+                    create: { id: w.id, lessonId: l.id, ...wordData },
+                  });
+                }
+              }
             }
             counts[doc.kind]++;
           }
