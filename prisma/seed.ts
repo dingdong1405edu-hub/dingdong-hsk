@@ -186,6 +186,49 @@ async function loadSeedData() {
   console.log("[seed-data] loaded:", JSON.stringify(counts));
 }
 
+// Derive vocabulary words (hanzi/pinyin/meaning) from a lesson's legacy
+// `exercises` JSON so the per-word learner flow has content. Prefers `match`
+// pairs (they carry all three fields), then falls back to pinyinMatch / translate.
+function wordsFromExercises(exercises: any): Array<{ hanzi: string; pinyin: string; meaning: string }> {
+  const list = Array.isArray(exercises) ? exercises : [];
+  const out: Array<{ hanzi: string; pinyin: string; meaning: string }> = [];
+  const seen = new Set<string>();
+  const add = (hanzi: any, pinyin: any, meaning: any) => {
+    const h = String(hanzi ?? "").trim();
+    if (!h || seen.has(h)) return;
+    seen.add(h);
+    out.push({ hanzi: h, pinyin: String(pinyin ?? "").trim(), meaning: String(meaning ?? "").trim() });
+  };
+  for (const e of list) if (e?.type === "match" && Array.isArray(e.pairs)) for (const p of e.pairs) add(p.zh, p.pinyin, p.vi);
+  if (out.length === 0) for (const e of list) if (e?.type === "pinyinMatch" && Array.isArray(e.pairs)) for (const p of e.pairs) add(p.zh, p.pinyin, "");
+  if (out.length === 0) for (const e of list) if (e?.type === "translate" && e.direction === "vi_to_zh" && e.answer) add(e.answer, e.pinyin, e.prompt);
+  return out;
+}
+
+// Backfill: any vocab lesson with no VocabWord rows gets words derived from its
+// exercises. Idempotent — lessons that already have words (sample data or
+// admin-authored) are skipped, so manual edits are never clobbered.
+async function migrateVocabWords() {
+  const lessons = await prisma.vocabLesson.findMany({ include: { _count: { select: { words: true } } } });
+  let populated = 0;
+  let upserted = 0;
+  for (const l of lessons) {
+    if (l._count.words > 0) continue;
+    const words = wordsFromExercises(l.exercises);
+    if (words.length === 0) continue;
+    populated++;
+    let i = 0;
+    for (const w of words) {
+      i++;
+      const id = `${l.id}-mw${i}`;
+      const data = { order: i, hanzi: w.hanzi, pinyin: w.pinyin, meaning: w.meaning, examples: [] as Prisma.InputJsonValue };
+      await prisma.vocabWord.upsert({ where: { id }, update: data, create: { id, lessonId: l.id, ...data } });
+      upserted++;
+    }
+  }
+  console.log(`[migrate vocab words] lessons populated: ${populated}, words upserted: ${upserted}`);
+}
+
 async function main() {
   console.log("Seeding database...");
 
@@ -778,6 +821,9 @@ async function main() {
 
   // ===== Bulk content authored in batch (prisma/seed-data/*.json) =====
   await loadSeedData();
+
+  // Backfill per-word vocab content from legacy exercises so every lesson has words.
+  await migrateVocabWords();
 
   console.log("Seeding completed!");
 }
