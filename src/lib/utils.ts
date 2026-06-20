@@ -14,6 +14,28 @@ export function countChineseChars(text: string): number {
   return count;
 }
 
+/**
+ * Split a sentence into segments, flagging every occurrence of `word` so the
+ * caller can bold it (used to highlight the target word inside example
+ * sentences). Plain string match — Chinese has no spaces so substring is exact.
+ */
+export function markWord(sentence: string, word: string): Array<{ text: string; match: boolean }> {
+  if (!word || !sentence.includes(word)) return [{ text: sentence, match: false }];
+  const out: Array<{ text: string; match: boolean }> = [];
+  let i = 0;
+  while (i < sentence.length) {
+    const idx = sentence.indexOf(word, i);
+    if (idx === -1) {
+      out.push({ text: sentence.slice(i), match: false });
+      break;
+    }
+    if (idx > i) out.push({ text: sentence.slice(i, idx), match: false });
+    out.push({ text: word, match: true });
+    i = idx + word.length;
+  }
+  return out;
+}
+
 export function formatDuration(seconds: number): string {
   const m = Math.floor(seconds / 60);
   const s = seconds % 60;

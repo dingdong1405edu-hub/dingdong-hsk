@@ -136,8 +136,29 @@ model VocabLesson {
   exercises Json
 
   progress  VocabProgress[]
+  words     VocabWord[]
 
   @@index([unitId, order])
+}
+
+/// A single vocabulary word taught in the per-word learner flow
+/// (show + auto-read → trace strokes → write → flashcards). Authored from the
+/// admin word editor. Stroke data is NOT stored here — Hanzi Writer loads it from
+/// CDN by character. `examples` is a JSON array of { hanzi, pinyin, meaning }.
+model VocabWord {
+  id        String      @id @default(cuid())
+  lessonId  String
+  lesson    VocabLesson @relation(fields: [lessonId], references: [id], onDelete: Cascade)
+  order     Int
+  hanzi     String
+  pinyin    String
+  meaning   String
+  examples  Json        @default("[]")
+  audioUrl  String?
+  createdAt DateTime    @default(now())
+  updatedAt DateTime    @updatedAt @default(now())
+
+  @@index([lessonId, order])
 }
 
 model VocabProgress {

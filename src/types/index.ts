@@ -49,6 +49,26 @@ export interface FillBlankExercise extends Exercise {
   hint?: string;
 }
 
+/** One example sentence attached to a vocabulary word. */
+export interface WordExample {
+  hanzi: string;
+  pinyin: string;
+  meaning: string;
+}
+
+/** A vocabulary word as consumed by the learner per-word flow (serialised from
+ *  the VocabWord model — `examples` parsed, `audioUrl` nullable). */
+export interface VocabWordCard {
+  id: string;
+  lessonId: string;
+  order: number;
+  hanzi: string;
+  pinyin: string;
+  meaning: string;
+  examples: WordExample[];
+  audioUrl: string | null;
+}
+
 export interface QuestionOption {
   text: string;
   pinyin?: string;

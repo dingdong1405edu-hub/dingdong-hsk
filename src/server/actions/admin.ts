@@ -251,3 +251,124 @@ export async function deleteLessonAction(skill: LessonSkill, lessonId: string, u
   }
   return { ok: true };
 }
+
+// ===== Vocab words (per-word learner flow) =====
+// Each VocabWord drives the show → trace → write → flashcard flow. The admin
+// word editor calls these directly with typed objects (not FormData).
+const wordExampleSchema = z.object({
+  hanzi: z.string().trim().min(1, "Câu ví dụ không được để trống."),
+  pinyin: z.string().trim().default(""),
+  meaning: z.string().trim().default(""),
+});
+
+const vocabWordSchema = z.object({
+  id: z.string().optional(), // present → update, absent → create
+  lessonId: z.string().min(1),
+  unitId: z.string().min(1), // for revalidation only
+  hanzi: z.string().trim().min(1, "Thiếu chữ Hán."),
+  pinyin: z.string().trim().min(1, "Thiếu pinyin."),
+  meaning: z.string().trim().min(1, "Thiếu nghĩa tiếng Việt."),
+  audioUrl: z.string().trim().optional(),
+  examples: z.array(wordExampleSchema).default([]),
+});
+
+export type VocabWordInput = z.input<typeof vocabWordSchema>;
+
+export async function saveVocabWordAction(
+  input: VocabWordInput
+): Promise<{ ok: boolean; error?: string }> {
+  try {
+    await requireAdmin();
+    const data = vocabWordSchema.parse(input);
+
+    // Every example must contain the word's hanzi — the learner UI auto-bolds it,
+    // so an example without the word would render nothing to highlight.
+    for (const ex of data.examples) {
+      if (!ex.hanzi.includes(data.hanzi)) {
+        throw new Error(`Câu ví dụ “${ex.hanzi}” không chứa chữ “${data.hanzi}”.`);
+      }
+    }
+
+    // Ownership: the target lesson must exist and belong to the given unit.
+    const lesson = await db.vocabLesson.findUnique({
+      where: { id: data.lessonId },
+      select: { unitId: true },
+    });
+    if (!lesson || lesson.unitId !== data.unitId) {
+      throw new Error("Bài học không hợp lệ.");
+    }
+
+    const examples = data.examples as unknown as Prisma.InputJsonValue;
+    const audioUrl = data.audioUrl ? data.audioUrl : null;
+
+    if (data.id) {
+      // The word being edited must actually live in this lesson.
+      const existing = await db.vocabWord.findUnique({
+        where: { id: data.id },
+        select: { lessonId: true },
+      });
+      if (!existing || existing.lessonId !== data.lessonId) {
+        throw new Error("Từ không thuộc bài học này.");
+      }
+      await db.vocabWord.update({
+        where: { id: data.id },
+        data: { hanzi: data.hanzi, pinyin: data.pinyin, meaning: data.meaning, audioUrl, examples },
+      });
+    } else {
+      const count = await db.vocabWord.count({ where: { lessonId: data.lessonId } });
+      await db.vocabWord.create({
+        data: {
+          lessonId: data.lessonId,
+          order: count + 1,
+          hanzi: data.hanzi,
+          pinyin: data.pinyin,
+          meaning: data.meaning,
+          audioUrl,
+          examples,
+        },
+      });
+    }
+    revalidatePath(`/admin/vocab/${data.unitId}`);
+    return { ok: true };
+  } catch (e) {
+    return { ok: false, error: e instanceof Error ? e.message : "Lỗi không xác định." };
+  }
+}
+
+export async function deleteVocabWordAction(id: string, unitId: string) {
+  await requireAdmin();
+  const word = await db.vocabWord.findUnique({
+    where: { id },
+    select: { lesson: { select: { unitId: true } } },
+  });
+  if (!word || word.lesson.unitId !== unitId) {
+    throw new Error("Không tìm thấy từ trong unit này.");
+  }
+  await db.vocabWord.delete({ where: { id } });
+  revalidatePath(`/admin/vocab/${unitId}`);
+  return { ok: true };
+}
+
+export async function reorderVocabWordsAction(unitId: string, orderedIds: string[]) {
+  await requireAdmin();
+  if (orderedIds.length === 0) return { ok: true };
+  // Every word must exist, share one lesson, and that lesson must be in this unit
+  // — otherwise reordering could corrupt the `order` sequence across lessons.
+  const words = await db.vocabWord.findMany({
+    where: { id: { in: orderedIds } },
+    select: { id: true, lessonId: true, lesson: { select: { unitId: true } } },
+  });
+  const lessonIds = new Set(words.map((w) => w.lessonId));
+  if (
+    words.length !== orderedIds.length ||
+    lessonIds.size !== 1 ||
+    words.some((w) => w.lesson.unitId !== unitId)
+  ) {
+    throw new Error("Danh sách sắp xếp không hợp lệ.");
+  }
+  await db.$transaction(
+    orderedIds.map((id, i) => db.vocabWord.update({ where: { id }, data: { order: i + 1 } }))
+  );
+  revalidatePath(`/admin/vocab/${unitId}`);
+  return { ok: true };
+}

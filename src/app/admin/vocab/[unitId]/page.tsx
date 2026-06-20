@@ -1,13 +1,32 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { revalidatePath } from "next/cache";
+import { Prisma } from "@prisma/client";
 import { db } from "@/lib/db";
+import { requireAdmin } from "@/lib/admin-guard";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 import { ArrowLeft, Plus, Trash2 } from "lucide-react";
 import { hskLevelLabel } from "@/lib/utils";
 import { LessonEditor } from "@/components/admin/lesson-editor";
+import { VocabWordEditor } from "@/components/admin/vocab-word-editor";
 import { deleteLessonAction } from "@/server/actions/admin";
+import type { VocabWordCard, WordExample } from "@/types";
+
+async function createVocabLessonAction(fd: FormData) {
+  "use server";
+  await requireAdmin();
+  const unitId = fd.get("unitId") as string;
+  const title = ((fd.get("title") as string) || "").trim();
+  const count = await db.vocabLesson.count({ where: { unitId } });
+  await db.vocabLesson.create({
+    data: { unitId, title, order: count + 1, exercises: [] as Prisma.InputJsonValue },
+  });
+  revalidatePath(`/admin/vocab/${unitId}`);
+}
 
 interface Props {
   params: Promise<{ unitId: string }>;
@@ -17,7 +36,12 @@ export default async function AdminVocabUnitPage({ params }: Props) {
   const { unitId } = await params;
   const unit = await db.vocabUnit.findUnique({
     where: { id: unitId },
-    include: { lessons: { orderBy: { order: "asc" } } },
+    include: {
+      lessons: {
+        orderBy: { order: "asc" },
+        include: { words: { orderBy: { order: "asc" } } },
+      },
+    },
   });
   if (!unit) notFound();
 
@@ -49,7 +73,17 @@ export default async function AdminVocabUnitPage({ params }: Props) {
           </CardTitle>
         </CardHeader>
         <CardContent>
-          <LessonEditor skill="vocab" unitId={unitId} />
+          <form action={createVocabLessonAction} className="flex items-end gap-2">
+            <input type="hidden" name="unitId" value={unitId} />
+            <div className="flex-1 space-y-1">
+              <Label>Tên bài học</Label>
+              <Input name="title" placeholder="VD: Chào hỏi cơ bản" />
+            </div>
+            <Button type="submit">Tạo bài</Button>
+          </form>
+          <p className="mt-2 text-[11px] text-muted-foreground">
+            Tạo bài rồi thêm từng từ vựng (chữ Hán, pinyin, nghĩa, ví dụ) ở danh sách bên dưới.
+          </p>
         </CardContent>
       </Card>
 
@@ -61,48 +95,64 @@ export default async function AdminVocabUnitPage({ params }: Props) {
             Chưa có bài học nào. Dùng form bên trên để tạo bài đầu tiên.
           </p>
         ) : (
-          unit.lessons.map((lesson, idx) => (
-            <Card key={lesson.id}>
-              <CardContent className="p-4">
-                <div className="flex items-center justify-between gap-3">
-                  <div className="flex items-center gap-3">
-                    <div className="flex h-8 w-8 items-center justify-center rounded-full bg-primary/10 text-sm font-bold text-primary">
-                      {idx + 1}
-                    </div>
-                    <div>
-                      <div className="font-medium">{lesson.title || `Bài ${idx + 1}`}</div>
-                      <div className="text-xs text-muted-foreground">
-                        {(lesson.exercises as unknown[]).length} bài tập
+          unit.lessons.map((lesson, idx) => {
+            const words: VocabWordCard[] = lesson.words.map((w) => ({
+              id: w.id,
+              lessonId: w.lessonId,
+              order: w.order,
+              hanzi: w.hanzi,
+              pinyin: w.pinyin,
+              meaning: w.meaning,
+              examples: Array.isArray(w.examples) ? (w.examples as unknown as WordExample[]) : [],
+              audioUrl: w.audioUrl,
+            }));
+            return (
+              <Card key={lesson.id}>
+                <CardContent className="p-4">
+                  <div className="flex items-center justify-between gap-3">
+                    <div className="flex items-center gap-3">
+                      <div className="flex h-8 w-8 items-center justify-center rounded-full bg-primary/10 text-sm font-bold text-primary">
+                        {idx + 1}
+                      </div>
+                      <div>
+                        <div className="font-medium">{lesson.title || `Bài ${idx + 1}`}</div>
+                        <div className="text-xs text-muted-foreground">{words.length} từ vựng</div>
                       </div>
                     </div>
+                    <form
+                      action={async () => {
+                        "use server";
+                        await deleteLessonAction("vocab", lesson.id, unitId);
+                      }}
+                    >
+                      <Button size="sm" variant="destructive" type="submit">
+                        <Trash2 className="h-4 w-4" />
+                      </Button>
+                    </form>
                   </div>
-                  <form
-                    action={async () => {
-                      "use server";
-                      await deleteLessonAction("vocab", lesson.id, unitId);
-                    }}
-                  >
-                    <Button size="sm" variant="destructive" type="submit">
-                      <Trash2 className="h-4 w-4" />
-                    </Button>
-                  </form>
-                </div>
 
-                <details className="mt-3">
-                  <summary className="cursor-pointer text-sm font-medium text-primary">
-                    Sửa nội dung bài học
-                  </summary>
+                  {/* Primary: per-word content for the learner flow */}
                   <div className="mt-3 border-t pt-3">
-                    <LessonEditor
-                      skill="vocab"
-                      unitId={unitId}
-                      lesson={{ id: lesson.id, title: lesson.title, exercises: lesson.exercises }}
-                    />
+                    <VocabWordEditor lessonId={lesson.id} unitId={unitId} words={words} />
                   </div>
-                </details>
-              </CardContent>
-            </Card>
-          ))
+
+                  {/* Advanced: legacy JSON drills (not shown in the vocab learner flow) */}
+                  <details className="mt-3">
+                    <summary className="cursor-pointer text-xs font-medium text-muted-foreground">
+                      Nâng cao: bài tập JSON (Duolingo)
+                    </summary>
+                    <div className="mt-3 border-t pt-3">
+                      <LessonEditor
+                        skill="vocab"
+                        unitId={unitId}
+                        lesson={{ id: lesson.id, title: lesson.title, exercises: lesson.exercises }}
+                      />
+                    </div>
+                  </details>
+                </CardContent>
+              </Card>
+            );
+          })
         )}
       </div>
     </div>

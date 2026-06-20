@@ -24,6 +24,7 @@ export default async function VocabUnitPage({ params }: Props) {
         orderBy: { order: "asc" },
         include: {
           progress: { where: { userId: session.user.id } },
+          _count: { select: { words: true } },
         },
       },
     },
@@ -51,7 +52,7 @@ export default async function VocabUnitPage({ params }: Props) {
                   <div>
                     <div className="font-medium">{lesson.title || `Bài ${idx + 1}`}</div>
                     <div className="text-xs text-muted-foreground">
-                      {(lesson.exercises as unknown[]).length} câu hỏi
+                      {lesson._count.words} từ vựng
                     </div>
                   </div>
                 </div>
