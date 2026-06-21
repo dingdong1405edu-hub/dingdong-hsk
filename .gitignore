@@ -42,3 +42,9 @@ prisma/migrations/dev.db
 # Audio uploads
 /public/audio/uploads/
 /data/
+
+# Railway secrets snapshot (added when pulling project)
+/railway/
+
+# Claude Code local workspace
+/.claude/

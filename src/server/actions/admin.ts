@@ -172,12 +172,28 @@ const KNOWN_EXERCISE_TYPES = [
   "sentence_order",
   "pinyinMatch",
   "fill_blank",
+  "answer_question",
+  "type_sentence",
 ];
 
 type LessonSkill = "vocab" | "grammar";
 
-// Validate the admin-entered exercises JSON. Throws a Vietnamese Error message
-// (surfaced inline by the LessonEditor) so malformed content never reaches the DB.
+// Validate a single exercise object. Throws a Vietnamese Error so malformed
+// content never reaches the DB (surfaced inline by the LessonEditor).
+function validateExercise(ex: unknown, i: number, label: string): void {
+  if (typeof ex !== "object" || ex === null || Array.isArray(ex)) {
+    throw new Error(`${label} #${i + 1} phải là một object { "type": ... }.`);
+  }
+  const t = (ex as { type?: unknown }).type;
+  if (typeof t !== "string" || !KNOWN_EXERCISE_TYPES.includes(t)) {
+    throw new Error(
+      `${label} #${i + 1} có "type" không hợp lệ: ${JSON.stringify(t)}. ` +
+        `Cho phép: ${KNOWN_EXERCISE_TYPES.join(", ")}.`
+    );
+  }
+}
+
+// Vocab lessons: a flat, non-empty array of drills.
 function parseExercises(raw: string): Prisma.InputJsonValue {
   let parsed: unknown;
   try {
@@ -188,18 +204,72 @@ function parseExercises(raw: string): Prisma.InputJsonValue {
   if (!Array.isArray(parsed) || parsed.length === 0) {
     throw new Error("Bài tập phải là một mảng JSON có ít nhất 1 phần tử.");
   }
-  parsed.forEach((ex, i) => {
-    if (typeof ex !== "object" || ex === null || Array.isArray(ex)) {
-      throw new Error(`Phần tử #${i + 1} phải là một object { "type": ... }.`);
+  parsed.forEach((ex, i) => validateExercise(ex, i, "Phần tử"));
+  return parsed as Prisma.InputJsonValue;
+}
+
+// Grammar lessons: the structured { theory, flashcards, test } object. A legacy
+// bare array is accepted and wrapped as flashcards-only so old content still saves.
+function parseGrammarLessonInput(raw: string): Prisma.InputJsonValue {
+  let parsed: unknown;
+  try {
+    parsed = JSON.parse(raw);
+  } catch {
+    throw new Error("Nội dung bài học không phải JSON hợp lệ.");
+  }
+
+  if (Array.isArray(parsed)) {
+    parsed.forEach((ex, i) => validateExercise(ex, i, "Bài tập"));
+    return {
+      version: 2,
+      theory: [],
+      flashcards: parsed,
+      test: { questions: [], passThreshold: 60 },
+    } as unknown as Prisma.InputJsonValue;
+  }
+
+  if (typeof parsed !== "object" || parsed === null) {
+    throw new Error(
+      'Nội dung phải là object { "theory": [...], "flashcards": [...], "test": {...} } hoặc một mảng bài tập.'
+    );
+  }
+
+  const obj = parsed as Record<string, unknown>;
+  const theory = obj.theory ?? [];
+  const flashcards = obj.flashcards ?? [];
+  const testObj = obj.test ?? {};
+
+  if (!Array.isArray(theory)) throw new Error('"theory" phải là một mảng.');
+  if (!Array.isArray(flashcards)) throw new Error('"flashcards" phải là một mảng.');
+  if (typeof testObj !== "object" || testObj === null || Array.isArray(testObj)) {
+    throw new Error('"test" phải là một object { "questions": [...] }.');
+  }
+  const questions = (testObj as Record<string, unknown>).questions ?? [];
+  if (!Array.isArray(questions)) throw new Error('"test.questions" phải là một mảng.');
+
+  theory.forEach((s, i) => {
+    if (typeof s !== "object" || s === null || Array.isArray(s)) {
+      throw new Error(`Mục lý thuyết #${i + 1} phải là một object.`);
     }
-    const t = (ex as { type?: unknown }).type;
-    if (typeof t !== "string" || !KNOWN_EXERCISE_TYPES.includes(t)) {
-      throw new Error(
-        `Phần tử #${i + 1} có "type" không hợp lệ: ${JSON.stringify(t)}. ` +
-          `Cho phép: ${KNOWN_EXERCISE_TYPES.join(", ")}.`
-      );
+    const sec = s as Record<string, unknown>;
+    if (typeof sec.title !== "string" || !sec.title.trim()) {
+      throw new Error(`Mục lý thuyết #${i + 1} thiếu "title".`);
+    }
+    if (typeof sec.explanation !== "string" || !sec.explanation.trim()) {
+      throw new Error(`Mục lý thuyết #${i + 1} thiếu "explanation".`);
+    }
+    if (!Array.isArray(sec.examples)) {
+      throw new Error(`Mục lý thuyết #${i + 1} phải có "examples" là một mảng (có thể để [] nếu không có ví dụ).`);
     }
   });
+
+  flashcards.forEach((ex, i) => validateExercise(ex, i, "Flashcard"));
+  questions.forEach((q, i) => validateExercise(q, i, "Câu hỏi test"));
+
+  if (theory.length === 0 && flashcards.length === 0 && questions.length === 0) {
+    throw new Error("Bài học phải có ít nhất một mục lý thuyết, flashcard hoặc câu hỏi test.");
+  }
+
   return parsed as Prisma.InputJsonValue;
 }
 
@@ -215,7 +285,10 @@ export async function saveLessonAction(
     const unitId = fd.get("unitId") as string;
     const lessonId = (fd.get("lessonId") as string) || "";
     const title = ((fd.get("title") as string) || "").trim();
-    const exercises = parseExercises(fd.get("exercises") as string);
+    const exercises =
+      skill === "grammar"
+        ? parseGrammarLessonInput(fd.get("exercises") as string)
+        : parseExercises(fd.get("exercises") as string);
 
     if (skill === "vocab") {
       if (lessonId) {

@@ -7,7 +7,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { AlertTriangle, CheckCircle2, Save } from "lucide-react";
 
-const TEMPLATE = `[
+const VOCAB_TEMPLATE = `[
   {
     "type": "translate",
     "direction": "zh_to_vi",
@@ -26,6 +26,70 @@ const TEMPLATE = `[
   }
 ]`;
 
+// Grammar lessons use the structured object: theory (lý thuyết) → flashcards
+// (luyện tập, có thể bỏ qua) → test (bài kiểm tra tổng hợp, đạt ≥ passThreshold%).
+const GRAMMAR_TEMPLATE = `{
+  "version": 2,
+  "theory": [
+    {
+      "id": "shi-1",
+      "title": "Câu với 是 (shì)",
+      "titleZh": "“是”字句",
+      "structure": "A + 是 + B",
+      "explanation": "是 (shì) nghĩa là 'là', nối chủ ngữ với danh từ để khẳng định A là B.",
+      "examples": [
+        {
+          "situation": "Khi giới thiệu nghề nghiệp",
+          "hanzi": "他是老师。",
+          "pinyin": "tā shì lǎoshī",
+          "meaning": "Anh ấy là giáo viên.",
+          "note": "Không thêm 很 trước 是."
+        }
+      ]
+    }
+  ],
+  "flashcards": [
+    {
+      "type": "fill_blank",
+      "sentence": "我___学生。",
+      "blank": "是",
+      "options": ["是", "有", "在", "叫"],
+      "hint": "Động từ 'là'"
+    },
+    {
+      "type": "answer_question",
+      "question": "你是学生吗？",
+      "questionPinyin": "nǐ shì xuésheng ma?",
+      "accept": ["我是学生", "是", "我是"],
+      "sampleAnswer": "我是学生。",
+      "hint": "Trả lời khẳng định"
+    },
+    {
+      "type": "type_sentence",
+      "prompt": "Dịch sang tiếng Trung: Cô ấy là bác sĩ.",
+      "accept": ["她是医生", "她是医生。"],
+      "meaning": "Cô ấy là bác sĩ."
+    }
+  ],
+  "test": {
+    "timeLimit": 180,
+    "passThreshold": 60,
+    "questions": [
+      {
+        "type": "fill_blank",
+        "sentence": "他___老师。",
+        "blank": "是",
+        "options": ["是", "很", "也", "不"]
+      },
+      {
+        "type": "sentence_order",
+        "words": ["老师", "是", "他"],
+        "answer": "他是老师"
+      }
+    ]
+  }
+}`;
+
 interface Props {
   skill: "vocab" | "grammar";
   unitId: string;
@@ -39,6 +103,8 @@ export function LessonEditor({ skill, unitId, lesson }: Props) {
   } as { ok: boolean; error?: string });
   const formRef = useRef<HTMLFormElement>(null);
   const isEdit = !!lesson;
+  const isGrammar = skill === "grammar";
+  const template = isGrammar ? GRAMMAR_TEMPLATE : VOCAB_TEMPLATE;
 
   // After a successful CREATE, clear the form so the next lesson starts fresh.
   useEffect(() => {
@@ -57,19 +123,29 @@ export function LessonEditor({ skill, unitId, lesson }: Props) {
       </div>
 
       <div className="space-y-1">
-        <Label>Bài tập (mảng JSON)</Label>
+        <Label>{isGrammar ? "Nội dung bài học (JSON)" : "Bài tập (mảng JSON)"}</Label>
         <Textarea
           name="exercises"
           defaultValue={lesson ? JSON.stringify(lesson.exercises, null, 2) : ""}
-          placeholder={TEMPLATE}
+          placeholder={template}
           className="min-h-48 font-mono text-xs"
           spellCheck={false}
           required
         />
-        <p className="text-[11px] text-muted-foreground">
-          Các loại được hỗ trợ: match, translate, toneSelect, hanziInput, sentenceOrder, pinyinMatch,
-          fill_blank. Để trống ô trên sẽ hiện mẫu ví dụ.
-        </p>
+        {isGrammar ? (
+          <p className="text-[11px] text-muted-foreground">
+            Object gồm: <code>theory</code> (lý thuyết: title, structure, explanation, examples),{" "}
+            <code>flashcards</code> (luyện tập, có thể bỏ qua) và <code>test</code> (bài kiểm tra
+            tổng hợp, đạt ≥ <code>passThreshold</code>% để qua bài). Loại bài tập: fill_blank,
+            sentence_order, translate, answer_question, type_sentence, toneSelect, match,
+            pinyinMatch. Để trống ô trên sẽ hiện mẫu ví dụ.
+          </p>
+        ) : (
+          <p className="text-[11px] text-muted-foreground">
+            Các loại được hỗ trợ: match, translate, toneSelect, hanziInput, sentenceOrder,
+            pinyinMatch, fill_blank. Để trống ô trên sẽ hiện mẫu ví dụ.
+          </p>
+        )}
       </div>
 
       {state.error && (

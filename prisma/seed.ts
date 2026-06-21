@@ -229,6 +229,332 @@ async function migrateVocabWords() {
   console.log(`[migrate vocab words] lessons populated: ${populated}, words upserted: ${upserted}`);
 }
 
+// ===================================================================
+//  HỌC THEO LỘ TRÌNH — khung khóa / chương / bài (chủ đề).
+//  Nội dung từng kỹ năng (từ vựng, ngữ pháp, nghe, nói, đọc, viết) sẽ
+//  được điền sau qua RoadmapSection; ở bước này chỉ dựng chủ đề cho map.
+// ===================================================================
+type RoadmapTopic = { topic: string; topicZh: string; icon: string };
+type RoadmapChapter = { title: string; titleZh: string; lessons: RoadmapTopic[] };
+type RoadmapCourse = {
+  level: HSKLevel;
+  title: string;
+  titleZh: string;
+  description: string;
+  chapters: RoadmapChapter[];
+};
+
+const ROADMAP_COURSES: RoadmapCourse[] = [
+  {
+    level: HSKLevel.HSK1,
+    title: "Khởi đầu",
+    titleZh: "入门",
+    description: "150 từ vựng nền tảng. Chào hỏi, số đếm, gia đình và những câu giao tiếp đầu tiên.",
+    chapters: [
+      {
+        title: "Chào hỏi & Làm quen",
+        titleZh: "问候与认识",
+        lessons: [
+          { topic: "Xin chào & Tạm biệt", topicZh: "你好与再见", icon: "👋" },
+          { topic: "Cảm ơn & Xin lỗi", topicZh: "谢谢与对不起", icon: "🙏" },
+          { topic: "Đại từ nhân xưng", topicZh: "人称代词", icon: "🧑" },
+          { topic: "Tên & Giới thiệu", topicZh: "名字与介绍", icon: "📛" },
+          { topic: "Quốc tịch", topicZh: "国籍", icon: "🌏" },
+        ],
+      },
+      {
+        title: "Số đếm & Thời gian",
+        titleZh: "数字与时间",
+        lessons: [
+          { topic: "Số 1–10", topicZh: "数字 1–10", icon: "🔢" },
+          { topic: "Số 11–100", topicZh: "数字 11–100", icon: "💯" },
+          { topic: "Ngày & Tháng", topicZh: "日期", icon: "📅" },
+          { topic: "Giờ giấc", topicZh: "时间", icon: "🕐" },
+          { topic: "Thứ trong tuần", topicZh: "星期", icon: "🗓️" },
+        ],
+      },
+      {
+        title: "Gia đình & Đời sống",
+        titleZh: "家庭与生活",
+        lessons: [
+          { topic: "Thành viên gia đình", topicZh: "家人", icon: "👨‍👩‍👧" },
+          { topic: "Đồ ăn & Thức uống", topicZh: "饮食", icon: "🍜" },
+          { topic: "Mua sắm cơ bản", topicZh: "购物", icon: "🛒" },
+          { topic: "Sở thích", topicZh: "爱好", icon: "⚽" },
+          { topic: "Một ngày của tôi", topicZh: "我的一天", icon: "☀️" },
+        ],
+      },
+    ],
+  },
+  {
+    level: HSKLevel.HSK2,
+    title: "Cuộc sống thường nhật",
+    titleZh: "日常生活",
+    description: "Mở rộng vốn từ quanh học tập, đi lại, sức khỏe và cảm xúc để giao tiếp tự nhiên hơn.",
+    chapters: [
+      {
+        title: "Học tập & Công việc",
+        titleZh: "学习与工作",
+        lessons: [
+          { topic: "Lớp học", topicZh: "教室", icon: "🏫" },
+          { topic: "Môn học", topicZh: "科目", icon: "📚" },
+          { topic: "Nghề nghiệp", topicZh: "职业", icon: "💼" },
+          { topic: "Đồng nghiệp & Bạn bè", topicZh: "同事与朋友", icon: "🤝" },
+          { topic: "Lịch làm việc", topicZh: "日程", icon: "⏰" },
+        ],
+      },
+      {
+        title: "Đi lại & Địa điểm",
+        titleZh: "出行与地点",
+        lessons: [
+          { topic: "Phương tiện giao thông", topicZh: "交通工具", icon: "🚌" },
+          { topic: "Hỏi đường", topicZh: "问路", icon: "🧭" },
+          { topic: "Thành phố & Nông thôn", topicZh: "城市与乡村", icon: "🏙️" },
+          { topic: "Du lịch", topicZh: "旅游", icon: "✈️" },
+          { topic: "Khách sạn", topicZh: "酒店", icon: "🏨" },
+        ],
+      },
+      {
+        title: "Sức khỏe & Cảm xúc",
+        titleZh: "健康与情感",
+        lessons: [
+          { topic: "Cơ thể", topicZh: "身体", icon: "🫀" },
+          { topic: "Đi khám bệnh", topicZh: "看病", icon: "🩺" },
+          { topic: "Thời tiết", topicZh: "天气", icon: "🌤️" },
+          { topic: "Cảm xúc", topicZh: "情绪", icon: "😊" },
+          { topic: "Mời & Hẹn gặp", topicZh: "邀请与约会", icon: "📨" },
+        ],
+      },
+    ],
+  },
+  {
+    level: HSKLevel.HSK3,
+    title: "Giao tiếp mở rộng",
+    titleZh: "扩展交流",
+    description: "Diễn đạt mạch lạc hơn: mô tả con người, so sánh, kể chuyện quá khứ và đời sống hiện đại.",
+    chapters: [
+      {
+        title: "Quan hệ xã hội",
+        titleZh: "社会关系",
+        lessons: [
+          { topic: "Tính cách", topicZh: "性格", icon: "🎭" },
+          { topic: "Ngoại hình", topicZh: "外貌", icon: "🧑‍🦰" },
+          { topic: "Mối quan hệ", topicZh: "人际关系", icon: "👫" },
+          { topic: "Giúp đỡ & Lời khuyên", topicZh: "帮助与建议", icon: "💡" },
+        ],
+      },
+      {
+        title: "Học & Trải nghiệm",
+        titleZh: "学习与体验",
+        lessons: [
+          { topic: "Kế hoạch học tập", topicZh: "学习计划", icon: "📝" },
+          { topic: "Internet & Điện thoại", topicZh: "网络与手机", icon: "📱" },
+          { topic: "Sở thích nâng cao", topicZh: "兴趣爱好", icon: "🎨" },
+          { topic: "So sánh", topicZh: "比较", icon: "⚖️" },
+        ],
+      },
+      {
+        title: "Cuộc sống hiện đại",
+        titleZh: "现代生活",
+        lessons: [
+          { topic: "Ngân hàng & Tiền bạc", topicZh: "银行与金钱", icon: "🏦" },
+          { topic: "Mua sắm nâng cao", topicZh: "购物进阶", icon: "🛍️" },
+          { topic: "Lễ hội", topicZh: "节日", icon: "🎉" },
+          { topic: "Kể chuyện quá khứ", topicZh: "谈论过去", icon: "📖" },
+        ],
+      },
+    ],
+  },
+  {
+    level: HSKLevel.HSK4,
+    title: "Diễn đạt ý kiến",
+    titleZh: "表达观点",
+    description: "Bàn luận công việc, văn hóa và xã hội; bày tỏ quan điểm, đồng tình hay phản biện.",
+    chapters: [
+      {
+        title: "Công việc & Sự nghiệp",
+        titleZh: "工作与事业",
+        lessons: [
+          { topic: "Phỏng vấn xin việc", topicZh: "求职面试", icon: "🧑‍💼" },
+          { topic: "Môi trường công sở", topicZh: "职场", icon: "🏢" },
+          { topic: "Kỹ năng & Năng lực", topicZh: "技能", icon: "🛠️" },
+          { topic: "Quản lý thời gian", topicZh: "时间管理", icon: "⌛" },
+        ],
+      },
+      {
+        title: "Xã hội & Văn hóa",
+        titleZh: "社会与文化",
+        lessons: [
+          { topic: "Truyền thông", topicZh: "媒体", icon: "📺" },
+          { topic: "Văn hóa Trung Hoa", topicZh: "中国文化", icon: "🏮" },
+          { topic: "Phong tục", topicZh: "风俗", icon: "🎏" },
+          { topic: "Môi trường", topicZh: "环境", icon: "🌱" },
+        ],
+      },
+      {
+        title: "Tư duy & Lập luận",
+        titleZh: "思辨与论证",
+        lessons: [
+          { topic: "Bày tỏ quan điểm", topicZh: "表达观点", icon: "🗣️" },
+          { topic: "Đồng ý & Phản đối", topicZh: "赞成与反对", icon: "👍" },
+          { topic: "Giải quyết vấn đề", topicZh: "解决问题", icon: "🧩" },
+          { topic: "Tranh luận", topicZh: "辩论", icon: "⚔️" },
+        ],
+      },
+    ],
+  },
+  {
+    level: HSKLevel.HSK5,
+    title: "Ngôn ngữ học thuật",
+    titleZh: "学术语言",
+    description: "Tiếp cận chủ đề học thuật, kinh tế, công nghệ và văn chương với từ vựng chuyên sâu.",
+    chapters: [
+      {
+        title: "Học thuật & Nghề nghiệp",
+        titleZh: "学术与职业",
+        lessons: [
+          { topic: "Giáo dục đại học", topicZh: "高等教育", icon: "🎓" },
+          { topic: "Nghiên cứu khoa học", topicZh: "科研", icon: "🔬" },
+          { topic: "Kinh tế & Thị trường", topicZh: "经济与市场", icon: "📈" },
+          { topic: "Khởi nghiệp", topicZh: "创业", icon: "🚀" },
+        ],
+      },
+      {
+        title: "Xã hội đương đại",
+        titleZh: "当代社会",
+        lessons: [
+          { topic: "Công nghệ & AI", topicZh: "科技与人工智能", icon: "🤖" },
+          { topic: "Sức khỏe tâm lý", topicZh: "心理健康", icon: "🧠" },
+          { topic: "Toàn cầu hóa", topicZh: "全球化", icon: "🌐" },
+          { topic: "Truyền thống & Hiện đại", topicZh: "传统与现代", icon: "🏛️" },
+        ],
+      },
+      {
+        title: "Văn chương & Nghị luận",
+        titleZh: "文学与评论",
+        lessons: [
+          { topic: "Văn học", topicZh: "文学", icon: "✒️" },
+          { topic: "Nghị luận xã hội", topicZh: "社会评论", icon: "📰" },
+        ],
+      },
+    ],
+  },
+  {
+    level: HSKLevel.HSK6,
+    title: "Thành thạo & Tinh tế",
+    titleZh: "精通与雅致",
+    description: "Đỉnh cao HSK: thành ngữ, tu từ, triết học, hùng biện và sáng tác như người bản ngữ.",
+    chapters: [
+      {
+        title: "Tư duy bậc cao",
+        titleZh: "高阶思维",
+        lessons: [
+          { topic: "Thành ngữ & Tục ngữ", topicZh: "成语与谚语", icon: "🐉" },
+          { topic: "Ẩn dụ & Tu từ", topicZh: "修辞", icon: "🎼" },
+          { topic: "Triết học", topicZh: "哲学", icon: "☯️" },
+          { topic: "Lịch sử Trung Hoa", topicZh: "中国历史", icon: "📜" },
+        ],
+      },
+      {
+        title: "Chuyên sâu",
+        titleZh: "专业领域",
+        lessons: [
+          { topic: "Chính trị & Pháp luật", topicZh: "政治与法律", icon: "⚖️" },
+          { topic: "Khoa học & Vũ trụ", topicZh: "科学与宇宙", icon: "🪐" },
+          { topic: "Nghệ thuật", topicZh: "艺术", icon: "🖼️" },
+          { topic: "Kinh tế vĩ mô", topicZh: "宏观经济", icon: "🏦" },
+        ],
+      },
+      {
+        title: "Đỉnh cao",
+        titleZh: "巅峰",
+        lessons: [
+          { topic: "Hùng biện", topicZh: "演讲", icon: "🎤" },
+          { topic: "Sáng tác", topicZh: "写作创作", icon: "🖋️" },
+        ],
+      },
+    ],
+  },
+];
+
+/**
+ * Dựng lộ trình học (Course → RoadmapLesson) từ ROADMAP_COURSES.
+ * Idempotent: upsert theo id ổn định (`course-hsk1`, `rl-hsk1-3`).
+ * Gán sẵn tiến độ mẫu cho tài khoản demo để map hiển thị đủ trạng thái
+ * (đã hoàn thành / đang học / bị khóa).
+ */
+async function seedRoadmap(demoLearnerId: string) {
+  let courseCount = 0;
+  let lessonCount = 0;
+
+  for (let ci = 0; ci < ROADMAP_COURSES.length; ci++) {
+    const c = ROADMAP_COURSES[ci];
+    const slug = c.level.toLowerCase(); // "hsk1"
+    const courseId = `course-${slug}`;
+    const courseData = {
+      hskLevel: c.level,
+      title: c.title,
+      titleZh: c.titleZh,
+      description: c.description,
+      order: ci + 1,
+      published: true,
+    };
+    await prisma.course.upsert({
+      where: { id: courseId },
+      update: courseData,
+      create: { id: courseId, ...courseData },
+    });
+    courseCount++;
+
+    let order = 0;
+    for (let chi = 0; chi < c.chapters.length; chi++) {
+      const ch = c.chapters[chi];
+      for (const t of ch.lessons) {
+        order++;
+        const lessonId = `rl-${slug}-${order}`;
+        const lessonData = {
+          courseId,
+          order,
+          topic: t.topic,
+          topicZh: t.topicZh,
+          icon: t.icon,
+          chapter: ch.title,
+          chapterOrder: chi + 1,
+          xpReward: 20,
+        };
+        await prisma.roadmapLesson.upsert({
+          where: { id: lessonId },
+          update: lessonData,
+          create: { id: lessonId, ...lessonData },
+        });
+        lessonCount++;
+      }
+    }
+  }
+
+  // Tiến độ mẫu cho tài khoản demo: hoàn thành 6 bài đầu HSK1 (2 chương đầu dở dang).
+  // skillsDone để rỗng cho tới khi nội dung từng kỹ năng (RoadmapSection) được điền,
+  // tránh hiển thị kỹ năng "đã xong" mà thực ra chưa có nội dung.
+  const demoDone = [1, 2, 3, 4, 5, 6];
+  for (const ord of demoDone) {
+    const lessonId = `rl-hsk1-${ord}`;
+    await prisma.roadmapProgress.upsert({
+      where: { userId_lessonId: { userId: demoLearnerId, lessonId } },
+      update: { completed: true, skillsDone: [], xpEarned: 20 },
+      create: {
+        userId: demoLearnerId,
+        lessonId,
+        completed: true,
+        skillsDone: [],
+        xpEarned: 20,
+        completedAt: new Date(),
+      },
+    });
+  }
+
+  console.log(`[roadmap] courses: ${courseCount}, lessons: ${lessonCount}, demo progress: ${demoDone.length}`);
+}
+
 async function main() {
   console.log("Seeding database...");
 
@@ -818,6 +1144,9 @@ async function main() {
       ],
     },
   });
+
+  // ===== Học theo lộ trình (Course → RoadmapLesson) =====
+  await seedRoadmap(learner.id);
 
   // ===== Bulk content authored in batch (prisma/seed-data/*.json) =====
   await loadSeedData();

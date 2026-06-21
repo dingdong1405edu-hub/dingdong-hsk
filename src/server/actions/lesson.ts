@@ -11,6 +11,10 @@ const schema = z.object({
   total: z.number().int().min(1),
   heartsLost: z.number().int().min(0).max(100),
   durationSec: z.number().int().min(0).optional(),
+  // Whether this attempt should mark the lesson completed (unlocking the next
+  // one). Defaults to true. Grammar passes `false` when the comprehensive test
+  // is below its pass threshold so a failed test never unlocks progression.
+  completed: z.boolean().optional(),
 });
 
 export async function completeLessonAction(params: z.infer<typeof schema>) {
@@ -21,10 +25,15 @@ export async function completeLessonAction(params: z.infer<typeof schema>) {
   if (!parsed.success) return { ok: false, error: "Invalid input" };
 
   const { lessonId, skill, correct, total, heartsLost, durationSec } = parsed.data;
+  const completedFlag = parsed.data.completed ?? true;
   // correct can never exceed total; guard divides and clamp XP/score.
   const safeCorrect = Math.min(correct, total);
   const xpEarned = Math.round((safeCorrect / total) * 20);
   const score = Math.round((safeCorrect / total) * 100);
+  // Only a completed (passing) attempt grants XP. A failed grammar test still
+  // records the Attempt for history but awards 0 — so fail-then-retry can never
+  // stack XP above a single first-time pass. Vocab always passes → unchanged.
+  const xpAwarded = completedFlag ? xpEarned : 0;
 
   try {
     // Clamp hearts at 0 — heartsLost is client-supplied and could exceed the
@@ -39,8 +48,8 @@ export async function completeLessonAction(params: z.infer<typeof schema>) {
       await db.$transaction([
         db.vocabProgress.upsert({
           where: { userId_lessonId: { userId: session.user.id, lessonId } },
-          update: { completed: true, xpEarned },
-          create: { userId: session.user.id, lessonId, completed: true, xpEarned },
+          update: { completed: true, xpEarned: xpAwarded },
+          create: { userId: session.user.id, lessonId, completed: true, xpEarned: xpAwarded },
         }),
         db.attempt.create({
           data: {
@@ -55,7 +64,7 @@ export async function completeLessonAction(params: z.infer<typeof schema>) {
         db.user.update({
           where: { id: session.user.id },
           data: {
-            xp: { increment: xpEarned },
+            xp: { increment: xpAwarded },
             hearts: { set: newHearts },
             lastActiveAt: new Date(),
           },
@@ -65,8 +74,10 @@ export async function completeLessonAction(params: z.infer<typeof schema>) {
       await db.$transaction([
         db.grammarProgress.upsert({
           where: { userId_lessonId: { userId: session.user.id, lessonId } },
-          update: { completed: true, xpEarned },
-          create: { userId: session.user.id, lessonId, completed: true, xpEarned },
+          // A failed attempt changes nothing: it must never downgrade a prior
+          // `completed: true` nor overwrite the XP already recorded for a pass.
+          update: completedFlag ? { completed: true, xpEarned: xpAwarded } : {},
+          create: { userId: session.user.id, lessonId, completed: completedFlag, xpEarned: xpAwarded },
         }),
         db.attempt.create({
           data: {
@@ -81,14 +92,14 @@ export async function completeLessonAction(params: z.infer<typeof schema>) {
         db.user.update({
           where: { id: session.user.id },
           data: {
-            xp: { increment: xpEarned },
+            xp: { increment: xpAwarded },
             hearts: { set: newHearts },
             lastActiveAt: new Date(),
           },
         }),
       ]);
     }
-    return { ok: true, xpEarned, score };
+    return { ok: true, xpEarned: xpAwarded, score };
   } catch {
     return { ok: false, error: "DB error" };
   }

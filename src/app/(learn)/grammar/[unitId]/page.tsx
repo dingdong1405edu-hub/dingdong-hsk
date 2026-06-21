@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { CheckCircle2 } from "lucide-react";
+import { grammarItemCount } from "@/lib/grammar";
 
 interface Props {
   params: Promise<{ unitId: string }>;
@@ -47,7 +48,7 @@ export default async function GrammarUnitPage({ params }: Props) {
                   <div>
                     <div className="font-medium">{lesson.title || `Bài ${idx + 1}`}</div>
                     <div className="text-xs text-muted-foreground">
-                      {(lesson.exercises as unknown[]).length} bài tập
+                      {grammarItemCount(lesson.exercises)} bài tập
                     </div>
                   </div>
                 </div>

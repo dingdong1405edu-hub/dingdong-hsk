@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ArrowLeft, Plus, Trash2 } from "lucide-react";
 import { hskLevelLabel } from "@/lib/utils";
+import { grammarItemCount } from "@/lib/grammar";
 import { LessonEditor } from "@/components/admin/lesson-editor";
 import { deleteLessonAction } from "@/server/actions/admin";
 
@@ -72,7 +73,7 @@ export default async function AdminGrammarUnitPage({ params }: Props) {
                     <div>
                       <div className="font-medium">{lesson.title || `Bài ${idx + 1}`}</div>
                       <div className="text-xs text-muted-foreground">
-                        {(lesson.exercises as unknown[]).length} bài tập
+                        {grammarItemCount(lesson.exercises)} bài tập
                       </div>
                     </div>
                   </div>

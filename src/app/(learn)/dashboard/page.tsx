@@ -4,7 +4,8 @@ import { redirect } from "next/navigation";
 import { ModuleCard } from "@/components/learn/module-card";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { cn, hskLevelLabel, xpToLevel } from "@/lib/utils";
-import { Flame, Heart, Star, Trophy, GraduationCap, type LucideIcon } from "lucide-react";
+import Link from "next/link";
+import { Flame, Heart, Star, Trophy, GraduationCap, Route, ArrowRight, Sparkles, type LucideIcon } from "lucide-react";
 import { AnimatedNumber } from "@/components/motion/animated-number";
 import { Ambient } from "@/components/motion/ambient";
 
@@ -86,6 +87,36 @@ export default async function DashboardPage() {
           中
         </div>
       </div>
+
+      {/* Featured: Học theo lộ trình */}
+      <Link href="/roadmap" className="group block">
+        <div className="relative overflow-hidden rounded-2xl border border-emerald-200/70 bg-gradient-to-r from-emerald-50 via-teal-50 to-sky-50 p-5 shadow-soft transition-all duration-200 hover:-translate-y-0.5 hover:shadow-soft-lg sm:p-6">
+          <div className="relative z-10 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+            <div className="flex items-center gap-4">
+              <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-600 text-white shadow-soft">
+                <Route className="h-7 w-7" />
+              </div>
+              <div>
+                <div className="flex items-center gap-2">
+                  <h2 className="text-lg font-extrabold sm:text-xl">Học theo lộ trình</h2>
+                  <span className="inline-flex items-center gap-1 rounded-full bg-emerald-600 px-2 py-0.5 text-[10px] font-extrabold uppercase tracking-wide text-white">
+                    <Sparkles className="h-3 w-3" /> Mới
+                  </span>
+                </div>
+                <p className="mt-0.5 text-sm text-muted-foreground">
+                  Bản đồ học HSK 1–6 kiểu phiêu lưu — từ vựng, ngữ pháp, nghe, nói, đọc, viết trong từng bài.
+                </p>
+              </div>
+            </div>
+            <span className="inline-flex shrink-0 items-center gap-1.5 self-start rounded-xl bg-emerald-600 px-4 py-2 text-sm font-bold text-white shadow-soft transition-transform group-hover:translate-x-0.5 sm:self-auto">
+              Khám phá <ArrowRight className="h-4 w-4" />
+            </span>
+          </div>
+          <div className="pointer-events-none absolute -right-3 -top-6 select-none font-chinese text-[110px] leading-none text-emerald-600/10">
+            道
+          </div>
+        </div>
+      </Link>
 
       {/* Stats */}
       <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">

@@ -1,18 +1,16 @@
 "use client";
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { toast } from "sonner";
-import { X, ArrowLeft, ArrowRight, PencilLine } from "lucide-react";
+import { X, ArrowLeft, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { completeLessonAction } from "@/server/actions/lesson";
-import { isCoarsePointer } from "@/lib/speech";
 import { WordCard } from "./word-card";
-import { StrokeTrace } from "./stroke-trace";
-import { WritingGrid } from "./writing-grid";
+import { StrokeQuiz } from "./stroke-quiz";
 import { FlashcardDeck } from "./flashcard-deck";
 import type { VocabWordCard } from "@/types";
 
@@ -29,13 +27,9 @@ export function WordFlow({ lesson, words, unitId }: Props) {
   const router = useRouter();
   const [phase, setPhase] = useState<Phase>("learn");
   const [wordIndex, setWordIndex] = useState(0);
-  const [step, setStep] = useState(0); // 0 card · 1 trace · 2 write
-  const [showGridDesktop, setShowGridDesktop] = useState(false);
-  const [isTouch, setIsTouch] = useState(true); // assume touch until measured
+  const [step, setStep] = useState(0); // 0 card · 1 trace · 2 recall
   const [xpEarned, setXpEarned] = useState<number | null>(null);
   const [startTime] = useState(Date.now());
-
-  useEffect(() => setIsTouch(isCoarsePointer()), []);
 
   const word = words[wordIndex];
   const totalSteps = words.length * STEP_LABELS.length;
@@ -61,7 +55,6 @@ export function WordFlow({ lesson, words, unitId }: Props) {
   }
 
   function goNextStep() {
-    setShowGridDesktop(false);
     if (step < STEP_LABELS.length - 1) {
       setStep((s) => s + 1);
       return;
@@ -76,7 +69,6 @@ export function WordFlow({ lesson, words, unitId }: Props) {
   }
 
   function goPrevStep() {
-    setShowGridDesktop(false);
     if (step > 0) {
       setStep((s) => s - 1);
     } else if (wordIndex > 0) {
@@ -162,22 +154,12 @@ export function WordFlow({ lesson, words, unitId }: Props) {
                 transition={{ duration: 0.2 }}
               >
                 {step === 0 && <WordCard word={word} />}
-                {step === 1 && <StrokeTrace key={word.id} character={word.hanzi} />}
-                {step === 2 &&
-                  (isTouch || showGridDesktop ? (
-                    <WritingGrid />
-                  ) : (
-                    <div className="flex flex-col items-center gap-4 text-center">
-                      <PencilLine className="h-10 w-10 text-muted-foreground" />
-                      <p className="max-w-xs text-sm text-muted-foreground">
-                        Phần tự viết phù hợp với thiết bị cảm ứng (máy tính bảng / điện thoại).
-                        Trên máy tính bạn có thể bỏ qua.
-                      </p>
-                      <Button variant="outline" size="sm" onClick={() => setShowGridDesktop(true)}>
-                        Vẫn muốn viết thử
-                      </Button>
-                    </div>
-                  ))}
+                {step === 1 && (
+                  <StrokeQuiz key={`${word.id}-trace`} mode="trace" character={word.hanzi} />
+                )}
+                {step === 2 && (
+                  <StrokeQuiz key={`${word.id}-recall`} mode="recall" character={word.hanzi} />
+                )}
               </motion.div>
             </AnimatePresence>
           </div>
@@ -192,7 +174,7 @@ export function WordFlow({ lesson, words, unitId }: Props) {
               <ArrowLeft className="mr-1.5 h-4 w-4" /> Trước
             </Button>
             <Button onClick={goNextStep}>
-              {step === 2 && !isTouch && !showGridDesktop ? "Bỏ qua" : "Tiếp tục"}
+              Tiếp tục
               <ArrowRight className="ml-1.5 h-4 w-4" />
             </Button>
           </div>

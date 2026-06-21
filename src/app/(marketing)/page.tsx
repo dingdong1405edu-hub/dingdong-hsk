@@ -1,294 +1,441 @@
+import type { Metadata } from "next";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
-import { Star, Flame, Heart, ChevronRight, Sparkles } from "lucide-react";
+import { ArrowRight, Rocket, Sparkles } from "lucide-react";
 import { BaoMascot } from "@/components/marketing/bao-mascot";
 import { Logo } from "@/components/shared/logo";
 import { Reveal } from "@/components/motion/reveal";
-import { Ambient } from "@/components/motion/ambient";
 import { AnimatedNumber } from "@/components/motion/animated-number";
+import { MarketingNav } from "./_components/marketing-nav";
+import { BackToTop } from "./_components/back-to-top";
+import styles from "./landing.module.css";
+
+export const metadata: Metadata = {
+  title: "DingDong HSK — Học Tiếng Trung Cùng AI | Nền tảng học tiếng Trung cho người Việt",
+  description:
+    "Học tiếng Trung online cùng AI thông minh. Từ vựng, ngữ pháp, viết chữ Hán, đọc – nghe – viết – nói HSK 1–6 & HSKK, được AI chấm điểm. Lộ trình bằng tiếng Việt, bắt đầu miễn phí!",
+  keywords: [
+    "học tiếng Trung",
+    "học tiếng Trung online",
+    "app học tiếng Trung",
+    "AI học tiếng Trung",
+    "luyện thi HSK",
+    "HSKK",
+    "DingDong HSK",
+  ],
+  openGraph: {
+    title: "DingDong HSK — Học Tiếng Trung Cùng AI Thông Minh",
+    description:
+      "Từ vựng, ngữ pháp, viết chữ Hán, đọc – nghe – viết – nói HSK 1–6 & HSKK, được AI chấm điểm. Bắt đầu miễn phí!",
+    type: "website",
+    locale: "vi_VN",
+  },
+};
+
+const audiences = [
+  { icon: "🎓", label: "Sinh viên" },
+  { icon: "💼", label: "Người đi làm" },
+  { icon: "✈️", label: "Du học sinh" },
+  { icon: "🀄", label: "Người mất gốc" },
+  { icon: "🏆", label: "Luyện thi HSK" },
+];
 
 const features = [
   {
+    icon: "🤖",
+    cls: styles.iconAi,
+    title: "AI Chấm Điểm Thông Minh",
+    desc: "Claude AI chấm bài viết luận & luyện nói: ngữ pháp, từ vựng, thanh điệu, độ lưu loát — kèm bản sửa lỗi chi tiết.",
+  },
+  {
     icon: "📚",
-    title: "Từ vựng & Ngữ pháp",
-    desc: "HSK 1–6, gamified như Duolingo với XP, streak, tim. Pinyin tooltip tức thì.",
-    chip: "bg-blue-50 ring-blue-100",
+    cls: styles.iconVocab,
+    title: "Từ Vựng & Ngữ Pháp",
+    desc: "HSK 1–6 gamified như Duolingo: XP, streak, tim. Pinyin tooltip tức thì và tô màu thanh điệu trực quan.",
   },
   {
     icon: "✍️",
-    title: "Luyện viết chữ Hán",
-    desc: "Animation thứ tự nét bút, quiz vẽ từng nét, ô 田字格 như vở tập viết.",
-    chip: "bg-amber-50 ring-amber-100",
+    cls: styles.iconWriting,
+    title: "Luyện Viết Chữ Hán",
+    desc: "Animation thứ tự nét bút, quiz vẽ lại từng nét trên ô 田字格 chuẩn như vở tập viết tiếng Trung.",
+  },
+  {
+    icon: "🎙️",
+    cls: styles.iconSpeaking,
+    title: "Luyện Nói HSKK",
+    desc: "Ghi âm ngay trên trình duyệt, AI phân tích phát âm, thanh điệu và độ lưu loát theo format HSKK 3 phần.",
   },
   {
     icon: "📖",
-    title: "Đọc hiểu",
-    desc: "Đoạn văn tiếng Trung + pinyin overlay + nhấn để tra từ. Câu hỏi theo format HSK.",
-    chip: "bg-emerald-50 ring-emerald-100",
+    cls: styles.iconHsk,
+    title: "Đọc & Nghe Hiểu",
+    desc: "Đoạn văn và audio chuẩn HSK, pinyin overlay, nhấn để tra từ, chấm tự động theo format đề thi thật.",
   },
   {
-    icon: "🎧",
-    title: "Nghe hiểu",
-    desc: "Audio HSK chuẩn với điều khiển tốc độ. Transcript mở khoá sau khi nộp.",
-    chip: "bg-teal-50 ring-teal-100",
-  },
-  {
-    icon: "🖊️",
-    title: "Luyện viết luận",
-    desc: "AI chấm ngữ pháp, từ vựng, mạch lạc kèm bản sửa lỗi chi tiết.",
-    chip: "bg-rose-50 ring-rose-100",
-  },
-  {
-    icon: "🎤",
-    title: "Luyện nói HSKK",
-    desc: "Ghi âm trực tiếp → AI chấm phát âm, thanh điệu và độ lưu loát.",
-    chip: "bg-indigo-50 ring-indigo-100",
+    icon: "🏆",
+    cls: styles.iconCommunity,
+    title: "Lộ Trình Thi HSK 1–6",
+    desc: "Mở khoá bài học theo thứ tự, theo dõi tiến bộ và XP, đồng hành cùng bạn tới mục tiêu HSK mỗi ngày.",
   },
 ];
 
-const trust = [
-  { icon: Flame, label: "Chuỗi ngày học", cls: "text-orange-500" },
-  { icon: Star, label: "Hệ thống XP", cls: "text-amber-500" },
-  { icon: Heart, label: "Tim như game", cls: "text-rose-500" },
+const stats = [
+  { to: 6, suffix: "", label: "Cấp độ HSK" },
+  { to: 5000, suffix: "+", label: "Từ vựng & mẫu câu" },
+  { to: 6, suffix: "", label: "Module kỹ năng" },
+  { to: 3, suffix: "", label: "Kỹ năng AI chấm điểm" },
+];
+
+const steps = [
+  {
+    n: 1,
+    title: "Đăng Ký Miễn Phí",
+    desc: "Tạo tài khoản trong 30 giây và chọn cấp độ HSK mục tiêu của bạn.",
+  },
+  {
+    n: 2,
+    title: "Học Theo Lộ Trình",
+    desc: "Từ vựng, ngữ pháp, chữ Hán, đọc – nghe – viết – nói được sắp xếp khoa học mỗi ngày.",
+  },
+  {
+    n: 3,
+    title: "Luyện & Tiến Bộ",
+    desc: "Làm bài AI chấm tự động, giữ chuỗi streak, theo dõi XP và chinh phục từng mốc HSK.",
+  },
 ];
 
 const levels = ["HSK 1", "HSK 2", "HSK 3", "HSK 4", "HSK 5", "HSK 6"];
 
-const stats = [
-  { to: 5000, suffix: "+", label: "Từ vựng HSK 1–6" },
-  { to: 6, suffix: "", label: "Cấp độ + HSKK" },
-  { to: 3, suffix: "", label: "Kỹ năng được AI chấm" },
+const testimonials = [
+  {
+    text: "“Mình mất gốc tiếng Trung, nhờ lộ trình chia nhỏ và AI sửa lỗi bài viết mà sau 3 tháng đã tự tin nhắn tin với đối tác.”",
+    name: "Minh Anh",
+    role: "Nhân viên xuất nhập khẩu",
+    initial: "M",
+  },
+  {
+    text: "“Phần luyện nói HSKK chấm phát âm cực chi tiết, chỉ ra mình hay sai thanh 3. Giao diện dễ thương như đang chơi game vậy.”",
+    name: "Hoàng Long",
+    role: "Sinh viên năm 2",
+    initial: "H",
+  },
+  {
+    text: "“Tính năng viết chữ Hán theo từng nét giúp con mình nhớ mặt chữ nhanh hẳn. Cả nhà cùng học mỗi tối, vui lắm.”",
+    name: "Thu Hà",
+    role: "Phụ huynh",
+    initial: "T",
+  },
 ];
 
-const floatHanzi = [
-  { c: "学", cls: "left-[6%] top-[15%] text-7xl", anim: "animate-hanzi" },
-  { c: "你", cls: "right-[9%] top-[26%] text-6xl", anim: "animate-float-y" },
-  { c: "好", cls: "left-[13%] bottom-[16%] text-6xl", anim: "animate-float-y2" },
-  { c: "中", cls: "right-[6%] bottom-[24%] text-7xl", anim: "animate-drift" },
+const footerCols = [
+  {
+    title: "Học tập",
+    links: [
+      { label: "Từ vựng & Ngữ pháp", href: "#features" },
+      { label: "Viết chữ Hán", href: "#features" },
+      { label: "Đọc & Nghe hiểu", href: "#features" },
+      { label: "Viết luận & Luyện nói", href: "#features" },
+    ],
+  },
+  {
+    title: "Khám phá",
+    links: [
+      { label: "Tính năng", href: "#features" },
+      { label: "Cách học", href: "#how" },
+      { label: "Lộ trình HSK", href: "#levels" },
+      { label: "Đánh giá", href: "#testimonials" },
+      { label: "Giới thiệu", href: "/gioi-thieu" },
+    ],
+  },
+  {
+    title: "Tài khoản",
+    links: [
+      { label: "Đăng nhập", href: "/login" },
+      { label: "Đăng ký miễn phí", href: "/register" },
+      { label: "dingdong1405edu@gmail.com", href: "mailto:dingdong1405edu@gmail.com" },
+    ],
+  },
 ];
+
+const anchor = { scrollMarginTop: "96px" } as const;
 
 export default function LandingPage() {
   return (
-    <div className="min-h-screen bg-background">
-      {/* Header */}
-      <header className="sticky top-0 z-50 border-b border-border/60 bg-background/70 backdrop-blur-xl">
-        <div className="container flex h-16 items-center justify-between">
-          <Link href="/" className="flex items-center gap-2">
-            <Logo className="h-10 w-10" />
-            <span className="text-[17px] font-extrabold tracking-tight">
-              DingDong <span className="text-primary">HSK</span>
-            </span>
-          </Link>
-          <div className="flex items-center gap-1.5 sm:gap-2">
-            <Link href="/login" className="hidden sm:block">
-              <Button variant="ghost" size="sm">
-                Đăng nhập
-              </Button>
-            </Link>
-            <Link href="/register">
-              <Button size="sm" className="shadow-soft-primary">
-                Bắt đầu miễn phí
-              </Button>
-            </Link>
+    <div className={styles.page}>
+      <MarketingNav />
+
+      {/* ============ HERO ============ */}
+      <section className={styles.hero} id="hero" aria-labelledby="hero-title">
+        <div className={styles.heroBgPattern} />
+        <div className={styles.heroGridBg} />
+        <div className={styles.heroContainer}>
+          <div className={styles.heroContent}>
+            <div className={styles.heroBadge}>
+              <span className={styles.dot} />
+              <Sparkles className="h-3.5 w-3.5" aria-hidden="true" /> Học cùng AI thông minh
+            </div>
+            <h1 id="hero-title" className={styles.heroTitle}>
+              Học Tiếng Trung<br />
+              Cùng AI Thông Minh<br />
+              <span className={styles.highlight}>Dễ Như Ăn Bánh Bao!</span>
+            </h1>
+            <p className={styles.heroDesc}>
+              DingDong HSK — nền tảng học tiếng Trung toàn diện cho người Việt. Từ vựng, ngữ pháp, chữ
+              Hán, đọc – nghe – viết – nói HSK 1–6 &amp; HSKK, được AI chấm điểm và đồng hành mỗi ngày.
+            </p>
+            <div className={styles.heroButtons}>
+              <Link href="/register" className={`${styles.btn} ${styles.btnPrimary}`}>
+                <Rocket className="h-[18px] w-[18px]" aria-hidden="true" /> Bắt đầu miễn phí
+              </Link>
+              <a href="#features" className={`${styles.btn} ${styles.btnSecondary}`}>
+                Khám phá tính năng <ArrowRight className="h-[18px] w-[18px]" aria-hidden="true" />
+              </a>
+            </div>
+            <div className={styles.heroStatsRow}>
+              <div className={styles.heroStatItem}>
+                <div className={styles.heroStatNum}>HSK 1–6</div>
+                <div className={styles.heroStatLbl}>+ HSKK</div>
+              </div>
+              <div className={styles.heroStatItem}>
+                <div className={styles.heroStatNum}>6</div>
+                <div className={styles.heroStatLbl}>Kỹ năng</div>
+              </div>
+              <div className={styles.heroStatItem}>
+                <div className={styles.heroStatNum}>5000+</div>
+                <div className={styles.heroStatLbl}>Từ vựng</div>
+              </div>
+            </div>
+          </div>
+
+          <div className={styles.heroVisual}>
+            <div className={styles.heroVisualInner}>
+              <BaoMascot transparent />
+            </div>
           </div>
         </div>
-      </header>
+      </section>
 
-      {/* Hero — fully green section */}
-      <section className="relative overflow-hidden text-white">
-        <div className="absolute inset-0 hero-green" />
-        <Ambient variant="glow" />
-        <div
-          className="pointer-events-none absolute inset-0"
-          style={{
-            backgroundImage:
-              "linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px)",
-            backgroundSize: "44px 44px",
-          }}
-        />
-        {floatHanzi.map((f) => (
-          <span
-            key={f.c}
-            className={`pointer-events-none absolute hidden select-none font-chinese text-white/10 md:block ${f.cls} ${f.anim}`}
-          >
-            {f.c}
-          </span>
-        ))}
-        <div className="container relative grid items-center gap-10 py-14 sm:py-16 lg:grid-cols-2 lg:gap-12 lg:py-24">
-          {/* Left */}
-          <div className="text-center lg:text-left">
-            <span
-              className="animate-fade-up inline-flex items-center gap-1.5 rounded-full border border-white/25 bg-white/15 px-3 py-1 text-[13px] font-semibold text-white backdrop-blur"
-              style={{ animationDelay: "0s" }}
-            >
-              <Sparkles className="h-3.5 w-3.5" /> HSK 1–6 + HSKK · Học bằng tiếng Việt
-            </span>
-            <h1
-              className="animate-fade-up mt-5 text-4xl font-extrabold leading-[1.08] sm:text-5xl lg:text-6xl"
-              style={{ animationDelay: "0.08s" }}
-            >
-              Học tiếng Trung{" "}
-              <span className="text-gradient-mint">dễ như trò chuyện</span>
-            </h1>
-            <p
-              className="animate-fade-up mx-auto mt-5 max-w-lg text-base leading-relaxed text-white/85 sm:text-lg lg:mx-0"
-              style={{ animationDelay: "0.16s" }}
-            >
-              Nền tảng học tiếng Trung toàn diện cho người Việt: từ vựng, ngữ pháp, chữ Hán, đọc – nghe –
-              viết – nói, được AI chấm điểm và đồng hành mỗi ngày.
-            </p>
-            <div
-              className="animate-fade-up mt-8 flex flex-col gap-3 sm:flex-row sm:justify-center lg:justify-start"
-              style={{ animationDelay: "0.24s" }}
-            >
-              <Link href="/register" className="w-full sm:w-auto">
-                <Button
-                  size="lg"
-                  className="sheen w-full bg-white text-primary shadow-soft-lg hover:bg-white sm:w-auto"
-                >
-                  Bắt đầu học miễn phí <ChevronRight className="ml-1 h-4 w-4" />
-                </Button>
-              </Link>
-              <Link href="/login" className="w-full sm:w-auto">
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="w-full border-white/40 bg-white/10 text-white backdrop-blur hover:border-white/60 hover:bg-white/20 hover:text-white sm:w-auto"
-                >
-                  Tôi đã có tài khoản
-                </Button>
-              </Link>
+      {/* ============ AUDIENCE STRIP ============ */}
+      <section className={styles.trusted} aria-label="Phù hợp với">
+        <div className={styles.container}>
+          <div className={styles.trustedLabel}>Phù hợp với mọi người học tiếng Trung</div>
+          <div className={styles.trustedLogos}>
+            {audiences.map((a) => (
+              <span key={a.label} className={styles.trustedLogo}>
+                <span aria-hidden>{a.icon}</span> {a.label}
+              </span>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ============ FEATURES ============ */}
+      <section className={styles.section} id="features" style={anchor} aria-labelledby="features-title">
+        <div className={styles.container}>
+          <Reveal>
+            <div className={styles.sectionHeader}>
+              <div className={styles.sectionLabel}>✨ Tính năng nổi bật</div>
+              <h2 id="features-title" className={styles.sectionTitle}>
+                Học Tiếng Trung Chưa Bao Giờ Dễ Đến Thế!
+              </h2>
+              <p className={styles.sectionSubtitle}>
+                Sáu module luyện tập bám sát đề thi HSK &amp; HSKK, kết hợp AI thông minh — tất cả bằng
+                tiếng Việt.
+              </p>
             </div>
-            <div
-              className="animate-fade-up mt-9 flex flex-wrap items-center justify-center gap-2.5 lg:justify-start"
-              style={{ animationDelay: "0.32s" }}
-            >
-              {trust.map((t) => (
+          </Reveal>
+          <div className={styles.featuresGrid}>
+            {features.map((f, i) => (
+              <Reveal key={f.title} delay={(i % 3) * 0.08} className="h-full">
+                <article className={styles.featureCard}>
+                  <div className={`${styles.featureIcon} ${f.cls}`} aria-hidden>
+                    {f.icon}
+                  </div>
+                  <h3>{f.title}</h3>
+                  <p>{f.desc}</p>
+                </article>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ============ STATS BAND ============ */}
+      <section className={styles.statsSection} aria-label="Thống kê">
+        <div className={styles.container}>
+          <div className={styles.statsGrid}>
+            {stats.map((s) => (
+              <Reveal key={s.label}>
+                <div className={styles.statItem}>
+                  <div className={styles.statNum}>
+                    <AnimatedNumber value={s.to} />
+                    {s.suffix}
+                  </div>
+                  <div className={styles.statLbl}>{s.label}</div>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ============ HOW IT WORKS ============ */}
+      <section className={styles.sectionCream} id="how" style={anchor} aria-labelledby="how-title">
+        <div className={styles.container}>
+          <Reveal>
+            <div className={styles.sectionHeader}>
+              <div className={styles.sectionLabel}>🎯 Cách thức hoạt động</div>
+              <h2 id="how-title" className={styles.sectionTitle}>
+                3 Bước Đơn Giản Để Bắt Đầu
+              </h2>
+              <p className={styles.sectionSubtitle}>
+                Lộ trình học được cá nhân hoá cho từng người, từ con số 0 đến HSK 6.
+              </p>
+            </div>
+          </Reveal>
+          <div className={styles.stepsGrid}>
+            {steps.map((s, i) => (
+              <Reveal key={s.n} delay={i * 0.1} className="h-full">
+                <div className={styles.stepCard}>
+                  <div className={styles.stepNumber}>{s.n}</div>
+                  <h3>{s.title}</h3>
+                  <p>{s.desc}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ============ LEVELS ============ */}
+      <section className={styles.section} id="levels" style={anchor} aria-labelledby="levels-title">
+        <div className={styles.container}>
+          <Reveal>
+            <div className={styles.sectionHeader}>
+              <div className={styles.sectionLabel}>📈 Lộ trình</div>
+              <h2 id="levels-title" className={styles.sectionTitle}>
+                Từ HSK 1 Đến HSK 6
+              </h2>
+              <p className={styles.sectionSubtitle}>
+                Từ 150 từ cơ bản đến hơn 5000 từ vựng — DingDong đi cùng bạn suốt cả hành trình.
+              </p>
+            </div>
+          </Reveal>
+          <Reveal>
+            <div className="flex flex-wrap justify-center gap-3">
+              {levels.map((l, i) => (
                 <span
-                  key={t.label}
-                  className="inline-flex items-center gap-1.5 rounded-full border border-white/20 bg-white/15 px-3 py-1.5 text-sm font-medium text-white backdrop-blur"
+                  key={l}
+                  className="rounded-full px-7 py-3 text-[15px] font-extrabold transition-transform duration-200 hover:-translate-y-1"
+                  style={
+                    i === 0
+                      ? { background: "var(--green)", color: "#fff", boxShadow: "0 8px 24px rgba(93,119,64,0.35)" }
+                      : { background: "#fff", color: "var(--green)", border: "2px solid rgba(93,119,64,0.25)" }
+                  }
                 >
-                  <t.icon className={`h-4 w-4 ${t.cls}`} /> {t.label}
+                  {l}
                 </span>
               ))}
             </div>
-          </div>
-
-          {/* Right — chỉ linh vật bánh bao (nền trong suốt) */}
-          <div
-            className="animate-fade-up relative mx-auto w-full max-w-[17rem] sm:max-w-sm lg:max-w-md"
-            style={{ animationDelay: "0.2s" }}
-          >
-            <div className="animate-breathe absolute inset-8 -z-10 rounded-full bg-white/20 blur-3xl" />
-            <BaoMascot transparent />
-          </div>
-        </div>
-      </section>
-
-      {/* Stats band — divider connects hero down to the content */}
-      <section className="relative border-b border-border/60 bg-muted/30">
-        <div className="pointer-events-none absolute inset-x-0 top-0 h-0.5 bg-gradient-to-r from-transparent via-primary to-transparent" />
-        <div className="pointer-events-none absolute inset-x-0 top-0 h-10 bg-gradient-to-b from-primary/10 to-transparent" />
-        <div className="container relative z-10 grid grid-cols-3 gap-4 py-10 text-center">
-          {stats.map((s, i) => (
-            <Reveal key={s.label} delay={i * 0.1}>
-              <div className="text-3xl font-extrabold text-primary sm:text-4xl">
-                <AnimatedNumber value={s.to} />
-                {s.suffix}
-              </div>
-              <div className="mt-1 text-xs text-muted-foreground sm:text-sm">{s.label}</div>
-            </Reveal>
-          ))}
-        </div>
-      </section>
-
-      {/* Features */}
-      <section className="relative overflow-hidden py-20">
-        <div className="peaceful-bg absolute inset-0" />
-        <div className="container relative">
-          <Reveal className="mx-auto max-w-2xl text-center">
-            <p className="text-sm font-bold uppercase tracking-wider text-primary">Tính năng</p>
-            <h2 className="mt-2 text-3xl font-extrabold sm:text-4xl">Đầy đủ mọi kỹ năng bạn cần</h2>
-            <p className="mt-3 text-muted-foreground">
-              Sáu module luyện tập bám sát đề thi HSK & HSKK, giao diện hoàn toàn bằng tiếng Việt.
-            </p>
           </Reveal>
-          <div className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {features.map((f, i) => (
-              <Reveal key={f.title} delay={(i % 3) * 0.08}>
-                <div className="group h-full rounded-2xl border border-border/60 bg-card/90 p-6 shadow-soft backdrop-blur transition-all duration-300 hover:-translate-y-1.5 hover:border-primary/30 hover:shadow-soft-lg">
-                  <div
-                    className={`mb-4 flex h-12 w-12 items-center justify-center rounded-xl text-2xl ring-1 ring-inset transition-transform duration-300 group-hover:-rotate-6 group-hover:scale-110 ${f.chip}`}
-                  >
-                    {f.icon}
-                  </div>
-                  <h3 className="mb-1.5 text-lg font-bold transition-colors group-hover:text-primary">{f.title}</h3>
-                  <p className="text-sm leading-relaxed text-muted-foreground">{f.desc}</p>
-                </div>
-              </Reveal>
-            ))}
-          </div>
         </div>
       </section>
 
-      {/* HSK levels */}
-      <section className="relative overflow-hidden border-y border-border/60 bg-gradient-to-b from-green-50/70 to-background py-20">
-        <div className="container relative text-center">
+      {/* ============ TESTIMONIALS ============ */}
+      <section
+        className={styles.sectionCream}
+        id="testimonials"
+        style={anchor}
+        aria-labelledby="testimonials-title"
+      >
+        <div className={styles.container}>
           <Reveal>
-            <h2 className="text-3xl font-extrabold sm:text-4xl">Lộ trình từ HSK 1 đến HSK 6</h2>
-            <p className="mx-auto mt-3 max-w-md text-muted-foreground">
-              Từ 150 từ cơ bản đến hơn 5000 từ vựng — đi cùng bạn suốt cả hành trình.
-            </p>
+            <div className={styles.sectionHeader}>
+              <div className={styles.sectionLabel}>💬 Cảm nhận học viên</div>
+              <h2 id="testimonials-title" className={styles.sectionTitle}>
+                Người Học Nói Gì Về DingDong HSK
+              </h2>
+              <p className={styles.sectionSubtitle}>
+                Những chia sẻ từ người học đang đồng hành cùng DingDong trên hành trình chinh phục HSK.
+              </p>
+            </div>
           </Reveal>
-          <div className="mt-8 flex flex-wrap justify-center gap-2.5">
-            {levels.map((l, i) => (
-              <Reveal key={l} delay={i * 0.06}>
-                <div
-                  className={`rounded-full px-6 py-2.5 text-sm font-bold transition-all duration-200 hover:-translate-y-0.5 ${
-                    i === 0
-                      ? "bg-primary text-primary-foreground shadow-soft-primary"
-                      : "border border-border bg-background text-foreground/70 hover:border-primary/40 hover:text-primary"
-                  }`}
-                >
-                  {l}
-                </div>
+          <div className={styles.testimonialsGrid}>
+            {testimonials.map((t, i) => (
+              <Reveal key={t.name} delay={i * 0.1} className="h-full">
+                <article className={styles.testimonialCard}>
+                  <div className={styles.stars} aria-label="5 trên 5 sao">
+                    ★★★★★
+                  </div>
+                  <p className={styles.testimonialText}>{t.text}</p>
+                  <div className={styles.testimonialAuthor}>
+                    <div className={styles.testimonialAvatar} aria-hidden>
+                      {t.initial}
+                    </div>
+                    <div>
+                      <div className={styles.testimonialName}>{t.name}</div>
+                      <div className={styles.testimonialRole}>{t.role}</div>
+                    </div>
+                  </div>
+                </article>
               </Reveal>
             ))}
           </div>
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="container py-20">
-        <Reveal>
-          <div className="relative mx-auto max-w-3xl overflow-hidden rounded-3xl bg-gradient-to-br from-primary to-green-800 px-8 py-14 text-center text-primary-foreground shadow-soft-lg sm:px-12">
-            <Ambient variant="calm" className="opacity-70" />
-            <span className="pointer-events-none absolute -right-6 -top-10 select-none font-chinese text-[160px] leading-none text-white/10">
-              梦
-            </span>
-            <h2 className="relative z-10 text-3xl font-extrabold sm:text-4xl">Sẵn sàng chinh phục tiếng Trung?</h2>
-            <p className="relative z-10 mx-auto mt-3 max-w-md text-primary-foreground/85">
-              Tạo tài khoản miễn phí và bắt đầu bài học đầu tiên ngay hôm nay.
-            </p>
-            <Link href="/register" className="relative z-10 mt-7 inline-block">
-              <Button size="lg" variant="secondary" className="sheen shadow-lg">
-                Đăng ký miễn phí ngay <ChevronRight className="ml-1 h-4 w-4" />
-              </Button>
-            </Link>
-          </div>
-        </Reveal>
+      {/* ============ CTA ============ */}
+      <section className={styles.cta} id="cta" aria-labelledby="cta-title">
+        <div className={styles.container}>
+          <Reveal>
+            <div className={styles.ctaContent}>
+              <h2 id="cta-title">Sẵn Sàng Chinh Phục Tiếng Trung?</h2>
+              <p>Tạo tài khoản miễn phí và bắt đầu bài học đầu tiên cùng DingDong ngay hôm nay.</p>
+              <Link href="/register" className={styles.btnWhite}>
+                <Rocket className="h-[18px] w-[18px]" aria-hidden="true" /> Đăng ký miễn phí ngay
+              </Link>
+            </div>
+          </Reveal>
+        </div>
       </section>
 
-      {/* Footer */}
-      <footer className="border-t border-border/60 py-10">
-        <div className="container flex flex-col items-center justify-between gap-4 text-sm text-muted-foreground sm:flex-row">
-          <div className="flex items-center gap-2 font-semibold text-foreground">
-            <Logo className="h-8 w-8" />
-            DingDong HSK
+      {/* ============ FOOTER ============ */}
+      <footer className={styles.footer}>
+        <div className={styles.container}>
+          <div className={styles.footerGrid}>
+            <div className={styles.footerBrand}>
+              <div className={styles.footerLogo}>
+                <Logo className={styles.footerLogoIcon} />
+                DingDong HSK
+              </div>
+              <p>
+                Nền tảng học tiếng Trung chuẩn HSK 1–6 &amp; HSKK cho người Việt, được AI chấm điểm và
+                đồng hành mỗi ngày.
+              </p>
+            </div>
+            {footerCols.map((col) => (
+              <div key={col.title}>
+                <h4>{col.title}</h4>
+                <ul className={styles.footerLinks}>
+                  {col.links.map((l) => (
+                    <li key={l.label}>
+                      {l.href.startsWith("/") ? (
+                        <Link href={l.href}>{l.label}</Link>
+                      ) : (
+                        <a href={l.href}>{l.label}</a>
+                      )}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
-          <p>© 2026 DingDong HSK · dingdong1405edu@gmail.com</p>
+          <div className={styles.footerBottom}>
+            © 2026 DingDong HSK · Học tiếng Trung cùng AI · dingdong1405edu@gmail.com
+          </div>
         </div>
       </footer>
+
+      <BackToTop />
     </div>
   );
 }

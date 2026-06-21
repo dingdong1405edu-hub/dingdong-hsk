@@ -1,7 +1,17 @@
 export type { HSKLevel, Role, Skill, QuestionType, WritingTaskType } from "@prisma/client";
 
 export interface Exercise {
-  type: "match" | "translate" | "toneSelect" | "hanziInput" | "sentenceOrder" | "pinyinMatch" | "fill_blank" | "sentence_order";
+  type:
+    | "match"
+    | "translate"
+    | "toneSelect"
+    | "hanziInput"
+    | "sentenceOrder"
+    | "pinyinMatch"
+    | "fill_blank"
+    | "sentence_order"
+    | "answer_question"
+    | "type_sentence";
   [key: string]: unknown;
 }
 
@@ -47,6 +57,67 @@ export interface FillBlankExercise extends Exercise {
   blank: string;
   options: string[];
   hint?: string;
+}
+
+/** Free-typed short answer to a question. Graded by matching the normalised
+ *  input against any entry in `accept` (deterministic, offline). */
+export interface AnswerQuestionExercise extends Exercise {
+  type: "answer_question";
+  question: string;
+  questionPinyin?: string;
+  accept: string[];
+  sampleAnswer: string;
+  hint?: string;
+}
+
+/** Free-typed full sentence (e.g. translate a Vietnamese prompt into Chinese).
+ *  Graded by matching the normalised input against any entry in `accept`. */
+export interface TypeSentenceExercise extends Exercise {
+  type: "type_sentence";
+  prompt: string;
+  accept: string[];
+  pinyin?: string;
+  meaning?: string;
+  hint?: string;
+}
+
+// ===== Grammar lesson content (theory → flashcards → comprehensive test) =====
+
+/** A concrete situational example illustrating one grammar point. */
+export interface SituationalExample {
+  situation: string;
+  hanzi: string;
+  pinyin: string;
+  meaning: string;
+  note?: string;
+}
+
+/** One "small part" of a grammar lesson's theory: a single structure broken
+ *  out with an explanation and situational examples. */
+export interface TheorySection {
+  id: string;
+  title: string;
+  titleZh?: string;
+  structure?: string;
+  explanation: string;
+  examples: SituationalExample[];
+}
+
+/** The comprehensive end-of-lesson test (standard grammar-exam format): graded
+ *  as a block, optional countdown, pass at `passThreshold`% (default 60). */
+export interface GrammarTest {
+  timeLimit?: number;
+  passThreshold?: number;
+  questions: Exercise[];
+}
+
+/** Structured `GrammarLesson.exercises` JSON (version 2). A legacy bare
+ *  `Exercise[]` is treated as flashcards-only by the deserialiser. */
+export interface GrammarLessonContent {
+  version: 2;
+  theory: TheorySection[];
+  flashcards: Exercise[];
+  test: GrammarTest;
 }
 
 /** One example sentence attached to a vocabulary word. */

@@ -77,7 +77,9 @@ model User {
   vocabProgress    VocabProgress[]
   grammarProgress  GrammarProgress[]
   hanziProgress    HanziProgress[]
+  roadmapProgress  RoadmapProgress[]
   attempts         Attempt[]
+  payments         Payment[]
 }
 
 model Account {
@@ -354,4 +356,131 @@ model Attempt {
 
   @@index([userId, skill])
   @@index([userId, createdAt])
+}
+
+// ===================================================================
+//  HỌC THEO LỘ TRÌNH (Learning roadmap — Duolingo-style)
+//  Course (1 per HSK level) → RoadmapLesson (10–20 / course) →
+//  RoadmapSection (6 kỹ năng: từ vựng, ngữ pháp, nghe, nói, đọc, viết).
+//  Nội dung từng kỹ năng được điền sau (RoadmapSection.content / refId);
+//  tiến độ học theo dõi trong RoadmapProgress.
+// ===================================================================
+
+/// Một khóa học = một cấp HSK. Mỗi cấp có một khóa duy nhất.
+model Course {
+  id          String   @id @default(cuid())
+  hskLevel    HSKLevel @unique
+  title       String
+  titleZh     String
+  description String?  @db.Text
+  order       Int
+  imageUrl    String?
+  published   Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt @default(now())
+
+  lessons RoadmapLesson[]
+
+  @@index([order])
+}
+
+/// Một bài trong lộ trình: một chủ đề, gom đủ 6 kỹ năng.
+/// `chapter` / `chapterOrder` gom các bài thành chương (banner trên map).
+model RoadmapLesson {
+  id           String   @id @default(cuid())
+  courseId     String
+  course       Course   @relation(fields: [courseId], references: [id], onDelete: Cascade)
+  order        Int
+  topic        String
+  topicZh      String
+  description  String?  @db.Text
+  icon         String?
+  chapter      String?
+  chapterOrder Int      @default(1)
+  xpReward     Int      @default(20)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt @default(now())
+
+  sections RoadmapSection[]
+  progress RoadmapProgress[]
+
+  @@unique([courseId, order])
+  @@index([courseId, chapterOrder, order])
+}
+
+/// Một kỹ năng trong bài (VOCAB | GRAMMAR | LISTENING | SPEAKING | READING | WRITING).
+/// `published = false` => "Sắp có". `content` (JSON) hoặc `refId` (trỏ tới nội dung
+/// có sẵn: VocabLesson / ReadingTest / ...) được điền sau.
+model RoadmapSection {
+  id        String   @id @default(cuid())
+  lessonId  String
+  lesson    RoadmapLesson @relation(fields: [lessonId], references: [id], onDelete: Cascade)
+  skill     Skill
+  order     Int      @default(0)
+  title     String   @default("")
+  content   Json?
+  refId     String?
+  published Boolean  @default(false)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt @default(now())
+
+  @@unique([lessonId, skill])
+  @@index([lessonId, order])
+}
+
+/// Tiến độ của người học theo từng bài lộ trình.
+/// `skillsDone` = mảng tên Skill đã hoàn thành (để mở khoá dần / tính %).
+model RoadmapProgress {
+  id          String    @id @default(cuid())
+  userId      String
+  user        User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  lessonId    String
+  lesson      RoadmapLesson @relation(fields: [lessonId], references: [id], onDelete: Cascade)
+  completed   Boolean   @default(false)
+  skillsDone  Json      @default("[]")
+  score       Float?
+  xpEarned    Int       @default(0)
+  completedAt DateTime?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt @default(now())
+
+  @@unique([userId, lessonId])
+  @@index([userId])
+}
+
+enum PaymentStatus {
+  PENDING
+  PAID
+  CANCELLED
+  EXPIRED
+  FAILED
+}
+
+/// Đơn thanh toán qua PayOS. Ghi nhận giao dịch (không khoá tính năng).
+/// `orderCode` là mã đơn gửi cho PayOS (số nguyên duy nhất) — dùng BigInt vì
+/// được sinh từ timestamp (vượt phạm vi Int 32-bit). `rawWebhook` lưu nguyên
+/// payload webhook để đối soát. Giá/tên gói cấu hình ở src/lib/payment-plans.ts.
+model Payment {
+  id            String        @id @default(cuid())
+  orderCode     BigInt        @unique
+  userId        String?
+  amount        Int
+  description   String
+  planId        String?
+  planName      String
+  status        PaymentStatus @default(PENDING)
+  buyerName     String?
+  buyerEmail    String?
+  checkoutUrl   String?       @db.Text
+  paymentLinkId String?
+  reference     String?
+  paidAt        DateTime?
+  rawWebhook    Json?
+  createdAt     DateTime      @default(now())
+  updatedAt     DateTime      @updatedAt @default(now())
+
+  user User? @relation(fields: [userId], references: [id], onDelete: SetNull)
+
+  @@index([userId])
+  @@index([status])
 }

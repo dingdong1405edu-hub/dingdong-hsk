@@ -12,103 +12,298 @@
           "id": "gr-HSK1-u1-l1",
           "title": "Động từ 是 (shì) - là",
           "order": 1,
-          "exercises": [
-            {
-              "type": "fill_blank",
-              "sentence": "我___学生。",
-              "blank": "是",
-              "options": ["是", "有", "在", "叫"],
-              "hint": "Động từ 是 (shì) nghĩa là 'là', dùng để nối chủ ngữ với danh từ."
-            },
-            {
-              "type": "fill_blank",
-              "sentence": "他___老师。",
-              "blank": "是",
-              "options": ["是", "很", "也", "不"],
-              "hint": "Dùng 是 (shì) để nói 'Anh ấy là giáo viên'."
-            },
-            {
-              "type": "sentence_order",
-              "words": ["老师", "是", "他"],
-              "answer": "他是老师",
-              "meaning": "Anh ấy là giáo viên."
-            },
-            {
-              "type": "translate",
-              "direction": "vi_to_zh",
-              "prompt": "Cô ấy là bác sĩ.",
-              "answer": "她是医生。",
-              "options": ["她是医生。", "他是老师。", "我是学生。", "你是医生。"]
+          "exercises": {
+            "version": 2,
+            "theory": [
+              {
+                "id": "u1l1-shi",
+                "title": "Câu khẳng định với 是",
+                "titleZh": "“是”字句",
+                "structure": "A + 是 + B",
+                "explanation": "是 (shì) nghĩa là 'là', dùng để nối chủ ngữ (A) với một danh từ (B) nhằm khẳng định A chính là B. Đây là động từ liên kết quan trọng nhất trong tiếng Trung.",
+                "examples": [
+                  {
+                    "situation": "Khi giới thiệu bản thân",
+                    "hanzi": "我是学生。",
+                    "pinyin": "wǒ shì xuésheng",
+                    "meaning": "Tôi là học sinh."
+                  },
+                  {
+                    "situation": "Khi nói về nghề nghiệp của người khác",
+                    "hanzi": "他是老师。",
+                    "pinyin": "tā shì lǎoshī",
+                    "meaning": "Anh ấy là giáo viên."
+                  }
+                ]
+              },
+              {
+                "id": "u1l1-note",
+                "title": "Lưu ý khi dùng 是",
+                "structure": "A + 是 + danh từ  (KHÔNG dùng với tính từ)",
+                "explanation": "是 chỉ nối với danh từ, không dùng trước tính từ. Để nói 'rất đẹp' ta dùng 很 chứ không dùng 是. Sai phổ biến: ❌ 我是高兴 → ✔ 我很高兴.",
+                "examples": [
+                  {
+                    "situation": "Phân biệt với tính từ",
+                    "hanzi": "这是书。",
+                    "pinyin": "zhè shì shū",
+                    "meaning": "Đây là sách.",
+                    "note": "是 đứng trước danh từ 书 (sách)."
+                  }
+                ]
+              }
+            ],
+            "flashcards": [
+              {
+                "type": "fill_blank",
+                "sentence": "我___学生。",
+                "blank": "是",
+                "options": ["是", "有", "在", "叫"],
+                "hint": "Động từ 'là' nối chủ ngữ với danh từ."
+              },
+              {
+                "type": "sentence_order",
+                "words": ["老师", "是", "他"],
+                "answer": "他是老师",
+                "meaning": "Anh ấy là giáo viên."
+              },
+              {
+                "type": "answer_question",
+                "question": "你是学生吗？",
+                "questionPinyin": "nǐ shì xuésheng ma?",
+                "accept": ["我是学生", "是的，我是学生", "是"],
+                "sampleAnswer": "我是学生。",
+                "hint": "Trả lời khẳng định bằng 是."
+              },
+              {
+                "type": "type_sentence",
+                "prompt": "Dịch sang tiếng Trung: Cô ấy là bác sĩ.",
+                "accept": ["她是医生"],
+                "meaning": "Cô ấy là bác sĩ."
+              }
+            ],
+            "test": {
+              "timeLimit": 180,
+              "passThreshold": 60,
+              "questions": [
+                {
+                  "type": "fill_blank",
+                  "sentence": "他___老师。",
+                  "blank": "是",
+                  "options": ["是", "很", "也", "不"]
+                },
+                {
+                  "type": "sentence_order",
+                  "words": ["是", "我", "学生"],
+                  "answer": "我是学生"
+                },
+                {
+                  "type": "translate",
+                  "direction": "vi_to_zh",
+                  "prompt": "Đây là sách.",
+                  "answer": "这是书。",
+                  "options": ["这是书。", "这是人。", "他是书。", "这有书。"]
+                },
+                {
+                  "type": "type_sentence",
+                  "prompt": "Dịch sang tiếng Trung: Tôi là người Trung Quốc.",
+                  "accept": ["我是中国人"],
+                  "meaning": "Tôi là người Trung Quốc."
+                }
+              ]
             }
-          ]
+          }
         },
         {
           "id": "gr-HSK1-u1-l2",
           "title": "Động từ 有 (yǒu) - có",
           "order": 2,
-          "exercises": [
-            {
-              "type": "fill_blank",
-              "sentence": "我___一个朋友。",
-              "blank": "有",
-              "options": ["有", "是", "在", "做"],
-              "hint": "Động từ 有 (yǒu) nghĩa là 'có', diễn tả sự sở hữu."
-            },
-            {
-              "type": "fill_blank",
-              "sentence": "他___三本书。",
-              "blank": "有",
-              "options": ["有", "是", "看", "买"],
-              "hint": "Dùng 有 (yǒu) để nói 'Anh ấy có ba quyển sách'."
-            },
-            {
-              "type": "sentence_order",
-              "words": ["有", "我", "一个", "女儿"],
-              "answer": "我有一个女儿",
-              "meaning": "Tôi có một con gái."
-            },
-            {
-              "type": "translate",
-              "direction": "vi_to_zh",
-              "prompt": "Tôi có một con mèo.",
-              "answer": "我有一只猫。",
-              "options": ["我有一只猫。", "我有一只狗。", "他有一只猫。", "我是一只猫。"]
+          "exercises": {
+            "version": 2,
+            "theory": [
+              {
+                "id": "u1l2-you",
+                "title": "Diễn tả sự sở hữu với 有",
+                "titleZh": "“有”字句",
+                "structure": "A + 有 + (số lượng) + B",
+                "explanation": "有 (yǒu) nghĩa là 'có', diễn tả việc A sở hữu B. Thường đi kèm số lượng và lượng từ trước danh từ, ví dụ 一个 (một cái), 三本 (ba quyển).",
+                "examples": [
+                  {
+                    "situation": "Khi nói về bạn bè",
+                    "hanzi": "我有一个朋友。",
+                    "pinyin": "wǒ yǒu yí gè péngyou",
+                    "meaning": "Tôi có một người bạn."
+                  },
+                  {
+                    "situation": "Khi đếm đồ vật",
+                    "hanzi": "他有三本书。",
+                    "pinyin": "tā yǒu sān běn shū",
+                    "meaning": "Anh ấy có ba quyển sách.",
+                    "note": "本 (běn) là lượng từ cho sách."
+                  }
+                ]
+              }
+            ],
+            "flashcards": [
+              {
+                "type": "fill_blank",
+                "sentence": "我___一个朋友。",
+                "blank": "有",
+                "options": ["有", "是", "在", "做"],
+                "hint": "Động từ 'có', diễn tả sự sở hữu."
+              },
+              {
+                "type": "sentence_order",
+                "words": ["有", "我", "一个", "女儿"],
+                "answer": "我有一个女儿",
+                "meaning": "Tôi có một con gái."
+              },
+              {
+                "type": "answer_question",
+                "question": "你有几本书？",
+                "questionPinyin": "nǐ yǒu jǐ běn shū?",
+                "accept": ["我有三本书", "三本", "我有一本书"],
+                "sampleAnswer": "我有三本书。",
+                "hint": "Dùng 有 + số + 本 + 书."
+              },
+              {
+                "type": "type_sentence",
+                "prompt": "Dịch sang tiếng Trung: Tôi có một con mèo.",
+                "accept": ["我有一只猫"],
+                "meaning": "Tôi có một con mèo."
+              }
+            ],
+            "test": {
+              "timeLimit": 180,
+              "passThreshold": 60,
+              "questions": [
+                {
+                  "type": "fill_blank",
+                  "sentence": "他___三本书。",
+                  "blank": "有",
+                  "options": ["有", "是", "看", "买"]
+                },
+                {
+                  "type": "sentence_order",
+                  "words": ["有", "我", "一个", "哥哥"],
+                  "answer": "我有一个哥哥"
+                },
+                {
+                  "type": "translate",
+                  "direction": "vi_to_zh",
+                  "prompt": "Tôi có một con mèo.",
+                  "answer": "我有一只猫。",
+                  "options": ["我有一只猫。", "我有一只狗。", "他有一只猫。", "我是一只猫。"]
+                }
+              ]
             }
-          ]
+          }
         },
         {
           "id": "gr-HSK1-u1-l3",
           "title": "Phủ định với 不 (bù) và 没 (méi)",
           "order": 3,
-          "exercises": [
-            {
-              "type": "fill_blank",
-              "sentence": "我___是老师。",
-              "blank": "不",
-              "options": ["不", "没", "很", "也"],
-              "hint": "Dùng 不 (bù) để phủ định động từ thường và 是 (shì)."
-            },
-            {
-              "type": "fill_blank",
-              "sentence": "我___有钱。",
-              "blank": "没",
-              "options": ["没", "不", "是", "很"],
-              "hint": "Động từ 有 (yǒu) phải phủ định bằng 没 (méi), không dùng 不."
-            },
-            {
-              "type": "sentence_order",
-              "words": ["不", "他", "去", "学校"],
-              "answer": "他不去学校",
-              "meaning": "Anh ấy không đi đến trường."
-            },
-            {
-              "type": "translate",
-              "direction": "vi_to_zh",
-              "prompt": "Tôi không phải là học sinh.",
-              "answer": "我不是学生。",
-              "options": ["我不是学生。", "我没是学生。", "我不有学生。", "我是不学生。"]
+          "exercises": {
+            "version": 2,
+            "theory": [
+              {
+                "id": "u1l3-bu",
+                "title": "Phủ định với 不",
+                "structure": "Chủ ngữ + 不 + động từ / 是",
+                "explanation": "不 (bù) đặt trước động từ thường và 是 để phủ định. Dùng cho hành động ở hiện tại, tương lai hoặc thói quen.",
+                "examples": [
+                  {
+                    "situation": "Phủ định 是",
+                    "hanzi": "我不是老师。",
+                    "pinyin": "wǒ bú shì lǎoshī",
+                    "meaning": "Tôi không phải là giáo viên.",
+                    "note": "不 đọc biến điệu thành bú khi đứng trước thanh 4 (是 shì)."
+                  }
+                ]
+              },
+              {
+                "id": "u1l3-mei",
+                "title": "Phủ định với 没",
+                "structure": "Chủ ngữ + 没 + 有",
+                "explanation": "Riêng động từ 有 (có) PHẢI phủ định bằng 没 (méi), tuyệt đối không dùng 不有. 没有 nghĩa là 'không có'.",
+                "examples": [
+                  {
+                    "situation": "Phủ định sở hữu",
+                    "hanzi": "我没有钱。",
+                    "pinyin": "wǒ méiyǒu qián",
+                    "meaning": "Tôi không có tiền.",
+                    "note": "❌ 我不有钱 là sai."
+                  }
+                ]
+              }
+            ],
+            "flashcards": [
+              {
+                "type": "fill_blank",
+                "sentence": "我___是老师。",
+                "blank": "不",
+                "options": ["不", "没", "很", "也"],
+                "hint": "Phủ định động từ 是 dùng 不."
+              },
+              {
+                "type": "fill_blank",
+                "sentence": "我___有钱。",
+                "blank": "没",
+                "options": ["没", "不", "是", "很"],
+                "hint": "Động từ 有 phải phủ định bằng 没."
+              },
+              {
+                "type": "sentence_order",
+                "words": ["不", "他", "去", "学校"],
+                "answer": "他不去学校",
+                "meaning": "Anh ấy không đi đến trường."
+              },
+              {
+                "type": "answer_question",
+                "question": "你有手机吗？（请用否定回答）",
+                "questionPinyin": "nǐ yǒu shǒujī ma?",
+                "accept": ["我没有手机", "没有", "我没有"],
+                "sampleAnswer": "我没有手机。",
+                "hint": "Phủ định 有 bằng 没有."
+              },
+              {
+                "type": "type_sentence",
+                "prompt": "Dịch sang tiếng Trung: Tôi không phải là học sinh.",
+                "accept": ["我不是学生"],
+                "meaning": "Tôi không phải là học sinh."
+              }
+            ],
+            "test": {
+              "timeLimit": 200,
+              "passThreshold": 60,
+              "questions": [
+                {
+                  "type": "fill_blank",
+                  "sentence": "我___有钱。",
+                  "blank": "没",
+                  "options": ["没", "不", "是", "也"]
+                },
+                {
+                  "type": "fill_blank",
+                  "sentence": "他___是中国人。",
+                  "blank": "不",
+                  "options": ["不", "没", "很", "有"]
+                },
+                {
+                  "type": "translate",
+                  "direction": "vi_to_zh",
+                  "prompt": "Tôi không phải là học sinh.",
+                  "answer": "我不是学生。",
+                  "options": ["我不是学生。", "我没是学生。", "我不有学生。", "我是不学生。"]
+                },
+                {
+                  "type": "type_sentence",
+                  "prompt": "Dịch sang tiếng Trung: Anh ấy không có em gái.",
+                  "accept": ["他没有妹妹"],
+                  "meaning": "Anh ấy không có em gái."
+                }
+              ]
             }
-          ]
+          }
         }
       ]
     },
@@ -123,103 +318,282 @@
           "id": "gr-HSK1-u2-l1",
           "title": "Câu hỏi với 吗 (ma)",
           "order": 1,
-          "exercises": [
-            {
-              "type": "fill_blank",
-              "sentence": "你是中国人___？",
-              "blank": "吗",
-              "options": ["吗", "呢", "了", "的"],
-              "hint": "Thêm 吗 (ma) ở cuối câu trần thuật để tạo câu hỏi có/không."
-            },
-            {
-              "type": "fill_blank",
-              "sentence": "他是老师___？",
-              "blank": "吗",
-              "options": ["吗", "不", "很", "也"],
-              "hint": "Dùng 吗 (ma) cuối câu để hỏi 'Anh ấy là giáo viên phải không?'."
-            },
-            {
-              "type": "sentence_order",
-              "words": ["吗", "学生", "你", "是"],
-              "answer": "你是学生吗",
-              "meaning": "Bạn là học sinh phải không?"
-            },
-            {
-              "type": "translate",
-              "direction": "vi_to_zh",
-              "prompt": "Bạn có sách không?",
-              "answer": "你有书吗？",
-              "options": ["你有书吗？", "你是书吗？", "你有书呢？", "你有书吧？"]
+          "exercises": {
+            "version": 2,
+            "theory": [
+              {
+                "id": "u2l1-ma",
+                "title": "Câu hỏi có/không với 吗",
+                "titleZh": "“吗”字疑问句",
+                "structure": "Câu trần thuật + 吗 ？",
+                "explanation": "Thêm trợ từ 吗 (ma) vào cuối một câu trần thuật để biến nó thành câu hỏi có/không. Cấu trúc câu giữ nguyên, chỉ thêm 吗 ở cuối.",
+                "examples": [
+                  {
+                    "situation": "Hỏi về quốc tịch",
+                    "hanzi": "你是中国人吗？",
+                    "pinyin": "nǐ shì Zhōngguórén ma?",
+                    "meaning": "Bạn là người Trung Quốc phải không?"
+                  },
+                  {
+                    "situation": "Hỏi về sở hữu",
+                    "hanzi": "你有书吗？",
+                    "pinyin": "nǐ yǒu shū ma?",
+                    "meaning": "Bạn có sách không?"
+                  }
+                ]
+              }
+            ],
+            "flashcards": [
+              {
+                "type": "fill_blank",
+                "sentence": "你是中国人___？",
+                "blank": "吗",
+                "options": ["吗", "呢", "了", "的"],
+                "hint": "Trợ từ tạo câu hỏi có/không, đặt cuối câu."
+              },
+              {
+                "type": "sentence_order",
+                "words": ["吗", "学生", "你", "是"],
+                "answer": "你是学生吗",
+                "meaning": "Bạn là học sinh phải không?"
+              },
+              {
+                "type": "answer_question",
+                "question": "他是老师吗？（请肯定回答）",
+                "questionPinyin": "tā shì lǎoshī ma?",
+                "accept": ["他是老师", "是", "是的，他是老师"],
+                "sampleAnswer": "他是老师。",
+                "hint": "Bỏ 吗 và trả lời khẳng định."
+              },
+              {
+                "type": "type_sentence",
+                "prompt": "Đặt câu hỏi tiếng Trung: 'Bạn có sách không?'",
+                "accept": ["你有书吗"],
+                "meaning": "Bạn có sách không?"
+              }
+            ],
+            "test": {
+              "timeLimit": 180,
+              "passThreshold": 60,
+              "questions": [
+                {
+                  "type": "fill_blank",
+                  "sentence": "他是老师___？",
+                  "blank": "吗",
+                  "options": ["吗", "不", "很", "也"]
+                },
+                {
+                  "type": "sentence_order",
+                  "words": ["吗", "你", "中国人", "是"],
+                  "answer": "你是中国人吗"
+                },
+                {
+                  "type": "translate",
+                  "direction": "vi_to_zh",
+                  "prompt": "Bạn có sách không?",
+                  "answer": "你有书吗？",
+                  "options": ["你有书吗？", "你是书吗？", "你有书呢？", "你有书吧？"]
+                }
+              ]
             }
-          ]
+          }
         },
         {
           "id": "gr-HSK1-u2-l2",
           "title": "Đại từ nghi vấn 什么 (shénme) - gì",
           "order": 2,
-          "exercises": [
-            {
-              "type": "fill_blank",
-              "sentence": "这是___？",
-              "blank": "什么",
-              "options": ["什么", "谁", "哪", "几"],
-              "hint": "什么 (shénme) nghĩa là 'cái gì', dùng để hỏi về sự vật."
-            },
-            {
-              "type": "fill_blank",
-              "sentence": "你叫___名字？",
-              "blank": "什么",
-              "options": ["什么", "谁", "多少", "怎么"],
-              "hint": "Dùng 什么 (shénme) để hỏi 'Bạn tên là gì?'."
-            },
-            {
-              "type": "sentence_order",
-              "words": ["什么", "吃", "你", "想"],
-              "answer": "你想吃什么",
-              "meaning": "Bạn muốn ăn gì?"
-            },
-            {
-              "type": "translate",
-              "direction": "vi_to_zh",
-              "prompt": "Đây là cái gì?",
-              "answer": "这是什么？",
-              "options": ["这是什么？", "那是谁？", "这是谁？", "你是什么？"]
+          "exercises": {
+            "version": 2,
+            "theory": [
+              {
+                "id": "u2l2-shenme",
+                "title": "Hỏi 'cái gì' với 什么",
+                "titleZh": "疑问代词“什么”",
+                "structure": "... + 什么 + (danh từ) ？",
+                "explanation": "什么 (shénme) nghĩa là 'cái gì / gì'. Khác với tiếng Việt, trật tự từ trong câu hỏi giữ NGUYÊN như câu trần thuật — 什么 đứng đúng ở vị trí của thông tin cần hỏi, không đảo lên đầu câu.",
+                "examples": [
+                  {
+                    "situation": "Hỏi về một vật",
+                    "hanzi": "这是什么？",
+                    "pinyin": "zhè shì shénme?",
+                    "meaning": "Đây là cái gì?"
+                  },
+                  {
+                    "situation": "Hỏi tên",
+                    "hanzi": "你叫什么名字？",
+                    "pinyin": "nǐ jiào shénme míngzi?",
+                    "meaning": "Bạn tên là gì?",
+                    "note": "什么 đứng trước danh từ 名字 (tên)."
+                  }
+                ]
+              }
+            ],
+            "flashcards": [
+              {
+                "type": "fill_blank",
+                "sentence": "这是___？",
+                "blank": "什么",
+                "options": ["什么", "谁", "哪", "几"],
+                "hint": "Hỏi 'cái gì' về sự vật."
+              },
+              {
+                "type": "fill_blank",
+                "sentence": "你叫___名字？",
+                "blank": "什么",
+                "options": ["什么", "谁", "多少", "怎么"],
+                "hint": "Hỏi 'Bạn tên là gì?'."
+              },
+              {
+                "type": "sentence_order",
+                "words": ["什么", "吃", "你", "想"],
+                "answer": "你想吃什么",
+                "meaning": "Bạn muốn ăn gì?"
+              },
+              {
+                "type": "answer_question",
+                "question": "你叫什么名字？",
+                "questionPinyin": "nǐ jiào shénme míngzi?",
+                "accept": ["我叫李明", "我叫王芳", "我叫"],
+                "sampleAnswer": "我叫李明。",
+                "hint": "Trả lời theo mẫu 我叫 + tên."
+              },
+              {
+                "type": "type_sentence",
+                "prompt": "Đặt câu hỏi tiếng Trung: 'Đây là cái gì?'",
+                "accept": ["这是什么"],
+                "meaning": "Đây là cái gì?"
+              }
+            ],
+            "test": {
+              "timeLimit": 180,
+              "passThreshold": 60,
+              "questions": [
+                {
+                  "type": "fill_blank",
+                  "sentence": "你想喝___？",
+                  "blank": "什么",
+                  "options": ["什么", "谁", "哪儿", "几"]
+                },
+                {
+                  "type": "sentence_order",
+                  "words": ["什么", "名字", "你", "叫"],
+                  "answer": "你叫什么名字"
+                },
+                {
+                  "type": "translate",
+                  "direction": "vi_to_zh",
+                  "prompt": "Đây là cái gì?",
+                  "answer": "这是什么？",
+                  "options": ["这是什么？", "那是谁？", "这是谁？", "你是什么？"]
+                }
+              ]
             }
-          ]
+          }
         },
         {
           "id": "gr-HSK1-u2-l3",
           "title": "Phó từ 很 (hěn) và 也 (yě)",
           "order": 3,
-          "exercises": [
-            {
-              "type": "fill_blank",
-              "sentence": "我___高兴。",
-              "blank": "很",
-              "options": ["很", "是", "有", "吗"],
-              "hint": "很 (hěn) là phó từ mức độ, đặt trước tính từ: 'rất'."
-            },
-            {
-              "type": "fill_blank",
-              "sentence": "我是学生，他___是学生。",
-              "blank": "也",
-              "options": ["也", "很", "不", "是"],
-              "hint": "也 (yě) nghĩa là 'cũng', đặt trước động từ."
-            },
-            {
-              "type": "sentence_order",
-              "words": ["很", "今天", "热", "天气"],
-              "answer": "今天天气很热",
-              "meaning": "Thời tiết hôm nay rất nóng."
-            },
-            {
-              "type": "translate",
-              "direction": "vi_to_zh",
-              "prompt": "Tôi cũng rất vui.",
-              "answer": "我也很高兴。",
-              "options": ["我也很高兴。", "我很高兴。", "他也很高兴。", "我也是高兴。"]
+          "exercises": {
+            "version": 2,
+            "theory": [
+              {
+                "id": "u2l3-hen",
+                "title": "Phó từ mức độ 很",
+                "structure": "Chủ ngữ + 很 + tính từ",
+                "explanation": "很 (hěn) nghĩa là 'rất', đặt TRƯỚC tính từ. Trong tiếng Trung, tính từ làm vị ngữ thường cần một phó từ mức độ như 很 đứng trước, không cần dùng 是.",
+                "examples": [
+                  {
+                    "situation": "Diễn tả cảm xúc",
+                    "hanzi": "我很高兴。",
+                    "pinyin": "wǒ hěn gāoxìng",
+                    "meaning": "Tôi rất vui.",
+                    "note": "❌ 我是高兴 là sai — tính từ không đi với 是."
+                  }
+                ]
+              },
+              {
+                "id": "u2l3-ye",
+                "title": "Phó từ 也 (cũng)",
+                "structure": "Chủ ngữ + 也 + động từ / 很 + tính từ",
+                "explanation": "也 (yě) nghĩa là 'cũng', luôn đặt TRƯỚC động từ hoặc phó từ 很, và đứng SAU chủ ngữ. Không đặt 也 ở cuối câu.",
+                "examples": [
+                  {
+                    "situation": "Bổ sung thông tin giống nhau",
+                    "hanzi": "我是学生，他也是学生。",
+                    "pinyin": "wǒ shì xuésheng, tā yě shì xuésheng",
+                    "meaning": "Tôi là học sinh, anh ấy cũng là học sinh."
+                  }
+                ]
+              }
+            ],
+            "flashcards": [
+              {
+                "type": "fill_blank",
+                "sentence": "我___高兴。",
+                "blank": "很",
+                "options": ["很", "是", "有", "吗"],
+                "hint": "Phó từ mức độ 'rất', đứng trước tính từ."
+              },
+              {
+                "type": "fill_blank",
+                "sentence": "我是学生，他___是学生。",
+                "blank": "也",
+                "options": ["也", "很", "不", "是"],
+                "hint": "'Cũng', đặt sau chủ ngữ, trước động từ."
+              },
+              {
+                "type": "sentence_order",
+                "words": ["很", "今天", "热", "天气"],
+                "answer": "今天天气很热",
+                "meaning": "Thời tiết hôm nay rất nóng."
+              },
+              {
+                "type": "answer_question",
+                "question": "你今天高兴吗？（请用 很 回答）",
+                "questionPinyin": "nǐ jīntiān gāoxìng ma?",
+                "accept": ["我很高兴", "很高兴", "我今天很高兴"],
+                "sampleAnswer": "我很高兴。",
+                "hint": "Trả lời theo mẫu 我很 + tính từ."
+              },
+              {
+                "type": "type_sentence",
+                "prompt": "Dịch sang tiếng Trung: Tôi cũng rất vui.",
+                "accept": ["我也很高兴"],
+                "meaning": "Tôi cũng rất vui."
+              }
+            ],
+            "test": {
+              "timeLimit": 200,
+              "passThreshold": 60,
+              "questions": [
+                {
+                  "type": "fill_blank",
+                  "sentence": "他___高兴。",
+                  "blank": "很",
+                  "options": ["很", "是", "吗", "有"]
+                },
+                {
+                  "type": "fill_blank",
+                  "sentence": "我喜欢汉语，他___喜欢汉语。",
+                  "blank": "也",
+                  "options": ["也", "很", "不", "是"]
+                },
+                {
+                  "type": "sentence_order",
+                  "words": ["也", "我", "很", "高兴"],
+                  "answer": "我也很高兴"
+                },
+                {
+                  "type": "translate",
+                  "direction": "vi_to_zh",
+                  "prompt": "Tôi cũng rất vui.",
+                  "answer": "我也很高兴。",
+                  "options": ["我也很高兴。", "我很高兴。", "他也很高兴。", "我也是高兴。"]
+                }
+              ]
             }
-          ]
+          }
         }
       ]
     }

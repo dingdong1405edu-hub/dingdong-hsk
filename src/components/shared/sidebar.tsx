@@ -5,6 +5,7 @@ import { motion, LayoutGroup } from "framer-motion";
 import {
   X,
   Home,
+  Route,
   Target,
   BookOpen,
   SpellCheck,
@@ -39,6 +40,7 @@ export const NAV_GROUPS: NavGroup[] = [
   {
     items: [
       { href: "/dashboard", label: "Trang chủ", icon: Home, exact: true },
+      { href: "/roadmap", label: "Lộ trình", icon: Route },
       { href: "/goals", label: "Mục tiêu", icon: Target },
     ],
   },
