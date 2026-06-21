@@ -7,12 +7,12 @@ import {
   DialogDescription,
 } from "@/components/ui/dialog";
 import { TheoryViewer } from "./theory-viewer";
-import type { TheorySection } from "@/types";
+import type { GrammarSection } from "@/types";
 
 interface Props {
   open: boolean;
   onOpenChange: (open: boolean) => void;
-  sections: TheorySection[];
+  sections: GrammarSection[];
 }
 
 /** "Xem lại lý thuyết" — a scrollable overlay listing every theory section, so

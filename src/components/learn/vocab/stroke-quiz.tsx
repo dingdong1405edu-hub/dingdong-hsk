@@ -1,47 +1,22 @@
 "use client";
-import { useCallback, useEffect, useRef, useState } from "react";
-import { Eye, RotateCcw, CheckCircle2, AlertCircle } from "lucide-react";
-
-/** Stroke data Hanzi Writer passes to the quiz callbacks (subset we use). */
-interface StrokeInfo {
-  strokeNum: number;
-  mistakesOnStroke: number;
-  totalMistakes: number;
-  strokesRemaining: number;
-}
-
-interface QuizOptions {
-  leniency?: number;
-  showHintAfterMisses?: number;
-  onMistake?: (info: StrokeInfo) => void;
-  onCorrectStroke?: (info: StrokeInfo) => void;
-  onComplete?: (summary: { totalMistakes: number }) => void;
-}
-
-// Minimal slice of the hanzi-writer instance API we use here.
-interface Writer {
-  quiz: (opts: QuizOptions) => void;
-  animateCharacter: (opts?: { onComplete?: () => void }) => void;
-  hideCharacter: () => void;
-  cancelQuiz: () => void;
-}
-
-type Mode = "trace" | "recall";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { CheckCircle2 } from "lucide-react";
+import { StrokeCell, type StrokeMode } from "./stroke-cell";
 
 interface Props {
+  /** A word/phrase — may be one or several Han characters. */
   character: string;
   /**
    * `trace`  — outline shown, learner writes over it (guided).
    * `recall` — blank grid, learner writes from memory; every stroke is still
    *            validated and a hint flashes the correct stroke after a miss.
    */
-  mode?: Mode;
-  size?: number;
-  /** Called once the learner finishes all strokes correctly. */
+  mode?: StrokeMode;
+  /** Called once every character has been written correctly. */
   onComplete?: () => void;
 }
 
-const MODE_CONFIG: Record<Mode, { hint: string; showOutline: boolean; hintAfterMisses: number }> = {
+const MODE_CONFIG: Record<StrokeMode, { hint: string; showOutline: boolean; hintAfterMisses: number }> = {
   trace: {
     hint: "Viết theo nét mẫu — đúng thứ tự nét.",
     showOutline: true,
@@ -54,141 +29,108 @@ const MODE_CONFIG: Record<Mode, { hint: string; showOutline: boolean; hintAfterM
   },
 };
 
+const isHan = (s: string) => /\p{Script=Han}/u.test(s);
+const clamp = (v: number, lo: number, hi: number) => Math.max(lo, Math.min(hi, v));
+
 /**
- * Steps 2 & 3 of the per-word flow. Both run Hanzi Writer quiz mode so each
- * stroke is checked in order: a wrong stroke is rejected and, after
- * `hintAfterMisses` misses, the expected stroke is highlighted as a hint.
- * The only difference is whether the faint outline guide is shown (`trace`) or
- * hidden so the learner reproduces the character from memory (`recall`).
- * Stroke data is loaded by the library from its CDN — nothing is stored in our DB.
+ * Pick a writing-box size from the available width. One character gets a big
+ * box (great on phones/tablets); multiple characters wrap into rows of
+ * comfortably-sized boxes. `width` 0 means "not measured yet" — fall back to a
+ * sensible default so the first paint isn't empty.
  */
-export function StrokeQuiz({ character, mode = "trace", size = 240, onComplete }: Props) {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const writerRef = useRef<Writer | null>(null);
-  const [done, setDone] = useState(false);
-  const [strokesLeft, setStrokesLeft] = useState<number | null>(null);
-  const [mistake, setMistake] = useState(false);
+function cellSizeFor(width: number, count: number): number {
+  const W = width > 0 ? width : 320;
+  const gap = 12;
+  if (count <= 1) return clamp(W - 4, 220, 340);
+  const minCell = 132;
+  const maxCell = 220;
+  let perRow = Math.max(1, Math.floor((W + gap) / (minCell + gap)));
+  perRow = Math.min(perRow, count);
+  const size = Math.floor((W - (perRow - 1) * gap) / perRow);
+  return clamp(size, minCell, maxCell);
+}
 
+/**
+ * Steps 2 & 3 of the per-word flow. Splits the word into individual Han
+ * characters and gives each its own validated writing box (Hanzi Writer can
+ * only load stroke data one character at a time, so a multi-character word like
+ * 你好 must be split — otherwise the grid loads nothing and can't be written on).
+ */
+export function StrokeQuiz({ character, mode = "trace", onComplete }: Props) {
   const cfg = MODE_CONFIG[mode];
+  const chars = useMemo(() => Array.from(character).filter(isHan), [character]);
 
-  const startQuiz = useCallback(
-    (writer: Writer) => {
-      setDone(false);
-      setMistake(false);
-      setStrokesLeft(null);
-      writer.quiz({
-        leniency: 1.2,
-        showHintAfterMisses: cfg.hintAfterMisses,
-        onMistake: (info) => {
-          setMistake(true);
-          setStrokesLeft(info.strokesRemaining);
-        },
-        onCorrectStroke: (info) => {
-          setMistake(false);
-          setStrokesLeft(info.strokesRemaining);
-        },
-        onComplete: () => {
-          setStrokesLeft(0);
-          setMistake(false);
-          setDone(true);
-          onComplete?.();
-        },
-      });
-    },
-    [cfg.hintAfterMisses, onComplete]
-  );
+  const wrapRef = useRef<HTMLDivElement>(null);
+  const [containerW, setContainerW] = useState(0);
 
   useEffect(() => {
-    if (!containerRef.current) return;
-    let cancelled = false;
-    setDone(false);
-    setStrokesLeft(null);
-    setMistake(false);
-
-    import("hanzi-writer").then((mod) => {
-      if (cancelled || !containerRef.current) return;
-      containerRef.current.innerHTML = "";
-      const writer = mod.default.create(containerRef.current, character, {
-        width: size,
-        height: size,
-        padding: 5,
-        showCharacter: false,
-        showOutline: cfg.showOutline,
-        showHintAfterMisses: cfg.hintAfterMisses,
-        strokeColor: "#16a34a",
-        outlineColor: "#d4d4d8",
-        drawingColor: "#16a34a",
-        highlightColor: "#86efac",
-      }) as unknown as Writer;
-      writerRef.current = writer;
-      startQuiz(writer);
+    const el = wrapRef.current;
+    if (!el) return;
+    setContainerW(Math.round(el.getBoundingClientRect().width));
+    const ro = new ResizeObserver((entries) => {
+      const w = entries[0]?.contentRect.width ?? 0;
+      setContainerW(Math.round(w));
     });
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, []);
 
-    return () => {
-      cancelled = true;
-      if (containerRef.current) containerRef.current.innerHTML = "";
-      writerRef.current = null;
-    };
-  }, [character, size, cfg.showOutline, cfg.hintAfterMisses, startQuiz]);
+  const size = cellSizeFor(containerW, chars.length);
 
-  function restartQuiz() {
-    const w = writerRef.current;
-    if (!w) return;
-    w.hideCharacter();
-    startQuiz(w);
-  }
+  // Track which characters are finished. Reset whenever the word or mode changes.
+  const doneSet = useRef<Set<number>>(new Set());
+  const [doneCount, setDoneCount] = useState(0);
+  useEffect(() => {
+    doneSet.current = new Set();
+    setDoneCount(0);
+  }, [character, mode]);
 
-  function showSample() {
-    const w = writerRef.current;
-    if (!w) return;
-    w.cancelQuiz();
-    w.animateCharacter({ onComplete: () => restartQuiz() });
+  const handleCellDone = useCallback(
+    (i: number) => {
+      if (doneSet.current.has(i)) return;
+      doneSet.current.add(i);
+      const c = doneSet.current.size;
+      setDoneCount(c);
+      if (c >= chars.length) onComplete?.();
+    },
+    [chars.length, onComplete]
+  );
+
+  const allDone = chars.length > 0 && doneCount >= chars.length;
+
+  if (chars.length === 0) {
+    return (
+      <p className="py-8 text-center text-sm text-muted-foreground">
+        Từ này không có chữ Hán để luyện viết.
+      </p>
+    );
   }
 
   return (
-    <div className="flex flex-col items-center gap-4">
-      <p className="text-sm text-muted-foreground">{cfg.hint}</p>
-      <div
-        ref={containerRef}
-        className="tianzi-grid rounded-lg bg-white"
-        style={{ width: size, height: size }}
-      />
-
-      {done ? (
+    <div ref={wrapRef} className="flex w-full flex-col items-center gap-3">
+      <p className="text-center text-sm text-muted-foreground">{cfg.hint}</p>
+      <div className="flex flex-wrap items-start justify-center gap-3">
+        {chars.map((ch, i) => (
+          <StrokeCell
+            key={`${mode}-${i}-${ch}`}
+            char={ch}
+            mode={mode}
+            size={size}
+            showOutline={cfg.showOutline}
+            hintAfterMisses={cfg.hintAfterMisses}
+            onDone={() => handleCellDone(i)}
+          />
+        ))}
+      </div>
+      {allDone ? (
         <div className="flex items-center gap-1.5 text-sm font-medium text-green-600">
-          <CheckCircle2 className="h-4 w-4" /> Viết đúng rồi!
+          <CheckCircle2 className="h-4 w-4" /> Viết đúng hết rồi!
         </div>
-      ) : (
-        <>
-          <div className="flex h-5 items-center gap-1.5 text-sm">
-            {mistake ? (
-              <span className="flex items-center gap-1.5 font-medium text-red-600">
-                <AlertCircle className="h-4 w-4" /> Sai nét — viết lại theo nét đang gợi ý.
-              </span>
-            ) : strokesLeft != null ? (
-              <span className="text-muted-foreground">Còn {strokesLeft} nét</span>
-            ) : (
-              <span className="text-muted-foreground">Bắt đầu viết nét đầu tiên…</span>
-            )}
-          </div>
-          <div className="flex gap-2">
-            <button
-              type="button"
-              onClick={showSample}
-              className="inline-flex items-center gap-1.5 rounded-md border px-3 py-1.5 text-sm transition-colors hover:bg-muted"
-            >
-              <Eye className="h-4 w-4" /> Xem mẫu
-            </button>
-            <button
-              type="button"
-              onClick={restartQuiz}
-              className="inline-flex items-center gap-1.5 rounded-md border px-3 py-1.5 text-sm transition-colors hover:bg-muted"
-            >
-              <RotateCcw className="h-4 w-4" /> Viết lại
-            </button>
-          </div>
-        </>
-      )}
+      ) : chars.length > 1 ? (
+        <div className="text-xs text-muted-foreground">
+          Đã viết đúng {doneCount}/{chars.length} chữ
+        </div>
+      ) : null}
     </div>
   );
 }

@@ -483,7 +483,7 @@ const ROADMAP_COURSES: RoadmapCourse[] = [
  * Gán sẵn tiến độ mẫu cho tài khoản demo để map hiển thị đủ trạng thái
  * (đã hoàn thành / đang học / bị khóa).
  */
-async function seedRoadmap(demoLearnerId: string) {
+async function seedRoadmap(testUserId: string) {
   let courseCount = 0;
   let lessonCount = 0;
 
@@ -517,6 +517,7 @@ async function seedRoadmap(demoLearnerId: string) {
           order,
           topic: t.topic,
           topicZh: t.topicZh,
+          description: `Khám phá chủ đề "${t.topic}" (${t.topicZh}) qua từ vựng, mẫu ngữ pháp và luyện nghe – nói – đọc – viết theo ngữ cảnh thực tế.`,
           icon: t.icon,
           chapter: ch.title,
           chapterOrder: chi + 1,
@@ -532,27 +533,34 @@ async function seedRoadmap(demoLearnerId: string) {
     }
   }
 
-  // Tiến độ mẫu cho tài khoản demo: hoàn thành 6 bài đầu HSK1 (2 chương đầu dở dang).
-  // skillsDone để rỗng cho tới khi nội dung từng kỹ năng (RoadmapSection) được điền,
-  // tránh hiển thị kỹ năng "đã xong" mà thực ra chưa có nội dung.
-  const demoDone = [1, 2, 3, 4, 5, 6];
-  for (const ord of demoDone) {
-    const lessonId = `rl-hsk1-${ord}`;
+  // Tiến độ mẫu cho tài khoản test (đăng nhập bằng Google) để xem vòng tròn % và đủ trạng thái:
+  //  - Bài 1–5: hoàn thành đủ 6 kỹ năng (vòng 100%).
+  //  - Bài 6: đang học dở, mới xong 3/6 kỹ năng (vòng 50%, là bài "đang học").
+  const ALL_SKILLS = ["VOCAB", "GRAMMAR", "LISTENING", "SPEAKING", "READING", "WRITING"];
+  const demoProgress: { ord: number; completed: boolean; skillsDone: string[] }[] = [
+    { ord: 1, completed: true, skillsDone: ALL_SKILLS },
+    { ord: 2, completed: true, skillsDone: ALL_SKILLS },
+    { ord: 3, completed: true, skillsDone: ALL_SKILLS },
+    { ord: 4, completed: true, skillsDone: ALL_SKILLS },
+    { ord: 5, completed: true, skillsDone: ALL_SKILLS },
+    { ord: 6, completed: false, skillsDone: ["VOCAB", "GRAMMAR", "LISTENING"] },
+  ];
+  for (const p of demoProgress) {
+    const lessonId = `rl-hsk1-${p.ord}`;
+    const data = {
+      completed: p.completed,
+      skillsDone: p.skillsDone as Prisma.InputJsonValue,
+      xpEarned: p.completed ? 20 : 0,
+      completedAt: p.completed ? new Date() : null,
+    };
     await prisma.roadmapProgress.upsert({
-      where: { userId_lessonId: { userId: demoLearnerId, lessonId } },
-      update: { completed: true, skillsDone: [], xpEarned: 20 },
-      create: {
-        userId: demoLearnerId,
-        lessonId,
-        completed: true,
-        skillsDone: [],
-        xpEarned: 20,
-        completedAt: new Date(),
-      },
+      where: { userId_lessonId: { userId: testUserId, lessonId } },
+      update: data,
+      create: { userId: testUserId, lessonId, ...data },
     });
   }
 
-  console.log(`[roadmap] courses: ${courseCount}, lessons: ${lessonCount}, demo progress: ${demoDone.length}`);
+  console.log(`[roadmap] courses: ${courseCount}, lessons: ${lessonCount}, demo progress: ${demoProgress.length}`);
 }
 
 async function main() {
@@ -1146,7 +1154,8 @@ async function main() {
   });
 
   // ===== Học theo lộ trình (Course → RoadmapLesson) =====
-  await seedRoadmap(learner.id);
+  // Gán tiến độ mẫu cho tài khoản test đăng nhập bằng Google (dingdong1405edu@gmail.com).
+  await seedRoadmap(admin.id);
 
   // ===== Bulk content authored in batch (prisma/seed-data/*.json) =====
   await loadSeedData();

@@ -208,8 +208,34 @@ function parseExercises(raw: string): Prisma.InputJsonValue {
   return parsed as Prisma.InputJsonValue;
 }
 
-// Grammar lessons: the structured { theory, flashcards, test } object. A legacy
-// bare array is accepted and wrapped as flashcards-only so old content still saves.
+// Validate one section's required theory fields + that its exercise list (under
+// `exField`) holds only known exercise types.
+function validateSection(s: unknown, i: number, exField: string): void {
+  if (typeof s !== "object" || s === null || Array.isArray(s)) {
+    throw new Error(`Phần #${i + 1} phải là một object.`);
+  }
+  const sec = s as Record<string, unknown>;
+  if (typeof sec.title !== "string" || !sec.title.trim()) {
+    throw new Error(`Phần #${i + 1} thiếu "title".`);
+  }
+  if (typeof sec.explanation !== "string" || !sec.explanation.trim()) {
+    throw new Error(`Phần #${i + 1} thiếu "explanation".`);
+  }
+  if (!Array.isArray(sec.examples)) {
+    throw new Error(`Phần #${i + 1} phải có "examples" là một mảng (để [] nếu không có ví dụ).`);
+  }
+  const exs = sec[exField];
+  if (exs !== undefined && !Array.isArray(exs)) {
+    throw new Error(`"${exField}" của phần #${i + 1} phải là một mảng.`);
+  }
+  (Array.isArray(exs) ? exs : []).forEach((ex, j) =>
+    validateExercise(ex, j, `Bài tập của phần #${i + 1}`)
+  );
+}
+
+// Grammar lessons: the v3 object { sections:[{ ...theory, exercises }], test }.
+// Also accepts a legacy bare Exercise[] array and the older v2 object
+// { theory, flashcards, test } so previously-saved content still edits & saves.
 function parseGrammarLessonInput(raw: string): Prisma.InputJsonValue {
   let parsed: unknown;
   try {
@@ -218,59 +244,53 @@ function parseGrammarLessonInput(raw: string): Prisma.InputJsonValue {
     throw new Error("Nội dung bài học không phải JSON hợp lệ.");
   }
 
+  // Legacy bare array → store as-is; the learner deserialiser wraps it.
   if (Array.isArray(parsed)) {
     parsed.forEach((ex, i) => validateExercise(ex, i, "Bài tập"));
-    return {
-      version: 2,
-      theory: [],
-      flashcards: parsed,
-      test: { questions: [], passThreshold: 60 },
-    } as unknown as Prisma.InputJsonValue;
+    return parsed as Prisma.InputJsonValue;
   }
 
   if (typeof parsed !== "object" || parsed === null) {
     throw new Error(
-      'Nội dung phải là object { "theory": [...], "flashcards": [...], "test": {...} } hoặc một mảng bài tập.'
+      'Nội dung phải là object { "sections": [...], "test": {...} } hoặc một mảng bài tập.'
     );
   }
 
   const obj = parsed as Record<string, unknown>;
-  const theory = obj.theory ?? [];
-  const flashcards = obj.flashcards ?? [];
   const testObj = obj.test ?? {};
-
-  if (!Array.isArray(theory)) throw new Error('"theory" phải là một mảng.');
-  if (!Array.isArray(flashcards)) throw new Error('"flashcards" phải là một mảng.');
   if (typeof testObj !== "object" || testObj === null || Array.isArray(testObj)) {
     throw new Error('"test" phải là một object { "questions": [...] }.');
   }
   const questions = (testObj as Record<string, unknown>).questions ?? [];
   if (!Array.isArray(questions)) throw new Error('"test.questions" phải là một mảng.');
-
-  theory.forEach((s, i) => {
-    if (typeof s !== "object" || s === null || Array.isArray(s)) {
-      throw new Error(`Mục lý thuyết #${i + 1} phải là một object.`);
-    }
-    const sec = s as Record<string, unknown>;
-    if (typeof sec.title !== "string" || !sec.title.trim()) {
-      throw new Error(`Mục lý thuyết #${i + 1} thiếu "title".`);
-    }
-    if (typeof sec.explanation !== "string" || !sec.explanation.trim()) {
-      throw new Error(`Mục lý thuyết #${i + 1} thiếu "explanation".`);
-    }
-    if (!Array.isArray(sec.examples)) {
-      throw new Error(`Mục lý thuyết #${i + 1} phải có "examples" là một mảng (có thể để [] nếu không có ví dụ).`);
-    }
-  });
-
-  flashcards.forEach((ex, i) => validateExercise(ex, i, "Flashcard"));
   questions.forEach((q, i) => validateExercise(q, i, "Câu hỏi test"));
 
-  if (theory.length === 0 && flashcards.length === 0 && questions.length === 0) {
-    throw new Error("Bài học phải có ít nhất một mục lý thuyết, flashcard hoặc câu hỏi test.");
+  // v3 — sections each carry their own practice exercises.
+  if (Array.isArray(obj.sections)) {
+    obj.sections.forEach((s, i) => validateSection(s, i, "exercises"));
+    if (obj.sections.length === 0 && questions.length === 0) {
+      throw new Error("Bài học phải có ít nhất một phần (section) hoặc câu hỏi test.");
+    }
+    return parsed as Prisma.InputJsonValue;
   }
 
-  return parsed as Prisma.InputJsonValue;
+  // v2 back-compat — { theory, flashcards, test }.
+  if (Array.isArray(obj.theory) || Array.isArray(obj.flashcards)) {
+    const theory = obj.theory ?? [];
+    const flashcards = obj.flashcards ?? [];
+    if (!Array.isArray(theory)) throw new Error('"theory" phải là một mảng.');
+    if (!Array.isArray(flashcards)) throw new Error('"flashcards" phải là một mảng.');
+    theory.forEach((s, i) => validateSection(s, i, "__noExercises__"));
+    flashcards.forEach((ex, i) => validateExercise(ex, i, "Flashcard"));
+    if (theory.length === 0 && flashcards.length === 0 && questions.length === 0) {
+      throw new Error("Bài học phải có ít nhất một phần lý thuyết, flashcard hoặc câu hỏi test.");
+    }
+    return parsed as Prisma.InputJsonValue;
+  }
+
+  throw new Error(
+    'Object không hợp lệ. Cần "sections" (khuyến nghị) hoặc "theory"/"flashcards", kèm "test".'
+  );
 }
 
 // Create (no lessonId) or update (lessonId present) a lesson. Returns a result
@@ -444,4 +464,100 @@ export async function reorderVocabWordsAction(unitId: string, orderedIds: string
   );
   revalidatePath(`/admin/vocab/${unitId}`);
   return { ok: true };
+}
+
+// ===== Bulk import vocab words (paste / CSV / .xlsx) =====
+// Parsing/preview happens client-side; this action validates and persists the
+// already-mapped rows. Each row → one VocabWord appended to the lesson.
+const bulkRowSchema = z.object({
+  hanzi: z.string().trim().min(1),
+  pinyin: z.string().trim().default(""),
+  meaning: z.string().trim().min(1),
+  exHanzi: z.string().trim().default(""),
+  exPinyin: z.string().trim().default(""),
+  exMeaning: z.string().trim().default(""),
+});
+
+export interface VocabBulkRow {
+  hanzi: string;
+  pinyin?: string;
+  meaning: string;
+  exHanzi?: string;
+  exPinyin?: string;
+  exMeaning?: string;
+}
+
+export async function bulkImportVocabWordsAction(input: {
+  lessonId: string;
+  unitId: string;
+  rows: VocabBulkRow[];
+}): Promise<{ ok: boolean; created?: number; skipped?: number; error?: string }> {
+  try {
+    await requireAdmin();
+    const lessonId = String(input?.lessonId ?? "");
+    const unitId = String(input?.unitId ?? "");
+
+    const lesson = await db.vocabLesson.findUnique({
+      where: { id: lessonId },
+      select: { unitId: true },
+    });
+    if (!lesson || lesson.unitId !== unitId) {
+      throw new Error("Bài học không hợp lệ.");
+    }
+
+    const rows = Array.isArray(input?.rows) ? input.rows : [];
+    const valid: Array<{
+      hanzi: string;
+      pinyin: string;
+      meaning: string;
+      examples: Prisma.InputJsonValue;
+    }> = [];
+    let skipped = 0;
+
+    for (const raw of rows) {
+      const parsed = bulkRowSchema.safeParse(raw);
+      if (!parsed.success) {
+        skipped++;
+        continue;
+      }
+      const d = parsed.data;
+      const examples: Array<{ hanzi: string; pinyin: string; meaning: string }> = [];
+      // Keep the example only if it actually contains the word — the learner UI
+      // bolds the word inside the example, so an example without it renders nothing.
+      if (d.exHanzi && d.exHanzi.includes(d.hanzi)) {
+        examples.push({ hanzi: d.exHanzi, pinyin: d.exPinyin, meaning: d.exMeaning });
+      }
+      valid.push({
+        hanzi: d.hanzi,
+        pinyin: d.pinyin,
+        meaning: d.meaning,
+        examples: examples as unknown as Prisma.InputJsonValue,
+      });
+    }
+
+    if (valid.length === 0) {
+      return { ok: false, error: "Không có dòng hợp lệ (cần ít nhất chữ Hán và nghĩa)." };
+    }
+
+    const count = await db.vocabWord.count({ where: { lessonId } });
+    await db.$transaction(
+      valid.map((v, i) =>
+        db.vocabWord.create({
+          data: {
+            lessonId,
+            order: count + i + 1,
+            hanzi: v.hanzi,
+            pinyin: v.pinyin,
+            meaning: v.meaning,
+            audioUrl: null,
+            examples: v.examples,
+          },
+        })
+      )
+    );
+    revalidatePath(`/admin/vocab/${unitId}`);
+    return { ok: true, created: valid.length, skipped };
+  } catch (e) {
+    return { ok: false, error: e instanceof Error ? e.message : "Lỗi không xác định." };
+  }
 }

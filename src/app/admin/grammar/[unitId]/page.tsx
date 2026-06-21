@@ -8,6 +8,7 @@ import { ArrowLeft, Plus, Trash2 } from "lucide-react";
 import { hskLevelLabel } from "@/lib/utils";
 import { grammarItemCount } from "@/lib/grammar";
 import { LessonEditor } from "@/components/admin/lesson-editor";
+import { GrammarAuthorGuide } from "@/components/admin/grammar-author-guide";
 import { deleteLessonAction } from "@/server/actions/admin";
 
 interface Props {
@@ -41,6 +42,9 @@ export default async function AdminGrammarUnitPage({ params }: Props) {
           <span className="text-xs text-muted-foreground">{unit.lessons.length} bài học</span>
         </div>
       </div>
+
+      {/* Authoring guide */}
+      <GrammarAuthorGuide />
 
       {/* Create lesson */}
       <Card>

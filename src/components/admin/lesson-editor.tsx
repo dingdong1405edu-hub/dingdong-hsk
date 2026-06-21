@@ -26,14 +26,15 @@ const VOCAB_TEMPLATE = `[
   }
 ]`;
 
-// Grammar lessons use the structured object: theory (lý thuyết) → flashcards
-// (luyện tập, có thể bỏ qua) → test (bài kiểm tra tổng hợp, đạt ≥ passThreshold%).
+// Grammar lessons use the v3 object: an ordered list of "sections" (mỗi phần =
+// lý thuyết + bài tập của chính phần đó, học xong là luyện tập ngay) rồi tới
+// "test" (bài kiểm tra tổng hợp cuối bài, đạt ≥ passThreshold% mới qua).
 const GRAMMAR_TEMPLATE = `{
-  "version": 2,
-  "theory": [
+  "version": 3,
+  "sections": [
     {
       "id": "shi-1",
-      "title": "Câu với 是 (shì)",
+      "title": "Câu khẳng định với 是 (shì)",
       "titleZh": "“是”字句",
       "structure": "A + 是 + B",
       "explanation": "是 (shì) nghĩa là 'là', nối chủ ngữ với danh từ để khẳng định A là B.",
@@ -45,30 +46,38 @@ const GRAMMAR_TEMPLATE = `{
           "meaning": "Anh ấy là giáo viên.",
           "note": "Không thêm 很 trước 是."
         }
+      ],
+      "exercises": [
+        {
+          "type": "fill_blank",
+          "sentence": "我___学生。",
+          "blank": "是",
+          "options": ["是", "有", "在", "叫"],
+          "hint": "Động từ 'là'"
+        },
+        {
+          "type": "answer_question",
+          "question": "你是学生吗？",
+          "questionPinyin": "nǐ shì xuésheng ma?",
+          "accept": ["我是学生", "是", "我是"],
+          "sampleAnswer": "我是学生。"
+        }
       ]
-    }
-  ],
-  "flashcards": [
-    {
-      "type": "fill_blank",
-      "sentence": "我___学生。",
-      "blank": "是",
-      "options": ["是", "有", "在", "叫"],
-      "hint": "Động từ 'là'"
     },
     {
-      "type": "answer_question",
-      "question": "你是学生吗？",
-      "questionPinyin": "nǐ shì xuésheng ma?",
-      "accept": ["我是学生", "是", "我是"],
-      "sampleAnswer": "我是学生。",
-      "hint": "Trả lời khẳng định"
-    },
-    {
-      "type": "type_sentence",
-      "prompt": "Dịch sang tiếng Trung: Cô ấy là bác sĩ.",
-      "accept": ["她是医生", "她是医生。"],
-      "meaning": "Cô ấy là bác sĩ."
+      "id": "shi-2",
+      "title": "Lưu ý: 是 đi với danh từ",
+      "structure": "A + 是 + danh từ (KHÔNG dùng với tính từ)",
+      "explanation": "是 chỉ nối với danh từ. 'rất vui' dùng 很 chứ không dùng 是.",
+      "examples": [],
+      "exercises": [
+        {
+          "type": "type_sentence",
+          "prompt": "Dịch sang tiếng Trung: Cô ấy là bác sĩ.",
+          "accept": ["她是医生"],
+          "meaning": "Cô ấy là bác sĩ."
+        }
+      ]
     }
   ],
   "test": {
@@ -134,11 +143,12 @@ export function LessonEditor({ skill, unitId, lesson }: Props) {
         />
         {isGrammar ? (
           <p className="text-[11px] text-muted-foreground">
-            Object gồm: <code>theory</code> (lý thuyết: title, structure, explanation, examples),{" "}
-            <code>flashcards</code> (luyện tập, có thể bỏ qua) và <code>test</code> (bài kiểm tra
+            Object gồm <code>sections</code> (mỗi phần: <code>title</code>, <code>structure</code>,{" "}
+            <code>explanation</code>, <code>examples</code>, <code>imageUrl</code> tùy chọn, và{" "}
+            <code>exercises</code> — bài tập của chính phần đó) và <code>test</code> (bài kiểm tra
             tổng hợp, đạt ≥ <code>passThreshold</code>% để qua bài). Loại bài tập: fill_blank,
             sentence_order, translate, answer_question, type_sentence, toneSelect, match,
-            pinyinMatch. Để trống ô trên sẽ hiện mẫu ví dụ.
+            pinyinMatch. Xem hướng dẫn chi tiết bên dưới. Để trống ô trên sẽ hiện mẫu ví dụ.
           </p>
         ) : (
           <p className="text-[11px] text-muted-foreground">

@@ -81,7 +81,7 @@ export interface TypeSentenceExercise extends Exercise {
   hint?: string;
 }
 
-// ===== Grammar lesson content (theory → flashcards → comprehensive test) =====
+// ===== Grammar lesson content (per-section: theory + practice → final test) =====
 
 /** A concrete situational example illustrating one grammar point. */
 export interface SituationalExample {
@@ -90,17 +90,28 @@ export interface SituationalExample {
   pinyin: string;
   meaning: string;
   note?: string;
+  /** Optional illustration for this context (URL or hosted path). */
+  imageUrl?: string;
 }
 
-/** One "small part" of a grammar lesson's theory: a single structure broken
- *  out with an explanation and situational examples. */
+/** The theory (display) fields of one grammar section: a single structure
+ *  broken out with a framed formula, explanation, optional image and examples. */
 export interface TheorySection {
   id: string;
   title: string;
   titleZh?: string;
   structure?: string;
   explanation: string;
+  /** Optional illustration for the whole section (URL or hosted path). */
+  imageUrl?: string;
   examples: SituationalExample[];
+}
+
+/** One "small part" of a grammar lesson: the theory above PLUS the practice
+ *  exercises for that exact part — the learner studies it then drills it
+ *  immediately, before moving to the next section. */
+export interface GrammarSection extends TheorySection {
+  exercises: Exercise[];
 }
 
 /** The comprehensive end-of-lesson test (standard grammar-exam format): graded
@@ -111,12 +122,13 @@ export interface GrammarTest {
   questions: Exercise[];
 }
 
-/** Structured `GrammarLesson.exercises` JSON (version 2). A legacy bare
- *  `Exercise[]` is treated as flashcards-only by the deserialiser. */
+/** Structured `GrammarLesson.exercises` JSON (version 3): an ordered list of
+ *  sections (each = theory + its practice) followed by one comprehensive test.
+ *  The deserialiser also accepts a legacy bare `Exercise[]` array and the
+ *  earlier `{ theory, flashcards, test }` (v2) shape. */
 export interface GrammarLessonContent {
-  version: 2;
-  theory: TheorySection[];
-  flashcards: Exercise[];
+  version: 3;
+  sections: GrammarSection[];
   test: GrammarTest;
 }
 

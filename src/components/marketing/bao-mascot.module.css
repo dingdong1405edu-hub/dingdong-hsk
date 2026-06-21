@@ -115,6 +115,10 @@
 .a { left: 24%; animation-delay: 0s; }
 .b { left: 48%; animation-delay: 1s; height: 115%; }
 .c { left: 70%; animation-delay: 2s; }
+
+/* Bare mode ngồi trên nền hero sáng: khói cao hơn + xanh ô-liu đậm để "bốc lên" rõ ràng */
+.bare .steam { top: -12%; height: 46%; width: 66%; }
+.bare .wisp { stroke: rgba(93, 119, 64, 0.75); stroke-width: 8; }
 @keyframes rise {
   0%   { opacity: 0;   transform: translateY(20%) scale(0.7); }
   25%  { opacity: 0.8; }

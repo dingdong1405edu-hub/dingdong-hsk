@@ -2,52 +2,53 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=Nunito:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif:wght@400;600;700&display=swap');
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 240 10% 3.9%;
+    /* Đồng bộ với trang chủ: nền kem ấm, xanh ô-liu (#5d7740), mực #2a2f45 */
+    --background: 40 56% 96%;
+    --foreground: 229 24% 22%;
     --card: 0 0% 100%;
-    --card-foreground: 240 10% 3.9%;
+    --card-foreground: 229 24% 22%;
     --popover: 0 0% 100%;
-    --popover-foreground: 240 10% 3.9%;
-    --primary: 156 41% 32%;
+    --popover-foreground: 229 24% 22%;
+    --primary: 88 30% 36%;
     --primary-foreground: 0 0% 100%;
-    --secondary: 150 26% 95%;
-    --secondary-foreground: 156 28% 17%;
-    --muted: 150 20% 95.5%;
-    --muted-foreground: 152 9% 41%;
-    --accent: 152 32% 93%;
-    --accent-foreground: 156 35% 21%;
+    --secondary: 80 36% 92%;
+    --secondary-foreground: 92 30% 22%;
+    --muted: 44 36% 93%;
+    --muted-foreground: 227 12% 47%;
+    --accent: 82 38% 90%;
+    --accent-foreground: 92 32% 22%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
-    --border: 150 15% 88%;
-    --input: 150 15% 88%;
-    --ring: 156 41% 32%;
+    --border: 76 22% 85%;
+    --input: 76 22% 85%;
+    --ring: 88 30% 36%;
     --radius: 0.625rem;
   }
 
   .dark {
-    --background: 240 10% 3.9%;
-    --foreground: 0 0% 98%;
-    --card: 240 10% 3.9%;
-    --card-foreground: 0 0% 98%;
-    --popover: 240 10% 3.9%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 156 38% 43%;
-    --primary-foreground: 156 30% 8%;
-    --secondary: 156 8% 16%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 156 8% 16%;
-    --muted-foreground: 150 6% 64%;
-    --accent: 156 10% 18%;
-    --accent-foreground: 0 0% 98%;
+    --background: 230 18% 9%;
+    --foreground: 40 30% 96%;
+    --card: 230 18% 9%;
+    --card-foreground: 40 30% 96%;
+    --popover: 230 18% 9%;
+    --popover-foreground: 40 30% 96%;
+    --primary: 88 32% 52%;
+    --primary-foreground: 92 40% 10%;
+    --secondary: 90 8% 18%;
+    --secondary-foreground: 40 30% 96%;
+    --muted: 90 8% 18%;
+    --muted-foreground: 80 8% 64%;
+    --accent: 88 12% 20%;
+    --accent-foreground: 40 30% 96%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
-    --border: 156 8% 18%;
-    --input: 156 8% 18%;
-    --ring: 156 38% 43%;
+    --border: 90 8% 20%;
+    --input: 90 8% 20%;
+    --ring: 88 32% 52%;
   }
 }
 
@@ -61,20 +62,19 @@
   }
   body {
     @apply bg-background text-foreground;
-    font-family: 'Inter', 'Noto Sans SC', system-ui, sans-serif;
+    font-family: 'Nunito', 'Noto Sans SC', system-ui, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
-    font-feature-settings: 'cv05', 'cv11';
   }
-  /* Display typeface for headings — Plus Jakarta Sans, tightened tracking */
+  /* Display typeface for headings — Nunito, đồng bộ với trang chủ */
   h1, h2, h3, h4, h5, h6, .font-display {
-    font-family: 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
-    font-weight: 700;
-    letter-spacing: -0.021em;
+    font-family: 'Nunito', system-ui, sans-serif;
+    font-weight: 800;
+    letter-spacing: -0.02em;
   }
   h1, h2 {
-    letter-spacing: -0.032em;
+    letter-spacing: -0.03em;
   }
   .font-chinese {
     font-family: 'Noto Sans SC', sans-serif;
@@ -83,16 +83,16 @@
     font-family: 'Noto Serif', serif;
   }
   ::selection {
-    background-color: hsl(130 52% 38% / 0.16);
+    background-color: hsl(88 30% 36% / 0.16);
   }
 }
 
 /* Light-green grid backdrop (hero / feature sections) */
 .hero-grid {
-  background-color: #f1f8ea;
+  background-color: #f4f7ec;
   background-image:
-    linear-gradient(rgba(76, 120, 50, 0.06) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(76, 120, 50, 0.06) 1px, transparent 1px);
+    linear-gradient(rgba(93, 119, 64, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(93, 119, 64, 0.06) 1px, transparent 1px);
   background-size: 46px 46px;
 }
 
@@ -101,17 +101,17 @@
 /* Calm layered green aurora — slowly pans for a living, peaceful feel */
 .aurora-bg {
   background:
-    radial-gradient(48% 55% at 18% 22%, hsl(156 44% 40% / 0.16), transparent 60%),
-    radial-gradient(42% 50% at 82% 18%, hsl(170 42% 44% / 0.14), transparent 60%),
-    radial-gradient(55% 60% at 50% 95%, hsl(150 40% 48% / 0.13), transparent 62%),
-    linear-gradient(180deg, #f1f8f4 0%, #e3f1ea 100%);
+    radial-gradient(48% 55% at 18% 22%, hsl(88 34% 42% / 0.16), transparent 60%),
+    radial-gradient(42% 50% at 82% 18%, hsl(80 32% 46% / 0.14), transparent 60%),
+    radial-gradient(55% 60% at 50% 95%, hsl(95 34% 48% / 0.13), transparent 62%),
+    linear-gradient(180deg, #f5f8ec 0%, #e9efdc 100%);
   background-size: 160% 160%, 160% 160%, 160% 160%, 100% 100%;
   animation: auroraPan 22s ease-in-out infinite;
 }
 .peaceful-bg {
   background:
-    radial-gradient(40% 45% at 12% 8%, hsl(156 44% 40% / 0.09), transparent 60%),
-    radial-gradient(36% 42% at 90% 6%, hsl(170 40% 44% / 0.08), transparent 60%),
+    radial-gradient(40% 45% at 12% 8%, hsl(88 34% 42% / 0.09), transparent 60%),
+    radial-gradient(36% 42% at 90% 6%, hsl(80 32% 46% / 0.08), transparent 60%),
     hsl(var(--background));
 }
 
@@ -132,15 +132,15 @@
   border: 1px solid hsl(0 0% 100% / 0.55);
 }
 .glass-green {
-  background: linear-gradient(150deg, hsl(110 45% 96% / 0.85), hsl(130 40% 92% / 0.7));
+  background: linear-gradient(150deg, hsl(82 42% 95% / 0.85), hsl(88 34% 90% / 0.7));
   backdrop-filter: blur(14px) saturate(1.4);
   -webkit-backdrop-filter: blur(14px) saturate(1.4);
-  border: 1px solid hsl(130 40% 80% / 0.45);
+  border: 1px solid hsl(88 30% 78% / 0.45);
 }
 
 /* Green gradient text (on light bg) */
 .text-gradient-green {
-  background: linear-gradient(105deg, hsl(156 48% 29%), hsl(168 46% 37%) 55%, hsl(150 44% 40%));
+  background: linear-gradient(105deg, hsl(92 38% 28%), hsl(82 34% 35%) 55%, hsl(78 32% 40%));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -157,10 +157,10 @@
 /* Calm, scholarly green hero background — fully green section */
 .hero-green {
   background:
-    radial-gradient(48% 55% at 16% 18%, hsl(156 46% 44% / 0.5), transparent 60%),
-    radial-gradient(45% 50% at 86% 14%, hsl(172 44% 46% / 0.42), transparent 60%),
-    radial-gradient(62% 72% at 50% 112%, hsl(158 50% 22% / 0.62), transparent 66%),
-    linear-gradient(160deg, hsl(157 44% 30%), hsl(162 52% 20%));
+    radial-gradient(48% 55% at 16% 18%, hsl(90 36% 42% / 0.5), transparent 60%),
+    radial-gradient(45% 50% at 86% 14%, hsl(80 34% 44% / 0.42), transparent 60%),
+    radial-gradient(62% 72% at 50% 112%, hsl(96 42% 20% / 0.62), transparent 66%),
+    linear-gradient(160deg, hsl(90 32% 28%), hsl(96 42% 18%));
   background-size: 170% 170%, 170% 170%, 170% 170%, 100% 100%;
   animation: auroraPan 24s ease-in-out infinite;
 }

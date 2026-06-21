@@ -1,16 +1,16 @@
 "use client";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { completeLessonAction } from "@/server/actions/lesson";
-import { TheoryPass } from "./theory-pass";
+import { SectionTheory } from "./section-theory";
 import { FlashcardPhase, type FlashResult } from "./flashcard-phase";
 import { GrammarTestRunner, type TestResult } from "./grammar-test-runner";
 import { TheoryReviewDialog } from "./theory-review-dialog";
-import type { GrammarLessonContent } from "@/types";
+import type { GrammarLessonContent, GrammarSection } from "@/types";
 
 interface Props {
   lesson: { id: string; title: string };
@@ -18,39 +18,48 @@ interface Props {
   unitId: string;
 }
 
-type Phase = "theory" | "flashcards" | "test" | "done";
+type Stage = "theory" | "practice" | "test" | "done";
+
+/** A section is worth a theory screen if it has any teaching content. */
+function sectionHasTheory(s: GrammarSection): boolean {
+  return Boolean(s.structure || s.explanation || s.examples.length || s.imageUrl);
+}
+function sectionHasPractice(s: GrammarSection): boolean {
+  return s.exercises.length > 0;
+}
 
 /**
- * Grammar lesson orchestrator: theory (single pass, reviewable any time) →
- * flashcards (skippable, risk-free) → comprehensive test → summary. Scoring:
- * flashcard skips are excluded from the denominator; the test alone decides
- * whether the lesson is marked completed (≥ passThreshold%, default 60).
+ * Grammar lesson orchestrator. Interleaved flow: for each section the learner
+ * studies its theory then immediately drills that section's exercises, before
+ * moving to the next section — then one comprehensive test, then the summary.
+ * Scoring: flashcard skips are excluded from the denominator; the test alone
+ * decides whether the lesson is marked completed (≥ passThreshold%, default 60).
  */
 export function GrammarFlow({ lesson, content, unitId }: Props) {
   const router = useRouter();
-  const hasTheory = content.theory.length > 0;
-  const hasFlashcards = content.flashcards.length > 0;
+  const sections = content.sections;
   const hasTest = content.test.questions.length > 0;
   const passThreshold = content.test.passThreshold ?? 60;
   const closeHref = `/grammar/${unitId}`;
 
-  const initialPhase: Phase = hasTheory
-    ? "theory"
-    : hasFlashcards
-      ? "flashcards"
-      : hasTest
-        ? "test"
-        : "done";
+  const theorySections = sections.filter(sectionHasTheory);
+  const firstIdx = sections.findIndex((s) => sectionHasTheory(s) || sectionHasPractice(s));
+  const hasAnyContent = firstIdx !== -1 || hasTest;
+  const startIdx = firstIdx === -1 ? sections.length : firstIdx;
+  const startStage: Stage =
+    firstIdx === -1 ? "test" : sectionHasTheory(sections[firstIdx]) ? "theory" : "practice";
+  const totalSegments = sections.length + (hasTest ? 1 : 0);
 
-  const [phase, setPhase] = useState<Phase>(initialPhase);
+  const [stage, setStage] = useState<Stage>(startStage);
+  const [sectionIndex, setSectionIndex] = useState(startIdx);
   const [reviewOpen, setReviewOpen] = useState(false);
-  const [flash, setFlash] = useState<FlashResult>({ correct: 0, wrong: 0, skipped: 0 });
   const [test, setTest] = useState<TestResult | null>(null);
   const [xpEarned, setXpEarned] = useState<number | null>(null);
+  const flashRef = useRef<FlashResult>({ correct: 0, wrong: 0, skipped: 0 });
   const [startTime] = useState(Date.now());
 
   // Empty lesson — nothing authored yet.
-  if (!hasTheory && !hasFlashcards && !hasTest) {
+  if (!hasAnyContent) {
     return (
       <div className="flex min-h-[60vh] flex-col items-center justify-center gap-4 text-center">
         <div className="text-5xl">📭</div>
@@ -74,8 +83,8 @@ export function GrammarFlow({ lesson, content, unitId }: Props) {
     const correct = flashResult.correct + tCorrect;
     const total = Math.max(1, flashResult.correct + flashResult.wrong + tTotal);
     // Pass gate = the comprehensive test only. No test authored → auto-pass.
-    // Round identically to the summary screen so the displayed % and the
-    // completed/locked decision can never disagree at the threshold boundary.
+    // Round identically to the summary screen so the % and the completed/locked
+    // decision can never disagree at the threshold boundary.
     const passed = tTotal === 0 ? true : Math.round((tCorrect / tTotal) * 100) >= passThreshold;
     const res = await completeLessonAction({
       lessonId: lesson.id,
@@ -92,33 +101,52 @@ export function GrammarFlow({ lesson, content, unitId }: Props) {
       toast.error("Lỗi lưu kết quả");
       setXpEarned(0);
     }
-    setPhase("done");
+    setStage("done");
   }
 
-  function handleTheoryDone() {
-    if (hasFlashcards) setPhase("flashcards");
-    else if (hasTest) setPhase("test");
-    else finishLesson({ correct: 0, wrong: 0, skipped: 0 }, null);
+  // Advance to the next section that has content, else the test, else finish.
+  function goToSection(from: number) {
+    let n = from;
+    while (n < sections.length && !sectionHasTheory(sections[n]) && !sectionHasPractice(sections[n])) {
+      n++;
+    }
+    if (n < sections.length) {
+      setSectionIndex(n);
+      setStage(sectionHasTheory(sections[n]) ? "theory" : "practice");
+    } else if (hasTest) {
+      setStage("test");
+    } else {
+      finishLesson(flashRef.current, null);
+    }
   }
 
-  function handleFlashDone(result: FlashResult) {
-    setFlash(result);
-    if (hasTest) setPhase("test");
-    else finishLesson(result, null);
+  function handleTheoryContinue() {
+    if (sectionHasPractice(sections[sectionIndex])) setStage("practice");
+    else goToSection(sectionIndex + 1);
+  }
+
+  function handlePracticeDone(result: FlashResult) {
+    flashRef.current = {
+      correct: flashRef.current.correct + result.correct,
+      wrong: flashRef.current.wrong + result.wrong,
+      skipped: flashRef.current.skipped + result.skipped,
+    };
+    goToSection(sectionIndex + 1);
   }
 
   function handleTestDone(result: TestResult) {
     setTest(result);
-    finishLesson(flash, result);
+    finishLesson(flashRef.current, result);
   }
 
   function retryTest() {
     setTest(null);
     setXpEarned(null);
-    setPhase("test");
+    setStage("test");
   }
 
-  if (phase === "done") {
+  if (stage === "done") {
+    const flash = flashRef.current;
     const testCorrect = test?.correct ?? 0;
     const testTotal = test?.total ?? 0;
     const testPct = testTotal > 0 ? Math.round((testCorrect / testTotal) * 100) : null;
@@ -134,9 +162,7 @@ export function GrammarFlow({ lesson, content, unitId }: Props) {
 
             {testPct !== null ? (
               <>
-                <div
-                  className={`text-4xl font-bold ${passed ? "text-primary" : "text-red-600"}`}
-                >
+                <div className={`text-4xl font-bold ${passed ? "text-primary" : "text-red-600"}`}>
                   {testPct}%
                 </div>
                 <div className="text-sm text-muted-foreground">
@@ -165,11 +191,7 @@ export function GrammarFlow({ lesson, content, unitId }: Props) {
                   Làm lại bài test
                 </Button>
               ) : (
-                <Button
-                  variant="outline"
-                  className="flex-1"
-                  onClick={() => window.location.reload()}
-                >
+                <Button variant="outline" className="flex-1" onClick={() => window.location.reload()}>
                   Học lại
                 </Button>
               )}
@@ -183,22 +205,36 @@ export function GrammarFlow({ lesson, content, unitId }: Props) {
     );
   }
 
-  const reviewBtn = hasTheory ? () => setReviewOpen(true) : undefined;
+  const reviewBtn = theorySections.length ? () => setReviewOpen(true) : undefined;
 
   return (
     <>
-      {phase === "theory" && (
-        <TheoryPass sections={content.theory} closeHref={closeHref} onDone={handleTheoryDone} />
-      )}
-      {phase === "flashcards" && (
-        <FlashcardPhase
-          flashcards={content.flashcards}
+      {stage === "theory" && (
+        <SectionTheory
+          section={sections[sectionIndex]}
+          sectionIndex={sectionIndex}
+          sectionCount={sections.length}
+          progress={Math.round((sectionIndex / Math.max(1, totalSegments)) * 100)}
           closeHref={closeHref}
+          ctaLabel={
+            sectionHasPractice(sections[sectionIndex]) ? "Luyện tập phần này" : "Tiếp tục"
+          }
           onReviewTheory={reviewBtn}
-          onDone={handleFlashDone}
+          onContinue={handleTheoryContinue}
         />
       )}
-      {phase === "test" && (
+
+      {stage === "practice" && (
+        <FlashcardPhase
+          flashcards={sections[sectionIndex].exercises}
+          closeHref={closeHref}
+          label={`Phần ${sectionIndex + 1}/${sections.length}`}
+          onReviewTheory={reviewBtn}
+          onDone={handlePracticeDone}
+        />
+      )}
+
+      {stage === "test" && (
         <GrammarTestRunner
           test={content.test}
           closeHref={closeHref}
@@ -206,11 +242,12 @@ export function GrammarFlow({ lesson, content, unitId }: Props) {
           onDone={handleTestDone}
         />
       )}
-      {hasTheory && (
+
+      {theorySections.length > 0 && (
         <TheoryReviewDialog
           open={reviewOpen}
           onOpenChange={setReviewOpen}
-          sections={content.theory}
+          sections={theorySections}
         />
       )}
     </>

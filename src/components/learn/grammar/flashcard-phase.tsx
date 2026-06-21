@@ -16,6 +16,9 @@ export interface FlashResult {
 interface Props {
   flashcards: Exercise[];
   closeHref: string;
+  /** Prefix for the progress line, e.g. "Phần 2/4" — identifies which section
+   *  this practice belongs to in the interleaved flow. */
+  label?: string;
   onReviewTheory?: () => void;
   onDone: (result: FlashResult) => void;
 }
@@ -25,7 +28,7 @@ type Feedback = "correct" | "wrong" | null;
 /** The memorisation phase: drills the learner one card at a time. Risk-free
  *  (no hearts). Any card can be skipped — skipped cards are excluded from the
  *  score entirely (they neither help nor hurt). */
-export function FlashcardPhase({ flashcards, closeHref, onReviewTheory, onDone }: Props) {
+export function FlashcardPhase({ flashcards, closeHref, label, onReviewTheory, onDone }: Props) {
   const [index, setIndex] = useState(0);
   const [feedback, setFeedback] = useState<Feedback>(null);
   const [correctAnswer, setCorrectAnswer] = useState<string | null>(null);
@@ -76,7 +79,7 @@ export function FlashcardPhase({ flashcards, closeHref, onReviewTheory, onDone }
       <FlowHeader progress={progress} closeHref={closeHref} onReviewTheory={onReviewTheory} />
 
       <div className="pb-2 text-center text-sm text-muted-foreground">
-        Luyện tập · Thẻ {index + 1}/{flashcards.length}
+        {label ? `${label} · ` : ""}Luyện tập · Thẻ {index + 1}/{flashcards.length}
       </div>
 
       <div className="flex flex-1 flex-col justify-center py-6">

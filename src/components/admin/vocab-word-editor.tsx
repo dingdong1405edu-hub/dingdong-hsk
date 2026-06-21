@@ -5,6 +5,7 @@ import { Plus, Pencil, Trash2, GripVertical } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { deleteVocabWordAction, reorderVocabWordsAction } from "@/server/actions/admin";
 import { VocabWordForm } from "./vocab-word-form";
+import { VocabWordImport } from "./vocab-word-import";
 import type { VocabWordCard } from "@/types";
 
 interface Props {
@@ -110,9 +111,16 @@ export function VocabWordEditor({ lessonId, unitId, words }: Props) {
           onCancel={() => setEditing(null)}
         />
       ) : (
-        <Button variant="outline" size="sm" onClick={() => setEditing("new")}>
-          <Plus className="mr-1 h-4 w-4" /> Thêm từ
-        </Button>
+        <div className="flex flex-wrap gap-2">
+          <Button variant="outline" size="sm" onClick={() => setEditing("new")}>
+            <Plus className="mr-1 h-4 w-4" /> Thêm từ
+          </Button>
+          <VocabWordImport
+            lessonId={lessonId}
+            unitId={unitId}
+            onImported={() => router.refresh()}
+          />
+        </div>
       )}
     </div>
   );

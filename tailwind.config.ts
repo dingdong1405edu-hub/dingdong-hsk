@@ -82,15 +82,15 @@ const config: Config = {
         "wrong-shake": "wrong-shake 0.3s ease-in-out",
       },
       fontFamily: {
-        sans: ["Inter", "Noto Sans SC", "system-ui", "sans-serif"],
-        display: ["Plus Jakarta Sans", "Inter", "system-ui", "sans-serif"],
+        sans: ["Nunito", "Noto Sans SC", "system-ui", "sans-serif"],
+        display: ["Nunito", "system-ui", "sans-serif"],
         chinese: ["Noto Sans SC", "sans-serif"],
         pinyin: ["Noto Serif", "serif"],
       },
       boxShadow: {
         soft: "0 1px 2px -1px rgba(16,24,40,0.04), 0 4px 16px -4px rgba(16,24,40,0.08)",
         "soft-lg": "0 2px 4px -2px rgba(16,24,40,0.05), 0 12px 32px -8px rgba(16,24,40,0.12)",
-        "soft-primary": "0 8px 24px -8px hsl(130 52% 38% / 0.35)",
+        "soft-primary": "0 8px 24px -8px hsl(88 30% 36% / 0.35)",
       },
     },
   },
