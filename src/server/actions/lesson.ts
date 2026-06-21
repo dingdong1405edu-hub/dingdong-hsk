@@ -1,8 +1,10 @@
 "use server";
 import { auth } from "@/lib/auth";
 import { db } from "@/lib/db";
-import { Skill } from "@prisma/client";
+import { Skill, Prisma } from "@prisma/client";
 import { z } from "zod";
+import { getEntitlements } from "@/lib/entitlements";
+import { effectiveHearts, MAX_HEARTS } from "@/lib/hearts";
 
 const schema = z.object({
   lessonId: z.string().min(1),
@@ -36,14 +38,34 @@ export async function completeLessonAction(params: z.infer<typeof schema>) {
   const xpAwarded = completedFlag ? xpEarned : 0;
 
   try {
-    // Clamp hearts at 0 — heartsLost is client-supplied and could exceed the
-    // user's current hearts; a relative `decrement` would persist a negative.
+    const ent = await getEntitlements(
+      session.user.id,
+      (session.user as { role?: string }).role
+    );
     const user = await db.user.findUnique({
       where: { id: session.user.id },
-      select: { hearts: true },
+      select: { hearts: true, heartsUpdatedAt: true },
     });
     if (!user) return { ok: false, error: "User not found" };
-    const newHearts = Math.max(0, user.hearts - heartsLost);
+
+    // Tim: người trả phí / admin = KHÔNG GIỚI HẠN → không đụng tới. Người miễn
+    // phí: hồi tim theo thời gian trước, trừ số tim đã mất; hoàn thành không sai
+    // câu nào (heartsLost === 0) thì TẶNG +1 tim để khuyến khích học.
+    const heartData: Prisma.UserUpdateInput = {};
+    if (!ent.unlimitedHearts) {
+      const now = new Date();
+      const current = effectiveHearts(user.hearts, user.heartsUpdatedAt, now);
+      let next = Math.max(0, current - heartsLost);
+      if (completedFlag && heartsLost === 0) next = Math.min(MAX_HEARTS, next + 1);
+      heartData.hearts = { set: next };
+      heartData.heartsUpdatedAt = now;
+    }
+
+    const userUpdate: Prisma.UserUpdateInput = {
+      xp: { increment: xpAwarded },
+      lastActiveAt: new Date(),
+      ...heartData,
+    };
     if (skill === "vocab") {
       await db.$transaction([
         db.vocabProgress.upsert({
@@ -61,14 +83,7 @@ export async function completeLessonAction(params: z.infer<typeof schema>) {
             durationSec,
           },
         }),
-        db.user.update({
-          where: { id: session.user.id },
-          data: {
-            xp: { increment: xpAwarded },
-            hearts: { set: newHearts },
-            lastActiveAt: new Date(),
-          },
-        }),
+        db.user.update({ where: { id: session.user.id }, data: userUpdate }),
       ]);
     } else {
       await db.$transaction([
@@ -89,14 +104,7 @@ export async function completeLessonAction(params: z.infer<typeof schema>) {
             durationSec,
           },
         }),
-        db.user.update({
-          where: { id: session.user.id },
-          data: {
-            xp: { increment: xpAwarded },
-            hearts: { set: newHearts },
-            lastActiveAt: new Date(),
-          },
-        }),
+        db.user.update({ where: { id: session.user.id }, data: userUpdate }),
       ]);
     }
     return { ok: true, xpEarned: xpAwarded, score };

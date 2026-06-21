@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { Menu, Flame, Heart, Star, LogOut, Settings, type LucideIcon } from "lucide-react";
+import { Menu, Flame, Heart, Star, LogOut, Settings, Sparkles, type LucideIcon } from "lucide-react";
 import { signOut } from "next-auth/react";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -20,6 +20,7 @@ interface TopbarUser {
   image?: string | null;
   xp: number;
   hearts: number;
+  unlimitedHearts: boolean;
   streakDays: number;
   role: string;
 }
@@ -39,16 +40,34 @@ export function Topbar({ user, onMenu }: { user: TopbarUser; onMenu: () => void 
       <Button variant="ghost" size="icon" className="-ml-2 lg:hidden" onClick={onMenu} aria-label="Mở menu">
         <Menu className="h-5 w-5" />
       </Button>
-      <Link href="/dashboard" className="flex items-center gap-2 lg:hidden">
+      <Link href="/" className="flex items-center gap-2 lg:hidden" aria-label="DingDong HSK — về trang chủ">
         <Logo className="h-8 w-8" />
         <span className="font-extrabold tracking-tight">DingDong</span>
       </Link>
 
       <div className="flex-1" />
 
+      {!user.unlimitedHearts && (
+        <Button asChild size="sm" className="mr-1 hidden sm:inline-flex">
+          <Link href="/payment">
+            <Sparkles className="h-4 w-4" /> Nâng cấp
+          </Link>
+        </Button>
+      )}
+
       <div className="flex items-center gap-1.5 sm:gap-2">
         <Stat icon={Flame} value={user.streakDays} className="text-orange-500 fill-orange-400" />
-        <Stat icon={Heart} value={user.hearts} className="text-rose-500 fill-rose-500" />
+        {user.unlimitedHearts ? (
+          <div
+            className="flex items-center gap-1.5 rounded-full bg-muted px-2.5 py-1 text-sm font-semibold"
+            title="Tim không giới hạn"
+          >
+            <Heart className="h-4 w-4 fill-rose-500 text-rose-500" />
+            <span className="leading-none">∞</span>
+          </div>
+        ) : (
+          <Stat icon={Heart} value={user.hearts} className="text-rose-500 fill-rose-500" />
+        )}
         <Stat icon={Star} value={user.xp} className="text-amber-500 fill-amber-400" />
       </div>
 
@@ -69,6 +88,13 @@ export function Topbar({ user, onMenu }: { user: TopbarUser; onMenu: () => void 
             <p className="truncate text-xs text-muted-foreground">{user.email}</p>
           </div>
           <DropdownMenuSeparator />
+          {!user.unlimitedHearts && (
+            <DropdownMenuItem asChild>
+              <Link href="/payment">
+                <Sparkles className="mr-2 h-4 w-4" /> Nâng cấp
+              </Link>
+            </DropdownMenuItem>
+          )}
           {user.role === "ADMIN" && (
             <DropdownMenuItem asChild>
               <Link href="/admin">

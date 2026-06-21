@@ -14,6 +14,7 @@ import {
   Library,
   Activity,
   ArrowRight,
+  CreditCard,
   type LucideIcon,
 } from "lucide-react";
 
@@ -29,6 +30,7 @@ export default async function AdminPage() {
     speakingCount,
     materialCount,
     attemptCount,
+    subscriptionCount,
     recentUsers,
   ] = await Promise.all([
     db.user.count(),
@@ -41,6 +43,7 @@ export default async function AdminPage() {
     db.speakingSet.count(),
     db.material.count(),
     db.attempt.count(),
+    db.subscription.count({ where: { expiresAt: { gt: new Date() } } }),
     db.user.findMany({
       orderBy: { createdAt: "desc" },
       take: 6,
@@ -58,6 +61,7 @@ export default async function AdminPage() {
     { href: "/admin/speaking", label: "Luyện nói", icon: Mic, count: speakingCount, cls: "bg-indigo-100 text-indigo-600" },
     { href: "/admin/materials", label: "Tài liệu", icon: Library, count: materialCount, cls: "bg-fuchsia-100 text-fuchsia-600" },
     { href: "/admin/users", label: "Người dùng", icon: Users, count: userCount, cls: "bg-sky-100 text-sky-600" },
+    { href: "/admin/subscriptions", label: "Gói & Quyền lợi", icon: CreditCard, count: subscriptionCount, cls: "bg-green-100 text-green-600" },
   ];
 
   return (

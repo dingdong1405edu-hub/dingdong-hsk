@@ -3,7 +3,7 @@
 import { useMemo, useState } from "react";
 import Link from "next/link";
 import { toast } from "sonner";
-import { ArrowLeft, Trophy } from "lucide-react";
+import { ArrowLeft, Trophy, Lock, Sparkles } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { ChapterPath } from "./chapter-path";
 import { LessonDetailDialog } from "./lesson-detail-dialog";
@@ -18,6 +18,12 @@ interface RoadmapMapProps {
   courseTitle: string;
   courseTitleZh: string;
   lessons: RoadmapLessonDTO[];
+  /** Người dùng đã mở khoá toàn bộ lộ trình cấp này (đã mua / admin). */
+  hasFullAccess: boolean;
+  /** Id gói lộ trình của cấp này (để link sang trang thanh toán). */
+  upgradePlanId: string | null;
+  /** Số bài đầu được học miễn phí. */
+  freePreviewCount: number;
 }
 
 interface Chapter {
@@ -29,7 +35,15 @@ interface Chapter {
 }
 
 /** Trang bản đồ học của một khóa HSK (Duolingo-style). */
-export function RoadmapMap({ level, courseTitle, courseTitleZh, lessons }: RoadmapMapProps) {
+export function RoadmapMap({
+  level,
+  courseTitle,
+  courseTitleZh,
+  lessons,
+  hasFullAccess,
+  upgradePlanId,
+  freePreviewCount,
+}: RoadmapMapProps) {
   const theme = themeFor(level);
   const [selected, setSelected] = useState<RoadmapLessonDTO | null>(null);
 
@@ -38,8 +52,14 @@ export function RoadmapMap({ level, courseTitle, courseTitleZh, lessons }: Roadm
   const pct = total > 0 ? Math.round((doneCount / total) * 100) : 0;
   const currentIndex = lessons.findIndex((l) => !l.completed);
 
-  const statusFor = (index: number): LessonStatus =>
-    lessons[index].completed ? "done" : index === currentIndex ? "current" : "locked";
+  const upgradeHref = upgradePlanId ? `/payment?plan=${upgradePlanId}` : "/payment";
+
+  // Bài bị khoá vì chưa mua luôn hiển thị "locked"; còn lại theo tiến độ.
+  const statusFor = (index: number): LessonStatus => {
+    const l = lessons[index];
+    if (l.accessLocked) return "locked";
+    return l.completed ? "done" : index === currentIndex ? "current" : "locked";
+  };
 
   // Gom bài thành chương, giữ nguyên thứ tự; tính lệch pha cho sóng sin liền mạch.
   const chapters = useMemo<Chapter[]>(() => {
@@ -69,6 +89,11 @@ export function RoadmapMap({ level, courseTitle, courseTitleZh, lessons }: Roadm
   }, [lessons]);
 
   function handleSelect(lesson: RoadmapLessonDTO) {
+    // Khoá do chưa mua → mở hộp thoại ở chế độ "nâng cấp".
+    if (lesson.accessLocked) {
+      setSelected(lesson);
+      return;
+    }
     const idx = lessons.findIndex((l) => l.id === lesson.id);
     if (statusFor(idx) === "locked") {
       toast.info("Hãy hoàn thành bài trước để mở khoá bài này 🔒");
@@ -120,6 +145,32 @@ export function RoadmapMap({ level, courseTitle, courseTitleZh, lessons }: Roadm
         </div>
       </div>
 
+      {/* Banner xem trước / nâng cấp (ẩn khi đã mở khoá đầy đủ) */}
+      {!hasFullAccess && (
+        <div className={cn("flex flex-col gap-3 rounded-2xl border p-4 sm:flex-row sm:items-center sm:justify-between", theme.accentBorder, theme.accentSoft)}>
+          <div className="flex items-start gap-3">
+            <div className={cn("flex h-9 w-9 shrink-0 items-center justify-center rounded-xl text-white", theme.accentBg)}>
+              <Sparkles className="h-4.5 w-4.5" />
+            </div>
+            <div className="text-sm">
+              <p className="font-bold">Bạn đang dùng bản xem trước</p>
+              <p className="text-muted-foreground">
+                {freePreviewCount} bài đầu miễn phí. Mở khoá toàn bộ {theme.label} để học không giới hạn.
+              </p>
+            </div>
+          </div>
+          <Link
+            href={upgradeHref}
+            className={cn(
+              "inline-flex shrink-0 items-center justify-center gap-1.5 rounded-xl px-4 py-2 text-sm font-bold text-white shadow-soft transition-transform hover:-translate-y-0.5",
+              theme.accentBg
+            )}
+          >
+            <Lock className="h-4 w-4" /> Mở khoá lộ trình
+          </Link>
+        </div>
+      )}
+
       {/* Bản đồ các chương */}
       <div className="space-y-2 pb-6">
         {chapters.map((ch, ci) => {
@@ -162,6 +213,8 @@ export function RoadmapMap({ level, courseTitle, courseTitleZh, lessons }: Roadm
         lesson={selected}
         levelLabel={theme.label}
         theme={theme}
+        locked={selected?.accessLocked ?? false}
+        upgradeHref={upgradeHref}
         onOpenChange={(o) => !o && setSelected(null)}
       />
     </div>

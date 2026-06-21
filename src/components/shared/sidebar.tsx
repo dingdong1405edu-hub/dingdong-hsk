@@ -4,7 +4,7 @@ import { usePathname } from "next/navigation";
 import { motion, LayoutGroup } from "framer-motion";
 import {
   X,
-  Home,
+  LayoutDashboard,
   Route,
   Target,
   BookOpen,
@@ -39,7 +39,7 @@ interface NavGroup {
 export const NAV_GROUPS: NavGroup[] = [
   {
     items: [
-      { href: "/dashboard", label: "Trang chủ", icon: Home, exact: true },
+      { href: "/dashboard", label: "Dashboard", icon: LayoutDashboard, exact: true },
       { href: "/roadmap", label: "Lộ trình", icon: Route },
       { href: "/goals", label: "Mục tiêu", icon: Target },
     ],
@@ -124,7 +124,7 @@ function NavContent({ user, onNavigate }: { user: SidebarUser; onNavigate?: () =
   return (
     <div className="flex h-full flex-col">
       {/* Brand */}
-      <Link href="/dashboard" className="flex h-16 items-center gap-2.5 border-b px-5">
+      <Link href="/" className="flex h-16 items-center gap-2.5 border-b px-5" aria-label="DingDong HSK — về trang chủ">
         <Logo className="h-9 w-9" />
         <div className="leading-tight">
           <div className="text-[15px] font-extrabold text-primary">DingDong HSK</div>

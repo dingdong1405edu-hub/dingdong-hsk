@@ -452,10 +452,10 @@ export default function AboutPage() {
         <div className={styles.container}>
           <div className={styles.footerGrid}>
             <div className={styles.footerBrand}>
-              <div className={styles.footerLogo}>
+              <Link href="/" className={styles.footerLogo} aria-label="DingDong HSK — về trang chủ">
                 <Logo className={styles.footerLogoIcon} />
                 DingDong HSK
-              </div>
+              </Link>
               <p>
                 Nền tảng học tiếng Trung chuẩn HSK 1–6 &amp; HSKK cho người Việt, được AI chấm điểm và
                 đồng hành mỗi ngày.

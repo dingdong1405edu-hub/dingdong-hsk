@@ -44,8 +44,12 @@ export async function createPaymentOrder(input: z.infer<typeof schema>): Promise
     return { ok: false, error: "Cấu hình giá gói không hợp lệ." };
   }
 
+  // Quyền lợi gắn với TÀI KHOẢN → bắt buộc đăng nhập để mua.
   const session = await auth();
-  const userId = session?.user?.id ?? null;
+  if (!session?.user?.id) {
+    return { ok: false, error: "Vui lòng đăng nhập để mua gói." };
+  }
+  const userId = session.user.id;
 
   const nameRaw = (parsed.data.buyerName || session?.user?.name || "").trim();
   const buyerName = nameRaw || undefined;

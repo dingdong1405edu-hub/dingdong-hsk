@@ -246,13 +246,13 @@ export default function LandingPage() {
           <div className={styles.featuresGrid}>
             {features.map((f, i) => (
               <Reveal key={f.title} delay={(i % 3) * 0.08} className="h-full">
-                <article className={styles.featureCard}>
+                <Link href="/register" className={styles.featureCard} aria-label={`${f.title} — bắt đầu học miễn phí`}>
                   <div className={`${styles.featureIcon} ${f.cls}`} aria-hidden>
                     {f.icon}
                   </div>
                   <h3>{f.title}</h3>
                   <p>{f.desc}</p>
-                </article>
+                </Link>
               </Reveal>
             ))}
           </div>
@@ -403,10 +403,10 @@ export default function LandingPage() {
         <div className={styles.container}>
           <div className={styles.footerGrid}>
             <div className={styles.footerBrand}>
-              <div className={styles.footerLogo}>
+              <Link href="/" className={styles.footerLogo} aria-label="DingDong HSK — về trang chủ">
                 <Logo className={styles.footerLogoIcon} />
                 DingDong HSK
-              </div>
+              </Link>
               <p>
                 Nền tảng học tiếng Trung chuẩn HSK 1–6 &amp; HSKK cho người Việt, được AI chấm điểm và
                 đồng hành mỗi ngày.

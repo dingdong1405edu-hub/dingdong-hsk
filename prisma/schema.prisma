@@ -65,6 +65,7 @@ model User {
   role          Role      @default(LEARNER)
   xp            Int       @default(0)
   hearts        Int       @default(5)
+  heartsUpdatedAt DateTime?            // mốc tính hồi tim (regen) — null = đang đầy
   streakDays    Int       @default(0)
   hskLevel      HSKLevel  @default(HSK1)
   lastActiveAt  DateTime?
@@ -80,6 +81,7 @@ model User {
   roadmapProgress  RoadmapProgress[]
   attempts         Attempt[]
   payments         Payment[]
+  subscriptions    Subscription[]
 }
 
 model Account {
@@ -483,4 +485,28 @@ model Payment {
 
   @@index([userId])
   @@index([status])
+}
+
+enum SubscriptionType {
+  FREESTYLE // Gói tự do: mọi tính năng ngoài lộ trình + tim không giới hạn
+  ROADMAP   // Gói lộ trình theo cấp HSK (hskLevel)
+}
+
+/// Quyền lợi đã mua của người học. Một lần mua có thể tạo nhiều Subscription
+/// (vd gói Lộ trình HSK3–6 tặng kèm 1 Subscription FREESTYLE). Quyền được tính
+/// là CÒN HẠN khi expiresAt > now. Cấu hình gói (giá/thời hạn/quyền) ở
+/// src/lib/payment-plans.ts; cách suy ra quyền ở src/lib/entitlements.ts.
+model Subscription {
+  id        String           @id @default(cuid())
+  userId    String
+  user      User             @relation(fields: [userId], references: [id], onDelete: Cascade)
+  type      SubscriptionType
+  hskLevel  HSKLevel?        // chỉ dùng cho ROADMAP
+  startedAt DateTime         @default(now())
+  expiresAt DateTime
+  paymentId String?          // Payment.id đã kích hoạt quyền này (idempotent)
+  createdAt DateTime         @default(now())
+
+  @@index([userId, expiresAt])
+  @@index([paymentId])
 }

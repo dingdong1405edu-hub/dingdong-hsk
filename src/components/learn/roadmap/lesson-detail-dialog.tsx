@@ -1,7 +1,8 @@
 "use client";
 
+import Link from "next/link";
 import { toast } from "sonner";
-import { Check, Sparkles, Star } from "lucide-react";
+import { Check, Lock, Sparkles, Star } from "lucide-react";
 import {
   Dialog,
   DialogContent,
@@ -18,6 +19,9 @@ interface LessonDetailDialogProps {
   lesson: RoadmapLessonDTO | null;
   levelLabel: string;
   theme: CourseTheme;
+  /** Bài bị khoá vì chưa mua gói lộ trình → hiện CTA nâng cấp thay vì kỹ năng. */
+  locked: boolean;
+  upgradeHref: string;
   onOpenChange: (open: boolean) => void;
 }
 
@@ -26,7 +30,7 @@ interface LessonDetailDialogProps {
  * % hoàn thành và 6 kỹ năng (từ vựng, ngữ pháp, nghe, nói, đọc, viết).
  * Nội dung từng kỹ năng sẽ được nối sau (hiện báo toast giữ chỗ).
  */
-export function LessonDetailDialog({ lesson, levelLabel, theme, onOpenChange }: LessonDetailDialogProps) {
+export function LessonDetailDialog({ lesson, levelLabel, theme, locked, upgradeHref, onOpenChange }: LessonDetailDialogProps) {
   const open = lesson !== null;
   const publishedBySkill = new Map((lesson?.sections ?? []).map((s) => [s.skill, s.published]));
   const doneSkills = new Set(lesson?.skillsDone ?? []);
@@ -105,32 +109,55 @@ export function LessonDetailDialog({ lesson, levelLabel, theme, onOpenChange }: 
 
         {/* Nội dung / thông tin bài học */}
         <div className="p-5">
-          {lesson?.description && (
-            <p className="mb-4 rounded-xl bg-muted/60 p-3 text-sm leading-relaxed text-muted-foreground">
-              {lesson.description}
-            </p>
+          {locked ? (
+            <div className="flex flex-col items-center gap-3 py-2 text-center">
+              <div className={cn("flex h-14 w-14 items-center justify-center rounded-2xl text-white shadow-soft", theme.accentBg)}>
+                <Lock className="h-7 w-7" />
+              </div>
+              <h3 className="text-base font-bold">Bài học đã khoá</h3>
+              <p className="text-sm text-muted-foreground">
+                Mở khoá toàn bộ lộ trình {levelLabel} để học bài này và tất cả các bài còn lại.
+              </p>
+              <Link
+                href={upgradeHref}
+                className={cn(
+                  "mt-1 inline-flex w-full items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-sm font-bold text-white shadow-soft transition-transform hover:-translate-y-0.5",
+                  theme.accentBg
+                )}
+              >
+                <Sparkles className="h-4 w-4" /> Mở khoá lộ trình
+              </Link>
+            </div>
+          ) : (
+            <>
+              {lesson?.description && (
+                <p className="mb-4 rounded-xl bg-muted/60 p-3 text-sm leading-relaxed text-muted-foreground">
+                  {lesson.description}
+                </p>
+              )}
+              <div className="mb-3 flex items-center gap-2 text-[13px] font-bold uppercase tracking-wide text-muted-foreground">
+                <Sparkles className={cn("h-4 w-4", theme.accentText)} /> Các kỹ năng trong bài
+              </div>
+              <div className="grid gap-2.5">
+                {SKILL_META.map((meta) => {
+                  const published = publishedBySkill.get(meta.key) ?? false;
+                  const done = doneSkills.has(meta.key);
+                  return (
+                    <SkillTile
+                      key={meta.key}
+                      meta={meta}
+                      published={published}
+                      done={done}
+                      onClick={() => handleSkill(meta.label, done, published)}
+                    />
+                  );
+                })}
+              </div>
+              <p className="mt-4 text-center text-[11px] text-muted-foreground">
+                Hoàn thành cả 6 kỹ năng để đạt 100% và mở khoá bài tiếp theo.
+              </p>
+            </>
           )}
-          <div className="mb-3 flex items-center gap-2 text-[13px] font-bold uppercase tracking-wide text-muted-foreground">
-            <Sparkles className={cn("h-4 w-4", theme.accentText)} /> Các kỹ năng trong bài
-          </div>
-          <div className="grid gap-2.5">
-            {SKILL_META.map((meta) => {
-              const published = publishedBySkill.get(meta.key) ?? false;
-              const done = doneSkills.has(meta.key);
-              return (
-                <SkillTile
-                  key={meta.key}
-                  meta={meta}
-                  published={published}
-                  done={done}
-                  onClick={() => handleSkill(meta.label, done, published)}
-                />
-              );
-            })}
-          </div>
-          <p className="mt-4 text-center text-[11px] text-muted-foreground">
-            Hoàn thành cả 6 kỹ năng để đạt 100% và mở khoá bài tiếp theo.
-          </p>
         </div>
       </DialogContent>
     </Dialog>

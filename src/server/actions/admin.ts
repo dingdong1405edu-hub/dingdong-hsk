@@ -3,7 +3,8 @@ import { auth } from "@/lib/auth";
 import { db } from "@/lib/db";
 import { revalidatePath } from "next/cache";
 import { z } from "zod";
-import { HSKLevel, Prisma } from "@prisma/client";
+import { HSKLevel, Prisma, SubscriptionType } from "@prisma/client";
+import { getPlan } from "@/lib/payment-plans";
 
 async function requireAdmin() {
   const session = await auth();
@@ -28,6 +29,54 @@ export async function adminUpdateUserAction(params: {
   }
 
   revalidatePath("/admin/users");
+  return { ok: true };
+}
+
+// ===== Cấp quyền lợi (Subscription) thủ công =====
+// Dùng để kích hoạt gói cho 1 tài khoản trước khi PayOS hoạt động (hoặc khi cần
+// tặng/đối soát). Cấp đúng các quyền (grants) của gói với thời hạn của gói.
+const grantSubSchema = z.object({
+  email: z.string().trim().email("Email không hợp lệ."),
+  planId: z.string().min(1),
+});
+
+export async function adminGrantSubscriptionAction(input: {
+  email: string;
+  planId: string;
+}): Promise<{ ok: boolean; error?: string }> {
+  await requireAdmin();
+  const parsed = grantSubSchema.safeParse(input);
+  if (!parsed.success) {
+    return { ok: false, error: parsed.error.issues[0]?.message ?? "Dữ liệu không hợp lệ." };
+  }
+
+  const plan = getPlan(parsed.data.planId);
+  if (!plan || plan.grants.length === 0) return { ok: false, error: "Gói không tồn tại." };
+
+  const user = await db.user.findUnique({
+    where: { email: parsed.data.email },
+    select: { id: true },
+  });
+  if (!user) return { ok: false, error: "Không tìm thấy người dùng với email này." };
+
+  const start = new Date();
+  const expiresAt = new Date(start.getTime() + plan.durationDays * 24 * 60 * 60 * 1000);
+
+  await db.$transaction(
+    plan.grants.map((g) =>
+      db.subscription.create({
+        data: {
+          userId: user.id,
+          type: g.type as SubscriptionType,
+          hskLevel: g.hskLevel ? (g.hskLevel as HSKLevel) : null,
+          startedAt: start,
+          expiresAt,
+        },
+      })
+    )
+  );
+
+  revalidatePath("/admin/subscriptions");
   return { ok: true };
 }
 

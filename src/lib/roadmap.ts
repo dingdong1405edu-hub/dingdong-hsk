@@ -203,4 +203,6 @@ export interface RoadmapLessonDTO {
   completed: boolean;
   skillsDone: SkillKey[];
   sections: RoadmapSectionDTO[];
+  /** Khoá vì chưa mua gói lộ trình cấp này (ngoài N bài xem trước miễn phí). */
+  accessLocked: boolean;
 }

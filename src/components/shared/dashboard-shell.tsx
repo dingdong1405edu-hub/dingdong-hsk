@@ -11,6 +11,7 @@ interface ShellUser {
   image?: string | null;
   xp: number;
   hearts: number;
+  unlimitedHearts: boolean;
   streakDays: number;
   role: string;
   hskLevel: string;

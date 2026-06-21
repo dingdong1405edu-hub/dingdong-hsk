@@ -5,7 +5,7 @@ import { revalidatePath } from "next/cache";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
-import { hskLevelLabel, xpToLevel, cn } from "@/lib/utils";
+import { hskLevelLabel, xpToLevel } from "@/lib/utils";
 import { HSKLevel } from "@prisma/client";
 import { Target, Flame, Star, CheckCircle2 } from "lucide-react";
 
@@ -101,13 +101,7 @@ export default async function GoalsPage() {
               {HSK_LEVELS.map((l) => {
                 const selected = l === user.hskLevel;
                 return (
-                  <label
-                    key={l}
-                    className={cn(
-                      "relative flex cursor-pointer flex-col rounded-xl border p-4 transition-colors hover:border-primary/40",
-                      selected ? "border-primary bg-primary/5 ring-1 ring-primary/30" : "border-input"
-                    )}
-                  >
+                  <label key={l} className="relative block cursor-pointer">
                     <input
                       type="radio"
                       name="hskLevel"
@@ -115,9 +109,11 @@ export default async function GoalsPage() {
                       defaultChecked={selected}
                       className="peer sr-only"
                     />
-                    {selected && <CheckCircle2 className="absolute right-3 top-3 h-5 w-5 text-primary" />}
-                    <span className="text-base font-bold">{hskLevelLabel(l)}</span>
-                    <span className="mt-1 text-xs text-muted-foreground">{LEVEL_NOTE[l]}</span>
+                    <span className="flex flex-col rounded-xl border border-input p-4 transition-colors hover:border-primary/40 peer-checked:border-primary peer-checked:bg-primary/5 peer-checked:ring-1 peer-checked:ring-primary/30">
+                      <CheckCircle2 className="absolute right-3 top-3 h-5 w-5 text-primary opacity-0 transition-opacity peer-checked:opacity-100" />
+                      <span className="text-base font-bold">{hskLevelLabel(l)}</span>
+                      <span className="mt-1 text-xs text-muted-foreground">{LEVEL_NOTE[l]}</span>
+                    </span>
                   </label>
                 );
               })}

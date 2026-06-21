@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { Prisma } from "@prisma/client";
 import { db } from "@/lib/db";
 import { verifyWebhookSignature, type PayosWebhookBody } from "@/lib/payos";
+import { grantSubscriptionsForPayment } from "@/lib/entitlements";
 
 // Node runtime (cần node:crypto trong verifyWebhookSignature).
 export const runtime = "nodejs";
@@ -54,7 +55,7 @@ export async function POST(req: NextRequest) {
 
     const isPaid = body.code === "00" && data.code === "00";
 
-    await db.payment.update({
+    const updated = await db.payment.update({
       where: { orderCode },
       data: {
         status: isPaid ? "PAID" : "FAILED",
@@ -63,6 +64,17 @@ export async function POST(req: NextRequest) {
         rawWebhook: body as unknown as Prisma.InputJsonValue,
       },
     });
+
+    // Thanh toán thành công → cấp quyền lợi (Subscription) cho tài khoản.
+    // Idempotent: gọi lại không tạo trùng (xem grantSubscriptionsForPayment).
+    if (isPaid) {
+      await grantSubscriptionsForPayment({
+        id: updated.id,
+        userId: updated.userId,
+        planId: updated.planId,
+        paidAt: updated.paidAt,
+      });
+    }
 
     return NextResponse.json({ success: true });
   } catch (e) {

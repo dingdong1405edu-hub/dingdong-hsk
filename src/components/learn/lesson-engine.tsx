@@ -19,6 +19,8 @@ interface LessonEngineProps {
   lessonId: string;
   unitId: string;
   skill: "vocab" | "grammar";
+  /** Người trả phí/admin: tim không giới hạn — không trừ tim khi sai. */
+  unlimited?: boolean;
   onComplete: (result: { correct: number; total: number; heartsLost: number }) => void;
 }
 
@@ -29,6 +31,7 @@ export function LessonEngine({
   hearts: initialHearts,
   lessonId,
   skill,
+  unlimited = false,
   onComplete,
 }: LessonEngineProps) {
   const [current, setCurrent] = useState(0);
@@ -50,14 +53,17 @@ export function LessonEngine({
         setCorrect((c) => c + 1);
       } else {
         setFeedback("wrong");
-        setHearts((h) => Math.max(0, h - 1));
-        // Cap at the hearts the user actually had so we never report (or send)
-        // more hearts lost than existed. Server also clamps defensively.
-        setHeartsLost((h) => Math.min(initialHearts, h + 1));
+        // Người trả phí/admin: không trừ tim (giữ heartsLost = 0).
+        if (!unlimited) {
+          setHearts((h) => Math.max(0, h - 1));
+          // Cap at the hearts the user actually had so we never report (or send)
+          // more hearts lost than existed. Server also clamps defensively.
+          setHeartsLost((h) => Math.min(initialHearts, h + 1));
+        }
         if (answer) setCorrectAnswer(answer);
       }
     },
-    [feedback, initialHearts]
+    [feedback, initialHearts, unlimited]
   );
 
   function advance() {
@@ -75,7 +81,7 @@ export function LessonEngine({
       {/* Header */}
       <div className="flex items-center gap-4 py-4">
         <Progress value={progress} className="flex-1 h-3" />
-        <HeartBar hearts={hearts} />
+        <HeartBar hearts={hearts} unlimited={unlimited} />
       </div>
 
       {/* Exercise area */}

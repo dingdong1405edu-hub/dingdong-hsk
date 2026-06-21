@@ -531,3 +531,56 @@ Khi Claude Code làm việc trên repo này, tuân theo thứ tự:
 - Owner: dingdong1405edu@gmail.com
 - Tokens cần thiết: `ANTHROPIC_API_KEY`, `DEEPGRAM_API_KEY`, `RAILWAY_TOKEN`, `GITHUB_TOKEN`.
 - Mọi quyết định kiến trúc lớn → hỏi user trước.
+
+---
+
+## 16. Chính sách giá & Phân quyền (Pricing & Entitlements)
+
+> Nguồn cấu hình GIÁ/GÓI: [src/lib/payment-plans.ts](src/lib/payment-plans.ts).
+> Suy ra quyền lợi & cấp quyền: [src/lib/entitlements.ts](src/lib/entitlements.ts).
+> Hệ thống tim: [src/lib/hearts.ts](src/lib/hearts.ts).
+> Sửa giá → chỉ cần sửa `payment-plans.ts` (không phải biến môi trường).
+
+### 16.1 Bảng giá
+
+**Gói Lộ trình (theo cấp HSK, 6 tháng/gói):**
+
+| Gói | Giá | Thời hạn | Quyền lợi |
+|-----|-----|----------|-----------|
+| Lộ trình HSK 1 | 900.000đ | 6 tháng | Toàn bộ lộ trình HSK 1 |
+| Lộ trình HSK 2 | 1.200.000đ | 6 tháng | Toàn bộ lộ trình HSK 2 |
+| Lộ trình HSK 3 | 1.500.000đ | 6 tháng | Lộ trình HSK 3 **+ tặng Gói Tự do** |
+| Lộ trình HSK 4 | 1.800.000đ | 6 tháng | Lộ trình HSK 4 **+ tặng Gói Tự do** |
+| Lộ trình HSK 5 | 2.100.000đ | 6 tháng | Lộ trình HSK 5 **+ tặng Gói Tự do** |
+| Lộ trình HSK 6 | 2.400.000đ | 6 tháng | Lộ trình HSK 6 **+ tặng Gói Tự do** |
+
+**Gói Tự do** (= tất cả tính năng **ngoài** phần học theo lộ trình):
+
+| Gói | Giá | Thời hạn | Ghi chú |
+|-----|-----|----------|---------|
+| Tự do · 1 tháng | 250.000đ | 30 ngày | — |
+| Tự do · 3 tháng | 600.000đ | 90 ngày | Tháng đầu chỉ 100k (100k + 250k + 250k = 600k) |
+
+### 16.2 Mô hình freemium (kiểu Duolingo)
+
+- **Lộ trình**: người miễn phí được học **`FREE_ROADMAP_LESSONS` bài đầu mỗi cấp** (mặc định **3**, sửa trong `entitlements.ts`); các bài sau bị khoá tới khi mua gói lộ trình cấp đó.
+- **Gói Tự do (tính năng ngoài lộ trình)**: miễn phí cho tới khi **hết tim (heart)**.
+  - Tim tối đa `MAX_HEARTS` (5), hồi 1 tim mỗi `HEART_REGEN_MINUTES` (30 phút) — `hearts.ts`.
+  - "Tặng tim": hoàn thành bài **không sai câu nào** → +1 tim (xem `completeLessonAction`).
+  - Hết tim → chặn luyện tập (tính năng tự do) tới khi hồi/được tặng.
+- **Mọi gói trả phí còn hạn → TIM KHÔNG GIỚI HẠN** (`unlimitedHearts`).
+- **Tài khoản ADMIN → mở hết tất cả** (mọi cấp lộ trình + tim ∞) — xử lý trong `getEntitlements`.
+
+### 16.3 Cách hoạt động (kỹ thuật)
+
+- Mua hàng **bắt buộc đăng nhập** (quyền lợi gắn với tài khoản).
+- Thanh toán qua **PayOS** → khi đơn `PAID` (webhook), `grantSubscriptionsForPayment` tạo `Subscription`
+  theo `plan.grants` với hạn = `paidAt + durationDays` (idempotent theo `paymentId`).
+- Một lần mua có thể tạo nhiều `Subscription` (vd HSK 3–6 tạo thêm 1 `FREESTYLE`).
+- Admin có thể **cấp gói thủ công** tại `/admin/subscriptions` (`adminGrantSubscriptionAction`) —
+  dùng để tặng/đối soát hoặc test trước khi PayOS hoạt động.
+- Models: `Subscription` (type `ROADMAP|FREESTYLE`, `hskLevel?`, `expiresAt`), `User.heartsUpdatedAt`.
+
+> CÒN LẠI (tuning bước sau): các luồng từ vựng (flashcard `WordFlow`) và ngữ pháp (`GrammarFlow`)
+> hiện báo `heartsLost: 0` nên chưa thực sự trừ tim. Hạ tầng tim (hồi/tặng/∞/chặn) đã sẵn sàng;
+> chỉ cần các luồng này báo số tim mất khi trả lời sai là kinh tế tim hoạt động đầy đủ.
