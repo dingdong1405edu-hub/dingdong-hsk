@@ -133,6 +133,78 @@ export function grammarReviewExercises(raw: unknown): Exercise[] {
   return [...c.sections.flatMap((s) => s.exercises), ...c.test.questions];
 }
 
+/** Vietnamese label for each exercise type — shared by the review breakdown and
+ *  the printable PDF. */
+export const EXERCISE_TYPE_LABEL: Record<string, string> = {
+  match: "Nối từ",
+  translate: "Dịch câu",
+  toneSelect: "Chọn thanh điệu",
+  sentenceOrder: "Sắp xếp câu",
+  sentence_order: "Sắp xếp câu",
+  pinyinMatch: "Nối pinyin",
+  fill_blank: "Điền chỗ trống",
+  answer_question: "Trả lời câu hỏi",
+  type_sentence: "Viết câu",
+};
+
+/** A flattened, printable view of one exercise: the question, any options, the
+ *  correct answer and the author explanation — everything the PDF needs. */
+export interface PdfExercise {
+  typeLabel: string;
+  question: string;
+  questionPinyin?: string;
+  options?: string[];
+  answer: string;
+  explanation?: string;
+}
+
+/** Reduce any exercise to the fields the printable answer key shows. Tolerant of
+ *  the loose Exercise shape (reads via the index signature). */
+export function describeExercise(ex: Exercise): PdfExercise {
+  const e = ex as Record<string, unknown>;
+  const type = String(ex.type);
+  const label = EXERCISE_TYPE_LABEL[type] ?? type;
+  const explanation = typeof ex.explanation === "string" ? ex.explanation : undefined;
+  const s = (k: string) => (typeof e[k] === "string" ? (e[k] as string) : undefined);
+  const list = (k: string) => (Array.isArray(e[k]) ? (e[k] as unknown[]).map((x) => String(x)) : undefined);
+
+  switch (type) {
+    case "fill_blank":
+      return { typeLabel: label, question: s("sentence") ?? "", options: list("options"), answer: s("blank") ?? "", explanation };
+    case "sentence_order":
+    case "sentenceOrder":
+      return { typeLabel: label, question: (list("words") ?? []).join("  /  "), answer: s("answer") ?? "", explanation };
+    case "translate":
+      return { typeLabel: label, question: s("prompt") ?? "", options: list("options"), answer: s("answer") ?? "", explanation };
+    case "answer_question": {
+      const accept = list("accept");
+      return { typeLabel: label, question: s("question") ?? "", questionPinyin: s("questionPinyin"), answer: s("sampleAnswer") ?? accept?.[0] ?? "", explanation };
+    }
+    case "type_sentence":
+      return { typeLabel: label, question: s("prompt") ?? "", answer: list("accept")?.[0] ?? "", explanation };
+    case "toneSelect": {
+      const options = list("options");
+      const correct = typeof e.correct === "number" ? (e.correct as number) : 0;
+      return { typeLabel: label, question: `${s("question") ?? ""} (${s("word") ?? ""})`.trim(), options, answer: options?.[correct] ?? "", explanation };
+    }
+    case "match": {
+      const pairs = Array.isArray(e.pairs) ? (e.pairs as Array<Record<string, unknown>>) : [];
+      return { typeLabel: label, question: "Nối từ với nghĩa tương ứng", answer: pairs.map((p) => `${p.zh} = ${p.vi}`).join(" · "), explanation };
+    }
+    case "pinyinMatch": {
+      const pairs = Array.isArray(e.pairs) ? (e.pairs as Array<Record<string, unknown>>) : [];
+      return { typeLabel: label, question: "Nối Hán tự với pinyin", answer: pairs.map((p) => `${p.zh} = ${p.pinyin}`).join(" · "), explanation };
+    }
+    default:
+      return {
+        typeLabel: label,
+        question: s("prompt") ?? s("question") ?? s("sentence") ?? "",
+        answer: s("answer") ?? s("blank") ?? "",
+        explanation,
+      };
+  }
+}
+
 /**
  * Normalise a free-typed answer for deterministic comparison: trim, lowercase
  * (for Latin / pinyin), drop all whitespace, and strip common CN + Latin

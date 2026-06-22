@@ -70,7 +70,9 @@ export async function completeLessonAction(params: z.infer<typeof schema>) {
       await db.$transaction([
         db.vocabProgress.upsert({
           where: { userId_lessonId: { userId: session.user.id, lessonId } },
-          update: { completed: true, xpEarned: xpAwarded },
+          // Reset vị trí học dở về 0: bài đã xong nên lần vào sau là "Học lại" từ
+          // đầu, không phải "Học tiếp" giữa chừng.
+          update: { completed: true, xpEarned: xpAwarded, lastWordIndex: 0, lastStep: 0 },
           create: { userId: session.user.id, lessonId, completed: true, xpEarned: xpAwarded },
         }),
         db.attempt.create({

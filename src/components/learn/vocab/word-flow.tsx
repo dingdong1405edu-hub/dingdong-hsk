@@ -1,14 +1,15 @@
 "use client";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { toast } from "sonner";
-import { X, ArrowLeft, ArrowRight } from "lucide-react";
+import { X, ArrowLeft, ArrowRight, RotateCcw, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { completeLessonAction } from "@/server/actions/lesson";
+import { saveVocabPositionAction } from "@/server/actions/vocab-review";
 import { WordCard } from "./word-card";
 import { StrokeQuiz } from "./stroke-quiz";
 import { FlashcardDeck } from "./flashcard-deck";
@@ -18,16 +19,36 @@ interface Props {
   lesson: { id: string; title: string };
   words: VocabWordCard[];
   unitId: string;
+  /** Vị trí bắt đầu (cho "Học tiếp"). Mặc định 0/0. */
+  startIndex?: number;
+  startStep?: number;
+  /** Bài kế tiếp trong unit (cho nút "Học tiếp" ở màn hoàn thành). */
+  nextLessonId?: string | null;
+  /** Thoát về menu bài (tab Học từ / Ôn từ). Nếu không có → link về unit. */
+  onExit?: () => void;
+  /** Chuyển sang chế độ "Ôn từ" ngay sau khi học xong. */
+  onReviewNow?: () => void;
 }
 
 type Phase = "learn" | "flashcards" | "done";
 const STEP_LABELS = ["Học từ", "Viết theo nét", "Tự viết"] as const;
 
-export function WordFlow({ lesson, words, unitId }: Props) {
+export function WordFlow({
+  lesson,
+  words,
+  unitId,
+  startIndex = 0,
+  startStep = 0,
+  nextLessonId,
+  onExit,
+  onReviewNow,
+}: Props) {
   const router = useRouter();
+  const clampIdx = Math.min(Math.max(0, startIndex), Math.max(0, words.length - 1));
+  const clampStep = Math.min(Math.max(0, startStep), STEP_LABELS.length - 1);
   const [phase, setPhase] = useState<Phase>("learn");
-  const [wordIndex, setWordIndex] = useState(0);
-  const [step, setStep] = useState(0); // 0 card · 1 trace · 2 recall
+  const [wordIndex, setWordIndex] = useState(clampIdx);
+  const [step, setStep] = useState(clampStep); // 0 card · 1 trace · 2 recall
   const [xpEarned, setXpEarned] = useState<number | null>(null);
   const [startTime] = useState(Date.now());
 
@@ -38,6 +59,14 @@ export function WordFlow({ lesson, words, unitId }: Props) {
     return Math.round(((wordIndex * STEP_LABELS.length + step) / totalSteps) * 100);
   }, [phase, wordIndex, step, totalSteps]);
 
+  // Lưu vị trí đang học (nền) để "Học tiếp" đúng chỗ. Chỉ trong pha học và khi đã
+  // có tiến triển (>0/0) — tránh tạo bản ghi tiến độ chỉ vì vừa mở bài.
+  useEffect(() => {
+    if (phase !== "learn" || words.length === 0) return;
+    if (wordIndex === 0 && step === 0) return;
+    void saveVocabPositionAction({ lessonId: lesson.id, wordIndex, step }).catch(() => {});
+  }, [phase, wordIndex, step, lesson.id, words.length]);
+
   // Empty lesson — nothing authored yet.
   if (words.length === 0) {
     return (
@@ -47,9 +76,15 @@ export function WordFlow({ lesson, words, unitId }: Props) {
         <p className="max-w-sm text-sm text-muted-foreground">
           Nội dung bài này đang được biên soạn. Hãy quay lại sau nhé!
         </p>
-        <Link href={`/vocab/${unitId}`}>
-          <Button variant="outline">Quay lại</Button>
-        </Link>
+        {onExit ? (
+          <Button variant="outline" onClick={onExit}>
+            Quay lại
+          </Button>
+        ) : (
+          <Link href={`/vocab/${unitId}`}>
+            <Button variant="outline">Quay lại</Button>
+          </Link>
+        )}
       </div>
     );
   }
@@ -97,6 +132,25 @@ export function WordFlow({ lesson, words, unitId }: Props) {
     setPhase("done");
   }
 
+  // "Học lại" — làm lại bài từ đầu, không reload trang.
+  function restart() {
+    setXpEarned(null);
+    setWordIndex(0);
+    setStep(0);
+    setPhase("learn");
+  }
+
+  // "Học tiếp" — sang bài kế tiếp (nếu có), nếu không thì về unit/menu.
+  function goNextLesson() {
+    if (nextLessonId) {
+      router.push(`/vocab/${unitId}/lesson/${nextLessonId}`);
+    } else if (onExit) {
+      onExit();
+    } else {
+      router.push(`/vocab/${unitId}`);
+    }
+  }
+
   if (phase === "done") {
     return (
       <div className="flex min-h-[60vh] items-center justify-center">
@@ -110,13 +164,24 @@ export function WordFlow({ lesson, words, unitId }: Props) {
             {xpEarned !== null && xpEarned > 0 && (
               <div className="font-semibold text-yellow-600">+{xpEarned} XP</div>
             )}
-            <div className="flex gap-2 pt-2">
-              <Button variant="outline" className="flex-1" onClick={() => window.location.reload()}>
-                Học lại
-              </Button>
-              <Button className="flex-1" onClick={() => router.push(`/vocab/${unitId}`)}>
-                Tiếp tục
-              </Button>
+            <div className="grid gap-2 pt-2">
+              {onReviewNow && (
+                <Button className="w-full" onClick={onReviewNow}>
+                  <Sparkles className="mr-1.5 h-4 w-4" /> Ôn từ ngay
+                </Button>
+              )}
+              <div className="flex gap-2">
+                <Button variant="outline" className="flex-1" onClick={restart}>
+                  <RotateCcw className="mr-1.5 h-4 w-4" /> Học lại
+                </Button>
+                <Button
+                  variant={onReviewNow ? "outline" : "default"}
+                  className="flex-1"
+                  onClick={goNextLesson}
+                >
+                  {nextLessonId ? "Học tiếp" : "Hoàn tất"}
+                </Button>
+              </div>
             </div>
           </CardContent>
         </Card>
@@ -128,9 +193,20 @@ export function WordFlow({ lesson, words, unitId }: Props) {
     <div className="mx-auto flex min-h-[calc(100vh-5rem)] max-w-2xl flex-col">
       {/* Header */}
       <div className="flex items-center gap-3 py-4">
-        <Link href={`/vocab/${unitId}`} className="text-muted-foreground hover:text-foreground">
-          <X className="h-5 w-5" />
-        </Link>
+        {onExit ? (
+          <button
+            type="button"
+            onClick={onExit}
+            className="text-muted-foreground transition-colors hover:text-foreground"
+            aria-label="Thoát"
+          >
+            <X className="h-5 w-5" />
+          </button>
+        ) : (
+          <Link href={`/vocab/${unitId}`} className="text-muted-foreground hover:text-foreground">
+            <X className="h-5 w-5" />
+          </Link>
+        )}
         <Progress value={progress} className="h-3 flex-1" />
       </div>
 

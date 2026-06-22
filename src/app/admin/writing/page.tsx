@@ -7,8 +7,10 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Badge } from "@/components/ui/badge";
 import { ImageUpload } from "@/components/admin/image-upload";
+import { PublishToggle } from "@/components/admin/publish-toggle";
+import { ReorderList } from "@/components/admin/reorder-list";
 import { hskLevelLabel } from "@/lib/utils";
-import { deleteWritingAction } from "@/server/actions/admin";
+import { deleteWritingAction, updateWritingAction } from "@/server/actions/admin";
 import { revalidatePath } from "next/cache";
 import { db as prisma } from "@/lib/db";
 import { HSKLevel, WritingTaskType } from "@prisma/client";
@@ -25,16 +27,26 @@ async function createWritingAction(fd: FormData): Promise<void> {
       timeLimit: parseInt(fd.get("timeLimit") as string) || 900,
       hskLevel: fd.get("hskLevel") as HSKLevel,
       imageUrl: (fd.get("imageUrl") as string) || undefined,
+      published: false,
     },
   });
   revalidatePath("/admin/writing");
 }
 import { Trash2, Plus } from "lucide-react";
 
-export default async function AdminWritingPage() {
-  const tasks = await db.writingTask.findMany({ orderBy: [{ hskLevel: "asc" }, { createdAt: "desc" }] });
+const typeLabel: Record<string, string> = { FREE: "Tự do", GUIDED: "Hướng dẫn", PICTURE_DESCRIPTION: "Mô tả ảnh" };
 
-  const typeLabel: Record<string, string> = { FREE: "Tự do", GUIDED: "Hướng dẫn", PICTURE_DESCRIPTION: "Mô tả ảnh" };
+export default async function AdminWritingPage() {
+  const tasks = await db.writingTask.findMany({
+    orderBy: [{ hskLevel: "asc" }, { order: "asc" }, { createdAt: "desc" }],
+  });
+
+  // Gom theo cấp HSK — mỗi cấp một <ReorderList> riêng (đổi thứ tự theo phạm vi cấp).
+  const byLevel = new Map<HSKLevel, typeof tasks>();
+  for (const task of tasks) {
+    if (!byLevel.has(task.hskLevel)) byLevel.set(task.hskLevel, []);
+    byLevel.get(task.hskLevel)!.push(task);
+  }
 
   return (
     <div className="space-y-6">
@@ -77,34 +89,95 @@ export default async function AdminWritingPage() {
               <Label>Giới hạn thời gian (giây)</Label>
               <Input name="timeLimit" type="number" defaultValue="900" />
             </div>
-            <div><Button type="submit">Tạo bài viết</Button></div>
+            <div className="md:col-span-2 space-y-2">
+              <Button type="submit">Tạo bài viết</Button>
+              <p className="text-xs text-muted-foreground">Bài mới sẽ ở trạng thái Bản nháp — bấm “Đang hiện/Bản nháp” để xuất bản.</p>
+            </div>
           </form>
         </CardContent>
       </Card>
-      <div className="space-y-2">
-        {tasks.map((task) => (
-          <Card key={task.id}>
-            <CardContent className="p-4 flex items-start justify-between gap-4">
-              <div className="flex flex-1 items-start gap-3">
-                {task.imageUrl && (
-                  <>
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src={task.imageUrl} alt="" className="h-12 w-12 shrink-0 rounded-lg object-cover" />
-                  </>
-                )}
-                <div className="flex-1">
-                  <div className="flex items-center gap-2 mb-1">
-                    <Badge variant="outline">{hskLevelLabel(task.hskLevel)}</Badge>
-                    <Badge variant="secondary">{typeLabel[task.taskType]}</Badge>
-                  </div>
-                  <p className="text-sm">{task.prompt}</p>
-                </div>
-              </div>
-              <form action={async () => { "use server"; await deleteWritingAction(task.id); }}>
-                <Button size="sm" variant="destructive" type="submit"><Trash2 className="h-4 w-4" /></Button>
-              </form>
-            </CardContent>
-          </Card>
+
+      <div className="space-y-6">
+        {[...byLevel.entries()].map(([level, group]) => (
+          <div key={level} className="space-y-2">
+            <h2 className="text-sm font-semibold text-muted-foreground">{hskLevelLabel(level)}</h2>
+            <ReorderList
+              spec={{ kind: "content", model: "writing", hskLevel: level }}
+              items={group.map((task) => ({
+                id: task.id,
+                content: (
+                  <Card>
+                    <CardContent className="p-4 flex items-start justify-between gap-4">
+                      <div className="flex flex-1 items-start gap-3">
+                        {task.imageUrl && (
+                          <>
+                            {/* eslint-disable-next-line @next/next/no-img-element */}
+                            <img src={task.imageUrl} alt="" className="h-12 w-12 shrink-0 rounded-lg object-cover" />
+                          </>
+                        )}
+                        <div className="flex-1 space-y-2">
+                          <div className="flex items-center gap-2 mb-1">
+                            <Badge variant="outline">{hskLevelLabel(task.hskLevel)}</Badge>
+                            <Badge variant="secondary">{typeLabel[task.taskType]}</Badge>
+                          </div>
+                          <p className="text-sm">{task.prompt}</p>
+                          <details>
+                            <summary className="cursor-pointer text-sm font-medium text-muted-foreground">Sửa</summary>
+                            <form action={async (fd: FormData) => { "use server"; await updateWritingAction(fd); }} className="mt-3 grid grid-cols-1 md:grid-cols-2 gap-3">
+                              <input type="hidden" name="id" value={task.id} />
+                              <div className="space-y-1">
+                                <Label>Loại bài</Label>
+                                <select name="taskType" defaultValue={task.taskType} className="flex h-9 w-full rounded-md border px-3 py-1 text-sm">
+                                  <option value="FREE">Tự do</option>
+                                  <option value="GUIDED">Có hướng dẫn</option>
+                                  <option value="PICTURE_DESCRIPTION">Mô tả ảnh</option>
+                                </select>
+                              </div>
+                              <div className="space-y-1">
+                                <Label>Cấp độ HSK</Label>
+                                <select name="hskLevel" defaultValue={task.hskLevel} className="flex h-9 w-full rounded-md border px-3 py-1 text-sm">
+                                  {["HSK1","HSK2","HSK3","HSK4","HSK5","HSK6"].map(l => <option key={l} value={l}>{l}</option>)}
+                                </select>
+                              </div>
+                              <div className="space-y-1 md:col-span-2">
+                                <Label>Tải ảnh đại diện lên</Label>
+                                <ImageUpload name="imageUrl" defaultValue={task.imageUrl ?? undefined} />
+                              </div>
+                              <div className="space-y-1 md:col-span-2">
+                                <Label>Đề bài (VI)</Label>
+                                <Textarea name="prompt" defaultValue={task.prompt} required />
+                              </div>
+                              <div className="space-y-1 md:col-span-2">
+                                <Label>Đề bài (ZH, tùy chọn)</Label>
+                                <Textarea name="promptZh" className="font-chinese" defaultValue={task.promptZh ?? undefined} />
+                              </div>
+                              <div className="space-y-1">
+                                <Label>Số chữ Hán tối thiểu</Label>
+                                <Input name="minChars" type="number" defaultValue={task.minChars} />
+                              </div>
+                              <div className="space-y-1">
+                                <Label>Giới hạn thời gian (giây)</Label>
+                                <Input name="timeLimit" type="number" defaultValue={task.timeLimit} />
+                              </div>
+                              <div className="md:col-span-2">
+                                <Button type="submit" size="sm">Lưu</Button>
+                              </div>
+                            </form>
+                          </details>
+                        </div>
+                      </div>
+                      <div className="flex shrink-0 flex-col items-end gap-2">
+                        <PublishToggle model="writing" id={task.id} published={task.published} />
+                        <form action={async () => { "use server"; await deleteWritingAction(task.id); }}>
+                          <Button size="sm" variant="destructive" type="submit"><Trash2 className="h-4 w-4" /></Button>
+                        </form>
+                      </div>
+                    </CardContent>
+                  </Card>
+                ),
+              }))}
+            />
+          </div>
         ))}
       </div>
     </div>

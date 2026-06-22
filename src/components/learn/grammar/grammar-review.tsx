@@ -2,45 +2,51 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import { CheckCircle2, Circle } from "lucide-react";
+import { CheckCircle2, XCircle, SkipForward } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { FlashcardPhase, type FlashResult } from "./flashcard-phase";
 import type { Exercise } from "@/types";
 
-/** One row in the progress breakdown shown on the review summary. */
-export interface ReviewProgressItem {
-  label: string;
-  /** Completion %, 0–100. */
-  pct: number;
-}
-
 interface Props {
-  /** Display title of the scope being reviewed (unit or HSK level). */
+  /** Display title of the scope being reviewed (lesson or unit). */
   title: string;
-  /** All practice items gathered from the scope's lessons. */
+  /** All practice items gathered from the scope, mixed together. */
   exercises: Exercise[];
   /** Where the close button / "Xong" returns to. */
   closeHref: string;
-  /** Aggregate completion of the whole scope. */
-  overall: { label: string; pct: number };
-  /** Heading for the per-item breakdown (e.g. "Tiến độ từng bài"). */
-  itemsTitle: string;
-  /** Per-lesson (unit review) or per-unit (level review) completion. */
-  items: ReviewProgressItem[];
 }
 
 type Stage = "review" | "done";
 
+/** Vietnamese labels for the per-type score breakdown. */
+const TYPE_LABEL: Record<string, string> = {
+  match: "Nối từ",
+  translate: "Dịch câu",
+  toneSelect: "Chọn thanh điệu",
+  sentenceOrder: "Sắp xếp câu",
+  sentence_order: "Sắp xếp câu",
+  pinyinMatch: "Nối pinyin",
+  fill_blank: "Điền chỗ trống",
+  answer_question: "Trả lời câu hỏi",
+  type_sentence: "Viết câu",
+};
+
+function scoreTone(pct: number): string {
+  if (pct >= 80) return "text-green-600";
+  if (pct >= 50) return "text-amber-600";
+  return "text-red-600";
+}
+
 /**
- * "Ôn ngữ pháp" runner. Mixes all practice items of a unit (or a whole HSK
- * level) into one shuffled, risk-free flashcard session, then shows the review
- * accuracy alongside how much of the lesson(s) and the unit/level the learner
- * has already completed. Reuses FlashcardPhase, so the click-to-lookup context
+ * "Ôn tập" runner. Mixes all practice items of a lesson (or a whole unit) into
+ * one shuffled, no-theory session — quiz + flashcard trộn hết — then shows a
+ * detailed percentage score: overall %, đúng/sai/bỏ qua, độ chính xác, and a
+ * per-type breakdown. Reuses FlashcardPhase, so the click-to-lookup context
  * words and the wrong-answer explanations work here too.
  */
-export function GrammarReview({ title, exercises, closeHref, overall, itemsTitle, items }: Props) {
+export function GrammarReview({ title, exercises, closeHref }: Props) {
   const router = useRouter();
   const [stage, setStage] = useState<Stage>("review");
   const [result, setResult] = useState<FlashResult | null>(null);
@@ -68,8 +74,6 @@ export function GrammarReview({ title, exercises, closeHref, overall, itemsTitle
   }
 
   if (stage === "review") {
-    // `deck` is null until the post-mount shuffle runs — render a stable skeleton
-    // so the server HTML and the first client render match (no hydration jump).
     if (!deck) {
       return (
         <div className="mx-auto flex min-h-[calc(100vh-5rem)] max-w-2xl items-center justify-center">
@@ -90,52 +94,85 @@ export function GrammarReview({ title, exercises, closeHref, overall, itemsTitle
     );
   }
 
-  const answered = (result?.correct ?? 0) + (result?.wrong ?? 0);
-  const accuracy = answered > 0 ? Math.round(((result?.correct ?? 0) / answered) * 100) : null;
+  // ===== Detailed score =====
+  const total = (result?.correct ?? 0) + (result?.wrong ?? 0) + (result?.skipped ?? 0);
+  const correct = result?.correct ?? 0;
+  const wrong = result?.wrong ?? 0;
+  const skipped = result?.skipped ?? 0;
+  const answered = correct + wrong;
+  // The headline score counts every item: skipped & wrong both cost points.
+  const scorePct = total > 0 ? Math.round((correct / total) * 100) : 0;
+  const accuracyPct = answered > 0 ? Math.round((correct / answered) * 100) : null;
+
+  // Per-type breakdown from the per-card log.
+  const byType = new Map<string, { correct: number; total: number }>();
+  for (const d of result?.details ?? []) {
+    const e = byType.get(d.type) ?? { correct: 0, total: 0 };
+    e.total += 1;
+    if (d.outcome === "correct") e.correct += 1;
+    byType.set(d.type, e);
+  }
+  const typeRows = Array.from(byType.entries()).map(([type, v]) => ({
+    label: TYPE_LABEL[type] ?? type,
+    correct: v.correct,
+    total: v.total,
+    pct: v.total > 0 ? Math.round((v.correct / v.total) * 100) : 0,
+  }));
 
   return (
     <div className="mx-auto flex min-h-[60vh] max-w-md items-center justify-center py-6">
       <Card className="w-full text-center">
         <CardContent className="space-y-5 px-6 pb-6 pt-8">
-          <div className="text-6xl">🎉</div>
-          <h2 className="text-2xl font-bold">Đã ôn xong!</h2>
+          <div className="text-5xl">{scorePct >= 80 ? "🏆" : scorePct >= 50 ? "💪" : "📚"}</div>
+          <h2 className="text-2xl font-bold">Kết quả ôn tập</h2>
           <p className="text-sm text-muted-foreground">{title}</p>
 
-          {accuracy !== null && (
-            <div>
-              <div className="text-4xl font-bold text-violet-600">{accuracy}%</div>
-              <div className="text-sm text-muted-foreground">
-                Độ chính xác · {result?.correct ?? 0}/{answered} câu đúng
-                {result?.skipped ? ` · ${result.skipped} bỏ qua` : ""}
-              </div>
+          {/* Headline score */}
+          <div>
+            <div className={`text-5xl font-extrabold ${scoreTone(scorePct)}`}>{scorePct}%</div>
+            <div className="mt-1 text-sm text-muted-foreground">
+              {correct}/{total} câu đúng
+              {accuracyPct !== null && answered !== total && (
+                <> · độ chính xác khi trả lời {accuracyPct}%</>
+              )}
             </div>
-          )}
-
-          {/* Overall completion of the unit / level */}
-          <div className="space-y-1.5 rounded-xl border bg-muted/30 p-4 text-left">
-            <div className="flex items-center justify-between text-sm font-semibold">
-              <span>{overall.label}</span>
-              <span className="text-violet-600">{overall.pct}%</span>
-            </div>
-            <Progress value={overall.pct} className="h-2" />
           </div>
 
-          {/* Per-lesson / per-unit breakdown */}
-          {items.length > 0 && (
+          {/* Đúng / Sai / Bỏ qua */}
+          <div className="grid grid-cols-3 gap-2">
+            <div className="rounded-xl bg-green-50 p-3">
+              <CheckCircle2 className="mx-auto h-5 w-5 text-green-600" />
+              <div className="mt-1 text-lg font-bold text-green-700">{correct}</div>
+              <div className="text-[11px] text-muted-foreground">Đúng</div>
+            </div>
+            <div className="rounded-xl bg-red-50 p-3">
+              <XCircle className="mx-auto h-5 w-5 text-red-500" />
+              <div className="mt-1 text-lg font-bold text-red-600">{wrong}</div>
+              <div className="text-[11px] text-muted-foreground">Sai</div>
+            </div>
+            <div className="rounded-xl bg-muted p-3">
+              <SkipForward className="mx-auto h-5 w-5 text-muted-foreground" />
+              <div className="mt-1 text-lg font-bold text-foreground">{skipped}</div>
+              <div className="text-[11px] text-muted-foreground">Bỏ qua</div>
+            </div>
+          </div>
+
+          {/* Per-type breakdown */}
+          {typeRows.length > 0 && (
             <div className="space-y-2 text-left">
               <div className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-                {itemsTitle}
+                Chi tiết theo loại bài
               </div>
               <ul className="space-y-2">
-                {items.map((it, i) => (
-                  <li key={i} className="flex items-center gap-2.5 text-sm">
-                    {it.pct >= 100 ? (
-                      <CheckCircle2 className="h-4 w-4 shrink-0 text-green-600" />
-                    ) : (
-                      <Circle className="h-4 w-4 shrink-0 text-muted-foreground/40" />
-                    )}
-                    <span className="min-w-0 flex-1 truncate">{it.label}</span>
-                    <span className="shrink-0 tabular-nums text-muted-foreground">{it.pct}%</span>
+                {typeRows.map((r, i) => (
+                  <li key={i} className="space-y-1">
+                    <div className="flex items-center justify-between text-sm">
+                      <span className="min-w-0 truncate">{r.label}</span>
+                      <span className="shrink-0 tabular-nums text-muted-foreground">
+                        {r.correct}/{r.total} · {r.pct}%
+                      </span>
+                    </div>
+                    <Progress value={r.pct} className="h-1.5" />
                   </li>
                 ))}
               </ul>

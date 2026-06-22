@@ -18,7 +18,8 @@ export default async function ReadingPage() {
   if (!session?.user) redirect("/login");
 
   const tests = await db.readingTest.findMany({
-    orderBy: [{ hskLevel: "asc" }, { createdAt: "desc" }],
+    where: { published: true }, // ẩn đề nháp khỏi học viên
+    orderBy: [{ hskLevel: "asc" }, { order: "asc" }, { createdAt: "desc" }],
     include: { questions: { select: { type: true } } },
   });
 

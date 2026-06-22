@@ -58,9 +58,16 @@ export default async function DashboardPage() {
   });
   if (!user) redirect("/login");
 
-  const vocabCount = await db.vocabLesson.count({ where: { unit: { hskLevel: user.hskLevel } } });
-  const grammarCount = await db.grammarLesson.count({ where: { unit: { hskLevel: user.hskLevel } } });
-  const hanziCount = await db.hanziCharacter.count({ where: { hskLevel: user.hskLevel } });
+  // Chỉ đếm nội dung đã xuất bản (bỏ bản nháp) để % tiến độ khớp những gì học viên thấy.
+  const vocabCount = await db.vocabLesson.count({
+    where: { published: true, unit: { published: true, hskLevel: user.hskLevel } },
+  });
+  const grammarCount = await db.grammarLesson.count({
+    where: { published: true, unit: { published: true, hskLevel: user.hskLevel } },
+  });
+  const hanziCount = await db.hanziCharacter.count({
+    where: { published: true, hskLevel: user.hskLevel },
+  });
 
   const vocabProgress = vocabCount > 0 ? Math.round((user.vocabProgress.length / vocabCount) * 100) : 0;
   const grammarProgress = grammarCount > 0 ? Math.round((user.grammarProgress.length / grammarCount) * 100) : 0;

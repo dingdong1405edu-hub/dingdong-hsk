@@ -1,7 +1,8 @@
 import { auth } from "@/lib/auth";
 import { db } from "@/lib/db";
 import { redirect } from "next/navigation";
-import { BookOpen } from "lucide-react";
+import Link from "next/link";
+import { BookOpen, Sparkles, ArrowRight } from "lucide-react";
 import { PracticeHub } from "@/components/learn/practice-hub";
 import { TestCard } from "@/components/learn/test-card";
 
@@ -9,15 +10,20 @@ export default async function VocabPage() {
   const session = await auth();
   if (!session?.user) redirect("/login");
 
-  const units = await db.vocabUnit.findMany({
-    orderBy: [{ hskLevel: "asc" }, { order: "asc" }],
-    include: {
-      lessons: {
-        include: { progress: { where: { userId: session.user.id, completed: true } } },
-        orderBy: { order: "asc" },
+  const [units, dueCount] = await Promise.all([
+    db.vocabUnit.findMany({
+      where: { published: true }, // ẩn unit nháp khỏi học viên
+      orderBy: [{ hskLevel: "asc" }, { order: "asc" }],
+      include: {
+        lessons: {
+          where: { published: true }, // ẩn bài nháp khỏi học viên
+          include: { progress: { where: { userId: session.user.id, completed: true } } },
+          orderBy: { order: "asc" },
+        },
       },
-    },
-  });
+    }),
+    db.vocabReview.count({ where: { userId: session.user.id, dueAt: { lte: new Date() } } }),
+  ]);
 
   const withStats = units.map((u) => {
     const total = u.lessons.length;
@@ -46,6 +52,25 @@ export default async function VocabPage() {
       gridTitle="Các đơn vị từ vựng"
       gridSubtitle="Nhấn vào một đơn vị để bắt đầu học."
     >
+      {dueCount > 0 && (
+        <Link
+          href="/vocab/review"
+          className="mb-4 flex items-center justify-between gap-3 rounded-2xl border border-amber-200 bg-gradient-to-br from-amber-50 to-white p-4 transition-colors hover:border-amber-300"
+        >
+          <div className="flex items-center gap-3">
+            <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-amber-100 text-amber-600">
+              <Sparkles className="h-5 w-5" />
+            </div>
+            <div>
+              <div className="font-semibold">Ôn tập tổng hợp</div>
+              <p className="text-sm text-muted-foreground">
+                {dueCount} từ đến hạn ôn — lặp lại ngắt quãng để nhớ lâu.
+              </p>
+            </div>
+          </div>
+          <ArrowRight className="h-5 w-5 shrink-0 text-amber-600" />
+        </Link>
+      )}
       {withStats.length === 0 ? (
         <EmptyState />
       ) : (

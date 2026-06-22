@@ -14,7 +14,8 @@ export default async function HanziPage() {
   if (!session?.user) redirect("/login");
 
   const characters = await db.hanziCharacter.findMany({
-    orderBy: [{ hskLevel: "asc" }],
+    where: { published: true }, // ẩn chữ nháp khỏi học viên
+    orderBy: [{ hskLevel: "asc" }, { order: "asc" }, { character: "asc" }],
     include: { progress: { where: { userId: session.user.id } } },
   });
 

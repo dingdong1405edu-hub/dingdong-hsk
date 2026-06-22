@@ -9,6 +9,8 @@ import { hskLevelLabel } from "@/lib/utils";
 import { grammarItemCount } from "@/lib/grammar";
 import { LessonEditor } from "@/components/admin/lesson-editor";
 import { GrammarAuthorGuide } from "@/components/admin/grammar-author-guide";
+import { PublishToggle } from "@/components/admin/publish-toggle";
+import { ReorderList } from "@/components/admin/reorder-list";
 import { deleteLessonAction } from "@/server/actions/admin";
 
 interface Props {
@@ -55,6 +57,9 @@ export default async function AdminGrammarUnitPage({ params }: Props) {
         </CardHeader>
         <CardContent>
           <LessonEditor skill="grammar" unitId={unitId} />
+          <p className="mt-2 text-[11px] text-muted-foreground">
+            Bài mới sẽ ở trạng thái Bản nháp — bấm “Đang hiện/Bản nháp” để xuất bản.
+          </p>
         </CardContent>
       </Card>
 
@@ -66,48 +71,57 @@ export default async function AdminGrammarUnitPage({ params }: Props) {
             Chưa có bài học nào. Dùng form bên trên để tạo bài đầu tiên.
           </p>
         ) : (
-          unit.lessons.map((lesson, idx) => (
-            <Card key={lesson.id}>
-              <CardContent className="p-4">
-                <div className="flex items-center justify-between gap-3">
-                  <div className="flex items-center gap-3">
-                    <div className="flex h-8 w-8 items-center justify-center rounded-full bg-primary/10 text-sm font-bold text-primary">
-                      {idx + 1}
-                    </div>
-                    <div>
-                      <div className="font-medium">{lesson.title || `Bài ${idx + 1}`}</div>
-                      <div className="text-xs text-muted-foreground">
-                        {grammarItemCount(lesson.exercises)} bài tập
+          <ReorderList
+            spec={{ kind: "lessons", skill: "grammar", unitId }}
+            items={unit.lessons.map((lesson, idx) => ({
+              id: lesson.id,
+              content: (
+                <Card>
+                  <CardContent className="p-4">
+                    <div className="flex items-center justify-between gap-3">
+                      <div className="flex items-center gap-3">
+                        <div className="flex h-8 w-8 items-center justify-center rounded-full bg-primary/10 text-sm font-bold text-primary">
+                          {idx + 1}
+                        </div>
+                        <div>
+                          <div className="font-medium">{lesson.title || `Bài ${idx + 1}`}</div>
+                          <div className="text-xs text-muted-foreground">
+                            {grammarItemCount(lesson.exercises)} bài tập
+                          </div>
+                        </div>
+                      </div>
+                      <div className="flex shrink-0 items-center gap-2">
+                        <PublishToggle model="grammarLesson" id={lesson.id} published={lesson.published} />
+                        <form
+                          action={async () => {
+                            "use server";
+                            await deleteLessonAction("grammar", lesson.id, unitId);
+                          }}
+                        >
+                          <Button size="sm" variant="destructive" type="submit">
+                            <Trash2 className="h-4 w-4" />
+                          </Button>
+                        </form>
                       </div>
                     </div>
-                  </div>
-                  <form
-                    action={async () => {
-                      "use server";
-                      await deleteLessonAction("grammar", lesson.id, unitId);
-                    }}
-                  >
-                    <Button size="sm" variant="destructive" type="submit">
-                      <Trash2 className="h-4 w-4" />
-                    </Button>
-                  </form>
-                </div>
 
-                <details className="mt-3">
-                  <summary className="cursor-pointer text-sm font-medium text-primary">
-                    Sửa nội dung bài học
-                  </summary>
-                  <div className="mt-3 border-t pt-3">
-                    <LessonEditor
-                      skill="grammar"
-                      unitId={unitId}
-                      lesson={{ id: lesson.id, title: lesson.title, exercises: lesson.exercises }}
-                    />
-                  </div>
-                </details>
-              </CardContent>
-            </Card>
-          ))
+                    <details className="mt-3">
+                      <summary className="cursor-pointer text-sm font-medium text-primary">
+                        Sửa nội dung bài học
+                      </summary>
+                      <div className="mt-3 border-t pt-3">
+                        <LessonEditor
+                          skill="grammar"
+                          unitId={unitId}
+                          lesson={{ id: lesson.id, title: lesson.title, exercises: lesson.exercises }}
+                        />
+                      </div>
+                    </details>
+                  </CardContent>
+                </Card>
+              ),
+            }))}
+          />
         )}
       </div>
     </div>

@@ -1,16 +1,10 @@
 "use server";
-import { auth } from "@/lib/auth";
 import { db } from "@/lib/db";
 import { revalidatePath } from "next/cache";
 import { z } from "zod";
-import { HSKLevel, Prisma, SubscriptionType } from "@prisma/client";
+import { HSKLevel, Prisma, Role, SubscriptionType, WritingTaskType } from "@prisma/client";
 import { getPlan } from "@/lib/payment-plans";
-
-async function requireAdmin() {
-  const session = await auth();
-  if (!session?.user || session.user.role !== "ADMIN") throw new Error("Unauthorized");
-  return session;
-}
+import { requireAdmin } from "@/lib/admin-guard";
 
 export async function adminUpdateUserAction(params: {
   userId: string;
@@ -105,6 +99,7 @@ export async function createReadingAction(fd: FormData) {
       // "has image?" checks stay consistent with updateReadingAction.
       imageUrl: data.imageUrl?.trim() ? data.imageUrl : null,
       passagePinyin: data.passagePinyin?.trim() ? data.passagePinyin : null,
+      published: false, // bản nháp: admin xuất bản sau khi kiểm lại
     },
   });
   revalidatePath("/admin/reading");
@@ -141,40 +136,56 @@ export async function deleteReadingAction(id: string) {
 }
 
 // ===== Listening =====
-export async function createListeningAction(fd: FormData) {
-  await requireAdmin();
-  await db.listeningTest.create({
-    data: {
-      title: fd.get("title") as string,
-      hskLevel: fd.get("hskLevel") as HSKLevel,
-      audioUrl: fd.get("audioUrl") as string,
-      transcript: (fd.get("transcript") as string) || undefined,
-      timeLimit: parseInt(fd.get("timeLimit") as string) || 300,
-      imageUrl: (fd.get("imageUrl") as string) || undefined,
-    },
-  });
-  revalidatePath("/admin/listening");
-  return { ok: true };
+// Both audio and transcript are intentionally OPTIONAL (an admin may save a
+// shell, then add audio/questions on the detail page). The learner player
+// degrades gracefully when both are missing. We still validate title/level/time
+// and normalize empties so a malformed POST returns { ok:false } instead of an
+// opaque Prisma crash.
+const listeningSchema = z.object({
+  title: z.string().trim().min(1, "Thiếu tiêu đề bài nghe."),
+  hskLevel: z.nativeEnum(HSKLevel),
+  audioUrl: z.string().trim().optional(),
+  transcript: z.string().optional(),
+  timeLimit: z.coerce.number().int().min(30).default(300),
+  imageUrl: z.string().trim().optional(),
+});
+
+function listeningData(input: z.infer<typeof listeningSchema>) {
+  return {
+    title: input.title,
+    hskLevel: input.hskLevel,
+    audioUrl: input.audioUrl?.trim() ? input.audioUrl.trim() : "",
+    transcript: input.transcript?.trim() ? input.transcript : null,
+    timeLimit: input.timeLimit,
+    imageUrl: input.imageUrl?.trim() ? input.imageUrl : null,
+  };
 }
 
-export async function updateListeningAction(fd: FormData) {
+export async function createListeningAction(fd: FormData): Promise<{ ok: boolean; error?: string }> {
   await requireAdmin();
-  const id = fd.get("id") as string;
-  if (!id) return { ok: false, error: "Thiếu id bài nghe" };
-  await db.listeningTest.update({
-    where: { id },
-    data: {
-      title: fd.get("title") as string,
-      hskLevel: fd.get("hskLevel") as HSKLevel,
-      audioUrl: (fd.get("audioUrl") as string) || "",
-      transcript: (fd.get("transcript") as string)?.trim() ? (fd.get("transcript") as string) : null,
-      timeLimit: parseInt(fd.get("timeLimit") as string) || 300,
-      imageUrl: (fd.get("imageUrl") as string)?.trim() ? (fd.get("imageUrl") as string) : null,
-    },
-  });
-  revalidatePath(`/admin/listening/${id}`);
-  revalidatePath("/admin/listening");
-  return { ok: true };
+  try {
+    const data = listeningData(listeningSchema.parse(Object.fromEntries(fd)));
+    await db.listeningTest.create({ data: { ...data, published: false } }); // bản nháp
+    revalidatePath("/admin/listening");
+    return { ok: true };
+  } catch (e) {
+    return { ok: false, error: e instanceof Error ? e.message : "Lỗi tạo bài nghe." };
+  }
+}
+
+export async function updateListeningAction(fd: FormData): Promise<{ ok: boolean; error?: string }> {
+  await requireAdmin();
+  try {
+    const id = (fd.get("id") as string) || "";
+    if (!id) return { ok: false, error: "Thiếu id bài nghe." };
+    const data = listeningData(listeningSchema.parse(Object.fromEntries(fd)));
+    await db.listeningTest.update({ where: { id }, data });
+    revalidatePath(`/admin/listening/${id}`);
+    revalidatePath("/admin/listening");
+    return { ok: true };
+  } catch (e) {
+    return { ok: false, error: e instanceof Error ? e.message : "Lỗi cập nhật bài nghe." };
+  }
 }
 
 export async function deleteListeningAction(id: string) {
@@ -196,6 +207,7 @@ export async function createWritingAction(fd: FormData) {
       timeLimit: parseInt(fd.get("timeLimit") as string) || 900,
       hskLevel: fd.get("hskLevel") as HSKLevel,
       imageUrl: (fd.get("imageUrl") as string) || undefined,
+      published: false, // bản nháp: admin xuất bản sau khi kiểm lại
     },
   });
   revalidatePath("/admin/writing");
@@ -418,7 +430,9 @@ export async function saveLessonAction(
         await db.vocabLesson.update({ where: { id: lessonId }, data: { title, exercises } });
       } else {
         const count = await db.vocabLesson.count({ where: { unitId } });
-        await db.vocabLesson.create({ data: { unitId, title, order: count + 1, exercises } });
+        await db.vocabLesson.create({
+          data: { unitId, title, order: count + 1, exercises, published: false }, // bản nháp
+        });
       }
       revalidatePath(`/admin/vocab/${unitId}`);
     } else {
@@ -426,7 +440,9 @@ export async function saveLessonAction(
         await db.grammarLesson.update({ where: { id: lessonId }, data: { title, exercises } });
       } else {
         const count = await db.grammarLesson.count({ where: { unitId } });
-        await db.grammarLesson.create({ data: { unitId, title, order: count + 1, exercises } });
+        await db.grammarLesson.create({
+          data: { unitId, title, order: count + 1, exercises, published: false }, // bản nháp
+        });
       }
       revalidatePath(`/admin/grammar/${unitId}`);
     }
@@ -662,5 +678,431 @@ export async function bulkImportVocabWordsAction(input: {
     return { ok: true, created: valid.length, skipped };
   } catch (e) {
     return { ok: false, error: e instanceof Error ? e.message : "Lỗi không xác định." };
+  }
+}
+
+// ===================================================================
+//  XUẤT BẢN / ẨN (publish · draft) — bật/tắt hiển thị nội dung trên web học viên
+// ===================================================================
+// Mỗi loại nội dung có một cột `published`. false = bản nháp (chỉ admin thấy,
+// ẩn khỏi mọi trang học viên). Các trang học viên lọc `where: { published: true }`,
+// nên đổi cờ này là đủ để hiện/ẩn. Toggle ở admin gọi action này rồi router.refresh().
+type ContentModel =
+  | "vocabUnit"
+  | "vocabLesson"
+  | "grammarUnit"
+  | "grammarLesson"
+  | "hanzi"
+  | "reading"
+  | "listening"
+  | "writing"
+  | "speaking";
+
+// Đường dẫn cần làm mới cache sau khi đổi trạng thái: trang admin (danh sách) và
+// trang học viên tương ứng. Dashboard học viên cũng đếm nội dung nên làm mới luôn.
+const CONTENT_PATHS: Record<ContentModel, { admin: string; learner: string }> = {
+  vocabUnit: { admin: "/admin/vocab", learner: "/vocab" },
+  vocabLesson: { admin: "/admin/vocab", learner: "/vocab" },
+  grammarUnit: { admin: "/admin/grammar", learner: "/grammar" },
+  grammarLesson: { admin: "/admin/grammar", learner: "/grammar" },
+  hanzi: { admin: "/admin/hanzi", learner: "/hanzi" },
+  reading: { admin: "/admin/reading", learner: "/reading" },
+  listening: { admin: "/admin/listening", learner: "/listening" },
+  writing: { admin: "/admin/writing", learner: "/writing" },
+  speaking: { admin: "/admin/speaking", learner: "/speaking" },
+};
+
+function revalidateContent(model: ContentModel) {
+  const p = CONTENT_PATHS[model];
+  revalidatePath(p.admin);
+  revalidatePath(p.learner);
+  revalidatePath("/dashboard");
+  revalidatePath("/exam");
+}
+
+export async function setContentPublishedAction(
+  model: ContentModel,
+  id: string,
+  published: boolean
+): Promise<{ ok: boolean; error?: string }> {
+  try {
+    await requireAdmin();
+    if (!id) return { ok: false, error: "Thiếu id nội dung." };
+    switch (model) {
+      case "vocabUnit":
+        await db.vocabUnit.update({ where: { id }, data: { published } });
+        break;
+      case "vocabLesson":
+        await db.vocabLesson.update({ where: { id }, data: { published } });
+        break;
+      case "grammarUnit":
+        await db.grammarUnit.update({ where: { id }, data: { published } });
+        break;
+      case "grammarLesson":
+        await db.grammarLesson.update({ where: { id }, data: { published } });
+        break;
+      case "hanzi":
+        await db.hanziCharacter.update({ where: { id }, data: { published } });
+        break;
+      case "reading":
+        await db.readingTest.update({ where: { id }, data: { published } });
+        break;
+      case "listening":
+        await db.listeningTest.update({ where: { id }, data: { published } });
+        break;
+      case "writing":
+        await db.writingTask.update({ where: { id }, data: { published } });
+        break;
+      case "speaking":
+        await db.speakingSet.update({ where: { id }, data: { published } });
+        break;
+      default:
+        return { ok: false, error: "Loại nội dung không hợp lệ." };
+    }
+    revalidateContent(model);
+    return { ok: true };
+  } catch (e) {
+    return { ok: false, error: e instanceof Error ? e.message : "Lỗi cập nhật trạng thái." };
+  }
+}
+
+// ===================================================================
+//  ĐỔI CHỖ (reorder) — sắp xếp lại thứ tự hiển thị
+// ===================================================================
+// Mọi action chuẩn hoá `order` về 1..n trên đúng phạm vi (một unit, hoặc một cấp
+// HSK của một loại) sau khi đã xác thực mọi id thuộc phạm vi đó — tránh làm hỏng
+// chuỗi `order` giữa các phạm vi. Học viên & admin sắp xếp theo [order, createdAt].
+
+// Bài học trong một unit (Từ vựng / Ngữ pháp).
+export async function reorderLessonsAction(
+  skill: LessonSkill,
+  unitId: string,
+  orderedIds: string[]
+): Promise<{ ok: boolean; error?: string }> {
+  try {
+    await requireAdmin();
+    if (orderedIds.length === 0) return { ok: true };
+    if (skill === "vocab") {
+      const lessons = await db.vocabLesson.findMany({
+        where: { id: { in: orderedIds } },
+        select: { id: true, unitId: true },
+      });
+      if (lessons.length !== orderedIds.length || lessons.some((l) => l.unitId !== unitId)) {
+        return { ok: false, error: "Danh sách sắp xếp không hợp lệ." };
+      }
+      await db.$transaction(
+        orderedIds.map((id, i) => db.vocabLesson.update({ where: { id }, data: { order: i + 1 } }))
+      );
+      revalidatePath(`/admin/vocab/${unitId}`);
+      revalidatePath("/vocab");
+    } else {
+      const lessons = await db.grammarLesson.findMany({
+        where: { id: { in: orderedIds } },
+        select: { id: true, unitId: true },
+      });
+      if (lessons.length !== orderedIds.length || lessons.some((l) => l.unitId !== unitId)) {
+        return { ok: false, error: "Danh sách sắp xếp không hợp lệ." };
+      }
+      await db.$transaction(
+        orderedIds.map((id, i) => db.grammarLesson.update({ where: { id }, data: { order: i + 1 } }))
+      );
+      revalidatePath(`/admin/grammar/${unitId}`);
+      revalidatePath("/grammar");
+    }
+    return { ok: true };
+  } catch (e) {
+    return { ok: false, error: e instanceof Error ? e.message : "Lỗi đổi thứ tự bài học." };
+  }
+}
+
+// Units trong một cấp HSK (Từ vựng / Ngữ pháp).
+export async function reorderUnitsAction(
+  skill: LessonSkill,
+  hskLevel: HSKLevel,
+  orderedIds: string[]
+): Promise<{ ok: boolean; error?: string }> {
+  try {
+    await requireAdmin();
+    if (orderedIds.length === 0) return { ok: true };
+    if (skill === "vocab") {
+      const units = await db.vocabUnit.findMany({
+        where: { id: { in: orderedIds } },
+        select: { id: true, hskLevel: true },
+      });
+      if (units.length !== orderedIds.length || units.some((u) => u.hskLevel !== hskLevel)) {
+        return { ok: false, error: "Danh sách sắp xếp không hợp lệ." };
+      }
+      await db.$transaction(
+        orderedIds.map((id, i) => db.vocabUnit.update({ where: { id }, data: { order: i + 1 } }))
+      );
+    } else {
+      const units = await db.grammarUnit.findMany({
+        where: { id: { in: orderedIds } },
+        select: { id: true, hskLevel: true },
+      });
+      if (units.length !== orderedIds.length || units.some((u) => u.hskLevel !== hskLevel)) {
+        return { ok: false, error: "Danh sách sắp xếp không hợp lệ." };
+      }
+      await db.$transaction(
+        orderedIds.map((id, i) => db.grammarUnit.update({ where: { id }, data: { order: i + 1 } }))
+      );
+    }
+    revalidatePath(skill === "vocab" ? "/admin/vocab" : "/admin/grammar");
+    revalidatePath(skill === "vocab" ? "/vocab" : "/grammar");
+    return { ok: true };
+  } catch (e) {
+    return { ok: false, error: e instanceof Error ? e.message : "Lỗi đổi thứ tự unit." };
+  }
+}
+
+// Bài độc lập (Đọc / Nghe / Viết / Nói / Chữ Hán) trong một cấp HSK.
+type OrderedContentModel = "reading" | "listening" | "writing" | "speaking" | "hanzi";
+
+export async function reorderContentAction(
+  model: OrderedContentModel,
+  hskLevel: HSKLevel,
+  orderedIds: string[]
+): Promise<{ ok: boolean; error?: string }> {
+  try {
+    await requireAdmin();
+    if (orderedIds.length === 0) return { ok: true };
+
+    // Xác thực: mọi id tồn tại và cùng một cấp HSK (không trộn cấp khi sắp xếp).
+    const rows = await (async () => {
+      switch (model) {
+        case "reading":
+          return db.readingTest.findMany({ where: { id: { in: orderedIds } }, select: { id: true, hskLevel: true } });
+        case "listening":
+          return db.listeningTest.findMany({ where: { id: { in: orderedIds } }, select: { id: true, hskLevel: true } });
+        case "writing":
+          return db.writingTask.findMany({ where: { id: { in: orderedIds } }, select: { id: true, hskLevel: true } });
+        case "speaking":
+          return db.speakingSet.findMany({ where: { id: { in: orderedIds } }, select: { id: true, hskLevel: true } });
+        case "hanzi":
+          return db.hanziCharacter.findMany({ where: { id: { in: orderedIds } }, select: { id: true, hskLevel: true } });
+      }
+    })();
+    if (rows.length !== orderedIds.length || rows.some((r) => r.hskLevel !== hskLevel)) {
+      return { ok: false, error: "Danh sách sắp xếp không hợp lệ." };
+    }
+
+    await db.$transaction(
+      orderedIds.map((id, i) => {
+        const data = { order: i + 1 };
+        switch (model) {
+          case "reading":
+            return db.readingTest.update({ where: { id }, data });
+          case "listening":
+            return db.listeningTest.update({ where: { id }, data });
+          case "writing":
+            return db.writingTask.update({ where: { id }, data });
+          case "speaking":
+            return db.speakingSet.update({ where: { id }, data });
+          case "hanzi":
+            return db.hanziCharacter.update({ where: { id }, data });
+        }
+      })
+    );
+    revalidateContent(model);
+    return { ok: true };
+  } catch (e) {
+    return { ok: false, error: e instanceof Error ? e.message : "Lỗi đổi thứ tự." };
+  }
+}
+
+// ===================================================================
+//  PHÂN QUYỀN ADMIN CON (sub-admin) — phong / gỡ quyền ADMIN
+// ===================================================================
+// Một "admin con" đơn giản là một tài khoản có Role.ADMIN (toàn quyền). Action
+// này đổi role giữa ADMIN ↔ LEARNER. Vì role được cache trong JWT, requireAdmin
+// và admin layout đã đọc role trực tiếp từ DB nên quyền có hiệu lực ngay.
+const setRoleSchema = z.object({
+  userId: z.string().min(1),
+  role: z.nativeEnum(Role),
+});
+
+export async function adminSetUserRoleAction(input: {
+  userId: string;
+  role: "ADMIN" | "LEARNER";
+}): Promise<{ ok: boolean; error?: string }> {
+  try {
+    const session = await requireAdmin();
+    const parsed = setRoleSchema.safeParse(input);
+    if (!parsed.success) {
+      return { ok: false, error: parsed.error.issues[0]?.message ?? "Dữ liệu không hợp lệ." };
+    }
+    // Không cho tự đổi quyền của chính mình — tránh tự khoá mình ra khỏi admin
+    // (và đảm bảo luôn còn ít nhất một admin: chính người đang thao tác).
+    if (parsed.data.userId === session.user?.id) {
+      return { ok: false, error: "Không thể tự đổi quyền của chính mình." };
+    }
+    const target = await db.user.findUnique({
+      where: { id: parsed.data.userId },
+      select: { id: true },
+    });
+    if (!target) return { ok: false, error: "Không tìm thấy người dùng." };
+
+    await db.user.update({ where: { id: parsed.data.userId }, data: { role: parsed.data.role } });
+    revalidatePath("/admin/users");
+    revalidatePath(`/admin/users/${parsed.data.userId}`);
+    return { ok: true };
+  } catch (e) {
+    return { ok: false, error: e instanceof Error ? e.message : "Lỗi đổi quyền." };
+  }
+}
+
+// ===================================================================
+//  THU HỒI GÓI (revoke subscription) — gỡ một quyền lợi đã cấp
+// ===================================================================
+// Xoá một Subscription (kể cả gói cấp qua PayOS lẫn cấp thủ công). Dùng khi cần
+// huỷ/đối soát. Không đụng tới Payment (lịch sử giao dịch vẫn giữ nguyên).
+export async function revokeSubscriptionAction(
+  subscriptionId: string
+): Promise<{ ok: boolean; error?: string }> {
+  try {
+    await requireAdmin();
+    if (!subscriptionId) return { ok: false, error: "Thiếu id gói." };
+    const sub = await db.subscription.findUnique({
+      where: { id: subscriptionId },
+      select: { userId: true },
+    });
+    if (!sub) return { ok: false, error: "Không tìm thấy gói." };
+    await db.subscription.delete({ where: { id: subscriptionId } });
+    revalidatePath(`/admin/users/${sub.userId}`);
+    revalidatePath("/admin/subscriptions");
+    return { ok: true };
+  } catch (e) {
+    return { ok: false, error: e instanceof Error ? e.message : "Lỗi thu hồi gói." };
+  }
+}
+
+// ===================================================================
+//  CẬP NHẬT (edit) cho các loại còn thiếu action sửa: Viết / Nói / Chữ Hán / Unit
+// ===================================================================
+// Các form sửa ở admin (đặt trong <details> trên trang danh sách) POST FormData
+// về đây. Chuẩn hoá chuỗi rỗng → null cho ảnh, và bọc JSON.parse trong try/catch
+// để dữ liệu hỏng trả { ok:false } thay vì sập Prisma.
+function optStr(fd: FormData, key: string): string | null {
+  const v = (fd.get(key) as string | null)?.trim();
+  return v ? v : null;
+}
+
+export async function updateWritingAction(
+  fd: FormData
+): Promise<{ ok: boolean; error?: string }> {
+  try {
+    await requireAdmin();
+    const id = (fd.get("id") as string) || "";
+    if (!id) return { ok: false, error: "Thiếu id bài viết." };
+    await db.writingTask.update({
+      where: { id },
+      data: {
+        taskType: fd.get("taskType") as WritingTaskType,
+        prompt: (fd.get("prompt") as string) || "",
+        promptZh: optStr(fd, "promptZh"),
+        minChars: parseInt(fd.get("minChars") as string) || 50,
+        timeLimit: parseInt(fd.get("timeLimit") as string) || 900,
+        hskLevel: fd.get("hskLevel") as HSKLevel,
+        imageUrl: optStr(fd, "imageUrl"),
+      },
+    });
+    revalidatePath("/admin/writing");
+    revalidatePath("/writing");
+    return { ok: true };
+  } catch (e) {
+    return { ok: false, error: e instanceof Error ? e.message : "Lỗi cập nhật bài viết." };
+  }
+}
+
+export async function updateSpeakingAction(
+  fd: FormData
+): Promise<{ ok: boolean; error?: string }> {
+  try {
+    await requireAdmin();
+    const id = (fd.get("id") as string) || "";
+    if (!id) return { ok: false, error: "Thiếu id bộ nói." };
+    const parseJson = (key: string, label: string): Prisma.InputJsonValue => {
+      try {
+        return JSON.parse((fd.get(key) as string) || "");
+      } catch {
+        throw new Error(`${label} không phải JSON hợp lệ.`);
+      }
+    };
+    await db.speakingSet.update({
+      where: { id },
+      data: {
+        title: (fd.get("title") as string) || "",
+        hskLevel: fd.get("hskLevel") as HSKLevel,
+        imageUrl: optStr(fd, "imageUrl"),
+        part1Sentences: parseJson("part1Sentences", "Part 1"),
+        part2Passage: parseJson("part2Passage", "Part 2"),
+        part3Questions: parseJson("part3Questions", "Part 3"),
+      },
+    });
+    revalidatePath("/admin/speaking");
+    revalidatePath("/speaking");
+    return { ok: true };
+  } catch (e) {
+    return { ok: false, error: e instanceof Error ? e.message : "Lỗi cập nhật bộ nói." };
+  }
+}
+
+export async function updateHanziAction(
+  fd: FormData
+): Promise<{ ok: boolean; error?: string }> {
+  try {
+    await requireAdmin();
+    const id = (fd.get("id") as string) || "";
+    if (!id) return { ok: false, error: "Thiếu id chữ Hán." };
+    await db.hanziCharacter.update({
+      where: { id },
+      data: {
+        character: (fd.get("character") as string) || "",
+        pinyin: (fd.get("pinyin") as string) || "",
+        tone: parseInt(fd.get("tone") as string) || 0,
+        meaning: (fd.get("meaning") as string) || "",
+        hskLevel: fd.get("hskLevel") as HSKLevel,
+        strokeCount: parseInt(fd.get("strokeCount") as string) || 0,
+        imageUrl: optStr(fd, "imageUrl"),
+      },
+    });
+    revalidatePath("/admin/hanzi");
+    revalidatePath("/hanzi");
+    return { ok: true };
+  } catch (e) {
+    // ký tự trùng (cột @unique) hoặc lỗi khác
+    return { ok: false, error: e instanceof Error ? e.message : "Lỗi cập nhật chữ Hán." };
+  }
+}
+
+// Sửa thông tin Unit (Từ vựng / Ngữ pháp): tên VI/ZH, cấp HSK, ảnh.
+export async function updateUnitAction(
+  skill: LessonSkill,
+  fd: FormData
+): Promise<{ ok: boolean; error?: string }> {
+  try {
+    await requireAdmin();
+    const id = (fd.get("id") as string) || "";
+    if (!id) return { ok: false, error: "Thiếu id unit." };
+    const data = {
+      title: (fd.get("title") as string) || "",
+      titleZh: (fd.get("titleZh") as string) || "",
+      hskLevel: fd.get("hskLevel") as HSKLevel,
+      imageUrl: optStr(fd, "imageUrl"),
+    };
+    if (skill === "vocab") {
+      await db.vocabUnit.update({ where: { id }, data });
+      revalidatePath("/admin/vocab");
+      revalidatePath(`/admin/vocab/${id}`);
+      revalidatePath("/vocab");
+    } else {
+      await db.grammarUnit.update({ where: { id }, data });
+      revalidatePath("/admin/grammar");
+      revalidatePath(`/admin/grammar/${id}`);
+      revalidatePath("/grammar");
+    }
+    return { ok: true };
+  } catch (e) {
+    return { ok: false, error: e instanceof Error ? e.message : "Lỗi cập nhật unit." };
   }
 }

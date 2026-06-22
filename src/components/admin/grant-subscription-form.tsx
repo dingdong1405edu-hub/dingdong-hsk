@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useTransition } from "react";
+import { useRouter } from "next/navigation";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -12,8 +13,15 @@ interface PlanOption {
   name: string;
 }
 
-export function GrantSubscriptionForm({ plans }: { plans: PlanOption[] }) {
-  const [email, setEmail] = useState("");
+export function GrantSubscriptionForm({
+  plans,
+  defaultEmail = "",
+}: {
+  plans: PlanOption[];
+  defaultEmail?: string;
+}) {
+  const router = useRouter();
+  const [email, setEmail] = useState(defaultEmail);
   const [planId, setPlanId] = useState(plans[0]?.id ?? "");
   const [isPending, startTransition] = useTransition();
 
@@ -27,7 +35,8 @@ export function GrantSubscriptionForm({ plans }: { plans: PlanOption[] }) {
       const res = await adminGrantSubscriptionAction({ email: email.trim(), planId });
       if (res.ok) {
         toast.success("Đã cấp gói cho người dùng.");
-        setEmail("");
+        if (!defaultEmail) setEmail("");
+        router.refresh();
       } else {
         toast.error(res.error ?? "Có lỗi xảy ra.");
       }

@@ -11,11 +11,13 @@ export default async function ExamPage() {
 
   const [reading, listening] = await Promise.all([
     db.readingTest.findMany({
-      orderBy: [{ hskLevel: "asc" }, { createdAt: "desc" }],
+      where: { published: true }, // ẩn đề nháp khỏi học viên
+      orderBy: [{ hskLevel: "asc" }, { order: "asc" }, { createdAt: "desc" }],
       include: { questions: { select: { id: true } } },
     }),
     db.listeningTest.findMany({
-      orderBy: [{ hskLevel: "asc" }, { createdAt: "desc" }],
+      where: { published: true }, // ẩn đề nháp khỏi học viên
+      orderBy: [{ hskLevel: "asc" }, { order: "asc" }, { createdAt: "desc" }],
       include: { questions: { select: { id: true } } },
     }),
   ]);

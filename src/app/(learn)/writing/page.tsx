@@ -16,7 +16,8 @@ export default async function WritingPage() {
   if (!session?.user) redirect("/login");
 
   const tasks = await db.writingTask.findMany({
-    orderBy: [{ hskLevel: "asc" }, { createdAt: "desc" }],
+    where: { published: true }, // ẩn đề nháp khỏi học viên
+    orderBy: [{ hskLevel: "asc" }, { order: "asc" }, { createdAt: "desc" }],
   });
 
   const attempts = await db.attempt.findMany({

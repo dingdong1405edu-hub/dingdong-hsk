@@ -1,5 +1,6 @@
+import Link from "next/link";
 import { db } from "@/lib/db";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { hskLevelLabel } from "@/lib/utils";
@@ -32,8 +33,16 @@ export default async function AdminUsersPage() {
               <tbody>
                 {users.map((u) => (
                   <tr key={u.id} className="border-b hover:bg-muted/30">
-                    <td className="px-4 py-3 font-medium">{u.name ?? "-"}</td>
-                    <td className="px-4 py-3 text-muted-foreground">{u.email}</td>
+                    <td className="px-4 py-3 font-medium">
+                      <Link href={`/admin/users/${u.id}`} className="hover:text-primary hover:underline">
+                        {u.name ?? "-"}
+                      </Link>
+                    </td>
+                    <td className="px-4 py-3 text-muted-foreground">
+                      <Link href={`/admin/users/${u.id}`} className="hover:text-primary hover:underline">
+                        {u.email}
+                      </Link>
+                    </td>
                     <td className="px-4 py-3">
                       <Badge variant={u.role === "ADMIN" ? "default" : "secondary"}>
                         {u.role}
@@ -53,6 +62,11 @@ export default async function AdminUsersPage() {
                       <form>
                         <input type="hidden" name="userId" value={u.id} />
                         <div className="flex gap-1">
+                          <Link href={`/admin/users/${u.id}`}>
+                            <Button size="sm" variant="outline" type="button">
+                              Chi tiết
+                            </Button>
+                          </Link>
                           <Button
                             size="sm"
                             variant="outline"

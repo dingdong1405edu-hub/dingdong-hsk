@@ -2,7 +2,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import { toast } from "sonner";
-import { Clock, Eye, EyeOff, Headphones, Info, RefreshCw, ListChecks, GraduationCap } from "lucide-react";
+import { Clock, Eye, EyeOff, Headphones, Info, RefreshCw, ListChecks, GraduationCap, AlertTriangle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { TestShell } from "@/components/learn/test-shell";
 import { ReadingPalette } from "@/components/learn/reading/reading-palette";
@@ -241,6 +241,9 @@ export function ListeningTestClient({ test }: { test: ListeningTestData; userId:
   // (post-mount), so a no-MP3 test doesn't flash the tapescript before the
   // browser-TTS engine is detected.
   const showTranscriptDuringTest = restored && !submitted && audio.mode === "none" && segments.length > 0;
+  // Neither audio nor transcript — an honest empty-state instead of telling the
+  // learner to "read the transcript below" when there isn't one.
+  const noContent = restored && audio.mode === "none" && segments.length === 0;
 
   return (
     <>
@@ -315,13 +318,31 @@ export function ListeningTestClient({ test }: { test: ListeningTestData; userId:
               <AudioPlayer audio={audio} reviewMode={submitted} segmentCount={segments.length} />
             </div>
 
+            {/* Honest empty-state: neither audio nor transcript exists */}
+            {noContent && (
+              <div className="flex items-start gap-2 rounded-xl border border-amber-200 bg-amber-50 p-3 text-sm text-amber-800">
+                <AlertTriangle className="mt-0.5 h-4 w-4 shrink-0 text-amber-600" />
+                <p>
+                  Bài nghe này chưa có audio hoặc lời thoại. Bạn vẫn trả lời được câu hỏi, nhưng nên báo giáo viên bổ
+                  sung nội dung.
+                </p>
+              </div>
+            )}
+
             {/* Instructions (test mode) */}
             {!submitted && (
               <div className="flex items-start gap-2 rounded-xl border border-teal-100 bg-teal-50/50 p-3 text-sm text-teal-900">
                 <Info className="mt-0.5 h-4 w-4 shrink-0 text-teal-600" />
                 <p>
-                  Nghe audio (tối đa <b>{maxPlays}</b> lần) rồi trả lời tất cả câu hỏi. Lời thoại &amp; lời giải sẽ
-                  hiện sau khi nộp bài. Hết giờ bài sẽ tự nộp.
+                  {audio.available ? (
+                    <>
+                      Nghe audio (tối đa <b>{maxPlays}</b> lần) rồi trả lời tất cả câu hỏi.{" "}
+                    </>
+                  ) : (
+                    <>Trả lời tất cả câu hỏi.{" "}</>
+                  )}
+                  {segments.length > 0 ? "Lời thoại & lời giải sẽ hiện sau khi nộp bài. " : "Lời giải sẽ hiện sau khi nộp bài. "}
+                  Hết giờ bài sẽ tự nộp.
                 </p>
               </div>
             )}
@@ -333,7 +354,8 @@ export function ListeningTestClient({ test }: { test: ListeningTestData; userId:
                 showPinyin={showPinyin}
                 evidenceMap={new Map()}
                 currentSegment={audio.currentSegment}
-                onPlaySegment={() => undefined}
+                canReplay={audio.canSpeakSegments}
+                onPlaySegment={(i) => audio.speakSegment(i)}
                 onCharClick={onCharClick}
               />
             )}
@@ -393,7 +415,7 @@ export function ListeningTestClient({ test }: { test: ListeningTestData; userId:
                         <QuestionEvidence
                           segment={evidenceSeg ?? null}
                           showPinyin={showPinyin}
-                          canReplay={audio.available && segIdx !== undefined && segIdx >= 0}
+                          canReplay={audio.canSpeakSegments && segIdx !== undefined && segIdx >= 0}
                           onPlay={() => segIdx !== undefined && segIdx >= 0 && audio.speakSegment(segIdx)}
                           saved={savedIds.has(q.id)}
                           onToggleSave={() => toggleSave(q.id)}
@@ -414,6 +436,7 @@ export function ListeningTestClient({ test }: { test: ListeningTestData; userId:
                   showPinyin={showPinyin}
                   evidenceMap={evidenceMap}
                   currentSegment={audio.currentSegment}
+                  canReplay={audio.canSpeakSegments}
                   onPlaySegment={(i) => audio.speakSegment(i)}
                   onCharClick={onCharClick}
                 />

@@ -19,6 +19,8 @@ interface TapescriptProps {
   /** segment index → list of question numbers (1-based) it answers. */
   evidenceMap: Map<number, number[]>;
   currentSegment: number | null;
+  /** Whether per-sentence replay can actually produce sound (browser zh voice). */
+  canReplay?: boolean;
   onPlaySegment: (i: number) => void;
   onCharClick: (char: string, pinyin: string, e: React.MouseEvent) => void;
 }
@@ -28,6 +30,7 @@ export function Tapescript({
   showPinyin,
   evidenceMap,
   currentSegment,
+  canReplay = true,
   onPlaySegment,
   onCharClick,
 }: TapescriptProps) {
@@ -45,7 +48,8 @@ export function Tapescript({
         <FileText className="h-4 w-4" /> Lời thoại (transcript)
       </div>
       <p className="mb-3 text-xs text-muted-foreground">
-        Nhấn vào một câu để nghe lại; câu được tô màu là nơi chứa đáp án. Nhấn từng chữ để xem pinyin &amp; nghĩa.
+        {canReplay ? "Nhấn loa để nghe lại từng câu; " : ""}câu được tô màu là nơi chứa đáp án. Nhấn từng chữ để xem
+        pinyin &amp; nghĩa.
       </p>
 
       <ol className="space-y-1.5">
@@ -96,14 +100,16 @@ export function Tapescript({
                 )}
               </div>
 
-              <button
-                type="button"
-                onClick={() => onPlaySegment(i)}
-                aria-label="Nghe lại câu này"
-                className="shrink-0 rounded-lg p-1.5 text-muted-foreground opacity-0 transition-opacity hover:bg-teal-100 hover:text-teal-700 group-hover:opacity-100"
-              >
-                <Volume2 className="h-4 w-4" />
-              </button>
+              {canReplay && (
+                <button
+                  type="button"
+                  onClick={() => onPlaySegment(i)}
+                  aria-label="Nghe lại câu này"
+                  className="shrink-0 rounded-lg p-1.5 text-muted-foreground opacity-0 transition-opacity hover:bg-teal-100 hover:text-teal-700 group-hover:opacity-100"
+                >
+                  <Volume2 className="h-4 w-4" />
+                </button>
+              )}
             </li>
           );
         })}

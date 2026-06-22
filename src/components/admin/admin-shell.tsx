@@ -14,6 +14,7 @@ import {
   Mic,
   Library,
   Users,
+  CreditCard,
   ArrowLeft,
   Menu,
   X,
@@ -47,7 +48,13 @@ const GROUPS: AdminNavGroup[] = [
       { href: "/admin/materials", label: "Tài liệu", icon: Library },
     ],
   },
-  { title: "Hệ thống", items: [{ href: "/admin/users", label: "Người dùng", icon: Users }] },
+  {
+    title: "Hệ thống",
+    items: [
+      { href: "/admin/users", label: "Người dùng", icon: Users },
+      { href: "/admin/subscriptions", label: "Gói & quyền lợi", icon: CreditCard },
+    ],
+  },
 ];
 
 function NavBody({ pathname, onNavigate }: { pathname: string; onNavigate?: () => void }) {

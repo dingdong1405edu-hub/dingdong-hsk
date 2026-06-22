@@ -13,7 +13,7 @@ export default async function WritingTaskPage({ params }: Props) {
   if (!session?.user) redirect("/login");
 
   const task = await db.writingTask.findUnique({ where: { id: taskId } });
-  if (!task) notFound();
+  if (!task || !task.published) notFound(); // chặn truy cập trực tiếp đề nháp
 
   return <WritingClient task={task} userId={session.user.id} />;
 }

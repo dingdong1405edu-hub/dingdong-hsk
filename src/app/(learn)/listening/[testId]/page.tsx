@@ -16,7 +16,7 @@ export default async function ListeningTestPage({ params }: Props) {
     where: { id: testId },
     include: { questions: { orderBy: { order: "asc" } } },
   });
-  if (!test) notFound();
+  if (!test || !test.published) notFound(); // chặn truy cập trực tiếp đề nháp
 
   return <ListeningTestClient test={test} userId={session.user.id} />;
 }

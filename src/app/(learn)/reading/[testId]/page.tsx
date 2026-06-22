@@ -16,7 +16,7 @@ export default async function ReadingTestPage({ params }: Props) {
     where: { id: testId },
     include: { questions: { orderBy: { order: "asc" } } },
   });
-  if (!test) notFound();
+  if (!test || !test.published) notFound(); // chặn truy cập trực tiếp đề nháp
 
   return <ReadingTestClient test={test} userId={session.user.id} />;
 }

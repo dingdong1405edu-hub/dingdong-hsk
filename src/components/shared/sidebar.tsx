@@ -9,7 +9,6 @@ import {
   Target,
   BookOpen,
   SpellCheck,
-  Repeat,
   PenTool,
   BookText,
   Headphones,
@@ -49,8 +48,7 @@ export const NAV_GROUPS: NavGroup[] = [
     title: "Luyện kỹ năng",
     items: [
       { href: "/vocab", label: "Từ vựng", icon: BookOpen },
-      { href: "/grammar", label: "Học ngữ pháp", icon: SpellCheck },
-      { href: "/grammar/review", label: "Ôn ngữ pháp", icon: Repeat },
+      { href: "/grammar", label: "Ngữ pháp", icon: SpellCheck },
       { href: "/hanzi", label: "Chữ Hán", icon: PenTool },
       { href: "/reading", label: "Đọc hiểu", icon: BookText },
       { href: "/listening", label: "Nghe hiểu", icon: Headphones },
@@ -120,16 +118,8 @@ function NavLink({
 
 function NavContent({ user, onNavigate }: { user: SidebarUser; onNavigate?: () => void }) {
   const pathname = usePathname();
-  // A nav item matches the current path when it's the href itself or a sub-route
-  // (unless `exact`). When several items match (e.g. "/grammar" and the more
-  // specific "/grammar/review"), only the LONGEST match highlights — otherwise a
-  // parent and its child would both light up and share the same layout pill.
-  const matches = (item: NavItem) =>
+  const isActive = (item: NavItem) =>
     item.exact ? pathname === item.href : pathname === item.href || pathname.startsWith(item.href + "/");
-  const activeHref = NAV_GROUPS.flatMap((g) => g.items)
-    .filter(matches)
-    .sort((a, b) => b.href.length - a.href.length)[0]?.href;
-  const isActive = (item: NavItem) => item.href === activeHref;
 
   return (
     <div className="flex h-full flex-col">

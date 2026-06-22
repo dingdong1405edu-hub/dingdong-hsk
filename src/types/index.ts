@@ -155,6 +155,16 @@ export interface VocabWordCard {
   audioUrl: string | null;
 }
 
+/** Trạng thái lặp lại ngắt quãng của một từ, đã serialise cho client (chế độ
+ *  "Ôn từ"). `dueAt` = ISO string thời điểm đến hạn, null = từ mới (chưa từng ôn).
+ *  `repetitions` dùng để phân biệt từ mới (0 → ưu tiên flashcard) với từ đã thuộc
+ *  (>0 → kiểm tra bằng mini-game). */
+export interface WordReviewState {
+  wordId: string;
+  dueAt: string | null;
+  repetitions: number;
+}
+
 export interface QuestionOption {
   text: string;
   pinyin?: string;

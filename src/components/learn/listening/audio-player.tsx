@@ -51,6 +51,10 @@ export function AudioPlayer({
   const mp3Progress = duration > 0 ? (currentTime / duration) * 100 : 0;
 
   const blocked = !canStart && status === "idle";
+  // Restart always begins a fresh play-through, so it's unavailable whenever a
+  // fresh start can't be charged — even while paused (avoids a dead control that
+  // would silently discard the paused listen).
+  const restartBlocked = !canStart;
 
   return (
     <div className="rounded-2xl border bg-gradient-to-br from-teal-50/70 to-white p-4 shadow-sm">
@@ -108,7 +112,7 @@ export function AudioPlayer({
           ) : (
             <div className="flex items-center gap-2 text-sm text-amber-600">
               <AlertTriangle className="h-4 w-4 shrink-0" />
-              <span>Thiết bị không phát được audio — bạn có thể đọc lời thoại bên dưới.</span>
+              <span>Hiện không phát được audio trên thiết bị này.</span>
             </div>
           )}
         </div>
@@ -117,11 +121,11 @@ export function AudioPlayer({
         {mode !== "none" && (
           <button
             onClick={restart}
-            disabled={blocked}
+            disabled={restartBlocked}
             aria-label="Nghe lại từ đầu"
             className={cn(
               "flex h-9 w-9 shrink-0 items-center justify-center rounded-full border transition-colors",
-              blocked
+              restartBlocked
                 ? "cursor-not-allowed text-zinc-300"
                 : "text-muted-foreground hover:border-teal-300 hover:text-teal-700",
             )}

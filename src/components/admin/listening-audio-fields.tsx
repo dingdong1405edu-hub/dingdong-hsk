@@ -133,7 +133,6 @@ export function ListeningAudioFields({
             <div className="mb-2 flex items-center gap-2 text-sm font-medium">
               <Music2 className="h-4 w-4 text-teal-600" /> Audio hiện tại
             </div>
-            {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
             <audio controls src={audioUrl} className="w-full" />
             <div className="mt-2 flex items-center gap-3">
               <button

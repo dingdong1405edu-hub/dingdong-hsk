@@ -21,6 +21,7 @@ export default async function VocabUnitPage({ params }: Props) {
     where: { id: unitId },
     include: {
       lessons: {
+        where: { published: true }, // ẩn bài nháp khỏi học viên
         orderBy: { order: "asc" },
         include: {
           progress: { where: { userId: session.user.id } },
@@ -29,7 +30,7 @@ export default async function VocabUnitPage({ params }: Props) {
       },
     },
   });
-  if (!unit) notFound();
+  if (!unit || !unit.published) notFound(); // ẩn unit nháp khỏi học viên
 
   return (
     <div className="space-y-6 max-w-2xl">

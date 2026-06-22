@@ -1,9 +1,7 @@
 import { auth } from "@/lib/auth";
 import { db } from "@/lib/db";
-import Link from "next/link";
 import { redirect } from "next/navigation";
-import { SpellCheck, Repeat } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { SpellCheck } from "lucide-react";
 import { PracticeHub } from "@/components/learn/practice-hub";
 import { TestCard } from "@/components/learn/test-card";
 
@@ -12,9 +10,11 @@ export default async function GrammarPage() {
   if (!session?.user) redirect("/login");
 
   const units = await db.grammarUnit.findMany({
+    where: { published: true }, // ẩn unit nháp khỏi học viên
     orderBy: [{ hskLevel: "asc" }, { order: "asc" }],
     include: {
       lessons: {
+        where: { published: true }, // ẩn bài nháp khỏi học viên
         include: { progress: { where: { userId: session.user.id, completed: true } } },
         orderBy: { order: "asc" },
       },
@@ -35,7 +35,7 @@ export default async function GrammarPage() {
       accent="violet"
       icon={<SpellCheck className="h-7 w-7" />}
       decoChar="语"
-      title="Học ngữ pháp"
+      title="Ngữ pháp"
       subtitle="Nắm cấu trúc câu tiếng Trung qua các bài tập tương tác ngắn"
       randomHref={randomHref}
       randomLabel="Học tiếp bài đang dở"
@@ -48,26 +48,6 @@ export default async function GrammarPage() {
       gridTitle="Các đơn vị ngữ pháp"
       gridSubtitle="Nhấn vào một đơn vị để bắt đầu học."
     >
-      {withStats.length > 0 && (
-        <Link href="/grammar/review" className="mb-4 block">
-          <div className="flex items-center justify-between gap-4 rounded-2xl border border-violet-200 bg-gradient-to-r from-violet-50 to-white p-4 transition-colors hover:border-violet-300">
-            <div className="flex items-center gap-3">
-              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-violet-100 text-violet-700">
-                <Repeat className="h-5 w-5" />
-              </div>
-              <div>
-                <div className="font-bold">Ôn ngữ pháp</div>
-                <p className="text-sm text-muted-foreground">
-                  Tổng hợp flashcard &amp; minigame của mọi bài để ôn tập một thể.
-                </p>
-              </div>
-            </div>
-            <Button variant="outline" className="shrink-0 border-violet-300 text-violet-700">
-              Ôn tập
-            </Button>
-          </div>
-        </Link>
-      )}
       {withStats.length === 0 ? (
         <EmptyState />
       ) : (

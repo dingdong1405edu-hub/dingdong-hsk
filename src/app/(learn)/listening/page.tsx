@@ -18,7 +18,8 @@ export default async function ListeningPage() {
   if (!session?.user) redirect("/login");
 
   const tests = await db.listeningTest.findMany({
-    orderBy: [{ hskLevel: "asc" }, { createdAt: "desc" }],
+    where: { published: true }, // ẩn đề nháp khỏi học viên
+    orderBy: [{ hskLevel: "asc" }, { order: "asc" }, { createdAt: "desc" }],
     include: { questions: { select: { type: true } } },
   });
 

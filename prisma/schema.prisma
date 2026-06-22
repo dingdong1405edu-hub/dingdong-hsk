@@ -76,6 +76,7 @@ model User {
   accounts         Account[]
   sessions         Session[]
   vocabProgress    VocabProgress[]
+  vocabReviews     VocabReview[]
   grammarProgress  GrammarProgress[]
   hanziProgress    HanziProgress[]
   roadmapProgress  RoadmapProgress[]
@@ -120,13 +121,14 @@ model VerificationToken {
 }
 
 model VocabUnit {
-  id       String      @id @default(cuid())
-  title    String
-  titleZh  String
-  hskLevel HSKLevel
-  order    Int
-  imageUrl String?
-  lessons  VocabLesson[]
+  id        String      @id @default(cuid())
+  title     String
+  titleZh   String
+  hskLevel  HSKLevel
+  order     Int
+  imageUrl  String?
+  published Boolean     @default(true) // false = bản nháp (ẩn khỏi web học viên)
+  lessons   VocabLesson[]
 
   @@index([hskLevel, order])
 }
@@ -138,6 +140,7 @@ model VocabLesson {
   order     Int
   title     String    @default("")
   exercises Json
+  published Boolean   @default(true) // false = bản nháp (ẩn khỏi web học viên)
 
   progress  VocabProgress[]
   words     VocabWord[]
@@ -162,6 +165,8 @@ model VocabWord {
   createdAt DateTime    @default(now())
   updatedAt DateTime    @updatedAt @default(now())
 
+  reviews   VocabReview[]
+
   @@index([lessonId, order])
 }
 
@@ -171,6 +176,11 @@ model VocabProgress {
   lessonId  String
   completed Boolean     @default(false)
   xpEarned  Int         @default(0)
+  // Vị trí đang học dở (cho nút "Học tiếp" — resume). lastWordIndex = chỉ số từ
+  // hiện tại trong bài, lastStep = bước trong từ đó (0 xem thẻ · 1 tô nét · 2 tự
+  // viết). Reset về 0 khi hoàn thành để lần vào sau là "Học lại" từ đầu.
+  lastWordIndex Int     @default(0)
+  lastStep      Int     @default(0)
   createdAt DateTime    @default(now())
   updatedAt DateTime    @updatedAt @default(now())
 
@@ -180,14 +190,39 @@ model VocabProgress {
   @@unique([userId, lessonId])
 }
 
+/// Trạng thái lặp lại ngắt quãng (spaced repetition · SM-2) cho từng từ vựng của
+/// mỗi người học — dùng cho chế độ "Ôn từ". `dueAt` = thời điểm đến hạn ôn kế
+/// tiếp; `ease` (easiness factor) ≥ 1.3; `intervalDays` = khoảng cách hiện tại.
+/// Thuật toán cập nhật ở src/lib/srs.ts.
+model VocabReview {
+  id             String    @id @default(cuid())
+  userId         String
+  wordId         String
+  repetitions    Int       @default(0)   // số lần trả lời đúng liên tiếp
+  intervalDays   Int       @default(0)   // khoảng cách hiện tại (ngày)
+  ease           Float     @default(2.5) // hệ số dễ (easiness factor)
+  lapses         Int       @default(0)   // số lần quên (trả lời sai)
+  dueAt          DateTime  @default(now())
+  lastReviewedAt DateTime?
+  createdAt      DateTime  @default(now())
+  updatedAt      DateTime  @updatedAt @default(now())
+
+  user User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  word VocabWord @relation(fields: [wordId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, wordId])
+  @@index([userId, dueAt])
+}
+
 model GrammarUnit {
-  id       String          @id @default(cuid())
-  title    String
-  titleZh  String
-  hskLevel HSKLevel
-  order    Int
-  imageUrl String?
-  lessons  GrammarLesson[]
+  id        String          @id @default(cuid())
+  title     String
+  titleZh   String
+  hskLevel  HSKLevel
+  order     Int
+  imageUrl  String?
+  published Boolean         @default(true) // false = bản nháp (ẩn khỏi web học viên)
+  lessons   GrammarLesson[]
 
   @@index([hskLevel, order])
 }
@@ -199,6 +234,7 @@ model GrammarLesson {
   order     Int
   title     String      @default("")
   exercises Json
+  published Boolean     @default(true) // false = bản nháp (ẩn khỏi web học viên)
 
   progress  GrammarProgress[]
 
@@ -231,8 +267,12 @@ model HanziCharacter {
   strokeOrder Json
   examples    Json
   imageUrl    String?
+  order       Int      @default(0)    // thứ tự hiển thị trong cấp HSK (đổi chỗ ở admin)
+  published   Boolean  @default(true) // false = bản nháp (ẩn khỏi web học viên)
 
   progress HanziProgress[]
+
+  @@index([hskLevel, order])
 }
 
 model HanziProgress {
@@ -259,10 +299,14 @@ model ReadingTest {
   passagePinyin String?  @db.Text
   imageUrl      String?
   timeLimit     Int
+  order         Int      @default(0)    // thứ tự hiển thị trong cấp HSK (đổi chỗ ở admin)
+  published     Boolean  @default(true) // false = bản nháp (ẩn khỏi web học viên)
   createdAt     DateTime @default(now())
   updatedAt     DateTime @updatedAt @default(now())
 
   questions Question[]
+
+  @@index([hskLevel, order])
 }
 
 model ListeningTest {
@@ -273,10 +317,14 @@ model ListeningTest {
   transcript String?  @db.Text
   imageUrl   String?
   timeLimit  Int      @default(300)
+  order      Int      @default(0)    // thứ tự hiển thị trong cấp HSK (đổi chỗ ở admin)
+  published  Boolean  @default(true) // false = bản nháp (ẩn khỏi web học viên)
   createdAt  DateTime @default(now())
   updatedAt  DateTime @updatedAt @default(now())
 
   questions Question[]
+
+  @@index([hskLevel, order])
 }
 
 model Question {
@@ -305,8 +353,12 @@ model WritingTask {
   minChars  Int
   timeLimit Int
   hskLevel  HSKLevel
+  order     Int             @default(0)    // thứ tự hiển thị trong cấp HSK (đổi chỗ ở admin)
+  published Boolean         @default(true) // false = bản nháp (ẩn khỏi web học viên)
   createdAt DateTime        @default(now())
   updatedAt DateTime        @updatedAt @default(now())
+
+  @@index([hskLevel, order])
 }
 
 model SpeakingSet {
@@ -317,8 +369,12 @@ model SpeakingSet {
   part1Sentences Json
   part2Passage   Json
   part3Questions Json
+  order          Int      @default(0)    // thứ tự hiển thị trong cấp HSK (đổi chỗ ở admin)
+  published      Boolean  @default(true) // false = bản nháp (ẩn khỏi web học viên)
   createdAt      DateTime @default(now())
   updatedAt      DateTime @updatedAt @default(now())
+
+  @@index([hskLevel, order])
 }
 
 /// Tài liệu học tập (study materials / documents). Content is stored as an

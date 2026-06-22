@@ -16,7 +16,7 @@ export default async function HanziDetailPage({ params }: Props) {
     where: { id: characterId },
     include: { progress: { where: { userId: session.user.id } } },
   });
-  if (!character) notFound();
+  if (!character || !character.published) notFound(); // chặn truy cập trực tiếp chữ nháp
 
   return <HanziDetailClient character={character} userId={session.user.id} />;
 }

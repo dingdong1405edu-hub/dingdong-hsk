@@ -10,7 +10,8 @@ export default async function SpeakingPage() {
   if (!session?.user) redirect("/login");
 
   const sets = await db.speakingSet.findMany({
-    orderBy: [{ hskLevel: "asc" }, { createdAt: "desc" }],
+    where: { published: true }, // ẩn bộ nháp khỏi học viên
+    orderBy: [{ hskLevel: "asc" }, { order: "asc" }, { createdAt: "desc" }],
   });
 
   const attempts = await db.attempt.findMany({

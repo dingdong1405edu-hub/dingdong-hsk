@@ -13,7 +13,7 @@ export default async function SpeakingSetPage({ params }: Props) {
   if (!session?.user) redirect("/login");
 
   const set = await db.speakingSet.findUnique({ where: { id: setId } });
-  if (!set) notFound();
+  if (!set || !set.published) notFound(); // chặn truy cập trực tiếp bộ nháp
 
   return <SpeakingClient set={set} userId={session.user.id} />;
 }

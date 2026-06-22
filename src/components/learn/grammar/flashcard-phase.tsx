@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { CheckCircle2, XCircle, SkipForward } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -8,10 +8,20 @@ import { FlowHeader } from "./flow-header";
 import { ExerciseRenderer } from "../exercises/exercise-renderer";
 import type { Exercise } from "@/types";
 
+/** Outcome of a single drilled card — fuels the detailed per-type score the
+ *  review (Ôn tập) screen shows. */
+export interface FlashItemResult {
+  type: string;
+  outcome: "correct" | "wrong" | "skipped";
+}
+
 export interface FlashResult {
   correct: number;
   wrong: number;
   skipped: number;
+  /** One entry per card the learner actually reached, in order. Optional so the
+   *  grammar lesson flow (which builds its own aggregate) stays compatible. */
+  details?: FlashItemResult[];
 }
 
 interface Props {
@@ -30,9 +40,11 @@ type Feedback = "correct" | "wrong" | null;
  *  Chinese typeface should only apply when the reference answer is actually CJK. */
 const hasHan = (s: string) => /\p{Script=Han}/u.test(s);
 
-/** The memorisation phase: drills the learner one card at a time. Risk-free
- *  (no hearts). Any card can be skipped — skipped cards are excluded from the
- *  score entirely (they neither help nor hurt). */
+/** Drills the learner one card at a time, risk-free (no hearts). Any card can be
+ *  skipped before answering; the per-card outcomes (including skips) are reported
+ *  to the consumer, which owns the scoring policy: the lesson flow (Học) excludes
+ *  skips from its denominator (a skip neither helps nor hurts), while the review
+ *  (Ôn tập) counts a skipped card against the headline % (it's a real test). */
 export function FlashcardPhase({ flashcards, closeHref, label, onReviewTheory, onDone }: Props) {
   const [index, setIndex] = useState(0);
   const [feedback, setFeedback] = useState<Feedback>(null);
@@ -40,12 +52,15 @@ export function FlashcardPhase({ flashcards, closeHref, label, onReviewTheory, o
   const [correct, setCorrect] = useState(0);
   const [wrong, setWrong] = useState(0);
   const [skipped, setSkipped] = useState(0);
+  // Per-card outcome log (ref so it's always current when onDone fires).
+  const detailsRef = useRef<FlashItemResult[]>([]);
 
   const exercise = flashcards[index];
   const progress = Math.round((index / flashcards.length) * 100);
 
   function handleAnswer(isCorrect: boolean, answer?: string) {
     if (feedback !== null) return;
+    detailsRef.current.push({ type: String(exercise?.type ?? ""), outcome: isCorrect ? "correct" : "wrong" });
     if (isCorrect) {
       setFeedback("correct");
       setCorrect((c) => c + 1);
@@ -60,7 +75,7 @@ export function FlashcardPhase({ flashcards, closeHref, label, onReviewTheory, o
   // re-rendered before the user pressed "Tiếp tục").
   function advanceAfterAnswer() {
     if (index + 1 >= flashcards.length) {
-      onDone({ correct, wrong, skipped });
+      onDone({ correct, wrong, skipped, details: detailsRef.current });
       return;
     }
     setFeedback(null);
@@ -70,10 +85,11 @@ export function FlashcardPhase({ flashcards, closeHref, label, onReviewTheory, o
 
   function skip() {
     if (feedback !== null) return;
+    detailsRef.current.push({ type: String(exercise?.type ?? ""), outcome: "skipped" });
     const nextSkipped = skipped + 1;
     setSkipped(nextSkipped);
     if (index + 1 >= flashcards.length) {
-      onDone({ correct, wrong, skipped: nextSkipped });
+      onDone({ correct, wrong, skipped: nextSkipped, details: detailsRef.current });
       return;
     }
     setIndex((i) => i + 1);

@@ -8,6 +8,8 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { ImageUpload } from "@/components/admin/image-upload";
+import { PublishToggle } from "@/components/admin/publish-toggle";
+import { ReorderList, type ReorderItem } from "@/components/admin/reorder-list";
 import { hskLevelLabel } from "@/lib/utils";
 import { deleteReadingAction } from "@/server/actions/admin";
 import { revalidatePath } from "next/cache";
@@ -26,6 +28,7 @@ async function createReadingAction(fd: FormData): Promise<void> {
       passagePinyin: (fd.get("passagePinyin") as string) || undefined,
       imageUrl: (fd.get("imageUrl") as string) || undefined,
       timeLimit: parseInt(fd.get("timeLimit") as string),
+      published: false,
     },
   });
   revalidatePath("/admin/reading");
@@ -34,9 +37,16 @@ import { Trash2, Plus, ChevronRight } from "lucide-react";
 
 export default async function AdminReadingPage() {
   const tests = await db.readingTest.findMany({
-    orderBy: [{ hskLevel: "asc" }, { createdAt: "desc" }],
+    orderBy: [{ hskLevel: "asc" }, { order: "asc" }, { createdAt: "desc" }],
     include: { _count: { select: { questions: true } } },
   });
+
+  // Nhóm theo cấp HSK — đổi thứ tự được giới hạn trong từng cấp.
+  const byLevel = new Map<HSKLevel, typeof tests>();
+  for (const t of tests) {
+    if (!byLevel.has(t.hskLevel)) byLevel.set(t.hskLevel, []);
+    byLevel.get(t.hskLevel)!.push(t);
+  }
 
   return (
     <div className="space-y-6">
@@ -79,51 +89,64 @@ export default async function AdminReadingPage() {
               <Label>Pinyin (tùy chọn)</Label>
               <Textarea name="passagePinyin" className="font-pinyin min-h-20" placeholder="Pinyin tương ứng..." />
             </div>
-            <div className="md:col-span-2">
+            <div className="md:col-span-2 space-y-2">
               <Button type="submit">Tạo bài đọc</Button>
+              <p className="text-xs text-muted-foreground">Bài mới sẽ ở trạng thái Bản nháp — bấm “Đang hiện/Bản nháp” để xuất bản.</p>
             </div>
           </form>
         </CardContent>
       </Card>
 
-      {/* List */}
-      <div className="space-y-2">
-        {tests.map((test) => (
-          <Card key={test.id}>
-            <CardContent className="p-4 flex items-center justify-between">
-              <div className="flex items-center gap-3">
-                {test.imageUrl && (
-                  <>
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src={test.imageUrl} alt="" className="h-12 w-12 shrink-0 rounded-lg object-cover" />
-                  </>
-                )}
-                <div>
-                  <div className="flex items-center gap-2">
-                    <span className="font-semibold">{test.title}</span>
-                    <span className="font-chinese text-muted-foreground text-sm">{test.titleZh}</span>
+      {/* List — nhóm theo cấp HSK, mỗi cấp một ReorderList riêng */}
+      <div className="space-y-8">
+        {[...byLevel.entries()].map(([level, group]) => {
+          const items: ReorderItem[] = group.map((test) => ({
+            id: test.id,
+            content: (
+              <Card>
+                <CardContent className="p-4 flex items-center justify-between">
+                  <div className="flex items-center gap-3">
+                    {test.imageUrl && (
+                      <>
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img src={test.imageUrl} alt="" className="h-12 w-12 shrink-0 rounded-lg object-cover" />
+                      </>
+                    )}
+                    <div>
+                      <div className="flex items-center gap-2">
+                        <span className="font-semibold">{test.title}</span>
+                        <span className="font-chinese text-muted-foreground text-sm">{test.titleZh}</span>
+                      </div>
+                      <div className="flex items-center gap-2 mt-1">
+                        <Badge variant="outline">{hskLevelLabel(test.hskLevel)}</Badge>
+                        <span className="text-xs text-muted-foreground">{test._count.questions} câu hỏi</span>
+                      </div>
+                    </div>
                   </div>
-                  <div className="flex items-center gap-2 mt-1">
-                    <Badge variant="outline">{hskLevelLabel(test.hskLevel)}</Badge>
-                    <span className="text-xs text-muted-foreground">{test._count.questions} câu hỏi</span>
+                  <div className="flex gap-2">
+                    <PublishToggle model="reading" id={test.id} published={test.published} />
+                    <Link href={`/admin/reading/${test.id}`}>
+                      <Button size="sm" variant="outline">
+                        <ChevronRight className="h-4 w-4" /> Câu hỏi
+                      </Button>
+                    </Link>
+                    <form action={async () => { "use server"; await deleteReadingAction(test.id); }}>
+                      <Button size="sm" variant="destructive" type="submit">
+                        <Trash2 className="h-4 w-4" />
+                      </Button>
+                    </form>
                   </div>
-                </div>
-              </div>
-              <div className="flex gap-2">
-                <Link href={`/admin/reading/${test.id}`}>
-                  <Button size="sm" variant="outline">
-                    <ChevronRight className="h-4 w-4" /> Câu hỏi
-                  </Button>
-                </Link>
-                <form action={async () => { "use server"; await deleteReadingAction(test.id); }}>
-                  <Button size="sm" variant="destructive" type="submit">
-                    <Trash2 className="h-4 w-4" />
-                  </Button>
-                </form>
-              </div>
-            </CardContent>
-          </Card>
-        ))}
+                </CardContent>
+              </Card>
+            ),
+          }));
+          return (
+            <div key={level} className="space-y-2">
+              <h2 className="text-sm font-semibold text-muted-foreground">{hskLevelLabel(level)}</h2>
+              <ReorderList spec={{ kind: "content", model: "reading", hskLevel: level }} items={items} />
+            </div>
+          );
+        })}
       </div>
     </div>
   );

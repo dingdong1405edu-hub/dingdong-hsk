@@ -7,13 +7,12 @@ import type { TranscriptSegment } from "@/lib/transcript";
 //   • mode "mp3" — a real <audio> element (uploaded / Voxtral-generated file).
 //   • mode "tts" — the browser Web Speech engine reads the transcript sentence
 //     by sentence (used when a test has no MP3, so listening is never dead).
-//   • mode "none" — no MP3 and no speech engine; the caller reveals the
-//     transcript so the exercise degrades to a reading task.
+//   • mode "none" — no MP3 and no usable speech engine; the caller reveals the
+//     transcript (reading fallback) or an empty-state.
 //
 // Pre-submit, a full play-through is rate-limited like a real exam; in review
 // mode replays are unlimited. `speakSegment` is a one-shot study replay of a
-// single sentence (used by the evidence box + tapescript) and stops the
-// transport first.
+// single sentence (evidence box + tapescript) and stops the transport first.
 
 type Status = "idle" | "playing" | "paused";
 const SENTENCE_GAP_MS = 180;
@@ -30,14 +29,44 @@ function chineseVoices(): SpeechSynthesisVoice[] {
   return cn.length ? cn : zh;
 }
 
-/** Second speaker? (B / 乙 / 女) — used to alternate voice + pitch for dialogues. */
-function isSecondSpeaker(speaker: string | null): boolean {
-  return !!speaker && /^(b|乙|女)$/i.test(speaker);
+// Gender is taken ONLY from an explicit 男/女 label — never inferred from A/B
+// turn order (which has no relation to who is male/female). Unknown speakers get
+// a neutral pitch so we don't fabricate a misleading gender cue.
+function speakerGender(speaker: string | null): "male" | "female" | null {
+  if (!speaker) return null;
+  if (/女/.test(speaker)) return "female";
+  if (/男/.test(speaker)) return "male";
+  return null;
+}
+
+function pitchForSpeaker(speaker: string | null): number {
+  const g = speakerGender(speaker);
+  if (g === "female") return 1.15;
+  if (g === "male") return 0.85;
+  return 1; // A / B / 甲 / 乙 / letters — neutral
+}
+
+// Give each distinct speaker a stable voice so turns are distinguishable,
+// without implying gender from order.
+function voiceForSpeaker(
+  speaker: string | null,
+  voices: SpeechSynthesisVoice[],
+): SpeechSynthesisVoice | undefined {
+  if (voices.length === 0) return undefined;
+  if (!speaker) return voices[0];
+  const code = speaker.toUpperCase().charCodeAt(0);
+  return voices[code % voices.length];
+}
+
+function clampRate(r: number): number {
+  return Math.max(0.5, Math.min(1.5, r));
 }
 
 export interface ListeningAudio {
   mode: "mp3" | "tts" | "none";
   available: boolean;
+  /** Can the per-sentence replay (browser TTS) actually produce Chinese sound? */
+  canSpeakSegments: boolean;
   status: Status;
   playing: boolean;
   paused: boolean;
@@ -66,6 +95,7 @@ export function useListeningAudio(opts: {
   const hasMp3 = !!(audioUrl && audioUrl.trim());
 
   const [ttsSupported, setTtsSupported] = useState(false);
+  const [hasZhVoice, setHasZhVoice] = useState(false);
   const [status, setStatus] = useState<Status>("idle");
   const [rate, setRateState] = useState(1);
   const [plays, setPlays] = useState(0);
@@ -76,29 +106,56 @@ export function useListeningAudio(opts: {
 
   const audioElRef = useRef<HTMLAudioElement | null>(null);
   const rateRef = useRef(1);
+  const reviewModeRef = useRef(reviewMode);
+  // TTS sequencer state.
   const ttsCancelled = useRef(false);
+  const ttsPaused = useRef(false);
+  const ttsActive = useRef(false); // an utterance is currently speaking
+  const ttsTimer = useRef<number | null>(null); // pending inter-sentence timer
+  const ttsResumeIndex = useRef(0);
+  // A fresh play-through whose play-count charge is still pending (charged only
+  // once audio actually starts, so a broken MP3 never burns a play).
+  const freshPending = useRef(false);
 
-  // Keep latest values for use inside long-lived closures.
   useEffect(() => {
     rateRef.current = rate;
   }, [rate]);
+  useEffect(() => {
+    reviewModeRef.current = reviewMode;
+  }, [reviewMode]);
 
-  // Resolve the playback mode. A broken MP3 URL falls back to browser TTS, and
-  // TTS itself needs transcript sentences to read — otherwise there's nothing to
-  // play and we degrade to "none" (caller reveals the transcript / shows a note).
-  const canTts = ttsSupported && segments.length > 0;
+  const speechReady = ttsSupported && hasZhVoice;
+  const canTts = speechReady && segments.length > 0;
   const mode: ListeningAudio["mode"] = hasMp3 && !mp3Failed ? "mp3" : canTts ? "tts" : "none";
 
-  // Detect speech support + warm the voice list (some browsers populate it async).
+  // Detect speech support + a Chinese voice (some browsers populate voices async).
   useEffect(() => {
     if (typeof window === "undefined" || !("speechSynthesis" in window)) return;
     setTtsSupported(true);
-    const warm = () => listVoices();
+    const warm = () => {
+      const vs = listVoices();
+      setHasZhVoice(vs.some((v) => v.lang?.toLowerCase().startsWith("zh")));
+    };
     warm();
     window.speechSynthesis.onvoiceschanged = warm;
     return () => {
       window.speechSynthesis.onvoiceschanged = null;
     };
+  }, []);
+
+  const clearTtsTimer = useCallback(() => {
+    if (ttsTimer.current !== null) {
+      clearTimeout(ttsTimer.current);
+      ttsTimer.current = null;
+    }
+  }, []);
+
+  // Charge one play the moment audio truly starts (idempotent per fresh start).
+  const chargePlay = useCallback(() => {
+    if (freshPending.current) {
+      if (!reviewModeRef.current) setPlays((p) => p + 1);
+      freshPending.current = false;
+    }
   }, []);
 
   // MP3 element lifecycle.
@@ -111,29 +168,32 @@ export function useListeningAudio(opts: {
     audioElRef.current = a;
     const onTime = () => setCurrentTime(a.currentTime);
     const onMeta = () => setDuration(Number.isFinite(a.duration) ? a.duration : 0);
+    const onPlaying = () => chargePlay();
     const onEnd = () => {
       setStatus("idle");
       setCurrentTime(0);
     };
-    // A 404 / decode error flips the mode to the browser-TTS fallback so the
-    // test is never left without any audio because of a bad URL.
+    // A 404 / decode error flips to the browser-TTS fallback so a bad URL never
+    // leaves the test silent. The failed attempt was never charged a play.
     const onErr = () => {
       setMp3Failed(true);
       setStatus("idle");
     };
     a.addEventListener("timeupdate", onTime);
     a.addEventListener("loadedmetadata", onMeta);
+    a.addEventListener("playing", onPlaying);
     a.addEventListener("ended", onEnd);
     a.addEventListener("error", onErr);
     return () => {
       a.pause();
       a.removeEventListener("timeupdate", onTime);
       a.removeEventListener("loadedmetadata", onMeta);
+      a.removeEventListener("playing", onPlaying);
       a.removeEventListener("ended", onEnd);
       a.removeEventListener("error", onErr);
       audioElRef.current = null;
     };
-  }, [hasMp3, audioUrl]);
+  }, [hasMp3, audioUrl, chargePlay]);
 
   useEffect(() => {
     if (audioElRef.current) audioElRef.current.playbackRate = rate;
@@ -143,58 +203,73 @@ export function useListeningAudio(opts: {
   useEffect(() => {
     return () => {
       ttsCancelled.current = true;
+      clearTtsTimer();
       if (typeof window !== "undefined" && "speechSynthesis" in window) {
         window.speechSynthesis.cancel();
       }
       audioElRef.current?.pause();
     };
-  }, []);
+  }, [clearTtsTimer]);
 
   const remainingPlays = reviewMode ? null : Math.max(0, maxPlays - plays);
   const canStart = reviewMode || plays < maxPlays;
 
-  // ----- TTS sequencer -----
+  // ----- TTS sequencer: speak `segments` from `fromIndex` -----
   const runTts = useCallback(
     (fromIndex: number) => {
       if (typeof window === "undefined" || !("speechSynthesis" in window)) return;
       const synth = window.speechSynthesis;
+      clearTtsTimer();
       synth.cancel();
       ttsCancelled.current = false;
+      ttsPaused.current = false;
+      ttsActive.current = false;
       const voices = chineseVoices();
       let i = fromIndex;
+      ttsResumeIndex.current = i;
+
+      const advance = () => {
+        ttsActive.current = false;
+        if (ttsCancelled.current || ttsPaused.current) return;
+        i += 1;
+        ttsResumeIndex.current = i;
+        ttsTimer.current = window.setTimeout(speakNext, SENTENCE_GAP_MS);
+      };
 
       const speakNext = () => {
-        if (ttsCancelled.current) return;
+        if (ttsCancelled.current || ttsPaused.current) return;
         if (i >= segments.length) {
           setStatus("idle");
           setCurrentSegment(null);
+          ttsActive.current = false;
           return;
         }
+        ttsResumeIndex.current = i;
         const seg = segments[i];
         setCurrentSegment(i);
         const u = new SpeechSynthesisUtterance(seg.text);
         u.lang = "zh-CN";
-        u.rate = Math.max(0.5, Math.min(1.5, rateRef.current * 0.95));
-        const second = isSecondSpeaker(seg.speaker);
-        const v = second ? voices[1] ?? voices[0] : voices[0];
+        u.rate = clampRate(rateRef.current * 0.95);
+        u.pitch = pitchForSpeaker(seg.speaker);
+        const v = voiceForSpeaker(seg.speaker, voices);
         if (v) u.voice = v;
-        u.pitch = second ? 0.85 : 1.1;
-        const advance = () => {
-          i += 1;
-          if (!ttsCancelled.current) window.setTimeout(speakNext, SENTENCE_GAP_MS);
+        u.onstart = () => {
+          ttsActive.current = true;
+          chargePlay();
         };
         u.onend = advance;
         u.onerror = advance;
         synth.speak(u);
       };
+
       speakNext();
     },
-    [segments],
+    [segments, clearTtsTimer, chargePlay],
   );
 
   const startFresh = useCallback(() => {
     if (!canStart) return;
-    if (!reviewMode) setPlays((p) => p + 1);
+    freshPending.current = true;
     setStatus("playing");
     if (mode === "mp3" && audioElRef.current) {
       const a = audioElRef.current;
@@ -202,39 +277,54 @@ export function useListeningAudio(opts: {
       void a.play().catch(() => setStatus("idle"));
     } else if (mode === "tts") {
       runTts(0);
+    } else {
+      freshPending.current = false;
+      setStatus("idle");
     }
-  }, [canStart, reviewMode, mode, runTts]);
+  }, [canStart, mode, runTts]);
 
   const resume = useCallback(() => {
     setStatus("playing");
     if (mode === "mp3" && audioElRef.current) {
       void audioElRef.current.play().catch(() => setStatus("idle"));
-    } else if (mode === "tts" && typeof window !== "undefined") {
-      window.speechSynthesis.resume();
+    } else if (mode === "tts") {
+      ttsPaused.current = false;
+      if (ttsActive.current && typeof window !== "undefined") {
+        window.speechSynthesis.resume();
+      } else {
+        runTts(ttsResumeIndex.current);
+      }
     }
-  }, [mode]);
+  }, [mode, runTts]);
 
   const pause = useCallback(() => {
     setStatus("paused");
     if (mode === "mp3" && audioElRef.current) {
       audioElRef.current.pause();
     } else if (mode === "tts" && typeof window !== "undefined") {
-      window.speechSynthesis.pause();
+      ttsPaused.current = true;
+      clearTtsTimer();
+      if (ttsActive.current) window.speechSynthesis.pause();
     }
-  }, [mode]);
+  }, [mode, clearTtsTimer]);
 
   const stop = useCallback(() => {
     setStatus("idle");
     setCurrentSegment(null);
+    freshPending.current = false;
     if (mode === "mp3" && audioElRef.current) {
       audioElRef.current.pause();
       audioElRef.current.currentTime = 0;
       setCurrentTime(0);
-    } else if (typeof window !== "undefined" && "speechSynthesis" in window) {
+    }
+    if (typeof window !== "undefined" && "speechSynthesis" in window) {
       ttsCancelled.current = true;
+      ttsPaused.current = false;
+      ttsActive.current = false;
+      clearTtsTimer();
       window.speechSynthesis.cancel();
     }
-  }, [mode]);
+  }, [mode, clearTtsTimer]);
 
   const toggle = useCallback(() => {
     if (status === "playing") pause();
@@ -243,10 +333,10 @@ export function useListeningAudio(opts: {
   }, [status, pause, resume, startFresh]);
 
   const restart = useCallback(() => {
+    if (!canStart) return;
     stop();
-    // Defer so the cancel/pause settles before a fresh start.
     window.setTimeout(() => startFresh(), 0);
-  }, [stop, startFresh]);
+  }, [canStart, stop, startFresh]);
 
   const seek = useCallback(
     (t: number) => {
@@ -258,9 +348,18 @@ export function useListeningAudio(opts: {
     [mode],
   );
 
-  const setRate = useCallback((r: number) => {
-    setRateState(r);
-  }, []);
+  const setRate = useCallback(
+    (r: number) => {
+      rateRef.current = r;
+      setRateState(r);
+      // For TTS the rate is baked into each utterance, so re-speak the current
+      // sentence at the new rate to make the speed control responsive (no charge).
+      if (mode === "tts" && status === "playing" && currentSegment !== null) {
+        runTts(currentSegment);
+      }
+    },
+    [mode, status, currentSegment, runTts],
+  );
 
   // One-shot study replay of a single sentence (evidence / tapescript). Stops the
   // transport first, then speaks just that line via the browser engine.
@@ -269,8 +368,10 @@ export function useListeningAudio(opts: {
       if (typeof window === "undefined" || !("speechSynthesis" in window)) return;
       const seg = segments[index];
       if (!seg) return;
-      // Stop transport.
       ttsCancelled.current = true;
+      ttsPaused.current = false;
+      ttsActive.current = false;
+      clearTtsTimer();
       window.speechSynthesis.cancel();
       audioElRef.current?.pause();
       setStatus("idle");
@@ -278,22 +379,22 @@ export function useListeningAudio(opts: {
       const voices = chineseVoices();
       const u = new SpeechSynthesisUtterance(seg.text);
       u.lang = "zh-CN";
-      u.rate = Math.max(0.5, Math.min(1.5, rateRef.current * 0.95));
-      const second = isSecondSpeaker(seg.speaker);
-      const v = second ? voices[1] ?? voices[0] : voices[0];
+      u.rate = clampRate(rateRef.current * 0.95);
+      u.pitch = pitchForSpeaker(seg.speaker);
+      const v = voiceForSpeaker(seg.speaker, voices);
       if (v) u.voice = v;
-      u.pitch = second ? 0.85 : 1.1;
       setCurrentSegment(index);
       u.onend = () => setCurrentSegment((c) => (c === index ? null : c));
       u.onerror = () => setCurrentSegment((c) => (c === index ? null : c));
       window.speechSynthesis.speak(u);
     },
-    [segments],
+    [segments, clearTtsTimer],
   );
 
   return {
     mode,
     available: mode !== "none",
+    canSpeakSegments: speechReady,
     status,
     playing: status === "playing",
     paused: status === "paused",

@@ -13,8 +13,11 @@ export default async function GrammarLessonPage({ params }: Props) {
   const session = await auth();
   if (!session?.user) redirect("/login");
 
-  const lesson = await db.grammarLesson.findUnique({ where: { id: lessonId } });
-  if (!lesson) notFound();
+  const lesson = await db.grammarLesson.findUnique({
+    where: { id: lessonId },
+    include: { unit: { select: { published: true } } },
+  });
+  if (!lesson || !lesson.published || !lesson.unit.published) notFound(); // ẩn bài/unit nháp
 
   // `exercises` may be the structured theory→flashcards→test object or a legacy
   // bare drill array — the deserialiser normalises both.
