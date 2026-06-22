@@ -8,7 +8,7 @@ import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
 import { countChineseChars, hskLevelLabel, formatDuration } from "@/lib/utils";
 import { gradeWritingAction } from "@/server/actions/writing";
-import { Clock, Loader2 } from "lucide-react";
+import { Clock, Loader2, Lightbulb, ChevronDown, CheckCircle2, ArrowUpCircle } from "lucide-react";
 import type { HSKLevel, WritingTaskType } from "@prisma/client";
 
 interface Task {
@@ -16,23 +16,39 @@ interface Task {
   taskType: WritingTaskType;
   prompt: string;
   promptZh?: string | null;
+  outline?: string | null;
   imageUrl?: string | null;
   minChars: number;
   timeLimit: number;
   hskLevel: HSKLevel;
 }
 
+interface CriterionBase {
+  score: number;
+  feedback: string;
+}
 interface GradeResult {
   score: number;
+  bandLabel?: string;
   criteria: {
-    grammar: { score: number; feedback: string; errors: string[] };
-    vocabulary: { score: number; feedback: string; suggestions: string[] };
-    coherence: { score: number; feedback: string };
+    taskResponse?: CriterionBase;
+    grammar: CriterionBase & { errors: string[] };
+    vocabulary: CriterionBase & { suggestions: string[] };
+    coherence: CriterionBase;
   };
-  annotations: Array<{ original: string; issue: string; correction: string; explanation: string }>;
+  annotations: Array<{ original: string; type?: string; issue: string; correction: string; explanation: string }>;
+  strengths?: string[];
+  improvements?: string[];
   correctedVersion: string;
   overallFeedback: string;
 }
+
+const CRITERIA_LABELS: Record<string, string> = {
+  taskResponse: "Bám sát đề 完成度",
+  grammar: "Ngữ pháp 语法",
+  vocabulary: "Từ vựng 词汇",
+  coherence: "Mạch lạc 连贯",
+};
 
 export function WritingClient({ task }: { task: Task; userId: string }) {
   const [text, setText] = useState("");
@@ -40,7 +56,14 @@ export function WritingClient({ task }: { task: Task; userId: string }) {
   const [grading, setGrading] = useState(false);
   const [result, setResult] = useState<GradeResult | null>(null);
   const [isComposing, setIsComposing] = useState(false);
+  const [showOutline, setShowOutline] = useState(false);
   const startTime = useRef(Date.now());
+
+  const outlineItems = (task.outline ?? "")
+    .split("\n")
+    .map((line) => line.replace(/^\s*[-*•]\s*/, "").trim())
+    .filter(Boolean);
+  const hasOutline = outlineItems.length > 0;
 
   const charCount = countChineseChars(text);
   const progress = Math.min(100, Math.round((charCount / task.minChars) * 100));
@@ -95,17 +118,22 @@ export function WritingClient({ task }: { task: Task; userId: string }) {
       <div className="max-w-3xl mx-auto space-y-6">
         <div className="flex items-center justify-between">
           <h2 className="text-xl font-bold">Kết quả chấm bài</h2>
-          <div className="text-4xl font-bold text-primary">{result.score}/100</div>
+          <div className="text-right">
+            <div className="text-4xl font-bold text-primary">{result.score}/100</div>
+            {result.bandLabel && (
+              <div className="text-xs font-medium text-muted-foreground mt-0.5">{result.bandLabel}</div>
+            )}
+          </div>
         </div>
 
         {/* Criteria */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {Object.entries(result.criteria).map(([key, val]) => {
-            const labels: Record<string, string> = { grammar: "Ngữ pháp 语法", vocabulary: "Từ vựng 词汇", coherence: "Mạch lạc 连贯" };
+            if (!val) return null;
             return (
               <Card key={key}>
                 <CardContent className="pt-4">
-                  <div className="text-xs text-muted-foreground">{labels[key]}</div>
+                  <div className="text-xs text-muted-foreground">{CRITERIA_LABELS[key] ?? key}</div>
                   <div className="text-2xl font-bold">{val.score}</div>
                   <Progress value={val.score} className="h-1.5 mt-1" />
                   <p className="text-xs text-muted-foreground mt-2">{val.feedback}</p>
@@ -115,21 +143,67 @@ export function WritingClient({ task }: { task: Task; userId: string }) {
           })}
         </div>
 
+        {/* Strengths */}
+        {result.strengths && result.strengths.length > 0 && (
+          <Card>
+            <CardHeader>
+              <CardTitle className="text-base flex items-center gap-2">
+                <CheckCircle2 className="h-4 w-4 text-green-600" /> Điểm mạnh
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <ul className="space-y-1.5 text-sm">
+                {result.strengths.map((s, i) => (
+                  <li key={i} className="flex gap-2">
+                    <span className="text-green-600">✓</span>
+                    <span>{s}</span>
+                  </li>
+                ))}
+              </ul>
+            </CardContent>
+          </Card>
+        )}
+
         {/* Annotations */}
-        {result.annotations.length > 0 && (
+        {(result.annotations?.length ?? 0) > 0 && (
           <Card>
             <CardHeader><CardTitle className="text-base">Lỗi cần sửa</CardTitle></CardHeader>
             <CardContent className="space-y-3">
               {result.annotations.map((ann, i) => (
                 <div key={i} className="border rounded-lg p-3 text-sm">
-                  <div className="flex gap-2">
+                  <div className="flex flex-wrap items-center gap-2">
+                    {ann.type && (
+                      <Badge variant="secondary" className="font-chinese text-[10px]">{ann.type}</Badge>
+                    )}
                     <span className="font-chinese text-red-600 line-through">{ann.original}</span>
                     <span>→</span>
                     <span className="font-chinese text-green-700 font-semibold">{ann.correction}</span>
                   </div>
+                  {ann.issue && <div className="text-muted-foreground mt-1 font-medium">{ann.issue}</div>}
                   <div className="text-muted-foreground mt-1">{ann.explanation}</div>
                 </div>
               ))}
+            </CardContent>
+          </Card>
+        )}
+
+        {/* Improvements */}
+        {result.improvements && result.improvements.length > 0 && (
+          <Card>
+            <CardHeader>
+              <CardTitle className="text-base flex items-center gap-2">
+                <ArrowUpCircle className="h-4 w-4 text-primary" /> Gợi ý cải thiện
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <ul className="space-y-1.5 text-sm">
+                {result.improvements.map((s, i) => (
+                  <li key={i} className="flex gap-2">
+                    <span className="text-primary">→</span>
+                    <span>{s}</span>
+                  </li>
+                ))}
+              </ul>
             </CardContent>
           </Card>
         )}
@@ -176,6 +250,31 @@ export function WritingClient({ task }: { task: Task; userId: string }) {
           <p className="text-sm mb-1">{task.prompt}</p>
           {task.promptZh && (
             <p className="font-chinese text-muted-foreground text-sm">{task.promptZh}</p>
+          )}
+
+          {hasOutline && (
+            <div className="mt-3 border-t pt-3">
+              <button
+                type="button"
+                onClick={() => setShowOutline((v) => !v)}
+                aria-expanded={showOutline}
+                className="inline-flex items-center gap-1.5 text-sm font-medium text-amber-600 hover:text-amber-700"
+              >
+                <Lightbulb className="h-4 w-4" />
+                {showOutline ? "Ẩn dàn ý gợi ý" : "Gợi ý dàn ý"}
+                <ChevronDown className={`h-4 w-4 transition-transform ${showOutline ? "rotate-180" : ""}`} />
+              </button>
+              {showOutline && (
+                <ul className="mt-2 space-y-1.5 rounded-lg bg-amber-50 p-3 text-sm text-amber-900">
+                  {outlineItems.map((item, i) => (
+                    <li key={i} className="flex gap-2">
+                      <span className="select-none text-amber-500">•</span>
+                      <span className="whitespace-pre-line">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
           )}
         </CardContent>
       </Card>

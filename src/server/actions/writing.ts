@@ -30,6 +30,7 @@ export async function gradeWritingAction(input: z.infer<typeof schema>) {
       hskLevel: task.hskLevel,
       taskPrompt: task.prompt,
       minChars: task.minChars,
+      outline: task.outline,
     });
 
     await db.$transaction([

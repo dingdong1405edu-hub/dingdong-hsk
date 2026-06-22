@@ -33,6 +33,7 @@ export default async function WritingPdfPage({ params }: Props) {
         hskLevel={task.hskLevel}
         prompt={task.prompt}
         promptZh={task.promptZh}
+        outline={task.outline}
         minChars={task.minChars}
         timeLimit={task.timeLimit}
         backHref="/writing"

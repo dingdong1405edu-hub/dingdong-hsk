@@ -355,6 +355,9 @@ model WritingTask {
   taskType  WritingTaskType
   prompt    String          @db.Text
   promptZh  String?         @db.Text
+  // Dàn ý gợi ý (admin nhập, mỗi ý một dòng) — ẩn mặc định, học viên bấm "Gợi ý
+  // dàn ý" mới hiện. Cũng được đưa vào prompt chấm AI để kiểm tra bám sát dàn ý.
+  outline   String?         @db.Text
   imageUrl  String?
   minChars  Int
   timeLimit Int

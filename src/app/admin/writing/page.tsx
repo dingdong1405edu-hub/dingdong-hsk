@@ -23,6 +23,7 @@ async function createWritingAction(fd: FormData): Promise<void> {
       taskType: fd.get("taskType") as WritingTaskType,
       prompt: fd.get("prompt") as string,
       promptZh: (fd.get("promptZh") as string) || undefined,
+      outline: (fd.get("outline") as string) || undefined,
       minChars: parseInt(fd.get("minChars") as string) || 50,
       timeLimit: parseInt(fd.get("timeLimit") as string) || 900,
       hskLevel: fd.get("hskLevel") as HSKLevel,
@@ -80,6 +81,11 @@ export default async function AdminWritingPage() {
             <div className="space-y-1 md:col-span-2">
               <Label>Đề bài (ZH, tùy chọn)</Label>
               <Textarea name="promptZh" className="font-chinese" />
+            </div>
+            <div className="space-y-1 md:col-span-2">
+              <Label>Dàn ý gợi ý (tùy chọn — mỗi ý một dòng)</Label>
+              <Textarea name="outline" rows={4} placeholder={"VD:\n- Mở bài: giới thiệu chủ đề\n- Thân bài: 2-3 ý chính + ví dụ\n- Kết bài: cảm nghĩ / kết luận"} />
+              <p className="text-xs text-muted-foreground">Học viên phải bấm “Gợi ý dàn ý” mới thấy. Dàn ý cũng được AI dùng để chấm độ bám sát.</p>
             </div>
             <div className="space-y-1">
               <Label>Số chữ Hán tối thiểu</Label>
@@ -150,6 +156,10 @@ export default async function AdminWritingPage() {
                               <div className="space-y-1 md:col-span-2">
                                 <Label>Đề bài (ZH, tùy chọn)</Label>
                                 <Textarea name="promptZh" className="font-chinese" defaultValue={task.promptZh ?? undefined} />
+                              </div>
+                              <div className="space-y-1 md:col-span-2">
+                                <Label>Dàn ý gợi ý (tùy chọn — mỗi ý một dòng)</Label>
+                                <Textarea name="outline" rows={4} defaultValue={task.outline ?? undefined} />
                               </div>
                               <div className="space-y-1">
                                 <Label>Số chữ Hán tối thiểu</Label>

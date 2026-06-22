@@ -18,7 +18,20 @@ export function isGradingConfigured(): boolean {
   return Boolean(process.env.GROQ_API_KEY);
 }
 
-const WRITING_SYSTEM = `You are a certified HSK Chinese language examiner with expertise in teaching Vietnamese learners. You evaluate Chinese writing submissions with strict rubric scoring. Return ONLY valid JSON, no explanation outside the JSON structure.`;
+const WRITING_SYSTEM = `You are a certified HSK (汉语水平考试) writing examiner with 15+ years grading Chinese compositions, and a specialist in teaching Vietnamese learners.
+
+Your job: grade ONE Chinese writing submission strictly, accurately and in fine detail, then write all feedback in natural Vietnamese (tiếng Việt) so a Vietnamese learner understands it.
+
+Grading discipline:
+- Calibrate to the stated HSK level: HSK1-2 expect short, simple, mostly correct sentences; HSK3-4 expect connected paragraphs with basic connectives (因为/所以, 虽然/但是, 然后); HSK5-6 expect rich vocabulary, complex structures, idioms/成语 and clear argument. Do NOT punish an HSK2 writer for lacking HSK6 sophistication, and do NOT over-reward an HSK6 writer for merely-correct basic sentences.
+- Score bands (apply to overall and each criterion): 90-100 = xuất sắc, gần như không lỗi; 75-89 = tốt, vài lỗi nhỏ; 60-74 = đạt, nhiều lỗi nhưng vẫn hiểu được; 40-59 = yếu, lỗi cản trở việc hiểu; 0-39 = chưa đạt / lạc đề / quá ngắn.
+- Be exhaustive about errors. Inspect for: 语法 (sai ngữ pháp, thiếu/thừa thành phần câu), 词汇 (dùng sai từ, sai sắc thái, từ không tồn tại), 语序 (trật tự từ sai), 量词 (dùng sai/thiếu lượng từ), 虚词 (dùng sai 了/着/过/的/地/得/把/被), 搭配 (kết hợp từ sai - collocation), 标点 (dấu câu sai, dùng dấu Latin thay vì dấu Trung 。，、？！), 错别字 (viết sai chữ Hán / dùng nhầm chữ đồng âm), and 重复/啰嗦 (lặp ý, dài dòng).
+- Vietnamese-learner pitfalls to actively check: thiếu lượng từ (一个人 not 一人), sai vị trí trạng ngữ thời gian/nơi chốn, lạm dụng/thiếu 了, dịch word-by-word từ tiếng Việt, dùng dấu câu Latin.
+- Every annotation MUST quote the learner's ACTUAL text verbatim in "original" — never invent or paraphrase an error that is not in the submission. If the writing has no real errors, return an empty annotations array.
+- "correctedVersion" must rewrite the WHOLE submission into natural, level-appropriate Chinese while preserving the learner's original meaning and ideas — do not add new content they did not write.
+- Also judge whether the writing addresses the task prompt, covers the suggested outline points (if an outline is given), and meets the minimum character requirement; reflect this in the taskResponse criterion and lower the overall score if it is off-topic or too short.
+
+Output: Return ONLY one valid JSON object, no markdown fences, no text before or after.`;
 
 const SPEAKING_SYSTEM = `You are a HSKK (Hanyu Shuiping Kouyu Kaoshi) examiner. You evaluate spoken Chinese by Vietnamese learners. Note: Vietnamese is a tonal language but tones differ significantly from Mandarin. Return ONLY valid JSON.`;
 
@@ -27,36 +40,56 @@ export async function gradeWriting(params: {
   hskLevel: string;
   taskPrompt: string;
   minChars: number;
+  outline?: string | null;
 }): Promise<WritingGradeResult> {
-  const { submission, hskLevel, taskPrompt, minChars } = params;
+  const { submission, hskLevel, taskPrompt, minChars, outline } = params;
+
+  const outlineBlock = outline?.trim()
+    ? `Suggested outline the learner was asked to follow (đối chiếu xem bài viết có bám sát các ý này không):
+${outline.trim()}`
+    : `No suggested outline was provided for this task.`;
 
   const response = await getGroq().chat.completions.create({
     model: "llama-3.3-70b-versatile",
-    max_tokens: 2048,
+    max_tokens: 4096,
     temperature: 0.3,
+    response_format: { type: "json_object" },
     messages: [
       { role: "system", content: WRITING_SYSTEM },
       {
         role: "user",
-        content: `Evaluate this Chinese writing submission by a Vietnamese learner at ${hskLevel} level.
+        content: `Grade this Chinese writing submission by a Vietnamese learner at ${hskLevel} level.
 
-Task: ${taskPrompt}
-Minimum characters required: ${minChars}
-Submission: ${submission}
+=== TASK PROMPT ===
+${taskPrompt}
 
-Return JSON with this exact structure:
+=== ${outlineBlock.startsWith("No suggested") ? "OUTLINE" : "SUGGESTED OUTLINE"} ===
+${outlineBlock}
+
+=== REQUIREMENTS ===
+Minimum Chinese characters required: ${minChars}
+
+=== LEARNER SUBMISSION ===
+${submission}
+
+=== INSTRUCTIONS ===
+Grade strictly and in detail per your rubric. Find EVERY meaningful error (quote the learner's real text in "original"). Write all feedback fields in Vietnamese. Return ONLY a JSON object with EXACTLY this structure:
 {
-  "score": <0-100>,
+  "score": <0-100, overall>,
+  "bandLabel": "<nhãn ngắn gọn bằng tiếng Việt, ví dụ 'Tốt – đạt chuẩn ${hskLevel}'>",
   "criteria": {
-    "grammar": { "score": <0-100>, "feedback": "<Vietnamese feedback>", "errors": ["<error1>"] },
-    "vocabulary": { "score": <0-100>, "feedback": "<Vietnamese feedback>", "suggestions": ["<suggestion1>"] },
-    "coherence": { "score": <0-100>, "feedback": "<Vietnamese feedback>" }
+    "taskResponse": { "score": <0-100>, "feedback": "<tiếng Việt: có bám sát đề + dàn ý không, đủ số chữ không, có lạc đề không>" },
+    "grammar": { "score": <0-100>, "feedback": "<tiếng Việt>", "errors": ["<tóm tắt từng lỗi ngữ pháp bằng tiếng Việt>"] },
+    "vocabulary": { "score": <0-100>, "feedback": "<tiếng Việt>", "suggestions": ["<gợi ý từ/cách dùng hay hơn>"] },
+    "coherence": { "score": <0-100>, "feedback": "<tiếng Việt: bố cục, liên kết câu, mạch lạc>" }
   },
   "annotations": [
-    { "original": "<错误片段>", "issue": "<Vietnamese explanation>", "correction": "<corrected>", "explanation": "<Vietnamese detail>" }
+    { "original": "<TRÍCH NGUYÊN VĂN đoạn sai trong bài>", "type": "<loại lỗi: 语法|词汇|语序|量词|虚词|搭配|标点|错别字>", "issue": "<lỗi là gì, tiếng Việt>", "correction": "<bản sửa đúng bằng chữ Hán>", "explanation": "<giải thích chi tiết bằng tiếng Việt, nói rõ vì sao sai và quy tắc đúng>" }
   ],
-  "correctedVersion": "<full corrected text>",
-  "overallFeedback": "<Vietnamese overall feedback>"
+  "strengths": ["<điểm mạnh cụ thể của bài viết, tiếng Việt>"],
+  "improvements": ["<gợi ý cải thiện cụ thể, có thể hành động, tiếng Việt>"],
+  "correctedVersion": "<toàn bộ bài viết đã được sửa thành tiếng Trung tự nhiên, giữ nguyên ý của học viên>",
+  "overallFeedback": "<nhận xét tổng thể bằng tiếng Việt, 2-4 câu>"
 }`,
       },
     ],
@@ -170,17 +203,27 @@ Trả về JSON đúng cấu trúc sau (không thêm gì ngoài JSON):
 
 export interface WritingGradeResult {
   score: number;
+  /** Nhãn ngắn gọn tiếng Việt, vd "Tốt – đạt chuẩn HSK4". Optional (tương thích bài chấm cũ). */
+  bandLabel?: string;
   criteria: {
+    /** Mức độ bám sát đề + dàn ý + đủ số chữ. Optional vì bài chấm cũ chưa có. */
+    taskResponse?: { score: number; feedback: string };
     grammar: { score: number; feedback: string; errors: string[] };
     vocabulary: { score: number; feedback: string; suggestions: string[] };
     coherence: { score: number; feedback: string };
   };
   annotations: Array<{
     original: string;
+    /** Loại lỗi (语法|词汇|语序|量词|虚词|搭配|标点|错别字). Optional. */
+    type?: string;
     issue: string;
     correction: string;
     explanation: string;
   }>;
+  /** Điểm mạnh của bài viết. Optional. */
+  strengths?: string[];
+  /** Gợi ý cải thiện cụ thể. Optional. */
+  improvements?: string[];
   correctedVersion: string;
   overallFeedback: string;
 }

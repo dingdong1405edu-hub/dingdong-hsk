@@ -1044,6 +1044,7 @@ export async function updateWritingAction(
         taskType: fd.get("taskType") as WritingTaskType,
         prompt: (fd.get("prompt") as string) || "",
         promptZh: optStr(fd, "promptZh"),
+        outline: optStr(fd, "outline"),
         minChars: parseInt(fd.get("minChars") as string) || 50,
         timeLimit: parseInt(fd.get("timeLimit") as string) || 900,
         hskLevel: fd.get("hskLevel") as HSKLevel,
