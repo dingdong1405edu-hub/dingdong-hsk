@@ -10,6 +10,7 @@ import {
   reorderLessonsAction,
   reorderContentAction,
 } from "@/server/actions/admin";
+import { reorderMockExamsAction } from "@/server/actions/mock-exam";
 
 // Một dòng đã được render sẵn ở server (Card/nội dung tuỳ trang). ReorderList chỉ
 // bọc thêm tay cầm kéo–thả + nút lên/xuống và lo việc lưu thứ tự.
@@ -27,11 +28,13 @@ export type ReorderSpec =
       kind: "content";
       model: "reading" | "listening" | "writing" | "speaking" | "hanzi";
       hskLevel: HSKLevel;
-    };
+    }
+  | { kind: "mockExam"; hskLevel: HSKLevel };
 
 function persist(spec: ReorderSpec, orderedIds: string[]) {
   if (spec.kind === "units") return reorderUnitsAction(spec.skill, spec.hskLevel, orderedIds);
   if (spec.kind === "lessons") return reorderLessonsAction(spec.skill, spec.unitId, orderedIds);
+  if (spec.kind === "mockExam") return reorderMockExamsAction(spec.hskLevel, orderedIds);
   return reorderContentAction(spec.model, spec.hskLevel, orderedIds);
 }
 

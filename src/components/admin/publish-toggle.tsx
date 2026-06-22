@@ -17,7 +17,8 @@ export type PublishModel =
   | "reading"
   | "listening"
   | "writing"
-  | "speaking";
+  | "speaking"
+  | "mockExam";
 
 /**
  * Nút bật/tắt hiển thị một nội dung trên web học viên.

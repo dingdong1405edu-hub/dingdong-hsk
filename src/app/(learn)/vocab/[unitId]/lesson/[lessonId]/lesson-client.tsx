@@ -6,6 +6,7 @@ import { LessonEngine } from "@/components/learn/lesson-engine";
 import { completeLessonAction } from "@/server/actions/lesson";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { BaoBuddy } from "@/components/marketing/bao-buddy";
 import type { Exercise } from "@/types";
 
 interface Props {
@@ -59,7 +60,12 @@ export function LessonClient({ lesson, unitId, hearts, skill }: Props) {
       <div className="min-h-[60vh] flex items-center justify-center">
         <Card className="max-w-md w-full text-center">
           <CardContent className="pt-8 pb-6 space-y-4">
-            <div className="text-6xl">{passed ? "🎉" : "😅"}</div>
+            <BaoBuddy
+              size={104}
+              pose={passed ? "cheer" : "idle"}
+              message={passed ? "棒极了!" : "加油!"}
+              className="mx-auto"
+            />
             <h2 className="text-2xl font-bold">{passed ? "Xuất sắc!" : "Cố lên!"}</h2>
             <div className="text-4xl font-bold text-primary">{pct}%</div>
             <div className="text-muted-foreground text-sm">

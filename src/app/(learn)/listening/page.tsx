@@ -4,6 +4,7 @@ import { redirect } from "next/navigation";
 import { Headphones } from "lucide-react";
 import { PracticeHub } from "@/components/learn/practice-hub";
 import { TestCard } from "@/components/learn/test-card";
+import { BaoBuddy } from "@/components/marketing/bao-buddy";
 
 const QTYPE_LABEL: Record<string, string> = {
   MCQ: "Trắc nghiệm",
@@ -88,7 +89,7 @@ export default async function ListeningPage() {
 function EmptyState() {
   return (
     <div className="rounded-2xl border border-dashed py-16 text-center text-muted-foreground">
-      <Headphones className="mx-auto mb-3 h-12 w-12 opacity-30" />
+      <BaoBuddy size={72} pose="idle" className="mx-auto mb-3" />
       <p>Chưa có bài nghe nào.</p>
     </div>
   );

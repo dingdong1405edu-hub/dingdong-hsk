@@ -4,6 +4,7 @@ import { redirect } from "next/navigation";
 import { Route } from "lucide-react";
 import { Ambient } from "@/components/motion/ambient";
 import { CourseWorldCard } from "@/components/learn/roadmap/course-world-card";
+import { BaoBuddy } from "@/components/marketing/bao-buddy";
 import { levelToSlug } from "@/lib/roadmap";
 
 export default async function RoadmapPage() {
@@ -55,7 +56,7 @@ export default async function RoadmapPage() {
       {/* Lưới khóa học */}
       {courses.length === 0 ? (
         <div className="rounded-2xl border border-dashed py-16 text-center text-muted-foreground">
-          <Route className="mx-auto mb-3 h-12 w-12 opacity-30" />
+          <BaoBuddy size={72} pose="idle" className="mx-auto mb-3" />
           <p>Chưa có khóa học nào trong lộ trình.</p>
         </div>
       ) : (

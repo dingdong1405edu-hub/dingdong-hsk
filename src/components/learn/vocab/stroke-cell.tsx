@@ -29,6 +29,15 @@ interface Writer {
 
 export type StrokeMode = "trace" | "recall";
 
+/**
+ * Why a cell finished:
+ *  - `"quiz"`        — the learner completed Hanzi Writer's stroke validation.
+ *  - `"unsupported"` — no stroke data / load error; the cell fell back to the
+ *                      freehand pad and was NEVER validated. Callers that reward
+ *                      writing (XP / mastery) must NOT count this as completion.
+ */
+export type StrokeDoneReason = "quiz" | "unsupported";
+
 interface Props {
   /** Exactly one Han character. */
   char: string;
@@ -36,8 +45,8 @@ interface Props {
   size: number;
   showOutline: boolean;
   hintAfterMisses: number;
-  /** Fired once when this cell is finished (quiz complete, or unsupported char). */
-  onDone: () => void;
+  /** Fired once when this cell is finished — see {@link StrokeDoneReason}. */
+  onDone: (reason: StrokeDoneReason) => void;
 }
 
 /**
@@ -80,7 +89,7 @@ export function StrokeCell({ char, mode, size, showOutline, hintAfterMisses, onD
           setStrokesLeft(0);
           setMistake(false);
           setDone(true);
-          onDoneRef.current();
+          onDoneRef.current("quiz");
         },
       });
     },
@@ -113,7 +122,7 @@ export function StrokeCell({ char, mode, size, showOutline, hintAfterMisses, onD
           onLoadCharDataError: () => {
             if (cancelled) return;
             setUnsupported(true);
-            onDoneRef.current();
+            onDoneRef.current("unsupported");
           },
         }) as unknown as Writer;
         writerRef.current = writer;
@@ -122,7 +131,7 @@ export function StrokeCell({ char, mode, size, showOutline, hintAfterMisses, onD
       .catch(() => {
         if (cancelled) return;
         setUnsupported(true);
-        onDoneRef.current();
+        onDoneRef.current("unsupported");
       });
 
     return () => {

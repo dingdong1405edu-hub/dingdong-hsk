@@ -4,6 +4,7 @@ import { redirect } from "next/navigation";
 import { PenLine } from "lucide-react";
 import { PracticeHub } from "@/components/learn/practice-hub";
 import { TestCard } from "@/components/learn/test-card";
+import { BaoBuddy } from "@/components/marketing/bao-buddy";
 
 const TYPE_LABEL: Record<string, string> = {
   FREE: "Viết tự do",
@@ -82,7 +83,7 @@ export default async function WritingPage() {
 function EmptyState() {
   return (
     <div className="rounded-2xl border border-dashed py-16 text-center text-muted-foreground">
-      <PenLine className="mx-auto mb-3 h-12 w-12 opacity-30" />
+      <BaoBuddy size={72} pose="idle" className="mx-auto mb-3" />
       <p>Chưa có đề viết nào.</p>
     </div>
   );

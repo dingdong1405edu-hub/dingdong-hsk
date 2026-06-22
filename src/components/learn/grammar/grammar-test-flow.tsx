@@ -5,6 +5,7 @@ import { toast } from "sonner";
 import { ClipboardCheck, CheckCircle2, XCircle, Trophy, RotateCcw } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { BaoBuddy } from "@/components/marketing/bao-buddy";
 import { GrammarTestRunner, type TestResult } from "./grammar-test-runner";
 import { submitGrammarTestAction } from "@/server/actions/lesson";
 import { describeExercise } from "@/lib/grammar";
@@ -46,7 +47,7 @@ export function GrammarTestFlow({ lesson, content, unitId }: Props) {
   if (questions.length === 0) {
     return (
       <div className="flex min-h-[60vh] flex-col items-center justify-center gap-4 text-center">
-        <div className="text-5xl">📝</div>
+        <BaoBuddy size={88} pose="idle" className="mx-auto" />
         <h2 className="text-xl font-bold">Bài này chưa có bài kiểm tra</h2>
         <Button variant="outline" onClick={() => router.push(closeHref)}>
           Quay lại
@@ -126,7 +127,12 @@ export function GrammarTestFlow({ lesson, content, unitId }: Props) {
     <div className="mx-auto max-w-2xl space-y-5 py-6">
       <Card className="text-center">
         <CardContent className="space-y-3 px-6 pb-6 pt-8">
-          <div className="text-6xl">{passed ? "🏆" : "📚"}</div>
+          <BaoBuddy
+            size={104}
+            pose={passed ? "cheer" : "idle"}
+            message={passed ? "太棒了!" : "再试一次"}
+            className="mx-auto"
+          />
           <h2 className="text-2xl font-bold">{passed ? "Đạt rồi!" : "Chưa đạt, thử lại nhé!"}</h2>
           <div className={cn("text-4xl font-bold", passed ? "text-primary" : "text-red-600")}>{pct}%</div>
           <div className="text-sm text-muted-foreground">

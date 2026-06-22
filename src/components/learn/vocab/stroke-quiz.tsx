@@ -1,7 +1,7 @@
 "use client";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { CheckCircle2 } from "lucide-react";
-import { StrokeCell, type StrokeMode } from "./stroke-cell";
+import { StrokeCell, type StrokeMode, type StrokeDoneReason } from "./stroke-cell";
 
 interface Props {
   /** A word/phrase — may be one or several Han characters. */
@@ -12,8 +12,12 @@ interface Props {
    *            validated and a hint flashes the correct stroke after a miss.
    */
   mode?: StrokeMode;
-  /** Called once every character has been written correctly. */
-  onComplete?: () => void;
+  /**
+   * Called once every character is finished. `allGenuine` is true only when every
+   * cell was validated by Hanzi Writer — false if any cell fell back to the
+   * freehand pad (no stroke data). Callers that reward writing must require it.
+   */
+  onComplete?: (allGenuine: boolean) => void;
 }
 
 const MODE_CONFIG: Record<StrokeMode, { hint: string; showOutline: boolean; hintAfterMisses: number }> = {
@@ -78,20 +82,27 @@ export function StrokeQuiz({ character, mode = "trace", onComplete }: Props) {
   const size = cellSizeFor(containerW, chars.length);
 
   // Track which characters are finished. Reset whenever the word or mode changes.
+  // `doneSet`    — every settled cell (incl. unsupported fallbacks) → drives N/N UI.
+  // `genuineSet` — only cells validated by Hanzi Writer → gates the reward callback.
   const doneSet = useRef<Set<number>>(new Set());
+  const genuineSet = useRef<Set<number>>(new Set());
   const [doneCount, setDoneCount] = useState(0);
   useEffect(() => {
     doneSet.current = new Set();
+    genuineSet.current = new Set();
     setDoneCount(0);
   }, [character, mode]);
 
   const handleCellDone = useCallback(
-    (i: number) => {
+    (i: number, reason: StrokeDoneReason) => {
       if (doneSet.current.has(i)) return;
       doneSet.current.add(i);
+      if (reason === "quiz") genuineSet.current.add(i);
       const c = doneSet.current.size;
       setDoneCount(c);
-      if (c >= chars.length) onComplete?.();
+      // Only report a genuine completion when EVERY cell was actually validated;
+      // a word with any unsupported (freehand) cell must not earn XP / mastery.
+      if (c >= chars.length) onComplete?.(genuineSet.current.size >= chars.length);
     },
     [chars.length, onComplete]
   );
@@ -118,7 +129,7 @@ export function StrokeQuiz({ character, mode = "trace", onComplete }: Props) {
             size={size}
             showOutline={cfg.showOutline}
             hintAfterMisses={cfg.hintAfterMisses}
-            onDone={() => handleCellDone(i)}
+            onDone={(reason) => handleCellDone(i, reason)}
           />
         ))}
       </div>

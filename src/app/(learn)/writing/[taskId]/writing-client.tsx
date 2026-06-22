@@ -6,6 +6,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
+import { BaoBuddy } from "@/components/marketing/bao-buddy";
 import { countChineseChars, hskLevelLabel, formatDuration } from "@/lib/utils";
 import { gradeWritingAction } from "@/server/actions/writing";
 import { Clock, Loader2, Lightbulb, ChevronDown, CheckCircle2, ArrowUpCircle } from "lucide-react";
@@ -116,6 +117,12 @@ export function WritingClient({ task }: { task: Task; userId: string }) {
   if (result) {
     return (
       <div className="max-w-3xl mx-auto space-y-6">
+        <BaoBuddy
+          size={88}
+          pose={result.score >= 60 ? "cheer" : "idle"}
+          message={result.score >= 60 ? "做得好!" : "加油!"}
+          className="mx-auto"
+        />
         <div className="flex items-center justify-between">
           <h2 className="text-xl font-bold">Kết quả chấm bài</h2>
           <div className="text-right">
@@ -128,7 +135,7 @@ export function WritingClient({ task }: { task: Task; userId: string }) {
 
         {/* Criteria */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          {Object.entries(result.criteria).map(([key, val]) => {
+          {Object.entries(result.criteria ?? {}).map(([key, val]) => {
             if (!val) return null;
             return (
               <Card key={key}>

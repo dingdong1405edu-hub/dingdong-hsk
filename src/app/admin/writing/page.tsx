@@ -23,7 +23,7 @@ async function createWritingAction(fd: FormData): Promise<void> {
       taskType: fd.get("taskType") as WritingTaskType,
       prompt: fd.get("prompt") as string,
       promptZh: (fd.get("promptZh") as string) || undefined,
-      outline: (fd.get("outline") as string) || undefined,
+      outline: ((fd.get("outline") as string) || "").trim() || undefined,
       minChars: parseInt(fd.get("minChars") as string) || 50,
       timeLimit: parseInt(fd.get("timeLimit") as string) || 900,
       hskLevel: fd.get("hskLevel") as HSKLevel,

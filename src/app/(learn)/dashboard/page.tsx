@@ -8,6 +8,7 @@ import Link from "next/link";
 import { Flame, Heart, Star, Trophy, GraduationCap, Route, ArrowRight, Sparkles, type LucideIcon } from "lucide-react";
 import { AnimatedNumber } from "@/components/motion/animated-number";
 import { Ambient } from "@/components/motion/ambient";
+import { BaoBuddy } from "@/components/marketing/bao-buddy";
 
 function StatCard({
   icon: Icon,
@@ -93,6 +94,11 @@ export default async function DashboardPage() {
         <div className="pointer-events-none absolute -right-4 -top-10 select-none font-chinese text-[140px] leading-none opacity-15">
           中
         </div>
+        <BaoBuddy
+          size={88}
+          pose="idle"
+          className="pointer-events-none absolute bottom-2 right-4 z-10 hidden sm:block"
+        />
       </div>
 
       {/* Featured: Học theo lộ trình */}
@@ -171,6 +177,7 @@ export default async function DashboardPage() {
             </div>
           ) : (
             <div className="py-6 text-center text-sm text-muted-foreground">
+              <BaoBuddy size={72} pose="idle" className="mx-auto mb-3" />
               Chưa có hoạt động nào. Hãy bắt đầu một bài học để ghi lại tiến độ! 🚀
             </div>
           )}

@@ -1,8 +1,9 @@
 import { auth } from "@/lib/auth";
 import { db } from "@/lib/db";
 import { redirect } from "next/navigation";
-import { Users2, Trophy, MessageCircle, Sparkles } from "lucide-react";
+import { Users2, Trophy, MessageCircle } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { BaoBuddy } from "@/components/marketing/bao-buddy";
 import { hskLevelLabel, cn } from "@/lib/utils";
 
 const MEDAL = ["bg-amber-400 text-amber-950", "bg-zinc-300 text-zinc-700", "bg-orange-300 text-orange-900"];
@@ -96,7 +97,7 @@ export default async function CommunityPage() {
             </CardHeader>
             <CardContent>
               <div className="rounded-xl border border-dashed bg-muted/30 p-5 text-center">
-                <Sparkles className="mx-auto mb-2 h-7 w-7 text-primary/60" />
+                <BaoBuddy size={64} pose="idle" className="mx-auto mb-2" />
                 <p className="text-sm font-medium">Sắp ra mắt</p>
                 <p className="mt-1 text-xs text-muted-foreground">
                   Đặt câu hỏi, chia sẻ mẹo học và kết bạn cùng tiến.

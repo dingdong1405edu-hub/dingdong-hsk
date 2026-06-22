@@ -6,6 +6,7 @@ import { toast } from "sonner";
 import { ClipboardCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { BaoBuddy } from "@/components/marketing/bao-buddy";
 import { completeLessonAction } from "@/server/actions/lesson";
 import { SectionTheory } from "./section-theory";
 import { FlashcardPhase, type FlashResult } from "./flashcard-phase";
@@ -71,7 +72,7 @@ export function GrammarFlow({ lesson, content, unitId }: Props) {
   if (!hasAnyContent) {
     return (
       <div className="flex min-h-[60vh] flex-col items-center justify-center gap-4 text-center">
-        <div className="text-5xl">📭</div>
+        <BaoBuddy size={88} pose="idle" className="mx-auto" />
         <h2 className="text-xl font-bold">Bài học chưa có nội dung</h2>
         <p className="max-w-sm text-sm text-muted-foreground">
           Phần ngữ pháp này đang được biên soạn. Hãy quay lại sau nhé!
@@ -138,7 +139,7 @@ export function GrammarFlow({ lesson, content, unitId }: Props) {
       <div className="flex min-h-[60vh] items-center justify-center">
         <Card className="w-full max-w-md text-center">
           <CardContent className="space-y-4 px-6 pb-6 pt-8">
-            <div className="text-6xl">🎉</div>
+            <BaoBuddy size={104} pose="cheer" message="做得好!" className="mx-auto" />
             <h2 className="text-2xl font-bold">Đã học xong bài!</h2>
             <p className="text-sm text-muted-foreground">
               Bạn đã hoàn thành bài “{lesson.title || "Ngữ pháp"}”. Bài tiếp theo đã được mở khoá.

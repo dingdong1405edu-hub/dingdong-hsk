@@ -4,6 +4,7 @@ import { redirect } from "next/navigation";
 import Link from "next/link";
 import { PenTool, CheckCircle2 } from "lucide-react";
 import { PracticeHub } from "@/components/learn/practice-hub";
+import { BaoBuddy } from "@/components/marketing/bao-buddy";
 import { hskBadgeClass, hskLevelLabel, toneColor, cn } from "@/lib/utils";
 import { HSKLevel } from "@prisma/client";
 
@@ -33,17 +34,18 @@ export default async function HanziPage() {
       randomHref={randomHref}
       randomLabel="Luyện 1 chữ ngẫu nhiên"
       tips={[
-        "Xem animation thứ tự nét bút (stroke order) cho từng chữ.",
-        "Chế độ quiz: tự vẽ từng nét rồi đối chiếu với đáp án.",
+        "Xem nét: animation thứ tự nét bút (stroke order) cho từng chữ.",
+        "Viết theo mẫu: viết đè lên nét mờ để quen tay và đúng thứ tự nét.",
+        "Tập viết: tự viết lại từ trí nhớ — viết sai nét sẽ được gợi ý ngay.",
         "Mỗi chữ có pinyin, thanh điệu (tô màu) và nghĩa tiếng Việt.",
-        "Chữ đã thuộc sẽ được đánh dấu ✓.",
+        "Viết đúng từ trí nhớ sẽ đánh dấu chữ là đã thuộc ✓ và cộng XP.",
       ]}
       gridTitle="Danh sách chữ Hán"
       gridSubtitle="Nhấn vào một chữ để luyện viết."
     >
       {characters.length === 0 ? (
         <div className="rounded-2xl border border-dashed py-16 text-center text-muted-foreground">
-          <PenTool className="mx-auto mb-3 h-12 w-12 opacity-30" />
+          <BaoBuddy size={72} pose="idle" className="mx-auto mb-3" />
           <p>Chưa có chữ Hán nào.</p>
         </div>
       ) : (

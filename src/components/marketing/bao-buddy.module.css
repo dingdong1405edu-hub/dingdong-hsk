@@ -1,0 +1,200 @@
+/* BaoBuddy — phiên bản nhỏ, thuần CSS của linh vật bánh bao (bao-mascot).
+   Không theo dõi con trỏ, không dùng JS → có thể đặt trong cả Server lẫn Client Component.
+   Mọi kích thước scale theo biến --bao-size. */
+
+.wrap {
+  --bun: #fff7ec;
+  --bun-sh: #f1e3cc;
+  --ink: #2a2f45;
+  --rose: #ff9fb0;
+  --rose-d: #ff7d95;
+  --spark: #ffe27a;
+  --orange: #f5a623;
+
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: calc(var(--bao-size) * 0.07);
+  line-height: 1;
+  font-family: "Nunito", system-ui, "Segoe UI", sans-serif;
+  user-select: none;
+}
+
+/* ===== Speech bubble ===== */
+.bubble {
+  position: relative;
+  max-width: calc(var(--bao-size) * 2.4);
+  background: #fff;
+  color: #2b3350;
+  font-weight: 800;
+  font-size: calc(var(--bao-size) * 0.17);
+  letter-spacing: 0.02em;
+  text-align: center;
+  padding: calc(var(--bao-size) * 0.08) calc(var(--bao-size) * 0.16);
+  border-radius: calc(var(--bao-size) * 0.22);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.14);
+  animation: bbFloaty 3.2s ease-in-out infinite;
+}
+.bubble::after {
+  content: "";
+  position: absolute;
+  bottom: calc(var(--bao-size) * -0.08);
+  left: 50%;
+  transform: translateX(-50%);
+  border-left: calc(var(--bao-size) * 0.08) solid transparent;
+  border-right: calc(var(--bao-size) * 0.08) solid transparent;
+  border-top: calc(var(--bao-size) * 0.09) solid #fff;
+}
+@keyframes bbFloaty {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(calc(var(--bao-size) * -0.05)); }
+}
+
+/* ===== Stage (square khung chứa bánh bao) ===== */
+.stage {
+  position: relative;
+  width: var(--bao-size);
+  height: var(--bao-size);
+}
+
+/* Chuyển động cả con bánh bao */
+.bob {
+  position: absolute;
+  inset: 0;
+  transform-origin: 50% 100%;
+}
+.idle .bob  { animation: bbFloat 3.4s ease-in-out infinite; }
+.cheer .bob { animation: bbBounce 1.4s cubic-bezier(0.5, 0, 0.5, 1) infinite; }
+
+@keyframes bbFloat {
+  0%, 100% { transform: translateY(0) rotate(-1.5deg); }
+  50%      { transform: translateY(calc(var(--bao-size) * -0.05)) rotate(1.5deg); }
+}
+@keyframes bbBounce {
+  0%, 100% { transform: translateY(0) scale(1, 1); }
+  50%      { transform: translateY(calc(var(--bao-size) * -0.12)) scale(1.04, 0.96); }
+}
+
+/* shadow dưới đất */
+.ground {
+  position: absolute;
+  bottom: 2%;
+  left: 50%;
+  width: 52%;
+  height: 6%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.16);
+  border-radius: 50%;
+  filter: blur(3px);
+}
+.cheer .ground { animation: bbGround 1.4s ease-in-out infinite; }
+@keyframes bbGround {
+  0%, 100% { transform: translateX(-50%) scale(1); opacity: 0.55; }
+  50%      { transform: translateX(-50%) scale(0.72); opacity: 0.3; }
+}
+
+.bunSvg { width: 100%; height: 100%; display: block; overflow: visible; }
+.bunBody { fill: var(--bun); stroke: var(--ink); stroke-width: 5; stroke-linejoin: round; }
+.bunShadow { fill: var(--bun-sh); opacity: 0.55; }
+.bunHi { fill: #fff; opacity: 0.55; }
+.bunKnob { fill: var(--bun); stroke: var(--ink); stroke-width: 4; stroke-linejoin: round; }
+
+/* ===== Khuôn mặt (overlay theo % giống bao-mascot) ===== */
+.face { position: absolute; inset: 0; }
+
+.eye {
+  position: absolute;
+  top: 47%;
+  width: 13%;
+  height: 15%;
+  background: var(--ink);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transform-origin: center;
+  animation: bbBlink 5.4s ease-in-out infinite;
+}
+.eye.l { left: 39%; }
+.eye.r { left: 61%; }
+.eye::after {
+  content: "";
+  position: absolute;
+  top: 14%;
+  left: 16%;
+  width: 38%;
+  height: 38%;
+  background: #fff;
+  border-radius: 50%;
+}
+@keyframes bbBlink {
+  0%, 90%, 100% { transform: translate(-50%, -50%) scaleY(1); }
+  94%           { transform: translate(-50%, -50%) scaleY(0.12); }
+}
+
+.cheek {
+  position: absolute;
+  top: 57%;
+  width: 14%;
+  aspect-ratio: 1;
+  background: radial-gradient(circle at 38% 35%, var(--rose), var(--rose-d));
+  border-radius: 50%;
+  opacity: 0.9;
+}
+.cheek.l { left: 21%; }
+.cheek.r { right: 21%; }
+
+/* miệng cười nhẹ (idle) */
+.smile {
+  position: absolute;
+  top: 59%;
+  left: 50%;
+  width: 15%;
+  height: 7%;
+  transform: translateX(-50%);
+  border-bottom: calc(var(--bao-size) * 0.025) solid var(--ink);
+  border-radius: 0 0 90px 90px;
+}
+/* miệng cười mở (cheer) */
+.mouthOpen {
+  position: absolute;
+  top: 56%;
+  left: 50%;
+  width: 13%;
+  height: 9%;
+  transform: translateX(-50%);
+  background: var(--ink);
+  border-radius: 0 0 100px 100px;
+  overflow: hidden;
+}
+.tongue {
+  position: absolute;
+  bottom: -32%;
+  left: 50%;
+  width: 62%;
+  aspect-ratio: 1;
+  transform: translateX(-50%);
+  background: var(--rose-d);
+  border-radius: 50%;
+}
+
+/* ===== Sparkles (chỉ ở pose cheer) ===== */
+.spark {
+  position: absolute;
+  width: 14%;
+  aspect-ratio: 1;
+  background: var(--spark);
+  clip-path: polygon(50% 0, 60% 40%, 100% 50%, 60% 60%, 50% 100%, 40% 60%, 0 50%, 40% 40%);
+  opacity: 0;
+  animation: bbTwinkle 2.4s ease-in-out infinite;
+}
+.s1 { top: 6%;  left: 2%;   animation-delay: 0s; }
+.s2 { top: 14%; right: 0%;  animation-delay: 0.7s; }
+.s3 { top: 52%; left: -4%;  width: 10%; animation-delay: 1.3s; }
+.s4 { top: 0%;  right: 20%; width: 11%; animation-delay: 1.9s; }
+@keyframes bbTwinkle {
+  0%, 100% { opacity: 0; transform: scale(0) rotate(0deg); }
+  50%      { opacity: 1; transform: scale(1) rotate(45deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bubble, .bob, .ground, .eye, .spark { animation: none; }
+}

@@ -6,6 +6,7 @@ import { CheckCircle2, XCircle, SkipForward } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
+import { BaoBuddy } from "@/components/marketing/bao-buddy";
 import { FlashcardPhase, type FlashResult } from "./flashcard-phase";
 import type { Exercise } from "@/types";
 
@@ -61,7 +62,7 @@ export function GrammarReview({ title, exercises, closeHref }: Props) {
   if (exercises.length === 0) {
     return (
       <div className="flex min-h-[60vh] flex-col items-center justify-center gap-4 text-center">
-        <div className="text-5xl">📭</div>
+        <BaoBuddy size={88} pose="idle" className="mx-auto" />
         <h2 className="text-xl font-bold">Chưa có bài tập để ôn</h2>
         <p className="max-w-sm text-sm text-muted-foreground">
           Phần này chưa có flashcard hay bài tập nào. Hãy quay lại sau nhé!
@@ -123,7 +124,12 @@ export function GrammarReview({ title, exercises, closeHref }: Props) {
     <div className="mx-auto flex min-h-[60vh] max-w-md items-center justify-center py-6">
       <Card className="w-full text-center">
         <CardContent className="space-y-5 px-6 pb-6 pt-8">
-          <div className="text-5xl">{scorePct >= 80 ? "🏆" : scorePct >= 50 ? "💪" : "📚"}</div>
+          <BaoBuddy
+            size={96}
+            pose={scorePct >= 80 ? "cheer" : "idle"}
+            message={scorePct >= 80 ? "棒极了!" : "继续加油"}
+            className="mx-auto"
+          />
           <h2 className="text-2xl font-bold">Kết quả ôn tập</h2>
           <p className="text-sm text-muted-foreground">{title}</p>
 

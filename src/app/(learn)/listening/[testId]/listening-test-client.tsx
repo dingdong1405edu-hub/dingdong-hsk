@@ -8,6 +8,7 @@ import { TestShell } from "@/components/learn/test-shell";
 import { ReadingPalette } from "@/components/learn/reading/reading-palette";
 import { QuestionCard } from "@/components/learn/reading/question-card";
 import { ResultsSummary } from "@/components/learn/reading/results-summary";
+import { BaoBuddy } from "@/components/marketing/bao-buddy";
 import { ReviewDialog } from "@/components/learn/reading/review-dialog";
 import { CharLookup, type LookupAnchor } from "@/components/learn/reading/char-lookup";
 import { AudioPlayer } from "@/components/learn/listening/audio-player";
@@ -363,6 +364,12 @@ export function ListeningTestClient({ test }: { test: ListeningTestData; userId:
             {/* Results (review) */}
             {submitted && result && (
               <>
+                <BaoBuddy
+                  size={84}
+                  pose={result.score >= 50 ? "cheer" : "idle"}
+                  message={result.score >= 50 ? "做得好!" : "加油!"}
+                  className="mx-auto"
+                />
                 <ResultsSummary
                   score={result.score}
                   correct={correctCount}

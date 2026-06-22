@@ -4,6 +4,7 @@ import { redirect } from "next/navigation";
 import { BookText } from "lucide-react";
 import { PracticeHub } from "@/components/learn/practice-hub";
 import { TestCard } from "@/components/learn/test-card";
+import { BaoBuddy } from "@/components/marketing/bao-buddy";
 
 const QTYPE_LABEL: Record<string, string> = {
   MCQ: "Trắc nghiệm",
@@ -88,7 +89,7 @@ export default async function ReadingPage() {
 function EmptyState() {
   return (
     <div className="rounded-2xl border border-dashed py-16 text-center text-muted-foreground">
-      <BookText className="mx-auto mb-3 h-12 w-12 opacity-30" />
+      <BaoBuddy size={72} pose="idle" className="mx-auto mb-3" />
       <p>Chưa có bài đọc nào. Quản trị viên sẽ thêm bài sớm!</p>
     </div>
   );

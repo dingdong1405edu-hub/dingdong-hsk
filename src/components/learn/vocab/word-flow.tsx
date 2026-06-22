@@ -13,6 +13,7 @@ import { saveVocabPositionAction } from "@/server/actions/vocab-review";
 import { WordCard } from "./word-card";
 import { StrokeQuiz } from "./stroke-quiz";
 import { FlashcardDeck } from "./flashcard-deck";
+import { BaoBuddy } from "@/components/marketing/bao-buddy";
 import type { VocabWordCard } from "@/types";
 
 interface Props {
@@ -71,7 +72,7 @@ export function WordFlow({
   if (words.length === 0) {
     return (
       <div className="flex min-h-[60vh] flex-col items-center justify-center gap-4 text-center">
-        <div className="text-5xl">📭</div>
+        <BaoBuddy size={96} pose="idle" className="mx-auto" />
         <h2 className="text-xl font-bold">Bài học chưa có từ vựng</h2>
         <p className="max-w-sm text-sm text-muted-foreground">
           Nội dung bài này đang được biên soạn. Hãy quay lại sau nhé!
@@ -156,7 +157,7 @@ export function WordFlow({
       <div className="flex min-h-[60vh] items-center justify-center">
         <Card className="w-full max-w-md text-center">
           <CardContent className="space-y-4 px-6 pb-6 pt-8">
-            <div className="text-6xl">🎉</div>
+            <BaoBuddy size={104} pose="cheer" message="做得好!" className="mx-auto" />
             <h2 className="text-2xl font-bold">Hoàn thành bài học!</h2>
             <p className="text-sm text-muted-foreground">
               Bạn đã học {words.length} từ trong bài “{lesson.title || "Từ vựng"}”.

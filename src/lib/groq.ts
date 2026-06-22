@@ -51,7 +51,10 @@ ${outline.trim()}`
 
   const response = await getGroq().chat.completions.create({
     model: "llama-3.3-70b-versatile",
-    max_tokens: 4096,
+    // Schema chấm khá lớn (4 tiêu chí + annotations trích nguyên văn + bản sửa
+    // toàn bài). Bài HSK5/6 dài dễ vượt 4096 → JSON bị cắt cụt, parse lỗi, mất
+    // bài chấm. Nâng trần để giảm nguy cơ truncation.
+    max_tokens: 8192,
     temperature: 0.3,
     response_format: { type: "json_object" },
     messages: [
@@ -95,11 +98,93 @@ Grade strictly and in detail per your rubric. Find EVERY meaningful error (quote
     ],
   });
 
-  const text = response.choices[0]?.message?.content ?? "";
-  const jsonMatch = text.match(/\{[\s\S]*\}/);
-  if (!jsonMatch) throw new Error("Invalid AI response");
+  const choice = response.choices[0];
+  const content = choice?.message?.content ?? "";
 
-  return JSON.parse(jsonMatch[0]) as WritingGradeResult;
+  let parsed: unknown;
+  try {
+    // response_format json_object → content thường đã là JSON object sạch.
+    parsed = JSON.parse(content);
+  } catch {
+    // Dự phòng: trích object JSON ngoài cùng (phòng khi có chữ thừa quanh JSON).
+    const match = content.match(/\{[\s\S]*\}/);
+    if (match) {
+      try {
+        parsed = JSON.parse(match[0]);
+      } catch {
+        parsed = null;
+      }
+    }
+    if (parsed == null) {
+      // Hay gặp khi finish_reason === "length" (JSON bị cắt cụt). Log để chẩn đoán.
+      console.error("Writing grade parse failed", {
+        finishReason: choice?.finish_reason,
+        contentLength: content.length,
+      });
+      throw new Error("Invalid AI response");
+    }
+  }
+
+  // Chuẩn hoá: không tin tưởng shape AS-IS từ AI. Bảo đảm criteria/score/mảng
+  // luôn hợp lệ để UI, PDF và phép tính XP không bao giờ crash / nhận NaN.
+  return coerceWritingResult(parsed);
+}
+
+function isRecord(v: unknown): v is Record<string, unknown> {
+  return typeof v === "object" && v !== null;
+}
+function asStr(v: unknown): string {
+  return typeof v === "string" ? v : "";
+}
+function asOptStr(v: unknown): string | undefined {
+  return typeof v === "string" && v.trim().length > 0 ? v : undefined;
+}
+function asStrArr(v: unknown): string[] {
+  return Array.isArray(v) ? v.filter((x): x is string => typeof x === "string" && x.trim().length > 0) : [];
+}
+function clampScore(v: unknown): number {
+  const n = typeof v === "number" ? v : typeof v === "string" ? Number(v) : NaN;
+  return Number.isFinite(n) ? Math.max(0, Math.min(100, Math.round(n))) : 0;
+}
+
+/** Ép kết quả chấm viết về đúng `WritingGradeResult` với mặc định an toàn. */
+function coerceWritingResult(raw: unknown): WritingGradeResult {
+  const r = isRecord(raw) ? raw : {};
+  const c = isRecord(r.criteria) ? r.criteria : {};
+  const g = isRecord(c.grammar) ? c.grammar : {};
+  const v = isRecord(c.vocabulary) ? c.vocabulary : {};
+  const co = isRecord(c.coherence) ? c.coherence : {};
+
+  const criteria: WritingGradeResult["criteria"] = {
+    grammar: { score: clampScore(g.score), feedback: asStr(g.feedback), errors: asStrArr(g.errors) },
+    vocabulary: { score: clampScore(v.score), feedback: asStr(v.feedback), suggestions: asStrArr(v.suggestions) },
+    coherence: { score: clampScore(co.score), feedback: asStr(co.feedback) },
+  };
+  if (isRecord(c.taskResponse)) {
+    criteria.taskResponse = { score: clampScore(c.taskResponse.score), feedback: asStr(c.taskResponse.feedback) };
+  }
+
+  const annotations = (Array.isArray(r.annotations) ? r.annotations : [])
+    .filter(isRecord)
+    .map((a) => ({
+      original: asStr(a.original),
+      type: asOptStr(a.type),
+      issue: asStr(a.issue),
+      correction: asStr(a.correction),
+      explanation: asStr(a.explanation),
+    }))
+    .filter((a) => a.original || a.correction || a.explanation);
+
+  return {
+    score: clampScore(r.score),
+    bandLabel: asOptStr(r.bandLabel),
+    criteria,
+    annotations,
+    strengths: asStrArr(r.strengths),
+    improvements: asStrArr(r.improvements),
+    correctedVersion: asStr(r.correctedVersion),
+    overallFeedback: asStr(r.overallFeedback),
+  };
 }
 
 export async function gradeSpeaking(params: {

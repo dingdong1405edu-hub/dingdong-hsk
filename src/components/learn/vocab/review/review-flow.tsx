@@ -1,8 +1,9 @@
 "use client";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, PartyPopper } from "lucide-react";
+import { X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { BaoBuddy } from "@/components/marketing/bao-buddy";
 import { Card, CardContent } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { countChineseChars } from "@/lib/utils";
@@ -211,7 +212,7 @@ export function ReviewFlow({ words, reviews, pool, title = "Ôn từ", onExit }:
   if (words.length === 0) {
     return (
       <div className="flex min-h-[60vh] flex-col items-center justify-center gap-4 text-center">
-        <div className="text-5xl">🗂️</div>
+        <BaoBuddy size={88} pose="idle" className="mx-auto" />
         <h2 className="text-xl font-bold">Chưa có từ để ôn</h2>
         <Button variant="outline" onClick={onExit}>
           Quay lại
@@ -226,7 +227,7 @@ export function ReviewFlow({ words, reviews, pool, title = "Ôn từ", onExit }:
       <div className="flex min-h-[60vh] items-center justify-center">
         <Card className="w-full max-w-md text-center">
           <CardContent className="space-y-4 px-6 pb-6 pt-8">
-            <PartyPopper className="mx-auto h-12 w-12 text-yellow-500" />
+            <BaoBuddy size={104} pose="cheer" message="加油!" className="mx-auto" />
             <h2 className="text-2xl font-bold">Hoàn thành phiên ôn!</h2>
             <p className="text-sm text-muted-foreground">
               Đã ôn {total} từ — lịch ôn kế tiếp đã được cập nhật theo trí nhớ của bạn.

@@ -4,6 +4,7 @@ import { redirect } from "next/navigation";
 import { SpellCheck } from "lucide-react";
 import { PracticeHub } from "@/components/learn/practice-hub";
 import { TestCard } from "@/components/learn/test-card";
+import { BaoBuddy } from "@/components/marketing/bao-buddy";
 
 export default async function GrammarPage() {
   const session = await auth();
@@ -74,7 +75,7 @@ export default async function GrammarPage() {
 function EmptyState() {
   return (
     <div className="rounded-2xl border border-dashed py-16 text-center text-muted-foreground">
-      <SpellCheck className="mx-auto mb-3 h-12 w-12 opacity-30" />
+      <BaoBuddy size={72} pose="idle" className="mx-auto mb-3" />
       <p>Chưa có đơn vị ngữ pháp nào.</p>
     </div>
   );

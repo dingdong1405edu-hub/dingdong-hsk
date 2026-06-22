@@ -29,6 +29,7 @@ enum Skill {
   VOCAB
   GRAMMAR
   HANZI
+  MOCK // bài thi thử trọn bộ (MockExam) — dùng cho Attempt.skill
 }
 
 enum QuestionType {
@@ -56,35 +57,35 @@ enum MaterialCategory {
 }
 
 model User {
-  id            String    @id @default(cuid())
-  email         String    @unique
-  name          String?
-  image         String?
-  emailVerified DateTime?
-  passwordHash  String?
-  role          Role      @default(LEARNER)
-  xp            Int       @default(0)
-  hearts        Int       @default(5)
-  heartsUpdatedAt DateTime?            // mốc tính hồi tim (regen) — null = đang đầy
-  streakDays    Int       @default(0)
-  hskLevel      HSKLevel  @default(HSK1)
-  lastActiveAt  DateTime?
-  createdAt     DateTime  @default(now())
-  updatedAt     DateTime  @updatedAt @default(now())
-  banned        Boolean   @default(false)
+  id              String    @id @default(cuid())
+  email           String    @unique
+  name            String?
+  image           String?
+  emailVerified   DateTime?
+  passwordHash    String?
+  role            Role      @default(LEARNER)
+  xp              Int       @default(0)
+  hearts          Int       @default(5)
+  heartsUpdatedAt DateTime? // mốc tính hồi tim (regen) — null = đang đầy
+  streakDays      Int       @default(0)
+  hskLevel        HSKLevel  @default(HSK1)
+  lastActiveAt    DateTime?
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @default(now()) @updatedAt
+  banned          Boolean   @default(false)
 
-  accounts         Account[]
-  sessions         Session[]
-  vocabProgress    VocabProgress[]
-  vocabReviews     VocabReview[]
-  grammarProgress  GrammarProgress[]
-  hanziProgress    HanziProgress[]
-  roadmapProgress  RoadmapProgress[]
-  attempts         Attempt[]
-  payments         Payment[]
-  subscriptions    Subscription[]
-  wordReports      WordReport[]
-  savedWords       SavedWord[]
+  accounts        Account[]
+  sessions        Session[]
+  vocabProgress   VocabProgress[]
+  vocabReviews    VocabReview[]
+  grammarProgress GrammarProgress[]
+  hanziProgress   HanziProgress[]
+  roadmapProgress RoadmapProgress[]
+  attempts        Attempt[]
+  payments        Payment[]
+  subscriptions   Subscription[]
+  wordReports     WordReport[]
+  savedWords      SavedWord[]
 }
 
 model Account {
@@ -123,13 +124,13 @@ model VerificationToken {
 }
 
 model VocabUnit {
-  id        String      @id @default(cuid())
+  id        String        @id @default(cuid())
   title     String
   titleZh   String
   hskLevel  HSKLevel
   order     Int
   imageUrl  String?
-  published Boolean     @default(true) // false = bản nháp (ẩn khỏi web học viên)
+  published Boolean       @default(true) // false = bản nháp (ẩn khỏi web học viên)
   lessons   VocabLesson[]
 
   @@index([hskLevel, order])
@@ -144,8 +145,8 @@ model VocabLesson {
   exercises Json
   published Boolean   @default(true) // false = bản nháp (ẩn khỏi web học viên)
 
-  progress  VocabProgress[]
-  words     VocabWord[]
+  progress VocabProgress[]
+  words    VocabWord[]
 
   @@index([unitId, order])
 }
@@ -165,27 +166,27 @@ model VocabWord {
   examples  Json        @default("[]")
   audioUrl  String?
   createdAt DateTime    @default(now())
-  updatedAt DateTime    @updatedAt @default(now())
+  updatedAt DateTime    @default(now()) @updatedAt
 
-  reviews   VocabReview[]
-  reports   WordReport[]
+  reviews VocabReview[]
+  reports WordReport[]
 
   @@index([lessonId, order])
 }
 
 model VocabProgress {
-  id        String      @id @default(cuid())
-  userId    String
-  lessonId  String
-  completed Boolean     @default(false)
-  xpEarned  Int         @default(0)
+  id            String   @id @default(cuid())
+  userId        String
+  lessonId      String
+  completed     Boolean  @default(false)
+  xpEarned      Int      @default(0)
   // Vị trí đang học dở (cho nút "Học tiếp" — resume). lastWordIndex = chỉ số từ
   // hiện tại trong bài, lastStep = bước trong từ đó (0 xem thẻ · 1 tô nét · 2 tự
   // viết). Reset về 0 khi hoàn thành để lần vào sau là "Học lại" từ đầu.
-  lastWordIndex Int     @default(0)
-  lastStep      Int     @default(0)
-  createdAt DateTime    @default(now())
-  updatedAt DateTime    @updatedAt @default(now())
+  lastWordIndex Int      @default(0)
+  lastStep      Int      @default(0)
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @default(now()) @updatedAt
 
   user   User        @relation(fields: [userId], references: [id], onDelete: Cascade)
   lesson VocabLesson @relation(fields: [lessonId], references: [id], onDelete: Cascade)
@@ -201,14 +202,14 @@ model VocabReview {
   id             String    @id @default(cuid())
   userId         String
   wordId         String
-  repetitions    Int       @default(0)   // số lần trả lời đúng liên tiếp
-  intervalDays   Int       @default(0)   // khoảng cách hiện tại (ngày)
+  repetitions    Int       @default(0) // số lần trả lời đúng liên tiếp
+  intervalDays   Int       @default(0) // khoảng cách hiện tại (ngày)
   ease           Float     @default(2.5) // hệ số dễ (easiness factor)
-  lapses         Int       @default(0)   // số lần quên (trả lời sai)
+  lapses         Int       @default(0) // số lần quên (trả lời sai)
   dueAt          DateTime  @default(now())
   lastReviewedAt DateTime?
   createdAt      DateTime  @default(now())
-  updatedAt      DateTime  @updatedAt @default(now())
+  updatedAt      DateTime  @default(now()) @updatedAt
 
   user User      @relation(fields: [userId], references: [id], onDelete: Cascade)
   word VocabWord @relation(fields: [wordId], references: [id], onDelete: Cascade)
@@ -239,19 +240,19 @@ model GrammarLesson {
   exercises Json
   published Boolean     @default(true) // false = bản nháp (ẩn khỏi web học viên)
 
-  progress  GrammarProgress[]
+  progress GrammarProgress[]
 
   @@index([unitId, order])
 }
 
 model GrammarProgress {
-  id        String        @id @default(cuid())
+  id        String   @id @default(cuid())
   userId    String
   lessonId  String
-  completed Boolean       @default(false)
-  xpEarned  Int           @default(0)
-  createdAt DateTime      @default(now())
-  updatedAt DateTime      @updatedAt @default(now())
+  completed Boolean  @default(false)
+  xpEarned  Int      @default(0)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now()) @updatedAt
 
   user   User          @relation(fields: [userId], references: [id], onDelete: Cascade)
   lesson GrammarLesson @relation(fields: [lessonId], references: [id], onDelete: Cascade)
@@ -260,8 +261,8 @@ model GrammarProgress {
 }
 
 model HanziCharacter {
-  id          String  @id @default(cuid())
-  character   String  @unique
+  id          String   @id @default(cuid())
+  character   String   @unique
   pinyin      String
   tone        Int
   meaning     String
@@ -270,7 +271,7 @@ model HanziCharacter {
   strokeOrder Json
   examples    Json
   imageUrl    String?
-  order       Int      @default(0)    // thứ tự hiển thị trong cấp HSK (đổi chỗ ở admin)
+  order       Int      @default(0) // thứ tự hiển thị trong cấp HSK (đổi chỗ ở admin)
   published   Boolean  @default(true) // false = bản nháp (ẩn khỏi web học viên)
 
   progress HanziProgress[]
@@ -279,13 +280,13 @@ model HanziCharacter {
 }
 
 model HanziProgress {
-  id          String         @id @default(cuid())
+  id          String   @id @default(cuid())
   userId      String
   characterId String
-  mastered    Boolean        @default(false)
-  attempts    Int            @default(0)
-  createdAt   DateTime       @default(now())
-  updatedAt   DateTime       @updatedAt @default(now())
+  mastered    Boolean  @default(false)
+  attempts    Int      @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @default(now()) @updatedAt
 
   user      User           @relation(fields: [userId], references: [id], onDelete: Cascade)
   character HanziCharacter @relation(fields: [characterId], references: [id], onDelete: Cascade)
@@ -302,10 +303,10 @@ model ReadingTest {
   passagePinyin String?  @db.Text
   imageUrl      String?
   timeLimit     Int
-  order         Int      @default(0)    // thứ tự hiển thị trong cấp HSK (đổi chỗ ở admin)
+  order         Int      @default(0) // thứ tự hiển thị trong cấp HSK (đổi chỗ ở admin)
   published     Boolean  @default(true) // false = bản nháp (ẩn khỏi web học viên)
   createdAt     DateTime @default(now())
-  updatedAt     DateTime @updatedAt @default(now())
+  updatedAt     DateTime @default(now()) @updatedAt
 
   questions Question[]
 
@@ -320,10 +321,10 @@ model ListeningTest {
   transcript String?  @db.Text
   imageUrl   String?
   timeLimit  Int      @default(300)
-  order      Int      @default(0)    // thứ tự hiển thị trong cấp HSK (đổi chỗ ở admin)
+  order      Int      @default(0) // thứ tự hiển thị trong cấp HSK (đổi chỗ ở admin)
   published  Boolean  @default(true) // false = bản nháp (ẩn khỏi web học viên)
   createdAt  DateTime @default(now())
-  updatedAt  DateTime @updatedAt @default(now())
+  updatedAt  DateTime @default(now()) @updatedAt
 
   questions Question[]
 
@@ -331,23 +332,90 @@ model ListeningTest {
 }
 
 model Question {
-  id           String       @id @default(cuid())
-  type         QuestionType
-  prompt       String       @db.Text
-  promptPinyin String?      @db.Text
-  options      Json?
-  correctAnswer Json
-  explanation  String?      @db.Text
+  id              String       @id @default(cuid())
+  type            QuestionType
+  prompt          String       @db.Text
+  promptPinyin    String?      @db.Text
+  options         Json?
+  correctAnswer   Json
+  explanation     String?      @db.Text
   // Câu/đoạn trích trong bài đọc chứng minh đáp án (Groq sinh sẵn khi admin thêm
   // câu hỏi) — dùng để "chỉ cho học viên đáp án lấy ở đâu" khi chữa bài.
-  supportingQuote String?    @db.Text
-  order        Int          @default(0)
+  supportingQuote String?      @db.Text
+  order           Int          @default(0)
 
   readingId   String?
   listeningId String?
+  examPartId  String?
 
   reading   ReadingTest?   @relation(fields: [readingId], references: [id], onDelete: Cascade)
   listening ListeningTest? @relation(fields: [listeningId], references: [id], onDelete: Cascade)
+  examPart  MockExamPart?  @relation(fields: [examPartId], references: [id], onDelete: Cascade)
+
+  @@index([examPartId, order])
+}
+
+// ===================================================================
+//  THI THỬ (Mock exam) — đề HSK trọn bộ, đúng format máy thật.
+//  MockExam (1 đề/cấp) → MockExamSection (Nghe/Đọc/Viết) →
+//  MockExamPart (第一部分...) → Question (dùng lại model Question).
+//  Một tiểu phần là DANH SÁCH câu hỏi auto-chấm (Nghe/Đọc, và 连词成句/
+//  看拼音写汉字 của Viết dùng FILL_BLANK), HOẶC một ô viết tự luận
+//  (writingPrompt ≠ null) chấm bằng AI. Bài thi lưu 1 Attempt (skill = MOCK).
+// ===================================================================
+
+model MockExam {
+  id          String   @id @default(cuid())
+  title       String // "Đề thi thử HSK4 — Đề 1"
+  titleZh     String?
+  hskLevel    HSKLevel
+  description String?  @db.Text
+  totalTime   Int? // tổng thời gian (giây); null = cộng dồn từ các phần
+  order       Int      @default(0) // thứ tự hiển thị trong cấp HSK
+  published   Boolean  @default(false) // false = bản nháp (ẩn khỏi web học viên)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @default(now()) @updatedAt
+
+  sections MockExamSection[]
+
+  @@index([hskLevel, order])
+}
+
+model MockExamSection {
+  id           String   @id @default(cuid())
+  examId       String
+  exam         MockExam @relation(fields: [examId], references: [id], onDelete: Cascade)
+  skill        Skill // LISTENING | READING | WRITING
+  order        Int      @default(0)
+  title        String   @default("") // "一、听力" (suy từ skill nếu trống)
+  instructions String?  @db.Text
+
+  parts MockExamPart[]
+
+  @@index([examId, order])
+}
+
+model MockExamPart {
+  id              String          @id @default(cuid())
+  sectionId       String
+  section         MockExamSection @relation(fields: [sectionId], references: [id], onDelete: Cascade)
+  order           Int             @default(0)
+  title           String          @default("") // "第一部分"
+  instructions    String?         @db.Text // hướng dẫn / ví dụ 例如
+  imageUrl        String? // ảnh dùng chung cho tiểu phần (câu hỏi nhìn hình)
+  // Đọc hiểu:
+  passage         String?         @db.Text
+  passagePinyin   String?         @db.Text
+  // Nghe hiểu:
+  audioUrl        String?
+  transcript      String?         @db.Text
+  // Viết tự luận (HSK5/6): nếu set => tiểu phần là 1 ô viết, chấm bằng AI
+  writingPrompt   String?         @db.Text
+  writingMinChars Int?
+
+  questions Question[]
+
+  @@index([sectionId, order])
 }
 
 model WritingTask {
@@ -362,10 +430,10 @@ model WritingTask {
   minChars  Int
   timeLimit Int
   hskLevel  HSKLevel
-  order     Int             @default(0)    // thứ tự hiển thị trong cấp HSK (đổi chỗ ở admin)
+  order     Int             @default(0) // thứ tự hiển thị trong cấp HSK (đổi chỗ ở admin)
   published Boolean         @default(true) // false = bản nháp (ẩn khỏi web học viên)
   createdAt DateTime        @default(now())
-  updatedAt DateTime        @updatedAt @default(now())
+  updatedAt DateTime        @default(now()) @updatedAt
 
   @@index([hskLevel, order])
 }
@@ -378,10 +446,10 @@ model SpeakingSet {
   part1Sentences Json
   part2Passage   Json
   part3Questions Json
-  order          Int      @default(0)    // thứ tự hiển thị trong cấp HSK (đổi chỗ ở admin)
+  order          Int      @default(0) // thứ tự hiển thị trong cấp HSK (đổi chỗ ở admin)
   published      Boolean  @default(true) // false = bản nháp (ẩn khỏi web học viên)
   createdAt      DateTime @default(now())
-  updatedAt      DateTime @updatedAt @default(now())
+  updatedAt      DateTime @default(now()) @updatedAt
 
   @@index([hskLevel, order])
 }
@@ -403,7 +471,7 @@ model Material {
   order       Int              @default(0)
   published   Boolean          @default(true)
   createdAt   DateTime         @default(now())
-  updatedAt   DateTime         @updatedAt @default(now())
+  updatedAt   DateTime         @default(now()) @updatedAt
 
   @@index([hskLevel, category, order])
 }
@@ -444,7 +512,7 @@ model Course {
   imageUrl    String?
   published   Boolean  @default(true)
   createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt @default(now())
+  updatedAt   DateTime @default(now()) @updatedAt
 
   lessons RoadmapLesson[]
 
@@ -466,7 +534,7 @@ model RoadmapLesson {
   chapterOrder Int      @default(1)
   xpReward     Int      @default(20)
   createdAt    DateTime @default(now())
-  updatedAt    DateTime @updatedAt @default(now())
+  updatedAt    DateTime @default(now()) @updatedAt
 
   sections RoadmapSection[]
   progress RoadmapProgress[]
@@ -479,17 +547,17 @@ model RoadmapLesson {
 /// `published = false` => "Sắp có". `content` (JSON) hoặc `refId` (trỏ tới nội dung
 /// có sẵn: VocabLesson / ReadingTest / ...) được điền sau.
 model RoadmapSection {
-  id        String   @id @default(cuid())
+  id        String        @id @default(cuid())
   lessonId  String
   lesson    RoadmapLesson @relation(fields: [lessonId], references: [id], onDelete: Cascade)
   skill     Skill
-  order     Int      @default(0)
-  title     String   @default("")
+  order     Int           @default(0)
+  title     String        @default("")
   content   Json?
   refId     String?
-  published Boolean  @default(false)
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt @default(now())
+  published Boolean       @default(false)
+  createdAt DateTime      @default(now())
+  updatedAt DateTime      @default(now()) @updatedAt
 
   @@unique([lessonId, skill])
   @@index([lessonId, order])
@@ -498,18 +566,18 @@ model RoadmapSection {
 /// Tiến độ của người học theo từng bài lộ trình.
 /// `skillsDone` = mảng tên Skill đã hoàn thành (để mở khoá dần / tính %).
 model RoadmapProgress {
-  id          String    @id @default(cuid())
+  id          String        @id @default(cuid())
   userId      String
-  user        User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  user        User          @relation(fields: [userId], references: [id], onDelete: Cascade)
   lessonId    String
   lesson      RoadmapLesson @relation(fields: [lessonId], references: [id], onDelete: Cascade)
-  completed   Boolean   @default(false)
-  skillsDone  Json      @default("[]")
+  completed   Boolean       @default(false)
+  skillsDone  Json          @default("[]")
   score       Float?
-  xpEarned    Int       @default(0)
+  xpEarned    Int           @default(0)
   completedAt DateTime?
-  createdAt   DateTime  @default(now())
-  updatedAt   DateTime  @updatedAt @default(now())
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @default(now()) @updatedAt
 
   @@unique([userId, lessonId])
   @@index([userId])
@@ -544,7 +612,7 @@ model Payment {
   paidAt        DateTime?
   rawWebhook    Json?
   createdAt     DateTime      @default(now())
-  updatedAt     DateTime      @updatedAt @default(now())
+  updatedAt     DateTime      @default(now()) @updatedAt
 
   user User? @relation(fields: [userId], references: [id], onDelete: SetNull)
 
@@ -554,7 +622,7 @@ model Payment {
 
 enum SubscriptionType {
   FREESTYLE // Gói tự do: mọi tính năng ngoài lộ trình + tim không giới hạn
-  ROADMAP   // Gói lộ trình theo cấp HSK (hskLevel)
+  ROADMAP // Gói lộ trình theo cấp HSK (hskLevel)
 }
 
 /// Quyền lợi đã mua của người học. Một lần mua có thể tạo nhiều Subscription
@@ -566,10 +634,10 @@ model Subscription {
   userId    String
   user      User             @relation(fields: [userId], references: [id], onDelete: Cascade)
   type      SubscriptionType
-  hskLevel  HSKLevel?        // chỉ dùng cho ROADMAP
+  hskLevel  HSKLevel? // chỉ dùng cho ROADMAP
   startedAt DateTime         @default(now())
   expiresAt DateTime
-  paymentId String?          // Payment.id đã kích hoạt quyền này (idempotent)
+  paymentId String? // Payment.id đã kích hoạt quyền này (idempotent)
   createdAt DateTime         @default(now())
 
   @@index([userId, expiresAt])
@@ -577,14 +645,14 @@ model Subscription {
 }
 
 enum WordReportKind {
-  ERROR    // Báo lỗi: từ/nghĩa/pinyin bị sai
-  COMMENT  // Bình luận / góp ý
+  ERROR // Báo lỗi: từ/nghĩa/pinyin bị sai
+  COMMENT // Bình luận / góp ý
 }
 
 enum WordReportStatus {
-  PENDING   // Chờ admin duyệt — chỉ chủ bài thấy
-  APPROVED  // Đã duyệt — hiển thị công khai cho mọi học viên
-  REJECTED  // Bị từ chối — ẩn
+  PENDING // Chờ admin duyệt — chỉ chủ bài thấy
+  APPROVED // Đã duyệt — hiển thị công khai cho mọi học viên
+  REJECTED // Bị từ chối — ẩn
 }
 
 /// Phản ánh / bình luận của học viên trên một từ vựng. Admin nhận ở
@@ -600,7 +668,7 @@ model WordReport {
   status    WordReportStatus @default(PENDING)
   adminNote String?          @db.Text
   createdAt DateTime         @default(now())
-  updatedAt DateTime         @updatedAt @default(now())
+  updatedAt DateTime         @default(now()) @updatedAt
 
   user User      @relation(fields: [userId], references: [id], onDelete: Cascade)
   word VocabWord @relation(fields: [wordId], references: [id], onDelete: Cascade)
@@ -615,11 +683,11 @@ model WordReport {
 model SavedWord {
   id        String   @id @default(cuid())
   userId    String
-  hanzi     String   // chữ Hán đã lưu (1 ký tự hoặc cụm)
+  hanzi     String // chữ Hán đã lưu (1 ký tự hoặc cụm)
   pinyin    String
   meaning   String   @db.Text
   hskLevel  String?
-  source    String?  // ngữ cảnh: "reading:<id>" / "listening:<id>" ...
+  source    String? // ngữ cảnh: "reading:<id>" / "listening:<id>" ...
   createdAt DateTime @default(now())
 
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)

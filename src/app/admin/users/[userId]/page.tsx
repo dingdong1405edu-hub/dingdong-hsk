@@ -24,6 +24,7 @@ const SKILL_LABEL: Record<Skill, string> = {
   VOCAB: "Từ vựng",
   GRAMMAR: "Ngữ pháp",
   HANZI: "Chữ Hán",
+  MOCK: "Thi thử",
 };
 
 const PAYMENT_STATUS_LABEL: Record<string, string> = {
@@ -45,14 +46,14 @@ async function resolveAttemptTitles(
   attempts: { skill: Skill; refId: string }[]
 ): Promise<Map<string, string>> {
   const bySkill: Record<Skill, string[]> = {
-    READING: [], LISTENING: [], WRITING: [], SPEAKING: [], VOCAB: [], GRAMMAR: [], HANZI: [],
+    READING: [], LISTENING: [], WRITING: [], SPEAKING: [], VOCAB: [], GRAMMAR: [], HANZI: [], MOCK: [],
   };
   for (const a of attempts) bySkill[a.skill].push(a.refId);
 
   const map = new Map<string, string>();
   const key = (skill: Skill, id: string) => `${skill}|${id}`;
 
-  const [readings, listenings, writings, speakings, vlessons, glessons, hanzis] = await Promise.all([
+  const [readings, listenings, writings, speakings, vlessons, glessons, hanzis, mocks] = await Promise.all([
     bySkill.READING.length
       ? db.readingTest.findMany({ where: { id: { in: bySkill.READING } }, select: { id: true, title: true } })
       : [],
@@ -74,6 +75,9 @@ async function resolveAttemptTitles(
     bySkill.HANZI.length
       ? db.hanziCharacter.findMany({ where: { id: { in: bySkill.HANZI } }, select: { id: true, character: true, meaning: true } })
       : [],
+    bySkill.MOCK.length
+      ? db.mockExam.findMany({ where: { id: { in: bySkill.MOCK } }, select: { id: true, title: true } })
+      : [],
   ]);
 
   readings.forEach((r) => map.set(key(Skill.READING, r.id), r.title));
@@ -83,6 +87,7 @@ async function resolveAttemptTitles(
   vlessons.forEach((r) => map.set(key(Skill.VOCAB, r.id), r.title || "Bài từ vựng"));
   glessons.forEach((r) => map.set(key(Skill.GRAMMAR, r.id), r.title || "Bài ngữ pháp"));
   hanzis.forEach((r) => map.set(key(Skill.HANZI, r.id), `${r.character} (${r.meaning})`));
+  mocks.forEach((r) => map.set(key(Skill.MOCK, r.id), r.title));
 
   return map;
 }

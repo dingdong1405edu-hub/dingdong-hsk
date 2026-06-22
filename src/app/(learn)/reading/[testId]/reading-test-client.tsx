@@ -22,6 +22,7 @@ import { ReadingPalette } from "@/components/learn/reading/reading-palette";
 import { SettingsDialog } from "@/components/learn/reading/settings-dialog";
 import { ReviewDialog } from "@/components/learn/reading/review-dialog";
 import { ResultsSummary } from "@/components/learn/reading/results-summary";
+import { BaoBuddy } from "@/components/marketing/bao-buddy";
 import { CharLookup, type LookupAnchor } from "@/components/learn/reading/char-lookup";
 import { SelectionLookup, type SelectionAnchor } from "@/components/learn/reading/selection-lookup";
 import { useReadingSettings } from "@/components/learn/reading/use-reading-settings";
@@ -280,6 +281,12 @@ export function ReadingTestClient({ test }: { test: ReadingTestData; userId: str
                 <div className="min-h-0 flex-1 space-y-3 overflow-y-auto px-4 py-4">
                   {submitted && result && (
                     <>
+                      <BaoBuddy
+                        size={84}
+                        pose={result.score >= 50 ? "cheer" : "idle"}
+                        message={result.score >= 50 ? "做得好!" : "加油!"}
+                        className="mx-auto"
+                      />
                       <ResultsSummary
                         score={result.score}
                         correct={correctCount}
