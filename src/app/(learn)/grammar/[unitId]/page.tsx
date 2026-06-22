@@ -4,8 +4,8 @@ import { notFound, redirect } from "next/navigation";
 import Link from "next/link";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { CheckCircle2, Repeat, BookOpen, FileDown, Lock } from "lucide-react";
-import { grammarItemCount } from "@/lib/grammar";
+import { CheckCircle2, Repeat, BookOpen, FileDown, Lock, ClipboardCheck } from "lucide-react";
+import { grammarItemCount, grammarTestCount } from "@/lib/grammar";
 
 interface Props {
   params: Promise<{ unitId: string }>;
@@ -53,6 +53,7 @@ export default async function GrammarUnitPage({ params }: Props) {
           // "Học" label: Bắt đầu (mới) · Học tiếp (đang dở) · Học lại (đã xong).
           const studyLabel = done ? "Học lại" : started ? "Học tiếp" : "Bắt đầu";
           const base = `/grammar/${unitId}/lesson/${lesson.id}`;
+          const hasTest = grammarTestCount(lesson.exercises) > 0;
           return (
             <Card key={lesson.id} className={!available ? "opacity-60" : ""}>
               <CardContent className="space-y-3 p-4">
@@ -88,6 +89,13 @@ export default async function GrammarUnitPage({ params }: Props) {
                         <Repeat className="h-4 w-4" /> Ôn tập
                       </Button>
                     </Link>
+                    {hasTest && (
+                      <Link href={`${base}/test`}>
+                        <Button size="sm" variant="outline" className="gap-1.5 border-amber-300 text-amber-700">
+                          <ClipboardCheck className="h-4 w-4" /> Kiểm tra
+                        </Button>
+                      </Link>
+                    )}
                     <Link href={`/grammar-pdf/${unitId}/${lesson.id}`}>
                       <Button size="sm" variant="ghost" className="gap-1.5 text-muted-foreground">
                         <FileDown className="h-4 w-4" /> Tải PDF

@@ -23,6 +23,7 @@ import { SettingsDialog } from "@/components/learn/reading/settings-dialog";
 import { ReviewDialog } from "@/components/learn/reading/review-dialog";
 import { ResultsSummary } from "@/components/learn/reading/results-summary";
 import { CharLookup, type LookupAnchor } from "@/components/learn/reading/char-lookup";
+import { SelectionLookup, type SelectionAnchor } from "@/components/learn/reading/selection-lookup";
 import { useReadingSettings } from "@/components/learn/reading/use-reading-settings";
 import type { ReadingTestData } from "@/components/learn/reading/types";
 
@@ -46,6 +47,7 @@ export function ReadingTestClient({ test }: { test: ReadingTestData; userId: str
   const [reviewOpen, setReviewOpen] = useState(false);
   const [reviewFilter, setReviewFilter] = useState<ReviewFilter>("all");
   const [lookup, setLookup] = useState<LookupAnchor | null>(null);
+  const [selection, setSelection] = useState<SelectionAnchor | null>(null);
   const [restored, setRestored] = useState(false);
   const [pendingScroll, setPendingScroll] = useState<number | null>(null);
 
@@ -227,7 +229,14 @@ export function ReadingTestClient({ test }: { test: ReadingTestData; userId: str
                 test={test}
                 showPinyin={showPinyin}
                 settings={settings}
-                onCharClick={(char, pinyin, e) => setLookup({ char, pinyin, x: e.clientX, y: e.clientY })}
+                onCharClick={(char, pinyin, e) => {
+                  setSelection(null);
+                  setLookup({ char, pinyin, x: e.clientX, y: e.clientY });
+                }}
+                onSelectText={(text, x, y) => {
+                  setLookup(null);
+                  setSelection({ text, x, y });
+                }}
               />
             </div>
 
@@ -334,7 +343,10 @@ export function ReadingTestClient({ test }: { test: ReadingTestData; userId: str
         onConfirm={handleSubmit}
         submitting={submitting}
       />
-      {lookup && <CharLookup anchor={lookup} onClose={() => setLookup(null)} />}
+      {lookup && <CharLookup anchor={lookup} onClose={() => setLookup(null)} source={`reading:${test.id}`} />}
+      {selection && (
+        <SelectionLookup anchor={selection} onClose={() => setSelection(null)} source={`reading:${test.id}`} />
+      )}
     </>
   );
 }

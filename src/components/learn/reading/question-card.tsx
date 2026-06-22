@@ -181,8 +181,14 @@ export function QuestionCard({
         </p>
       )}
 
+      {submitted && q.supportingQuote && (
+        <div className="mt-3 rounded-lg border border-emerald-200 bg-emerald-50 p-2.5 text-xs text-emerald-800">
+          <span className="font-semibold">📍 Đáp án nằm ở đoạn:</span>{" "}
+          <span className="font-chinese">{q.supportingQuote}</span>
+        </div>
+      )}
       {submitted && q.explanation && (
-        <div className="mt-3 rounded-lg bg-muted p-2.5 text-xs text-muted-foreground">💡 {q.explanation}</div>
+        <div className="mt-2 rounded-lg bg-muted p-2.5 text-xs text-muted-foreground">💡 {q.explanation}</div>
       )}
     </div>
   );

@@ -16,6 +16,7 @@ import {
   Mic,
   GraduationCap,
   Library,
+  BookMarked,
   Users2,
   UserRound,
   Crown,
@@ -61,6 +62,7 @@ export const NAV_GROUPS: NavGroup[] = [
     items: [
       { href: "/exam", label: "Thi thử", icon: GraduationCap },
       { href: "/materials", label: "Tài liệu", icon: Library },
+      { href: "/so-tu", label: "Sổ từ", icon: BookMarked },
     ],
   },
   {

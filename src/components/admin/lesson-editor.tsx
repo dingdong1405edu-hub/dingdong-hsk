@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { AlertTriangle, CheckCircle2, Save } from "lucide-react";
+import { AlertTriangle, CheckCircle2, Save, Info } from "lucide-react";
 
 const VOCAB_TEMPLATE = `[
   {
@@ -28,7 +28,11 @@ const VOCAB_TEMPLATE = `[
 
 // Grammar lessons use the v3 object: an ordered list of "sections" (mỗi phần =
 // lý thuyết + bài tập của chính phần đó, học xong là luyện tập ngay) rồi tới
-// "test" (bài kiểm tra tổng hợp cuối bài, đạt ≥ passThreshold% mới qua).
+// "test" (bài kiểm tra tổng hợp — TÁCH RIÊNG, đạt ≥ 80% mới được XP).
+//
+// CHUẨN: mỗi điểm ngữ pháp (section) cần ĐỦ 8 MINIGAME — 2× chọn từ (fill_blank)
+// + 2× sắp xếp câu (sentence_order) + 2× dịch Việt→Trung (translate vi_to_zh)
+// + 2× dịch Trung→Việt (translate zh_to_vi).
 const GRAMMAR_TEMPLATE = `{
   "version": 3,
   "sections": [
@@ -48,53 +52,23 @@ const GRAMMAR_TEMPLATE = `{
         }
       ],
       "exercises": [
-        {
-          "type": "fill_blank",
-          "sentence": "我___学生。",
-          "blank": "是",
-          "options": ["是", "有", "在", "叫"],
-          "hint": "Động từ 'là'"
-        },
-        {
-          "type": "answer_question",
-          "question": "你是学生吗？",
-          "questionPinyin": "nǐ shì xuésheng ma?",
-          "accept": ["我是学生", "是", "我是"],
-          "sampleAnswer": "我是学生。"
-        }
-      ]
-    },
-    {
-      "id": "shi-2",
-      "title": "Lưu ý: 是 đi với danh từ",
-      "structure": "A + 是 + danh từ (KHÔNG dùng với tính từ)",
-      "explanation": "是 chỉ nối với danh từ. 'rất vui' dùng 很 chứ không dùng 是.",
-      "examples": [],
-      "exercises": [
-        {
-          "type": "type_sentence",
-          "prompt": "Dịch sang tiếng Trung: Cô ấy là bác sĩ.",
-          "accept": ["她是医生"],
-          "meaning": "Cô ấy là bác sĩ."
-        }
+        { "type": "fill_blank", "sentence": "我___学生。", "blank": "是", "options": ["是", "有", "在", "叫"], "hint": "Động từ 'là'" },
+        { "type": "fill_blank", "sentence": "他___我的老师。", "blank": "是", "options": ["是", "很", "也", "不"] },
+        { "type": "sentence_order", "words": ["学生", "是", "我"], "answer": "我是学生", "meaning": "Tôi là học sinh." },
+        { "type": "sentence_order", "words": ["老师", "是", "他"], "answer": "他是老师", "meaning": "Anh ấy là giáo viên." },
+        { "type": "translate", "direction": "vi_to_zh", "prompt": "Tôi là học sinh.", "answer": "我是学生", "options": ["我是学生", "我有学生", "我在学生", "我叫学生"] },
+        { "type": "translate", "direction": "vi_to_zh", "prompt": "Cô ấy là bác sĩ.", "answer": "她是医生", "options": ["她是医生", "她很医生", "她也医生", "她不医生"] },
+        { "type": "translate", "direction": "zh_to_vi", "prompt": "他是老师。", "pinyin": "tā shì lǎoshī", "answer": "Anh ấy là giáo viên.", "options": ["Anh ấy là giáo viên.", "Anh ấy là học sinh.", "Anh ấy là bác sĩ.", "Anh ấy rất vui."] },
+        { "type": "translate", "direction": "zh_to_vi", "prompt": "我是学生。", "pinyin": "wǒ shì xuésheng", "answer": "Tôi là học sinh.", "options": ["Tôi là học sinh.", "Tôi là giáo viên.", "Tôi tên là.", "Tôi có học sinh."] }
       ]
     }
   ],
   "test": {
     "timeLimit": 180,
-    "passThreshold": 60,
     "questions": [
-      {
-        "type": "fill_blank",
-        "sentence": "他___老师。",
-        "blank": "是",
-        "options": ["是", "很", "也", "不"]
-      },
-      {
-        "type": "sentence_order",
-        "words": ["老师", "是", "他"],
-        "answer": "他是老师"
-      }
+      { "type": "fill_blank", "sentence": "他___老师。", "blank": "是", "options": ["是", "很", "也", "不"] },
+      { "type": "sentence_order", "words": ["老师", "是", "他"], "answer": "他是老师" },
+      { "type": "translate", "direction": "zh_to_vi", "prompt": "我是学生。", "answer": "Tôi là học sinh.", "options": ["Tôi là học sinh.", "Tôi là giáo viên.", "Tôi là bác sĩ.", "Tôi rất vui."] }
     ]
   }
 }`;
@@ -109,7 +83,7 @@ interface Props {
 export function LessonEditor({ skill, unitId, lesson }: Props) {
   const [state, action, pending] = useActionState(saveLessonAction, {
     ok: false,
-  } as { ok: boolean; error?: string });
+  } as { ok: boolean; error?: string; warning?: string });
   const formRef = useRef<HTMLFormElement>(null);
   const isEdit = !!lesson;
   const isGrammar = skill === "grammar";
@@ -145,10 +119,14 @@ export function LessonEditor({ skill, unitId, lesson }: Props) {
           <p className="text-[11px] text-muted-foreground">
             Object gồm <code>sections</code> (mỗi phần: <code>title</code>, <code>structure</code>,{" "}
             <code>explanation</code>, <code>examples</code>, <code>imageUrl</code> tùy chọn, và{" "}
-            <code>exercises</code> — bài tập của chính phần đó) và <code>test</code> (bài kiểm tra
-            tổng hợp, đạt ≥ <code>passThreshold</code>% để qua bài). Loại bài tập: fill_blank,
-            sentence_order, translate, answer_question, type_sentence, toneSelect, match,
-            pinyinMatch. Xem hướng dẫn chi tiết bên dưới. Để trống ô trên sẽ hiện mẫu ví dụ.
+            <code>exercises</code> — bài tập của chính phần đó) và <code>test</code> (bài kiểm tra —
+            tách riêng khỏi luồng học, đạt ≥ 80% mới được điểm kinh nghiệm).{" "}
+            <b>
+              Mỗi điểm ngữ pháp nên có đủ 8 minigame: 2× chọn từ (fill_blank), 2× sắp xếp câu
+              (sentence_order), 2× dịch Việt→Trung (translate vi_to_zh), 2× dịch Trung→Việt
+              (translate zh_to_vi).
+            </b>{" "}
+            Để trống ô trên sẽ hiện mẫu ví dụ chuẩn.
           </p>
         ) : (
           <p className="text-[11px] text-muted-foreground">
@@ -170,6 +148,12 @@ export function LessonEditor({ skill, unitId, lesson }: Props) {
       {state.ok && (
         <div className="flex items-center gap-2 rounded-md border border-green-200 bg-green-50 px-3 py-2 text-sm text-green-700">
           <CheckCircle2 className="h-4 w-4" /> Đã lưu bài học.
+        </div>
+      )}
+      {state.ok && state.warning && (
+        <div className="flex items-start gap-2 rounded-md border border-amber-300 bg-amber-50 px-3 py-2 text-sm text-amber-800">
+          <Info className="mt-0.5 h-4 w-4 shrink-0" />
+          <span>{state.warning}</span>
         </div>
       )}
 

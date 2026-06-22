@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { getTone } from "@/lib/pinyin";
 import { toneColor, markWord } from "@/lib/utils";
 import { playWord } from "@/lib/speech";
+import { WordReportButton } from "@/components/learn/vocab/word-report-button";
 import type { VocabWordCard } from "@/types";
 
 interface Props {
@@ -37,6 +38,7 @@ export function WordCard({ word }: Props) {
         >
           <Volume2 className="mr-1.5 h-4 w-4" /> Nghe lại
         </Button>
+        <WordReportButton wordId={word.id} hanzi={word.hanzi} />
       </div>
 
       {word.examples.length > 0 && (

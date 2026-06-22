@@ -83,6 +83,8 @@ model User {
   attempts         Attempt[]
   payments         Payment[]
   subscriptions    Subscription[]
+  wordReports      WordReport[]
+  savedWords       SavedWord[]
 }
 
 model Account {
@@ -166,6 +168,7 @@ model VocabWord {
   updatedAt DateTime    @updatedAt @default(now())
 
   reviews   VocabReview[]
+  reports   WordReport[]
 
   @@index([lessonId, order])
 }
@@ -335,6 +338,9 @@ model Question {
   options      Json?
   correctAnswer Json
   explanation  String?      @db.Text
+  // Câu/đoạn trích trong bài đọc chứng minh đáp án (Groq sinh sẵn khi admin thêm
+  // câu hỏi) — dùng để "chỉ cho học viên đáp án lấy ở đâu" khi chữa bài.
+  supportingQuote String?    @db.Text
   order        Int          @default(0)
 
   readingId   String?
@@ -565,4 +571,56 @@ model Subscription {
 
   @@index([userId, expiresAt])
   @@index([paymentId])
+}
+
+enum WordReportKind {
+  ERROR    // Báo lỗi: từ/nghĩa/pinyin bị sai
+  COMMENT  // Bình luận / góp ý
+}
+
+enum WordReportStatus {
+  PENDING   // Chờ admin duyệt — chỉ chủ bài thấy
+  APPROVED  // Đã duyệt — hiển thị công khai cho mọi học viên
+  REJECTED  // Bị từ chối — ẩn
+}
+
+/// Phản ánh / bình luận của học viên trên một từ vựng. Admin nhận ở
+/// /admin/word-reports; chỉ khi `status = APPROVED` thì bình luận mới hiển thị
+/// công khai cho các học viên khác (kiểm duyệt). Báo lỗi (ERROR) chủ yếu để admin
+/// sửa nội dung từ; bình luận (COMMENT) sau khi duyệt sẽ hiện dưới thẻ từ.
+model WordReport {
+  id        String           @id @default(cuid())
+  userId    String
+  wordId    String
+  kind      WordReportKind   @default(COMMENT)
+  content   String           @db.Text
+  status    WordReportStatus @default(PENDING)
+  adminNote String?          @db.Text
+  createdAt DateTime         @default(now())
+  updatedAt DateTime         @updatedAt @default(now())
+
+  user User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  word VocabWord @relation(fields: [wordId], references: [id], onDelete: Cascade)
+
+  @@index([wordId, status])
+  @@index([status, createdAt])
+}
+
+/// "Sổ từ" — từ học viên lưu lại khi tra cứu (đọc hiểu, v.v.). Chỉ lưu các từ có
+/// trong từ điển (HanziCharacter). Snapshot pinyin/nghĩa tại thời điểm lưu để giữ
+/// nguyên kể cả khi từ điển thay đổi. Một học viên mỗi từ (hanzi) chỉ lưu 1 lần.
+model SavedWord {
+  id        String   @id @default(cuid())
+  userId    String
+  hanzi     String   // chữ Hán đã lưu (1 ký tự hoặc cụm)
+  pinyin    String
+  meaning   String   @db.Text
+  hskLevel  String?
+  source    String?  // ngữ cảnh: "reading:<id>" / "listening:<id>" ...
+  createdAt DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, hanzi])
+  @@index([userId, createdAt])
 }

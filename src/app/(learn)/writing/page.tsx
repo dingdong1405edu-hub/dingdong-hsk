@@ -70,6 +70,7 @@ export default async function WritingPage() {
               score={bestMap.get(task.id) ?? null}
               seed={task.id}
               imageUrl={task.imageUrl}
+              pdfHref={`/writing-pdf/${task.id}`}
             />
           ))}
         </div>

@@ -10,10 +10,24 @@ interface PassagePaneProps {
   showPinyin: boolean;
   settings: ReadingSettings;
   onCharClick: (char: string, pinyin: string, e: React.MouseEvent) => void;
+  /** Khi học viên kéo bôi đen một cụm chữ Hán trong đoạn văn. */
+  onSelectText?: (text: string, x: number, y: number) => void;
 }
 
-export function PassagePane({ test, showPinyin, settings, onCharClick }: PassagePaneProps) {
+export function PassagePane({ test, showPinyin, settings, onCharClick, onSelectText }: PassagePaneProps) {
   const charCount = useMemo(() => countChineseChars(test.passage), [test.passage]);
+
+  // Bôi đen (kéo tô) một cụm chữ → tra cứu cả cụm. Click 1 chữ vẫn do ruby xử lý
+  // riêng (lúc đó selection rỗng nên bỏ qua ở đây).
+  function detectSelection() {
+    if (!onSelectText) return;
+    const sel = typeof window !== "undefined" ? window.getSelection() : null;
+    if (!sel || sel.isCollapsed || sel.rangeCount === 0) return;
+    const text = sel.toString().trim();
+    if (!text || !/\p{Script=Han}/u.test(text)) return;
+    const rect = sel.getRangeAt(0).getBoundingClientRect();
+    onSelectText(text, rect.left + rect.width / 2, rect.top);
+  }
 
   return (
     <div className="flex h-full min-h-0 flex-col">
@@ -72,12 +86,16 @@ export function PassagePane({ test, showPinyin, settings, onCharClick }: Passage
           <h1 className="font-display text-xl font-bold leading-tight sm:text-2xl">{test.title}</h1>
           <p className="reading-muted font-chinese text-sm text-muted-foreground">{test.titleZh}</p>
 
-          <div className={cn("reading-prose mt-5 font-chinese", showPinyin && "ruby-on")}>
+          <div
+            className={cn("reading-prose mt-5 font-chinese", showPinyin && "ruby-on")}
+            onMouseUp={detectSelection}
+            onTouchEnd={() => setTimeout(detectSelection, 0)}
+          >
             <PinyinText text={test.passage} showPinyin={showPinyin} onWordClick={onCharClick} />
           </div>
 
           <p className="reading-muted mt-7 flex items-center gap-1.5 text-xs text-muted-foreground">
-            <Languages className="h-3.5 w-3.5" /> Nhấn vào từng chữ để xem pinyin &amp; nghĩa.
+            <Languages className="h-3.5 w-3.5" /> Nhấn vào từng chữ — hoặc kéo bôi đen một cụm — để xem pinyin, nghĩa &amp; lưu vào sổ từ.
           </p>
         </div>
       </div>

@@ -12,8 +12,9 @@ import { ImageUpload } from "@/components/admin/image-upload";
 import { revalidatePath } from "next/cache";
 import { db as prisma } from "@/lib/db";
 import { QuestionType, Prisma } from "@prisma/client";
-import { Plus, ArrowLeft, Trash2, Save, Pencil } from "lucide-react";
+import { Plus, ArrowLeft, Trash2, Save, Pencil, Sparkles } from "lucide-react";
 import { deleteQuestionAction, updateReadingAction } from "@/server/actions/admin";
+import { generateReadingExplanation, isGradingConfigured } from "@/lib/groq";
 
 const HSK_LEVELS = ["HSK1", "HSK2", "HSK3", "HSK4", "HSK5", "HSK6"];
 
@@ -22,8 +23,10 @@ async function createQuestionAction(fd: FormData): Promise<void> {
   await requireAdmin();
   const type = fd.get("type") as QuestionType;
   const readingId = fd.get("readingId") as string;
+  const prompt = fd.get("prompt") as string;
   let options: Prisma.InputJsonValue | undefined = undefined;
   let correctAnswer: Prisma.InputJsonValue = {};
+  let correctAnswerText = "";
 
   if (type === "MCQ") {
     const opts = (fd.get("options") as string)
@@ -31,15 +34,47 @@ async function createQuestionAction(fd: FormData): Promise<void> {
       .filter(Boolean)
       .map((t) => ({ text: t.trim() }));
     options = opts as Prisma.InputJsonValue;
-    correctAnswer = { index: parseInt(fd.get("correctIndex") as string) || 0 };
+    const idx = parseInt(fd.get("correctIndex") as string) || 0;
+    correctAnswer = { index: idx };
+    correctAnswerText = opts[idx]?.text ?? "";
   } else if (type === "TRUE_FALSE") {
-    correctAnswer = { value: fd.get("correctBool") === "true" };
+    const value = fd.get("correctBool") === "true";
+    correctAnswer = { value };
+    correctAnswerText = value ? "Đúng" : "Sai";
   } else if (type === "FILL_BLANK") {
     const accepted = ((fd.get("correctAccepted") as string) || "")
       .split("\n")
       .map((s) => s.trim())
       .filter(Boolean);
-    correctAnswer = { text: ((fd.get("correctText") as string) || "").trim(), accepted };
+    const text = ((fd.get("correctText") as string) || "").trim();
+    correctAnswer = { text, accepted };
+    correctAnswerText = text;
+  }
+
+  // Giải thích + chỗ trích dẫn: ưu tiên admin tự nhập; nếu để trống thì nhờ Groq
+  // sinh sẵn (chỉ cho học viên đáp án lấy ở đâu + giải thích chi tiết). Lỗi AI
+  // không chặn việc tạo câu hỏi.
+  let explanation = ((fd.get("explanation") as string) || "").trim() || undefined;
+  let supportingQuote: string | undefined = undefined;
+  if (!explanation && isGradingConfigured()) {
+    try {
+      const test = await prisma.readingTest.findUnique({
+        where: { id: readingId },
+        select: { passage: true, hskLevel: true },
+      });
+      if (test) {
+        const r = await generateReadingExplanation({
+          passage: test.passage,
+          prompt,
+          correctAnswer: correctAnswerText,
+          hskLevel: test.hskLevel,
+        });
+        explanation = r.explanation || undefined;
+        supportingQuote = r.supportingQuote || undefined;
+      }
+    } catch (e) {
+      console.error("generateReadingExplanation failed:", e);
+    }
   }
 
   // Append after existing questions so ordering is deterministic.
@@ -47,11 +82,12 @@ async function createQuestionAction(fd: FormData): Promise<void> {
   await prisma.question.create({
     data: {
       type,
-      prompt: fd.get("prompt") as string,
+      prompt,
       promptPinyin: (fd.get("promptPinyin") as string) || undefined,
       options: options ?? Prisma.JsonNull,
       correctAnswer,
-      explanation: (fd.get("explanation") as string) || undefined,
+      explanation,
+      supportingQuote,
       readingId,
       order: count + 1,
     },
@@ -211,7 +247,11 @@ export default async function AdminReadingDetailPage({ params }: Props) {
             </div>
             <div className="space-y-1">
               <Label>Giải thích (tùy chọn)</Label>
-              <Input name="explanation" className="font-chinese" placeholder="Giải thích đáp án..." />
+              <Textarea name="explanation" className="min-h-16" placeholder="Giải thích đáp án..." />
+              <p className="flex items-center gap-1.5 text-xs text-muted-foreground">
+                <Sparkles className="h-3.5 w-3.5 text-primary" />
+                Để trống để AI (Groq) tự tạo giải thích chi tiết + chỉ ra câu trong bài chứa đáp án.
+              </p>
             </div>
             <Button type="submit">Thêm câu hỏi</Button>
           </form>
@@ -224,14 +264,22 @@ export default async function AdminReadingDetailPage({ params }: Props) {
           <Card key={q.id}>
             <CardContent className="p-3">
               <div className="flex items-start justify-between gap-3">
-                <div className="flex-1">
-                  <span className="text-xs font-semibold text-muted-foreground">{idx + 1}. </span>
-                  <span className="font-chinese text-sm">{q.prompt}</span>
-                  <div className="mt-1">
-                    <Badge variant="secondary" className="text-xs">
-                      {q.type}
-                    </Badge>
+                <div className="flex-1 space-y-1.5">
+                  <div>
+                    <span className="text-xs font-semibold text-muted-foreground">{idx + 1}. </span>
+                    <span className="font-chinese text-sm">{q.prompt}</span>
                   </div>
+                  <Badge variant="secondary" className="text-xs">
+                    {q.type}
+                  </Badge>
+                  {q.supportingQuote && (
+                    <p className="rounded-md border border-emerald-200 bg-emerald-50 px-2 py-1 text-xs text-emerald-800">
+                      📍 <span className="font-chinese">{q.supportingQuote}</span>
+                    </p>
+                  )}
+                  {q.explanation && (
+                    <p className="rounded-md bg-muted px-2 py-1 text-xs text-muted-foreground">💡 {q.explanation}</p>
+                  )}
                 </div>
                 <form
                   action={async () => {

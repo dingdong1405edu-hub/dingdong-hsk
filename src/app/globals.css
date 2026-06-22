@@ -306,8 +306,11 @@ ruby rt {
    the only real content. We keep `.print-document` in normal flow (no absolute
    positioning) so multi-page lessons paginate correctly, and just hide the
    on-screen toolbar + flatten the card chrome. */
+/* Footer "dingdonghsk.com" — chỉ hiện khi in; vị trí fixed nên LẶP LẠI ở chân
+   MỖI TRANG in (Chrome/Edge). @page margin-bottom chừa chỗ để không đè nội dung. */
+.print-footer { display: none; }
 @media print {
-  @page { margin: 1.4cm; }
+  @page { margin: 1.4cm 1.4cm 2cm 1.4cm; }
   html, body { background: #fff !important; }
   .no-print { display: none !important; }
   .print-document {
@@ -316,5 +319,17 @@ ruby rt {
     border: 0 !important;
     border-radius: 0 !important;
     box-shadow: none !important;
+  }
+  .print-footer {
+    display: block;
+    position: fixed;
+    bottom: 0.7cm;
+    left: 1.4cm;
+    right: 1.4cm;
+    text-align: center;
+    font-size: 9pt;
+    color: #9ca3af;
+    border-top: 1px solid #e5e7eb;
+    padding-top: 0.25cm;
   }
 }

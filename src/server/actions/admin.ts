@@ -5,6 +5,7 @@ import { z } from "zod";
 import { HSKLevel, Prisma, Role, SubscriptionType, WritingTaskType } from "@prisma/client";
 import { getPlan } from "@/lib/payment-plans";
 import { requireAdmin } from "@/lib/admin-guard";
+import { parseGrammarContent } from "@/lib/grammar";
 
 export async function adminUpdateUserAction(params: {
   userId: string;
@@ -408,12 +409,45 @@ function parseGrammarLessonInput(raw: string): Prisma.InputJsonValue {
   );
 }
 
+// Cảnh báo MỀM (không chặn lưu): mỗi điểm ngữ pháp nên có đủ 8 minigame —
+// 2× "chọn từ" (fill_blank) + 2× "sắp xếp câu" (sentence_order) + 2× dịch
+// Việt→Trung (translate vi_to_zh) + 2× dịch Trung→Việt (translate zh_to_vi).
+function grammarStructureWarning(value: Prisma.InputJsonValue): string | undefined {
+  const content = parseGrammarContent(value as unknown);
+  const problems: string[] = [];
+  content.sections.forEach((s, i) => {
+    const c = { fill: 0, order: 0, vi2zh: 0, zh2vi: 0 };
+    for (const ex of s.exercises) {
+      const e = ex as Record<string, unknown>;
+      const t = String(e.type);
+      if (t === "fill_blank") c.fill++;
+      else if (t === "sentence_order" || t === "sentenceOrder") c.order++;
+      else if (t === "translate") {
+        if (e.direction === "vi_to_zh") c.vi2zh++;
+        else if (e.direction === "zh_to_vi") c.zh2vi++;
+      }
+    }
+    const missing: string[] = [];
+    if (c.fill < 2) missing.push("chọn từ ×2 (fill_blank)");
+    if (c.order < 2) missing.push("sắp xếp câu ×2 (sentence_order)");
+    if (c.vi2zh < 2) missing.push("dịch Việt→Trung ×2 (translate vi_to_zh)");
+    if (c.zh2vi < 2) missing.push("dịch Trung→Việt ×2 (translate zh_to_vi)");
+    if (missing.length) problems.push(`Phần ${i + 1}${s.title ? ` (“${s.title}”)` : ""}: thiếu ${missing.join(", ")}`);
+  });
+  if (problems.length === 0) return undefined;
+  return (
+    "Đã lưu, nhưng nên chuẩn hoá: mỗi điểm ngữ pháp cần đủ 8 minigame (2× mỗi loại). " +
+    problems.join("; ") +
+    "."
+  );
+}
+
 // Create (no lessonId) or update (lessonId present) a lesson. Returns a result
-// object so the client form can show validation errors inline via useActionState.
+// object so the client form can show validation errors / warnings inline.
 export async function saveLessonAction(
-  _prev: { ok: boolean; error?: string },
+  _prev: { ok: boolean; error?: string; warning?: string },
   fd: FormData
-): Promise<{ ok: boolean; error?: string }> {
+): Promise<{ ok: boolean; error?: string; warning?: string }> {
   try {
     await requireAdmin();
     const skill = fd.get("skill") as LessonSkill;
@@ -424,6 +458,7 @@ export async function saveLessonAction(
       skill === "grammar"
         ? parseGrammarLessonInput(fd.get("exercises") as string)
         : parseExercises(fd.get("exercises") as string);
+    const warning = skill === "grammar" ? grammarStructureWarning(exercises) : undefined;
 
     if (skill === "vocab") {
       if (lessonId) {
@@ -446,7 +481,7 @@ export async function saveLessonAction(
       }
       revalidatePath(`/admin/grammar/${unitId}`);
     }
-    return { ok: true };
+    return { ok: true, warning };
   } catch (e) {
     return { ok: false, error: e instanceof Error ? e.message : "Lỗi không xác định." };
   }

@@ -37,15 +37,24 @@ export function GrammarAuthorGuide() {
               <h3 className="font-semibold">1. Cấu trúc tổng thể</h3>
               <p className="text-muted-foreground">
                 Mỗi bài học là một object gồm <b>sections</b> (các phần) và <b>test</b> (bài kiểm
-                tra cuối bài). Mỗi phần có <b>lý thuyết riêng</b> và <b>bài tập riêng</b> — học viên
-                học xong lý thuyết phần nào sẽ luyện tập ngay phần đó, rồi mới sang phần tiếp theo.
-                Cuối cùng là một bài test tổng hợp; phải đạt từ <b>passThreshold%</b> trở lên mới qua
-                bài và mở khoá bài kế tiếp.
+                tra). Mỗi phần có <b>lý thuyết riêng</b> và <b>bài tập riêng</b> — học viên học xong
+                lý thuyết phần nào sẽ luyện tập ngay phần đó, rồi sang phần tiếp theo.{" "}
+                <b>Hoàn thành phần luyện tập là mở khoá bài kế tiếp</b> (KHÔNG bắt buộc làm bài kiểm
+                tra). Bài <b>test</b> được <b>tách riêng</b> (nút “Kiểm tra”); chấm xong sẽ hiện đáp
+                án và chỉ rõ câu sai, và chỉ khi đạt <b>≥ 80%</b> mới được điểm kinh nghiệm.
               </p>
+              <div className="rounded-lg border border-violet-300 bg-violet-100/60 p-3 text-[13px] text-violet-900">
+                <b>Bắt buộc về số lượng minigame:</b> mỗi điểm ngữ pháp (mỗi <b>section</b>) cần có
+                đủ <b>8 minigame</b> — 2× <b>chọn từ</b> (<code>fill_blank</code>), 2× <b>sắp xếp
+                câu</b> (<code>sentence_order</code>), 2× <b>dịch Việt→Trung</b> (
+                <code>translate</code>, <code>direction: "vi_to_zh"</code>), 2× <b>dịch Trung→Việt</b>{" "}
+                (<code>translate</code>, <code>direction: "zh_to_vi"</code>). Lưu thiếu vẫn được nhưng
+                hệ thống sẽ nhắc.
+              </div>
               <Code>{`{
   "version": 3,
-  "sections": [ { ...phần 1... }, { ...phần 2... } ],
-  "test": { "timeLimit": 180, "passThreshold": 60, "questions": [ ... ] }
+  "sections": [ { ...phần 1 (đủ 8 minigame)... }, { ...phần 2... } ],
+  "test": { "timeLimit": 180, "questions": [ ... ] }
 }`}</Code>
             </section>
 
@@ -60,7 +69,10 @@ export function GrammarAuthorGuide() {
                 <Field name="explanation">giải thích bằng tiếng Việt (bắt buộc).</Field>
                 <Field name="imageUrl">link ảnh minh hoạ (tùy chọn) — dán URL ảnh đã có trên mạng (vd: https://abc.com/anh.png). Bỏ field này nếu không có ảnh. Mỗi ví dụ cũng có thể có imageUrl riêng.</Field>
                 <Field name="examples">mảng ví dụ theo ngữ cảnh (có thể để [] nếu chưa có).</Field>
-                <Field name="exercises">mảng bài tập của riêng phần này (học xong là làm luôn).</Field>
+                <Field name="exercises">
+                  mảng bài tập của riêng phần này (học xong là làm luôn). <b>Nên đủ 8 minigame</b>:
+                  2× fill_blank, 2× sentence_order, 2× translate vi_to_zh, 2× translate zh_to_vi.
+                </Field>
               </ul>
               <p className="text-muted-foreground">Mỗi ví dụ trong examples:</p>
               <Code>{`{
@@ -163,15 +175,21 @@ export function GrammarAuthorGuide() {
 
             {/* Test + tips */}
             <section className="space-y-2">
-              <h3 className="font-semibold">4. Bài test & mẹo</h3>
+              <h3 className="font-semibold">4. Bài kiểm tra & mẹo</h3>
               <ul className="space-y-1">
                 <Field name="test.questions">mảng câu hỏi (dùng đúng các loại ở mục 3).</Field>
-                <Field name="test.passThreshold">% tối thiểu để qua bài (mặc định 60).</Field>
                 <Field name="test.timeLimit">thời gian làm bài tính bằng giây (tùy chọn; bỏ qua nếu không giới hạn).</Field>
               </ul>
               <ul className="list-disc space-y-1 pl-5 text-[13px] text-muted-foreground">
+                <li>
+                  <b>Bài kiểm tra tách riêng</b> khỏi phần học (nút “Kiểm tra” ở danh sách bài). Chấm
+                  xong hiện đáp án + chỉ rõ câu sai cho từng câu.
+                </li>
+                <li>
+                  Đạt <b>≥ 80%</b> mới được điểm kinh nghiệm (mỗi bài chỉ thưởng một lần). Làm bài
+                  kiểm tra <b>không bắt buộc</b> để sang bài tiếp theo.
+                </li>
                 <li>Học viên KHÔNG bị trừ tim ở phần ngữ pháp; mỗi bài luyện tập có nút Bỏ qua.</li>
-                <li>Câu bị bỏ qua không tính vào điểm; điểm qua bài chỉ dựa trên bài test.</li>
                 <li>Sau khi dán JSON, bấm lưu — nếu sai cấu trúc hệ thống sẽ báo lỗi cụ thể ngay.</li>
               </ul>
             </section>

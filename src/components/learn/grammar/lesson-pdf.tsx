@@ -4,6 +4,7 @@ import Link from "next/link";
 import { ArrowLeft, Printer, BookText, ListChecks, Layers } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Logo } from "@/components/shared/logo";
+import { PrintFooter } from "@/components/learn/printable-doc";
 import { cn, hskLevelLabel } from "@/lib/utils";
 import { describeExercise } from "@/lib/grammar";
 import type { GrammarLessonContent, Exercise, TheorySection } from "@/types";
@@ -159,9 +160,7 @@ export function LessonPdf({ lessonTitle, unitTitle, unitTitleZh, hskLevel, conte
           <p className="text-sm text-zinc-500">Bài học này chưa có bài tập.</p>
         )}
 
-        <footer className="mt-8 border-t pt-3 text-center text-[11px] text-zinc-400">
-          DingDong HSK · dingdonghsk.com — Tài liệu học tập
-        </footer>
+        <PrintFooter />
       </div>
     </div>
   );

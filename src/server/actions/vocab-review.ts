@@ -2,7 +2,7 @@
 import { auth } from "@/lib/auth";
 import { db } from "@/lib/db";
 import { z } from "zod";
-import { schedule, nextDueAt, SRS_DEFAULT } from "@/lib/srs";
+import { schedule, dueAtFromMinutes, SRS_DEFAULT } from "@/lib/srs";
 
 // ── Lưu vị trí đang học (cho nút "Học tiếp" — resume) ──────────────────────────
 
@@ -72,7 +72,8 @@ export async function reviewWordAction(params: z.infer<typeof reviewSchema>) {
 
     const next = schedule(prev, quality);
     const now = new Date();
-    const dueAt = nextDueAt(next.intervalDays, now);
+    // dueAt chính xác theo phút: "Quên" → +1 phút (quay lại học luôn), còn lại theo ngày.
+    const dueAt = dueAtFromMinutes(next.intervalMinutes, now);
 
     await db.vocabReview.upsert({
       where: { userId_wordId: { userId, wordId } },

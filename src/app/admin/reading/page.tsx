@@ -13,13 +13,14 @@ import { ReorderList, type ReorderItem } from "@/components/admin/reorder-list";
 import { hskLevelLabel } from "@/lib/utils";
 import { deleteReadingAction } from "@/server/actions/admin";
 import { revalidatePath } from "next/cache";
+import { redirect } from "next/navigation";
 import { db as prisma } from "@/lib/db";
 import { HSKLevel } from "@prisma/client";
 
 async function createReadingAction(fd: FormData): Promise<void> {
   "use server";
   await requireAdmin();
-  await prisma.readingTest.create({
+  const created = await prisma.readingTest.create({
     data: {
       title: fd.get("title") as string,
       titleZh: fd.get("titleZh") as string,
@@ -32,6 +33,9 @@ async function createReadingAction(fd: FormData): Promise<void> {
     },
   });
   revalidatePath("/admin/reading");
+  // Vào thẳng trang chi tiết — nơi form "Thêm câu hỏi" nằm ngay dưới bài đọc, để
+  // admin thêm câu hỏi liền mạch (không phải tìm và bấm sang mục khác).
+  redirect(`/admin/reading/${created.id}`);
 }
 import { Trash2, Plus, ChevronRight } from "lucide-react";
 
@@ -90,8 +94,11 @@ export default async function AdminReadingPage() {
               <Textarea name="passagePinyin" className="font-pinyin min-h-20" placeholder="Pinyin tương ứng..." />
             </div>
             <div className="md:col-span-2 space-y-2">
-              <Button type="submit">Tạo bài đọc</Button>
-              <p className="text-xs text-muted-foreground">Bài mới sẽ ở trạng thái Bản nháp — bấm “Đang hiện/Bản nháp” để xuất bản.</p>
+              <Button type="submit">Tạo bài đọc &amp; thêm câu hỏi</Button>
+              <p className="text-xs text-muted-foreground">
+                Sau khi tạo, bạn sẽ vào ngay trang thêm câu hỏi cho bài này. Bài mới ở trạng thái Bản nháp — bấm
+                “Đang hiện/Bản nháp” để xuất bản.
+              </p>
             </div>
           </form>
         </CardContent>

@@ -13,6 +13,8 @@ export interface ReadingQuestion {
   options?: unknown;
   correctAnswer: unknown;
   explanation?: string | null;
+  /** Câu/đoạn trích trong bài chứng minh đáp án (Groq sinh khi admin thêm câu hỏi). */
+  supportingQuote?: string | null;
   order: number;
 }
 

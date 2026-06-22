@@ -119,6 +119,55 @@ Return JSON:
   return JSON.parse(jsonMatch[0]) as SpeakingGradeResult;
 }
 
+const READING_EXPLAIN_SYSTEM = `You are a Vietnamese HSK Chinese reading teacher. For a reading-comprehension question, you explain (in Vietnamese) why the correct answer is correct and you point to the exact place in the passage that proves it. Return ONLY valid JSON.`;
+
+/**
+ * Sinh sẵn (tại lúc admin thêm câu hỏi) phần CHỮA BÀI cho một câu hỏi đọc hiểu:
+ *  - `supportingQuote`: câu/cụm chữ Hán TRÍCH NGUYÊN VĂN từ đoạn văn chứng minh đáp án
+ *    (để chỉ cho học viên đáp án lấy ở đâu).
+ *  - `explanation`: giải thích chi tiết bằng tiếng Việt vì sao đáp án đúng.
+ */
+export async function generateReadingExplanation(params: {
+  passage: string;
+  prompt: string;
+  correctAnswer: string;
+  hskLevel?: string;
+}): Promise<{ explanation: string; supportingQuote: string }> {
+  const { passage, prompt, correctAnswer, hskLevel } = params;
+
+  const response = await getGroq().chat.completions.create({
+    model: "llama-3.3-70b-versatile",
+    max_tokens: 1024,
+    temperature: 0.3,
+    messages: [
+      { role: "system", content: READING_EXPLAIN_SYSTEM },
+      {
+        role: "user",
+        content: `Đoạn văn (Hán tự)${hskLevel ? ` — trình độ ${hskLevel}` : ""}:
+${passage}
+
+Câu hỏi: ${prompt}
+Đáp án đúng: ${correctAnswer}
+
+Trả về JSON đúng cấu trúc sau (không thêm gì ngoài JSON):
+{
+  "supportingQuote": "<TRÍCH NGUYÊN VĂN một câu hoặc cụm chữ Hán có trong đoạn văn, chứng minh đáp án>",
+  "explanation": "<giải thích chi tiết bằng tiếng Việt vì sao đáp án đúng, có nhắc tới chỗ trích dẫn>"
+}`,
+      },
+    ],
+  });
+
+  const text = response.choices[0]?.message?.content ?? "";
+  const jsonMatch = text.match(/\{[\s\S]*\}/);
+  if (!jsonMatch) throw new Error("Invalid AI response");
+  const parsed = JSON.parse(jsonMatch[0]) as { explanation?: string; supportingQuote?: string };
+  return {
+    explanation: typeof parsed.explanation === "string" ? parsed.explanation : "",
+    supportingQuote: typeof parsed.supportingQuote === "string" ? parsed.supportingQuote : "",
+  };
+}
+
 export interface WritingGradeResult {
   score: number;
   criteria: {

@@ -15,6 +15,7 @@ import {
   Library,
   Users,
   CreditCard,
+  Flag,
   ArrowLeft,
   Menu,
   X,
@@ -53,6 +54,7 @@ const GROUPS: AdminNavGroup[] = [
     items: [
       { href: "/admin/users", label: "Người dùng", icon: Users },
       { href: "/admin/subscriptions", label: "Gói & quyền lợi", icon: CreditCard },
+      { href: "/admin/word-reports", label: "Phản ánh từ", icon: Flag },
     ],
   },
 ];

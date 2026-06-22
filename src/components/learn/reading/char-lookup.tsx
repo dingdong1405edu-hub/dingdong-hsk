@@ -1,9 +1,11 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
-import { X } from "lucide-react";
+import { X, BookmarkPlus, BookmarkCheck, Loader2 } from "lucide-react";
+import { toast } from "sonner";
 import { getTone } from "@/lib/pinyin";
 import { toneColor, cn } from "@/lib/utils";
 import { lookupHanziAction, type HanziLookupResult } from "@/server/actions/hanzi-lookup";
+import { saveWordAction } from "@/server/actions/saved-word";
 
 const TONE_NAME: Record<number, string> = {
   1: "Thanh 1 (ngang)",
@@ -27,15 +29,26 @@ function firstExample(examples: unknown): string | null {
   return typeof text === "string" && text ? text : null;
 }
 
-export function CharLookup({ anchor, onClose }: { anchor: LookupAnchor; onClose: () => void }) {
+export function CharLookup({
+  anchor,
+  onClose,
+  source,
+}: {
+  anchor: LookupAnchor;
+  onClose: () => void;
+  /** Ngữ cảnh lưu (vd "reading:<id>") để ghi nguồn vào sổ từ. */
+  source?: string;
+}) {
   const [info, setInfo] = useState<HanziLookupResult | null>(null);
   const [loading, setLoading] = useState(true);
+  const [saveState, setSaveState] = useState<"idle" | "saving" | "saved">("idle");
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     let active = true;
     setLoading(true);
     setInfo(null);
+    setSaveState("idle");
     lookupHanziAction(anchor.char).then((r) => {
       if (active) {
         setInfo(r);
@@ -46,6 +59,25 @@ export function CharLookup({ anchor, onClose }: { anchor: LookupAnchor; onClose:
       active = false;
     };
   }, [anchor.char]);
+
+  async function save() {
+    if (!info || saveState !== "idle") return;
+    setSaveState("saving");
+    const res = await saveWordAction({
+      hanzi: anchor.char,
+      pinyin: info.pinyin || anchor.pinyin,
+      meaning: info.meaning,
+      hskLevel: info.hskLevel,
+      source,
+    });
+    if (res.ok) {
+      setSaveState("saved");
+      toast.success("Đã lưu vào sổ từ");
+    } else {
+      setSaveState("idle");
+      toast.error(res.error ?? "Lưu thất bại");
+    }
+  }
 
   useEffect(() => {
     function onDoc(e: MouseEvent) {
@@ -105,6 +137,26 @@ export function CharLookup({ anchor, onClose }: { anchor: LookupAnchor; onClose:
           <>
             <p className="font-medium leading-snug">{info.meaning}</p>
             {example && <p className="mt-1 font-chinese text-xs text-muted-foreground">{example}</p>}
+            <button
+              type="button"
+              onClick={save}
+              disabled={saveState !== "idle"}
+              className={cn(
+                "mt-2.5 inline-flex w-full items-center justify-center gap-1.5 rounded-lg border py-1.5 text-xs font-semibold transition-colors",
+                saveState === "saved"
+                  ? "border-emerald-300 bg-emerald-50 text-emerald-700"
+                  : "border-primary/40 text-primary hover:bg-primary/5",
+              )}
+            >
+              {saveState === "saving" ? (
+                <Loader2 className="h-3.5 w-3.5 animate-spin" />
+              ) : saveState === "saved" ? (
+                <BookmarkCheck className="h-3.5 w-3.5" />
+              ) : (
+                <BookmarkPlus className="h-3.5 w-3.5" />
+              )}
+              {saveState === "saved" ? "Đã lưu vào sổ từ" : "Lưu vào sổ từ"}
+            </button>
           </>
         ) : (
           <span className="text-xs text-muted-foreground">Chưa có nghĩa trong từ điển.</span>

@@ -122,6 +122,11 @@ export function grammarItemCount(raw: unknown): number {
   return c.sections.reduce((n, s) => n + s.exercises.length, 0) + c.test.questions.length;
 }
 
+/** Số câu hỏi trong bài kiểm tra của một bài ngữ pháp (đọc raw DB JSON). */
+export function grammarTestCount(raw: unknown): number {
+  return parseGrammarContent(raw).test.questions.length;
+}
+
 /**
  * Flatten one grammar lesson's raw JSON into a single list of practice items —
  * every section's exercises plus the comprehensive test's questions. Used by the

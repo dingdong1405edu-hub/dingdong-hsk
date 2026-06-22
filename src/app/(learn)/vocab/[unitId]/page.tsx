@@ -4,9 +4,7 @@ import { notFound, redirect } from "next/navigation";
 import Link from "next/link";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { Progress } from "@/components/ui/progress";
-import { CheckCircle2, PlayCircle } from "lucide-react";
+import { CheckCircle2, FileDown } from "lucide-react";
 
 interface Props {
   params: Promise<{ unitId: string }>;
@@ -58,11 +56,18 @@ export default async function VocabUnitPage({ params }: Props) {
                   </div>
                 </div>
                 {available && (
-                  <Link href={`/vocab/${unitId}/lesson/${lesson.id}`}>
-                    <Button size="sm" variant={done ? "outline" : "default"}>
-                      {done ? "Ôn lại" : "Bắt đầu"}
-                    </Button>
-                  </Link>
+                  <div className="flex shrink-0 items-center gap-2">
+                    <Link href={`/vocab/${unitId}/lesson/${lesson.id}`}>
+                      <Button size="sm" variant={done ? "outline" : "default"}>
+                        {done ? "Ôn lại" : "Bắt đầu"}
+                      </Button>
+                    </Link>
+                    <Link href={`/vocab-pdf/${unitId}/${lesson.id}`}>
+                      <Button size="sm" variant="ghost" className="gap-1.5 text-muted-foreground">
+                        <FileDown className="h-4 w-4" /> PDF
+                      </Button>
+                    </Link>
+                  </div>
                 )}
               </CardContent>
             </Card>

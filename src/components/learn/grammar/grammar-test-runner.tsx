@@ -10,6 +10,8 @@ import type { Exercise, GrammarTest } from "@/types";
 export interface TestResult {
   correct: number;
   total: number;
+  /** Đúng/sai từng câu theo thứ tự — để màn chữa bài chỉ ra câu sai. */
+  results: boolean[];
 }
 
 interface Props {
@@ -34,6 +36,7 @@ export function GrammarTestRunner({ test, closeHref, onReviewTheory, onDone }: P
     return typeof t === "number" && t > 0 ? t : null;
   });
   const correctRef = useRef(0);
+  const resultsRef = useRef<boolean[]>([]);
   const doneRef = useRef(false);
   const advanceRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
@@ -48,7 +51,7 @@ export function GrammarTestRunner({ test, closeHref, onReviewTheory, onDone }: P
   function finish() {
     if (doneRef.current) return;
     doneRef.current = true;
-    onDone({ correct: correctRef.current, total });
+    onDone({ correct: correctRef.current, total, results: resultsRef.current.slice() });
   }
 
   // Countdown tick. When it hits 0, submit whatever has been answered so far.
@@ -66,6 +69,7 @@ export function GrammarTestRunner({ test, closeHref, onReviewTheory, onDone }: P
   function handleAnswer(isCorrect: boolean) {
     if (locked || doneRef.current) return;
     setLocked(true);
+    resultsRef.current[index] = isCorrect;
     if (isCorrect) correctRef.current += 1;
     // Brief pause so the choice registers, then move on — no feedback bar.
     advanceRef.current = setTimeout(() => {
