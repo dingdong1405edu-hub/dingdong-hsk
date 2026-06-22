@@ -1,256 +1,378 @@
 "use client";
-import { useState, useEffect, useRef } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import { toast } from "sonner";
+import {
+  Eye,
+  EyeOff,
+  Settings2,
+  Clock,
+  BookOpen,
+  ListChecks,
+  ChevronLeft,
+  ChevronRight,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { PinyinText } from "@/components/learn/pinyin-text";
-import { TestShell, QuestionNavBar } from "@/components/learn/test-shell";
-import { coverChar, coverGradient, formatDuration, hskBadgeClass, hskLevelLabel, cn } from "@/lib/utils";
+import { TestShell } from "@/components/learn/test-shell";
+import { cn, formatDuration } from "@/lib/utils";
 import { submitReadingAction } from "@/server/actions/reading";
-import { Eye, EyeOff, CheckCircle2, XCircle, Languages } from "lucide-react";
-import type { HSKLevel, QuestionType } from "@prisma/client";
+import { PassagePane } from "@/components/learn/reading/passage-pane";
+import { QuestionCard } from "@/components/learn/reading/question-card";
+import { ReadingPalette } from "@/components/learn/reading/reading-palette";
+import { SettingsDialog } from "@/components/learn/reading/settings-dialog";
+import { ReviewDialog } from "@/components/learn/reading/review-dialog";
+import { ResultsSummary } from "@/components/learn/reading/results-summary";
+import { CharLookup, type LookupAnchor } from "@/components/learn/reading/char-lookup";
+import { useReadingSettings } from "@/components/learn/reading/use-reading-settings";
+import type { ReadingTestData } from "@/components/learn/reading/types";
 
-interface Option {
-  text: string;
-  pinyin?: string;
-}
-interface Question {
-  id: string;
-  type: QuestionType;
-  prompt: string;
-  promptPinyin?: string | null;
-  options?: unknown;
-  correctAnswer: unknown;
-  explanation?: string | null;
-  order: number;
-}
-interface Test {
-  id: string;
-  title: string;
-  titleZh: string;
-  hskLevel: HSKLevel;
-  passage: string;
-  passagePinyin?: string | null;
-  timeLimit: number;
-  questions: Question[];
-}
+type Pane = "passage" | "questions";
+type ReviewFilter = "all" | "wrong" | "flagged";
 
-export function ReadingTestClient({ test }: { test: Test; userId: string }) {
+const isAnswered = (v: unknown) => v !== undefined && v !== null && v !== "";
+
+export function ReadingTestClient({ test }: { test: ReadingTestData; userId: string }) {
+  const { settings, setSettings } = useReadingSettings();
   const [showPinyin, setShowPinyin] = useState(false);
   const [answers, setAnswers] = useState<Record<string, unknown>>({});
+  const [flags, setFlags] = useState<Record<string, boolean>>({});
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [result, setResult] = useState<{ score: number; details: Record<string, boolean> } | null>(null);
   const [elapsed, setElapsed] = useState(0);
   const [current, setCurrent] = useState(0);
-  const questionRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const [tab, setTab] = useState<Pane>("passage");
+  const [settingsOpen, setSettingsOpen] = useState(false);
+  const [reviewOpen, setReviewOpen] = useState(false);
+  const [reviewFilter, setReviewFilter] = useState<ReviewFilter>("all");
+  const [lookup, setLookup] = useState<LookupAnchor | null>(null);
+  const [restored, setRestored] = useState(false);
+  const [pendingScroll, setPendingScroll] = useState<number | null>(null);
 
+  const questionRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const storageKey = `dingdong:reading:${test.id}`;
+  const total = test.questions.length;
+
+  // Restore in-progress work (answers / flags / elapsed) once on mount.
+  useEffect(() => {
+    try {
+      const raw = localStorage.getItem(storageKey);
+      if (raw) {
+        const s = JSON.parse(raw) as { answers?: Record<string, unknown>; flags?: Record<string, boolean>; elapsed?: number };
+        if (s.answers) setAnswers(s.answers);
+        if (s.flags) setFlags(s.flags);
+        if (typeof s.elapsed === "number") setElapsed(s.elapsed);
+      }
+    } catch {
+      /* ignore */
+    }
+    setRestored(true);
+  }, [storageKey]);
+
+  // Autosave until submitted. Gated on `restored` (a committed state flag, not a
+  // ref) so the first run can't clobber just-restored progress with empty
+  // defaults; skips writing the empty initial state entirely.
+  useEffect(() => {
+    if (!restored || submitted) return;
+    if (Object.keys(answers).length === 0 && Object.keys(flags).length === 0 && elapsed === 0) return;
+    try {
+      localStorage.setItem(storageKey, JSON.stringify({ answers, flags, elapsed }));
+    } catch {
+      /* ignore */
+    }
+  }, [answers, flags, elapsed, submitted, restored, storageKey]);
+
+  // Scroll to a target question once its card is actually in the DOM — robust to
+  // the mobile tab switch and review-filter remounts (no magic timeout).
+  useEffect(() => {
+    if (pendingScroll === null) return;
+    const el = questionRefs.current[pendingScroll];
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth", block: "center" });
+      setPendingScroll(null);
+    }
+  }, [pendingScroll, tab, reviewFilter, submitted]);
+
+  // Elapsed clock.
   useEffect(() => {
     if (submitted) return;
     const t = setInterval(() => setElapsed((s) => s + 1), 1000);
     return () => clearInterval(t);
   }, [submitted]);
 
+  const answeredArr = useMemo(() => test.questions.map((q) => isAnswered(answers[q.id])), [test.questions, answers]);
+  const flaggedArr = useMemo(() => test.questions.map((q) => !!flags[q.id]), [test.questions, flags]);
+  const answeredCount = answeredArr.filter(Boolean).length;
+  const unansweredIdx = answeredArr.map((a, i) => (a ? -1 : i)).filter((i) => i >= 0);
+  const flaggedIdx = flaggedArr.map((f, i) => (f ? i : -1)).filter((i) => i >= 0);
+  const correctnessArr = submitted ? test.questions.map((q) => result?.details[q.id]) : undefined;
+  const correctCount = result ? Object.values(result.details).filter(Boolean).length : 0;
+  const wrongCount = total - correctCount;
+
+  function answer(qid: string, value: unknown) {
+    if (submitted) return;
+    setAnswers((a) => ({ ...a, [qid]: value }));
+  }
+  function toggleFlag(qid: string) {
+    setFlags((f) => ({ ...f, [qid]: !f[qid] }));
+  }
+
+  function jump(i: number) {
+    setCurrent(i);
+    if (submitted) setReviewFilter("all");
+    setTab("questions");
+    setPendingScroll(i);
+  }
+
   async function handleSubmit() {
-    if (Object.keys(answers).length < test.questions.length) {
-      toast.error("Vui lòng trả lời tất cả câu hỏi trước khi nộp");
-      return;
-    }
+    if (submitting || submitted) return; // re-entrancy guard (no duplicate Attempt/XP)
     setSubmitting(true);
-    const res = await submitReadingAction({ testId: test.id, answers });
+    const res = await submitReadingAction({ testId: test.id, answers, durationSec: elapsed });
     setSubmitting(false);
     if (res.ok && res.result) {
       setResult(res.result);
       setSubmitted(true);
+      setReviewOpen(false);
+      setTab("questions"); // reveal graded results on the tabbed (mobile/iPad) layout
+      try {
+        localStorage.removeItem(storageKey);
+      } catch {
+        /* ignore */
+      }
       toast.success(`Bạn đạt ${Math.round(res.result.score)}%`);
     } else {
       toast.error("Lỗi nộp bài, thử lại sau");
     }
   }
 
-  function answer(qid: string, value: unknown) {
-    if (submitted) return;
-    setAnswers((a) => ({ ...a, [qid]: value }));
-  }
-
-  function jump(i: number) {
-    setCurrent(i);
-    questionRefs.current[i]?.scrollIntoView({ behavior: "smooth", block: "center" });
-  }
-
-  const answeredArr = test.questions.map((q) => answers[q.id] !== undefined);
-  const correctnessArr = submitted
-    ? test.questions.map((q) => result?.details[q.id])
-    : undefined;
-  const correctCount = result ? Object.values(result.details).filter(Boolean).length : 0;
+  const overTime = elapsed > test.timeLimit;
 
   return (
-    <TestShell
-      subtitle="Đọc hiểu · Luyện tập"
-      backHref="/reading"
-      elapsedLabel={`${formatDuration(elapsed)} đã làm`}
-      onSubmit={handleSubmit}
-      submitting={submitting}
-      submitted={submitted}
-      tools={
-        <Button
-          size="sm"
-          variant={showPinyin ? "default" : "outline"}
-          className="gap-1.5 rounded-lg"
-          onClick={() => setShowPinyin((v) => !v)}
-        >
-          {showPinyin ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
-          <span className="hidden sm:inline">Pinyin</span>
-        </Button>
-      }
-      nav={
-        <QuestionNavBar
-          partLabel={`${test.questions.length} câu`}
-          total={test.questions.length}
-          answered={answeredArr}
-          current={current}
-          correctness={correctnessArr}
-          onJump={jump}
-        />
-      }
-    >
-      <div className="h-full overflow-y-auto lg:overflow-hidden">
-        <div className="mx-auto h-full max-w-6xl lg:grid lg:grid-cols-2">
-          {/* Passage */}
-          <article className="p-4 sm:p-6 lg:h-full lg:overflow-y-auto lg:border-r">
-            <div className={cn("relative mb-4 flex h-32 items-center justify-center overflow-hidden rounded-2xl bg-gradient-to-br", coverGradient(test.id))}>
-              <span className="font-chinese text-7xl text-white/25">{coverChar(test.id)}</span>
-              <span className={cn("absolute bottom-2 left-2 rounded-full px-2 py-0.5 text-[11px] font-bold shadow", hskBadgeClass(test.hskLevel))}>
-                {hskLevelLabel(test.hskLevel)}
-              </span>
-            </div>
-            <h1 className="text-lg font-bold sm:text-xl">{test.title}</h1>
-            <p className="font-chinese text-sm text-muted-foreground">{test.titleZh}</p>
-            <div className="mt-4 font-chinese text-[15px] leading-loose">
-              <PinyinText
-                text={test.passage}
+    <>
+      <TestShell
+        subtitle="Đọc hiểu · Luyện tập"
+        backHref="/reading"
+        onSubmit={() => setReviewOpen(true)}
+        submitting={submitting}
+        submitted={submitted}
+        center={
+          <span
+            className={cn(
+              "inline-flex items-center gap-1.5 rounded-lg px-2.5 py-1.5 text-sm font-semibold tabular-nums",
+              overTime ? "bg-amber-100 text-amber-700" : "bg-muted",
+            )}
+          >
+            <Clock className={cn("h-4 w-4", overTime ? "text-amber-600" : "text-muted-foreground")} />
+            {formatDuration(elapsed)}
+            <span className="hidden text-xs font-normal text-muted-foreground sm:inline">
+              / đề xuất {formatDuration(test.timeLimit)}
+            </span>
+          </span>
+        }
+        tools={
+          <>
+            <Button
+              size="sm"
+              variant="outline"
+              className="gap-1.5 rounded-lg"
+              onClick={() => setSettingsOpen(true)}
+              aria-label="Tuỳ chỉnh đọc"
+            >
+              <Settings2 className="h-4 w-4" />
+              <span className="hidden lg:inline">Cỡ chữ</span>
+            </Button>
+            <Button
+              size="sm"
+              variant={showPinyin ? "default" : "outline"}
+              className="gap-1.5 rounded-lg"
+              onClick={() => setShowPinyin((v) => !v)}
+            >
+              {showPinyin ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
+              <span className="hidden lg:inline">Pinyin</span>
+            </Button>
+          </>
+        }
+        nav={
+          <div className="flex items-center gap-2">
+            <span className="hidden shrink-0 rounded-full border border-primary/30 bg-primary/5 px-3 py-1 text-xs font-bold text-primary sm:inline">
+              {answeredCount}/{total} câu
+            </span>
+            <ReadingPalette
+              total={total}
+              answered={answeredArr}
+              flagged={flaggedArr}
+              current={current}
+              correctness={correctnessArr}
+              onJump={jump}
+            />
+          </div>
+        }
+      >
+        <div className="flex h-full min-h-0 flex-col">
+          {/* Segmented passage/questions switch — phones & iPad portrait */}
+          <div className="flex shrink-0 gap-1 border-b bg-white/80 p-1.5 backdrop-blur lg:hidden">
+            <SegButton active={tab === "passage"} onClick={() => setTab("passage")} icon={BookOpen} label="Đoạn văn" />
+            <SegButton
+              active={tab === "questions"}
+              onClick={() => setTab("questions")}
+              icon={ListChecks}
+              label={`Câu hỏi ${answeredCount}/${total}`}
+            />
+          </div>
+
+          {/* Panes: split on lg+, single (tabbed) below */}
+          <div className="min-h-0 flex-1 lg:grid lg:grid-cols-[minmax(0,1fr)_1px_minmax(0,1fr)]">
+            <div className={cn("h-full min-h-0", tab === "passage" ? "block" : "hidden", "lg:block")}>
+              <PassagePane
+                test={test}
                 showPinyin={showPinyin}
-                onWordClick={(char, pinyin) => toast(`${char}`, { description: pinyin })}
+                settings={settings}
+                onCharClick={(char, pinyin, e) => setLookup({ char, pinyin, x: e.clientX, y: e.clientY })}
               />
             </div>
-            <p className="mt-4 flex items-center gap-1.5 text-xs text-muted-foreground">
-              <Languages className="h-3.5 w-3.5" /> Nhấn vào từng chữ để xem pinyin.
-            </p>
-          </article>
 
-          {/* Questions */}
-          <section className="space-y-3 p-4 sm:p-6 lg:h-full lg:overflow-y-auto">
-            <div className="flex items-center justify-between">
-              <h2 className="text-base font-bold text-primary">Câu hỏi ({test.questions.length})</h2>
-              {submitted && (
-                <span className="rounded-full bg-emerald-100 px-3 py-1 text-sm font-bold text-emerald-700">
-                  {Math.round(result?.score ?? 0)}% · {correctCount}/{test.questions.length}
-                </span>
-              )}
-            </div>
+            <div className="hidden bg-border lg:block" />
 
-            {test.questions.map((q, idx) => {
-              const userAnswer = answers[q.id];
-              const isCorrect = submitted && result?.details[q.id];
-              const correctAns = q.correctAnswer as { index?: number; value?: boolean };
-
-              return (
-                <div
-                  key={q.id}
-                  ref={(el) => {
-                    questionRefs.current[idx] = el;
-                  }}
-                  onMouseDown={() => setCurrent(idx)}
-                  className={cn(
-                    "rounded-2xl border bg-card p-4",
-                    submitted ? (isCorrect ? "border-emerald-300" : "border-rose-300") : current === idx ? "border-primary/40" : ""
-                  )}
-                >
-                  <div className="flex items-start gap-2">
-                    <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary/10 text-xs font-bold text-primary">
-                      {idx + 1}
+            <div className={cn("h-full min-h-0", tab === "questions" ? "block" : "hidden", "lg:block")}>
+              <div className="flex h-full min-h-0 flex-col">
+                <div className="flex shrink-0 items-center justify-between border-b bg-white/70 px-4 py-2 backdrop-blur">
+                  <span className="text-xs font-bold uppercase tracking-wide text-muted-foreground">
+                    Câu hỏi · {total}
+                  </span>
+                  {submitted ? (
+                    <span className="rounded-full bg-emerald-100 px-2.5 py-0.5 text-xs font-bold text-emerald-700">
+                      {Math.round(result?.score ?? 0)}% · {correctCount}/{total}
                     </span>
-                    {submitted &&
-                      (isCorrect ? (
-                        <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-emerald-500" />
-                      ) : (
-                        <XCircle className="mt-0.5 h-5 w-5 shrink-0 text-rose-500" />
-                      ))}
-                    <span className="font-chinese text-sm font-semibold leading-snug">{q.prompt}</span>
-                  </div>
-
-                  {q.type === "MCQ" && (
-                    <div className="mt-3 space-y-2">
-                      {(q.options as Option[])?.map((opt, oi) => (
-                        <button
-                          key={oi}
-                          onClick={() => answer(q.id, oi)}
-                          disabled={submitted}
-                          className={cn(
-                            "flex w-full items-center gap-2 rounded-xl border p-2.5 text-left font-chinese text-sm transition-colors",
-                            userAnswer === oi
-                              ? submitted
-                                ? oi === correctAns.index
-                                  ? "border-emerald-500 bg-emerald-50"
-                                  : "border-rose-400 bg-rose-50"
-                                : "border-primary bg-primary/10"
-                              : submitted && oi === correctAns.index
-                                ? "border-emerald-300 bg-emerald-50/50"
-                                : "hover:border-primary/50"
-                          )}
-                        >
-                          <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full border text-xs font-bold">
-                            {String.fromCharCode(65 + oi)}
-                          </span>
-                          {opt.text}
-                        </button>
-                      ))}
-                    </div>
-                  )}
-
-                  {q.type === "TRUE_FALSE" && (
-                    <div className="mt-3 flex gap-2">
-                      {[true, false].map((val) => (
-                        <button
-                          key={String(val)}
-                          onClick={() => answer(q.id, val)}
-                          disabled={submitted}
-                          className={cn(
-                            "flex-1 rounded-xl border p-2.5 text-sm font-semibold transition-colors",
-                            userAnswer === val
-                              ? submitted
-                                ? val === correctAns.value
-                                  ? "border-emerald-500 bg-emerald-50"
-                                  : "border-rose-400 bg-rose-50"
-                                : "border-primary bg-primary/10"
-                              : submitted && val === correctAns.value
-                                ? "border-emerald-300 bg-emerald-50/50"
-                                : "hover:border-primary/50"
-                          )}
-                        >
-                          {val ? "Đúng ✓" : "Sai ✗"}
-                        </button>
-                      ))}
-                    </div>
-                  )}
-
-                  {submitted && q.explanation && (
-                    <div className="mt-3 rounded-lg bg-muted p-2.5 text-xs text-muted-foreground">
-                      💡 {q.explanation}
+                  ) : (
+                    <div className="flex items-center gap-1">
+                      <button
+                        onClick={() => jump(Math.max(0, current - 1))}
+                        className="rounded-md p-1 text-muted-foreground hover:bg-muted disabled:opacity-40"
+                        disabled={current === 0}
+                        aria-label="Câu trước"
+                      >
+                        <ChevronLeft className="h-4 w-4" />
+                      </button>
+                      <span className="text-xs tabular-nums text-muted-foreground">
+                        {current + 1}/{total}
+                      </span>
+                      <button
+                        onClick={() => jump(Math.min(total - 1, current + 1))}
+                        className="rounded-md p-1 text-muted-foreground hover:bg-muted disabled:opacity-40"
+                        disabled={current === total - 1}
+                        aria-label="Câu sau"
+                      >
+                        <ChevronRight className="h-4 w-4" />
+                      </button>
                     </div>
                   )}
                 </div>
-              );
-            })}
 
-            {submitted && (
-              <Button asChild variant="outline" className="w-full">
-                <Link href="/reading">Quay lại danh sách đề</Link>
-              </Button>
-            )}
-          </section>
+                <div className="min-h-0 flex-1 space-y-3 overflow-y-auto px-4 py-4">
+                  {submitted && result && (
+                    <>
+                      <ResultsSummary
+                        score={result.score}
+                        correct={correctCount}
+                        total={total}
+                        level={test.hskLevel}
+                        elapsedLabel={`${formatDuration(elapsed)} đã làm`}
+                      />
+                      <div className="flex gap-1.5">
+                        <FilterButton active={reviewFilter === "all"} onClick={() => setReviewFilter("all")} label={`Tất cả · ${total}`} />
+                        <FilterButton active={reviewFilter === "wrong"} onClick={() => setReviewFilter("wrong")} label={`Sai · ${wrongCount}`} />
+                        <FilterButton active={reviewFilter === "flagged"} onClick={() => setReviewFilter("flagged")} label={`Cờ · ${flaggedIdx.length}`} />
+                      </div>
+                    </>
+                  )}
+
+                  {test.questions.map((q, idx) => {
+                    if (submitted && reviewFilter === "wrong" && result?.details[q.id]) return null;
+                    if (submitted && reviewFilter === "flagged" && !flags[q.id]) return null;
+                    return (
+                      <QuestionCard
+                        key={q.id}
+                        question={q}
+                        index={idx}
+                        userAnswer={answers[q.id]}
+                        onAnswer={(v) => answer(q.id, v)}
+                        submitted={submitted}
+                        isCorrect={result?.details[q.id]}
+                        flagged={!!flags[q.id]}
+                        onToggleFlag={() => toggleFlag(q.id)}
+                        showPinyin={showPinyin}
+                        isCurrent={current === idx}
+                        onActivate={() => setCurrent(idx)}
+                        cardRef={(el) => {
+                          questionRefs.current[idx] = el;
+                        }}
+                      />
+                    );
+                  })}
+
+                  {submitted && (
+                    <Button asChild variant="outline" className="w-full">
+                      <Link href="/reading">Quay lại danh sách đề</Link>
+                    </Button>
+                  )}
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-    </TestShell>
+      </TestShell>
+
+      <SettingsDialog open={settingsOpen} onOpenChange={setSettingsOpen} settings={settings} onChange={setSettings} />
+      <ReviewDialog
+        open={reviewOpen}
+        onOpenChange={setReviewOpen}
+        total={total}
+        answeredCount={answeredCount}
+        unanswered={unansweredIdx}
+        flagged={flaggedIdx}
+        onJump={jump}
+        onConfirm={handleSubmit}
+        submitting={submitting}
+      />
+      {lookup && <CharLookup anchor={lookup} onClose={() => setLookup(null)} />}
+    </>
+  );
+}
+
+function SegButton({
+  active,
+  onClick,
+  icon: Icon,
+  label,
+}: {
+  active: boolean;
+  onClick: () => void;
+  icon: React.ComponentType<{ className?: string }>;
+  label: string;
+}) {
+  return (
+    <button
+      onClick={onClick}
+      className={cn(
+        "flex flex-1 items-center justify-center gap-1.5 rounded-lg px-3 py-2 text-sm font-semibold transition-colors",
+        active ? "bg-primary text-primary-foreground shadow-sm" : "text-muted-foreground hover:bg-muted",
+      )}
+    >
+      <Icon className="h-4 w-4" /> {label}
+    </button>
+  );
+}
+
+function FilterButton({ active, onClick, label }: { active: boolean; onClick: () => void; label: string }) {
+  return (
+    <button
+      onClick={onClick}
+      className={cn(
+        "rounded-full border px-3 py-1 text-xs font-semibold transition-colors",
+        active ? "border-primary bg-primary/10 text-primary" : "border-input text-muted-foreground hover:border-primary/40",
+      )}
+    >
+      {label}
+    </button>
   );
 }

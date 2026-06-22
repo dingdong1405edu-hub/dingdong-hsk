@@ -3,6 +3,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { CheckCircle2, XCircle, SkipForward } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 import { FlowHeader } from "./flow-header";
 import { ExerciseRenderer } from "../exercises/exercise-renderer";
 import type { Exercise } from "@/types";
@@ -24,6 +25,10 @@ interface Props {
 }
 
 type Feedback = "correct" | "wrong" | null;
+
+/** Han-script detection — translate answers can be Vietnamese (zh_to_vi), so the
+ *  Chinese typeface should only apply when the reference answer is actually CJK. */
+const hasHan = (s: string) => /\p{Script=Han}/u.test(s);
 
 /** The memorisation phase: drills the learner one card at a time. Risk-free
  *  (no hearts). Any card can be skipped — skipped cards are excluded from the
@@ -115,18 +120,18 @@ export function FlashcardPhase({ flashcards, closeHref, label, onReviewTheory, o
             initial={{ y: 100, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: 100, opacity: 0 }}
-            className={`fixed bottom-0 left-0 right-0 border-t p-6 ${
+            className={`fixed bottom-0 left-0 right-0 max-h-[55dvh] overflow-y-auto border-t p-6 ${
               feedback === "correct" ? "border-green-200 bg-green-50" : "border-red-200 bg-red-50"
             }`}
           >
-            <div className="mx-auto flex max-w-2xl items-center justify-between">
-              <div className="flex items-center gap-3">
+            <div className="mx-auto flex max-w-2xl items-start justify-between gap-4">
+              <div className="flex min-w-0 items-start gap-3">
                 {feedback === "correct" ? (
-                  <CheckCircle2 className="h-6 w-6 text-green-600" />
+                  <CheckCircle2 className="mt-0.5 h-6 w-6 shrink-0 text-green-600" />
                 ) : (
-                  <XCircle className="h-6 w-6 text-red-500" />
+                  <XCircle className="mt-0.5 h-6 w-6 shrink-0 text-red-500" />
                 )}
-                <div>
+                <div className="min-w-0 space-y-1">
                   <div
                     className={`font-bold ${
                       feedback === "correct" ? "text-green-700" : "text-red-600"
@@ -134,17 +139,33 @@ export function FlashcardPhase({ flashcards, closeHref, label, onReviewTheory, o
                   >
                     {feedback === "correct" ? "Chính xác!" : "Chưa đúng"}
                   </div>
-                  {correctAnswer && (
+                  {feedback === "wrong" && correctAnswer && (
+                    <div className="text-sm text-muted-foreground">
+                      Sửa lại đúng:{" "}
+                      <span className={cn("font-semibold text-foreground", hasHan(correctAnswer) && "font-chinese")}>
+                        {correctAnswer}
+                      </span>
+                    </div>
+                  )}
+                  {feedback === "correct" && correctAnswer && (
                     <div className="text-sm text-muted-foreground">
                       Đáp án đúng:{" "}
-                      <span className="font-chinese font-semibold">{correctAnswer}</span>
+                      <span className={cn("font-semibold", hasHan(correctAnswer) && "font-chinese")}>
+                        {correctAnswer}
+                      </span>
+                    </div>
+                  )}
+                  {feedback === "wrong" && exercise?.explanation && (
+                    <div className="text-sm leading-relaxed text-muted-foreground">
+                      <span className="font-medium text-foreground">Giải thích: </span>
+                      {exercise.explanation}
                     </div>
                   )}
                 </div>
               </div>
               <Button
                 onClick={advanceAfterAnswer}
-                className={feedback === "correct" ? "bg-green-600 hover:bg-green-700" : ""}
+                className={cn("shrink-0", feedback === "correct" && "bg-green-600 hover:bg-green-700")}
               >
                 Tiếp tục
               </Button>

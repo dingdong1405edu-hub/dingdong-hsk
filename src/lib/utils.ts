@@ -6,12 +6,19 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export function countChineseChars(text: string): number {
-  const segmenter = new Intl.Segmenter("zh", { granularity: "grapheme" });
-  let count = 0;
-  for (const seg of segmenter.segment(text)) {
-    if (/\p{Script=Han}/u.test(seg.segment)) count++;
+  if (!text) return 0;
+  // Fall back to a regex count where Intl.Segmenter is unavailable (old webviews)
+  // so this never throws during render and blanks the screen.
+  try {
+    const segmenter = new Intl.Segmenter("zh", { granularity: "grapheme" });
+    let count = 0;
+    for (const seg of segmenter.segment(text)) {
+      if (/\p{Script=Han}/u.test(seg.segment)) count++;
+    }
+    return count;
+  } catch {
+    return (text.match(/\p{Script=Han}/gu) ?? []).length;
   }
-  return count;
 }
 
 /**

@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
+import { LookupText } from "@/components/learn/grammar/lookup-text";
 import type { FillBlankExercise } from "@/types";
 
 interface Props {
@@ -26,7 +27,7 @@ export function FillBlankExerciseUI({ exercise, onAnswer, disabled }: Props) {
       <div className="text-center space-y-3">
         <p className="text-sm text-muted-foreground">Điền từ còn thiếu</p>
         <div className="text-2xl font-chinese font-semibold bg-muted/50 rounded-xl p-4">
-          {parts[0]}
+          <LookupText text={parts[0]} />
           <span
             className={cn(
               "inline-block border-b-2 min-w-[3rem] px-2 mx-1",
@@ -35,7 +36,7 @@ export function FillBlankExerciseUI({ exercise, onAnswer, disabled }: Props) {
           >
             {selected ?? "___"}
           </span>
-          {parts[1]}
+          <LookupText text={parts[1] ?? ""} />
         </div>
         {exercise.hint && <p className="text-sm text-muted-foreground italic">Gợi ý: {exercise.hint}</p>}
       </div>

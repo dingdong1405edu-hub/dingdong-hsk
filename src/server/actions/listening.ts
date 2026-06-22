@@ -7,13 +7,22 @@ import { Skill, Prisma } from "@prisma/client";
 const schema = z.object({
   testId: z.string(),
   answers: z.record(z.unknown()),
+  durationSec: z.number().int().nonnegative().optional(),
 });
+
+/** Normalize a free-text answer: NFKC (fold full/half-width from Chinese IMEs), drop whitespace, lowercase. */
+function normalize(v: unknown): string {
+  return String(v ?? "")
+    .normalize("NFKC")
+    .replace(/\s+/g, "")
+    .toLowerCase();
+}
 
 export async function submitListeningAction(input: z.infer<typeof schema>) {
   const session = await auth();
   if (!session?.user) return { ok: false, error: "Unauthorized" };
 
-  const { testId, answers } = schema.parse(input);
+  const { testId, answers, durationSec } = schema.parse(input);
 
   const test = await db.listeningTest.findUnique({
     where: { id: testId },
@@ -26,11 +35,26 @@ export async function submitListeningAction(input: z.infer<typeof schema>) {
 
   for (const q of test.questions) {
     const userAnswer = answers[q.id];
-    const correctAnswer = q.correctAnswer as { index?: number; value?: boolean };
+    const correctAnswer = q.correctAnswer as {
+      index?: number;
+      value?: boolean;
+      text?: string;
+      accepted?: string[];
+    };
     let isCorrect = false;
 
-    if (q.type === "MCQ") isCorrect = userAnswer === correctAnswer.index;
-    else if (q.type === "TRUE_FALSE") isCorrect = userAnswer === correctAnswer.value;
+    if (q.type === "MCQ") {
+      isCorrect = typeof correctAnswer.index === "number" && userAnswer === correctAnswer.index;
+    } else if (q.type === "TRUE_FALSE") {
+      isCorrect = typeof correctAnswer.value === "boolean" && userAnswer === correctAnswer.value;
+    } else if (q.type === "FILL_BLANK" || q.type === "SHORT_ANSWER") {
+      const accepted = [
+        ...(correctAnswer.text ? [correctAnswer.text] : []),
+        ...(Array.isArray(correctAnswer.accepted) ? correctAnswer.accepted : []),
+      ].map(normalize);
+      const ua = normalize(userAnswer);
+      isCorrect = ua.length > 0 && accepted.includes(ua);
+    }
 
     details[q.id] = isCorrect;
     if (isCorrect) correct++;
@@ -50,6 +74,7 @@ export async function submitListeningAction(input: z.infer<typeof schema>) {
           rawAnswer: answers as Prisma.InputJsonValue,
           score,
           feedback: { details } as Prisma.InputJsonValue,
+          durationSec: durationSec ?? null,
         },
       }),
       db.user.update({

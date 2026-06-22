@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
+import { LookupText } from "@/components/learn/grammar/lookup-text";
 import type { TranslateExercise } from "@/types";
 
 interface Props {
@@ -26,7 +27,11 @@ export function TranslateExerciseUI({ exercise, onAnswer, disabled }: Props) {
           {exercise.direction === "vi_to_zh" ? "Dịch sang tiếng Trung" : "Dịch sang tiếng Việt"}
         </p>
         <div className="text-3xl font-chinese font-bold bg-muted/50 rounded-xl p-4">
-          {exercise.prompt}
+          {exercise.direction === "zh_to_vi" ? (
+            <LookupText text={exercise.prompt} />
+          ) : (
+            exercise.prompt
+          )}
         </div>
         {exercise.pinyin && (
           <p className="font-pinyin text-muted-foreground text-sm">{exercise.pinyin}</p>

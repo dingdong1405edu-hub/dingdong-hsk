@@ -88,13 +88,47 @@ const readingSchema = z.object({
   passage: z.string().min(1),
   passagePinyin: z.string().optional(),
   timeLimit: z.coerce.number().min(60),
-  imageUrl: z.string().optional(),
+  imageUrl: z
+    .string()
+    .trim()
+    .optional()
+    .refine((v) => !v || /^(https?:\/\/|\/)\S+$/.test(v), "Liên kết ảnh không hợp lệ."),
 });
 
 export async function createReadingAction(fd: FormData) {
   await requireAdmin();
   const data = readingSchema.parse(Object.fromEntries(fd));
-  await db.readingTest.create({ data });
+  await db.readingTest.create({
+    data: {
+      ...data,
+      // Empty hidden-input / pasted blanks normalise to null (not "") so
+      // "has image?" checks stay consistent with updateReadingAction.
+      imageUrl: data.imageUrl?.trim() ? data.imageUrl : null,
+      passagePinyin: data.passagePinyin?.trim() ? data.passagePinyin : null,
+    },
+  });
+  revalidatePath("/admin/reading");
+  return { ok: true };
+}
+
+const updateReadingSchema = readingSchema.extend({ id: z.string().min(1) });
+
+export async function updateReadingAction(fd: FormData) {
+  await requireAdmin();
+  const { id, ...rest } = updateReadingSchema.parse(Object.fromEntries(fd));
+  await db.readingTest.update({
+    where: { id },
+    data: {
+      title: rest.title,
+      titleZh: rest.titleZh,
+      hskLevel: rest.hskLevel,
+      passage: rest.passage,
+      passagePinyin: rest.passagePinyin?.trim() ? rest.passagePinyin : null,
+      timeLimit: rest.timeLimit,
+      imageUrl: rest.imageUrl?.trim() ? rest.imageUrl : null,
+    },
+  });
+  revalidatePath(`/admin/reading/${id}`);
   revalidatePath("/admin/reading");
   return { ok: true };
 }
@@ -119,6 +153,26 @@ export async function createListeningAction(fd: FormData) {
       imageUrl: (fd.get("imageUrl") as string) || undefined,
     },
   });
+  revalidatePath("/admin/listening");
+  return { ok: true };
+}
+
+export async function updateListeningAction(fd: FormData) {
+  await requireAdmin();
+  const id = fd.get("id") as string;
+  if (!id) return { ok: false, error: "Thiếu id bài nghe" };
+  await db.listeningTest.update({
+    where: { id },
+    data: {
+      title: fd.get("title") as string,
+      hskLevel: fd.get("hskLevel") as HSKLevel,
+      audioUrl: (fd.get("audioUrl") as string) || "",
+      transcript: (fd.get("transcript") as string)?.trim() ? (fd.get("transcript") as string) : null,
+      timeLimit: parseInt(fd.get("timeLimit") as string) || 300,
+      imageUrl: (fd.get("imageUrl") as string)?.trim() ? (fd.get("imageUrl") as string) : null,
+    },
+  });
+  revalidatePath(`/admin/listening/${id}`);
   revalidatePath("/admin/listening");
   return { ok: true };
 }

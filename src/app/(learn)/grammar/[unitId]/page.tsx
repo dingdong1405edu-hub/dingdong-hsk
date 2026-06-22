@@ -4,7 +4,7 @@ import { notFound, redirect } from "next/navigation";
 import Link from "next/link";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { CheckCircle2 } from "lucide-react";
+import { CheckCircle2, Repeat } from "lucide-react";
 import { grammarItemCount } from "@/lib/grammar";
 
 interface Props {
@@ -29,9 +29,16 @@ export default async function GrammarUnitPage({ params }: Props) {
 
   return (
     <div className="space-y-6 max-w-2xl">
-      <div>
-        <h1 className="text-2xl font-bold">{unit.title}</h1>
-        <p className="font-chinese text-muted-foreground">{unit.titleZh}</p>
+      <div className="flex items-start justify-between gap-3">
+        <div>
+          <h1 className="text-2xl font-bold">{unit.title}</h1>
+          <p className="font-chinese text-muted-foreground">{unit.titleZh}</p>
+        </div>
+        <Link href={`/grammar/review/unit/${unitId}`} className="shrink-0">
+          <Button variant="outline" size="sm" className="gap-1.5 border-violet-300 text-violet-700">
+            <Repeat className="h-4 w-4" /> Ôn cả unit
+          </Button>
+        </Link>
       </div>
       <div className="space-y-3">
         {unit.lessons.map((lesson, idx) => {

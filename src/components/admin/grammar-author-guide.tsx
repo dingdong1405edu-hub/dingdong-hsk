@@ -76,6 +76,14 @@ export function GrammarAuthorGuide() {
             <section className="space-y-3">
               <h3 className="font-semibold">3. Các loại bài tập (dùng cho exercises & test.questions)</h3>
 
+              <div className="rounded-lg border border-amber-200 bg-amber-50/60 p-3 text-[13px]">
+                <b>Mẹo:</b> Mọi loại bài tập đều có thể thêm trường tùy chọn{" "}
+                <code className="rounded bg-muted px-1 py-0.5 font-mono text-[12px]">explanation</code>{" "}
+                — lời giải thích bằng tiếng Việt <b>tại sao đáp án đúng</b>. Khi học viên trả lời
+                SAI, hệ thống sẽ hiện đáp án đúng kèm phần giải thích này (không chỉ hiện mỗi đáp án).
+                Nên viết ngắn gọn, tập trung vào lỗi thường gặp.
+              </div>
+
               <div>
                 <p className="font-medium">a) Điền từ — trắc nghiệm (fill_blank)</p>
                 <Code>{`{
@@ -83,7 +91,8 @@ export function GrammarAuthorGuide() {
   "sentence": "我___学生。",       // ___ là chỗ trống
   "blank": "是",                  // đáp án đúng
   "options": ["是", "有", "在", "叫"],
-  "hint": "Động từ 'là'"          // tùy chọn
+  "hint": "Động từ 'là'",         // tùy chọn
+  "explanation": "Dùng 是 để nối chủ ngữ với danh từ (学生). 有 = 'có', 在 = 'ở', đều sai ngữ cảnh."  // tùy chọn, hiện khi trả lời sai
 }`}</Code>
               </div>
 

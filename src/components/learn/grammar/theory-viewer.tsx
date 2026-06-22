@@ -2,6 +2,7 @@
 import { Volume2, MapPin, Lightbulb, Sparkles } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { playWord } from "@/lib/speech";
+import { LookupText } from "./lookup-text";
 import type { TheorySection } from "@/types";
 
 /** Only render an image for a real-looking URL (absolute http(s) or a rooted
@@ -79,16 +80,20 @@ export function TheoryViewer({ section }: { section: TheorySection }) {
                     className="max-h-48 w-full rounded-lg border object-contain"
                   />
                 )}
-                <button
-                  type="button"
-                  onClick={() => playWord({ hanzi: ex.hanzi })}
-                  className="flex w-full items-center gap-2 text-left"
-                >
-                  <span className="font-chinese text-xl font-semibold leading-relaxed">
-                    {ex.hanzi}
-                  </span>
-                  <Volume2 className="h-4 w-4 shrink-0 text-violet-400" />
-                </button>
+                <div className="flex w-full items-start gap-2 text-left">
+                  <LookupText
+                    text={ex.hanzi}
+                    className="text-xl font-semibold leading-relaxed"
+                  />
+                  <button
+                    type="button"
+                    onClick={() => playWord({ hanzi: ex.hanzi })}
+                    aria-label="Nghe ví dụ"
+                    className="mt-1 shrink-0 text-violet-400 transition-colors hover:text-violet-600"
+                  >
+                    <Volume2 className="h-4 w-4" />
+                  </button>
+                </div>
                 <div className="font-serif text-sm text-violet-600">{ex.pinyin}</div>
                 <div className="text-sm text-foreground/80">{ex.meaning}</div>
                 {ex.note && (

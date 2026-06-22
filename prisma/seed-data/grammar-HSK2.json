@@ -18,27 +18,31 @@
               "sentence": "我昨天买___一本书。",
               "blank": "了",
               "options": ["了", "的", "得", "着"],
-              "hint": "Trợ từ 了 (le) đặt sau động từ diễn tả hành động đã hoàn thành"
+              "hint": "Trợ từ 了 (le) đặt sau động từ diễn tả hành động đã hoàn thành",
+              "explanation": "Đáp án 了 đứng ngay sau động từ 买 để báo hành động mua đã hoàn thành (我昨天买了一本书). 的 dùng để định ngữ/sở hữu, 得 nối bổ ngữ trình độ, còn 着 chỉ trạng thái đang tiếp diễn nên đều không hợp ở đây."
             },
             {
               "type": "fill_blank",
               "sentence": "他吃___饭就去工作了。",
               "blank": "了",
               "options": ["了", "在", "和", "对"],
-              "hint": "Hành động ăn cơm đã xong, dùng 了 (le)"
+              "hint": "Hành động ăn cơm đã xong, dùng 了 (le)",
+              "explanation": "了 đặt sau 吃 cho thấy việc ăn cơm xong rồi mới đi làm (吃了饭就...), diễn tả hành động trước hoàn tất. 在 chỉ đang diễn ra, 和 (và) và 对 (đối với) là liên/giới từ nên sai ngữ pháp ở vị trí này."
             },
             {
               "type": "sentence_order",
               "words": ["了", "我", "他", "看见"],
               "answer": "我看见他了",
-              "meaning": "Tôi đã nhìn thấy anh ấy rồi"
+              "meaning": "Tôi đã nhìn thấy anh ấy rồi",
+              "explanation": "Trật tự tiếng Trung là Chủ ngữ + Động từ + Tân ngữ: 我 (tôi) + 看见 (nhìn thấy) + 他 (anh ấy), rồi 了 đặt cuối câu báo sự việc đã xảy ra. Đặt 他 trước 看见 sẽ sai vì tân ngữ phải đứng sau động từ."
             },
             {
               "type": "translate",
               "direction": "vi_to_zh",
               "prompt": "Hôm qua tôi đã mua một chiếc áo.",
               "answer": "昨天我买了一件衣服。",
-              "options": ["昨天我买了一件衣服。", "昨天我买一件衣服。", "明天我买一件衣服。", "昨天他买了一件衣服。"]
+              "options": ["昨天我买了一件衣服。", "昨天我买一件衣服。", "明天我买一件衣服。", "昨天他买了一件衣服。"],
+              "explanation": "Câu nói về quá khứ (hôm qua, đã mua) nên cần 了 sau 买 để chỉ hành động hoàn thành: 昨天我买了一件衣服。Phương án thiếu 了 không diễn tả 'đã', phương án 明天 (ngày mai) sai thời điểm, còn 他 (anh ấy) sai chủ ngữ vì câu gốc là 'tôi'."
             }
           ]
         },
@@ -52,27 +56,31 @@
               "sentence": "今天___冷了！",
               "blank": "太",
               "options": ["太", "很", "都", "也"],
-              "hint": "Cấu trúc 太 ... 了 (tài ... le) nghĩa là quá, rất"
+              "hint": "Cấu trúc 太 ... 了 (tài ... le) nghĩa là quá, rất",
+              "explanation": "Cuối câu đã có 了 nên chỗ trống phải là 太 để tạo cấu trúc cố định 太...了 (quá...): 今天太冷了。 很 (rất) không đi với 了 cuối câu cảm thán này, còn 都 (đều) và 也 (cũng) là phó từ phạm vi nên không hợp nghĩa."
             },
             {
               "type": "fill_blank",
               "sentence": "这个菜太好吃___！",
               "blank": "了",
               "options": ["了", "的", "吗", "呢"],
-              "hint": "Cấu trúc 太 ... 了 cần 了 (le) ở cuối"
+              "hint": "Cấu trúc 太 ... 了 cần 了 (le) ở cuối",
+              "explanation": "Đầu câu đã có 太 nên cần 了 ở cuối để hoàn chỉnh cấu trúc cảm thán 太...了 (这个菜太好吃了！ - Món này ngon quá!). 的 là trợ từ định ngữ, 吗 và 呢 là trợ từ nghi vấn nên biến câu cảm thán thành câu hỏi, không đúng."
             },
             {
               "type": "sentence_order",
               "words": ["太", "贵", "了", "这", "件", "衣服"],
               "answer": "这件衣服太贵了",
-              "meaning": "Chiếc áo này quá đắt"
+              "meaning": "Chiếc áo này quá đắt",
+              "explanation": "Cụm danh từ chủ ngữ đứng đầu theo thứ tự chỉ định + lượng từ + danh từ: 这件衣服 (chiếc áo này), sau đó là cấu trúc 太 + tính từ 贵 + 了 ở cuối: 这件衣服太贵了。 太 phải đứng trước tính từ và 了 luôn nằm cuối câu."
             },
             {
               "type": "translate",
               "direction": "vi_to_zh",
               "prompt": "Hôm nay nóng quá!",
               "answer": "今天太热了！",
-              "options": ["今天太热了！", "今天很热。", "今天太冷了！", "明天太热了！"]
+              "options": ["今天太热了！", "今天很热。", "今天太冷了！", "明天太热了！"],
+              "explanation": "Từ 'quá' trong câu cảm thán dịch bằng cấu trúc 太...了: 今天太热了！ 今天很热 chỉ nghĩa 'rất nóng' (không phải 'quá'), 太冷了 nghĩa là 'lạnh quá' (sai nghĩa), còn 明天 là 'ngày mai' (sai thời điểm)."
             }
           ]
         },
@@ -86,27 +94,31 @@
               "sentence": "我们一起去___！",
               "blank": "吧",
               "options": ["吧", "吗", "呢", "了"],
-              "hint": "Trợ từ 吧 (ba) cuối câu diễn tả đề nghị, rủ rê"
+              "hint": "Trợ từ 吧 (ba) cuối câu diễn tả đề nghị, rủ rê",
+              "explanation": "Câu rủ rê 'chúng ta cùng đi nào' dùng trợ từ 吧 ở cuối để đề nghị: 我们一起去吧！ 吗 tạo câu hỏi đúng/sai, 呢 hỏi lại hoặc nhấn tiếp diễn, còn 了 báo thay đổi/hoàn thành nên đều không diễn tả ý rủ rê."
             },
             {
               "type": "fill_blank",
               "sentence": "他是你的老师___？",
               "blank": "吧",
               "options": ["吧", "的", "得", "在"],
-              "hint": "吧 (ba) ở đây diễn tả sự suy đoán phải không"
+              "hint": "吧 (ba) ở đây diễn tả sự suy đoán phải không",
+              "explanation": "Ở cuối câu hỏi mang tính phỏng đoán 'phải không', dùng 吧: 他是你的老师吧？ (Anh ấy là thầy của bạn phải không?). 的 là trợ từ định ngữ, 得 nối bổ ngữ, 在 chỉ vị trí/đang diễn ra nên không thể đứng cuối câu để hỏi suy đoán."
             },
             {
               "type": "sentence_order",
               "words": ["吧", "我们", "吃饭", "去"],
               "answer": "我们去吃饭吧",
-              "meaning": "Chúng ta đi ăn cơm thôi"
+              "meaning": "Chúng ta đi ăn cơm thôi",
+              "explanation": "Chủ ngữ 我们 đứng đầu, rồi chuỗi động từ liên động 去 + 吃饭 (đi để ăn cơm) theo đúng trình tự, cuối cùng 吧 đặt cuối câu để rủ rê: 我们去吃饭吧。 去 phải đứng trước 吃饭 và 吧 luôn nằm ở cuối."
             },
             {
               "type": "translate",
               "direction": "vi_to_zh",
               "prompt": "Bạn nghỉ ngơi một chút đi!",
               "answer": "你休息一下吧！",
-              "options": ["你休息一下吧！", "你休息一下吗？", "我休息一下吧！", "你工作一下吧！"]
+              "options": ["你休息一下吧！", "你休息一下吗？", "我休息一下吧！", "你工作一下吧！"],
+              "explanation": "Câu khuyên bảo nhẹ nhàng 'nghỉ ngơi một chút đi' dùng 吧 ở cuối, kèm 一下 làm dịu ngữ khí: 你休息一下吧！ Phương án dùng 吗 thành câu hỏi, 我 sai chủ ngữ (phải là 你 - bạn), còn 工作 (làm việc) sai nghĩa so với 休息 (nghỉ ngơi)."
             }
           ]
         }
@@ -129,27 +141,31 @@
               "sentence": "我___他高。",
               "blank": "比",
               "options": ["比", "和", "跟", "在"],
-              "hint": "Giới từ 比 (bǐ) dùng để so sánh hai đối tượng"
+              "hint": "Giới từ 比 (bǐ) dùng để so sánh hai đối tượng",
+              "explanation": "Để so sánh 'tôi cao hơn anh ấy' dùng giới từ 比 theo cấu trúc A 比 B + tính từ: 我比他高。 和 và 跟 nghĩa 'với/cùng' chỉ sự đồng hành chứ không so sánh hơn-kém, còn 在 chỉ vị trí nên đều sai."
             },
             {
               "type": "fill_blank",
               "sentence": "今天比昨天___。",
               "blank": "热",
               "options": ["热", "热吗", "很热", "太热"],
-              "hint": "Câu so sánh với 比 không dùng 很, 太 trước tính từ"
+              "hint": "Câu so sánh với 比 không dùng 很, 太 trước tính từ",
+              "explanation": "Trong câu so sánh với 比, tính từ đứng một mình, không thêm phó từ mức độ: 今天比昨天热。 Vì vậy 很热 và 太热 sai (không dùng 很/太 trong câu 比), còn 热吗 biến câu khẳng định thành câu hỏi nên không phù hợp."
             },
             {
               "type": "sentence_order",
               "words": ["比", "弟弟", "哥哥", "大"],
               "answer": "哥哥比弟弟大",
-              "meaning": "Anh trai lớn tuổi hơn em trai"
+              "meaning": "Anh trai lớn tuổi hơn em trai",
+              "explanation": "Câu so sánh theo cấu trúc A 比 B + tính từ: 哥哥 (A) + 比 + 弟弟 (B) + 大: 哥哥比弟弟大。 Đối tượng được nói tới (哥哥) đứng trước 比, đối tượng đem ra so sánh (弟弟) đứng sau; đảo lại thành 弟弟比哥哥大 sẽ sai nghĩa."
             },
             {
               "type": "translate",
               "direction": "vi_to_zh",
               "prompt": "Cái này đắt hơn cái kia.",
               "answer": "这个比那个贵。",
-              "options": ["这个比那个贵。", "这个和那个贵。", "那个比这个贵。", "这个比那个便宜。"]
+              "options": ["这个比那个贵。", "这个和那个贵。", "那个比这个贵。", "这个比那个便宜。"],
+              "explanation": "'Cái này đắt hơn cái kia' theo cấu trúc A 比 B 贵: 这个比那个贵。 这个和那个 (cái này và cái kia) không phải so sánh, 那个比这个贵 đảo ngược chủ thể (thành 'cái kia đắt hơn'), còn 便宜 (rẻ) trái nghĩa với 贵 (đắt)."
             }
           ]
         },
@@ -163,27 +179,31 @@
               "sentence": "他跑___很快。",
               "blank": "得",
               "options": ["得", "了", "的", "地"],
-              "hint": "Trợ từ 得 (de) nối động từ với bổ ngữ trình độ"
+              "hint": "Trợ từ 得 (de) nối động từ với bổ ngữ trình độ",
+              "explanation": "Sau động từ 跑 và trước bổ ngữ trình độ 很快 phải dùng 得 để đánh giá mức độ của hành động: 他跑得很快 (Anh ấy chạy rất nhanh). Lưu ý phân biệt 3 chữ 'de': 的 đứng trước danh từ, 地 đứng trước động từ, còn 得 đứng sau động từ nối bổ ngữ."
             },
             {
               "type": "fill_blank",
               "sentence": "她说汉语说___很好。",
               "blank": "得",
               "options": ["得", "了", "着", "在"],
-              "hint": "Cấu trúc động từ + 得 (de) + bổ ngữ chỉ mức độ"
+              "hint": "Cấu trúc động từ + 得 (de) + bổ ngữ chỉ mức độ",
+              "explanation": "Khi có tân ngữ, động từ được lặp lại: 说汉语说 + 得 + bổ ngữ 很好 (她说汉语说得很好 - Cô ấy nói tiếng Trung rất giỏi). Chỉ 得 mới nối được bổ ngữ trình độ; 了 báo hoàn thành, 着 chỉ trạng thái tiếp diễn, 在 chỉ đang làm nên đều sai."
             },
             {
               "type": "sentence_order",
               "words": ["得", "好", "他", "唱", "很"],
               "answer": "他唱得很好",
-              "meaning": "Anh ấy hát rất hay"
+              "meaning": "Anh ấy hát rất hay",
+              "explanation": "Trật tự là Chủ ngữ + Động từ + 得 + bổ ngữ: 他 + 唱 + 得 + 很好: 他唱得很好。 得 phải đặt ngay sau động từ 唱, và bổ ngữ trình độ 很好 (rất hay) gồm phó từ 很 đứng trước tính từ 好 đứng cuối."
             },
             {
               "type": "translate",
               "direction": "vi_to_zh",
               "prompt": "Cô ấy viết chữ rất đẹp.",
               "answer": "她写字写得很漂亮。",
-              "options": ["她写字写得很漂亮。", "她写字写得很快。", "他写字写得很漂亮。", "她说话说得很漂亮。"]
+              "options": ["她写字写得很漂亮。", "她写字写得很快。", "他写字写得很漂亮。", "她说话说得很漂亮。"],
+              "explanation": "Có tân ngữ 字 nên động từ 写 phải lặp lại trước 得: 她写字写得很漂亮 (Cô ấy viết chữ rất đẹp). 很快 (nhanh) sai nghĩa với 'đẹp', 他 (anh ấy) sai chủ ngữ là 'cô ấy', còn 说话 (nói chuyện) sai động từ so với 写字 (viết chữ)."
             }
           ]
         },
@@ -197,27 +217,31 @@
               "sentence": "他___吃饭呢。",
               "blank": "正在",
               "options": ["正在", "已经", "还是", "应该"],
-              "hint": "正在 (zhèngzài) diễn tả hành động đang diễn ra"
+              "hint": "正在 (zhèngzài) diễn tả hành động đang diễn ra",
+              "explanation": "Cuối câu có 呢 báo hành động đang tiếp diễn, nên chỗ trống là 正在 tạo cặp 正在...呢: 他正在吃饭呢 (Anh ấy đang ăn cơm). 已经 (đã) chỉ hoàn thành, 还是 (hay là) là liên từ lựa chọn, 应该 (nên) chỉ sự cần thiết nên đều không hợp."
             },
             {
               "type": "fill_blank",
               "sentence": "妈妈正在做饭___。",
               "blank": "呢",
               "options": ["呢", "了", "吗", "吧"],
-              "hint": "Trợ từ 呢 (ne) cuối câu nhấn mạnh hành động đang tiếp diễn"
+              "hint": "Trợ từ 呢 (ne) cuối câu nhấn mạnh hành động đang tiếp diễn",
+              "explanation": "Đầu câu đã có 正在 nên cuối câu dùng 呢 để hô ứng, nhấn mạnh việc đang diễn ra: 妈妈正在做饭呢 (Mẹ đang nấu cơm). 了 báo hoàn thành (mâu thuẫn với 正在), 吗 thành câu hỏi, 吧 thành lời rủ/suy đoán nên đều sai."
             },
             {
               "type": "sentence_order",
               "words": ["正在", "呢", "看书", "我"],
               "answer": "我正在看书呢",
-              "meaning": "Tôi đang đọc sách"
+              "meaning": "Tôi đang đọc sách",
+              "explanation": "Chủ ngữ 我 đứng đầu, phó từ 正在 đứng trước động từ 看书, và trợ từ 呢 đặt cuối câu: 我正在看书呢。 正在 luôn đứng trước động từ để chỉ 'đang', còn 呢 luôn nằm cuối câu để hô ứng."
             },
             {
               "type": "translate",
               "direction": "vi_to_zh",
               "prompt": "Họ đang xem ti vi.",
               "answer": "他们正在看电视呢。",
-              "options": ["他们正在看电视呢。", "他们正在睡觉呢。", "我们正在看电视呢。", "他们已经看电视了。"]
+              "options": ["他们正在看电视呢。", "他们正在睡觉呢。", "我们正在看电视呢。", "他们已经看电视了。"],
+              "explanation": "'Họ đang xem ti vi' dùng cấu trúc tiếp diễn 正在...呢: 他们正在看电视呢。 睡觉 (ngủ) sai động từ, 我们 (chúng tôi) sai chủ ngữ là 'họ', còn 已经...了 nghĩa 'đã...rồi' (hoàn thành) trái với ý 'đang' (tiếp diễn)."
             }
           ]
         }

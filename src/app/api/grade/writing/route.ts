@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { auth } from "@/lib/auth";
-import { gradeWriting, isGradingConfigured } from "@/lib/claude";
+import { gradeWriting, isGradingConfigured } from "@/lib/groq";
 import { z } from "zod";
 
 const schema = z.object({

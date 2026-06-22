@@ -18,27 +18,31 @@
               "sentence": "___只有百分之一的希望，我们也要尽全力。",
               "blank": "哪怕",
               "options": ["哪怕", "因为", "尽管", "既然"],
-              "hint": "哪怕 (nǎpà): dù cho, biểu thị giả thiết nhượng bộ cực đoan, thường đi với 也"
+              "hint": "哪怕 (nǎpà): dù cho, biểu thị giả thiết nhượng bộ cực đoan, thường đi với 也",
+              "explanation": "Vế sau có 也 nên cần một liên từ nhượng bộ giả định ở vế đầu; 哪怕 nêu giả thiết cực đoan ('dù chỉ có 1% hy vọng') đúng với cặp 哪怕...也. 因为 chỉ nguyên nhân, 尽管 nhượng bộ với sự thật có thật (không phải giả định), 既然 nêu tiền đề đã rồi nên đều sai."
             },
             {
               "type": "fill_blank",
               "sentence": "哪怕再困难，他___从不放弃自己的理想。",
               "blank": "也",
               "options": ["也", "就", "才", "却"],
-              "hint": "哪怕 thường kết hợp với 也 (yě) ở vế sau"
+              "hint": "哪怕 thường kết hợp với 也 (yě) ở vế sau",
+              "explanation": "哪怕 ở vế trước cố định đi với 也 ở vế sau để diễn đạt 'dù cho... vẫn...'. 就 dùng cho điều kiện/kết quả tất yếu, 才 nhấn mạnh điều kiện cần, 却 chỉ sự chuyển ý trái ngược nên không hợp cặp cố định 哪怕...也."
             },
             {
               "type": "sentence_order",
               "words": ["哪怕", "失败", "我", "也", "要", "尝试"],
               "answer": "哪怕失败我也要尝试",
-              "meaning": "Dù cho thất bại tôi vẫn muốn thử"
+              "meaning": "Dù cho thất bại tôi vẫn muốn thử",
+              "explanation": "Cặp 哪怕...也 chia câu thành hai vế: 哪怕 + giả thiết (失败) đứng đầu, rồi đến chủ ngữ 我, và 也 phải đứng ngay trước động từ (也要尝试). Vì vậy trật tự đúng là 哪怕失败 / 我也要尝试."
             },
             {
               "type": "translate",
               "direction": "vi_to_zh",
               "prompt": "Dù cho chỉ còn một phút, chúng tôi cũng không từ bỏ.",
               "answer": "哪怕只剩一分钟，我们也不放弃。",
-              "options": ["哪怕只剩一分钟，我们也不放弃。", "因为只剩一分钟，所以我们放弃了。", "如果只剩一分钟，我们就放弃。", "虽然只剩一分钟，但是我们放弃了。"]
+              "options": ["哪怕只剩一分钟，我们也不放弃。", "因为只剩一分钟，所以我们放弃了。", "如果只剩一分钟，我们就放弃。", "虽然只剩一分钟，但是我们放弃了。"],
+              "explanation": "'Dù cho... cũng...' tương ứng đúng cặp 哪怕...也, giữ nghĩa nhượng bộ và 'không từ bỏ' (也不放弃). Các phương án kia dùng 因为...所以 (nhân quả), 如果...就 (điều kiện) hoặc 虽然...但是 và đều kết thúc bằng 'từ bỏ', sai cả cấu trúc lẫn nghĩa."
             }
           ]
         },
@@ -52,27 +56,31 @@
               "sentence": "___在家发愁，不如出去走走散散心。",
               "blank": "与其",
               "options": ["与其", "尽管", "无论", "即便"],
-              "hint": "与其 (yǔqí): thay vì, dùng để so sánh hai lựa chọn, đi với 不如"
+              "hint": "与其 (yǔqí): thay vì, dùng để so sánh hai lựa chọn, đi với 不如",
+              "explanation": "Vế sau có 不如 nên vế đầu phải là 与其 để tạo cặp so sánh hai lựa chọn ('thay vì ở nhà... chi bằng ra ngoài'). 尽管 (mặc dù), 无论 (bất kể), 即便 (cho dù) đều là nhượng bộ, không kết hợp với 不如."
             },
             {
               "type": "fill_blank",
               "sentence": "与其等别人帮忙，___自己动手解决。",
               "blank": "不如",
               "options": ["不如", "何况", "不止", "不料"],
-              "hint": "与其 kết hợp với 不如 (bùrú) để biểu thị 'chi bằng', chọn vế sau"
+              "hint": "与其 kết hợp với 不如 (bùrú) để biểu thị 'chi bằng', chọn vế sau",
+              "explanation": "与其 ở vế đầu cố định đi với 不如 ở vế sau để nêu lựa chọn được ưu tiên ('chi bằng tự mình làm'). 何况 (huống chi), 不止 (không chỉ), 不料 (không ngờ) không tạo nghĩa so sánh lựa chọn nên đều sai."
             },
             {
               "type": "sentence_order",
               "words": ["与其", "抱怨", "不如", "想", "办法"],
               "answer": "与其抱怨不如想办法",
-              "meaning": "Thay vì than phiền chi bằng nghĩ cách"
+              "meaning": "Thay vì than phiền chi bằng nghĩ cách",
+              "explanation": "Cặp 与其...不如 đặt lựa chọn bị bác bỏ sau 与其 (抱怨) và lựa chọn được chọn sau 不如 (想办法). Vì vậy trật tự đúng là 与其抱怨 / 不如想办法, không thể đảo hai vế."
             },
             {
               "type": "translate",
               "direction": "vi_to_zh",
               "prompt": "Thay vì mua mới, chi bằng sửa cái cũ.",
               "answer": "与其买新的，不如修旧的。",
-              "options": ["与其买新的，不如修旧的。", "因为买新的，所以修旧的。", "虽然买新的，但是修旧的。", "如果买新的，就修旧的。"]
+              "options": ["与其买新的，不如修旧的。", "因为买新的，所以修旧的。", "虽然买新的，但是修旧的。", "如果买新的，就修旧的。"],
+              "explanation": "'Thay vì... chi bằng...' khớp đúng cặp 与其...不如, đặt 买新的 (bị bác) sau 与其 và 修旧的 (được chọn) sau 不如. Các phương án 因为...所以, 虽然...但是, 如果...就 đều không diễn đạt sự so sánh lựa chọn."
             }
           ]
         },
@@ -86,27 +94,31 @@
               "sentence": "他___能成功，是因为他付出了别人看不到的努力。",
               "blank": "之所以",
               "options": ["之所以", "尽管如此", "不仅如此", "总而言之"],
-              "hint": "之所以 (zhīsuǒyǐ): sở dĩ, đặt trước kết quả, đi với 是因为"
+              "hint": "之所以 (zhīsuǒyǐ): sở dĩ, đặt trước kết quả, đi với 是因为",
+              "explanation": "Vế sau có 是因为 (nêu nguyên nhân) nên vế đầu phải là 之所以 đặt trước kết quả (能成功), tạo cặp 之所以...是因为 đảo trật tự nhân quả để nhấn mạnh lý do. 尽管如此/不仅如此/总而言之 là cụm nối đoạn, không ghép với 是因为."
             },
             {
               "type": "fill_blank",
               "sentence": "我之所以迟到，___路上堵车堵得厉害。",
               "blank": "是因为",
               "options": ["是因为", "于是", "因此", "结果"],
-              "hint": "之所以 kết hợp với 是因为 (shì yīnwèi) để nêu nguyên nhân ở vế sau"
+              "hint": "之所以 kết hợp với 是因为 (shì yīnwèi) để nêu nguyên nhân ở vế sau",
+              "explanation": "之所以 ở vế đầu cố định đi với 是因为 ở vế sau để giải thích nguyên nhân của việc đến muộn (堵车). 于是/因此/结果 đều dẫn ra kết quả chứ không dẫn ra nguyên nhân nên không hợp với 之所以."
             },
             {
               "type": "sentence_order",
               "words": ["他", "之所以", "进步", "快", "是因为", "勤奋"],
               "answer": "他之所以进步快是因为勤奋",
-              "meaning": "Sở dĩ anh ấy tiến bộ nhanh là vì siêng năng"
+              "meaning": "Sở dĩ anh ấy tiến bộ nhanh là vì siêng năng",
+              "explanation": "Chủ ngữ 他 đứng trước 之所以, tiếp theo là kết quả 进步快, rồi 是因为 dẫn ra nguyên nhân 勤奋. Cấu trúc 之所以...是因为 luôn nêu kết quả trước, nguyên nhân sau, nên trật tự đúng là 他之所以进步快是因为勤奋."
             },
             {
               "type": "translate",
               "direction": "vi_to_zh",
               "prompt": "Sở dĩ tôi thích thành phố này là vì ở đây rất yên tĩnh.",
               "answer": "我之所以喜欢这座城市，是因为这里很安静。",
-              "options": ["我之所以喜欢这座城市，是因为这里很安静。", "我虽然喜欢这座城市，但是这里很吵。", "我如果喜欢这座城市，就因为这里很安静。", "我不但喜欢这座城市，而且这里很安静。"]
+              "options": ["我之所以喜欢这座城市，是因为这里很安静。", "我虽然喜欢这座城市，但是这里很吵。", "我如果喜欢这座城市，就因为这里很安静。", "我不但喜欢这座城市，而且这里很安静。"],
+              "explanation": "'Sở dĩ... là vì...' tương ứng đúng cặp 之所以...是因为, giữ kết quả (喜欢) trước và nguyên nhân (很安静) sau. Các phương án 虽然...但是 (lại đổi nghĩa thành 'rất ồn'), 如果...就, 不但...而且 đều sai cả cấu trúc lẫn nghĩa."
             }
           ]
         }
@@ -129,27 +141,31 @@
               "sentence": "这个决定___经过反复讨论才做出的。",
               "blank": "是",
               "options": ["是", "被", "把", "让"],
-              "hint": "Cấu trúc 是...的 dùng để nhấn mạnh thời gian, địa điểm, cách thức; 是 đặt trước thành phần nhấn mạnh"
+              "hint": "Cấu trúc 是...的 dùng để nhấn mạnh thời gian, địa điểm, cách thức; 是 đặt trước thành phần nhấn mạnh",
+              "explanation": "Cuối câu có 的 và muốn nhấn mạnh cách thức (经过反复讨论) nên cần 是 mở đầu cấu trúc nhấn mạnh 是...的. 被 dùng cho câu bị động, 把 cho câu chữ 把 (xử lý đối tượng), 让 mang nghĩa 'để/khiến' nên đều không phù hợp."
             },
             {
               "type": "fill_blank",
               "sentence": "他是去年从国外回来___。",
               "blank": "的",
               "options": ["的", "了", "过", "着"],
-              "hint": "Cấu trúc 是...的 kết thúc bằng 的 (de), nhấn mạnh hành động đã xảy ra trong quá khứ"
+              "hint": "Cấu trúc 是...的 kết thúc bằng 的 (de), nhấn mạnh hành động đã xảy ra trong quá khứ",
+              "explanation": "Câu đã có 是 và nhấn mạnh thời gian (去年) của hành động quá khứ đã xác định, nên kết thúc bằng 的 để hoàn chỉnh 是...的. 了/过/着 là trợ từ thì/thể (hoàn thành/từng/đang diễn ra) không thay được 的 trong cấu trúc nhấn mạnh này."
             },
             {
               "type": "sentence_order",
               "words": ["这", "幅", "画", "是", "他", "画", "的"],
               "answer": "这幅画是他画的",
-              "meaning": "Bức tranh này là do anh ấy vẽ"
+              "meaning": "Bức tranh này là do anh ấy vẽ",
+              "explanation": "Chủ ngữ 这幅画 (lượng từ 幅 đứng giữa 这 và 画) đứng đầu; 是 đặt trước thành phần nhấn mạnh 他 (người thực hiện), động từ 画 và kết thúc bằng 的. Cấu trúc 是...的 luôn bao 是 + phần nhấn mạnh + động từ + 的, nên trật tự đúng là 这幅画是他画的."
             },
             {
               "type": "translate",
               "direction": "vi_to_zh",
               "prompt": "Tôi đến đây bằng tàu cao tốc.",
               "answer": "我是坐高铁来的。",
-              "options": ["我是坐高铁来的。", "我坐高铁来了。", "我被高铁来的。", "我把高铁坐来的。"]
+              "options": ["我是坐高铁来的。", "我坐高铁来了。", "我被高铁来的。", "我把高铁坐来的。"],
+              "explanation": "Câu nhấn mạnh phương tiện (坐高铁) của một hành động đã xảy ra nên dùng cấu trúc 是...的: 我是坐高铁来的. 我坐高铁来了 chỉ thuật lại sự việc chứ không nhấn mạnh; 被 và 把 dùng sai vì đây không phải câu bị động hay câu chữ 把."
             }
           ]
         },
@@ -163,27 +179,31 @@
               "sentence": "他这个人很敏感，别人___说他几句，他就受不了。",
               "blank": "一",
               "options": ["一", "再", "刚", "才"],
-              "hint": "Cấu trúc 一...就... (yī...jiù...): vừa... liền..., biểu thị hai việc xảy ra liền nhau"
+              "hint": "Cấu trúc 一...就... (yī...jiù...): vừa... liền..., biểu thị hai việc xảy ra liền nhau",
+              "explanation": "Vế sau có 就 (他就受不了) báo hiệu cặp 一...就 diễn đạt 'vừa... là liền...': người khác vừa nói là anh ta chịu không nổi. 再 (lại), 刚 (vừa mới, đứng trước động từ chứ không tạo cặp với 就 kiểu này), 才 (mới) đều không tạo nghĩa hai việc nối tiếp tức thì."
             },
             {
               "type": "fill_blank",
               "sentence": "这件事越想___复杂，干脆别想了。",
               "blank": "越",
               "options": ["越", "更", "最", "太"],
-              "hint": "Cấu trúc 越...越... (yuè...yuè...): càng... càng..., biểu thị mức độ tăng theo nhau"
+              "hint": "Cấu trúc 越...越... (yuè...yuè...): càng... càng..., biểu thị mức độ tăng theo nhau",
+              "explanation": "Trước đó đã có 越 (越想) nên chỗ trống phải là 越 để hoàn thành cặp 越...越 ('càng nghĩ càng phức tạp') — mức độ tăng song song. 更 (hơn), 最 (nhất), 太 (quá) chỉ là phó từ mức độ đơn lẻ, không tạo quan hệ tăng tiến theo nhau."
             },
             {
               "type": "sentence_order",
               "words": ["雨", "越", "下", "越", "大", "了"],
               "answer": "雨越下越大了",
-              "meaning": "Mưa càng lúc càng to"
+              "meaning": "Mưa càng lúc càng to",
+              "explanation": "Trong cấu trúc 越A越B, mỗi 越 đứng ngay trước một động từ/tính từ: 越下 (càng rơi) rồi 越大 (càng to), với chủ ngữ 雨 ở đầu và 了 chỉ sự thay đổi ở cuối. Vì vậy trật tự đúng là 雨越下越大了."
             },
             {
               "type": "translate",
               "direction": "vi_to_zh",
               "prompt": "Anh ấy vừa nghe xong liền hiểu ngay.",
               "answer": "他一听就明白了。",
-              "options": ["他一听就明白了。", "他越听越明白了。", "他一听才明白了。", "他刚听就不明白了。"]
+              "options": ["他一听就明白了。", "他越听越明白了。", "他一听才明白了。", "他刚听就不明白了。"],
+              "explanation": "'Vừa nghe... liền hiểu ngay' diễn đạt hai việc nối tiếp tức thì nên dùng 一...就: 他一听就明白了. 越听越明白 nghĩa 'càng nghe càng hiểu' (tăng dần), 一听才明白 hàm ý 'mãi mới hiểu', còn 刚听就不明白 lại mang nghĩa phủ định, đều sai nghĩa."
             }
           ]
         },
@@ -197,27 +217,31 @@
               "sentence": "___遇到什么困难，他都能冷静地面对。",
               "blank": "无论",
               "options": ["无论", "因为", "由于", "既然"],
-              "hint": "无论 (wúlùn): bất kể, biểu thị điều kiện không thay đổi kết quả, đi với 都 hoặc 也"
+              "hint": "无论 (wúlùn): bất kể, biểu thị điều kiện không thay đổi kết quả, đi với 都 hoặc 也",
+              "explanation": "Vế đầu có từ nghi vấn 什么 và vế sau có 都, đây là dấu hiệu của 无论...都 ('bất kể... đều...'): dù gặp khó khăn gì cũng bình tĩnh. 因为/由于 chỉ nguyên nhân, 既然 nêu tiền đề đã rồi, đều không đi với từ nghi vấn + 都."
             },
             {
               "type": "fill_blank",
               "sentence": "无论你怎么劝，他___不会改变主意。",
               "blank": "都",
               "options": ["都", "就", "才", "再"],
-              "hint": "无论 thường kết hợp với 都 (dōu) hoặc 也 ở vế sau"
+              "hint": "无论 thường kết hợp với 都 (dōu) hoặc 也 ở vế sau",
+              "explanation": "无论 ở vế đầu cố định đi với 都 (hoặc 也) ở vế sau để biểu thị 'dù... thế nào cũng vẫn...': dù khuyên thế nào anh ấy đều không đổi ý. 就/才/再 không tạo nên ý 'không có ngoại lệ' nên không hợp với 无论."
             },
             {
               "type": "sentence_order",
               "words": ["无论", "多", "晚", "他", "都", "会", "回家"],
               "answer": "无论多晚他都会回家",
-              "meaning": "Bất kể muộn thế nào anh ấy đều sẽ về nhà"
+              "meaning": "Bất kể muộn thế nào anh ấy đều sẽ về nhà",
+              "explanation": "无论 mở đầu kèm cụm nghi vấn 多晚 (muộn thế nào) tạo điều kiện không xác định; sau đó là chủ ngữ 他 và 都 phải đứng trước động từ (都会回家). Vì vậy trật tự đúng là 无论多晚 / 他都会回家."
             },
             {
               "type": "translate",
               "direction": "vi_to_zh",
               "prompt": "Bất kể là ai, đều phải tuân thủ quy định.",
               "answer": "无论是谁，都得遵守规定。",
-              "options": ["无论是谁，都得遵守规定。", "因为是谁，所以遵守规定。", "如果是谁，就遵守规定。", "虽然是谁，但是遵守规定。"]
+              "options": ["无论是谁，都得遵守规定。", "因为是谁，所以遵守规定。", "如果是谁，就遵守规定。", "虽然是谁，但是遵守规定。"],
+              "explanation": "'Bất kể... đều...' khớp đúng cặp 无论...都, với 是谁 là điều kiện không xác định và 得遵守规定 (phải tuân thủ) là kết quả bất biến. Các phương án 因为...所以, 如果...就, 虽然...但是 đều không diễn đạt được ý 'không có ngoại lệ'."
             }
           ]
         }

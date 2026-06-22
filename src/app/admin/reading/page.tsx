@@ -7,7 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { ImageUpload } from "@/components/admin/image-upload";
 import { hskLevelLabel } from "@/lib/utils";
 import { deleteReadingAction } from "@/server/actions/admin";
 import { revalidatePath } from "next/cache";
@@ -68,8 +68,8 @@ export default async function AdminReadingPage() {
               <Input name="timeLimit" type="number" defaultValue="600" required />
             </div>
             <div className="space-y-1 md:col-span-2">
-              <Label>Hình minh hoạ (URL)</Label>
-              <Input name="imageUrl" placeholder="https://... hoặc /images/..." />
+              <Label>Tải ảnh đại diện lên</Label>
+              <ImageUpload name="imageUrl" />
             </div>
             <div className="space-y-1 md:col-span-2">
               <Label>Đoạn văn (Hán tự)</Label>

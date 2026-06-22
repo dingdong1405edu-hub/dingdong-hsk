@@ -18,27 +18,31 @@
               "sentence": "___下雨，我也要去爬山。",
               "blank": "即使",
               "options": ["即使", "因为", "如果", "虽然"],
-              "hint": "即使 (jíshǐ): cho dù, biểu thị giả thiết nhượng bộ, đi với 也"
+              "hint": "即使 (jíshǐ): cho dù, biểu thị giả thiết nhượng bộ, đi với 也",
+              "explanation": "Vế sau có 也 báo hiệu cấu trúc nhượng bộ giả định 即使...也... (cho dù... vẫn...), nên chỗ trống phải là 即使. 因为 (vì) dùng cho nguyên nhân, 如果 (nếu) cần đi với 就 chứ không phải 也, còn 虽然 (tuy) nói về sự thật có thật chứ không phải giả định 'cho dù'."
             },
             {
               "type": "fill_blank",
               "sentence": "即使工作再忙，他___会抽时间锻炼身体。",
               "blank": "也",
               "options": ["也", "就", "才", "都"],
-              "hint": "即使 thường kết hợp với 也 (yě) ở vế sau"
+              "hint": "即使 thường kết hợp với 也 (yě) ở vế sau",
+              "explanation": "Vế trước đã có 即使 nên vế sau bắt buộc dùng 也 để tạo cặp cố định 即使...也... (cho dù... vẫn...). 就 thường đi với 如果, 才 nhấn mạnh điều kiện 'mới', 都 chỉ phạm vi 'đều', đều không phải từ hô ứng của 即使."
             },
             {
               "type": "sentence_order",
               "words": ["即使", "很贵", "我", "也", "要", "买"],
               "answer": "即使很贵我也要买",
-              "meaning": "Cho dù rất đắt tôi vẫn muốn mua"
+              "meaning": "Cho dù rất đắt tôi vẫn muốn mua",
+              "explanation": "Trong cấu trúc 即使...也..., 即使 đứng đầu nêu giả thiết (即使很贵), còn 也 phải đứng sau chủ ngữ và ngay trước động từ ở vế sau (我也要买). Vì vậy trật tự đúng là 即使 + giả thiết + 我 + 也 + 要买."
             },
             {
               "type": "translate",
               "direction": "vi_to_zh",
               "prompt": "Cho dù khó khăn, chúng tôi cũng không bỏ cuộc.",
               "answer": "即使有困难，我们也不放弃。",
-              "options": ["即使有困难，我们也不放弃。", "因为有困难，我们就放弃了。", "如果有困难，我们会放弃。", "虽然有困难，但是我们放弃了。"]
+              "options": ["即使有困难，我们也不放弃。", "因为有困难，我们就放弃了。", "如果有困难，我们会放弃。", "虽然有困难，但是我们放弃了。"],
+              "explanation": "'Cho dù... cũng không' đúng là cặp 即使...也不..., nên đáp án dùng 即使有困难，我们也不放弃。 Các phương án kia sai về nghĩa: 因为 nêu lý do và lại '放弃了' (đã bỏ cuộc), 如果...会放弃 nghĩa là 'sẽ bỏ cuộc', 虽然...但是...放弃了 cũng diễn đạt là đã bỏ cuộc — đều trái nghĩa câu gốc."
             }
           ]
         },
@@ -52,27 +56,31 @@
               "sentence": "吃了药以后，他的病不但没好，___更严重了。",
               "blank": "反而",
               "options": ["反而", "而且", "并且", "然后"],
-              "hint": "反而 (fǎn'ér): mà ngược lại, biểu thị kết quả trái với mong đợi"
+              "hint": "反而 (fǎn'ér): mà ngược lại, biểu thị kết quả trái với mong đợi",
+              "explanation": "Vế trước có 不但没 (uống thuốc đáng lẽ phải khỏi), nên vế sau cần 反而 để diễn tả kết quả trái ngược với mong đợi (bệnh lại nặng hơn), tạo cặp 不但没...反而... Còn 而且/并且 chỉ bổ sung thêm ý cùng chiều, 然后 chỉ trình tự thời gian, không thể hiện sự nghịch lý."
             },
             {
               "type": "fill_blank",
               "sentence": "天气预报说会下雨，可是今天___一片云都没有。",
               "blank": "反而",
               "options": ["反而", "因此", "于是", "结果"],
-              "hint": "反而 nhấn mạnh tình huống đi ngược lại dự đoán"
+              "hint": "反而 nhấn mạnh tình huống đi ngược lại dự đoán",
+              "explanation": "Dự báo nói sẽ mưa nhưng thực tế lại không một gợn mây — tình huống đi ngược dự đoán nên dùng 反而 (ngược lại). 因此/于是 chỉ quan hệ nguyên nhân–kết quả thuận chiều, còn 结果 nêu kết cục trung tính, không nhấn mạnh sự trái ngược như 反而."
             },
             {
               "type": "sentence_order",
               "words": ["他", "不但", "不", "生气", "反而", "笑了"],
               "answer": "他不但不生气反而笑了",
-              "meaning": "Anh ấy không những không tức giận mà ngược lại còn cười"
+              "meaning": "Anh ấy không những không tức giận mà ngược lại còn cười",
+              "explanation": "Cấu trúc 不但不...反而... đặt sau chủ ngữ: 他 + 不但不 + động từ/tính từ phủ định (不生气) + 反而 + kết quả trái ngược (笑了). Vì vậy trật tự đúng là 他不但不生气反而笑了, với 不但不 và 反而 hô ứng nhau."
             },
             {
               "type": "translate",
               "direction": "vi_to_zh",
               "prompt": "Cô ấy không những không cảm ơn tôi, mà ngược lại còn trách tôi.",
               "answer": "她不但不感谢我，反而责怪我。",
-              "options": ["她不但不感谢我，反而责怪我。", "她不但感谢我，而且帮助我。", "她因为感谢我，所以责怪我。", "她虽然感谢我，但是责怪我。"]
+              "options": ["她不但不感谢我，反而责怪我。", "她不但感谢我，而且帮助我。", "她因为感谢我，所以责怪我。", "她虽然感谢我，但是责怪我。"],
+              "explanation": "'Không những không... mà ngược lại còn...' ứng đúng với cặp 不但不...反而..., nên đáp án là 她不但不感谢我，反而责怪我。 Các phương án kia sai nghĩa: 不但感谢...而且帮助 là khen ngợi, 因为感谢所以责怪 vô lý về logic nhân quả, còn 虽然...但是 chỉ là nhượng bộ chứ không diễn tả sự nghịch lý '不但不'."
             }
           ]
         },
@@ -86,27 +94,31 @@
               "sentence": "他___站着，也不愿意坐在他旁边。",
               "blank": "宁可",
               "options": ["宁可", "尽管", "无论", "不管"],
-              "hint": "宁可 (nìngkě): thà, biểu thị sự lựa chọn sau khi cân nhắc, đi với 也不"
+              "hint": "宁可 (nìngkě): thà, biểu thị sự lựa chọn sau khi cân nhắc, đi với 也不",
+              "explanation": "Vế sau có 也不愿意 cho thấy đây là sự lựa chọn 'thà... chứ không...', nên chỗ trống là 宁可 (cặp 宁可...也不...). 尽管 (mặc dù) là nhượng bộ, còn 无论/不管 (bất kể) phải đi với 都/也 chỉ phạm vi tùy ý chứ không diễn tả sự cân nhắc chọn lựa."
             },
             {
               "type": "fill_blank",
               "sentence": "我宁可自己辛苦一点，___不想麻烦别人。",
               "blank": "也",
               "options": ["也", "却", "再", "更"],
-              "hint": "宁可 kết hợp với 也不 hoặc 也 để biểu thị 'thà... chứ không'"
+              "hint": "宁可 kết hợp với 也不 hoặc 也 để biểu thị 'thà... chứ không'",
+              "explanation": "Vế trước có 宁可 nên vế sau dùng 也 (với 不想 thành 也不想) để hoàn chỉnh cặp hô ứng 宁可...也不... 'thà... chứ không...'. 却 chỉ sự chuyển ý trái ngược, 再 chỉ sự lặp lại, 更 chỉ mức độ tăng tiến, đều không phải từ hô ứng của 宁可."
             },
             {
               "type": "sentence_order",
               "words": ["我", "宁可", "走路", "也不", "坐", "他的车"],
               "answer": "我宁可走路也不坐他的车",
-              "meaning": "Tôi thà đi bộ chứ không ngồi xe của anh ấy"
+              "meaning": "Tôi thà đi bộ chứ không ngồi xe của anh ấy",
+              "explanation": "Cấu trúc 宁可...也不...: chủ ngữ 我 đứng đầu, 宁可 đặt trước lựa chọn được chọn (走路), 也不 đặt trước điều bị từ chối (坐他的车). Vì vậy trật tự đúng là 我宁可走路也不坐他的车, thể hiện 'thà... chứ không...'."
             },
             {
               "type": "translate",
               "direction": "vi_to_zh",
               "prompt": "Tôi thà nói thật chứ không muốn nói dối.",
               "answer": "我宁可说实话，也不愿意说谎。",
-              "options": ["我宁可说实话，也不愿意说谎。", "我虽然说实话，但是说谎了。", "我因为说实话，所以说谎。", "我不但说实话，而且说谎。"]
+              "options": ["我宁可说实话，也不愿意说谎。", "我虽然说实话，但是说谎了。", "我因为说实话，所以说谎。", "我不但说实话，而且说谎。"],
+              "explanation": "'Thà... chứ không muốn...' tương ứng với cặp 宁可...也不愿意..., nên đáp án là 我宁可说实话，也不愿意说谎。 Các phương án kia sai nghĩa: 虽然...但是说谎了 nghĩa là vẫn nói dối, 因为...所以说谎 phi logic, còn 不但...而且说谎 lại khẳng định cả hai cùng nói dối — đều trái với ý câu gốc."
             }
           ]
         }
@@ -129,27 +141,31 @@
               "sentence": "请你___这些文件放在桌子上。",
               "blank": "把",
               "options": ["把", "被", "让", "给"],
-              "hint": "把 (bǎ): đưa tân ngữ lên trước động từ, nhấn mạnh sự xử lý đối với tân ngữ"
+              "hint": "把 (bǎ): đưa tân ngữ lên trước động từ, nhấn mạnh sự xử lý đối với tân ngữ",
+              "explanation": "Câu yêu cầu xử lý tân ngữ (đặt tài liệu lên bàn) với kết quả 放在桌子上, nên dùng câu chữ 把 đưa tân ngữ 这些文件 lên trước động từ. 被 dùng cho câu bị động, còn 让/给 không phù hợp để mở đầu kết cấu xử lý chủ động này."
             },
             {
               "type": "fill_blank",
               "sentence": "他不小心把杯子___了。",
               "blank": "打破",
               "options": ["打破", "打开", "打算", "打听"],
-              "hint": "Sau 把 + tân ngữ, động từ phải có thành phần khác (ở đây là bổ ngữ kết quả 破)"
+              "hint": "Sau 把 + tân ngữ, động từ phải có thành phần khác (ở đây là bổ ngữ kết quả 破)",
+              "explanation": "Câu chữ 把 đòi hỏi động từ phải có kết quả tác động lên tân ngữ; 不小心 (vô ý) đi với 杯子 (cái cốc) hợp nghĩa nhất là 打破 (làm vỡ, có bổ ngữ kết quả 破). 打开 (mở ra), 打算 (dự định), 打听 (dò hỏi) không tạo được kết quả 'làm vỡ cốc' và 打算/打听 không thể đứng trong câu 把."
             },
             {
               "type": "sentence_order",
               "words": ["我", "把", "作业", "做", "完", "了"],
               "answer": "我把作业做完了",
-              "meaning": "Tôi đã làm xong bài tập"
+              "meaning": "Tôi đã làm xong bài tập",
+              "explanation": "Trật tự của câu chữ 把 là: chủ ngữ + 把 + tân ngữ + động từ + bổ ngữ/thành phần khác. Ở đây 我 + 把 + 作业 + 做 + bổ ngữ kết quả 完 + 了, cho ra 我把作业做完了; động từ 做 không thể đứng một mình mà phải kèm 完了."
             },
             {
               "type": "translate",
               "direction": "vi_to_zh",
               "prompt": "Xin hãy đóng cửa lại.",
               "answer": "请把门关上。",
-              "options": ["请把门关上。", "请把门打开。", "请被门关上。", "请让门关上。"]
+              "options": ["请把门关上。", "请把门打开。", "请被门关上。", "请让门关上。"],
+              "explanation": "'Đóng cửa lại' là hành động xử lý cánh cửa nên dùng câu chữ 把: 请把门关上 (关上 = đóng lại, có bổ ngữ xu hướng 上). 请把门打开 nghĩa ngược lại là 'mở cửa', còn 被/让 dùng cho bị động nên 请被门.../请让门... đều sai ngữ pháp ở câu mệnh lệnh xử lý này."
             }
           ]
         },
@@ -163,27 +179,31 @@
               "sentence": "我的自行车___人偷走了。",
               "blank": "被",
               "options": ["被", "把", "向", "对"],
-              "hint": "被 (bèi): biểu thị bị động, chủ ngữ là đối tượng chịu tác động"
+              "hint": "被 (bèi): biểu thị bị động, chủ ngữ là đối tượng chịu tác động",
+              "explanation": "Chủ ngữ 我的自行车 (xe đạp của tôi) là vật chịu tác động bị 'lấy trộm đi' (偷走了), nên cần 被 để tạo câu bị động (被 + tác nhân 人 + động từ). 把 dùng cho câu chủ động xử lý, còn 向/对 chỉ hướng/đối tượng nhắm tới chứ không biểu thị bị động."
             },
             {
               "type": "fill_blank",
               "sentence": "那本书已经被他___了。",
               "blank": "借走",
               "options": ["借走", "借给", "借口", "借钱"],
-              "hint": "Sau câu bị động, động từ thường mang bổ ngữ; 借走 = mượn đi"
+              "hint": "Sau câu bị động, động từ thường mang bổ ngữ; 借走 = mượn đi",
+              "explanation": "Trong câu bị động 被他...了, động từ cần mang bổ ngữ kết quả/xu hướng; 借走 (mượn đi, có bổ ngữ 走) hợp với chủ ngữ 那本书 đã bị anh ấy mượn đi. 借给 cần thêm tân ngữ người nhận, 借口 (cái cớ) là danh từ, 借钱 (mượn tiền) sai nghĩa với 'cuốn sách'."
             },
             {
               "type": "sentence_order",
               "words": ["蛋糕", "被", "弟弟", "吃", "完", "了"],
               "answer": "蛋糕被弟弟吃完了",
-              "meaning": "Bánh ngọt đã bị em trai ăn hết"
+              "meaning": "Bánh ngọt đã bị em trai ăn hết",
+              "explanation": "Trật tự câu bị động 被 là: đối tượng chịu tác động + 被 + tác nhân + động từ + bổ ngữ. Ở đây 蛋糕 (vật bị tác động) + 被 + 弟弟 (tác nhân) + 吃 + bổ ngữ kết quả 完 + 了, cho ra 蛋糕被弟弟吃完了; động từ 吃 phải kèm 完了 chứ không đứng trơ."
             },
             {
               "type": "translate",
               "direction": "vi_to_zh",
               "prompt": "Chiếc kính của tôi bị em trai làm vỡ rồi.",
               "answer": "我的眼镜被弟弟弄坏了。",
-              "options": ["我的眼镜被弟弟弄坏了。", "我的眼镜把弟弟弄坏了。", "我的眼镜让眼镜弄坏了。", "我的眼镜被弟弟修好了。"]
+              "options": ["我的眼镜被弟弟弄坏了。", "我的眼镜把弟弟弄坏了。", "我的眼镜让眼镜弄坏了。", "我的眼镜被弟弟修好了。"],
+              "explanation": "Câu mang nghĩa bị động 'bị em trai làm vỡ', nên dùng 被 + tác nhân 弟弟 + 弄坏了 (làm hỏng): 我的眼镜被弟弟弄坏了。 Phương án 把弟弟 biến em trai thành vật bị làm hỏng (sai nghĩa), 让眼镜 lặp sai tác nhân, còn 被弟弟修好了 nghĩa là 'được sửa tốt' — trái với 'làm vỡ'."
             }
           ]
         },
@@ -197,27 +217,31 @@
               "sentence": "这些字太小了，我看___清楚。",
               "blank": "不",
               "options": ["不", "得", "了", "完"],
-              "hint": "看不清楚: không nhìn rõ được, dùng 不 cho bổ ngữ khả năng phủ định"
+              "hint": "看不清楚: không nhìn rõ được, dùng 不 cho bổ ngữ khả năng phủ định",
+              "explanation": "Vì chữ quá nhỏ (字太小) nên ý là 'không nhìn rõ được', dùng bổ ngữ khả năng phủ định 看不清楚 (动词 + 不 + kết quả). Nếu dùng 得 sẽ thành khẳng định 'nhìn rõ được' (trái nghĩa), còn 了/完 không phải thành phần của bổ ngữ khả năng này."
             },
             {
               "type": "fill_blank",
               "sentence": "这么多菜，我们三个人吃___完吗？",
               "blank": "得",
               "options": ["得", "不", "了", "过"],
-              "hint": "吃得完: ăn hết nổi, dùng 得 cho bổ ngữ khả năng khẳng định"
+              "hint": "吃得完: ăn hết nổi, dùng 得 cho bổ ngữ khả năng khẳng định",
+              "explanation": "Câu hỏi 吗 hỏi về khả năng 'có ăn hết nổi không', nên dùng bổ ngữ khả năng khẳng định 吃得完 (động từ + 得 + kết quả). Dùng 不 sẽ thành 'không ăn hết nổi' (mâu thuẫn với câu hỏi nghi vấn), còn 了/过 không phải thành phần của kết cấu khả năng 得/不...完."
             },
             {
               "type": "sentence_order",
               "words": ["这个", "问题", "我", "回答", "得", "出来"],
               "answer": "这个问题我回答得出来",
-              "meaning": "Câu hỏi này tôi trả lời được"
+              "meaning": "Câu hỏi này tôi trả lời được",
+              "explanation": "Bổ ngữ khả năng khẳng định có cấu trúc: động từ + 得 + bổ ngữ xu hướng/kết quả. Tân ngữ 这个问题 đưa lên đầu làm đề ngữ, rồi 我 + 回答 + 得 + 出来, cho ra 这个问题我回答得出来 (回答得出来 = trả lời ra được)."
             },
             {
               "type": "translate",
               "direction": "vi_to_zh",
               "prompt": "Tiếng quá ồn, tôi nghe không rõ bạn nói gì.",
               "answer": "声音太吵了，我听不清楚你说什么。",
-              "options": ["声音太吵了，我听不清楚你说什么。", "声音太吵了，我听得清楚你说什么。", "声音太吵了，我看不清楚你说什么。", "声音太大了，我听得见你说什么。"]
+              "options": ["声音太吵了，我听不清楚你说什么。", "声音太吵了，我听得清楚你说什么。", "声音太吵了，我看不清楚你说什么。", "声音太大了，我听得见你说什么。"],
+              "explanation": "'Nghe không rõ' là bổ ngữ khả năng phủ định 听不清楚, nên đáp án là 声音太吵了，我听不清楚你说什么。 听得清楚 là khẳng định 'nghe rõ được' (trái nghĩa), 看不清楚 là 'nhìn không rõ' (sai động từ), còn 听得见 chỉ là 'nghe thấy được' chứ không diễn tả 'nghe rõ' và lại là khẳng định."
             }
           ]
         }

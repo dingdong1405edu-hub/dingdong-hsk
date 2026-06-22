@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Badge } from "@/components/ui/badge";
+import { ImageUpload } from "@/components/admin/image-upload";
 import { hskLevelLabel, toneColor } from "@/lib/utils";
 import { HSKLevel } from "@prisma/client";
 import { revalidatePath } from "next/cache";
@@ -73,9 +74,9 @@ export default async function AdminHanziPage() {
               <Label>Số nét</Label>
               <Input name="strokeCount" type="number" defaultValue="5" required />
             </div>
-            <div className="space-y-1">
-              <Label>Hình minh hoạ (URL)</Label>
-              <Input name="imageUrl" placeholder="https://... hoặc /images/..." />
+            <div className="space-y-1 col-span-2 sm:col-span-4">
+              <Label>Tải ảnh minh hoạ lên</Label>
+              <ImageUpload name="imageUrl" />
             </div>
             <div className="col-span-2 sm:col-span-2">
               <Button type="submit" className="w-full">Thêm chữ</Button>

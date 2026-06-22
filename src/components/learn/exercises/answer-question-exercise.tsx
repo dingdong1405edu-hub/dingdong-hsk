@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
 import { matchesAccepted } from "@/lib/grammar";
 import { playWord } from "@/lib/speech";
+import { LookupText } from "@/components/learn/grammar/lookup-text";
 import type { AnswerQuestionExercise } from "@/types";
 
 interface Props {
@@ -34,14 +35,17 @@ export function AnswerQuestionExerciseUI({ exercise, onAnswer, disabled }: Props
       <div className="space-y-3 text-center">
         <p className="text-sm text-muted-foreground">Trả lời câu hỏi</p>
         <div className="rounded-xl bg-muted/50 p-4">
-          <button
-            type="button"
-            onClick={() => playWord({ hanzi: exercise.question })}
-            className="inline-flex items-center gap-2"
-          >
-            <span className="font-chinese text-xl font-semibold">{exercise.question}</span>
-            <Volume2 className="h-4 w-4 shrink-0 text-muted-foreground" />
-          </button>
+          <div className="inline-flex items-center gap-2">
+            <LookupText text={exercise.question} className="text-xl font-semibold" />
+            <button
+              type="button"
+              onClick={() => playWord({ hanzi: exercise.question })}
+              aria-label="Nghe câu hỏi"
+              className="shrink-0 text-muted-foreground transition-colors hover:text-foreground"
+            >
+              <Volume2 className="h-4 w-4" />
+            </button>
+          </div>
           {exercise.questionPinyin && (
             <p className="mt-1 text-sm text-muted-foreground">{exercise.questionPinyin}</p>
           )}

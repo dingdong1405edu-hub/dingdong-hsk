@@ -18,27 +18,31 @@
               "sentence": "请你___门关上。",
               "blank": "把",
               "options": ["把", "被", "比", "对"],
-              "hint": "Giới từ 把 (bǎ) đưa tân ngữ lên trước động từ để nhấn mạnh sự xử lý"
+              "hint": "Giới từ 把 (bǎ) đưa tân ngữ lên trước động từ để nhấn mạnh sự xử lý",
+              "explanation": "Đúng là 把 vì câu cần đưa tân ngữ 门 lên trước động từ 关上 để nhấn mạnh việc xử lý đối tượng (đóng cửa). 被 dùng cho câu bị động, 比 để so sánh, 对 chỉ hướng tới, đều không tạo được cấu trúc xử lý này."
             },
             {
               "type": "fill_blank",
               "sentence": "他把作业做___了。",
               "blank": "完",
               "options": ["完", "吗", "吧", "呢"],
-              "hint": "Câu chữ 把 thường có bổ ngữ sau động từ, ở đây là 完 (wán) chỉ sự hoàn thành"
+              "hint": "Câu chữ 把 thường có bổ ngữ sau động từ, ở đây là 完 (wán) chỉ sự hoàn thành",
+              "explanation": "Đúng là 完 vì câu chữ 把 bắt buộc động từ phải có thành phần đi kèm (bổ ngữ kết quả), 做完 nghĩa là làm xong. 吗/吧/呢 là trợ từ ngữ khí cuối câu, không thể làm bổ ngữ cho động từ nên sai."
             },
             {
               "type": "sentence_order",
               "words": ["把", "我", "喝完了", "咖啡"],
               "answer": "我把咖啡喝完了",
-              "meaning": "Tôi đã uống hết cà phê rồi"
+              "meaning": "Tôi đã uống hết cà phê rồi",
+              "explanation": "Trật tự đúng theo công thức câu chữ 把: Chủ ngữ (我) + 把 + tân ngữ (咖啡) + động từ kèm bổ ngữ (喝完了). Tân ngữ phải đứng giữa 把 và động từ, không được để sau động từ như câu thường."
             },
             {
               "type": "translate",
               "direction": "vi_to_zh",
               "prompt": "Xin hãy đặt cuốn sách lên bàn.",
               "answer": "请把书放在桌子上。",
-              "options": ["请把书放在桌子上。", "请把书放在椅子上。", "请把笔放在桌子上。", "请被书放在桌子上。"]
+              "options": ["请把书放在桌子上。", "请把书放在椅子上。", "请把笔放在桌子上。", "请被书放在桌子上。"],
+              "explanation": "Đúng vì 书 là sách, 桌子 là bàn, và động từ 放 (đặt) cần dùng 把 để chỉ rõ việc xử lý đối tượng đến một vị trí. 椅子 (ghế) và 笔 (bút) sai nghĩa; 请被书 sai vì 被 dùng cho bị động chứ không dùng được ở đây."
             }
           ]
         },
@@ -52,27 +56,31 @@
               "sentence": "我的手机___小偷偷走了。",
               "blank": "被",
               "options": ["被", "把", "让", "比"],
-              "hint": "Giới từ 被 (bèi) tạo câu bị động, chủ ngữ là đối tượng chịu tác động"
+              "hint": "Giới từ 被 (bèi) tạo câu bị động, chủ ngữ là đối tượng chịu tác động",
+              "explanation": "Đúng là 被 vì chủ ngữ 我的手机 là vật chịu tác động (bị lấy mất), tạo câu bị động 被 + người thực hiện (小偷) + động từ. 把 cần chủ ngữ là người gây tác động, 比 để so sánh; 让 cũng có thể tạo bị động nhưng 被 là chuẩn nhất ở đây."
             },
             {
               "type": "fill_blank",
               "sentence": "杯子被弟弟打___了。",
               "blank": "破",
               "options": ["破", "了", "吗", "的"],
-              "hint": "Sau động từ trong câu bị động thường có bổ ngữ kết quả, 破 (pò) nghĩa là vỡ"
+              "hint": "Sau động từ trong câu bị động thường có bổ ngữ kết quả, 破 (pò) nghĩa là vỡ",
+              "explanation": "Đúng là 破 vì câu bị động cần bổ ngữ kết quả ngay sau động từ để cho biết hậu quả: 打破 nghĩa là đập vỡ. 了 là trợ từ (đã có sẵn ở cuối), 吗 là từ hỏi, 的 là trợ từ định ngữ, đều không phải bổ ngữ kết quả nên sai."
             },
             {
               "type": "sentence_order",
               "words": ["被", "吃完了", "蛋糕", "他"],
               "answer": "蛋糕被他吃完了",
-              "meaning": "Cái bánh đã bị anh ấy ăn hết rồi"
+              "meaning": "Cái bánh đã bị anh ấy ăn hết rồi",
+              "explanation": "Trật tự đúng theo công thức câu bị động: đối tượng chịu tác động (蛋糕) + 被 + người gây ra (他) + động từ kèm bổ ngữ (吃完了). Vật bị tác động phải làm chủ ngữ đứng đầu, người thực hiện đứng ngay sau 被."
             },
             {
               "type": "translate",
               "direction": "vi_to_zh",
               "prompt": "Cánh cửa bị gió thổi mở ra.",
               "answer": "门被风吹开了。",
-              "options": ["门被风吹开了。", "门把风吹开了。", "窗户被风吹开了。", "门被风关上了。"]
+              "options": ["门被风吹开了。", "门把风吹开了。", "窗户被风吹开了。", "门被风关上了。"],
+              "explanation": "Đúng vì 门 (cửa) là vật chịu tác động nên dùng 被 + 风 (gió) + 吹开 (thổi mở). 门把风 sai vì 把 đảo vai khiến cửa thành chủ thể hành động; 窗户 là cửa sổ sai nghĩa; 关上 nghĩa đóng lại, trái với mở ra."
             }
           ]
         },
@@ -86,27 +94,31 @@
               "sentence": "我___昨天来的。",
               "blank": "是",
               "options": ["是", "在", "把", "被"],
-              "hint": "Cấu trúc 是 ... 的 nhấn mạnh thời gian, địa điểm hay cách thức của hành động đã xảy ra"
+              "hint": "Cấu trúc 是 ... 的 nhấn mạnh thời gian, địa điểm hay cách thức của hành động đã xảy ra",
+              "explanation": "Đúng là 是 vì câu kết thúc bằng 的 nên cần 是 ở đầu để tạo cặp 是 ... 的, nhấn mạnh thời gian (昨天) của hành động đã xảy ra. 在 chỉ nơi chốn/đang diễn ra, 把 và 被 dùng cho câu xử lý/bị động nên không hợp."
             },
             {
               "type": "fill_blank",
               "sentence": "他是坐飞机来___。",
               "blank": "的",
               "options": ["的", "了", "吗", "呢"],
-              "hint": "Cấu trúc 是 ... 的 kết thúc bằng 的 (de) để nhấn mạnh cách thức"
+              "hint": "Cấu trúc 是 ... 的 kết thúc bằng 的 (de) để nhấn mạnh cách thức",
+              "explanation": "Đúng là 的 vì đầu câu đã có 是, cần 的 ở cuối để hoàn thành cặp 是 ... 的 nhấn mạnh cách thức (坐飞机 - đi máy bay). Với hành động đã xảy ra dùng 是 ... 的 thì không dùng 了; 吗/呢 là trợ từ nghi vấn nên sai."
             },
             {
               "type": "sentence_order",
               "words": ["是", "的", "我", "在北京", "学的"],
               "answer": "我是在北京学的",
-              "meaning": "Tôi học ở Bắc Kinh"
+              "meaning": "Tôi học ở Bắc Kinh",
+              "explanation": "Trật tự đúng theo cấu trúc 是 ... 的: Chủ ngữ (我) + 是 + thành phần nhấn mạnh (在北京 - địa điểm) + động từ + 的. 是 đặt trước phần cần nhấn mạnh và 的 đóng ngay sau động từ để làm nổi bật nơi diễn ra hành động."
             },
             {
               "type": "translate",
               "direction": "vi_to_zh",
               "prompt": "Cô ấy đến từ Việt Nam.",
               "answer": "她是从越南来的。",
-              "options": ["她是从越南来的。", "他是从越南来的。", "她是从中国来的。", "她从越南来。"]
+              "options": ["她是从越南来的。", "他是从越南来的。", "她是从中国来的。", "她从越南来。"],
+              "explanation": "Đúng vì 她 (cô ấy) hợp giới tính, 从越南 nghĩa là từ Việt Nam, và dùng 是 ... 的 để nhấn mạnh nguồn gốc. 他 sai giới tính, 中国 sai nước, còn 她从越南来 thiếu cặp 是 ... 的 nên mất sắc thái nhấn mạnh."
             }
           ]
         }
@@ -129,27 +141,31 @@
               "sentence": "她___会说汉语，而且说得很好。",
               "blank": "不但",
               "options": ["不但", "因为", "虽然", "如果"],
-              "hint": "Cấu trúc 不但 ... 而且 ... diễn tả ý không những ... mà còn ..."
+              "hint": "Cấu trúc 不但 ... 而且 ... diễn tả ý không những ... mà còn ...",
+              "explanation": "Đúng là 不但 vì vế sau có 而且, tạo cặp liên từ tăng tiến 不但 ... 而且 ... (không những ... mà còn ...). 因为 chỉ nguyên nhân, 虽然 chỉ nhượng bộ (đi với 但是), 如果 chỉ giả thiết, đều không khớp với 而且."
             },
             {
               "type": "fill_blank",
               "sentence": "这家餐厅的菜不但好吃，___很便宜。",
               "blank": "而且",
               "options": ["而且", "但是", "所以", "因为"],
-              "hint": "Vế thứ hai dùng 而且 (érqiě) để bổ sung thêm thông tin tăng tiến"
+              "hint": "Vế thứ hai dùng 而且 (érqiě) để bổ sung thêm thông tin tăng tiến",
+              "explanation": "Đúng là 而且 vì vế trước có 不但, cần 而且 để hoàn thành cặp tăng tiến (vừa ngon vừa rẻ - hai ưu điểm cùng chiều). 但是 chỉ sự đối lập, 所以 chỉ kết quả, 因为 chỉ nguyên nhân, đều phá vỡ ý nghĩa tăng tiến."
             },
             {
               "type": "sentence_order",
               "words": ["不但", "聪明", "而且", "他", "努力", "很"],
               "answer": "他不但聪明而且很努力",
-              "meaning": "Anh ấy không những thông minh mà còn rất chăm chỉ"
+              "meaning": "Anh ấy không những thông minh mà còn rất chăm chỉ",
+              "explanation": "Trật tự đúng: Chủ ngữ (他) + 不但 + tính chất 1 (聪明) + 而且 + tính chất 2 (很努力). Vì cùng một chủ ngữ nên 他 đặt trước 不但; 很 phải đứng ngay trước tính từ 努力 để bổ nghĩa mức độ."
             },
             {
               "type": "translate",
               "direction": "vi_to_zh",
               "prompt": "Căn phòng này không những lớn mà còn rất sáng.",
               "answer": "这个房间不但大，而且很亮。",
-              "options": ["这个房间不但大，而且很亮。", "这个房间不但大，但是很亮。", "这个房间不但小，而且很亮。", "这个房间虽然大，而且很亮。"]
+              "options": ["这个房间不但大，而且很亮。", "这个房间不但大，但是很亮。", "这个房间不但小，而且很亮。", "这个房间虽然大，而且很亮。"],
+              "explanation": "Đúng vì cặp 不但 ... 而且 đi liền nhau diễn tả tăng tiến (大 lớn và 很亮 rất sáng cùng là ưu điểm). 不但 ... 但是 sai vì 但是 chỉ đối lập; 小 (nhỏ) sai nghĩa; 虽然 ... 而且 sai vì 虽然 phải đi với 但是 chứ không với 而且."
             }
           ]
         },
@@ -163,27 +179,31 @@
               "sentence": "雨___下越大。",
               "blank": "越",
               "options": ["越", "更", "最", "太"],
-              "hint": "Cấu trúc 越 ... 越 ... diễn tả mức độ tăng theo nhau, càng ... càng ..."
+              "hint": "Cấu trúc 越 ... 越 ... diễn tả mức độ tăng theo nhau, càng ... càng ...",
+              "explanation": "Đúng là 越 vì vế sau đã có 越大, cần 越 ở trước (越下越大) để tạo cặp 越 ... 越 ... diễn tả mức độ tăng dần (càng rơi càng to). 更 (hơn), 最 (nhất), 太 (quá) chỉ là phó từ mức độ đơn lẻ, không tạo được quan hệ tăng tiến đồng biến."
             },
             {
               "type": "fill_blank",
               "sentence": "天气___来越冷了。",
               "blank": "越",
               "options": ["越", "更", "很", "比"],
-              "hint": "越来越 (yuè lái yuè) nghĩa là ngày càng, dùng cho biến đổi theo thời gian"
+              "hint": "越来越 (yuè lái yuè) nghĩa là ngày càng, dùng cho biến đổi theo thời gian",
+              "explanation": "Đúng là 越 vì cụm cố định 越来越 (ngày càng) cần điền 越 vào trước 来越 để diễn tả sự biến đổi tăng dần theo thời gian (trời ngày càng lạnh). 更/很/比 không ghép được thành cụm 越来越 nên sai về cấu trúc."
             },
             {
               "type": "sentence_order",
               "words": ["越", "汉语", "越", "他", "说", "好", "得"],
               "answer": "他汉语说得越来越好",
-              "meaning": "Tiếng Hán của anh ấy nói ngày càng tốt"
+              "meaning": "Tiếng Hán của anh ấy nói ngày càng tốt",
+              "explanation": "Trật tự đúng: Chủ ngữ (他) + đối tượng (汉语) + động từ (说) + 得 + bổ ngữ trình độ (越来越好). 得 đứng sau động từ để dẫn ra bổ ngữ chỉ mức độ, và 越来越 đặt trước tính từ 好 để diễn tả sự tiến bộ tăng dần."
             },
             {
               "type": "translate",
               "direction": "vi_to_zh",
               "prompt": "Tôi càng học càng thích.",
               "answer": "我越学越喜欢。",
-              "options": ["我越学越喜欢。", "我越学越累。", "他越学越喜欢。", "我更学更喜欢。"]
+              "options": ["我越学越喜欢。", "我越学越累。", "他越学越喜欢。", "我更学更喜欢。"],
+              "explanation": "Đúng vì cặp 越 ... 越 ... diễn tả hai vế tăng đồng biến: càng học (学) càng thích (喜欢). 累 (mệt) sai nghĩa so với thích; 他 sai chủ ngữ (phải là 我 - tôi); 更 ... 更 sai vì 更 không tạo được cấu trúc tương quan như 越."
             }
           ]
         },
@@ -197,27 +217,31 @@
               "sentence": "他喜欢___吃饭一边看电视。",
               "blank": "一边",
               "options": ["一边", "一点", "一起", "一样"],
-              "hint": "Cấu trúc 一边 ... 一边 ... diễn tả hai hành động xảy ra đồng thời"
+              "hint": "Cấu trúc 一边 ... 一边 ... diễn tả hai hành động xảy ra đồng thời",
+              "explanation": "Đúng là 一边 vì vế sau đã có 一边看电视, cần 一边 ở trước (一边吃饭) để tạo cặp 一边 ... 一边 ... chỉ hai hành động diễn ra cùng lúc. 一点 (một chút), 一起 (cùng nhau), 一样 (giống nhau) không tạo được cấu trúc song hành này."
             },
             {
               "type": "fill_blank",
               "sentence": "我们一边走___聊天。",
               "blank": "一边",
               "options": ["一边", "一直", "一定", "一会儿"],
-              "hint": "Vế thứ hai cũng dùng 一边 (yìbiān) để chỉ hành động song song"
+              "hint": "Vế thứ hai cũng dùng 一边 (yìbiān) để chỉ hành động song song",
+              "explanation": "Đúng là 一边 vì vế trước có 一边走, cần lặp lại 一边 trước 聊天 để hoàn thành cặp 一边 ... 一边 ... (vừa đi vừa trò chuyện). 一直 (luôn luôn), 一定 (nhất định), 一会儿 (một lát) không diễn tả được hai hành động đồng thời."
             },
             {
               "type": "sentence_order",
               "words": ["一边", "一边", "她", "听音乐", "学习"],
               "answer": "她一边听音乐一边学习",
-              "meaning": "Cô ấy vừa nghe nhạc vừa học bài"
+              "meaning": "Cô ấy vừa nghe nhạc vừa học bài",
+              "explanation": "Trật tự đúng: Chủ ngữ (她) + 一边 + hành động 1 (听音乐) + 一边 + hành động 2 (学习). Mỗi 一边 đặt ngay trước một động từ để cho thấy hai việc xảy ra song song dưới cùng một chủ ngữ."
             },
             {
               "type": "translate",
               "direction": "vi_to_zh",
               "prompt": "Anh ấy vừa lái xe vừa nghe nhạc.",
               "answer": "他一边开车一边听音乐。",
-              "options": ["他一边开车一边听音乐。", "他一边走路一边听音乐。", "她一边开车一边听音乐。", "他一起开车一起听音乐。"]
+              "options": ["他一边开车一边听音乐。", "他一边走路一边听音乐。", "她一边开车一边听音乐。", "他一起开车一起听音乐。"],
+              "explanation": "Đúng vì cặp 一边 ... 一边 ... nối hai hành động đồng thời: 开车 (lái xe) và 听音乐 (nghe nhạc). 走路 (đi bộ) sai nghĩa với lái xe; 她 sai giới tính; 一起 ... 一起 nghĩa là cùng nhau (với người khác), không phải hai việc song song của một người."
             }
           ]
         }

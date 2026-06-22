@@ -7,9 +7,15 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Badge } from "@/components/ui/badge";
-import { ArrowLeft, Plus, Trash2 } from "lucide-react";
+import { ArrowLeft, Plus, Trash2, Save, Pencil } from "lucide-react";
 import { hskLevelLabel } from "@/lib/utils";
-import { createQuestionAction, deleteQuestionAction } from "@/server/actions/admin";
+import { ImageUpload } from "@/components/admin/image-upload";
+import { ListeningAudioFields } from "@/components/admin/listening-audio-fields";
+import {
+  createQuestionAction,
+  deleteQuestionAction,
+  updateListeningAction,
+} from "@/server/actions/admin";
 
 interface Props {
   params: Promise<{ testId: string }>;
@@ -32,25 +38,69 @@ export default async function AdminListeningDetailPage({ params }: Props) {
         <ArrowLeft className="h-4 w-4" /> Quay lại danh sách bài nghe
       </Link>
 
-      <div>
-        <div className="flex items-center gap-2">
-          <h1 className="text-xl font-bold">{test.title}</h1>
-          <Badge variant="outline">{hskLevelLabel(test.hskLevel)}</Badge>
-        </div>
+      <div className="flex items-center gap-2">
+        <h1 className="text-xl font-bold">{test.title}</h1>
+        <Badge variant="outline">{hskLevelLabel(test.hskLevel)}</Badge>
       </div>
 
+      {/* Edit audio / transcript / meta */}
       <Card>
         <CardHeader>
-          <CardTitle className="text-base">Audio &amp; lời thoại</CardTitle>
+          <CardTitle className="flex items-center gap-2 text-base">
+            <Pencil className="h-4 w-4" /> Audio &amp; lời thoại
+          </CardTitle>
         </CardHeader>
-        <CardContent className="space-y-3">
-          <audio controls src={test.audioUrl} className="w-full">
-            Trình duyệt không hỗ trợ phát audio.
-          </audio>
-          <p className="break-all text-xs text-muted-foreground">{test.audioUrl}</p>
-          {test.transcript && (
-            <p className="font-chinese text-sm leading-relaxed text-muted-foreground">{test.transcript}</p>
-          )}
+        <CardContent>
+          <form
+            action={async (fd) => {
+              "use server";
+              await updateListeningAction(fd);
+            }}
+            className="space-y-4"
+          >
+            <input type="hidden" name="id" value={test.id} />
+            <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+              <div className="space-y-1">
+                <Label>Tiêu đề</Label>
+                <Input name="title" defaultValue={test.title} required />
+              </div>
+              <div className="grid grid-cols-2 gap-4">
+                <div className="space-y-1">
+                  <Label>Cấp độ HSK</Label>
+                  <select
+                    name="hskLevel"
+                    defaultValue={test.hskLevel}
+                    className="flex h-9 w-full rounded-md border px-3 py-1 text-sm"
+                  >
+                    {["HSK1", "HSK2", "HSK3", "HSK4", "HSK5", "HSK6"].map((l) => (
+                      <option key={l} value={l}>
+                        {l}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+                <div className="space-y-1">
+                  <Label>Thời gian (giây)</Label>
+                  <Input name="timeLimit" type="number" defaultValue={test.timeLimit} />
+                </div>
+              </div>
+            </div>
+
+            <div className="space-y-1">
+              <Label>Hình minh hoạ</Label>
+              <ImageUpload name="imageUrl" defaultValue={test.imageUrl} />
+            </div>
+
+            <ListeningAudioFields
+              idSuffix="edit"
+              defaultAudioUrl={test.audioUrl}
+              defaultTranscript={test.transcript}
+            />
+
+            <Button type="submit" className="gap-1.5">
+              <Save className="h-4 w-4" /> Lưu thay đổi
+            </Button>
+          </form>
         </CardContent>
       </Card>
 
@@ -73,7 +123,7 @@ export default async function AdminListeningDetailPage({ params }: Props) {
             <div className="space-y-1">
               <Label>Loại câu hỏi</Label>
               <select name="type" className="flex h-9 w-full rounded-md border px-3 py-1 text-sm">
-                <option value="MCQ">MCQ</option>
+                <option value="MCQ">MCQ (trắc nghiệm)</option>
                 <option value="TRUE_FALSE">Đúng/Sai</option>
               </select>
             </div>
@@ -83,7 +133,11 @@ export default async function AdminListeningDetailPage({ params }: Props) {
             </div>
             <div className="space-y-1">
               <Label>Đáp án (mỗi dòng 1 option — dùng cho MCQ)</Label>
-              <Textarea name="options" className="font-chinese" placeholder="Option A&#10;Option B&#10;Option C&#10;Option D" />
+              <Textarea
+                name="options"
+                className="font-chinese"
+                placeholder="Option A&#10;Option B&#10;Option C&#10;Option D"
+              />
             </div>
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-1">
@@ -99,8 +153,12 @@ export default async function AdminListeningDetailPage({ params }: Props) {
               </div>
             </div>
             <div className="space-y-1">
-              <Label>Giải thích (tùy chọn)</Label>
-              <Input name="explanation" className="font-chinese" placeholder="Giải thích đáp án..." />
+              <Label>Giải thích (vì sao chọn đáp án này)</Label>
+              <Textarea
+                name="explanation"
+                className="font-chinese"
+                placeholder="Giải thích để hiển thị khi chữa bài..."
+              />
             </div>
             <Button type="submit">Thêm câu hỏi</Button>
           </form>

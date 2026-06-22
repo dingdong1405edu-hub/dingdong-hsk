@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Badge } from "@/components/ui/badge";
+import { ImageUpload } from "@/components/admin/image-upload";
 import { hskLevelLabel } from "@/lib/utils";
 import { deleteWritingAction } from "@/server/actions/admin";
 import { revalidatePath } from "next/cache";
@@ -57,8 +58,8 @@ export default async function AdminWritingPage() {
               </select>
             </div>
             <div className="space-y-1 md:col-span-2">
-              <Label>Hình minh hoạ (URL)</Label>
-              <Input name="imageUrl" placeholder="https://... hoặc /images/..." />
+              <Label>Tải ảnh đại diện lên</Label>
+              <ImageUpload name="imageUrl" />
             </div>
             <div className="space-y-1 md:col-span-2">
               <Label>Đề bài (VI)</Label>

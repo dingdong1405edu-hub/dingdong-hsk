@@ -18,27 +18,31 @@
               "sentence": "请你___门关上。",
               "blank": "把",
               "options": ["把", "被", "比", "在"],
-              "hint": "Giới từ 把 (bǎ) đưa tân ngữ lên trước động từ để nhấn mạnh sự xử lý"
+              "hint": "Giới từ 把 (bǎ) đưa tân ngữ lên trước động từ để nhấn mạnh sự xử lý",
+              "explanation": "Câu chữ 把 đưa tân ngữ 门 lên trước động từ 关上 để nhấn mạnh việc xử lý đối tượng, nên dùng 把. 被 dùng cho câu bị động, 比 để so sánh, 在 chỉ vị trí nên đều sai."
             },
             {
               "type": "fill_blank",
               "sentence": "我把作业___完了。",
               "blank": "做",
               "options": ["做", "是", "有", "很"],
-              "hint": "Trong câu chữ 把, sau tân ngữ phải có động từ kèm thành phần bổ sung"
+              "hint": "Trong câu chữ 把, sau tân ngữ phải có động từ kèm thành phần bổ sung",
+              "explanation": "Trong câu chữ 把, chỗ trống cần một động từ để kết hợp với bổ ngữ kết quả 完, nên chọn động từ 做 (làm). 是/有 là động từ không chỉ hành động xử lý, 很 là phó từ mức độ nên không dùng được."
             },
             {
               "type": "sentence_order",
               "words": ["把", "我", "吃", "苹果", "了"],
               "answer": "我把苹果吃了",
-              "meaning": "Tôi đã ăn quả táo rồi"
+              "meaning": "Tôi đã ăn quả táo rồi",
+              "explanation": "Trật tự câu chữ 把 là: chủ ngữ + 把 + tân ngữ + động từ + thành phần khác, nên 苹果 đứng sau 把 và trước động từ 吃, cuối câu là 了. Không đặt tân ngữ sau động từ như câu thường."
             },
             {
               "type": "translate",
               "direction": "vi_to_zh",
               "prompt": "Anh ấy đã đặt cuốn sách lên bàn.",
               "answer": "他把书放在桌子上了。",
-              "options": ["他把书放在桌子上了。", "他把书放在椅子上了。", "我把书放在桌子上了。", "他把笔放在桌子上了。"]
+              "options": ["他把书放在桌子上了。", "他把书放在椅子上了。", "我把书放在桌子上了。", "他把笔放在桌子上了。"],
+              "explanation": "Hành động đặt vật vào vị trí dùng câu chữ 把: 他把书放在桌子上了, với 放在 + nơi chốn chỉ kết quả đặt ở đâu. Các đáp án khác sai vì đổi 椅子 (ghế), đổi chủ ngữ 我, hoặc đổi 笔 (bút) không khớp prompt."
             }
           ]
         },
@@ -52,27 +56,31 @@
               "sentence": "我已经吃___饭了。",
               "blank": "完",
               "options": ["完", "在", "着", "过"],
-              "hint": "Bổ ngữ kết quả 完 (wán) đặt sau động từ chỉ hành động đã hoàn tất"
+              "hint": "Bổ ngữ kết quả 完 (wán) đặt sau động từ chỉ hành động đã hoàn tất",
+              "explanation": "完 là bổ ngữ kết quả đặt ngay sau động từ 吃 để chỉ ăn xong (hoàn tất), nên 吃完饭了 là đúng. 在/着 chỉ trạng thái đang tiếp diễn, 过 chỉ kinh nghiệm từng làm nên không diễn tả sự hoàn tất ở đây."
             },
             {
               "type": "fill_blank",
               "sentence": "这件事情我们已经准备___了。",
               "blank": "好",
               "options": ["好", "完", "到", "见"],
-              "hint": "Bổ ngữ kết quả 好 (hǎo) chỉ việc làm xong đạt trạng thái tốt, sẵn sàng"
+              "hint": "Bổ ngữ kết quả 好 (hǎo) chỉ việc làm xong đạt trạng thái tốt, sẵn sàng",
+              "explanation": "好 là bổ ngữ kết quả nhấn mạnh việc chuẩn bị đã xong xuôi, hoàn chỉnh và sẵn sàng (准备好), phù hợp với 这件事情. 完 chỉ nhấn mạnh kết thúc, còn 到/见 không kết hợp với 准备 theo nghĩa này."
             },
             {
               "type": "sentence_order",
               "words": ["看完", "我", "这本书", "了"],
               "answer": "我看完这本书了",
-              "meaning": "Tôi đã đọc xong cuốn sách này"
+              "meaning": "Tôi đã đọc xong cuốn sách này",
+              "explanation": "Cụm động từ + bổ ngữ kết quả 看完 đứng liền nhau ngay sau chủ ngữ 我, rồi mới đến tân ngữ 这本书 và trợ từ 了 cuối câu. Bổ ngữ kết quả không tách rời khỏi động từ."
             },
             {
               "type": "translate",
               "direction": "vi_to_zh",
               "prompt": "Tôi đã làm xong bài tập rồi.",
               "answer": "我做完作业了。",
-              "options": ["我做完作业了。", "我做好作业了。", "他做完作业了。", "我看完作业了。"]
+              "options": ["我做完作业了。", "我做好作业了。", "他做完作业了。", "我看完作业了。"],
+              "explanation": "Làm xong bài tập dùng động từ 做 + bổ ngữ kết quả 完 chỉ sự hoàn tất, nên 我做完作业了 là đúng. 做好 nhấn mạnh làm tốt/sẵn sàng, đổi chủ ngữ thành 他, hoặc dùng 看 (đọc) thay 做 đều lệch nghĩa prompt."
             }
           ]
         },
@@ -86,27 +94,31 @@
               "sentence": "我找___我的手机了。",
               "blank": "到",
               "options": ["到", "完", "好", "在"],
-              "hint": "Bổ ngữ kết quả 到 (dào) chỉ kết quả đạt được mục đích của hành động"
+              "hint": "Bổ ngữ kết quả 到 (dào) chỉ kết quả đạt được mục đích của hành động",
+              "explanation": "到 là bổ ngữ kết quả chỉ hành động đạt được mục đích: 找到 nghĩa là tìm thấy (tìm và có kết quả). 完 chỉ kết thúc, 好 chỉ làm tốt, 在 chỉ vị trí nên không diễn tả việc tìm thành công."
             },
             {
               "type": "fill_blank",
               "sentence": "你听___老师说的话了吗？",
               "blank": "见",
               "options": ["见", "完", "好", "过"],
-              "hint": "Bổ ngữ kết quả 见 (jiàn) thường dùng với 看, 听 chỉ tri giác được"
+              "hint": "Bổ ngữ kết quả 见 (jiàn) thường dùng với 看, 听 chỉ tri giác được",
+              "explanation": "见 là bổ ngữ kết quả đi với động từ tri giác như 听, 看, nên 听见 nghĩa là nghe thấy (tiếp nhận được bằng giác quan). 完/好 không kết hợp với 听 theo nghĩa tri giác, 过 chỉ kinh nghiệm nên đều sai."
             },
             {
               "type": "sentence_order",
               "words": ["看见", "我", "了", "他"],
               "answer": "我看见他了",
-              "meaning": "Tôi đã nhìn thấy anh ấy rồi"
+              "meaning": "Tôi đã nhìn thấy anh ấy rồi",
+              "explanation": "Động từ + bổ ngữ kết quả 看见 đi liền sau chủ ngữ 我, tiếp theo là tân ngữ 他 rồi mới đến 了 cuối câu. Trợ từ 了 luôn đứng cuối, không xen vào giữa 看见 và tân ngữ."
             },
             {
               "type": "translate",
               "direction": "vi_to_zh",
               "prompt": "Tôi đã nghe thấy tiếng của cô ấy.",
               "answer": "我听见她的声音了。",
-              "options": ["我听见她的声音了。", "我看见她的声音了。", "我听见他的声音了。", "我找到她的声音了。"]
+              "options": ["我听见她的声音了。", "我看见她的声音了。", "我听见他的声音了。", "我找到她的声音了。"],
+              "explanation": "Nghe thấy âm thanh dùng 听 + bổ ngữ 见 (听见) vì âm thanh tiếp nhận bằng tai, nên 我听见她的声音了 đúng. 看见 dùng cho thị giác, đổi 她→他 sai về người, còn 找到声音 (tìm thấy âm thanh) không hợp logic."
             }
           ]
         }
@@ -129,27 +141,31 @@
               "sentence": "___下雨，所以我没去公园。",
               "blank": "因为",
               "options": ["因为", "虽然", "如果", "但是"],
-              "hint": "因为 (yīnwèi) đặt ở vế chỉ nguyên nhân, nghĩa là vì, bởi vì"
+              "hint": "因为 (yīnwèi) đặt ở vế chỉ nguyên nhân, nghĩa là vì, bởi vì",
+              "explanation": "Vế sau có 所以 (cho nên) nên vế đầu chỉ nguyên nhân phải dùng 因为 để tạo cặp 因为...所以. 虽然 đi với 但是, 如果 đi với 就 chỉ giả thiết, 但是 chỉ sự trái ngược nên đều không khớp."
             },
             {
               "type": "fill_blank",
               "sentence": "因为他生病了，___没来上课。",
               "blank": "所以",
               "options": ["所以", "因为", "可是", "还是"],
-              "hint": "所以 (suǒyǐ) đặt ở vế chỉ kết quả, nghĩa là cho nên, vì vậy"
+              "hint": "所以 (suǒyǐ) đặt ở vế chỉ kết quả, nghĩa là cho nên, vì vậy",
+              "explanation": "Vế đầu đã có 因为 nêu nguyên nhân (生病), nên vế kết quả phải dùng 所以 để hoàn thành cặp 因为...所以. 因为 lặp lại là sai, 可是 chỉ trái ngược, 还是 nghĩa vẫn/hay là nên không hợp."
             },
             {
               "type": "sentence_order",
               "words": ["因为", "所以", "很累", "他", "睡觉了", "早早"],
               "answer": "因为很累，所以他早早睡觉了",
-              "meaning": "Vì rất mệt nên anh ấy đã đi ngủ sớm"
+              "meaning": "Vì rất mệt nên anh ấy đã đi ngủ sớm",
+              "explanation": "Cặp liên từ 因为...所以 mở đầu mỗi vế: 因为 + nguyên nhân (很累), 所以 + kết quả (他早早睡觉了). Trong vế kết quả, trạng ngữ 早早 đứng trước động từ 睡觉 theo đúng trật tự tiếng Trung."
             },
             {
               "type": "translate",
               "direction": "vi_to_zh",
               "prompt": "Vì hôm nay rất nóng nên tôi không muốn đi ra ngoài.",
               "answer": "因为今天很热，所以我不想出去。",
-              "options": ["因为今天很热，所以我不想出去。", "虽然今天很热，但是我想出去。", "因为今天很冷，所以我不想出去。", "因为今天很热，所以他不想出去。"]
+              "options": ["因为今天很热，所以我不想出去。", "虽然今天很热，但是我想出去。", "因为今天很冷，所以我不想出去。", "因为今天很热，所以他不想出去。"],
+              "explanation": "Quan hệ nhân quả vì...nên dùng cặp 因为...所以, với nguyên nhân 很热 và kết quả 我不想出去. Đáp án 虽然...但是 sai vì là quan hệ nhượng bộ, 很冷 sai nghĩa (lạnh), và đổi 我→他 sai chủ ngữ."
             }
           ]
         },
@@ -163,27 +179,31 @@
               "sentence": "___这个工作很累，但是我很喜欢。",
               "blank": "虽然",
               "options": ["虽然", "因为", "所以", "如果"],
-              "hint": "虽然 (suīrán) nghĩa là mặc dù, tuy rằng, đặt ở vế đầu"
+              "hint": "虽然 (suīrán) nghĩa là mặc dù, tuy rằng, đặt ở vế đầu",
+              "explanation": "Vế sau có 但是 (nhưng) thể hiện sự trái ngược, nên vế đầu phải dùng 虽然 tạo cặp 虽然...但是 (mặc dù...nhưng). 因为 đi với 所以 (nhân quả), 所以 là vế kết quả, 如果 chỉ giả thiết nên đều sai."
             },
             {
               "type": "fill_blank",
               "sentence": "虽然他很忙，___每天都锻炼身体。",
               "blank": "但是",
               "options": ["但是", "所以", "因为", "或者"],
-              "hint": "但是 (dànshì) nghĩa là nhưng, đặt ở vế sau biểu thị sự trái ngược"
+              "hint": "但是 (dànshì) nghĩa là nhưng, đặt ở vế sau biểu thị sự trái ngược",
+              "explanation": "Vế đầu có 虽然 (rất bận) nên vế sau phải dùng 但是 để biểu thị sự trái ngược (vẫn luyện tập), hoàn thành cặp 虽然...但是. 所以 chỉ kết quả, 因为 chỉ nguyên nhân, 或者 nghĩa hoặc là nên không phù hợp."
             },
             {
               "type": "sentence_order",
               "words": ["虽然", "但是", "很贵", "这个手机", "很好用"],
               "answer": "这个手机虽然很贵，但是很好用",
-              "meaning": "Chiếc điện thoại này tuy đắt nhưng rất dễ dùng"
+              "meaning": "Chiếc điện thoại này tuy đắt nhưng rất dễ dùng",
+              "explanation": "Khi hai vế cùng chủ ngữ (这个手机), chủ ngữ có thể đặt trước 虽然: 这个手机虽然很贵，但是很好用. Cặp 虽然...但是 nối hai vế trái ngược, với 但是 mở đầu vế nhượng bộ phía sau."
             },
             {
               "type": "translate",
               "direction": "vi_to_zh",
               "prompt": "Mặc dù trời mưa nhưng anh ấy vẫn đi làm.",
               "answer": "虽然下雨了，但是他还是去上班了。",
-              "options": ["虽然下雨了，但是他还是去上班了。", "因为下雨了，所以他没去上班。", "虽然下雪了，但是他还是去上班了。", "虽然下雨了，但是我还是去上班了。"]
+              "options": ["虽然下雨了，但是他还是去上班了。", "因为下雨了，所以他没去上班。", "虽然下雪了，但是他还是去上班了。", "虽然下雨了，但是我还是去上班了。"],
+              "explanation": "Mặc dù...nhưng vẫn dùng cặp 虽然...但是 kèm 还是 nhấn mạnh vẫn (虽然下雨...但是他还是去上班). 因为...所以 sai vì là nhân quả, 下雪 (tuyết) sai nghĩa mưa, và đổi 他→我 sai chủ ngữ so với prompt."
             }
           ]
         },
@@ -197,27 +217,31 @@
               "sentence": "他___走___打电话。",
               "blank": "一边",
               "options": ["一边", "一点", "一些", "一直"],
-              "hint": "一边 (yìbiān) ... 一边 (yìbiān) diễn tả hai hành động xảy ra cùng lúc"
+              "hint": "一边 (yìbiān) ... 一边 (yìbiān) diễn tả hai hành động xảy ra cùng lúc",
+              "explanation": "Câu có hai động từ (走, 打电话) cùng lúc nên dùng cặp 一边...一边 đặt trước mỗi động từ. 一点/一些 chỉ số lượng nhỏ, 一直 nghĩa luôn/liên tục nên không diễn tả hai hành động đồng thời."
             },
             {
               "type": "fill_blank",
               "sentence": "我喜欢一边吃饭___看电视。",
               "blank": "一边",
               "options": ["一边", "一定", "已经", "正在"],
-              "hint": "Vế thứ hai của cấu trúc cũng dùng 一边 (yìbiān) trước động từ"
+              "hint": "Vế thứ hai của cấu trúc cũng dùng 一边 (yìbiān) trước động từ",
+              "explanation": "Vế đầu đã có 一边吃饭 nên vế thứ hai cũng phải dùng 一边 trước 看电视 để hoàn thành cặp 一边...一边. 一定 nghĩa nhất định, 已经 đã, 正在 đang nên không tạo cấu trúc hai hành động song song."
             },
             {
               "type": "sentence_order",
               "words": ["一边", "一边", "听音乐", "他", "学习"],
               "answer": "他一边听音乐一边学习",
-              "meaning": "Anh ấy vừa nghe nhạc vừa học bài"
+              "meaning": "Anh ấy vừa nghe nhạc vừa học bài",
+              "explanation": "Sau chủ ngữ 他, mỗi 一边 đặt ngay trước một động từ: 一边听音乐 一边学习, biểu thị hai hành động diễn ra cùng lúc. Không gộp hai 一边 cạnh nhau hay đặt sau động từ."
             },
             {
               "type": "translate",
               "direction": "vi_to_zh",
               "prompt": "Cô ấy vừa hát vừa nhảy.",
               "answer": "她一边唱歌一边跳舞。",
-              "options": ["她一边唱歌一边跳舞。", "她一边吃饭一边跳舞。", "他一边唱歌一边跳舞。", "她一直唱歌一直跳舞。"]
+              "options": ["她一边唱歌一边跳舞。", "她一边吃饭一边跳舞。", "他一边唱歌一边跳舞。", "她一直唱歌一直跳舞。"],
+              "explanation": "Vừa hát vừa nhảy là hai hành động đồng thời nên dùng 一边唱歌一边跳舞 (她 là cô ấy). 一边吃饭 sai nghĩa (ăn cơm), đổi 她→他 sai giới tính, còn 一直...一直 chỉ sự liên tục chứ không phải đồng thời."
             }
           ]
         }

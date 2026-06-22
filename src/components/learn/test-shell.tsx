@@ -1,4 +1,6 @@
 "use client";
+import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import Link from "next/link";
 import { ArrowLeft, Send, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -8,6 +10,8 @@ interface TestShellProps {
   subtitle: string;
   backHref: string;
   elapsedLabel?: string;
+  /** Centered toolbar slot (e.g. an exam timer). */
+  center?: React.ReactNode;
   tools?: React.ReactNode;
   onSubmit?: () => void;
   submitting?: boolean;
@@ -21,6 +25,7 @@ export function TestShell({
   subtitle,
   backHref,
   elapsedLabel,
+  center,
   tools,
   onSubmit,
   submitting,
@@ -29,8 +34,19 @@ export function TestShell({
   nav,
   children,
 }: TestShellProps) {
-  return (
-    <div className="fixed inset-0 z-50 flex flex-col bg-[#faf7f2]">
+  // Portal the overlay to <body> so it ESCAPES the (learn) DashboardShell <main>,
+  // which carries an entrance transform (`animate-fade-up`). A transformed
+  // ancestor would otherwise become the containing block for this `position:
+  // fixed` overlay and collapse it (the reading/listening "vanishing test" bug).
+  // Rendered only after mount so there's no SSR/hydration mismatch.
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
+
+  const shell = (
+    // `h-dvh` (dynamic viewport height) gives the overlay a definite height that
+    // does NOT depend on the containing block — so the inner flex/scroll chain
+    // can never collapse, and mobile browser chrome (URL bar) is handled cleanly.
+    <div className="fixed inset-0 z-50 flex h-dvh flex-col bg-[#faf7f2]">
       {/* Top toolbar */}
       <header className="flex h-14 shrink-0 items-center gap-2 border-b bg-white/90 px-3 backdrop-blur sm:gap-3 sm:px-4">
         <Link
@@ -44,24 +60,30 @@ export function TestShell({
           <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-primary text-xs font-extrabold text-primary-foreground">
             中
           </span>
-          <span className="hidden text-sm font-semibold sm:inline">
+          <span className="hidden text-sm font-semibold md:inline">
             DingDong <span className="font-normal text-muted-foreground">/ {subtitle}</span>
           </span>
         </div>
 
-        <div className="flex-1" />
+        {center ? (
+          <div className="flex flex-1 items-center justify-center px-1">{center}</div>
+        ) : (
+          <div className="flex-1" />
+        )}
 
-        {tools}
-        {elapsedLabel && (
-          <span className="inline-flex items-center gap-1.5 rounded-lg bg-muted px-2.5 py-1.5 text-sm font-semibold tabular-nums">
-            <Clock className="h-4 w-4 text-muted-foreground" /> {elapsedLabel}
-          </span>
-        )}
-        {!submitted && onSubmit && (
-          <Button onClick={onSubmit} disabled={submitting} className="gap-1.5 rounded-lg">
-            <Send className="h-4 w-4" /> <span className="hidden sm:inline">{submitLabel}</span>
-          </Button>
-        )}
+        <div className="flex items-center gap-1.5 sm:gap-2">
+          {tools}
+          {elapsedLabel && (
+            <span className="inline-flex items-center gap-1.5 rounded-lg bg-muted px-2.5 py-1.5 text-sm font-semibold tabular-nums">
+              <Clock className="h-4 w-4 text-muted-foreground" /> {elapsedLabel}
+            </span>
+          )}
+          {!submitted && onSubmit && (
+            <Button onClick={onSubmit} disabled={submitting} className="gap-1.5 rounded-lg">
+              <Send className="h-4 w-4" /> <span className="hidden sm:inline">{submitLabel}</span>
+            </Button>
+          )}
+        </div>
       </header>
 
       {/* Body */}
@@ -73,6 +95,9 @@ export function TestShell({
       )}
     </div>
   );
+
+  if (!mounted) return null;
+  return createPortal(shell, document.body);
 }
 
 interface QuestionNavBarProps {

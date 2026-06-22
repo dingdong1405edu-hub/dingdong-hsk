@@ -123,6 +123,17 @@ export function grammarItemCount(raw: unknown): number {
 }
 
 /**
+ * Flatten one grammar lesson's raw JSON into a single list of practice items —
+ * every section's exercises plus the comprehensive test's questions. Used by the
+ * "Ôn ngữ pháp" review mode, which mixes the items of many lessons into one
+ * risk-free session. Operates on raw DB JSON (tolerant via parseGrammarContent).
+ */
+export function grammarReviewExercises(raw: unknown): Exercise[] {
+  const c = parseGrammarContent(raw);
+  return [...c.sections.flatMap((s) => s.exercises), ...c.test.questions];
+}
+
+/**
  * Normalise a free-typed answer for deterministic comparison: trim, lowercase
  * (for Latin / pinyin), drop all whitespace, and strip common CN + Latin
  * punctuation so "他是老师。" matches "他是老师".

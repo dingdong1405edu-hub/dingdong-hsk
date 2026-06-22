@@ -2,7 +2,7 @@
 import { auth } from "@/lib/auth";
 import { db } from "@/lib/db";
 import { z } from "zod";
-import { gradeWriting, isGradingConfigured } from "@/lib/claude";
+import { gradeWriting, isGradingConfigured } from "@/lib/groq";
 import { Skill, Prisma } from "@prisma/client";
 
 const schema = z.object({

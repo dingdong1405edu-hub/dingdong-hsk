@@ -39,8 +39,10 @@ next-env.d.ts
 # Prisma
 prisma/migrations/dev.db
 
-# Audio uploads
+# Uploads (audio + images written at runtime by admin)
 /public/audio/uploads/
+/public/audio/generated/
+/public/images/uploads/
 /data/
 
 # Railway secrets snapshot (added when pulling project)

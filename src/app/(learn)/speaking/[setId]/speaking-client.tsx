@@ -7,6 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { hskLevelLabel } from "@/lib/utils";
+import { gradeSpeakingAction } from "@/server/actions/speaking";
 import { Mic, Square, Loader2, CheckCircle2 } from "lucide-react";
 import type { HSKLevel } from "@prisma/client";
 
@@ -38,12 +39,13 @@ function AudioRecorder({
   onRecorded,
   disabled,
 }: {
-  onRecorded: (blob: Blob) => void;
+  onRecorded: (blob: Blob, durationSec: number) => void;
   disabled?: boolean;
 }) {
   const [recording, setRecording] = useState(false);
   const mediaRecorder = useRef<MediaRecorder | null>(null);
   const chunks = useRef<Blob[]>([]);
+  const startedAt = useRef(0);
 
   async function start() {
     try {
@@ -53,9 +55,11 @@ function AudioRecorder({
       mr.ondataavailable = (e) => chunks.current.push(e.data);
       mr.onstop = () => {
         const blob = new Blob(chunks.current, { type: "audio/webm" });
-        onRecorded(blob);
+        const durationSec = Math.max(1, Math.round((Date.now() - startedAt.current) / 1000));
+        onRecorded(blob, durationSec);
         stream.getTracks().forEach((t) => t.stop());
       };
+      startedAt.current = Date.now();
       mr.start();
       mediaRecorder.current = mr;
       setRecording(true);
@@ -85,13 +89,18 @@ function AudioRecorder({
   );
 }
 
-async function transcribeAndGrade(
-  blob: Blob,
-  referenceText: string | null,
-  part: "repeat" | "read" | "answer",
-  question: string | null,
-  hskLevel: string
-): Promise<GradeResult> {
+async function transcribeAndGrade(params: {
+  blob: Blob;
+  durationSec: number;
+  setId: string;
+  referenceText: string | null;
+  part: "repeat" | "read" | "answer";
+  question: string | null;
+  index: number;
+}): Promise<GradeResult> {
+  const { blob, durationSec, setId, referenceText, part, question, index } = params;
+
+  // 1) Audio → transcript via Voxtral (multipart upload stays an API route).
   const fd = new FormData();
   fd.append("audio", blob, "recording.webm");
   const transcribeRes = await fetch("/api/transcribe", { method: "POST", body: fd });
@@ -100,17 +109,24 @@ async function transcribeAndGrade(
     throw new Error(err.error || "Không thể chuyển giọng nói thành văn bản");
   }
   const { transcript } = (await transcribeRes.json()) as { transcript: string };
-
-  const gradeRes = await fetch("/api/grade/speaking", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ transcript, referenceText, part, question, hskLevel }),
-  });
-  if (!gradeRes.ok) {
-    const err = (await gradeRes.json().catch(() => ({}))) as { error?: string };
-    throw new Error(err.error || "Chấm điểm thất bại");
+  if (!transcript.trim()) {
+    throw new Error("Không nghe rõ giọng nói, hãy thử ghi âm lại.");
   }
-  return gradeRes.json() as Promise<GradeResult>;
+
+  // 2) Transcript → score via Groq, persisted as an Attempt (server action).
+  const res = await gradeSpeakingAction({
+    setId,
+    transcript,
+    referenceText,
+    part,
+    question,
+    index,
+    durationSec,
+  });
+  if (!res.ok || !res.result) {
+    throw new Error(res.error || "Chấm điểm thất bại");
+  }
+  return res.result as GradeResult;
 }
 
 function ScoreBadge({ score }: { score: number }) {
@@ -131,10 +147,13 @@ export function SpeakingClient({ set }: { set: SpeakingSetData; userId: string }
   const [part3Loading, setPart3Loading] = useState<boolean[]>(Array(questions.length).fill(false));
   const [showPinyin, setShowPinyin] = useState(false);
 
-  async function gradePart1(idx: number, blob: Blob) {
+  async function gradePart1(idx: number, blob: Blob, durationSec: number) {
     setPart1Loading((l) => { const n = [...l]; n[idx] = true; return n; });
     try {
-      const res = await transcribeAndGrade(blob, sentences[idx].text, "repeat", null, set.hskLevel);
+      const res = await transcribeAndGrade({
+        blob, durationSec, setId: set.id, referenceText: sentences[idx].text,
+        part: "repeat", question: null, index: idx,
+      });
       setPart1Results((r) => { const n = [...r]; n[idx] = res; return n; });
     } catch (e) {
       toast.error(e instanceof Error ? e.message : "Lỗi chấm điểm");
@@ -143,10 +162,13 @@ export function SpeakingClient({ set }: { set: SpeakingSetData; userId: string }
     }
   }
 
-  async function gradePart2(blob: Blob) {
+  async function gradePart2(blob: Blob, durationSec: number) {
     setPart2Loading(true);
     try {
-      const res = await transcribeAndGrade(blob, passage.text, "read", null, set.hskLevel);
+      const res = await transcribeAndGrade({
+        blob, durationSec, setId: set.id, referenceText: passage.text,
+        part: "read", question: null, index: 0,
+      });
       setPart2Result(res);
     } catch (e) {
       toast.error(e instanceof Error ? e.message : "Lỗi chấm điểm");
@@ -155,10 +177,13 @@ export function SpeakingClient({ set }: { set: SpeakingSetData; userId: string }
     }
   }
 
-  async function gradePart3(idx: number, blob: Blob) {
+  async function gradePart3(idx: number, blob: Blob, durationSec: number) {
     setPart3Loading((l) => { const n = [...l]; n[idx] = true; return n; });
     try {
-      const res = await transcribeAndGrade(blob, null, "answer", questions[idx].question, set.hskLevel);
+      const res = await transcribeAndGrade({
+        blob, durationSec, setId: set.id, referenceText: null,
+        part: "answer", question: questions[idx].question, index: idx,
+      });
       setPart3Results((r) => { const n = [...r]; n[idx] = res; return n; });
     } catch (e) {
       toast.error(e instanceof Error ? e.message : "Lỗi chấm điểm");
@@ -198,7 +223,7 @@ export function SpeakingClient({ set }: { set: SpeakingSetData; userId: string }
                 {showPinyin && <div className="font-pinyin text-muted-foreground">{s.pinyin}</div>}
                 <div className="flex items-center gap-3">
                   <AudioRecorder
-                    onRecorded={(blob) => gradePart1(idx, blob)}
+                    onRecorded={(blob, durationSec) => gradePart1(idx, blob, durationSec)}
                     disabled={part1Loading[idx]}
                   />
                   {part1Loading[idx] && <Loader2 className="h-4 w-4 animate-spin text-muted-foreground" />}
@@ -233,7 +258,10 @@ export function SpeakingClient({ set }: { set: SpeakingSetData; userId: string }
                 )}
               </div>
               <div className="flex items-center gap-3">
-                <AudioRecorder onRecorded={gradePart2} disabled={part2Loading} />
+                <AudioRecorder
+                  onRecorded={(blob, durationSec) => gradePart2(blob, durationSec)}
+                  disabled={part2Loading}
+                />
                 {part2Loading && <Loader2 className="h-4 w-4 animate-spin text-muted-foreground" />}
                 {part2Result && (
                   <div className="flex items-center gap-2">
@@ -273,7 +301,7 @@ export function SpeakingClient({ set }: { set: SpeakingSetData; userId: string }
                 {showPinyin && <div className="font-pinyin text-muted-foreground text-sm">{q.pinyin}</div>}
                 <div className="flex items-center gap-3">
                   <AudioRecorder
-                    onRecorded={(blob) => gradePart3(idx, blob)}
+                    onRecorded={(blob, durationSec) => gradePart3(idx, blob, durationSec)}
                     disabled={part3Loading[idx]}
                   />
                   {part3Loading[idx] && <Loader2 className="h-4 w-4 animate-spin text-muted-foreground" />}

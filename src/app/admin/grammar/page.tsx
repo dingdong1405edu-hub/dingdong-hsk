@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Badge } from "@/components/ui/badge";
+import { ImageUpload } from "@/components/admin/image-upload";
 import { hskLevelLabel } from "@/lib/utils";
 import { HSKLevel } from "@prisma/client";
 import { revalidatePath } from "next/cache";
@@ -63,9 +64,9 @@ export default async function AdminGrammarPage() {
                 {["HSK1","HSK2","HSK3","HSK4","HSK5","HSK6"].map(l => <option key={l} value={l}>{l}</option>)}
               </select>
             </div>
-            <div className="space-y-1">
-              <Label>Hình minh hoạ (URL)</Label>
-              <Input name="imageUrl" placeholder="https://... hoặc /images/..." />
+            <div className="space-y-1 sm:col-span-4">
+              <Label>Tải ảnh đại diện cho unit lên</Label>
+              <ImageUpload name="imageUrl" />
             </div>
             <Button type="submit">Tạo</Button>
           </form>

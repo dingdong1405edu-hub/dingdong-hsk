@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Badge } from "@/components/ui/badge";
+import { ImageUpload } from "@/components/admin/image-upload";
 import { hskLevelLabel } from "@/lib/utils";
 import { deleteSpeakingAction } from "@/server/actions/admin";
 import { Trash2, Plus } from "lucide-react";
@@ -50,8 +51,8 @@ export default async function AdminSpeakingPage() {
                 </select>
               </div>
               <div className="space-y-1 col-span-2">
-                <Label>Hình minh hoạ (URL)</Label>
-                <Input name="imageUrl" placeholder="https://... hoặc /images/..." />
+                <Label>Tải ảnh đại diện lên</Label>
+                <ImageUpload name="imageUrl" />
               </div>
             </div>
             <div className="space-y-1">

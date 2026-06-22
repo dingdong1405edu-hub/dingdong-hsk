@@ -12,6 +12,9 @@ export interface Exercise {
     | "sentence_order"
     | "answer_question"
     | "type_sentence";
+  /** Optional author-written rationale shown when the learner answers wrong —
+   *  explains WHY the answer is what it is, not just the correct answer. */
+  explanation?: string;
   [key: string]: unknown;
 }
 
