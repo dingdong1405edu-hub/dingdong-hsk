@@ -1,9 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
-import { writeFile, mkdir } from "fs/promises";
-import path from "path";
-import { randomUUID } from "crypto";
 import { requireAdmin } from "@/lib/admin-guard";
 import { synthesizeSpeech, isTtsConfigured } from "@/lib/voxtral";
+import { storeUpload } from "@/lib/uploads";
 
 export const runtime = "nodejs";
 
@@ -28,23 +26,15 @@ function sniffAudio(buf: Buffer): string | null {
   return null;
 }
 
-async function saveAudio(buf: Buffer, ext: string, subdir: string): Promise<string> {
-  const dir = path.join(process.cwd(), "public", "audio", subdir);
-  await mkdir(dir, { recursive: true });
-  const filename = `${randomUUID()}.${ext}`;
-  await writeFile(path.join(dir, filename), buf);
-  return `/audio/${subdir}/${filename}`;
-}
-
 /**
  * Admin-only listening audio endpoint. Two modes in one multipart POST:
  *  - `file`        → upload an existing audio file (mp3/wav/ogg/m4a).
  *  - `transcript`  → synthesize an MP3 from text via Voxtral TTS.
- * Returns `{ ok, url }`. Files live under `public/audio/{uploads,generated}/`.
+ * Returns `{ ok, url }` where url is `/api/files/<id>` (served from Postgres).
  *
- * NOTE (deploy): on an ephemeral filesystem (Railway without a mounted volume)
- * these files do not survive a redeploy. Mount a volume at `/app/public/audio`
- * or swap for R2 to make them durable; the form also accepts a pasted URL.
+ * Lý do lưu DB thay vì public/: filesystem trên Railway là ephemeral nên file
+ * ghi vào public/ biến mất sau mỗi lần deploy/restart. Lưu DB thì bền vĩnh viễn.
+ * Form admin vẫn nhận được URL dán tay (https/CDN) làm phương án thay thế.
  */
 export async function POST(req: NextRequest) {
   try {
@@ -77,7 +67,7 @@ export async function POST(req: NextRequest) {
           { status: 400 },
         );
       }
-      const url = await saveAudio(buf, ext, "uploads");
+      const url = await storeUpload(buf, ext, "audio");
       return NextResponse.json({ ok: true, url });
     } catch (e) {
       console.error("Audio upload error:", e);
@@ -95,7 +85,7 @@ export async function POST(req: NextRequest) {
     }
     try {
       const { buffer } = await synthesizeSpeech(transcript);
-      const url = await saveAudio(buffer, "mp3", "generated");
+      const url = await storeUpload(buffer, "mp3", "audio");
       return NextResponse.json({ ok: true, url });
     } catch (e) {
       const msg = e instanceof Error ? e.message : "Tạo MP3 thất bại";

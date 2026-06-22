@@ -162,13 +162,15 @@ function listeningData(input: z.infer<typeof listeningSchema>) {
   };
 }
 
-export async function createListeningAction(fd: FormData): Promise<{ ok: boolean; error?: string }> {
+export async function createListeningAction(
+  fd: FormData,
+): Promise<{ ok: boolean; id?: string; error?: string }> {
   await requireAdmin();
   try {
     const data = listeningData(listeningSchema.parse(Object.fromEntries(fd)));
-    await db.listeningTest.create({ data: { ...data, published: false } }); // bản nháp
+    const created = await db.listeningTest.create({ data: { ...data, published: false } }); // bản nháp
     revalidatePath("/admin/listening");
-    return { ok: true };
+    return { ok: true, id: created.id };
   } catch (e) {
     return { ok: false, error: e instanceof Error ? e.message : "Lỗi tạo bài nghe." };
   }
@@ -248,6 +250,12 @@ export async function createQuestionAction(fd: FormData) {
     correctAnswer = { value: fd.get("correctBool") === "true" };
   }
 
+  // Thêm vào CUỐI danh sách để thứ tự ổn định (trang admin/học viên sắp xếp theo
+  // `order` asc). Không set order thì mọi câu hỏi đều = 0 → thứ tự nhảy lung tung.
+  const count = await db.question.count({
+    where: readingId ? { readingId } : { listeningId },
+  });
+
   await db.question.create({
     data: {
       type,
@@ -255,6 +263,7 @@ export async function createQuestionAction(fd: FormData) {
       options: options ?? Prisma.JsonNull,
       correctAnswer,
       explanation: (fd.get("explanation") as string) || undefined,
+      order: count + 1,
       readingId,
       listeningId,
     },

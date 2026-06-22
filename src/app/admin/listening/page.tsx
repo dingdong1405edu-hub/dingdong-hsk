@@ -11,6 +11,7 @@ import { PublishToggle } from "@/components/admin/publish-toggle";
 import { ReorderList, type ReorderItem } from "@/components/admin/reorder-list";
 import { hskLevelLabel } from "@/lib/utils";
 import { createListeningAction, deleteListeningAction } from "@/server/actions/admin";
+import { redirect } from "next/navigation";
 import { Trash2, Plus, ChevronRight, Headphones, Volume2 } from "lucide-react";
 import type { HSKLevel } from "@prisma/client";
 
@@ -44,7 +45,10 @@ export default async function AdminListeningPage() {
           <form
             action={async (fd) => {
               "use server";
-              await createListeningAction(fd);
+              const r = await createListeningAction(fd);
+              // Vào thẳng trang chi tiết — nơi form "Thêm câu hỏi" + danh sách câu
+              // hỏi nằm ngay dưới phần audio, để admin thêm câu hỏi liền mạch.
+              if (r.ok && r.id) redirect(`/admin/listening/${r.id}`);
             }}
             className="space-y-4"
           >
@@ -79,8 +83,11 @@ export default async function AdminListeningPage() {
             <ListeningAudioFields idSuffix="create" />
 
             <div className="space-y-2">
-              <Button type="submit">Tạo bài nghe</Button>
-              <p className="text-xs text-muted-foreground">Bài mới sẽ ở trạng thái Bản nháp — bấm “Đang hiện/Bản nháp” để xuất bản.</p>
+              <Button type="submit">Tạo bài nghe &amp; thêm câu hỏi</Button>
+              <p className="text-xs text-muted-foreground">
+                Sau khi tạo, bạn sẽ vào ngay trang thêm câu hỏi cho bài này. Bài mới ở trạng thái Bản nháp — bấm
+                “Đang hiện/Bản nháp” để xuất bản.
+              </p>
             </div>
           </form>
         </CardContent>

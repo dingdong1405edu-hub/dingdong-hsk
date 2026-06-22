@@ -624,3 +624,21 @@ model SavedWord {
   @@unique([userId, hanzi])
   @@index([userId, createdAt])
 }
+
+/// Tệp do admin tải lên / sinh ra (ảnh minh hoạ, audio bài nghe, MP3 từ TTS).
+/// Lưu THẲNG trong Postgres (cột `data` Bytes) thay vì ghi vào public/ — vì
+/// filesystem trên Railway là EPHEMERAL nên file trong public/ bị xoá sau mỗi
+/// lần deploy/restart (đó là lý do "tải lên nhưng không lưu được"). Phục vụ qua
+/// `/api/files/[id]` với Content-Type = `mime`. URL lưu ở imageUrl/audioUrl là
+/// `/api/files/<id>`.
+model Upload {
+  id        String   @id @default(cuid())
+  mime      String // VD: "image/webp", "audio/mpeg"
+  ext       String // đuôi chuẩn hoá: png/jpg/webp/mp3/wav/...
+  size      Int // số byte (dùng cho Content-Length)
+  kind      String   @default("image") // "image" | "audio" (chỉ để phân loại)
+  data      Bytes // nội dung tệp (Postgres bytea)
+  createdAt DateTime @default(now())
+
+  @@index([createdAt])
+}

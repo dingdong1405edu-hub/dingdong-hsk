@@ -1,8 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
-import { writeFile, mkdir } from "fs/promises";
-import path from "path";
-import { randomUUID } from "crypto";
 import { requireAdmin } from "@/lib/admin-guard";
+import { storeUpload } from "@/lib/uploads";
 
 export const runtime = "nodejs";
 
@@ -28,13 +26,13 @@ function sniffImage(buf: Buffer): string | null {
 }
 
 /**
- * Admin-only image upload. Stores files under `public/images/uploads/` and
- * returns a public path (e.g. `/images/uploads/<uuid>.webp`).
+ * Admin-only image upload. Stores the bytes in Postgres (model Upload) and
+ * returns a durable public path (e.g. `/api/files/<id>`), served by
+ * `src/app/api/files/[id]/route.ts`.
  *
- * NOTE (deploy): on an ephemeral filesystem (Railway without a mounted volume)
- * these files do not survive a redeploy. Mount a volume at
- * `/app/public/images/uploads` or swap this for R2 to make them durable. The
- * admin form also accepts a pasted URL for fully durable storage.
+ * Lý do lưu DB thay vì public/: filesystem trên Railway là ephemeral nên file
+ * ghi vào public/ biến mất sau mỗi lần deploy/restart. Lưu DB thì bền vĩnh viễn.
+ * Form admin vẫn nhận được URL dán tay (https/CDN) làm phương án thay thế.
  */
 export async function POST(req: NextRequest) {
   try {
@@ -67,11 +65,8 @@ export async function POST(req: NextRequest) {
         { status: 400 },
       );
     }
-    const dir = path.join(process.cwd(), "public", "images", "uploads");
-    await mkdir(dir, { recursive: true });
-    const filename = `${randomUUID()}.${ext}`;
-    await writeFile(path.join(dir, filename), buf);
-    return NextResponse.json({ ok: true, url: `/images/uploads/${filename}` });
+    const url = await storeUpload(buf, ext, "image");
+    return NextResponse.json({ ok: true, url });
   } catch (e) {
     console.error("Image upload error:", e);
     return NextResponse.json({ ok: false, error: "Lỗi lưu ảnh trên máy chủ" }, { status: 500 });
