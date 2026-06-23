@@ -45,7 +45,7 @@ export default async function VocabPage() {
       randomHref={randomHref}
       randomLabel="Học tiếp bài đang dở"
       tips={[
-        "Mỗi đơn vị (unit) gồm nhiều bài học ngắn, mở khoá lần lượt.",
+        "Mỗi đơn vị (unit) gồm nhiều bài học ngắn — học bài nào trước cũng được.",
         "Dạng bài: nối từ, dịch câu, chọn thanh điệu, gõ chữ Hán, nối pinyin.",
         "Trả lời sai sẽ mất 1 tim ❤️ — hết tim cần đợi hồi hoặc luyện lại.",
         "Hoàn thành bài học để cộng XP và giữ chuỗi ngày học.",

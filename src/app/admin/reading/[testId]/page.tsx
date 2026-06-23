@@ -12,9 +12,10 @@ import { ImageUpload } from "@/components/admin/image-upload";
 import { revalidatePath } from "next/cache";
 import { db as prisma } from "@/lib/db";
 import { QuestionType, Prisma } from "@prisma/client";
-import { Plus, ArrowLeft, Trash2, Save, Pencil, Sparkles } from "lucide-react";
+import { Plus, ArrowLeft, Trash2, Save, Pencil, Sparkles, Wand2 } from "lucide-react";
 import { deleteQuestionAction, updateReadingAction } from "@/server/actions/admin";
 import { generateReadingExplanation, isGradingConfigured } from "@/lib/groq";
+import { ReadingQuestionsImporter } from "@/components/admin/reading-questions-importer";
 
 const HSK_LEVELS = ["HSK1", "HSK2", "HSK3", "HSK4", "HSK5", "HSK6"];
 
@@ -83,7 +84,6 @@ async function createQuestionAction(fd: FormData): Promise<void> {
     data: {
       type,
       prompt,
-      promptPinyin: (fd.get("promptPinyin") as string) || undefined,
       options: options ?? Prisma.JsonNull,
       correctAnswer,
       explanation,
@@ -170,14 +170,7 @@ export default async function AdminReadingDetailPage({ params }: Props) {
             <div className="space-y-1 md:col-span-2">
               <Label>Đoạn văn (Hán tự)</Label>
               <Textarea name="passage" className="min-h-32 font-chinese" defaultValue={test.passage} required />
-            </div>
-            <div className="space-y-1 md:col-span-2">
-              <Label>Pinyin (tùy chọn)</Label>
-              <Textarea
-                name="passagePinyin"
-                className="min-h-20 font-pinyin"
-                defaultValue={test.passagePinyin ?? ""}
-              />
+              <p className="text-xs text-muted-foreground">Không cần nhập pinyin — máy tự sinh khi hiển thị cho học viên.</p>
             </div>
             <div className="md:col-span-2">
               <Button type="submit" className="gap-1.5">
@@ -188,29 +181,35 @@ export default async function AdminReadingDetailPage({ params }: Props) {
         </CardContent>
       </Card>
 
-      {/* Add question */}
+      {/* Bulk add via AI / JSON */}
       <Card>
         <CardHeader>
           <CardTitle className="flex items-center gap-2 text-base">
-            <Plus className="h-4 w-4" /> Thêm câu hỏi
+            <Wand2 className="h-4 w-4 text-primary" /> Thêm nhiều câu hỏi (AI / JSON)
+          </CardTitle>
+        </CardHeader>
+        <CardContent>
+          <ReadingQuestionsImporter readingId={test.id} />
+        </CardContent>
+      </Card>
+
+      {/* Add a single question manually */}
+      <Card>
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2 text-base">
+            <Plus className="h-4 w-4" /> Thêm 1 câu hỏi (thủ công)
           </CardTitle>
         </CardHeader>
         <CardContent>
           <form action={createQuestionAction} className="space-y-4">
             <input type="hidden" name="readingId" value={test.id} />
-            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-              <div className="space-y-1">
-                <Label>Loại câu hỏi</Label>
-                <select name="type" className="flex h-9 w-full rounded-md border px-3 py-1 text-sm">
-                  <option value="MCQ">Trắc nghiệm (MCQ)</option>
-                  <option value="TRUE_FALSE">Đúng / Sai</option>
-                  <option value="FILL_BLANK">Điền chỗ trống</option>
-                </select>
-              </div>
-              <div className="space-y-1">
-                <Label>Pinyin câu hỏi (tùy chọn)</Label>
-                <Input name="promptPinyin" className="font-pinyin" placeholder="Pinyin của câu hỏi..." />
-              </div>
+            <div className="space-y-1">
+              <Label>Loại câu hỏi</Label>
+              <select name="type" className="flex h-9 w-full rounded-md border px-3 py-1 text-sm">
+                <option value="MCQ">Trắc nghiệm (MCQ)</option>
+                <option value="TRUE_FALSE">Đúng / Sai</option>
+                <option value="FILL_BLANK">Điền chỗ trống</option>
+              </select>
             </div>
             <div className="space-y-1">
               <Label>Câu hỏi</Label>

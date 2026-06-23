@@ -7,23 +7,35 @@ interface PinyinTextProps {
   text: string;
   showPinyin?: boolean;
   className?: string;
-  /** Fired when a Han character is tapped — `e` lets the caller anchor a popup. */
-  onWordClick?: (char: string, pinyin: string, e: React.MouseEvent) => void;
+  /** Fired when a Han character is tapped — `e` anchors a popup, `index` is the segment position. */
+  onWordClick?: (char: string, pinyin: string, e: React.MouseEvent, index: number) => void;
+  /** Tô nền cho các segment theo vị trí: { [index]: cssColor }. Dùng cho bút highlight. */
+  highlights?: Record<number, string>;
 }
 
-export function PinyinText({ text, showPinyin = false, className, onWordClick }: PinyinTextProps) {
+export function PinyinText({ text, showPinyin = false, className, onWordClick, highlights }: PinyinTextProps) {
   // Per-grapheme segmentation + pinyin is pure work over `text`; memoize so
   // toggling pinyin / re-rendering the workspace doesn't re-segment every time.
   const segments = useMemo(() => toPinyinArray(text), [text]);
 
   return (
     <span className={cn("font-chinese", className)}>
-      {segments.map((seg, i) =>
-        /\p{Script=Han}/u.test(seg.char) ? (
+      {segments.map((seg, i) => {
+        const hl = highlights?.[i];
+        const hlStyle = hl ? { backgroundColor: hl } : undefined;
+        return /\p{Script=Han}/u.test(seg.char) ? (
           <ruby
             key={i}
+            data-idx={i}
             className="cursor-pointer rounded px-0.5 transition-colors"
-            onClick={(e) => onWordClick?.(seg.char, seg.pinyin, e)}
+            style={hlStyle}
+            onClick={(e) => {
+              // Bỏ qua click ở cuối thao tác kéo bôi đen — để popup tra cụm (SelectionLookup)
+              // không bị popup 1-chữ (CharLookup) ghi đè ngay sau đó.
+              const sel = typeof window !== "undefined" ? window.getSelection() : null;
+              if (sel && !sel.isCollapsed && sel.toString().trim()) return;
+              onWordClick?.(seg.char, seg.pinyin, e, i);
+            }}
           >
             {seg.char}
             <rt className={cn("font-pinyin transition-opacity", showPinyin ? "opacity-100" : "opacity-0")}>
@@ -31,9 +43,11 @@ export function PinyinText({ text, showPinyin = false, className, onWordClick }:
             </rt>
           </ruby>
         ) : (
-          <span key={i}>{seg.char}</span>
-        )
-      )}
+          <span key={i} data-idx={i} style={hlStyle}>
+            {seg.char}
+          </span>
+        );
+      })}
     </span>
   );
 }

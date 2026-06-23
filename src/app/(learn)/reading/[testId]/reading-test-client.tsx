@@ -11,6 +11,8 @@ import {
   ListChecks,
   ChevronLeft,
   ChevronRight,
+  Highlighter,
+  Eraser,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { TestShell } from "@/components/learn/test-shell";
@@ -30,8 +32,17 @@ import type { ReadingTestData } from "@/components/learn/reading/types";
 
 type Pane = "passage" | "questions";
 type ReviewFilter = "all" | "wrong" | "flagged";
+type ReadMode = "lookup" | "highlight";
 
 const isAnswered = (v: unknown) => v !== undefined && v !== null && v !== "";
+
+// Màu bút highlight — rgba bán trong suốt để đọc rõ trên cả nền sáng lẫn theme tối.
+const HIGHLIGHT_COLORS: { name: string; value: string }[] = [
+  { name: "Vàng", value: "rgba(250, 204, 21, 0.45)" },
+  { name: "Lục", value: "rgba(74, 222, 128, 0.45)" },
+  { name: "Lam", value: "rgba(96, 165, 250, 0.45)" },
+  { name: "Hồng", value: "rgba(244, 114, 182, 0.45)" },
+];
 
 export function ReadingTestClient({ test }: { test: ReadingTestData; userId: string }) {
   const { settings, setSettings } = useReadingSettings();
@@ -51,10 +62,44 @@ export function ReadingTestClient({ test }: { test: ReadingTestData; userId: str
   const [selection, setSelection] = useState<SelectionAnchor | null>(null);
   const [restored, setRestored] = useState(false);
   const [pendingScroll, setPendingScroll] = useState<number | null>(null);
+  const [mode, setMode] = useState<ReadMode>("lookup");
+  const [highlightColor, setHighlightColor] = useState(HIGHLIGHT_COLORS[0].value);
+  const [highlights, setHighlights] = useState<Record<number, string>>({});
 
   const questionRefs = useRef<(HTMLDivElement | null)[]>([]);
   const storageKey = `dingdong:reading:${test.id}`;
+  // Highlight lưu riêng (không xoá khi nộp bài — là công cụ học tập, không phải đáp án).
+  const hlKey = `dingdong:reading:hl:${test.id}`;
+  // Index tô theo vị trí ký tự → lưu kèm độ dài đoạn văn để bỏ map cũ nếu admin sửa bài.
+  const passageLen = test.passage.length;
   const total = test.questions.length;
+
+  function applyHighlight(indices: number[], color: string) {
+    setHighlights((h) => {
+      const next = { ...h };
+      for (const i of indices) next[i] = color;
+      return next;
+    });
+  }
+  function eraseHighlight(index: number) {
+    setHighlights((h) => {
+      if (!(index in h)) return h;
+      const next = { ...h };
+      delete next[index];
+      return next;
+    });
+  }
+  function toggleMode() {
+    setMode((m) => {
+      const next: ReadMode = m === "highlight" ? "lookup" : "highlight";
+      if (next === "highlight") {
+        // Đóng popup tra cứu đang mở để không lẫn với thao tác tô.
+        setLookup(null);
+        setSelection(null);
+      }
+      return next;
+    });
+  }
 
   // Restore in-progress work (answers / flags / elapsed) once on mount.
   useEffect(() => {
@@ -66,11 +111,32 @@ export function ReadingTestClient({ test }: { test: ReadingTestData; userId: str
         if (s.flags) setFlags(s.flags);
         if (typeof s.elapsed === "number") setElapsed(s.elapsed);
       }
+      const rawHl = localStorage.getItem(hlKey);
+      if (rawHl) {
+        const saved = JSON.parse(rawHl) as { len?: number; map?: Record<string, string> };
+        // Chỉ khôi phục khi đoạn văn chưa đổi độ dài (tránh tô nhầm ký tự sau khi admin sửa bài).
+        if (saved && typeof saved === "object" && saved.map && saved.len === passageLen) {
+          setHighlights(saved.map as Record<number, string>);
+        } else {
+          localStorage.removeItem(hlKey);
+        }
+      }
     } catch {
       /* ignore */
     }
     setRestored(true);
-  }, [storageKey]);
+  }, [storageKey, hlKey, passageLen]);
+
+  // Lưu highlight độc lập với bài làm; xoá key khi không còn highlight nào.
+  useEffect(() => {
+    if (!restored) return;
+    try {
+      if (Object.keys(highlights).length === 0) localStorage.removeItem(hlKey);
+      else localStorage.setItem(hlKey, JSON.stringify({ len: passageLen, map: highlights }));
+    } catch {
+      /* ignore */
+    }
+  }, [highlights, restored, hlKey, passageLen]);
 
   // Autosave until submitted. Gated on `restored` (a committed state flag, not a
   // ref) so the first run can't clobber just-restored progress with empty
@@ -193,6 +259,44 @@ export function ReadingTestClient({ test }: { test: ReadingTestData; userId: str
               {showPinyin ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
               <span className="hidden lg:inline">Pinyin</span>
             </Button>
+            <Button
+              size="sm"
+              variant={mode === "highlight" ? "default" : "outline"}
+              className="gap-1.5 rounded-lg"
+              onClick={toggleMode}
+              aria-label="Bút tô màu"
+            >
+              <Highlighter className="h-4 w-4" />
+              <span className="hidden lg:inline">Bút</span>
+            </Button>
+            {mode === "highlight" && (
+              <div className="flex items-center gap-1 rounded-lg border bg-white/70 px-1.5 py-1">
+                {HIGHLIGHT_COLORS.map((c) => (
+                  <button
+                    key={c.value}
+                    type="button"
+                    onClick={() => setHighlightColor(c.value)}
+                    aria-label={`Màu ${c.name}`}
+                    title={c.name}
+                    className={cn(
+                      "h-5 w-5 rounded-full border-2 transition-transform",
+                      highlightColor === c.value ? "scale-110 border-foreground" : "border-black/10",
+                    )}
+                    style={{ backgroundColor: c.value }}
+                  />
+                ))}
+                <button
+                  type="button"
+                  onClick={() => setHighlights({})}
+                  disabled={Object.keys(highlights).length === 0}
+                  aria-label="Xoá hết tô"
+                  title="Xoá hết tô"
+                  className="ml-0.5 rounded-md p-1 text-muted-foreground transition-colors hover:bg-muted disabled:opacity-40"
+                >
+                  <Eraser className="h-4 w-4" />
+                </button>
+              </div>
+            )}
           </>
         }
         nav={
@@ -230,6 +334,9 @@ export function ReadingTestClient({ test }: { test: ReadingTestData; userId: str
                 test={test}
                 showPinyin={showPinyin}
                 settings={settings}
+                mode={mode}
+                highlightColor={highlightColor}
+                highlights={highlights}
                 onCharClick={(char, pinyin, e) => {
                   setSelection(null);
                   setLookup({ char, pinyin, x: e.clientX, y: e.clientY });
@@ -238,6 +345,8 @@ export function ReadingTestClient({ test }: { test: ReadingTestData; userId: str
                   setLookup(null);
                   setSelection({ text, x, y });
                 }}
+                onHighlight={applyHighlight}
+                onEraseHighlight={eraseHighlight}
               />
             </div>
 

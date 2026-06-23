@@ -286,6 +286,142 @@ Trả về JSON đúng cấu trúc sau (không thêm gì ngoài JSON):
   };
 }
 
+const READING_QUESTIONS_SYSTEM = `You are a certified HSK (汉语水平考试) reading-comprehension examiner who writes exam questions for Vietnamese learners.
+
+Your job: read ONE Chinese passage and write high-quality reading-comprehension questions answerable from the passage ALONE.
+
+Rules:
+- Calibrate difficulty to the stated HSK level (HSK1-2: simple facts, short options; HSK3-4: detail + simple inference; HSK5-6: main idea, nuance, implied meaning).
+- Write every question prompt and all answer options in SIMPLIFIED CHINESE (简体字). Do NOT add pinyin.
+- Write every explanation in natural Vietnamese (tiếng Việt).
+- Mix question types: mostly MCQ (4 options), with some TRUE_FALSE and the occasional FILL_BLANK.
+- MCQ: exactly ONE correct option; "answer" is its 0-based index; distractors must be plausible but clearly wrong per the passage.
+- TRUE_FALSE: "answer" is a boolean clearly verifiable from the passage.
+- FILL_BLANK: the prompt contains a blank "___"; "answer" is the exact Chinese string the passage supports.
+- Every question MUST be answerable strictly from the passage. "supportingQuote" must quote VERBATIM a sentence/phrase that appears in the passage and proves the answer — never invent text that is not present.
+
+Output: Return ONLY one valid JSON object of the form { "questions": [ ... ] }. No markdown fences, no text before or after.`;
+
+export interface GeneratedReadingQuestion {
+  type: "MCQ" | "TRUE_FALSE" | "FILL_BLANK";
+  prompt: string;
+  options?: string[];
+  answer: number | boolean | string;
+  accepted?: string[];
+  explanation?: string;
+  supportingQuote?: string;
+}
+
+/** Chuẩn hoá 1 câu hỏi do AI sinh về đúng shape `GeneratedReadingQuestion`; trả null nếu không dùng được. */
+function coerceGeneratedQuestion(raw: unknown): GeneratedReadingQuestion | null {
+  if (!isRecord(raw)) return null;
+  const prompt = asStr(raw.prompt).trim();
+  if (!prompt) return null;
+  const explanation = asOptStr(raw.explanation);
+  const supportingQuote = asOptStr(raw.supportingQuote);
+
+  if (raw.type === "MCQ") {
+    const options = (Array.isArray(raw.options) ? raw.options : [])
+      .filter((o): o is string => typeof o === "string" && o.trim().length > 0)
+      .map((o) => o.trim());
+    if (options.length < 2) return null;
+    // Chấp nhận answer là chỉ số 0-based, hoặc (khi AI nhầm) là chính nội dung lựa chọn.
+    const a = raw.answer;
+    let idx: number;
+    if (typeof a === "number") idx = a;
+    else if (typeof a === "string") {
+      const byText = options.indexOf(a.trim());
+      idx = byText >= 0 ? byText : Number(a);
+    } else idx = NaN;
+    // Index không dùng được → bỏ câu (đừng âm thầm gán 0 = đáp án sai trông như đúng).
+    if (!Number.isInteger(idx) || idx < 0 || idx >= options.length) return null;
+    return { type: "MCQ", prompt, options, answer: idx, explanation, supportingQuote };
+  }
+  if (raw.type === "TRUE_FALSE") {
+    const a = raw.answer;
+    let answer: boolean | null = null;
+    if (typeof a === "boolean") answer = a;
+    else if (typeof a === "number") answer = a === 1 ? true : a === 0 ? false : null;
+    else if (typeof a === "string") {
+      const s = a.trim().toLowerCase();
+      if (["true", "1", "yes", "correct", "đúng", "对", "正确", "是"].includes(s)) answer = true;
+      else if (["false", "0", "no", "incorrect", "sai", "错", "错误", "不是"].includes(s)) answer = false;
+    }
+    if (answer === null) return null; // bỏ câu mơ hồ thay vì đoán "false"
+    return { type: "TRUE_FALSE", prompt, answer, explanation, supportingQuote };
+  }
+  if (raw.type === "FILL_BLANK") {
+    const answer = asStr(raw.answer).trim();
+    if (!answer) return null;
+    return { type: "FILL_BLANK", prompt, answer, accepted: asStrArr(raw.accepted), explanation, supportingQuote };
+  }
+  return null;
+}
+
+/**
+ * Cho admin: từ một đoạn văn, nhờ Groq soạn sẵn `count` câu hỏi đọc hiểu (MCQ /
+ * Đúng-Sai / điền chỗ trống) kèm đáp án + giải thích + trích dẫn. Kết quả được
+ * admin DUYỆT trong ô JSON trước khi lưu, nên hàm chỉ trả về mảng đã chuẩn hoá.
+ */
+export async function generateReadingQuestions(params: {
+  passage: string;
+  hskLevel: string;
+  count: number;
+}): Promise<GeneratedReadingQuestion[]> {
+  const { passage, hskLevel, count } = params;
+  const n = Math.max(1, Math.min(20, Math.round(count) || 5));
+
+  const response = await getGroq().chat.completions.create({
+    model: "llama-3.3-70b-versatile",
+    // Mỗi câu (Hán tự + 4 lựa chọn + giải thích tiếng Việt + trích dẫn) khá tốn
+    // token; với count tới 20 dễ vượt 4096 → JSON bị cắt cụt. Nâng trần như chấm viết.
+    max_tokens: 8192,
+    temperature: 0.3,
+    response_format: { type: "json_object" },
+    messages: [
+      { role: "system", content: READING_QUESTIONS_SYSTEM },
+      {
+        role: "user",
+        content: `Soạn ${n} câu hỏi đọc hiểu cho đoạn văn sau (trình độ ${hskLevel}).
+
+=== ĐOẠN VĂN (Hán tự) ===
+${passage}
+
+=== YÊU CẦU ===
+Trả về DUY NHẤT một JSON object đúng cấu trúc:
+{
+  "questions": [
+    { "type": "MCQ", "prompt": "<Hán>", "options": ["<Hán>","<Hán>","<Hán>","<Hán>"], "answer": <chỉ số 0-based>, "explanation": "<tiếng Việt>", "supportingQuote": "<trích nguyên văn trong đoạn>" },
+    { "type": "TRUE_FALSE", "prompt": "<Hán>", "answer": <true|false>, "explanation": "<tiếng Việt>", "supportingQuote": "<trích nguyên văn>" },
+    { "type": "FILL_BLANK", "prompt": "<Hán có chỗ trống ___>", "answer": "<Hán>", "accepted": ["<đáp án thay thế nếu có>"], "explanation": "<tiếng Việt>", "supportingQuote": "<trích nguyên văn>" }
+  ]
+}`,
+      },
+    ],
+  });
+
+  const text = response.choices[0]?.message?.content ?? "";
+  // Phòng khi finish_reason === "length" làm JSON bị cắt cụt: cả hai lần parse đều
+  // có thể ném lỗi → bọc try/catch để degrade về mảng rỗng thay vì văng lỗi (giống gradeWriting).
+  let parsed: unknown = null;
+  try {
+    parsed = JSON.parse(text);
+  } catch {
+    const m = text.match(/\{[\s\S]*\}/);
+    if (m) {
+      try {
+        parsed = JSON.parse(m[0]);
+      } catch {
+        parsed = null;
+      }
+    }
+  }
+  const arr = isRecord(parsed) && Array.isArray(parsed.questions) ? parsed.questions : [];
+  return arr
+    .map(coerceGeneratedQuestion)
+    .filter((q): q is GeneratedReadingQuestion => q !== null);
+}
+
 export interface WritingGradeResult {
   score: number;
   /** Nhãn ngắn gọn tiếng Việt, vd "Tốt – đạt chuẩn HSK4". Optional (tương thích bài chấm cũ). */

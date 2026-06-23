@@ -26,7 +26,6 @@ async function createReadingAction(fd: FormData): Promise<void> {
       titleZh: fd.get("titleZh") as string,
       hskLevel: fd.get("hskLevel") as HSKLevel,
       passage: fd.get("passage") as string,
-      passagePinyin: (fd.get("passagePinyin") as string) || undefined,
       imageUrl: (fd.get("imageUrl") as string) || undefined,
       timeLimit: parseInt(fd.get("timeLimit") as string),
       published: false,
@@ -88,10 +87,7 @@ export default async function AdminReadingPage() {
             <div className="space-y-1 md:col-span-2">
               <Label>Đoạn văn (Hán tự)</Label>
               <Textarea name="passage" className="font-chinese min-h-32" placeholder="Nội dung đoạn văn..." required />
-            </div>
-            <div className="space-y-1 md:col-span-2">
-              <Label>Pinyin (tùy chọn)</Label>
-              <Textarea name="passagePinyin" className="font-pinyin min-h-20" placeholder="Pinyin tương ứng..." />
+              <p className="text-xs text-muted-foreground">Không cần nhập pinyin — máy tự sinh khi hiển thị cho học viên.</p>
             </div>
             <div className="md:col-span-2 space-y-2">
               <Button type="submit">Tạo bài đọc &amp; thêm câu hỏi</Button>

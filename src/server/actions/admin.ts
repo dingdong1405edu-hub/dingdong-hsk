@@ -2,10 +2,11 @@
 import { db } from "@/lib/db";
 import { revalidatePath } from "next/cache";
 import { z } from "zod";
-import { HSKLevel, Prisma, Role, SubscriptionType, WritingTaskType } from "@prisma/client";
+import { HSKLevel, Prisma, QuestionType, Role, SubscriptionType, WritingTaskType } from "@prisma/client";
 import { getPlan } from "@/lib/payment-plans";
 import { requireAdmin } from "@/lib/admin-guard";
 import { parseGrammarContent } from "@/lib/grammar";
+import { generateReadingQuestions, isGradingConfigured } from "@/lib/groq";
 
 export async function adminUpdateUserAction(params: {
   userId: string;
@@ -119,7 +120,8 @@ export async function updateReadingAction(fd: FormData) {
       titleZh: rest.titleZh,
       hskLevel: rest.hskLevel,
       passage: rest.passage,
-      passagePinyin: rest.passagePinyin?.trim() ? rest.passagePinyin : null,
+      // KHÔNG ghi passagePinyin: form sửa đã bỏ ô pinyin nên field không được gửi lên.
+      // Cố ghi sẽ luôn nhận undefined → xoá mất pinyin cũ (vẫn dùng cho xuất PDF). Giữ nguyên giá trị DB.
       timeLimit: rest.timeLimit,
       imageUrl: rest.imageUrl?.trim() ? rest.imageUrl : null,
     },
@@ -134,6 +136,131 @@ export async function deleteReadingAction(id: string) {
   await db.readingTest.delete({ where: { id } });
   revalidatePath("/admin/reading");
   return { ok: true };
+}
+
+// ===== Reading: thêm câu hỏi hàng loạt bằng JSON + AI sinh câu hỏi =====
+// Một ô JSON duy nhất cho cả 2 luồng: admin dán tay HOẶC bấm "AI tạo câu hỏi"
+// để Groq đổ JSON vào ô rồi admin duyệt trước khi lưu. Định dạng (mảng):
+//   { "type":"MCQ", "prompt":"…", "options":["…"], "answer":<0-based>, "explanation"?, "supportingQuote"? }
+//   { "type":"TRUE_FALSE", "prompt":"…", "answer":<bool>, … }
+//   { "type":"FILL_BLANK", "prompt":"…", "answer":"…", "accepted"?:["…"], … }
+const bulkQuestionSchema = z.discriminatedUnion("type", [
+  z.object({
+    type: z.literal("MCQ"),
+    prompt: z.string().trim().min(1),
+    options: z.array(z.string().trim().min(1)).min(2, "MCQ cần ≥ 2 lựa chọn."),
+    answer: z.coerce.number().int().min(0),
+    explanation: z.string().trim().optional(),
+    supportingQuote: z.string().trim().optional(),
+  }),
+  z.object({
+    type: z.literal("TRUE_FALSE"),
+    prompt: z.string().trim().min(1),
+    answer: z.boolean(),
+    explanation: z.string().trim().optional(),
+    supportingQuote: z.string().trim().optional(),
+  }),
+  z.object({
+    type: z.literal("FILL_BLANK"),
+    prompt: z.string().trim().min(1),
+    answer: z.string().trim().min(1),
+    accepted: z.array(z.string().trim().min(1)).optional(),
+    explanation: z.string().trim().optional(),
+    supportingQuote: z.string().trim().optional(),
+  }),
+]);
+const bulkQuestionsSchema = z.array(bulkQuestionSchema).min(1, "Cần ít nhất 1 câu hỏi.").max(50, "Tối đa 50 câu mỗi lần.");
+
+export async function bulkCreateReadingQuestionsAction(readingId: string, jsonText: string) {
+  await requireAdmin();
+  if (!readingId) return { ok: false as const, error: "Thiếu mã bài đọc." };
+
+  let raw: unknown;
+  try {
+    raw = JSON.parse(jsonText);
+  } catch {
+    return { ok: false as const, error: "JSON không hợp lệ — kiểm tra lại dấu ngoặc/dấu phẩy." };
+  }
+
+  const result = bulkQuestionsSchema.safeParse(raw);
+  if (!result.success) {
+    const first = result.error.issues[0];
+    const where = first?.path.length ? `(ở ${first.path.join(".")}) ` : "";
+    return { ok: false as const, error: `JSON sai cấu trúc ${where}— ${first?.message ?? "không xác định"}` };
+  }
+  const questions = result.data;
+
+  // Chỉ số đáp án MCQ phải nằm trong số lựa chọn.
+  for (let i = 0; i < questions.length; i++) {
+    const q = questions[i];
+    if (q.type === "MCQ" && q.answer >= q.options.length) {
+      return { ok: false as const, error: `Câu ${i + 1} (MCQ): "answer" (${q.answer}) vượt quá số lựa chọn (${q.options.length}).` };
+    }
+  }
+
+  const reading = await db.readingTest.findUnique({ where: { id: readingId }, select: { id: true } });
+  if (!reading) return { ok: false as const, error: "Không tìm thấy bài đọc." };
+
+  const startOrder = (await db.question.count({ where: { readingId } })) + 1;
+
+  try {
+    await db.$transaction(
+      questions.map((q, i) => {
+        const base = {
+          prompt: q.prompt,
+          explanation: q.explanation,
+          supportingQuote: q.supportingQuote,
+          readingId,
+          order: startOrder + i,
+        };
+        if (q.type === "MCQ") {
+          return db.question.create({
+            data: { ...base, type: QuestionType.MCQ, options: q.options.map((t) => ({ text: t })), correctAnswer: { index: q.answer } },
+          });
+        }
+        if (q.type === "TRUE_FALSE") {
+          return db.question.create({
+            data: { ...base, type: QuestionType.TRUE_FALSE, options: Prisma.JsonNull, correctAnswer: { value: q.answer } },
+          });
+        }
+        return db.question.create({
+          data: { ...base, type: QuestionType.FILL_BLANK, options: Prisma.JsonNull, correctAnswer: { text: q.answer, accepted: q.accepted ?? [] } },
+        });
+      }),
+    );
+  } catch (e) {
+    console.error("bulkCreateReadingQuestions error:", e);
+    return { ok: false as const, error: "Lỗi lưu câu hỏi vào cơ sở dữ liệu." };
+  }
+
+  revalidatePath(`/admin/reading/${readingId}`);
+  return { ok: true as const, count: questions.length };
+}
+
+export async function generateReadingQuestionsAction(readingId: string, count: number) {
+  await requireAdmin();
+  if (!isGradingConfigured()) {
+    return { ok: false as const, error: "Máy chủ chưa cấu hình GROQ_API_KEY." };
+  }
+  const reading = await db.readingTest.findUnique({
+    where: { id: readingId },
+    select: { passage: true, hskLevel: true },
+  });
+  if (!reading) return { ok: false as const, error: "Không tìm thấy bài đọc." };
+  if (!reading.passage.trim()) return { ok: false as const, error: "Bài đọc chưa có đoạn văn để AI tạo câu hỏi." };
+
+  try {
+    const questions = await generateReadingQuestions({
+      passage: reading.passage,
+      hskLevel: reading.hskLevel,
+      count,
+    });
+    if (questions.length === 0) return { ok: false as const, error: "AI chưa tạo được câu hỏi nào — thử lại." };
+    return { ok: true as const, json: JSON.stringify(questions, null, 2) };
+  } catch (e) {
+    console.error("generateReadingQuestions error:", e);
+    return { ok: false as const, error: "Lỗi khi gọi AI (Groq). Thử lại sau." };
+  }
 }
 
 // ===== Listening =====

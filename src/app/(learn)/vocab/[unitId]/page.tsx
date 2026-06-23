@@ -39,10 +39,8 @@ export default async function VocabUnitPage({ params }: Props) {
       <div className="space-y-3">
         {unit.lessons.map((lesson, idx) => {
           const done = lesson.progress.length > 0 && lesson.progress[0].completed;
-          const prevDone = idx === 0 || (unit.lessons[idx - 1].progress.length > 0 && unit.lessons[idx - 1].progress[0].completed);
-          const available = idx === 0 || prevDone;
           return (
-            <Card key={lesson.id} className={!available ? "opacity-50" : ""}>
+            <Card key={lesson.id}>
               <CardContent className="p-4 flex items-center justify-between">
                 <div className="flex items-center gap-3">
                   <div className={`w-10 h-10 rounded-full flex items-center justify-center font-bold ${done ? "bg-green-100 text-green-600" : "bg-primary/10 text-primary"}`}>
@@ -55,20 +53,18 @@ export default async function VocabUnitPage({ params }: Props) {
                     </div>
                   </div>
                 </div>
-                {available && (
-                  <div className="flex shrink-0 items-center gap-2">
-                    <Link href={`/vocab/${unitId}/lesson/${lesson.id}`}>
-                      <Button size="sm" variant={done ? "outline" : "default"}>
-                        {done ? "Ôn lại" : "Bắt đầu"}
-                      </Button>
-                    </Link>
-                    <Link href={`/vocab-pdf/${unitId}/${lesson.id}`}>
-                      <Button size="sm" variant="ghost" className="gap-1.5 text-muted-foreground">
-                        <FileDown className="h-4 w-4" /> PDF
-                      </Button>
-                    </Link>
-                  </div>
-                )}
+                <div className="flex shrink-0 items-center gap-2">
+                  <Link href={`/vocab/${unitId}/lesson/${lesson.id}`}>
+                    <Button size="sm" variant={done ? "outline" : "default"}>
+                      {done ? "Ôn lại" : "Bắt đầu"}
+                    </Button>
+                  </Link>
+                  <Link href={`/vocab-pdf/${unitId}/${lesson.id}`}>
+                    <Button size="sm" variant="ghost" className="gap-1.5 text-muted-foreground">
+                      <FileDown className="h-4 w-4" /> PDF
+                    </Button>
+                  </Link>
+                </div>
               </CardContent>
             </Card>
           );
