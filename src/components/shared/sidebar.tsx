@@ -19,6 +19,7 @@ import {
   BookMarked,
   Users2,
   UserRound,
+  MessageCircleHeart,
   Crown,
   Shield,
   type LucideIcon,
@@ -70,6 +71,7 @@ export const NAV_GROUPS: NavGroup[] = [
     items: [
       { href: "/community", label: "Cộng đồng", icon: Users2 },
       { href: "/profile", label: "Hồ sơ", icon: UserRound },
+      { href: "/lien-he", label: "Liên hệ & Góp ý", icon: MessageCircleHeart },
     ],
   },
 ];

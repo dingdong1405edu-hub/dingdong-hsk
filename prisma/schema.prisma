@@ -86,6 +86,7 @@ model User {
   subscriptions   Subscription[]
   wordReports     WordReport[]
   savedWords      SavedWord[]
+  feedbacks       Feedback[]
 }
 
 model Account {
@@ -694,6 +695,42 @@ model SavedWord {
 
   @@unique([userId, hanzi])
   @@index([userId, createdAt])
+}
+
+enum FeedbackCategory {
+  SUGGESTION // Góp ý / đề xuất tính năng
+  BUG // Báo lỗi
+  QUESTION // Câu hỏi / cần hỗ trợ
+  CONTENT // Góp ý về nội dung bài học
+  OTHER // Khác
+}
+
+enum FeedbackStatus {
+  NEW // Mới gửi — chưa xem
+  IN_REVIEW // Đang xem xét / xử lý
+  RESOLVED // Đã xử lý / phản hồi
+}
+
+/// Liên hệ & góp ý của người học (gửi từ trang /lien-he trong khu vực học, nên
+/// luôn gắn với một tài khoản đã đăng nhập). Admin nhận và xử lý ở /admin/feedback.
+/// `contactName`/`contactEmail` là SNAPSHOT thông tin liên hệ tại thời điểm gửi
+/// (người dùng có thể sửa hồ sơ sau) để admin biết liên hệ lại theo địa chỉ nào.
+model Feedback {
+  id           String           @id @default(cuid())
+  userId       String
+  user         User             @relation(fields: [userId], references: [id], onDelete: Cascade)
+  category     FeedbackCategory @default(SUGGESTION)
+  subject      String?
+  message      String           @db.Text
+  contactName  String?
+  contactEmail String?
+  status       FeedbackStatus   @default(NEW)
+  adminNote    String?          @db.Text
+  createdAt    DateTime         @default(now())
+  updatedAt    DateTime         @default(now()) @updatedAt
+
+  @@index([status, createdAt])
+  @@index([userId])
 }
 
 /// Tệp do admin tải lên / sinh ra (ảnh minh hoạ, audio bài nghe, MP3 từ TTS).

@@ -4,6 +4,7 @@ import { usePathname } from "next/navigation";
 import { Sidebar } from "./sidebar";
 import { Topbar } from "./topbar";
 import { Ambient } from "@/components/motion/ambient";
+import { ChatWidget } from "@/components/chat/chat-widget";
 
 interface ShellUser {
   name?: string | null;
@@ -39,6 +40,9 @@ export function DashboardShell({ user, children }: { user: ShellUser; children: 
           {children}
         </main>
       </div>
+
+      {/* Trợ lý AI "Bao" — bong bóng nổi trên mọi trang khu vực học */}
+      <ChatWidget userName={user.name} />
     </div>
   );
 }

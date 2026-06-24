@@ -17,6 +17,7 @@ import {
   Users,
   CreditCard,
   Flag,
+  Inbox,
   ArrowLeft,
   Menu,
   X,
@@ -57,6 +58,7 @@ const GROUPS: AdminNavGroup[] = [
       { href: "/admin/users", label: "Người dùng", icon: Users },
       { href: "/admin/subscriptions", label: "Gói & quyền lợi", icon: CreditCard },
       { href: "/admin/word-reports", label: "Phản ánh từ", icon: Flag },
+      { href: "/admin/feedback", label: "Góp ý & Liên hệ", icon: Inbox },
     ],
   },
 ];

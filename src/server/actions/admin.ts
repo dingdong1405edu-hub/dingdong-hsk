@@ -1,4 +1,6 @@
 "use server";
+import { lookup } from "node:dns/promises";
+import { isIP } from "node:net";
 import { db } from "@/lib/db";
 import { revalidatePath } from "next/cache";
 import { z } from "zod";
@@ -6,7 +8,8 @@ import { HSKLevel, Prisma, QuestionType, Role, SubscriptionType, WritingTaskType
 import { getPlan } from "@/lib/payment-plans";
 import { requireAdmin } from "@/lib/admin-guard";
 import { parseGrammarContent } from "@/lib/grammar";
-import { generateReadingQuestions, isGradingConfigured } from "@/lib/groq";
+import { generateReadingQuestions, generateListeningQuestions, isGradingConfigured } from "@/lib/groq";
+import { transcribeAudio, isTranscriptionConfigured } from "@/lib/stt";
 
 export async function adminUpdateUserAction(params: {
   userId: string;
@@ -323,6 +326,218 @@ export async function deleteListeningAction(id: string) {
   await db.listeningTest.delete({ where: { id } });
   revalidatePath("/admin/listening");
   return { ok: true };
+}
+
+// Như bulkCreateReadingQuestionsAction nhưng gắn câu hỏi vào bài NGHE (listeningId).
+// Dùng chung schema/validate với phần đọc — cấu trúc câu hỏi giống hệt.
+export async function bulkCreateListeningQuestionsAction(listeningId: string, jsonText: string) {
+  await requireAdmin();
+  if (!listeningId) return { ok: false as const, error: "Thiếu mã bài nghe." };
+
+  let raw: unknown;
+  try {
+    raw = JSON.parse(jsonText);
+  } catch {
+    return { ok: false as const, error: "JSON không hợp lệ — kiểm tra lại dấu ngoặc/dấu phẩy." };
+  }
+
+  const result = bulkQuestionsSchema.safeParse(raw);
+  if (!result.success) {
+    const first = result.error.issues[0];
+    const where = first?.path.length ? `(ở ${first.path.join(".")}) ` : "";
+    return { ok: false as const, error: `JSON sai cấu trúc ${where}— ${first?.message ?? "không xác định"}` };
+  }
+  const questions = result.data;
+
+  for (let i = 0; i < questions.length; i++) {
+    const q = questions[i];
+    if (q.type === "MCQ" && q.answer >= q.options.length) {
+      return { ok: false as const, error: `Câu ${i + 1} (MCQ): "answer" (${q.answer}) vượt quá số lựa chọn (${q.options.length}).` };
+    }
+  }
+
+  const listening = await db.listeningTest.findUnique({ where: { id: listeningId }, select: { id: true } });
+  if (!listening) return { ok: false as const, error: "Không tìm thấy bài nghe." };
+
+  const startOrder = (await db.question.count({ where: { listeningId } })) + 1;
+
+  try {
+    await db.$transaction(
+      questions.map((q, i) => {
+        const base = {
+          prompt: q.prompt,
+          explanation: q.explanation,
+          supportingQuote: q.supportingQuote,
+          listeningId,
+          order: startOrder + i,
+        };
+        if (q.type === "MCQ") {
+          return db.question.create({
+            data: { ...base, type: QuestionType.MCQ, options: q.options.map((t) => ({ text: t })), correctAnswer: { index: q.answer } },
+          });
+        }
+        if (q.type === "TRUE_FALSE") {
+          return db.question.create({
+            data: { ...base, type: QuestionType.TRUE_FALSE, options: Prisma.JsonNull, correctAnswer: { value: q.answer } },
+          });
+        }
+        return db.question.create({
+          data: { ...base, type: QuestionType.FILL_BLANK, options: Prisma.JsonNull, correctAnswer: { text: q.answer, accepted: q.accepted ?? [] } },
+        });
+      }),
+    );
+  } catch (e) {
+    console.error("bulkCreateListeningQuestions error:", e);
+    return { ok: false as const, error: "Lỗi lưu câu hỏi vào cơ sở dữ liệu." };
+  }
+
+  revalidatePath(`/admin/listening/${listeningId}`);
+  return { ok: true as const, count: questions.length };
+}
+
+// Nhờ Groq soạn câu hỏi nghe hiểu TỪ lời thoại (transcript) của bài nghe.
+export async function generateListeningQuestionsAction(listeningId: string, count: number) {
+  await requireAdmin();
+  if (!isGradingConfigured()) {
+    return { ok: false as const, error: "Máy chủ chưa cấu hình GROQ_API_KEY." };
+  }
+  const listening = await db.listeningTest.findUnique({
+    where: { id: listeningId },
+    select: { transcript: true, hskLevel: true },
+  });
+  if (!listening) return { ok: false as const, error: "Không tìm thấy bài nghe." };
+  if (!listening.transcript?.trim()) {
+    return { ok: false as const, error: "Bài nghe chưa có lời thoại (transcript) để AI tạo câu hỏi." };
+  }
+
+  try {
+    const questions = await generateListeningQuestions({
+      transcript: listening.transcript,
+      hskLevel: listening.hskLevel,
+      count,
+    });
+    if (questions.length === 0) return { ok: false as const, error: "AI chưa tạo được câu hỏi nào — thử lại." };
+    return { ok: true as const, json: JSON.stringify(questions, null, 2) };
+  } catch (e) {
+    console.error("generateListeningQuestions error:", e);
+    return { ok: false as const, error: "Lỗi khi gọi AI (Groq). Thử lại sau." };
+  }
+}
+
+// Trần kích thước cho audio tải từ URL ngoài (khớp giới hạn upload 20MB).
+const MAX_AUDIO_FETCH_BYTES = 20 * 1024 * 1024;
+
+/** Chặn các dải IP nội bộ/loopback/link-local (chống SSRF). */
+function isBlockedIp(ip: string): boolean {
+  if (isIP(ip) === 4) {
+    const p = ip.split(".").map(Number);
+    if (p[0] === 0 || p[0] === 10 || p[0] === 127) return true;
+    if (p[0] === 169 && p[1] === 254) return true; // link-local + cloud metadata 169.254.169.254
+    if (p[0] === 172 && p[1] >= 16 && p[1] <= 31) return true;
+    if (p[0] === 192 && p[1] === 168) return true;
+    if (p[0] === 100 && p[1] >= 64 && p[1] <= 127) return true; // CGNAT
+    return false;
+  }
+  const v = ip.toLowerCase().replace(/^\[|\]$/g, "");
+  if (v === "::1" || v === "::") return true;
+  if (v.startsWith("fe80")) return true; // link-local
+  if (v.startsWith("fc") || v.startsWith("fd")) return true; // unique-local
+  if (v.startsWith("::ffff:")) return isBlockedIp(v.slice(7)); // IPv4-mapped
+  return false;
+}
+
+/**
+ * Xác thực một URL audio ngoài là AN TOÀN để máy chủ tải về: chỉ http/https, và
+ * tên miền không trỏ tới địa chỉ nội bộ (resolve DNS để chặn cả trường hợp hostname
+ * map sang IP riêng). Ném lỗi mô tả nếu không hợp lệ.
+ */
+async function assertPublicAudioUrl(rawUrl: string): Promise<void> {
+  let u: URL;
+  try {
+    u = new URL(rawUrl);
+  } catch {
+    throw new Error("URL audio không hợp lệ.");
+  }
+  if (u.protocol !== "http:" && u.protocol !== "https:") {
+    throw new Error("Chỉ hỗ trợ liên kết http/https.");
+  }
+  const host = u.hostname.replace(/^\[|\]$/g, "");
+  if (/^(localhost|.*\.local|.*\.internal)$/i.test(host)) {
+    throw new Error("Không cho phép địa chỉ nội bộ.");
+  }
+  const addrs = isIP(host) ? [{ address: host }] : await lookup(host, { all: true });
+  for (const a of addrs) {
+    if (isBlockedIp(a.address)) throw new Error("Không cho phép địa chỉ nội bộ.");
+  }
+}
+
+// Tạo lời thoại (transcript) tiếng Trung TỪ audio đã có bằng Deepgram (fallback
+// Groq Whisper). Nhận URL audio hiện tại của bài nghe: nếu là tệp lưu trong DB
+// (/api/files/<id>) thì đọc bytes trực tiếp; nếu là URL ngoài (https) thì tải về.
+export async function transcribeListeningAudioAction(audioUrl: string) {
+  await requireAdmin();
+  if (!isTranscriptionConfigured()) {
+    return { ok: false as const, error: "Máy chủ chưa cấu hình DEEPGRAM_API_KEY (hoặc GROQ_API_KEY)." };
+  }
+  const url = (audioUrl || "").trim();
+  if (!url) return { ok: false as const, error: "Chưa có audio để tạo transcript." };
+
+  try {
+    let buffer: Buffer;
+    let mime: string;
+    const m = url.match(/^\/api\/files\/([^/?#]+)/);
+    if (m) {
+      const file = await db.upload.findUnique({ where: { id: m[1] }, select: { data: true, mime: true } });
+      if (!file) return { ok: false as const, error: "Không tìm thấy tệp audio đã lưu." };
+      buffer = Buffer.from(file.data);
+      mime = file.mime;
+    } else if (/^https?:\/\//i.test(url)) {
+      // URL ngoài (R2/CDN) do admin dán: xác thực chống SSRF + chặn redirect +
+      // timeout + giới hạn kích thước trước khi nạp vào bộ nhớ.
+      try {
+        await assertPublicAudioUrl(url);
+      } catch (err) {
+        return { ok: false as const, error: err instanceof Error ? err.message : "URL audio không hợp lệ." };
+      }
+      const controller = new AbortController();
+      const timer = setTimeout(() => controller.abort(), 30_000);
+      try {
+        const res = await fetch(url, { signal: controller.signal, redirect: "manual" });
+        if (res.status === 0 || (res.status >= 300 && res.status < 400) || res.type === "opaqueredirect") {
+          return { ok: false as const, error: "Liên kết bị chuyển hướng — hãy dán liên kết trực tiếp tới tệp audio." };
+        }
+        if (!res.ok) return { ok: false as const, error: `Không tải được audio (HTTP ${res.status}).` };
+        const declared = Number(res.headers.get("content-length") || "0");
+        if (declared && declared > MAX_AUDIO_FETCH_BYTES) {
+          return { ok: false as const, error: "Tệp audio quá lớn (tối đa 20MB)." };
+        }
+        const ab = await res.arrayBuffer();
+        if (ab.byteLength > MAX_AUDIO_FETCH_BYTES) {
+          return { ok: false as const, error: "Tệp audio quá lớn (tối đa 20MB)." };
+        }
+        buffer = Buffer.from(ab);
+        mime = res.headers.get("content-type") || "audio/mpeg";
+      } catch (err) {
+        if (err instanceof Error && err.name === "AbortError") {
+          return { ok: false as const, error: "Tải audio quá lâu (quá 30s) — kiểm tra lại liên kết." };
+        }
+        throw err;
+      } finally {
+        clearTimeout(timer);
+      }
+    } else {
+      return { ok: false as const, error: "Đường dẫn audio không hợp lệ để tạo transcript." };
+    }
+
+    const transcript = await transcribeAudio(buffer, mime);
+    if (!transcript.trim()) {
+      return { ok: false as const, error: "Không nhận được lời thoại từ audio (im lặng hoặc không nghe rõ)." };
+    }
+    return { ok: true as const, transcript };
+  } catch (e) {
+    console.error("transcribeListeningAudio error:", e);
+    return { ok: false as const, error: "Lỗi khi nhận dạng giọng nói. Thử lại sau." };
+  }
 }
 
 // ===== Writing =====

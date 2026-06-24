@@ -7,10 +7,11 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Badge } from "@/components/ui/badge";
-import { ArrowLeft, Plus, Trash2, Save, Pencil } from "lucide-react";
+import { ArrowLeft, Plus, Trash2, Save, Pencil, Sparkles } from "lucide-react";
 import { hskLevelLabel } from "@/lib/utils";
 import { ImageUpload } from "@/components/admin/image-upload";
 import { ListeningAudioFields } from "@/components/admin/listening-audio-fields";
+import { ListeningQuestionsImporter } from "@/components/admin/listening-questions-importer";
 import {
   createQuestionAction,
   deleteQuestionAction,
@@ -101,6 +102,18 @@ export default async function AdminListeningDetailPage({ params }: Props) {
               <Save className="h-4 w-4" /> Lưu thay đổi
             </Button>
           </form>
+        </CardContent>
+      </Card>
+
+      {/* AI generate questions from the tapescript (Groq) */}
+      <Card>
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2 text-base">
+            <Sparkles className="h-4 w-4 text-primary" /> AI tạo câu hỏi từ lời thoại
+          </CardTitle>
+        </CardHeader>
+        <CardContent>
+          <ListeningQuestionsImporter listeningId={test.id} />
         </CardContent>
       </Card>
 

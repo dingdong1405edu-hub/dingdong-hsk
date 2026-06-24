@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { auth } from "@/lib/auth";
-import { transcribeAudio, isTranscriptionConfigured } from "@/lib/voxtral";
+import { transcribeAudio, isTranscriptionConfigured } from "@/lib/stt";
 
 export async function POST(req: NextRequest) {
   const session = await auth();
@@ -8,7 +8,7 @@ export async function POST(req: NextRequest) {
 
   if (!isTranscriptionConfigured()) {
     return NextResponse.json(
-      { error: "Chức năng nhận dạng giọng nói chưa được cấu hình (thiếu VOXTRAL_API_KEY)." },
+      { error: "Chức năng nhận dạng giọng nói chưa được cấu hình (thiếu DEEPGRAM_API_KEY hoặc GROQ_API_KEY)." },
       { status: 503 }
     );
   }

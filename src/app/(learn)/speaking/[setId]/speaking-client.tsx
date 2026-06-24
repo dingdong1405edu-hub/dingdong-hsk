@@ -100,7 +100,7 @@ async function transcribeAndGrade(params: {
 }): Promise<GradeResult> {
   const { blob, durationSec, setId, referenceText, part, question, index } = params;
 
-  // 1) Audio → transcript via Voxtral (multipart upload stays an API route).
+  // 1) Audio → transcript via Deepgram (multipart upload stays an API route).
   const fd = new FormData();
   fd.append("audio", blob, "recording.webm");
   const transcribeRes = await fetch("/api/transcribe", { method: "POST", body: fd });

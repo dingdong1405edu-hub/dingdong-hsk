@@ -17,9 +17,10 @@ const schema = z.object({
 
 // Grades one HSKK speaking recording with Groq and persists the result as an
 // Attempt (mirrors gradeWritingAction). The audio→transcript step stays in the
-// /api/transcribe route (Voxtral) because it uploads a multipart audio file;
-// only the text grading + persistence lives here so the speaking list page can
-// show attempt counts and best scores like every other skill.
+// /api/transcribe route (Deepgram, with a Groq Whisper fallback) because it
+// uploads a multipart audio file; only the text grading + persistence lives here
+// so the speaking list page can show attempt counts and best scores like every
+// other skill.
 export async function gradeSpeakingAction(input: z.infer<typeof schema>) {
   const session = await auth();
   if (!session?.user) return { ok: false as const, error: "Unauthorized" };

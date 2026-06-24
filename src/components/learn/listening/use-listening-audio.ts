@@ -4,7 +4,7 @@ import type { TranscriptSegment } from "@/lib/transcript";
 
 // One audio controller for the whole listening test. It owns BOTH playback
 // engines so there's never overlapping sound:
-//   • mode "mp3" — a real <audio> element (uploaded / Voxtral-generated file).
+//   • mode "mp3" — a real <audio> element (uploaded / Google-TTS-generated file).
 //   • mode "tts" — the browser Web Speech engine reads the transcript sentence
 //     by sentence (used when a test has no MP3, so listening is never dead).
 //   • mode "none" — no MP3 and no usable speech engine; the caller reveals the

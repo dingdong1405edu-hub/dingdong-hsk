@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { requireAdmin } from "@/lib/admin-guard";
-import { synthesizeSpeech, isTtsConfigured } from "@/lib/voxtral";
+import { synthesizeSpeech, isTtsConfigured } from "@/lib/google-tts";
 import { storeUpload } from "@/lib/uploads";
 
 export const runtime = "nodejs";
@@ -29,7 +29,7 @@ function sniffAudio(buf: Buffer): string | null {
 /**
  * Admin-only listening audio endpoint. Two modes in one multipart POST:
  *  - `file`        → upload an existing audio file (mp3/wav/ogg/m4a).
- *  - `transcript`  → synthesize an MP3 from text via Voxtral TTS.
+ *  - `transcript`  → synthesize a Mandarin MP3 from text via Google Cloud TTS.
  * Returns `{ ok, url }` where url is `/api/files/<id>` (served from Postgres).
  *
  * Lý do lưu DB thay vì public/: filesystem trên Railway là ephemeral nên file
@@ -75,11 +75,11 @@ export async function POST(req: NextRequest) {
     }
   }
 
-  // ----- Mode 2: generate from transcript (Voxtral TTS) -----
+  // ----- Mode 2: generate Mandarin MP3 from transcript (Google Cloud TTS) -----
   if (typeof transcript === "string" && transcript.trim()) {
     if (!isTtsConfigured()) {
       return NextResponse.json(
-        { ok: false, error: "Chưa cấu hình Voxtral (thiếu VOXTRAL_API_KEY) nên không thể tạo MP3." },
+        { ok: false, error: "Chưa cấu hình Google TTS (thiếu GOOGLE_TTS_API_KEY) nên không thể tạo MP3." },
         { status: 503 },
       );
     }

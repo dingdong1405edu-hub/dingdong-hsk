@@ -1,11 +1,12 @@
 "use client";
 import { useId, useRef, useState } from "react";
-import { Loader2, Trash2, Link2, UploadCloud, Sparkles, Music2, Replace } from "lucide-react";
+import { Loader2, Trash2, Link2, UploadCloud, Sparkles, Music2, Replace, FileAudio } from "lucide-react";
 import { toast } from "sonner";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { cn, countChineseChars } from "@/lib/utils";
+import { transcribeListeningAudioAction } from "@/server/actions/admin";
 
 interface ListeningAudioFieldsProps {
   /** Hidden input name for the resulting audio URL. */
@@ -20,11 +21,15 @@ interface ListeningAudioFieldsProps {
 
 /**
  * Admin audio + transcript editor for a listening test. One client component so
- * "Tạo MP3 từ transcript" can read the live transcript value. Submits two fields
- * with the surrounding server-action <form>: `audioUrl` (hidden) + `transcript`.
+ * both AI directions can read/write the live transcript value. Submits two
+ * fields with the surrounding server-action <form>: `audioUrl` (hidden) +
+ * `transcript`.
  *
  *  - Upload an MP3/WAV/OGG/M4A file → POST /api/admin/audio (file).
- *  - Or paste a transcript and generate the MP3 via Voxtral → POST (transcript).
+ *  - Audio → transcript: Deepgram transcribes the uploaded audio to Mandarin
+ *    text (transcribeListeningAudioAction).
+ *  - Transcript → MP3: Google Cloud TTS synthesizes a Mandarin clip → POST
+ *    /api/admin/audio (transcript).
  *  - Or paste a direct URL (fallback for durable/CDN storage).
  */
 export function ListeningAudioFields({
@@ -38,6 +43,7 @@ export function ListeningAudioFields({
   const [transcript, setTranscript] = useState(defaultTranscript ?? "");
   const [uploading, setUploading] = useState(false);
   const [generating, setGenerating] = useState(false);
+  const [transcribing, setTranscribing] = useState(false);
   const [dragging, setDragging] = useState(false);
   const [showUrl, setShowUrl] = useState(false);
   const fileRef = useRef<HTMLInputElement>(null);
@@ -45,7 +51,7 @@ export function ListeningAudioFields({
   const fieldId = `${useId()}${idSuffix}`;
 
   const charCount = countChineseChars(transcript);
-  const busy = uploading || generating;
+  const busy = uploading || generating || transcribing;
 
   async function uploadFile(file: File) {
     if (!file.type.startsWith("audio/") && !/\.(mp3|wav|ogg|m4a)$/i.test(file.name)) {
@@ -99,6 +105,27 @@ export function ListeningAudioFields({
     }
   }
 
+  async function generateTranscriptFromAudio() {
+    if (!audioUrl.trim()) {
+      toast.error("Hãy tải audio lên (hoặc dán liên kết) trước khi tạo transcript");
+      return;
+    }
+    setTranscribing(true);
+    try {
+      const res = await transcribeListeningAudioAction(audioUrl);
+      if (res.ok) {
+        setTranscript(res.transcript);
+        toast.success("Đã tạo transcript từ audio (Deepgram)");
+      } else {
+        toast.error(res.error);
+      }
+    } catch {
+      toast.error("Lỗi khi tạo transcript từ audio");
+    } finally {
+      setTranscribing(false);
+    }
+  }
+
   return (
     <div className="space-y-4">
       {/* Hidden submitted value */}
@@ -122,6 +149,21 @@ export function ListeningAudioFields({
           Mẹo: dùng nhãn <code className="font-mono">A:</code> / <code className="font-mono">B:</code> đầu dòng cho
           hội thoại — hệ thống sẽ tách câu, đổi giọng A/B và dò “đáp án nằm ở câu nào”.
         </p>
+        <div className="pt-0.5">
+          <button
+            type="button"
+            onClick={generateTranscriptFromAudio}
+            disabled={busy || !audioUrl.trim()}
+            title={!audioUrl.trim() ? "Cần có audio ở dưới trước" : undefined}
+            className={cn(
+              "inline-flex items-center gap-1.5 rounded-lg border border-sky-300 bg-sky-50 px-3 py-1.5 text-sm font-semibold text-sky-700 transition hover:bg-sky-100 disabled:cursor-not-allowed disabled:opacity-50",
+            )}
+          >
+            {transcribing ? <Loader2 className="h-4 w-4 animate-spin" /> : <FileAudio className="h-4 w-4" />}
+            {transcribing ? "Đang tạo transcript…" : "Tạo transcript từ audio (Deepgram)"}
+          </button>
+          <span className="ml-2 text-xs text-muted-foreground">Ghi lời thoại tiếng Trung từ file audio bên dưới.</span>
+        </div>
       </div>
 
       {/* Audio */}
@@ -206,7 +248,7 @@ export function ListeningAudioFields({
             )}
           >
             {generating ? <Loader2 className="h-4 w-4 animate-spin" /> : <Sparkles className="h-4 w-4" />}
-            {generating ? "Đang tạo MP3…" : "Tạo MP3 từ transcript (Voxtral)"}
+            {generating ? "Đang tạo MP3…" : "Tạo MP3 từ transcript (Google TTS)"}
           </button>
           <button
             type="button"
@@ -225,8 +267,9 @@ export function ListeningAudioFields({
           />
         )}
         <p className="text-xs text-muted-foreground">
-          Voxtral hỗ trợ chính thức 9 ngôn ngữ (chưa có tiếng Trung) nên giọng đọc Hán tự là “best-effort”. Nếu bài
-          không có MP3, người học vẫn nghe được nhờ giọng đọc tiếng Trung của trình duyệt.
+          Tạo MP3 dùng <span className="font-medium">Google Cloud TTS</span> (giọng Quan thoại cmn-CN). Tạo transcript
+          dùng <span className="font-medium">Deepgram</span> (dự phòng Groq Whisper). Nếu bài không có MP3, người học vẫn
+          nghe được nhờ giọng đọc tiếng Trung của trình duyệt.
         </p>
       </div>
     </div>
