@@ -38,5 +38,4 @@ jobs:
           AUTH_SECRET: test-secret-for-ci
           GROQ_API_KEY: placeholder
           DEEPGRAM_API_KEY: placeholder
-          GOOGLE_TTS_API_KEY: placeholder
           NEXT_PUBLIC_APP_URL: http://localhost:3000

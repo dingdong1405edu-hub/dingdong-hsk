@@ -16,16 +16,22 @@ const PLACEHOLDER = `[
   {
     "type": "MCQ",
     "prompt": "女的想买什么?",
+    "promptTranslation": "Người nữ muốn mua gì?",
     "options": ["苹果", "香蕉", "西瓜", "葡萄"],
+    "optionsTranslation": ["táo", "chuối", "dưa hấu", "nho"],
     "answer": 0,
-    "explanation": "Người nữ nói muốn mua táo.",
-    "supportingQuote": "我想买一斤苹果"
+    "explanation": "Người nữ nói rõ muốn mua táo.",
+    "supportingQuote": "我想买一斤苹果",
+    "quoteTranslation": "Tôi muốn mua nửa cân táo"
   },
   {
     "type": "TRUE_FALSE",
     "prompt": "他们打算明天去公园。",
+    "promptTranslation": "Họ định ngày mai đi công viên.",
     "answer": true,
-    "explanation": "Hai người hẹn ngày mai đi công viên."
+    "explanation": "Hai người hẹn ngày mai đi công viên.",
+    "supportingQuote": "明天我们去公园吧",
+    "quoteTranslation": "Mai mình đi công viên nhé"
   }
 ]`;
 
@@ -110,8 +116,9 @@ export function ListeningQuestionsImporter({ listeningId }: { listeningId: strin
           Dán JSON một mảng câu hỏi (hoặc bấm “AI tạo câu hỏi”). Loại hỗ trợ:{" "}
           <span className="font-medium">MCQ</span> (kèm <code>options</code> + <code>answer</code> là chỉ số từ 0),{" "}
           <span className="font-medium">TRUE_FALSE</span> (<code>answer</code> true/false),{" "}
-          <span className="font-medium">FILL_BLANK</span> (<code>answer</code> là chữ Hán). Cần có lời thoại trước khi để AI
-          tạo câu hỏi.
+          <span className="font-medium">FILL_BLANK</span> (<code>answer</code> là chữ Hán). Nên kèm bản dịch tiếng Việt:{" "}
+          <code>promptTranslation</code>, <code>optionsTranslation</code>, <code>quoteTranslation</code> — hiện ở phần chữa bài.
+          Cần có lời thoại trước khi để AI tạo câu hỏi.
         </p>
       </div>
 

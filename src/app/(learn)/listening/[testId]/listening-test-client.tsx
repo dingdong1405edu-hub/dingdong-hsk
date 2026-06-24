@@ -1,8 +1,9 @@
 "use client";
 import { useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
+import { motion } from "framer-motion";
 import { toast } from "sonner";
-import { Clock, Eye, EyeOff, Headphones, Info, RefreshCw, ListChecks, GraduationCap, AlertTriangle } from "lucide-react";
+import { Clock, Eye, EyeOff, Headphones, RefreshCw, ListChecks, GraduationCap, AlertTriangle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { TestShell } from "@/components/learn/test-shell";
 import { ReadingPalette } from "@/components/learn/reading/reading-palette";
@@ -13,12 +14,28 @@ import { ReviewDialog } from "@/components/learn/reading/review-dialog";
 import { CharLookup, type LookupAnchor } from "@/components/learn/reading/char-lookup";
 import { AudioPlayer } from "@/components/learn/listening/audio-player";
 import { Tapescript } from "@/components/learn/listening/tapescript";
+import { TranscriptExplanation } from "@/components/learn/listening/transcript-explanation";
 import { QuestionEvidence } from "@/components/learn/listening/question-evidence";
 import { useListeningAudio } from "@/components/learn/listening/use-listening-audio";
 import type { ListeningTestData } from "@/components/learn/listening/types";
 import { splitTranscript, findEvidenceIndex } from "@/lib/transcript";
 import { cn, formatDuration, hskBadgeClass, hskLevelLabel } from "@/lib/utils";
 import { submitListeningAction } from "@/server/actions/listening";
+
+/** Câu chúc tiếng Trung của Bao (bóng thoại) theo điểm số. */
+function baoBubble(score: number): string {
+  if (score >= 90) return "太棒了!";
+  if (score >= 70) return "做得好!";
+  if (score >= 50) return "加油!";
+  return "别灰心!";
+}
+/** Lời cổ vũ tiếng Việt theo điểm số. */
+function baoLine(score: number): string {
+  if (score >= 90) return "Xuất sắc! Bạn nghe rất tốt 🎉";
+  if (score >= 70) return "Làm tốt lắm! Cố thêm chút nữa nhé.";
+  if (score >= 50) return "Khá rồi! Ôn lại các câu sai cho chắc.";
+  return "Đừng nản — nghe lại lời thoại & xem giải thích nhé!";
+}
 
 const SAVED_KEY = "dingdong:listening:saved";
 const isAnswered = (v: unknown) => v !== undefined && v !== null && v !== "";
@@ -304,12 +321,14 @@ export function ListeningTestClient({ test }: { test: ListeningTestData; userId:
         <div className="h-full overflow-y-auto">
           <div className="mx-auto max-w-2xl space-y-5 p-4 sm:p-6">
             {/* Title */}
-            <div className="flex items-center justify-between gap-3">
-              <div className="flex items-center gap-2">
-                <Headphones className="h-5 w-5 text-teal-600" />
+            <div className="flex items-center justify-between gap-3 rounded-2xl border border-teal-100 bg-gradient-to-r from-teal-50 to-emerald-50/40 p-3.5">
+              <div className="flex items-center gap-2.5">
+                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-teal-100 text-teal-600">
+                  <Headphones className="h-5 w-5" />
+                </span>
                 <h1 className="text-lg font-bold sm:text-xl">{test.title}</h1>
               </div>
-              <span className={cn("rounded-full px-2.5 py-0.5 text-xs font-bold", hskBadgeClass(test.hskLevel))}>
+              <span className={cn("shrink-0 rounded-full px-2.5 py-0.5 text-xs font-bold", hskBadgeClass(test.hskLevel))}>
                 {hskLevelLabel(test.hskLevel)}
               </span>
             </div>
@@ -330,10 +349,10 @@ export function ListeningTestClient({ test }: { test: ListeningTestData; userId:
               </div>
             )}
 
-            {/* Instructions (test mode) */}
+            {/* Instructions (test mode) — kèm linh vật Bao chào học viên */}
             {!submitted && (
-              <div className="flex items-start gap-2 rounded-xl border border-teal-100 bg-teal-50/50 p-3 text-sm text-teal-900">
-                <Info className="mt-0.5 h-4 w-4 shrink-0 text-teal-600" />
+              <div className="flex items-center gap-3 rounded-xl border border-teal-100 bg-teal-50/50 p-3 text-sm text-teal-900">
+                <BaoBuddy size={54} pose="idle" className="shrink-0" aria-label="Bao chào bạn" />
                 <p>
                   {audio.available ? (
                     <>
@@ -361,15 +380,29 @@ export function ListeningTestClient({ test }: { test: ListeningTestData; userId:
               />
             )}
 
-            {/* Results (review) */}
+            {/* Results (review) — sảnh chúc mừng với linh vật Bao nổi bật */}
             {submitted && result && (
               <>
-                <BaoBuddy
-                  size={84}
-                  pose={result.score >= 50 ? "cheer" : "idle"}
-                  message={result.score >= 50 ? "做得好!" : "加油!"}
-                  className="mx-auto"
-                />
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.92, y: 10 }}
+                  animate={{ opacity: 1, scale: 1, y: 0 }}
+                  transition={{ type: "spring", stiffness: 220, damping: 18 }}
+                  className="relative overflow-hidden rounded-3xl border border-amber-200/70 bg-gradient-to-br from-amber-50 via-rose-50 to-teal-50 px-5 py-6 text-center shadow-sm"
+                >
+                  <BaoBuddy
+                    size={120}
+                    pose={result.score >= 50 ? "cheer" : "idle"}
+                    message={baoBubble(result.score)}
+                    className="mx-auto"
+                  />
+                  <div className="mt-1 text-4xl font-extrabold tracking-tight text-zinc-800">
+                    {Math.round(result.score)}%
+                  </div>
+                  <div className="mt-0.5 text-sm font-medium text-zinc-600">
+                    {correctCount}/{total} câu đúng · {formatDuration(elapsed)}
+                  </div>
+                  <div className="mt-1.5 text-sm font-semibold text-primary">{baoLine(result.score)}</div>
+                </motion.div>
                 <ResultsSummary
                   score={result.score}
                   correct={correctCount}
@@ -435,7 +468,7 @@ export function ListeningTestClient({ test }: { test: ListeningTestData; userId:
               </div>
             )}
 
-            {/* Review extras: tapescript + study actions */}
+            {/* Review extras: tapescript + dịch/giải thích + study actions */}
             {submitted && (
               <div className="space-y-4">
                 <Tapescript
@@ -447,6 +480,8 @@ export function ListeningTestClient({ test }: { test: ListeningTestData; userId:
                   onPlaySegment={(i) => audio.speakSegment(i)}
                   onCharClick={onCharClick}
                 />
+
+                {test.transcriptExplanation && <TranscriptExplanation text={test.transcriptExplanation} />}
 
                 <div className="rounded-2xl border bg-card p-4">
                   <div className="mb-2 flex items-center gap-2 text-sm font-bold text-primary">

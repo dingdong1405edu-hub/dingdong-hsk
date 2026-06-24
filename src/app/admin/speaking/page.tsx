@@ -10,7 +10,8 @@ import { PublishToggle } from "@/components/admin/publish-toggle";
 import { ReorderList } from "@/components/admin/reorder-list";
 import { hskLevelLabel } from "@/lib/utils";
 import { deleteSpeakingAction, updateSpeakingAction } from "@/server/actions/admin";
-import { Trash2, Plus } from "lucide-react";
+import { Trash2, Plus, MessagesSquare } from "lucide-react";
+import Link from "next/link";
 import { db as prisma } from "@/lib/db";
 import { HSKLevel } from "@prisma/client";
 import { revalidatePath } from "next/cache";
@@ -54,7 +55,14 @@ export default async function AdminSpeakingPage() {
 
   return (
     <div className="space-y-6">
-      <h1 className="text-2xl font-bold">Bộ luyện nói HSKK</h1>
+      <div className="flex items-center justify-between gap-3">
+        <h1 className="text-2xl font-bold">Bộ luyện nói HSKK</h1>
+        <Link href="/admin/speaking/topics">
+          <Button variant="outline" size="sm">
+            <MessagesSquare className="mr-1 h-4 w-4" /> Nói theo chủ đề
+          </Button>
+        </Link>
+      </div>
       <Card>
         <CardHeader><CardTitle className="text-base"><Plus className="h-4 w-4 inline mr-2" />Thêm bộ nói</CardTitle></CardHeader>
         <CardContent>

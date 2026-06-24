@@ -8,7 +8,12 @@ import { HSKLevel, Prisma, QuestionType, Role, SubscriptionType, WritingTaskType
 import { getPlan } from "@/lib/payment-plans";
 import { requireAdmin } from "@/lib/admin-guard";
 import { parseGrammarContent } from "@/lib/grammar";
-import { generateReadingQuestions, generateListeningQuestions, isGradingConfigured } from "@/lib/groq";
+import {
+  generateReadingQuestions,
+  generateListeningQuestions,
+  generateTranscriptExplanation,
+  isGradingConfigured,
+} from "@/lib/groq";
 import { transcribeAudio, isTranscriptionConfigured } from "@/lib/stt";
 
 export async function adminUpdateUserAction(params: {
@@ -151,28 +156,43 @@ const bulkQuestionSchema = z.discriminatedUnion("type", [
   z.object({
     type: z.literal("MCQ"),
     prompt: z.string().trim().min(1),
+    promptTranslation: z.string().trim().optional(),
     options: z.array(z.string().trim().min(1)).min(2, "MCQ cần ≥ 2 lựa chọn."),
+    optionsTranslation: z.array(z.string().trim()).optional(),
     answer: z.coerce.number().int().min(0),
     explanation: z.string().trim().optional(),
     supportingQuote: z.string().trim().optional(),
+    quoteTranslation: z.string().trim().optional(),
   }),
   z.object({
     type: z.literal("TRUE_FALSE"),
     prompt: z.string().trim().min(1),
+    promptTranslation: z.string().trim().optional(),
     answer: z.boolean(),
     explanation: z.string().trim().optional(),
     supportingQuote: z.string().trim().optional(),
+    quoteTranslation: z.string().trim().optional(),
   }),
   z.object({
     type: z.literal("FILL_BLANK"),
     prompt: z.string().trim().min(1),
+    promptTranslation: z.string().trim().optional(),
     answer: z.string().trim().min(1),
     accepted: z.array(z.string().trim().min(1)).optional(),
     explanation: z.string().trim().optional(),
     supportingQuote: z.string().trim().optional(),
+    quoteTranslation: z.string().trim().optional(),
   }),
 ]);
 const bulkQuestionsSchema = z.array(bulkQuestionSchema).min(1, "Cần ít nhất 1 câu hỏi.").max(50, "Tối đa 50 câu mỗi lần.");
+
+/** Dựng options Json cho MCQ: ghép mỗi lựa chọn với bản dịch tiếng Việt (nếu có), giữ đúng thứ tự. */
+function mcqOptions(options: string[], translations?: string[]) {
+  return options.map((text, i) => {
+    const tr = translations?.[i]?.trim();
+    return tr ? { text, translation: tr } : { text };
+  });
+}
 
 export async function bulkCreateReadingQuestionsAction(readingId: string, jsonText: string) {
   await requireAdmin();
@@ -211,14 +231,16 @@ export async function bulkCreateReadingQuestionsAction(readingId: string, jsonTe
       questions.map((q, i) => {
         const base = {
           prompt: q.prompt,
+          promptTranslation: q.promptTranslation || null,
           explanation: q.explanation,
           supportingQuote: q.supportingQuote,
+          quoteTranslation: q.quoteTranslation || null,
           readingId,
           order: startOrder + i,
         };
         if (q.type === "MCQ") {
           return db.question.create({
-            data: { ...base, type: QuestionType.MCQ, options: q.options.map((t) => ({ text: t })), correctAnswer: { index: q.answer } },
+            data: { ...base, type: QuestionType.MCQ, options: mcqOptions(q.options, q.optionsTranslation), correctAnswer: { index: q.answer } },
           });
         }
         if (q.type === "TRUE_FALSE") {
@@ -277,6 +299,7 @@ const listeningSchema = z.object({
   hskLevel: z.nativeEnum(HSKLevel),
   audioUrl: z.string().trim().optional(),
   transcript: z.string().optional(),
+  transcriptExplanation: z.string().optional(),
   timeLimit: z.coerce.number().int().min(30).default(300),
   imageUrl: z.string().trim().optional(),
 });
@@ -287,6 +310,7 @@ function listeningData(input: z.infer<typeof listeningSchema>) {
     hskLevel: input.hskLevel,
     audioUrl: input.audioUrl?.trim() ? input.audioUrl.trim() : "",
     transcript: input.transcript?.trim() ? input.transcript : null,
+    transcriptExplanation: input.transcriptExplanation?.trim() ? input.transcriptExplanation : null,
     timeLimit: input.timeLimit,
     imageUrl: input.imageUrl?.trim() ? input.imageUrl : null,
   };
@@ -366,14 +390,16 @@ export async function bulkCreateListeningQuestionsAction(listeningId: string, js
       questions.map((q, i) => {
         const base = {
           prompt: q.prompt,
+          promptTranslation: q.promptTranslation || null,
           explanation: q.explanation,
           supportingQuote: q.supportingQuote,
+          quoteTranslation: q.quoteTranslation || null,
           listeningId,
           order: startOrder + i,
         };
         if (q.type === "MCQ") {
           return db.question.create({
-            data: { ...base, type: QuestionType.MCQ, options: q.options.map((t) => ({ text: t })), correctAnswer: { index: q.answer } },
+            data: { ...base, type: QuestionType.MCQ, options: mcqOptions(q.options, q.optionsTranslation), correctAnswer: { index: q.answer } },
           });
         }
         if (q.type === "TRUE_FALSE") {
@@ -420,6 +446,46 @@ export async function generateListeningQuestionsAction(listeningId: string, coun
     return { ok: true as const, json: JSON.stringify(questions, null, 2) };
   } catch (e) {
     console.error("generateListeningQuestions error:", e);
+    return { ok: false as const, error: "Lỗi khi gọi AI (Groq). Thử lại sau." };
+  }
+}
+
+// Nhờ Groq DỊCH & GIẢI THÍCH toàn bộ lời thoại (tiếng Việt) → trả về đoạn text
+// gọn để admin duyệt/sửa trong ô "Dịch & giải thích lời thoại" rồi lưu cùng form.
+export async function generateTranscriptExplanationAction(listeningId: string) {
+  await requireAdmin();
+  if (!isGradingConfigured()) {
+    return { ok: false as const, error: "Máy chủ chưa cấu hình GROQ_API_KEY." };
+  }
+  const listening = await db.listeningTest.findUnique({
+    where: { id: listeningId },
+    select: { transcript: true, hskLevel: true },
+  });
+  if (!listening) return { ok: false as const, error: "Không tìm thấy bài nghe." };
+  if (!listening.transcript?.trim()) {
+    return { ok: false as const, error: "Bài nghe chưa có lời thoại (transcript) để AI dịch." };
+  }
+
+  try {
+    const ex = await generateTranscriptExplanation({
+      transcript: listening.transcript,
+      hskLevel: listening.hskLevel,
+    });
+    if (!ex.translation && ex.vocab.length === 0) {
+      return { ok: false as const, error: "AI chưa dịch được — thử lại." };
+    }
+    const parts: string[] = [];
+    if (ex.summary) parts.push(ex.summary);
+    if (ex.translation) parts.push(`— Dịch lời thoại —\n${ex.translation}`);
+    if (ex.vocab.length) {
+      const lines = ex.vocab
+        .map((v) => `• ${v.zh}${v.pinyin ? ` (${v.pinyin})` : ""} — ${v.vi}`)
+        .join("\n");
+      parts.push(`— Từ vựng —\n${lines}`);
+    }
+    return { ok: true as const, text: parts.join("\n\n") };
+  } catch (e) {
+    console.error("generateTranscriptExplanation error:", e);
     return { ok: false as const, error: "Lỗi khi gọi AI (Groq). Thử lại sau." };
   }
 }
@@ -1083,6 +1149,7 @@ type ContentModel =
   | "listening"
   | "writing"
   | "speaking"
+  | "speakingTopic"
   | "mockExam";
 
 // Đường dẫn cần làm mới cache sau khi đổi trạng thái: trang admin (danh sách) và
@@ -1097,6 +1164,7 @@ const CONTENT_PATHS: Record<ContentModel, { admin: string; learner: string }> = 
   listening: { admin: "/admin/listening", learner: "/listening" },
   writing: { admin: "/admin/writing", learner: "/writing" },
   speaking: { admin: "/admin/speaking", learner: "/speaking" },
+  speakingTopic: { admin: "/admin/speaking/topics", learner: "/speaking" },
   mockExam: { admin: "/admin/exam", learner: "/exam" },
 };
 
@@ -1143,6 +1211,9 @@ export async function setContentPublishedAction(
         break;
       case "speaking":
         await db.speakingSet.update({ where: { id }, data: { published } });
+        break;
+      case "speakingTopic":
+        await db.speakingTopic.update({ where: { id }, data: { published } });
         break;
       case "mockExam":
         await db.mockExam.update({ where: { id }, data: { published } });
@@ -1437,6 +1508,95 @@ export async function updateSpeakingAction(
   } catch (e) {
     return { ok: false, error: e instanceof Error ? e.message : "Lỗi cập nhật bộ nói." };
   }
+}
+
+// ===== Nói theo chủ đề (SpeakingTopic) — CRUD =====
+// `hints` là chuỗi JSON (mảng [{ text, pinyin?, vi? }]) do SpeakingTopicFields dựng.
+// Chuẩn hoá ở server: bỏ mục rỗng, chỉ giữ field chuỗi, sai định dạng → mảng rỗng
+// (không sập Prisma). Audio + transcript dùng lại hạ tầng upload/Deepgram của bài nghe.
+function parseTopicHints(fd: FormData): Prisma.InputJsonValue {
+  let raw: unknown;
+  try {
+    raw = JSON.parse((fd.get("hints") as string) || "[]");
+  } catch {
+    return [];
+  }
+  if (!Array.isArray(raw)) return [];
+  return raw
+    .map((h) => {
+      const o = h && typeof h === "object" ? (h as Record<string, unknown>) : {};
+      const text = typeof o.text === "string" ? o.text.trim() : "";
+      const pinyin = typeof o.pinyin === "string" ? o.pinyin.trim() : "";
+      const vi = typeof o.vi === "string" ? o.vi.trim() : "";
+      const item: Record<string, string> = {};
+      if (text) item.text = text;
+      if (pinyin) item.pinyin = pinyin;
+      if (vi) item.vi = vi;
+      return item;
+    })
+    .filter((item) => Object.keys(item).length > 0);
+}
+
+function topicDataFromForm(fd: FormData) {
+  return {
+    title: (fd.get("title") as string)?.trim() || "",
+    hskLevel: fd.get("hskLevel") as HSKLevel,
+    topic: (fd.get("topic") as string)?.trim() || "",
+    questionZh: (fd.get("questionZh") as string)?.trim() || "",
+    questionPinyin: optStr(fd, "questionPinyin"),
+    questionVi: optStr(fd, "questionVi"),
+    audioUrl: optStr(fd, "audioUrl"),
+    transcript: optStr(fd, "transcript"),
+    hints: parseTopicHints(fd),
+    sampleAnswer: optStr(fd, "sampleAnswer"),
+    sampleAnswerPinyin: optStr(fd, "sampleAnswerPinyin"),
+    minChars: parseInt(fd.get("minChars") as string) || 0,
+    prepSeconds: parseInt(fd.get("prepSeconds") as string) || 0,
+    imageUrl: optStr(fd, "imageUrl"),
+    order: parseInt(fd.get("order") as string) || 0,
+  };
+}
+
+export async function createSpeakingTopicAction(
+  fd: FormData
+): Promise<{ ok: boolean; error?: string }> {
+  try {
+    await requireAdmin();
+    const data = topicDataFromForm(fd);
+    if (!data.questionZh) return { ok: false, error: "Thiếu câu hỏi (tiếng Trung)." };
+    await db.speakingTopic.create({ data: { ...data, published: false } });
+    revalidatePath("/admin/speaking/topics");
+    return { ok: true };
+  } catch (e) {
+    return { ok: false, error: e instanceof Error ? e.message : "Lỗi tạo chủ đề nói." };
+  }
+}
+
+export async function updateSpeakingTopicAction(
+  fd: FormData
+): Promise<{ ok: boolean; error?: string }> {
+  try {
+    await requireAdmin();
+    const id = (fd.get("id") as string) || "";
+    if (!id) return { ok: false, error: "Thiếu id chủ đề." };
+    const data = topicDataFromForm(fd);
+    if (!data.questionZh) return { ok: false, error: "Thiếu câu hỏi (tiếng Trung)." };
+    await db.speakingTopic.update({ where: { id }, data });
+    revalidatePath("/admin/speaking/topics");
+    revalidatePath("/speaking");
+    revalidatePath(`/speaking/topic/${id}`);
+    return { ok: true };
+  } catch (e) {
+    return { ok: false, error: e instanceof Error ? e.message : "Lỗi cập nhật chủ đề nói." };
+  }
+}
+
+export async function deleteSpeakingTopicAction(id: string) {
+  await requireAdmin();
+  await db.speakingTopic.delete({ where: { id } });
+  revalidatePath("/admin/speaking/topics");
+  revalidatePath("/speaking");
+  return { ok: true };
 }
 
 export async function updateHanziAction(

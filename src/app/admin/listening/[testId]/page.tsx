@@ -94,8 +94,10 @@ export default async function AdminListeningDetailPage({ params }: Props) {
 
             <ListeningAudioFields
               idSuffix="edit"
+              listeningId={test.id}
               defaultAudioUrl={test.audioUrl}
               defaultTranscript={test.transcript}
+              defaultTranscriptExplanation={test.transcriptExplanation}
             />
 
             <Button type="submit" className="gap-1.5">

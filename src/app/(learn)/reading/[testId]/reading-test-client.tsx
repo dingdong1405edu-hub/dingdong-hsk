@@ -28,6 +28,7 @@ import { BaoBuddy } from "@/components/marketing/bao-buddy";
 import { CharLookup, type LookupAnchor } from "@/components/learn/reading/char-lookup";
 import { SelectionLookup, type SelectionAnchor } from "@/components/learn/reading/selection-lookup";
 import { useReadingSettings } from "@/components/learn/reading/use-reading-settings";
+import { toPinyinArray } from "@/lib/pinyin";
 import type { ReadingTestData } from "@/components/learn/reading/types";
 
 type Pane = "passage" | "questions";
@@ -65,6 +66,8 @@ export function ReadingTestClient({ test }: { test: ReadingTestData; userId: str
   const [mode, setMode] = useState<ReadMode>("lookup");
   const [highlightColor, setHighlightColor] = useState(HIGHLIGHT_COLORS[0].value);
   const [highlights, setHighlights] = useState<Record<number, string>>({});
+  // "Chỗ chứa đáp án" đang tô sáng trong đoạn văn (nonce đổi mỗi lần bấm để cuộn lại).
+  const [evidence, setEvidence] = useState<{ indices: number[]; nonce: number } | null>(null);
 
   const questionRefs = useRef<(HTMLDivElement | null)[]>([]);
   const storageKey = `dingdong:reading:${test.id}`;
@@ -99,6 +102,60 @@ export function ReadingTestClient({ test }: { test: ReadingTestData; userId: str
       }
       return next;
     });
+  }
+
+  // Phân đoạn đoạn văn ĐÚNG như PinyinText (cùng toPinyinArray) để map trích dẫn của
+  // câu hỏi về chính các segment index mà PinyinText gắn data-idx.
+  const passageSegments = useMemo(() => toPinyinArray(test.passage), [test.passage]);
+  const segOffsets = useMemo(() => {
+    const offs: number[] = [];
+    let acc = 0;
+    for (const s of passageSegments) {
+      offs.push(acc);
+      acc += s.char.length;
+    }
+    return offs;
+  }, [passageSegments]);
+  const joinedPassage = useMemo(
+    () => passageSegments.map((s) => s.char).join("").normalize("NFC"),
+    [passageSegments],
+  );
+
+  // Tìm các segment trong đoạn văn ứng với "supportingQuote" (trích nguyên văn).
+  function locateEvidence(quote: string): number[] {
+    const q = quote.normalize("NFC").trim();
+    if (!q) return [];
+    const TRIM = /^[\s，。、？！：；,.!?"'“”‘’()（）【】「」]+|[\s，。、？！：；,.!?"'“”‘’()（）【】「」]+$/g;
+    let pos = joinedPassage.indexOf(q);
+    let len = q.length;
+    if (pos < 0) {
+      // AI đôi khi thêm/thiếu dấu câu ở hai đầu — thử lại với phần lõi.
+      const core = q.replace(TRIM, "");
+      if (core && core !== q) {
+        pos = joinedPassage.indexOf(core);
+        len = core.length;
+      }
+    }
+    if (pos < 0) return [];
+    const end = pos + len;
+    const indices: number[] = [];
+    for (let i = 0; i < passageSegments.length; i++) {
+      const segStart = segOffsets[i];
+      const segEnd = segStart + passageSegments[i].char.length;
+      if (segStart < end && segEnd > pos) indices.push(i);
+    }
+    return indices;
+  }
+
+  function showEvidence(quote?: string | null) {
+    if (!quote) return;
+    const indices = locateEvidence(quote);
+    if (indices.length === 0) {
+      toast.message("Không định vị được trích dẫn trong đoạn văn.");
+      return;
+    }
+    setEvidence((e) => ({ indices, nonce: (e?.nonce ?? 0) + 1 }));
+    setTab("passage"); // điện thoại/iPad dọc: chuyển sang xem đoạn văn để thấy chỗ tô
   }
 
   // Restore in-progress work (answers / flags / elapsed) once on mount.
@@ -347,6 +404,7 @@ export function ReadingTestClient({ test }: { test: ReadingTestData; userId: str
                 }}
                 onHighlight={applyHighlight}
                 onEraseHighlight={eraseHighlight}
+                evidence={evidence}
               />
             </div>
 
@@ -428,6 +486,7 @@ export function ReadingTestClient({ test }: { test: ReadingTestData; userId: str
                         showPinyin={showPinyin}
                         isCurrent={current === idx}
                         onActivate={() => setCurrent(idx)}
+                        onShowEvidence={() => showEvidence(q.supportingQuote)}
                         cardRef={(el) => {
                           questionRefs.current[idx] = el;
                         }}

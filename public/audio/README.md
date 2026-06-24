@@ -7,13 +7,12 @@ Three ways an audio URL ends up in the DB (set from **Admin → Bài nghe**):
 1. **Upload a file** — drag/drop an `.mp3` (or `.wav/.ogg/.m4a`). Stored in
    Postgres (model `Upload`) → `audioUrl = /api/files/<id>`. You can then click
    **"Tạo transcript từ audio (Deepgram)"** to auto-fill the lời thoại.
-2. **Generate from transcript** — paste the lời thoại and click
-   "Tạo MP3 từ transcript (Google TTS)" (Mandarin cmn-CN voice). Stored the same way.
-3. **Paste a URL** — e.g. a fully-qualified Cloudflare R2 link, used as-is.
+2. **Paste a URL** — e.g. a fully-qualified Cloudflare R2 link, used as-is.
 
-> Deepgram & Groq do NOT have a Mandarin TTS voice — generating the MP3 uses
-> **Google Cloud Text-to-Speech**; transcribing audio uses **Deepgram Nova-3**
-> (with a Groq Whisper fallback).
+> There is NO AI text-to-speech — Deepgram & Groq have no Mandarin TTS voice, so
+> admins upload a real MP3. Transcribing an uploaded clip uses **Deepgram Nova-3**
+> (Groq Whisper fallback). When a test has no MP3, the learner player falls back
+> to the browser's `zh-CN` Web Speech voice.
 
 Uploaded and generated audio is persisted in Postgres (model `Upload`) and
 served via `/api/files/<id>`, so it survives Railway redeploys (the filesystem

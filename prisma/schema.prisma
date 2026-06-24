@@ -320,6 +320,9 @@ model ListeningTest {
   hskLevel   HSKLevel
   audioUrl   String
   transcript String?  @db.Text
+  // Bản dịch + giải thích toàn bộ lời thoại (tiếng Việt) do Groq sinh — hiện ở
+  // phần "chữa bài" để học viên hiểu kỹ nội dung nghe.
+  transcriptExplanation String? @db.Text
   imageUrl   String?
   timeLimit  Int      @default(300)
   order      Int      @default(0) // thứ tự hiển thị trong cấp HSK (đổi chỗ ở admin)
@@ -337,12 +340,17 @@ model Question {
   type            QuestionType
   prompt          String       @db.Text
   promptPinyin    String?      @db.Text
+  // Bản dịch tiếng Việt của câu hỏi (Groq sinh) — hiện khi chữa bài. Bản dịch
+  // từng lựa chọn nằm trong options Json ({ text, translation }).
+  promptTranslation String?    @db.Text
   options         Json?
   correctAnswer   Json
   explanation     String?      @db.Text
   // Câu/đoạn trích trong bài đọc chứng minh đáp án (Groq sinh sẵn khi admin thêm
   // câu hỏi) — dùng để "chỉ cho học viên đáp án lấy ở đâu" khi chữa bài.
   supportingQuote String?      @db.Text
+  // Bản dịch tiếng Việt của câu trích dẫn (supportingQuote).
+  quoteTranslation String?     @db.Text
   order           Int          @default(0)
 
   readingId   String?
@@ -451,6 +459,36 @@ model SpeakingSet {
   published      Boolean  @default(true) // false = bản nháp (ẩn khỏi web học viên)
   createdAt      DateTime @default(now())
   updatedAt      DateTime @default(now()) @updatedAt
+
+  @@index([hskLevel, order])
+}
+
+/// Bài "Nói theo chủ đề" (HSKK 命题说话 / phỏng vấn). Giám khảo (admin) đặt MỘT câu
+/// hỏi mở theo chủ đề kèm MP3 thật + transcript + gợi ý; học viên ghi âm trả lời
+/// thành MỘT ĐOẠN DÀI → Deepgram chuyển thành lời thoại → Groq chấm CHI TIẾT (nội
+/// dung, ngữ pháp, từ vựng, mạch lạc, lưu loát) + sửa lỗi o→f như chấm viết. Lưu 1
+/// Attempt (skill = SPEAKING, rawAnswer.kind = "topic"). `hints` = JSON mảng
+/// [{ text, pinyin?, vi? }] gợi ý từ/cụm nên dùng.
+model SpeakingTopic {
+  id                 String   @id @default(cuid())
+  title              String   @default("")
+  hskLevel           HSKLevel
+  topic              String   @default("") // nhãn chủ đề ngắn (vd "爱好 — Sở thích")
+  questionZh         String   @db.Text // câu giám khảo hỏi (tiếng Trung)
+  questionPinyin     String?  @db.Text
+  questionVi         String?  @db.Text // dịch tiếng Việt câu hỏi
+  audioUrl           String? // MP3 giám khảo hỏi (admin tự tải lên)
+  transcript         String?  @db.Text // transcript của MP3 (admin nhập / Deepgram)
+  hints              Json     @default("[]") // [{ text, pinyin?, vi? }]
+  sampleAnswer       String?  @db.Text // bài trả lời mẫu (tham khảo)
+  sampleAnswerPinyin String?  @db.Text
+  minChars           Int      @default(0) // độ dài tối thiểu gợi ý (số chữ Hán)
+  prepSeconds        Int      @default(0) // thời gian chuẩn bị (giây) trước khi ghi âm
+  imageUrl           String?
+  order              Int      @default(0)
+  published          Boolean  @default(false) // false = bản nháp (ẩn khỏi web học viên)
+  createdAt          DateTime @default(now())
+  updatedAt          DateTime @default(now()) @updatedAt
 
   @@index([hskLevel, order])
 }

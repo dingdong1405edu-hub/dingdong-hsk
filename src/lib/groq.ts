@@ -390,6 +390,37 @@ function coerceCompactWriting(raw: unknown, submission: string, hskLevel: string
   };
 }
 
+/** Ép kết quả chấm NÓI về đúng SpeakingGradeResult với mặc định an toàn (không
+ *  tin shape thô từ AI) — tránh crash UI khi payload thiếu `criteria`/`score`. */
+function coerceSpeakingResult(raw: unknown): SpeakingGradeResult {
+  const r = isRecord(raw) ? raw : {};
+  const c = isRecord(r.criteria) ? r.criteria : {};
+  const p = isRecord(c.pronunciation) ? c.pronunciation : {};
+  const t = isRecord(c.tones) ? c.tones : {};
+  const f = isRecord(c.fluency) ? c.fluency : {};
+  const rows = (v: unknown) => (Array.isArray(v) ? v.filter(isRecord) : []);
+  return {
+    score: clampScore(r.score),
+    criteria: {
+      pronunciation: {
+        score: clampScore(p.score),
+        errors: rows(p.errors).map((e) => ({ word: asStr(e.word), issue: asStr(e.issue), correct: asStr(e.correct) })),
+      },
+      tones: {
+        score: clampScore(t.score),
+        errors: rows(t.errors).map((e) => ({ word: asStr(e.word), expected: asStr(e.expected), detected: asStr(e.detected) })),
+      },
+      fluency: {
+        score: clampScore(f.score),
+        wordsPerMinute: typeof f.wordsPerMinute === "number" ? f.wordsPerMinute : 0,
+        feedback: asStr(f.feedback),
+      },
+    },
+    transcript: asStr(r.transcript),
+    overallFeedback: asStr(r.overallFeedback),
+  };
+}
+
 export async function gradeSpeaking(params: {
   transcript: string;
   referenceText: string | null;
@@ -428,7 +459,176 @@ Return JSON:
 }`,
   });
 
-  return parsed as SpeakingGradeResult;
+  return coerceSpeakingResult(parsed);
+}
+
+// ===== Chấm NÓI THEO CHỦ ĐỀ (HSKK 命题说话 / phỏng vấn) =====
+// Khác gradeSpeaking (chấm 3 tiêu chí phát âm/thanh điệu/lưu loát cho câu ngắn):
+// đây là bài trả lời MỞ, DÀI. Đầu vào là transcript do ASR (Deepgram) tạo ra, nên
+// prompt dặn model BỎ QUA dấu câu + lỗi đồng âm nghi do máy nghe nhầm, tập trung
+// ngữ pháp / từ vựng / mạch lạc / nội dung — và sửa lỗi o→f giống chấm viết để
+// server tự dựng "bản sửa". Trả JSON gọn rồi coerce ở dưới.
+const SPEAKING_TOPIC_SYSTEM = `You are a strict, fair certified HSKK (汉语水平口语考试) speaking examiner and a specialist coach for Vietnamese learners. You grade ONE extended spoken answer to an open topic question. The text you receive is an ASR (speech-to-text) TRANSCRIPT of the learner speaking — treat it as speech, not writing. Output ONLY one compact JSON object — no markdown, no code fences, no <think>, no extra keys.
+
+ASR-AWARE RULES (critical — the input came from a machine recognizer):
+- IGNORE punctuation entirely (it was inserted by the recognizer): never score or "fix" 标点.
+- Do NOT report a span as 错别字 if it is plausibly an ASR homophone mistake (same/similar pinyin) rather than a learner error; when unsure whether an oddity is the learner or the recognizer, SKIP it.
+- Focus your error list on issues that are clearly the SPEAKER'S: 语法, 词汇 (sai/lặp từ), 语序, 搭配, 虚词 (了/着/过/的/地/得/把/被), 量词, missing connectives.
+- A very short or near-empty transcript = the learner barely spoke: score LOW on content + delivery and say so.
+
+CALIBRATE to the stated HSK level (never grade spoken HSK3 against native fluency):
+- HSK1-2: a few simple sentences on the topic; judge basic correctness + staying on topic.
+- HSK3-4: a connected paragraph with basic connectives (因为…所以, 然后, 我觉得…), some detail/reasons.
+- HSK5-6: developed, organized discourse with rich vocabulary, varied structures, examples/opinions.
+At the stated level: 90+ = fully meets it, near-zero speaker errors, well developed; ~70 = communicates the idea with several level-appropriate errors or thin development.
+
+SCORE FIVE axes 0-100 INDEPENDENTLY (let them diverge):
+- ct (内容/切题): does the answer ADDRESS the question and DEVELOP it with enough relevant content & length for the level? (use the char count + min-chars given; too short ⇒ low ct).
+- g (语法): sentence-level grammatical correctness of what was said.
+- v (词汇): word-choice accuracy and range.
+- co (连贯): logical flow, ordering, use of connectives across sentences.
+- d (流利度/表达): fluency & delivery, judged from length, speaking rate (chars/min given) and repetition/fillers — fast empty rambling and long silences both lower d. Do NOT judge pronunciation/tones (not recoverable from a transcript).
+s (overall): weight content + grammar heavily at HSK1-4, add vocabulary + coherence at HSK5-6. s MUST lie between the lowest and highest of ct/g/v/co/d.
+
+ERROR LIST "e" (the server rebuilds a corrected transcript by replacing each "o" with "f" — follow EXACTLY or the fix is lost):
+- "o" = a NON-EMPTY contiguous substring copied VERBATIM, character-for-character, from the transcript — INCLUDING any punctuation that falls INSIDE the span (it must be locatable by exact match, so never strip or normalize anything you quote). This is separate from grading: you still do NOT score 标点. Make "o" long enough to occur EXACTLY ONCE; spans must NOT overlap or nest; list in order of appearance.
+- Single wrong character or function word (虚词 了/着/过/的/地/得/把/被, a measure word, one mis-said字): quote the WHOLE surrounding word or a 2-8 char phrase around it, NEVER the bare single character — otherwise it cannot be located uniquely in a long answer where that character repeats.
+- "f" = "o" rewritten correctly with a MINIMAL edit that fixes ONLY this issue and preserves the learner's meaning. For an omission, set "o" to a short existing window (3-8 chars) and "f" to that window with the missing element added.
+- "k" = one of 语法|词汇|语序|量词|虚词|搭配 (do NOT use 标点; avoid 错别字 unless certain it is the learner).
+- "n" = SHORT explanation in natural Vietnamese, ONE line.
+CONFIDENCE over exhaustiveness: only list a span you are confident is a real SPEAKER error at this level; a clean answer returns "e": []. CONSISTENCY: if "e" is empty, all five axis scores must be ≥85; if you list serious errors, g and v must reflect them.
+
+ALSO return:
+- "str": 1-3 strengths in Vietnamese (SHORT, what the learner did well).
+- "imp": 1-3 concrete improvements in Vietnamese (what to fix/add next time).
+- "sa": a MODEL answer in natural Simplified Chinese AT THE STATED LEVEL that fully answers the SAME question (HSK1-2: 2-3 câu; HSK3-4: 4-6 câu; HSK5-6: một đoạn ngắn mạch lạc). No pinyin, no translation — Chinese only.
+- "fb": 2-3 câu nhận xét tổng bằng tiếng Việt (1 điểm mạnh + hướng cải thiện chính).
+
+Write every Vietnamese field on ONE line, no literal newlines, no unescaped quotes/backslashes. Output EXACTLY these keys and nothing else:
+{"s":<0-100>,"ct":<0-100>,"g":<0-100>,"v":<0-100>,"co":<0-100>,"d":<0-100>,"e":[{"o":"<verbatim>","f":"<sửa>","k":"<语法|词汇|语序|量词|虚词|搭配>","n":"<tiếng Việt>"}],"str":["<tiếng Việt>"],"imp":["<tiếng Việt>"],"sa":"<câu trả lời mẫu, Hán tự>","fb":"<nhận xét tổng, tiếng Việt>"}
+/no_think`;
+
+export interface SpeakingTopicGradeResult {
+  score: number;
+  bandLabel: string;
+  criteria: {
+    content: { score: number };
+    grammar: { score: number };
+    vocabulary: { score: number };
+    coherence: { score: number };
+    delivery: { score: number; wordsPerMinute: number };
+  };
+  annotations: Array<{
+    original: string;
+    type?: string;
+    correction: string;
+    explanation: string;
+  }>;
+  correctedVersion: string;
+  strengths: string[];
+  improvements: string[];
+  /** Câu trả lời mẫu (Hán tự) do AI gợi ý ở cấp HSK tương ứng. */
+  sampleAnswer: string;
+  transcript: string;
+  /** Số chữ Hán nói được (đếm ở server từ transcript). */
+  charCount: number;
+  overallFeedback: string;
+}
+
+/**
+ * Chấm một bài "Nói theo chủ đề": transcript trả lời mở → điểm 5 trục + danh sách
+ * lỗi o→f (server dựng bản sửa) + điểm mạnh/cải thiện + câu trả lời mẫu. Đếm chữ &
+ * tốc độ nói Ở SERVER (LLM đếm không đáng tin) rồi đưa số thật cho model.
+ */
+export async function gradeSpeakingTopic(params: {
+  transcript: string;
+  topic: string;
+  questionZh: string;
+  referenceTranscript: string | null;
+  hskLevel: string;
+  minChars: number;
+  durationSec: number | null;
+}): Promise<SpeakingTopicGradeResult> {
+  const { transcript, topic, questionZh, referenceTranscript, hskLevel, minChars, durationSec } = params;
+
+  const charCount = countChineseChars(transcript);
+  const wpm =
+    durationSec && durationSec > 0 ? Math.round((charCount / durationSec) * 60) : 0;
+  const tooShortNote =
+    minChars > 0 && charCount < minChars
+      ? ` — NGẮN HƠN mức gợi ý, hạ "ct" và "d" tương ứng.`
+      : "";
+  const refBlock = referenceTranscript?.trim()
+    ? `\n=== LỜI GIÁM KHẢO (transcript MP3, chỉ để hiểu câu hỏi) ===\n${referenceTranscript.trim()}`
+    : "";
+
+  const userContent = `HSK level: ${hskLevel}
+Chủ đề: ${topic || "(không ghi)"}
+Câu hỏi của giám khảo: ${questionZh}
+Số chữ Hán học viên nói (đã đếm sẵn — DÙNG SỐ NÀY): ${charCount} (gợi ý tối thiểu: ${minChars})${tooShortNote}
+Tốc độ nói: ${wpm > 0 ? `${wpm} chữ/phút (thời lượng ${durationSec}s)` : "không rõ thời lượng"}${refBlock}
+
+=== TRANSCRIPT TRẢ LỜI CỦA HỌC VIÊN (chấm bài này; trích "o" ĐÚNG NGUYÊN VĂN từ đây) ===
+${transcript}
+
+Return ONLY the compact JSON object.`;
+
+  const parsed = await runGroqJson({
+    models: GRADING_MODELS,
+    // Output này nặng nhất trong các grader: 6 điểm + danh sách lỗi o→f + str/imp
+    // + cả một câu trả lời mẫu Hán tự. Trần cao để bài dài không bị cắt cụt JSON.
+    system: SPEAKING_TOPIC_SYSTEM,
+    maxTokens: 6144,
+    temperature: 0.2,
+    user: userContent,
+  });
+
+  return coerceSpeakingTopic(parsed, transcript, hskLevel, charCount, wpm);
+}
+
+/** Ép JSON gọn của model về `SpeakingTopicGradeResult`; không tin shape thô. */
+function coerceSpeakingTopic(
+  raw: unknown,
+  transcript: string,
+  hskLevel: string,
+  charCount: number,
+  wpm: number,
+): SpeakingTopicGradeResult {
+  const r = isRecord(raw) ? raw : {};
+
+  const annotations = (Array.isArray(r.e) ? r.e : [])
+    .filter(isRecord)
+    .map((a) => {
+      const k = asStr(a.k).trim();
+      return {
+        original: asStr(a.o),
+        type: VALID_ERROR_TYPES.has(k) ? k : undefined,
+        correction: asStr(a.f),
+        explanation: asStr(a.n),
+      };
+    })
+    .filter((a) => a.original || a.correction || a.explanation);
+
+  const score = clampScore(r.s);
+  return {
+    score,
+    bandLabel: bandLabelFor(score, hskLevel),
+    criteria: {
+      content: { score: clampScore(r.ct) },
+      grammar: { score: clampScore(r.g) },
+      vocabulary: { score: clampScore(r.v) },
+      coherence: { score: clampScore(r.co) },
+      delivery: { score: clampScore(r.d), wordsPerMinute: wpm },
+    },
+    annotations,
+    correctedVersion: reconstructCorrected(transcript, annotations),
+    strengths: asStrArr(r.str),
+    improvements: asStrArr(r.imp),
+    sampleAnswer: asStr(r.sa).trim(),
+    transcript,
+    charCount,
+    overallFeedback: asStr(r.fb),
+  };
 }
 
 const READING_EXPLAIN_SYSTEM = `You are a Vietnamese HSK Chinese reading teacher. For a reading-comprehension question, you explain (in Vietnamese) why the correct answer is correct and you point to the exact place in the passage that proves it. Return ONLY valid JSON.`;
@@ -490,11 +690,17 @@ Output: Return ONLY one valid JSON object of the form { "questions": [ ... ] }. 
 export interface GeneratedReadingQuestion {
   type: "MCQ" | "TRUE_FALSE" | "FILL_BLANK";
   prompt: string;
+  /** Bản dịch tiếng Việt của câu hỏi (dùng cho phần chữa bài). */
+  promptTranslation?: string;
   options?: string[];
+  /** Bản dịch tiếng Việt của từng lựa chọn, cùng thứ tự với options. */
+  optionsTranslation?: string[];
   answer: number | boolean | string;
   accepted?: string[];
   explanation?: string;
   supportingQuote?: string;
+  /** Bản dịch tiếng Việt của câu trích dẫn (supportingQuote). */
+  quoteTranslation?: string;
 }
 
 /** Chuẩn hoá 1 câu hỏi do AI sinh về đúng shape `GeneratedReadingQuestion`; trả null nếu không dùng được. */
@@ -504,12 +710,22 @@ function coerceGeneratedQuestion(raw: unknown): GeneratedReadingQuestion | null 
   if (!prompt) return null;
   const explanation = asOptStr(raw.explanation);
   const supportingQuote = asOptStr(raw.supportingQuote);
+  const promptTranslation = asOptStr(raw.promptTranslation);
+  const quoteTranslation = asOptStr(raw.quoteTranslation);
 
   if (raw.type === "MCQ") {
-    const options = (Array.isArray(raw.options) ? raw.options : [])
-      .filter((o): o is string => typeof o === "string" && o.trim().length > 0)
-      .map((o) => o.trim());
-    if (options.length < 2) return null;
+    // Ghép option ↔ bản dịch TRƯỚC khi lọc để giữ đúng thứ tự nếu có option rỗng.
+    const rawOpts = Array.isArray(raw.options) ? raw.options : [];
+    const rawTrans = Array.isArray(raw.optionsTranslation) ? raw.optionsTranslation : [];
+    const pairs = rawOpts
+      .map((o, i) => ({
+        text: typeof o === "string" ? o.trim() : "",
+        tr: typeof rawTrans[i] === "string" ? (rawTrans[i] as string).trim() : "",
+      }))
+      .filter((p) => p.text.length > 0);
+    if (pairs.length < 2) return null;
+    const options = pairs.map((p) => p.text);
+    const optionsTranslation = pairs.some((p) => p.tr) ? pairs.map((p) => p.tr) : undefined;
     // Chấp nhận answer là chỉ số 0-based, hoặc (khi AI nhầm) là chính nội dung lựa chọn.
     const a = raw.answer;
     let idx: number;
@@ -520,7 +736,7 @@ function coerceGeneratedQuestion(raw: unknown): GeneratedReadingQuestion | null 
     } else idx = NaN;
     // Index không dùng được → bỏ câu (đừng âm thầm gán 0 = đáp án sai trông như đúng).
     if (!Number.isInteger(idx) || idx < 0 || idx >= options.length) return null;
-    return { type: "MCQ", prompt, options, answer: idx, explanation, supportingQuote };
+    return { type: "MCQ", prompt, promptTranslation, options, optionsTranslation, answer: idx, explanation, supportingQuote, quoteTranslation };
   }
   if (raw.type === "TRUE_FALSE") {
     const a = raw.answer;
@@ -533,12 +749,12 @@ function coerceGeneratedQuestion(raw: unknown): GeneratedReadingQuestion | null 
       else if (["false", "0", "no", "incorrect", "sai", "错", "错误", "不是"].includes(s)) answer = false;
     }
     if (answer === null) return null; // bỏ câu mơ hồ thay vì đoán "false"
-    return { type: "TRUE_FALSE", prompt, answer, explanation, supportingQuote };
+    return { type: "TRUE_FALSE", prompt, promptTranslation, answer, explanation, supportingQuote, quoteTranslation };
   }
   if (raw.type === "FILL_BLANK") {
     const answer = asStr(raw.answer).trim();
     if (!answer) return null;
-    return { type: "FILL_BLANK", prompt, answer, accepted: asStrArr(raw.accepted), explanation, supportingQuote };
+    return { type: "FILL_BLANK", prompt, promptTranslation, answer, accepted: asStrArr(raw.accepted), explanation, supportingQuote, quoteTranslation };
   }
   return null;
 }
@@ -603,9 +819,15 @@ Rules:
 - TRUE_FALSE: "answer" is a boolean clearly verifiable from the tapescript.
 - Every question MUST be answerable strictly from the tapescript — never invent facts that are not present.
 
-ANSWER EVIDENCE — BOTH fields below are REQUIRED on every question (never omit them, never leave them empty):
-- "supportingQuote": the EXACT sentence or phrase COPIED VERBATIM from the tapescript (Chinese, character-for-character) that contains or proves the answer. Do NOT paraphrase, translate, or invent — it must be findable in the tapescript word-for-word. Pick the shortest span that fully proves the answer.
-- "explanation": a DETAILED explanation in natural Vietnamese (tiếng Việt) of WHY the answer is correct, explicitly pointing to where the evidence is in the tapescript (reference the content of supportingQuote). For MCQ, state why the correct option is right and, when useful, briefly why the most tempting distractor is wrong. 2-3 câu, cụ thể, không chung chung.
+ANSWER EVIDENCE — these fields are REQUIRED on every question (never omit them, never leave them empty):
+- "supportingQuote": the EXACT sentence or phrase COPIED VERBATIM from the tapescript (Chinese, character-for-character) that contains or proves the answer. Do NOT paraphrase or invent — it must be findable in the tapescript word-for-word. Pick the shortest span that fully proves the answer.
+- "explanation": a DETAILED explanation in natural Vietnamese (tiếng Việt) of WHY the answer is correct, explicitly pointing to where the evidence is in the tapescript. For MCQ, state why the correct option is right and, when useful, briefly why the most tempting distractor is wrong. 2-3 câu, cụ thể, không chung chung.
+
+VIETNAMESE TRANSLATIONS — also REQUIRED on every question so the learner can study the review:
+- "promptTranslation": natural Vietnamese translation of the question prompt.
+- "optionsTranslation" (MCQ only): an array translating EACH option into Vietnamese, in the SAME order and SAME length as "options".
+- "quoteTranslation": natural Vietnamese translation of "supportingQuote".
+Translations must be natural Vietnamese (not word-by-word), accurate to the Chinese.
 
 Output: Return ONLY one valid JSON object of the form { "questions": [ ... ] }. No markdown fences, no text before or after.`;
 
@@ -629,9 +851,10 @@ export async function generateListeningQuestions(params: {
     parsed = await runGroqJson({
       models: GRADING_MODELS,
       system: LISTENING_QUESTIONS_SYSTEM,
-      // Mỗi câu (Hán tự + 4 lựa chọn + giải thích + trích dẫn) khá tốn token; với
-      // count tới 20 dễ vượt 4096 → JSON bị cắt cụt. Nâng trần như phần đọc.
-      maxTokens: 8192,
+      // Câu hỏi NGHE nặng token hơn ĐỌC (mỗi câu thêm promptTranslation +
+      // optionsTranslation×4 + quoteTranslation ≈ gấp đôi). Trần cố định 8192 dễ
+      // bị cắt cụt khi count lớn → JSON hỏng → trả [] âm thầm. Co giãn theo n.
+      maxTokens: Math.min(16000, 2200 + n * 800),
       temperature: 0.3,
       user: `Soạn ${n} câu hỏi nghe hiểu cho lời thoại sau (trình độ ${hskLevel}).
 
@@ -639,12 +862,12 @@ export async function generateListeningQuestions(params: {
 ${transcript}
 
 === YÊU CẦU ===
-Mỗi câu BẮT BUỘC có "explanation" (giải thích CHI TIẾT bằng tiếng Việt vì sao đáp án đúng, chỉ rõ dựa vào lời thoại nào) và "supportingQuote" (TRÍCH NGUYÊN VĂN câu/cụm trong lời thoại chứa đáp án — không được để trống).
+Mỗi câu BẮT BUỘC có đủ: "explanation" (giải thích CHI TIẾT tiếng Việt), "supportingQuote" (TRÍCH NGUYÊN VĂN trong lời thoại — không để trống), "promptTranslation" (dịch câu hỏi sang tiếng Việt), "quoteTranslation" (dịch câu trích dẫn). Riêng MCQ thêm "optionsTranslation" (mảng dịch TỪNG lựa chọn, cùng thứ tự & độ dài với options).
 Trả về DUY NHẤT một JSON object đúng cấu trúc:
 {
   "questions": [
-    { "type": "MCQ", "prompt": "<Hán>", "options": ["<Hán>","<Hán>","<Hán>","<Hán>"], "answer": <chỉ số 0-based>, "explanation": "<giải thích chi tiết, tiếng Việt: vì sao đúng + dựa vào đâu>", "supportingQuote": "<trích NGUYÊN VĂN câu trong lời thoại chứa đáp án>" },
-    { "type": "TRUE_FALSE", "prompt": "<Hán>", "answer": <true|false>, "explanation": "<giải thích chi tiết, tiếng Việt>", "supportingQuote": "<trích NGUYÊN VĂN>" }
+    { "type": "MCQ", "prompt": "<Hán>", "promptTranslation": "<dịch câu hỏi, tiếng Việt>", "options": ["<Hán>","<Hán>","<Hán>","<Hán>"], "optionsTranslation": ["<dịch>","<dịch>","<dịch>","<dịch>"], "answer": <chỉ số 0-based>, "explanation": "<giải thích chi tiết, tiếng Việt>", "supportingQuote": "<trích NGUYÊN VĂN>", "quoteTranslation": "<dịch câu trích, tiếng Việt>" },
+    { "type": "TRUE_FALSE", "prompt": "<Hán>", "promptTranslation": "<dịch câu hỏi>", "answer": <true|false>, "explanation": "<giải thích chi tiết, tiếng Việt>", "supportingQuote": "<trích NGUYÊN VĂN>", "quoteTranslation": "<dịch câu trích>" }
   ]
 }`,
     });
@@ -655,6 +878,63 @@ Trả về DUY NHẤT một JSON object đúng cấu trúc:
   return arr
     .map(coerceGeneratedQuestion)
     .filter((q): q is GeneratedReadingQuestion => q !== null);
+}
+
+const TRANSCRIPT_EXPLAIN_SYSTEM = `You are a Chinese-listening teacher for Vietnamese HSK learners. Given ONE Chinese listening tapescript (lời thoại, possibly a dialogue with speaker labels like A:/B:/男:/女:), produce a clear, exam-style explanation IN VIETNAMESE so the learner fully understands what they heard.
+
+Rules:
+- "translation": dịch TOÀN BỘ lời thoại sang tiếng Việt TỰ NHIÊN, theo từng lượt thoại/câu, giữ nhãn người nói (A:/B:/男:/女:) ở đầu dòng nếu có. Mỗi câu/lượt một dòng. KHÔNG chèn chữ Hán, KHÔNG phiên âm — chỉ tiếng Việt.
+- "summary": 1-2 câu tiếng Việt tóm tắt nội dung/tình huống chính của đoạn nghe.
+- "vocab": liệt kê 4-10 từ/cụm QUAN TRỌNG hoặc KHÓ trong lời thoại; mỗi mục { "zh": "<chữ Hán>", "pinyin": "<pinyin có dấu thanh>", "vi": "<nghĩa tiếng Việt>" }. Chọn từ thực sự đáng học ở trình độ đề.
+
+Output: Return ONLY one valid JSON object. No markdown fences, no text before or after.`;
+
+export interface TranscriptExplanation {
+  translation: string;
+  summary: string;
+  vocab: Array<{ zh: string; pinyin: string; vi: string }>;
+}
+
+/**
+ * Cho admin: dịch + giải thích toàn bộ lời thoại của bài nghe (tiếng Việt) để
+ * lưu vào ListeningTest.transcriptExplanation và hiện ở phần chữa bài. Trả về
+ * shape đã chuẩn hoá (không tin shape thô từ AI).
+ */
+export async function generateTranscriptExplanation(params: {
+  transcript: string;
+  hskLevel: string;
+}): Promise<TranscriptExplanation> {
+  const { transcript, hskLevel } = params;
+
+  const parsed = await runGroqJson({
+    models: GRADING_MODELS,
+    system: TRANSCRIPT_EXPLAIN_SYSTEM,
+    maxTokens: 4096,
+    temperature: 0.2,
+    user: `Dịch & giải thích lời thoại bài nghe sau (trình độ ${hskLevel}).
+
+=== LỜI THOẠI (Hán tự) ===
+${transcript}
+
+=== YÊU CẦU ===
+Trả về DUY NHẤT một JSON object đúng cấu trúc:
+{
+  "translation": "<dịch toàn bộ lời thoại sang tiếng Việt, mỗi câu/lượt một dòng>",
+  "summary": "<1-2 câu tóm tắt tiếng Việt>",
+  "vocab": [ { "zh": "<Hán>", "pinyin": "<pinyin>", "vi": "<nghĩa tiếng Việt>" } ]
+}`,
+  });
+
+  const r = isRecord(parsed) ? parsed : {};
+  const vocab = (Array.isArray(r.vocab) ? r.vocab : [])
+    .filter(isRecord)
+    .map((v) => ({ zh: asStr(v.zh).trim(), pinyin: asStr(v.pinyin).trim(), vi: asStr(v.vi).trim() }))
+    .filter((v) => v.zh && v.vi);
+  return {
+    translation: asStr(r.translation).trim(),
+    summary: asStr(r.summary).trim(),
+    vocab,
+  };
 }
 
 export interface WritingGradeResult {

@@ -1,5 +1,5 @@
 "use client";
-import { useMemo, useRef } from "react";
+import { useEffect, useMemo, useRef } from "react";
 import { Languages, Highlighter } from "lucide-react";
 import { PinyinText } from "@/components/learn/pinyin-text";
 import { cn, coverChar, coverGradient, countChineseChars, hskBadgeClass, hskLevelLabel } from "@/lib/utils";
@@ -20,6 +20,9 @@ interface PassagePaneProps {
   onHighlight: (indices: number[], color: string) => void;
   /** Xoá tô của một segment khi chạm vào (chế độ bút). */
   onEraseHighlight: (index: number) => void;
+  /** "Chỗ chứa đáp án" cần tô sáng + cuộn tới (khi học viên bấm xem ở phần câu hỏi).
+   *  `nonce` đổi sau mỗi lần bấm để cuộn lại dù cùng một vị trí. */
+  evidence?: { indices: number[]; nonce: number } | null;
 }
 
 export function PassagePane({
@@ -33,9 +36,19 @@ export function PassagePane({
   onSelectText,
   onHighlight,
   onEraseHighlight,
+  evidence,
 }: PassagePaneProps) {
   const charCount = useMemo(() => countChineseChars(test.passage), [test.passage]);
   const proseRef = useRef<HTMLDivElement>(null);
+  const evidenceSet = useMemo(() => new Set(evidence?.indices ?? []), [evidence]);
+
+  // Khi học viên bấm "xem chỗ chứa đáp án": cuộn tới segment đầu tiên của vùng đó.
+  // Dep theo `evidence` (object mới mỗi lần bấm nhờ nonce) → cuộn lại cả khi cùng vị trí.
+  useEffect(() => {
+    if (!evidence || evidence.indices.length === 0) return;
+    const el = proseRef.current?.querySelector<HTMLElement>(`[data-idx="${evidence.indices[0]}"]`);
+    if (el) el.scrollIntoView({ behavior: "smooth", block: "center" });
+  }, [evidence]);
   // Nuốt đúng 1 "click đuôi" của thao tác kéo tô 1 ký tự (click rơi trên chính ruby đó)
   // để tô xong không bị chính click ấy xoá. Kéo tô nhiều ký tự không sinh click trên ruby
   // (rơi vào phần tử cha) nên không cần — và không được — nuốt, tránh chặn nhầm thao tác xoá sau đó.
@@ -166,6 +179,7 @@ export function PassagePane({
               showPinyin={showPinyin}
               onWordClick={handleWordClick}
               highlights={highlights}
+              evidence={evidenceSet}
             />
           </div>
 

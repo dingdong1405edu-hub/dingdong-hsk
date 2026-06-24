@@ -17,6 +17,8 @@ interface QuestionCardProps {
   showPinyin: boolean;
   isCurrent: boolean;
   onActivate: () => void;
+  /** Tô sáng + cuộn tới chỗ chứa đáp án trong đoạn văn (chỉ dùng khi đã nộp). */
+  onShowEvidence?: () => void;
   cardRef: (el: HTMLDivElement | null) => void;
 }
 
@@ -32,6 +34,7 @@ export function QuestionCard({
   showPinyin,
   isCurrent,
   onActivate,
+  onShowEvidence,
   cardRef,
 }: QuestionCardProps) {
   const ca = q.correctAnswer as { index?: number; value?: boolean; text?: string; accepted?: string[] };
@@ -96,6 +99,11 @@ export function QuestionCard({
         </button>
       </div>
 
+      {/* Câu hỏi dịch (khi chữa bài) */}
+      {submitted && q.promptTranslation && (
+        <p className="mt-1.5 pl-8 text-xs italic text-muted-foreground">{q.promptTranslation}</p>
+      )}
+
       {/* MCQ */}
       {q.type === "MCQ" && (
         <div className="mt-3 space-y-2">
@@ -105,7 +113,7 @@ export function QuestionCard({
               onClick={() => onAnswer(oi)}
               disabled={submitted}
               className={cn(
-                "flex w-full items-center gap-2 rounded-xl border p-2.5 text-left font-chinese text-sm transition-colors",
+                "flex w-full items-start gap-2 rounded-xl border p-2.5 text-left font-chinese text-sm transition-colors",
                 userAnswer === oi
                   ? submitted
                     ? oi === ca.index
@@ -117,10 +125,25 @@ export function QuestionCard({
                     : "hover:border-primary/50",
               )}
             >
-              <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full border text-xs font-bold">
+              <span
+                className={cn(
+                  "mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full border text-xs font-bold",
+                  submitted && oi === ca.index && "border-emerald-500 bg-emerald-500 text-white",
+                )}
+              >
                 {String.fromCharCode(65 + oi)}
               </span>
-              {opt.text}
+              <span className="min-w-0 flex-1">
+                <span className="block leading-snug">{opt.text}</span>
+                {submitted && opt.translation && (
+                  <span className="mt-0.5 block font-sans text-xs font-normal not-italic text-muted-foreground">
+                    {opt.translation}
+                  </span>
+                )}
+              </span>
+              {submitted && oi === ca.index && (
+                <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-emerald-500" />
+              )}
             </button>
           ))}
         </div>
@@ -181,14 +204,36 @@ export function QuestionCard({
         </p>
       )}
 
-      {submitted && q.supportingQuote && (
-        <div className="mt-3 rounded-lg border border-emerald-200 bg-emerald-50 p-2.5 text-xs text-emerald-800">
-          <span className="font-semibold">📍 Đáp án nằm ở đoạn:</span>{" "}
-          <span className="font-chinese">{q.supportingQuote}</span>
-        </div>
-      )}
+      {submitted &&
+        q.supportingQuote &&
+        (onShowEvidence ? (
+          <button
+            type="button"
+            onClick={onShowEvidence}
+            className="mt-3 block w-full rounded-lg border border-emerald-200 bg-emerald-50 p-2.5 text-left text-xs text-emerald-800 transition-colors hover:border-emerald-400 hover:bg-emerald-100"
+          >
+            <span className="font-semibold">📍 Đáp án nằm ở đoạn:</span>{" "}
+            <span className="font-chinese">{q.supportingQuote}</span>
+            {q.quoteTranslation && (
+              <span className="mt-1 block italic text-emerald-700/80">“{q.quoteTranslation}”</span>
+            )}
+            <span className="mt-1 block text-[11px] font-medium text-emerald-600">
+              Bấm để xem &amp; tô sáng trong đoạn văn →
+            </span>
+          </button>
+        ) : (
+          <div className="mt-3 rounded-lg border border-emerald-200 bg-emerald-50 p-2.5 text-xs text-emerald-800">
+            <span className="font-semibold">📍 Đáp án nằm ở đoạn:</span>{" "}
+            <span className="font-chinese">{q.supportingQuote}</span>
+            {q.quoteTranslation && (
+              <span className="mt-1 block italic text-emerald-700/80">“{q.quoteTranslation}”</span>
+            )}
+          </div>
+        ))}
       {submitted && q.explanation && (
-        <div className="mt-2 rounded-lg bg-muted p-2.5 text-xs text-muted-foreground">💡 {q.explanation}</div>
+        <div className="mt-2 rounded-lg border border-amber-200 bg-amber-50 p-2.5 text-xs leading-relaxed text-amber-900">
+          <span className="font-semibold">💡 Giải thích:</span> {q.explanation}
+        </div>
       )}
     </div>
   );

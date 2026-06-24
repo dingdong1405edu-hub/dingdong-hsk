@@ -277,6 +277,23 @@ ruby rt {
 /* Click-to-look-up: the character under the cursor gets a soft marker. */
 .reading-prose ruby:hover { background-color: hsl(88 30% 40% / 0.12); border-radius: 4px; }
 
+/* "Chỗ chứa đáp án" — tô khi học viên bấm xem trích dẫn ở phần câu hỏi.
+   Dùng nền vàng + gạch chân để PHÂN BIỆT rõ với bút highlight (chỉ tô nền). */
+.reading-evidence {
+  background-color: rgba(254, 240, 138, 0.7);
+  box-shadow: inset 0 -0.14em 0 rgba(202, 138, 4, 0.85);
+  border-radius: 3px;
+  animation: evidence-pulse 1.1s ease-out 1;
+}
+.reading-theme-night .reading-evidence {
+  background-color: rgba(202, 138, 4, 0.42);
+  box-shadow: inset 0 -0.14em 0 rgba(250, 204, 21, 0.9);
+}
+@keyframes evidence-pulse {
+  0% { background-color: rgba(250, 204, 21, 0.95); }
+  100% { background-color: rgba(254, 240, 138, 0.7); }
+}
+
 /* Animations */
 .animate-correct {
   animation: correct-pulse 0.3s ease-in-out;

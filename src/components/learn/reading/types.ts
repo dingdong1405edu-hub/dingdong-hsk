@@ -3,6 +3,8 @@ import type { HSKLevel, QuestionType } from "@prisma/client";
 export interface ReadingOption {
   text: string;
   pinyin?: string;
+  /** Bản dịch tiếng Việt của lựa chọn (hiện khi chữa bài). */
+  translation?: string;
 }
 
 export interface ReadingQuestion {
@@ -10,11 +12,15 @@ export interface ReadingQuestion {
   type: QuestionType;
   prompt: string;
   promptPinyin?: string | null;
+  /** Bản dịch tiếng Việt của câu hỏi (hiện khi chữa bài). */
+  promptTranslation?: string | null;
   options?: unknown;
   correctAnswer: unknown;
   explanation?: string | null;
   /** Câu/đoạn trích trong bài chứng minh đáp án (Groq sinh khi admin thêm câu hỏi). */
   supportingQuote?: string | null;
+  /** Bản dịch tiếng Việt của câu trích dẫn. */
+  quoteTranslation?: string | null;
   order: number;
 }
 

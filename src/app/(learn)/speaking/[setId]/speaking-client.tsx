@@ -1,5 +1,6 @@
 "use client";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
+import { motion } from "framer-motion";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -8,6 +9,7 @@ import { Progress } from "@/components/ui/progress";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { hskLevelLabel } from "@/lib/utils";
 import { gradeSpeakingAction } from "@/server/actions/speaking";
+import { BaoBuddy } from "@/components/marketing/bao-buddy";
 import { Mic, Square, Loader2, CheckCircle2 } from "lucide-react";
 import type { HSKLevel } from "@prisma/client";
 
@@ -44,27 +46,41 @@ function AudioRecorder({
 }) {
   const [recording, setRecording] = useState(false);
   const mediaRecorder = useRef<MediaRecorder | null>(null);
+  const streamRef = useRef<MediaStream | null>(null);
   const chunks = useRef<Blob[]>([]);
   const startedAt = useRef(0);
 
   async function start() {
+    let stream: MediaStream;
     try {
-      const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
-      const mr = new MediaRecorder(stream, { mimeType: "audio/webm" });
+      stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+    } catch {
+      toast.error("Không thể truy cập microphone");
+      return;
+    }
+    try {
+      streamRef.current = stream;
+      // Safari/iOS không nhận "audio/webm" và ném lỗi nếu ép → để trình duyệt tự chọn.
+      const mime = typeof MediaRecorder !== "undefined" &&
+        ["audio/webm", "audio/mp4", "audio/ogg"].find((c) => MediaRecorder.isTypeSupported?.(c));
+      const mr = new MediaRecorder(stream, mime ? { mimeType: mime } : undefined);
       chunks.current = [];
       mr.ondataavailable = (e) => chunks.current.push(e.data);
       mr.onstop = () => {
-        const blob = new Blob(chunks.current, { type: "audio/webm" });
+        const blob = new Blob(chunks.current, { type: mr.mimeType || mime || "audio/webm" });
         const durationSec = Math.max(1, Math.round((Date.now() - startedAt.current) / 1000));
-        onRecorded(blob, durationSec);
         stream.getTracks().forEach((t) => t.stop());
+        streamRef.current = null;
+        onRecorded(blob, durationSec);
       };
       startedAt.current = Date.now();
       mr.start();
       mediaRecorder.current = mr;
       setRecording(true);
     } catch {
-      toast.error("Không thể truy cập microphone");
+      stream.getTracks().forEach((t) => t.stop());
+      streamRef.current = null;
+      toast.error("Trình duyệt không hỗ trợ ghi âm. Hãy thử Chrome hoặc Safari mới.");
     }
   }
 
@@ -73,19 +89,37 @@ function AudioRecorder({
     setRecording(false);
   }
 
+  // Rời trang khi đang ghi → dừng mic để không kẹt đèn micro / rò tài nguyên.
+  useEffect(
+    () => () => {
+      streamRef.current?.getTracks().forEach((t) => t.stop());
+    },
+    [],
+  );
+
   return (
-    <Button
-      onClick={recording ? stop : start}
-      disabled={disabled}
-      variant={recording ? "destructive" : "default"}
-      size="sm"
-    >
-      {recording ? (
-        <><Square className="h-4 w-4 mr-2" /> Dừng</>
-      ) : (
-        <><Mic className="h-4 w-4 mr-2" /> Ghi âm</>
+    <div className="relative inline-flex">
+      {recording && (
+        <motion.span
+          className="absolute inset-0 rounded-md bg-rose-500/30"
+          animate={{ scale: [1, 1.25, 1], opacity: [0.5, 0, 0.5] }}
+          transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut" }}
+        />
       )}
-    </Button>
+      <Button
+        onClick={recording ? stop : start}
+        disabled={disabled}
+        variant={recording ? "destructive" : "default"}
+        size="sm"
+        className="relative"
+      >
+        {recording ? (
+          <><Square className="h-4 w-4 mr-2" /> Dừng</>
+        ) : (
+          <><Mic className="h-4 w-4 mr-2" /> Ghi âm</>
+        )}
+      </Button>
+    </div>
   );
 }
 
@@ -131,7 +165,17 @@ async function transcribeAndGrade(params: {
 
 function ScoreBadge({ score }: { score: number }) {
   const color = score >= 80 ? "text-green-700" : score >= 60 ? "text-yellow-700" : "text-red-600";
-  return <span className={`font-bold text-2xl ${color}`}>{score}</span>;
+  return (
+    <motion.span
+      key={score}
+      initial={{ scale: 0.4, opacity: 0 }}
+      animate={{ scale: 1, opacity: 1 }}
+      transition={{ type: "spring", stiffness: 260, damping: 14 }}
+      className={`font-bold text-2xl ${color}`}
+    >
+      {score}
+    </motion.span>
+  );
 }
 
 export function SpeakingClient({ set }: { set: SpeakingSetData; userId: string }) {
@@ -146,6 +190,8 @@ export function SpeakingClient({ set }: { set: SpeakingSetData; userId: string }
   const [part3Results, setPart3Results] = useState<(GradeResult | null)[]>(Array(questions.length).fill(null));
   const [part3Loading, setPart3Loading] = useState<boolean[]>(Array(questions.length).fill(false));
   const [showPinyin, setShowPinyin] = useState(false);
+
+  const anyHigh = [...part1Results, part2Result, ...part3Results].some((r) => r != null && r.score >= 80);
 
   async function gradePart1(idx: number, blob: Blob, durationSec: number) {
     setPart1Loading((l) => { const n = [...l]; n[idx] = true; return n; });
@@ -194,13 +240,24 @@ export function SpeakingClient({ set }: { set: SpeakingSetData; userId: string }
 
   return (
     <div className="max-w-3xl mx-auto space-y-6">
-      <div className="flex items-center justify-between">
-        <h1 className="text-xl font-bold">Luyện nói HSKK</h1>
-        <div className="flex items-center gap-2">
-          <Badge variant="outline">{hskLevelLabel(set.hskLevel)}</Badge>
-          <Button size="sm" variant="outline" onClick={() => setShowPinyin(!showPinyin)}>
-            {showPinyin ? "Ẩn" : "Hiện"} pinyin
-          </Button>
+      <div className="relative overflow-hidden rounded-2xl border bg-gradient-to-br from-indigo-50 to-white p-5">
+        <div className="flex items-center justify-between gap-3">
+          <div className="flex items-center gap-3">
+            <BaoBuddy size={60} pose={anyHigh ? "cheer" : "idle"} className="shrink-0" />
+            <div>
+              <h1 className="text-xl font-extrabold">Luyện nói HSKK</h1>
+              <p className="mt-0.5 text-sm text-muted-foreground">Ghi âm · AI chấm phát âm, thanh điệu, lưu loát</p>
+            </div>
+          </div>
+          <div className="flex shrink-0 flex-col items-end gap-2">
+            <Badge variant="outline">{hskLevelLabel(set.hskLevel)}</Badge>
+            <Button size="sm" variant="outline" onClick={() => setShowPinyin(!showPinyin)}>
+              {showPinyin ? "Ẩn" : "Hiện"} pinyin
+            </Button>
+          </div>
+        </div>
+        <div className="pointer-events-none absolute -right-4 -top-6 select-none font-chinese text-[110px] leading-none text-black/[0.04]">
+          说
         </div>
       </div>
 

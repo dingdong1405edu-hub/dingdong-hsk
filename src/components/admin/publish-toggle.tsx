@@ -18,6 +18,7 @@ export type PublishModel =
   | "listening"
   | "writing"
   | "speaking"
+  | "speakingTopic"
   | "mockExam";
 
 /**

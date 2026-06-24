@@ -1,49 +1,60 @@
 "use client";
 import { useId, useRef, useState } from "react";
-import { Loader2, Trash2, Link2, UploadCloud, Sparkles, Music2, Replace, FileAudio } from "lucide-react";
+import { Loader2, Trash2, Link2, UploadCloud, Sparkles, Music2, Replace, FileAudio, Languages } from "lucide-react";
 import { toast } from "sonner";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { cn, countChineseChars } from "@/lib/utils";
-import { transcribeListeningAudioAction } from "@/server/actions/admin";
+import {
+  transcribeListeningAudioAction,
+  generateTranscriptExplanationAction,
+} from "@/server/actions/admin";
 
 interface ListeningAudioFieldsProps {
   /** Hidden input name for the resulting audio URL. */
   audioName?: string;
-  /** Hidden/textarea input name for the transcript. */
+  /** Textarea input name for the transcript. */
   transcriptName?: string;
+  /** Textarea input name for the Vietnamese transcript explanation. */
+  transcriptExplanationName?: string;
   defaultAudioUrl?: string | null;
   defaultTranscript?: string | null;
+  defaultTranscriptExplanation?: string | null;
+  /** Test id — required for the AI "dịch & giải thích" button (edit page only). */
+  listeningId?: string;
   /** Unique suffix so two instances (create + edit) don't collide on element ids. */
   idSuffix?: string;
 }
 
 /**
  * Admin audio + transcript editor for a listening test. One client component so
- * both AI directions can read/write the live transcript value. Submits two
- * fields with the surrounding server-action <form>: `audioUrl` (hidden) +
- * `transcript`.
+ * the AI helpers can read/write the live transcript value. Submits three fields
+ * with the surrounding server-action <form>: `audioUrl` (hidden) + `transcript`
+ * + `transcriptExplanation`.
  *
- *  - Upload an MP3/WAV/OGG/M4A file → POST /api/admin/audio (file).
- *  - Audio → transcript: Deepgram transcribes the uploaded audio to Mandarin
- *    text (transcribeListeningAudioAction).
- *  - Transcript → MP3: Google Cloud TTS synthesizes a Mandarin clip → POST
- *    /api/admin/audio (transcript).
+ *  - Upload an MP3/WAV/OGG/M4A file → POST /api/admin/audio (file). (Admin tự tải
+ *    audio thật — KHÔNG còn tạo MP3 bằng AI vì không có giọng TTS tiếng Trung.)
+ *  - Audio → transcript: Deepgram transcribes the audio to Mandarin text.
+ *  - Transcript → dịch & giải thích (tiếng Việt) via Groq, hiện ở phần chữa bài.
  *  - Or paste a direct URL (fallback for durable/CDN storage).
  */
 export function ListeningAudioFields({
   audioName = "audioUrl",
   transcriptName = "transcript",
+  transcriptExplanationName = "transcriptExplanation",
   defaultAudioUrl,
   defaultTranscript,
+  defaultTranscriptExplanation,
+  listeningId,
   idSuffix = "",
 }: ListeningAudioFieldsProps) {
   const [audioUrl, setAudioUrl] = useState(defaultAudioUrl ?? "");
   const [transcript, setTranscript] = useState(defaultTranscript ?? "");
+  const [explanation, setExplanation] = useState(defaultTranscriptExplanation ?? "");
   const [uploading, setUploading] = useState(false);
-  const [generating, setGenerating] = useState(false);
   const [transcribing, setTranscribing] = useState(false);
+  const [explaining, setExplaining] = useState(false);
   const [dragging, setDragging] = useState(false);
   const [showUrl, setShowUrl] = useState(false);
   const fileRef = useRef<HTMLInputElement>(null);
@@ -51,7 +62,7 @@ export function ListeningAudioFields({
   const fieldId = `${useId()}${idSuffix}`;
 
   const charCount = countChineseChars(transcript);
-  const busy = uploading || generating || transcribing;
+  const busy = uploading || transcribing || explaining;
 
   async function uploadFile(file: File) {
     if (!file.type.startsWith("audio/") && !/\.(mp3|wav|ogg|m4a)$/i.test(file.name)) {
@@ -81,30 +92,6 @@ export function ListeningAudioFields({
     }
   }
 
-  async function generateFromTranscript() {
-    if (!transcript.trim()) {
-      toast.error("Hãy dán transcript trước khi tạo MP3");
-      return;
-    }
-    setGenerating(true);
-    try {
-      const fd = new FormData();
-      fd.append("transcript", transcript);
-      const res = await fetch("/api/admin/audio", { method: "POST", body: fd });
-      const data = (await res.json()) as { ok: boolean; url?: string; error?: string };
-      if (data.ok && data.url) {
-        setAudioUrl(data.url);
-        toast.success("Đã tạo MP3 từ transcript");
-      } else {
-        toast.error(data.error ?? "Tạo MP3 thất bại");
-      }
-    } catch {
-      toast.error("Lỗi kết nối khi tạo MP3");
-    } finally {
-      setGenerating(false);
-    }
-  }
-
   async function generateTranscriptFromAudio() {
     if (!audioUrl.trim()) {
       toast.error("Hãy tải audio lên (hoặc dán liên kết) trước khi tạo transcript");
@@ -123,6 +110,31 @@ export function ListeningAudioFields({
       toast.error("Lỗi khi tạo transcript từ audio");
     } finally {
       setTranscribing(false);
+    }
+  }
+
+  async function explainTranscript() {
+    if (!listeningId) {
+      toast.error("Hãy lưu bài nghe trước, rồi mới dịch lời thoại.");
+      return;
+    }
+    if (!transcript.trim()) {
+      toast.error("Hãy có lời thoại (transcript) trước khi dịch.");
+      return;
+    }
+    setExplaining(true);
+    try {
+      const res = await generateTranscriptExplanationAction(listeningId);
+      if (res.ok) {
+        setExplanation(res.text);
+        toast.success("Đã dịch & giải thích lời thoại (Groq)");
+      } else {
+        toast.error(res.error);
+      }
+    } catch {
+      toast.error("Lỗi khi dịch lời thoại");
+    } finally {
+      setExplaining(false);
     }
   }
 
@@ -237,19 +249,8 @@ export function ListeningAudioFields({
           }}
         />
 
-        {/* Generate + URL fallback */}
+        {/* URL fallback */}
         <div className="flex flex-wrap items-center gap-3 pt-0.5">
-          <button
-            type="button"
-            onClick={generateFromTranscript}
-            disabled={busy || !transcript.trim()}
-            className={cn(
-              "inline-flex items-center gap-1.5 rounded-lg border border-teal-300 bg-teal-50 px-3 py-1.5 text-sm font-semibold text-teal-700 transition hover:bg-teal-100 disabled:cursor-not-allowed disabled:opacity-50",
-            )}
-          >
-            {generating ? <Loader2 className="h-4 w-4 animate-spin" /> : <Sparkles className="h-4 w-4" />}
-            {generating ? "Đang tạo MP3…" : "Tạo MP3 từ transcript (Google TTS)"}
-          </button>
           <button
             type="button"
             onClick={() => setShowUrl((v) => !v)}
@@ -262,14 +263,45 @@ export function ListeningAudioFields({
           <Input
             value={audioUrl}
             onChange={(e) => setAudioUrl(e.target.value)}
-            placeholder="https://... hoặc /audio/..."
+            placeholder="https://... hoặc /api/files/..."
             className="text-sm"
           />
         )}
         <p className="text-xs text-muted-foreground">
-          Tạo MP3 dùng <span className="font-medium">Google Cloud TTS</span> (giọng Quan thoại cmn-CN). Tạo transcript
-          dùng <span className="font-medium">Deepgram</span> (dự phòng Groq Whisper). Nếu bài không có MP3, người học vẫn
-          nghe được nhờ giọng đọc tiếng Trung của trình duyệt.
+          Tự tải file MP3 thật lên (giọng người/thu âm). Có thể bấm{" "}
+          <span className="font-medium">Tạo transcript từ audio (Deepgram)</span> để máy tự ghi lời thoại. Nếu bài chưa
+          có MP3, người học vẫn nghe được nhờ giọng đọc tiếng Trung của trình duyệt.
+        </p>
+      </div>
+
+      {/* Transcript explanation (Vietnamese translation + notes) */}
+      <div className="space-y-1">
+        <div className="flex items-center justify-between">
+          <Label htmlFor={`${fieldId}-explain`}>Dịch &amp; giải thích lời thoại (tiếng Việt)</Label>
+          <button
+            type="button"
+            onClick={explainTranscript}
+            disabled={busy || !listeningId || !transcript.trim()}
+            title={!listeningId ? "Lưu bài nghe trước đã" : !transcript.trim() ? "Cần có lời thoại trước" : undefined}
+            className={cn(
+              "inline-flex items-center gap-1.5 rounded-lg border border-violet-300 bg-violet-50 px-3 py-1.5 text-sm font-semibold text-violet-700 transition hover:bg-violet-100 disabled:cursor-not-allowed disabled:opacity-50",
+            )}
+          >
+            {explaining ? <Loader2 className="h-4 w-4 animate-spin" /> : <Sparkles className="h-4 w-4" />}
+            {explaining ? "Đang dịch…" : "AI dịch & giải thích"}
+          </button>
+        </div>
+        <Textarea
+          id={`${fieldId}-explain`}
+          name={transcriptExplanationName}
+          value={explanation}
+          onChange={(e) => setExplanation(e.target.value)}
+          className="min-h-28"
+          placeholder={"Tóm tắt + bản dịch tiếng Việt + từ vựng. Bấm “AI dịch & giải thích” để tạo tự động rồi chỉnh lại."}
+        />
+        <p className="flex items-center gap-1.5 text-xs text-muted-foreground">
+          <Languages className="h-3.5 w-3.5" /> Hiện ở phần chữa bài để học viên hiểu kỹ nội dung nghe.
+          {!listeningId && " (Lưu bài nghe xong mới dùng được nút AI.)"}
         </p>
       </div>
     </div>

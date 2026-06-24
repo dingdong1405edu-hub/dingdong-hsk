@@ -1,6 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
 import { requireAdmin } from "@/lib/admin-guard";
-import { synthesizeSpeech, isTtsConfigured } from "@/lib/google-tts";
 import { storeUpload } from "@/lib/uploads";
 
 export const runtime = "nodejs";
@@ -27,14 +26,15 @@ function sniffAudio(buf: Buffer): string | null {
 }
 
 /**
- * Admin-only listening audio endpoint. Two modes in one multipart POST:
- *  - `file`        → upload an existing audio file (mp3/wav/ogg/m4a).
- *  - `transcript`  → synthesize a Mandarin MP3 from text via Google Cloud TTS.
- * Returns `{ ok, url }` where url is `/api/files/<id>` (served from Postgres).
+ * Admin-only listening audio upload. One multipart POST with `file` → lưu một
+ * tệp audio có sẵn (mp3/wav/ogg/m4a). Trả `{ ok, url }` với url là
+ * `/api/files/<id>` (phục vụ từ Postgres).
  *
  * Lý do lưu DB thay vì public/: filesystem trên Railway là ephemeral nên file
  * ghi vào public/ biến mất sau mỗi lần deploy/restart. Lưu DB thì bền vĩnh viễn.
  * Form admin vẫn nhận được URL dán tay (https/CDN) làm phương án thay thế.
+ *
+ * (Không còn tạo MP3 bằng AI — admin tự tải audio thật lên; xem CLAUDE.md §2.)
  */
 export async function POST(req: NextRequest) {
   try {
@@ -51,9 +51,8 @@ export async function POST(req: NextRequest) {
   }
 
   const file = form.get("file");
-  const transcript = form.get("transcript");
 
-  // ----- Mode 1: file upload -----
+  // ----- File upload -----
   if (file instanceof File && file.size > 0) {
     if (file.size > MAX_BYTES) {
       return NextResponse.json({ ok: false, error: "Tệp âm thanh vượt quá 20MB" }, { status: 400 });
@@ -75,27 +74,8 @@ export async function POST(req: NextRequest) {
     }
   }
 
-  // ----- Mode 2: generate Mandarin MP3 from transcript (Google Cloud TTS) -----
-  if (typeof transcript === "string" && transcript.trim()) {
-    if (!isTtsConfigured()) {
-      return NextResponse.json(
-        { ok: false, error: "Chưa cấu hình Google TTS (thiếu GOOGLE_TTS_API_KEY) nên không thể tạo MP3." },
-        { status: 503 },
-      );
-    }
-    try {
-      const { buffer } = await synthesizeSpeech(transcript);
-      const url = await storeUpload(buffer, "mp3", "audio");
-      return NextResponse.json({ ok: true, url });
-    } catch (e) {
-      const msg = e instanceof Error ? e.message : "Tạo MP3 thất bại";
-      console.error("Audio generate error:", e);
-      return NextResponse.json({ ok: false, error: msg }, { status: 502 });
-    }
-  }
-
   return NextResponse.json(
-    { ok: false, error: "Thiếu tệp âm thanh hoặc transcript để tạo." },
+    { ok: false, error: "Thiếu tệp âm thanh để tải lên." },
     { status: 400 },
   );
 }
