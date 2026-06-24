@@ -1545,6 +1545,7 @@ function topicDataFromForm(fd: FormData) {
     questionZh: (fd.get("questionZh") as string)?.trim() || "",
     questionPinyin: optStr(fd, "questionPinyin"),
     questionVi: optStr(fd, "questionVi"),
+    outline: optStr(fd, "outline"),
     audioUrl: optStr(fd, "audioUrl"),
     transcript: optStr(fd, "transcript"),
     hints: parseTopicHints(fd),

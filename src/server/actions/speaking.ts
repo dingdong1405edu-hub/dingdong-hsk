@@ -106,6 +106,7 @@ export async function gradeSpeakingTopicAction(input: z.infer<typeof topicSchema
       topic: topic.topic,
       questionZh: topic.questionZh,
       referenceTranscript: topic.transcript,
+      outline: topic.outline,
       hskLevel: topic.hskLevel,
       minChars: topic.minChars,
       durationSec: durationSec ?? null,

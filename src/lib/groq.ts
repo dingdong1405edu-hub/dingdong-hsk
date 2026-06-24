@@ -545,11 +545,12 @@ export async function gradeSpeakingTopic(params: {
   topic: string;
   questionZh: string;
   referenceTranscript: string | null;
+  outline: string | null;
   hskLevel: string;
   minChars: number;
   durationSec: number | null;
 }): Promise<SpeakingTopicGradeResult> {
-  const { transcript, topic, questionZh, referenceTranscript, hskLevel, minChars, durationSec } = params;
+  const { transcript, topic, questionZh, referenceTranscript, outline, hskLevel, minChars, durationSec } = params;
 
   const charCount = countChineseChars(transcript);
   const wpm =
@@ -561,12 +562,17 @@ export async function gradeSpeakingTopic(params: {
   const refBlock = referenceTranscript?.trim()
     ? `\n=== LỜI GIÁM KHẢO (transcript MP3, chỉ để hiểu câu hỏi) ===\n${referenceTranscript.trim()}`
     : "";
+  // Dàn ý gợi ý (nếu admin nhập): đưa vào để chấm "ct" (nội dung) thưởng điểm khi bài
+  // bao quát các ý — KHÔNG ép học viên phải theo đúng từng ý.
+  const outlineBlock = outline?.trim()
+    ? `\n=== DÀN Ý GỢI Ý (cho điểm "ct"/"co" cao hơn nếu bài bao quát được các ý này; đây chỉ là gợi ý, không bắt buộc) ===\n${outline.trim()}`
+    : "";
 
   const userContent = `HSK level: ${hskLevel}
 Chủ đề: ${topic || "(không ghi)"}
 Câu hỏi của giám khảo: ${questionZh}
 Số chữ Hán học viên nói (đã đếm sẵn — DÙNG SỐ NÀY): ${charCount} (gợi ý tối thiểu: ${minChars})${tooShortNote}
-Tốc độ nói: ${wpm > 0 ? `${wpm} chữ/phút (thời lượng ${durationSec}s)` : "không rõ thời lượng"}${refBlock}
+Tốc độ nói: ${wpm > 0 ? `${wpm} chữ/phút (thời lượng ${durationSec}s)` : "không rõ thời lượng"}${refBlock}${outlineBlock}
 
 === TRANSCRIPT TRẢ LỜI CỦA HỌC VIÊN (chấm bài này; trích "o" ĐÚNG NGUYÊN VĂN từ đây) ===
 ${transcript}

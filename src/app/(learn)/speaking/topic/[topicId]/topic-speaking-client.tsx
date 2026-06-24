@@ -25,6 +25,7 @@ import {
   AlertCircle,
   Quote,
   Gauge,
+  ListTree,
 } from "lucide-react";
 import type { HSKLevel } from "@prisma/client";
 
@@ -36,6 +37,7 @@ export interface TopicData {
   questionZh: string;
   questionPinyin: string | null;
   questionVi: string | null;
+  outline: string | null;
   audioUrl: string | null;
   transcript: string | null;
   hints: TopicHint[];
@@ -344,6 +346,7 @@ export function TopicSpeakingClient({ topic }: { topic: TopicData }) {
   const [phase, setPhase] = useState<Phase>("idle");
   const [result, setResult] = useState<SpeakingTopicGradeResult | null>(null);
   const [showHints, setShowHints] = useState(false);
+  const [showOutline, setShowOutline] = useState(false);
   const [showPinyin, setShowPinyin] = useState(false);
   const [showVi, setShowVi] = useState(false);
   const [prepLeft, setPrepLeft] = useState(0);
@@ -445,6 +448,34 @@ export function TopicSpeakingClient({ topic }: { topic: TopicData }) {
           <div className="font-pinyin mt-1 text-muted-foreground">{topic.questionPinyin}</div>
         )}
         {showVi && topic.questionVi && <div className="mt-2 text-sm text-muted-foreground">{topic.questionVi}</div>}
+
+        {/* Outline (gợi ý dàn ý bài nói) */}
+        {topic.outline?.trim() && (
+          <div className="mt-4">
+            <button
+              type="button"
+              onClick={() => setShowOutline((v) => !v)}
+              className="inline-flex items-center gap-1.5 rounded-lg border border-emerald-300 bg-emerald-50 px-3 py-1.5 text-sm font-semibold text-emerald-700 transition hover:bg-emerald-100"
+            >
+              <ListTree className="h-4 w-4" /> {showOutline ? "Ẩn dàn ý" : "Gợi ý dàn ý"}
+            </button>
+            <AnimatePresence initial={false}>
+              {showOutline && (
+                <motion.div
+                  initial={{ height: 0, opacity: 0 }}
+                  animate={{ height: "auto", opacity: 1 }}
+                  exit={{ height: 0, opacity: 0 }}
+                  transition={{ duration: 0.25 }}
+                  className="overflow-hidden"
+                >
+                  <div className="mt-3 whitespace-pre-line rounded-xl border border-emerald-200 bg-emerald-50/50 p-3 text-sm text-emerald-900">
+                    {topic.outline}
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+        )}
 
         {/* Hints */}
         {topic.hints.length > 0 && (

@@ -477,6 +477,9 @@ model SpeakingTopic {
   questionZh         String   @db.Text // câu giám khảo hỏi (tiếng Trung)
   questionPinyin     String?  @db.Text
   questionVi         String?  @db.Text // dịch tiếng Việt câu hỏi
+  // Gợi ý dàn ý bài nói (mỗi ý một dòng) — học viên bấm "Gợi ý dàn ý" mới hiện;
+  // cũng được đưa vào prompt chấm AI để thưởng điểm khi bài bao quát đủ ý.
+  outline            String?  @db.Text
   audioUrl           String? // MP3 giám khảo hỏi (admin tự tải lên)
   transcript         String?  @db.Text // transcript của MP3 (admin nhập / Deepgram)
   hints              Json     @default("[]") // [{ text, pinyin?, vi? }]

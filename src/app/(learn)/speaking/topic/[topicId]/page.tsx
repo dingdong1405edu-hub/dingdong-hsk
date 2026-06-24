@@ -36,6 +36,7 @@ export default async function SpeakingTopicPage({ params }: Props) {
     questionZh: t.questionZh,
     questionPinyin: t.questionPinyin,
     questionVi: t.questionVi,
+    outline: t.outline,
     audioUrl: t.audioUrl,
     transcript: t.transcript,
     hints: asHints(t.hints),
