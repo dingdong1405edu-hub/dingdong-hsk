@@ -19,12 +19,26 @@ import { db } from "@/lib/db";
  * makes the DB the single source of truth for authorization.
  */
 export async function requireAdmin() {
+  const { session } = await requireAdminActor();
+  return session;
+}
+
+/**
+ * Như `requireAdmin()` nhưng trả về kèm `actor` (id + email + tên) của quản trị
+ * viên đang thao tác, dùng để ghi nhật ký (audit log — src/lib/audit.ts).
+ * email/tên được đọc TƯƠI từ DB cùng lượt kiểm tra role (không thêm truy vấn),
+ * nên luôn chính xác kể cả khi JWT chưa cập nhật.
+ */
+export async function requireAdminActor() {
   const session = await auth();
   if (!session?.user?.id) throw new Error("Unauthorized");
   const user = await db.user.findUnique({
     where: { id: session.user.id },
-    select: { role: true },
+    select: { role: true, email: true, name: true },
   });
   if (user?.role !== "ADMIN") throw new Error("Unauthorized");
-  return session;
+  return {
+    session,
+    actor: { id: session.user.id, email: user.email, name: user.name },
+  };
 }

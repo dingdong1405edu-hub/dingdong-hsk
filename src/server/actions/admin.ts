@@ -6,7 +6,8 @@ import { revalidatePath } from "next/cache";
 import { z } from "zod";
 import { HSKLevel, Prisma, QuestionType, Role, SubscriptionType, WritingTaskType } from "@prisma/client";
 import { getPlan } from "@/lib/payment-plans";
-import { requireAdmin } from "@/lib/admin-guard";
+import { requireAdmin, requireAdminActor } from "@/lib/admin-guard";
+import { logAudit, entityLabel } from "@/lib/audit";
 import { parseGrammarContent } from "@/lib/grammar";
 import {
   generateReadingQuestions,
@@ -21,16 +22,31 @@ export async function adminUpdateUserAction(params: {
   action: "ban" | "unban" | "resetHearts";
   hskLevel?: string;
 }) {
-  await requireAdmin();
+  const { actor } = await requireAdminActor();
   const { userId, action } = params;
 
+  const before = await db.user.findUnique({ where: { id: userId } });
+
+  let after: typeof before = before;
   if (action === "ban") {
-    await db.user.update({ where: { id: userId }, data: { banned: true } });
+    after = await db.user.update({ where: { id: userId }, data: { banned: true } });
   } else if (action === "unban") {
-    await db.user.update({ where: { id: userId }, data: { banned: false } });
+    after = await db.user.update({ where: { id: userId }, data: { banned: false } });
   } else if (action === "resetHearts") {
-    await db.user.update({ where: { id: userId }, data: { hearts: 5 } });
+    after = await db.user.update({ where: { id: userId }, data: { hearts: 5 } });
   }
+
+  const actionLabel =
+    action === "ban" ? "Khóa" : action === "unban" ? "Mở khóa" : "Đặt lại tim cho";
+  await logAudit({
+    actor,
+    action: "UPDATE",
+    entity: "User",
+    entityId: userId,
+    summary: `${actionLabel} người dùng ${after?.email ?? userId}`,
+    before,
+    after,
+  });
 
   revalidatePath("/admin/users");
   return { ok: true };
@@ -48,7 +64,7 @@ export async function adminGrantSubscriptionAction(input: {
   email: string;
   planId: string;
 }): Promise<{ ok: boolean; error?: string }> {
-  await requireAdmin();
+  const { actor } = await requireAdminActor();
   const parsed = grantSubSchema.safeParse(input);
   if (!parsed.success) {
     return { ok: false, error: parsed.error.issues[0]?.message ?? "Dữ liệu không hợp lệ." };
@@ -66,7 +82,7 @@ export async function adminGrantSubscriptionAction(input: {
   const start = new Date();
   const expiresAt = new Date(start.getTime() + plan.durationDays * 24 * 60 * 60 * 1000);
 
-  await db.$transaction(
+  const created = await db.$transaction(
     plan.grants.map((g) =>
       db.subscription.create({
         data: {
@@ -79,6 +95,15 @@ export async function adminGrantSubscriptionAction(input: {
       })
     )
   );
+
+  await logAudit({
+    actor,
+    action: "CREATE",
+    entity: "Subscription",
+    entityId: created[0]?.id ?? null,
+    summary: `Cấp gói ${plan.name} cho ${parsed.data.email}`,
+    after: { count: created.length, items: created },
+  });
 
   revalidatePath("/admin/subscriptions");
   return { ok: true };
@@ -100,9 +125,9 @@ const readingSchema = z.object({
 });
 
 export async function createReadingAction(fd: FormData) {
-  await requireAdmin();
+  const { actor } = await requireAdminActor();
   const data = readingSchema.parse(Object.fromEntries(fd));
-  await db.readingTest.create({
+  const created = await db.readingTest.create({
     data: {
       ...data,
       // Empty hidden-input / pasted blanks normalise to null (not "") so
@@ -112,6 +137,14 @@ export async function createReadingAction(fd: FormData) {
       published: false, // bản nháp: admin xuất bản sau khi kiểm lại
     },
   });
+  await logAudit({
+    actor,
+    action: "CREATE",
+    entity: "ReadingTest",
+    entityId: created.id,
+    summary: `Tạo ${entityLabel("ReadingTest")} «${created.title}»`,
+    after: created,
+  });
   revalidatePath("/admin/reading");
   return { ok: true };
 }
@@ -119,9 +152,10 @@ export async function createReadingAction(fd: FormData) {
 const updateReadingSchema = readingSchema.extend({ id: z.string().min(1) });
 
 export async function updateReadingAction(fd: FormData) {
-  await requireAdmin();
+  const { actor } = await requireAdminActor();
   const { id, ...rest } = updateReadingSchema.parse(Object.fromEntries(fd));
-  await db.readingTest.update({
+  const before = await db.readingTest.findUnique({ where: { id } });
+  const after = await db.readingTest.update({
     where: { id },
     data: {
       title: rest.title,
@@ -134,14 +168,31 @@ export async function updateReadingAction(fd: FormData) {
       imageUrl: rest.imageUrl?.trim() ? rest.imageUrl : null,
     },
   });
+  await logAudit({
+    actor,
+    action: "UPDATE",
+    entity: "ReadingTest",
+    entityId: id,
+    summary: `Sửa ${entityLabel("ReadingTest")} «${after.title}»`,
+    before,
+    after,
+  });
   revalidatePath(`/admin/reading/${id}`);
   revalidatePath("/admin/reading");
   return { ok: true };
 }
 
 export async function deleteReadingAction(id: string) {
-  await requireAdmin();
-  await db.readingTest.delete({ where: { id } });
+  const { actor } = await requireAdminActor();
+  const deleted = await db.readingTest.delete({ where: { id } });
+  await logAudit({
+    actor,
+    action: "DELETE",
+    entity: "ReadingTest",
+    entityId: id,
+    summary: `Xóa ${entityLabel("ReadingTest")} «${deleted.title}»`,
+    before: deleted,
+  });
   revalidatePath("/admin/reading");
   return { ok: true };
 }
@@ -195,7 +246,7 @@ function mcqOptions(options: string[], translations?: string[]) {
 }
 
 export async function bulkCreateReadingQuestionsAction(readingId: string, jsonText: string) {
-  await requireAdmin();
+  const { actor } = await requireAdminActor();
   if (!readingId) return { ok: false as const, error: "Thiếu mã bài đọc." };
 
   let raw: unknown;
@@ -226,8 +277,9 @@ export async function bulkCreateReadingQuestionsAction(readingId: string, jsonTe
 
   const startOrder = (await db.question.count({ where: { readingId } })) + 1;
 
+  let created: Awaited<ReturnType<typeof db.question.create>>[];
   try {
-    await db.$transaction(
+    created = await db.$transaction(
       questions.map((q, i) => {
         const base = {
           prompt: q.prompt,
@@ -257,6 +309,15 @@ export async function bulkCreateReadingQuestionsAction(readingId: string, jsonTe
     console.error("bulkCreateReadingQuestions error:", e);
     return { ok: false as const, error: "Lỗi lưu câu hỏi vào cơ sở dữ liệu." };
   }
+
+  await logAudit({
+    actor,
+    action: "CREATE",
+    entity: "Question",
+    entityId: readingId,
+    summary: `Nhập ${created.length} ${entityLabel("Question")} cho bài đọc`,
+    after: { count: created.length, items: created.slice(0, 20) },
+  });
 
   revalidatePath(`/admin/reading/${readingId}`);
   return { ok: true as const, count: questions.length };
@@ -319,10 +380,18 @@ function listeningData(input: z.infer<typeof listeningSchema>) {
 export async function createListeningAction(
   fd: FormData,
 ): Promise<{ ok: boolean; id?: string; error?: string }> {
-  await requireAdmin();
+  const { actor } = await requireAdminActor();
   try {
     const data = listeningData(listeningSchema.parse(Object.fromEntries(fd)));
     const created = await db.listeningTest.create({ data: { ...data, published: false } }); // bản nháp
+    await logAudit({
+      actor,
+      action: "CREATE",
+      entity: "ListeningTest",
+      entityId: created.id,
+      summary: `Tạo ${entityLabel("ListeningTest")} «${created.title}»`,
+      after: created,
+    });
     revalidatePath("/admin/listening");
     return { ok: true, id: created.id };
   } catch (e) {
@@ -331,12 +400,22 @@ export async function createListeningAction(
 }
 
 export async function updateListeningAction(fd: FormData): Promise<{ ok: boolean; error?: string }> {
-  await requireAdmin();
+  const { actor } = await requireAdminActor();
   try {
     const id = (fd.get("id") as string) || "";
     if (!id) return { ok: false, error: "Thiếu id bài nghe." };
     const data = listeningData(listeningSchema.parse(Object.fromEntries(fd)));
-    await db.listeningTest.update({ where: { id }, data });
+    const before = await db.listeningTest.findUnique({ where: { id } });
+    const after = await db.listeningTest.update({ where: { id }, data });
+    await logAudit({
+      actor,
+      action: "UPDATE",
+      entity: "ListeningTest",
+      entityId: id,
+      summary: `Sửa ${entityLabel("ListeningTest")} «${after.title}»`,
+      before,
+      after,
+    });
     revalidatePath(`/admin/listening/${id}`);
     revalidatePath("/admin/listening");
     return { ok: true };
@@ -346,8 +425,16 @@ export async function updateListeningAction(fd: FormData): Promise<{ ok: boolean
 }
 
 export async function deleteListeningAction(id: string) {
-  await requireAdmin();
-  await db.listeningTest.delete({ where: { id } });
+  const { actor } = await requireAdminActor();
+  const deleted = await db.listeningTest.delete({ where: { id } });
+  await logAudit({
+    actor,
+    action: "DELETE",
+    entity: "ListeningTest",
+    entityId: id,
+    summary: `Xóa ${entityLabel("ListeningTest")} «${deleted.title}»`,
+    before: deleted,
+  });
   revalidatePath("/admin/listening");
   return { ok: true };
 }
@@ -355,7 +442,7 @@ export async function deleteListeningAction(id: string) {
 // Như bulkCreateReadingQuestionsAction nhưng gắn câu hỏi vào bài NGHE (listeningId).
 // Dùng chung schema/validate với phần đọc — cấu trúc câu hỏi giống hệt.
 export async function bulkCreateListeningQuestionsAction(listeningId: string, jsonText: string) {
-  await requireAdmin();
+  const { actor } = await requireAdminActor();
   if (!listeningId) return { ok: false as const, error: "Thiếu mã bài nghe." };
 
   let raw: unknown;
@@ -385,8 +472,9 @@ export async function bulkCreateListeningQuestionsAction(listeningId: string, js
 
   const startOrder = (await db.question.count({ where: { listeningId } })) + 1;
 
+  let created: Awaited<ReturnType<typeof db.question.create>>[];
   try {
-    await db.$transaction(
+    created = await db.$transaction(
       questions.map((q, i) => {
         const base = {
           prompt: q.prompt,
@@ -416,6 +504,15 @@ export async function bulkCreateListeningQuestionsAction(listeningId: string, js
     console.error("bulkCreateListeningQuestions error:", e);
     return { ok: false as const, error: "Lỗi lưu câu hỏi vào cơ sở dữ liệu." };
   }
+
+  await logAudit({
+    actor,
+    action: "CREATE",
+    entity: "Question",
+    entityId: listeningId,
+    summary: `Nhập ${created.length} ${entityLabel("Question")} cho bài nghe`,
+    after: { count: created.length, items: created.slice(0, 20) },
+  });
 
   revalidatePath(`/admin/listening/${listeningId}`);
   return { ok: true as const, count: questions.length };
@@ -608,8 +705,8 @@ export async function transcribeListeningAudioAction(audioUrl: string) {
 
 // ===== Writing =====
 export async function createWritingAction(fd: FormData) {
-  await requireAdmin();
-  await db.writingTask.create({
+  const { actor } = await requireAdminActor();
+  const created = await db.writingTask.create({
     data: {
       taskType: fd.get("taskType") as "FREE" | "GUIDED" | "PICTURE_DESCRIPTION",
       prompt: fd.get("prompt") as string,
@@ -621,28 +718,52 @@ export async function createWritingAction(fd: FormData) {
       published: false, // bản nháp: admin xuất bản sau khi kiểm lại
     },
   });
+  await logAudit({
+    actor,
+    action: "CREATE",
+    entity: "WritingTask",
+    entityId: created.id,
+    summary: `Tạo ${entityLabel("WritingTask")} «${created.prompt.slice(0, 40)}»`,
+    after: created,
+  });
   revalidatePath("/admin/writing");
   return { ok: true };
 }
 
 export async function deleteWritingAction(id: string) {
-  await requireAdmin();
-  await db.writingTask.delete({ where: { id } });
+  const { actor } = await requireAdminActor();
+  const deleted = await db.writingTask.delete({ where: { id } });
+  await logAudit({
+    actor,
+    action: "DELETE",
+    entity: "WritingTask",
+    entityId: id,
+    summary: `Xóa ${entityLabel("WritingTask")} «${deleted.prompt.slice(0, 40)}»`,
+    before: deleted,
+  });
   revalidatePath("/admin/writing");
   return { ok: true };
 }
 
 // ===== Speaking =====
 export async function deleteSpeakingAction(id: string) {
-  await requireAdmin();
-  await db.speakingSet.delete({ where: { id } });
+  const { actor } = await requireAdminActor();
+  const deleted = await db.speakingSet.delete({ where: { id } });
+  await logAudit({
+    actor,
+    action: "DELETE",
+    entity: "SpeakingSet",
+    entityId: id,
+    summary: `Xóa ${entityLabel("SpeakingSet")} «${deleted.title}»`,
+    before: deleted,
+  });
   revalidatePath("/admin/speaking");
   return { ok: true };
 }
 
 // ===== Questions =====
 export async function createQuestionAction(fd: FormData) {
-  await requireAdmin();
+  const { actor } = await requireAdminActor();
   const type = fd.get("type") as "MCQ" | "TRUE_FALSE" | "FILL_BLANK";
   const readingId = (fd.get("readingId") as string) || undefined;
   const listeningId = (fd.get("listeningId") as string) || undefined;
@@ -664,7 +785,7 @@ export async function createQuestionAction(fd: FormData) {
     where: readingId ? { readingId } : { listeningId },
   });
 
-  await db.question.create({
+  const created = await db.question.create({
     data: {
       type,
       prompt: fd.get("prompt") as string,
@@ -677,6 +798,15 @@ export async function createQuestionAction(fd: FormData) {
     },
   });
 
+  await logAudit({
+    actor,
+    action: "CREATE",
+    entity: "Question",
+    entityId: created.id,
+    summary: `Tạo ${entityLabel("Question")} «${created.prompt.slice(0, 40)}»`,
+    after: created,
+  });
+
   if (readingId) revalidatePath(`/admin/reading/${readingId}`);
   if (listeningId) revalidatePath(`/admin/listening/${listeningId}`);
   return { ok: true };
@@ -686,8 +816,16 @@ export async function deleteQuestionAction(
   questionId: string,
   ref: { readingId?: string; listeningId?: string }
 ) {
-  await requireAdmin();
-  await db.question.delete({ where: { id: questionId } });
+  const { actor } = await requireAdminActor();
+  const deleted = await db.question.delete({ where: { id: questionId } });
+  await logAudit({
+    actor,
+    action: "DELETE",
+    entity: "Question",
+    entityId: questionId,
+    summary: `Xóa ${entityLabel("Question")} «${deleted.prompt.slice(0, 40)}»`,
+    before: deleted,
+  });
   if (ref.readingId) revalidatePath(`/admin/reading/${ref.readingId}`);
   if (ref.listeningId) revalidatePath(`/admin/listening/${ref.listeningId}`);
   return { ok: true };
@@ -866,7 +1004,7 @@ export async function saveLessonAction(
   fd: FormData
 ): Promise<{ ok: boolean; error?: string; warning?: string }> {
   try {
-    await requireAdmin();
+    const { actor } = await requireAdminActor();
     const skill = fd.get("skill") as LessonSkill;
     const unitId = fd.get("unitId") as string;
     const lessonId = (fd.get("lessonId") as string) || "";
@@ -879,21 +1017,57 @@ export async function saveLessonAction(
 
     if (skill === "vocab") {
       if (lessonId) {
-        await db.vocabLesson.update({ where: { id: lessonId }, data: { title, exercises } });
+        const before = await db.vocabLesson.findUnique({ where: { id: lessonId } });
+        const after = await db.vocabLesson.update({ where: { id: lessonId }, data: { title, exercises } });
+        await logAudit({
+          actor,
+          action: "UPDATE",
+          entity: "VocabLesson",
+          entityId: lessonId,
+          summary: `Sửa ${entityLabel("VocabLesson")} «${after.title}»`,
+          before,
+          after,
+        });
       } else {
         const count = await db.vocabLesson.count({ where: { unitId } });
-        await db.vocabLesson.create({
+        const created = await db.vocabLesson.create({
           data: { unitId, title, order: count + 1, exercises, published: false }, // bản nháp
+        });
+        await logAudit({
+          actor,
+          action: "CREATE",
+          entity: "VocabLesson",
+          entityId: created.id,
+          summary: `Tạo ${entityLabel("VocabLesson")} «${created.title}»`,
+          after: created,
         });
       }
       revalidatePath(`/admin/vocab/${unitId}`);
     } else {
       if (lessonId) {
-        await db.grammarLesson.update({ where: { id: lessonId }, data: { title, exercises } });
+        const before = await db.grammarLesson.findUnique({ where: { id: lessonId } });
+        const after = await db.grammarLesson.update({ where: { id: lessonId }, data: { title, exercises } });
+        await logAudit({
+          actor,
+          action: "UPDATE",
+          entity: "GrammarLesson",
+          entityId: lessonId,
+          summary: `Sửa ${entityLabel("GrammarLesson")} «${after.title}»`,
+          before,
+          after,
+        });
       } else {
         const count = await db.grammarLesson.count({ where: { unitId } });
-        await db.grammarLesson.create({
+        const created = await db.grammarLesson.create({
           data: { unitId, title, order: count + 1, exercises, published: false }, // bản nháp
+        });
+        await logAudit({
+          actor,
+          action: "CREATE",
+          entity: "GrammarLesson",
+          entityId: created.id,
+          summary: `Tạo ${entityLabel("GrammarLesson")} «${created.title}»`,
+          after: created,
         });
       }
       revalidatePath(`/admin/grammar/${unitId}`);
@@ -905,12 +1079,28 @@ export async function saveLessonAction(
 }
 
 export async function deleteLessonAction(skill: LessonSkill, lessonId: string, unitId: string) {
-  await requireAdmin();
+  const { actor } = await requireAdminActor();
   if (skill === "vocab") {
-    await db.vocabLesson.delete({ where: { id: lessonId } });
+    const deleted = await db.vocabLesson.delete({ where: { id: lessonId } });
+    await logAudit({
+      actor,
+      action: "DELETE",
+      entity: "VocabLesson",
+      entityId: lessonId,
+      summary: `Xóa ${entityLabel("VocabLesson")} «${deleted.title}»`,
+      before: deleted,
+    });
     revalidatePath(`/admin/vocab/${unitId}`);
   } else {
-    await db.grammarLesson.delete({ where: { id: lessonId } });
+    const deleted = await db.grammarLesson.delete({ where: { id: lessonId } });
+    await logAudit({
+      actor,
+      action: "DELETE",
+      entity: "GrammarLesson",
+      entityId: lessonId,
+      summary: `Xóa ${entityLabel("GrammarLesson")} «${deleted.title}»`,
+      before: deleted,
+    });
     revalidatePath(`/admin/grammar/${unitId}`);
   }
   return { ok: true };
@@ -942,7 +1132,7 @@ export async function saveVocabWordAction(
   input: VocabWordInput
 ): Promise<{ ok: boolean; error?: string }> {
   try {
-    await requireAdmin();
+    const { actor } = await requireAdminActor();
     const data = vocabWordSchema.parse(input);
 
     // Every example must contain the word's hanzi — the learner UI auto-bolds it,
@@ -969,18 +1159,26 @@ export async function saveVocabWordAction(
       // The word being edited must actually live in this lesson.
       const existing = await db.vocabWord.findUnique({
         where: { id: data.id },
-        select: { lessonId: true },
       });
       if (!existing || existing.lessonId !== data.lessonId) {
         throw new Error("Từ không thuộc bài học này.");
       }
-      await db.vocabWord.update({
+      const after = await db.vocabWord.update({
         where: { id: data.id },
         data: { hanzi: data.hanzi, pinyin: data.pinyin, meaning: data.meaning, audioUrl, examples },
       });
+      await logAudit({
+        actor,
+        action: "UPDATE",
+        entity: "VocabWord",
+        entityId: data.id,
+        summary: `Sửa ${entityLabel("VocabWord")} «${after.hanzi}»`,
+        before: existing,
+        after,
+      });
     } else {
       const count = await db.vocabWord.count({ where: { lessonId: data.lessonId } });
-      await db.vocabWord.create({
+      const created = await db.vocabWord.create({
         data: {
           lessonId: data.lessonId,
           order: count + 1,
@@ -991,6 +1189,14 @@ export async function saveVocabWordAction(
           examples,
         },
       });
+      await logAudit({
+        actor,
+        action: "CREATE",
+        entity: "VocabWord",
+        entityId: created.id,
+        summary: `Tạo ${entityLabel("VocabWord")} «${created.hanzi}»`,
+        after: created,
+      });
     }
     revalidatePath(`/admin/vocab/${data.unitId}`);
     return { ok: true };
@@ -1000,7 +1206,7 @@ export async function saveVocabWordAction(
 }
 
 export async function deleteVocabWordAction(id: string, unitId: string) {
-  await requireAdmin();
+  const { actor } = await requireAdminActor();
   const word = await db.vocabWord.findUnique({
     where: { id },
     select: { lesson: { select: { unitId: true } } },
@@ -1008,13 +1214,21 @@ export async function deleteVocabWordAction(id: string, unitId: string) {
   if (!word || word.lesson.unitId !== unitId) {
     throw new Error("Không tìm thấy từ trong unit này.");
   }
-  await db.vocabWord.delete({ where: { id } });
+  const deleted = await db.vocabWord.delete({ where: { id } });
+  await logAudit({
+    actor,
+    action: "DELETE",
+    entity: "VocabWord",
+    entityId: id,
+    summary: `Xóa ${entityLabel("VocabWord")} «${deleted.hanzi}»`,
+    before: deleted,
+  });
   revalidatePath(`/admin/vocab/${unitId}`);
   return { ok: true };
 }
 
 export async function reorderVocabWordsAction(unitId: string, orderedIds: string[]) {
-  await requireAdmin();
+  const { actor } = await requireAdminActor();
   if (orderedIds.length === 0) return { ok: true };
   // Every word must exist, share one lesson, and that lesson must be in this unit
   // — otherwise reordering could corrupt the `order` sequence across lessons.
@@ -1033,6 +1247,14 @@ export async function reorderVocabWordsAction(unitId: string, orderedIds: string
   await db.$transaction(
     orderedIds.map((id, i) => db.vocabWord.update({ where: { id }, data: { order: i + 1 } }))
   );
+  await logAudit({
+    actor,
+    action: "UPDATE",
+    entity: "VocabWord",
+    entityId: unitId,
+    summary: `Sắp xếp lại thứ tự ${entityLabel("VocabWord")}`,
+    after: { orderedIds },
+  });
   revalidatePath(`/admin/vocab/${unitId}`);
   return { ok: true };
 }
@@ -1064,7 +1286,7 @@ export async function bulkImportVocabWordsAction(input: {
   rows: VocabBulkRow[];
 }): Promise<{ ok: boolean; created?: number; skipped?: number; error?: string }> {
   try {
-    await requireAdmin();
+    const { actor } = await requireAdminActor();
     const lessonId = String(input?.lessonId ?? "");
     const unitId = String(input?.unitId ?? "");
 
@@ -1111,7 +1333,7 @@ export async function bulkImportVocabWordsAction(input: {
     }
 
     const count = await db.vocabWord.count({ where: { lessonId } });
-    await db.$transaction(
+    const createdRows = await db.$transaction(
       valid.map((v, i) =>
         db.vocabWord.create({
           data: {
@@ -1126,6 +1348,14 @@ export async function bulkImportVocabWordsAction(input: {
         })
       )
     );
+    await logAudit({
+      actor,
+      action: "CREATE",
+      entity: "VocabWord",
+      entityId: lessonId,
+      summary: `Nhập ${createdRows.length} ${entityLabel("VocabWord")}`,
+      after: { count: createdRows.length, items: createdRows.slice(0, 20) },
+    });
     revalidatePath(`/admin/vocab/${unitId}`);
     return { ok: true, created: valid.length, skipped };
   } catch (e) {
@@ -1180,13 +1410,30 @@ function revalidateContent(model: ContentModel) {
   revalidatePath("/exam");
 }
 
+// Ánh xạ discriminator nội bộ → tên model Prisma (PascalCase) cho audit log.
+const CONTENT_ENTITY: Record<ContentModel, string> = {
+  vocabUnit: "VocabUnit",
+  vocabLesson: "VocabLesson",
+  grammarUnit: "GrammarUnit",
+  grammarLesson: "GrammarLesson",
+  hanzi: "HanziCharacter",
+  reading: "ReadingTest",
+  listening: "ListeningTest",
+  writing: "WritingTask",
+  speaking: "SpeakingSet",
+  speakingTopic: "SpeakingTopic",
+  mockExam: "MockExam",
+  course: "Course",
+  roadmapSection: "RoadmapSection",
+};
+
 export async function setContentPublishedAction(
   model: ContentModel,
   id: string,
   published: boolean
 ): Promise<{ ok: boolean; error?: string }> {
   try {
-    await requireAdmin();
+    const { actor } = await requireAdminActor();
     if (!id) return { ok: false, error: "Thiếu id nội dung." };
     switch (model) {
       case "vocabUnit":
@@ -1231,6 +1478,16 @@ export async function setContentPublishedAction(
       default:
         return { ok: false, error: "Loại nội dung không hợp lệ." };
     }
+    const entity = CONTENT_ENTITY[model];
+    await logAudit({
+      actor,
+      action: "UPDATE",
+      entity,
+      entityId: id,
+      summary: `${published ? "Hiện" : "Ẩn"} ${entityLabel(entity)}`,
+      before: { published: !published },
+      after: { published },
+    });
     revalidateContent(model);
     return { ok: true };
   } catch (e) {
@@ -1252,7 +1509,7 @@ export async function reorderLessonsAction(
   orderedIds: string[]
 ): Promise<{ ok: boolean; error?: string }> {
   try {
-    await requireAdmin();
+    const { actor } = await requireAdminActor();
     if (orderedIds.length === 0) return { ok: true };
     if (skill === "vocab") {
       const lessons = await db.vocabLesson.findMany({
@@ -1265,6 +1522,14 @@ export async function reorderLessonsAction(
       await db.$transaction(
         orderedIds.map((id, i) => db.vocabLesson.update({ where: { id }, data: { order: i + 1 } }))
       );
+      await logAudit({
+        actor,
+        action: "UPDATE",
+        entity: "VocabLesson",
+        entityId: unitId,
+        summary: `Sắp xếp lại thứ tự ${entityLabel("VocabLesson")}`,
+        after: { orderedIds },
+      });
       revalidatePath(`/admin/vocab/${unitId}`);
       revalidatePath("/vocab");
     } else {
@@ -1278,6 +1543,14 @@ export async function reorderLessonsAction(
       await db.$transaction(
         orderedIds.map((id, i) => db.grammarLesson.update({ where: { id }, data: { order: i + 1 } }))
       );
+      await logAudit({
+        actor,
+        action: "UPDATE",
+        entity: "GrammarLesson",
+        entityId: unitId,
+        summary: `Sắp xếp lại thứ tự ${entityLabel("GrammarLesson")}`,
+        after: { orderedIds },
+      });
       revalidatePath(`/admin/grammar/${unitId}`);
       revalidatePath("/grammar");
     }
@@ -1294,7 +1567,7 @@ export async function reorderUnitsAction(
   orderedIds: string[]
 ): Promise<{ ok: boolean; error?: string }> {
   try {
-    await requireAdmin();
+    const { actor } = await requireAdminActor();
     if (orderedIds.length === 0) return { ok: true };
     if (skill === "vocab") {
       const units = await db.vocabUnit.findMany({
@@ -1319,6 +1592,15 @@ export async function reorderUnitsAction(
         orderedIds.map((id, i) => db.grammarUnit.update({ where: { id }, data: { order: i + 1 } }))
       );
     }
+    const unitEntity = skill === "vocab" ? "VocabUnit" : "GrammarUnit";
+    await logAudit({
+      actor,
+      action: "UPDATE",
+      entity: unitEntity,
+      entityId: hskLevel,
+      summary: `Sắp xếp lại thứ tự ${entityLabel(unitEntity)} (${hskLevel})`,
+      after: { hskLevel, orderedIds },
+    });
     revalidatePath(skill === "vocab" ? "/admin/vocab" : "/admin/grammar");
     revalidatePath(skill === "vocab" ? "/vocab" : "/grammar");
     return { ok: true };
@@ -1336,7 +1618,7 @@ export async function reorderContentAction(
   orderedIds: string[]
 ): Promise<{ ok: boolean; error?: string }> {
   try {
-    await requireAdmin();
+    const { actor } = await requireAdminActor();
     if (orderedIds.length === 0) return { ok: true };
 
     // Xác thực: mọi id tồn tại và cùng một cấp HSK (không trộn cấp khi sắp xếp).
@@ -1375,6 +1657,15 @@ export async function reorderContentAction(
         }
       })
     );
+    const contentEntity = CONTENT_ENTITY[model];
+    await logAudit({
+      actor,
+      action: "UPDATE",
+      entity: contentEntity,
+      entityId: hskLevel,
+      summary: `Sắp xếp lại thứ tự ${entityLabel(contentEntity)} (${hskLevel})`,
+      after: { hskLevel, orderedIds },
+    });
     revalidateContent(model);
     return { ok: true };
   } catch (e) {
@@ -1398,7 +1689,7 @@ export async function adminSetUserRoleAction(input: {
   role: "ADMIN" | "LEARNER";
 }): Promise<{ ok: boolean; error?: string }> {
   try {
-    const session = await requireAdmin();
+    const { session, actor } = await requireAdminActor();
     const parsed = setRoleSchema.safeParse(input);
     if (!parsed.success) {
       return { ok: false, error: parsed.error.issues[0]?.message ?? "Dữ liệu không hợp lệ." };
@@ -1410,11 +1701,19 @@ export async function adminSetUserRoleAction(input: {
     }
     const target = await db.user.findUnique({
       where: { id: parsed.data.userId },
-      select: { id: true },
     });
     if (!target) return { ok: false, error: "Không tìm thấy người dùng." };
 
-    await db.user.update({ where: { id: parsed.data.userId }, data: { role: parsed.data.role } });
+    const after = await db.user.update({ where: { id: parsed.data.userId }, data: { role: parsed.data.role } });
+    await logAudit({
+      actor,
+      action: "UPDATE",
+      entity: "User",
+      entityId: parsed.data.userId,
+      summary: `Đổi quyền ${target.email} → ${parsed.data.role}`,
+      before: target,
+      after,
+    });
     revalidatePath("/admin/users");
     revalidatePath(`/admin/users/${parsed.data.userId}`);
     return { ok: true };
@@ -1432,14 +1731,22 @@ export async function revokeSubscriptionAction(
   subscriptionId: string
 ): Promise<{ ok: boolean; error?: string }> {
   try {
-    await requireAdmin();
+    const { actor } = await requireAdminActor();
     if (!subscriptionId) return { ok: false, error: "Thiếu id gói." };
     const sub = await db.subscription.findUnique({
       where: { id: subscriptionId },
       select: { userId: true },
     });
     if (!sub) return { ok: false, error: "Không tìm thấy gói." };
-    await db.subscription.delete({ where: { id: subscriptionId } });
+    const deleted = await db.subscription.delete({ where: { id: subscriptionId } });
+    await logAudit({
+      actor,
+      action: "DELETE",
+      entity: "Subscription",
+      entityId: subscriptionId,
+      summary: `Thu hồi ${entityLabel("Subscription")} (${deleted.type}${deleted.hskLevel ? ` ${deleted.hskLevel}` : ""})`,
+      before: deleted,
+    });
     revalidatePath(`/admin/users/${sub.userId}`);
     revalidatePath("/admin/subscriptions");
     return { ok: true };
@@ -1463,10 +1770,11 @@ export async function updateWritingAction(
   fd: FormData
 ): Promise<{ ok: boolean; error?: string }> {
   try {
-    await requireAdmin();
+    const { actor } = await requireAdminActor();
     const id = (fd.get("id") as string) || "";
     if (!id) return { ok: false, error: "Thiếu id bài viết." };
-    await db.writingTask.update({
+    const before = await db.writingTask.findUnique({ where: { id } });
+    const after = await db.writingTask.update({
       where: { id },
       data: {
         taskType: fd.get("taskType") as WritingTaskType,
@@ -1478,6 +1786,15 @@ export async function updateWritingAction(
         hskLevel: fd.get("hskLevel") as HSKLevel,
         imageUrl: optStr(fd, "imageUrl"),
       },
+    });
+    await logAudit({
+      actor,
+      action: "UPDATE",
+      entity: "WritingTask",
+      entityId: id,
+      summary: `Sửa ${entityLabel("WritingTask")} «${after.prompt.slice(0, 40)}»`,
+      before,
+      after,
     });
     revalidatePath("/admin/writing");
     revalidatePath("/writing");
@@ -1491,7 +1808,7 @@ export async function updateSpeakingAction(
   fd: FormData
 ): Promise<{ ok: boolean; error?: string }> {
   try {
-    await requireAdmin();
+    const { actor } = await requireAdminActor();
     const id = (fd.get("id") as string) || "";
     if (!id) return { ok: false, error: "Thiếu id bộ nói." };
     const parseJson = (key: string, label: string): Prisma.InputJsonValue => {
@@ -1501,7 +1818,8 @@ export async function updateSpeakingAction(
         throw new Error(`${label} không phải JSON hợp lệ.`);
       }
     };
-    await db.speakingSet.update({
+    const before = await db.speakingSet.findUnique({ where: { id } });
+    const after = await db.speakingSet.update({
       where: { id },
       data: {
         title: (fd.get("title") as string) || "",
@@ -1511,6 +1829,15 @@ export async function updateSpeakingAction(
         part2Passage: parseJson("part2Passage", "Part 2"),
         part3Questions: parseJson("part3Questions", "Part 3"),
       },
+    });
+    await logAudit({
+      actor,
+      action: "UPDATE",
+      entity: "SpeakingSet",
+      entityId: id,
+      summary: `Sửa ${entityLabel("SpeakingSet")} «${after.title}»`,
+      before,
+      after,
     });
     revalidatePath("/admin/speaking");
     revalidatePath("/speaking");
@@ -1572,10 +1899,18 @@ export async function createSpeakingTopicAction(
   fd: FormData
 ): Promise<{ ok: boolean; error?: string }> {
   try {
-    await requireAdmin();
+    const { actor } = await requireAdminActor();
     const data = topicDataFromForm(fd);
     if (!data.questionZh) return { ok: false, error: "Thiếu câu hỏi (tiếng Trung)." };
-    await db.speakingTopic.create({ data: { ...data, published: false } });
+    const created = await db.speakingTopic.create({ data: { ...data, published: false } });
+    await logAudit({
+      actor,
+      action: "CREATE",
+      entity: "SpeakingTopic",
+      entityId: created.id,
+      summary: `Tạo ${entityLabel("SpeakingTopic")} «${created.topic || created.questionZh}»`,
+      after: created,
+    });
     revalidatePath("/admin/speaking/topics");
     return { ok: true };
   } catch (e) {
@@ -1587,12 +1922,22 @@ export async function updateSpeakingTopicAction(
   fd: FormData
 ): Promise<{ ok: boolean; error?: string }> {
   try {
-    await requireAdmin();
+    const { actor } = await requireAdminActor();
     const id = (fd.get("id") as string) || "";
     if (!id) return { ok: false, error: "Thiếu id chủ đề." };
     const data = topicDataFromForm(fd);
     if (!data.questionZh) return { ok: false, error: "Thiếu câu hỏi (tiếng Trung)." };
-    await db.speakingTopic.update({ where: { id }, data });
+    const before = await db.speakingTopic.findUnique({ where: { id } });
+    const after = await db.speakingTopic.update({ where: { id }, data });
+    await logAudit({
+      actor,
+      action: "UPDATE",
+      entity: "SpeakingTopic",
+      entityId: id,
+      summary: `Sửa ${entityLabel("SpeakingTopic")} «${after.topic || after.questionZh}»`,
+      before,
+      after,
+    });
     revalidatePath("/admin/speaking/topics");
     revalidatePath("/speaking");
     revalidatePath(`/speaking/topic/${id}`);
@@ -1603,8 +1948,16 @@ export async function updateSpeakingTopicAction(
 }
 
 export async function deleteSpeakingTopicAction(id: string) {
-  await requireAdmin();
-  await db.speakingTopic.delete({ where: { id } });
+  const { actor } = await requireAdminActor();
+  const deleted = await db.speakingTopic.delete({ where: { id } });
+  await logAudit({
+    actor,
+    action: "DELETE",
+    entity: "SpeakingTopic",
+    entityId: id,
+    summary: `Xóa ${entityLabel("SpeakingTopic")} «${deleted.topic || deleted.questionZh}»`,
+    before: deleted,
+  });
   revalidatePath("/admin/speaking/topics");
   revalidatePath("/speaking");
   return { ok: true };
@@ -1614,10 +1967,11 @@ export async function updateHanziAction(
   fd: FormData
 ): Promise<{ ok: boolean; error?: string }> {
   try {
-    await requireAdmin();
+    const { actor } = await requireAdminActor();
     const id = (fd.get("id") as string) || "";
     if (!id) return { ok: false, error: "Thiếu id chữ Hán." };
-    await db.hanziCharacter.update({
+    const before = await db.hanziCharacter.findUnique({ where: { id } });
+    const after = await db.hanziCharacter.update({
       where: { id },
       data: {
         character: (fd.get("character") as string) || "",
@@ -1628,6 +1982,15 @@ export async function updateHanziAction(
         strokeCount: parseInt(fd.get("strokeCount") as string) || 0,
         imageUrl: optStr(fd, "imageUrl"),
       },
+    });
+    await logAudit({
+      actor,
+      action: "UPDATE",
+      entity: "HanziCharacter",
+      entityId: id,
+      summary: `Sửa ${entityLabel("HanziCharacter")} «${after.character}»`,
+      before,
+      after,
     });
     revalidatePath("/admin/hanzi");
     revalidatePath("/hanzi");
@@ -1644,7 +2007,7 @@ export async function updateUnitAction(
   fd: FormData
 ): Promise<{ ok: boolean; error?: string }> {
   try {
-    await requireAdmin();
+    const { actor } = await requireAdminActor();
     const id = (fd.get("id") as string) || "";
     if (!id) return { ok: false, error: "Thiếu id unit." };
     const data = {
@@ -1654,12 +2017,32 @@ export async function updateUnitAction(
       imageUrl: optStr(fd, "imageUrl"),
     };
     if (skill === "vocab") {
-      await db.vocabUnit.update({ where: { id }, data });
+      const before = await db.vocabUnit.findUnique({ where: { id } });
+      const after = await db.vocabUnit.update({ where: { id }, data });
+      await logAudit({
+        actor,
+        action: "UPDATE",
+        entity: "VocabUnit",
+        entityId: id,
+        summary: `Sửa ${entityLabel("VocabUnit")} «${after.title}»`,
+        before,
+        after,
+      });
       revalidatePath("/admin/vocab");
       revalidatePath(`/admin/vocab/${id}`);
       revalidatePath("/vocab");
     } else {
-      await db.grammarUnit.update({ where: { id }, data });
+      const before = await db.grammarUnit.findUnique({ where: { id } });
+      const after = await db.grammarUnit.update({ where: { id }, data });
+      await logAudit({
+        actor,
+        action: "UPDATE",
+        entity: "GrammarUnit",
+        entityId: id,
+        summary: `Sửa ${entityLabel("GrammarUnit")} «${after.title}»`,
+        before,
+        after,
+      });
       revalidatePath("/admin/grammar");
       revalidatePath(`/admin/grammar/${id}`);
       revalidatePath("/grammar");

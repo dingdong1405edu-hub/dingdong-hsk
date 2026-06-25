@@ -1,7 +1,8 @@
 "use server";
 import { auth } from "@/lib/auth";
 import { db } from "@/lib/db";
-import { requireAdmin } from "@/lib/admin-guard";
+import { requireAdminActor } from "@/lib/admin-guard";
+import { logAudit } from "@/lib/audit";
 import { revalidatePath } from "next/cache";
 import { z } from "zod";
 import { FeedbackCategory, FeedbackStatus } from "@prisma/client";
@@ -73,15 +74,25 @@ const moderateSchema = z.object({
 });
 
 export async function updateFeedbackStatusAction(input: z.infer<typeof moderateSchema>) {
-  await requireAdmin();
+  const { actor } = await requireAdminActor();
   const parsed = moderateSchema.safeParse(input);
   if (!parsed.success) return { ok: false, error: "Dữ liệu không hợp lệ" };
   const { id, status, adminNote } = parsed.data;
   try {
-    await db.feedback.update({
+    const before = await db.feedback.findUnique({ where: { id } });
+    const after = await db.feedback.update({
       where: { id },
       // adminNote === undefined → giữ nguyên ghi chú cũ (chỉ đổi trạng thái).
       data: { status, adminNote: adminNote === undefined ? undefined : adminNote || null },
+    });
+    await logAudit({
+      actor,
+      action: "UPDATE",
+      entity: "Feedback",
+      entityId: after.id,
+      summary: `Sửa góp ý «${after.subject ?? after.contactEmail ?? after.id}»`,
+      before,
+      after,
     });
     revalidatePath("/admin/feedback");
     return { ok: true };
@@ -91,9 +102,17 @@ export async function updateFeedbackStatusAction(input: z.infer<typeof moderateS
 }
 
 export async function deleteFeedbackAction(id: string) {
-  await requireAdmin();
+  const { actor } = await requireAdminActor();
   try {
-    await db.feedback.delete({ where: { id } });
+    const before = await db.feedback.delete({ where: { id } });
+    await logAudit({
+      actor,
+      action: "DELETE",
+      entity: "Feedback",
+      entityId: before.id,
+      summary: `Xóa góp ý «${before.subject ?? before.contactEmail ?? before.id}»`,
+      before,
+    });
     revalidatePath("/admin/feedback");
     return { ok: true };
   } catch {

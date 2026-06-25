@@ -6,8 +6,9 @@ import { db } from "@/lib/db";
 import { revalidatePath } from "next/cache";
 import { z } from "zod";
 import { HSKLevel, Prisma, Skill } from "@prisma/client";
-import { requireAdmin } from "@/lib/admin-guard";
-import { LEVELS, type SkillKey } from "@/lib/roadmap";
+import { requireAdmin, requireAdminActor } from "@/lib/admin-guard";
+import { logAudit } from "@/lib/audit";
+import { LEVELS, UNCHAPTERED_ORDER, type SkillKey } from "@/lib/roadmap";
 import { validateSectionContent } from "@/lib/roadmap-content";
 import {
   generateReadingQuestions,
@@ -49,7 +50,7 @@ function optStr(fd: FormData, key: string): string | null {
 /** Tạo khóa cho một cấp HSK nếu chưa có (Course.hskLevel là @unique → 1 khóa/cấp). */
 export async function createCourseForLevelAction(level: string): Promise<Result<{ id: string }>> {
   try {
-    await requireAdmin();
+    const { actor } = await requireAdminActor();
     if (!(LEVELS as readonly string[]).includes(level)) {
       return { ok: false, error: "Cấp HSK không hợp lệ." };
     }
@@ -66,7 +67,15 @@ export async function createCourseForLevelAction(level: string): Promise<Result<
         order: n,
         published: true,
       },
-      select: { id: true },
+      select: { id: true, title: true },
+    });
+    await logAudit({
+      actor,
+      action: "CREATE",
+      entity: "Course",
+      entityId: created.id,
+      summary: `Tạo khóa «${created.title}»`,
+      after: created,
     });
     revalidateRoadmap(hskLevel);
     return { ok: true, data: { id: created.id } };
@@ -77,10 +86,11 @@ export async function createCourseForLevelAction(level: string): Promise<Result<
 
 export async function updateCourseAction(fd: FormData): Promise<Result> {
   try {
-    await requireAdmin();
+    const { actor } = await requireAdminActor();
     const id = optStr(fd, "id");
     const title = optStr(fd, "title");
     if (!id || !title) return { ok: false, error: "Thiếu tiêu đề khóa." };
+    const before = await db.course.findUnique({ where: { id } });
     const course = await db.course.update({
       where: { id },
       data: {
@@ -89,7 +99,15 @@ export async function updateCourseAction(fd: FormData): Promise<Result> {
         description: optStr(fd, "description"),
         imageUrl: optStr(fd, "imageUrl"),
       },
-      select: { hskLevel: true },
+    });
+    await logAudit({
+      actor,
+      action: "UPDATE",
+      entity: "Course",
+      entityId: course.id,
+      summary: `Sửa khóa «${course.title}»`,
+      before,
+      after: course,
     });
     revalidateRoadmap(course.hskLevel);
     return { ok: true };
@@ -105,8 +123,8 @@ const lessonSchema = z.object({
   topicZh: z.string().trim().default(""),
   icon: z.string().trim().optional(),
   description: z.string().trim().optional(),
-  chapter: z.string().trim().optional(),
-  chapterOrder: z.coerce.number().int().min(1).default(1),
+  // Bài thuộc chương nào (RoadmapChapter.id). Rỗng = chưa phân chương.
+  chapterId: z.string().trim().optional(),
   xpReward: z.coerce.number().int().min(0).default(20),
 });
 
@@ -116,15 +134,35 @@ function lessonDataFromForm(fd: FormData) {
     topicZh: fd.get("topicZh") ?? "",
     icon: fd.get("icon") ?? undefined,
     description: fd.get("description") ?? undefined,
-    chapter: fd.get("chapter") ?? undefined,
-    chapterOrder: fd.get("chapterOrder") ?? 1,
+    chapterId: fd.get("chapterId") ?? undefined,
     xpReward: fd.get("xpReward") ?? 20,
   });
 }
 
+/**
+ * Suy ra bộ trường chương cho một bài từ `chapterId` đã chọn:
+ *  - `chapterId` => khoá ngoại (nguồn sự thật)
+ *  - `chapter` / `chapterOrder` => bản sao (cache) để học viên gom bài theo chương.
+ * Trả về `null` nếu chương không tồn tại hoặc không cùng khóa (đầu vào không hợp lệ).
+ */
+async function resolveChapterFields(
+  courseId: string,
+  chapterId: string | null | undefined
+): Promise<{ chapterId: string | null; chapter: string | null; chapterOrder: number } | null> {
+  const id = chapterId && chapterId.length ? chapterId : null;
+  // Chưa phân chương: chapter=null (tín hiệu UI) + chapterOrder sentinel để xếp cuối.
+  if (!id) return { chapterId: null, chapter: null, chapterOrder: UNCHAPTERED_ORDER };
+  const ch = await db.roadmapChapter.findUnique({
+    where: { id },
+    select: { courseId: true, order: true, title: true },
+  });
+  if (!ch || ch.courseId !== courseId) return null;
+  return { chapterId: id, chapter: ch.title, chapterOrder: ch.order };
+}
+
 export async function createRoadmapLessonAction(fd: FormData): Promise<Result<{ id: string }>> {
   try {
-    await requireAdmin();
+    const { actor } = await requireAdminActor();
     const courseId = optStr(fd, "courseId");
     if (!courseId) return { ok: false, error: "Thiếu khóa." };
     const parsed = lessonDataFromForm(fd);
@@ -132,6 +170,9 @@ export async function createRoadmapLessonAction(fd: FormData): Promise<Result<{ 
 
     const course = await db.course.findUnique({ where: { id: courseId }, select: { hskLevel: true } });
     if (!course) return { ok: false, error: "Không tìm thấy khóa." };
+
+    const chapterFields = await resolveChapterFields(courseId, parsed.data.chapterId);
+    if (!chapterFields) return { ok: false, error: "Chương đã chọn không hợp lệ." };
 
     const agg = await db.roadmapLesson.aggregate({ where: { courseId }, _max: { order: true } });
     const order = (agg._max.order ?? 0) + 1;
@@ -144,11 +185,17 @@ export async function createRoadmapLessonAction(fd: FormData): Promise<Result<{ 
         topicZh: parsed.data.topicZh,
         icon: parsed.data.icon ?? null,
         description: parsed.data.description ?? null,
-        chapter: parsed.data.chapter ?? null,
-        chapterOrder: parsed.data.chapterOrder,
+        ...chapterFields,
         xpReward: parsed.data.xpReward,
       },
-      select: { id: true },
+    });
+    await logAudit({
+      actor,
+      action: "CREATE",
+      entity: "RoadmapLesson",
+      entityId: created.id,
+      summary: `Tạo bài «${created.topic}»`,
+      after: created,
     });
     revalidateRoadmap(course.hskLevel);
     return { ok: true, data: { id: created.id } };
@@ -159,11 +206,17 @@ export async function createRoadmapLessonAction(fd: FormData): Promise<Result<{ 
 
 export async function updateRoadmapLessonAction(fd: FormData): Promise<Result> {
   try {
-    await requireAdmin();
+    const { actor } = await requireAdminActor();
     const id = optStr(fd, "id");
     if (!id) return { ok: false, error: "Thiếu bài." };
     const parsed = lessonDataFromForm(fd);
     if (!parsed.success) return { ok: false, error: parsed.error.issues[0]?.message ?? "Dữ liệu không hợp lệ." };
+
+    const existing = await db.roadmapLesson.findUnique({ where: { id } });
+    if (!existing) return { ok: false, error: "Không tìm thấy bài." };
+
+    const chapterFields = await resolveChapterFields(existing.courseId, parsed.data.chapterId);
+    if (!chapterFields) return { ok: false, error: "Chương đã chọn không hợp lệ." };
 
     const lesson = await db.roadmapLesson.update({
       where: { id },
@@ -172,11 +225,19 @@ export async function updateRoadmapLessonAction(fd: FormData): Promise<Result> {
         topicZh: parsed.data.topicZh,
         icon: parsed.data.icon ?? null,
         description: parsed.data.description ?? null,
-        chapter: parsed.data.chapter ?? null,
-        chapterOrder: parsed.data.chapterOrder,
+        ...chapterFields,
         xpReward: parsed.data.xpReward,
       },
-      select: { course: { select: { hskLevel: true } } },
+      include: { course: { select: { hskLevel: true } } },
+    });
+    await logAudit({
+      actor,
+      action: "UPDATE",
+      entity: "RoadmapLesson",
+      entityId: lesson.id,
+      summary: `Sửa bài «${lesson.topic}»`,
+      before: existing,
+      after: lesson,
     });
     revalidateRoadmap(lesson.course.hskLevel);
     return { ok: true };
@@ -187,12 +248,20 @@ export async function updateRoadmapLessonAction(fd: FormData): Promise<Result> {
 
 export async function deleteRoadmapLessonAction(id: string): Promise<Result> {
   try {
-    await requireAdmin();
+    const { actor } = await requireAdminActor();
     const lesson = await db.roadmapLesson.findUnique({
       where: { id },
       select: { course: { select: { hskLevel: true } } },
     });
-    await db.roadmapLesson.delete({ where: { id } });
+    const deleted = await db.roadmapLesson.delete({ where: { id } });
+    await logAudit({
+      actor,
+      action: "DELETE",
+      entity: "RoadmapLesson",
+      entityId: deleted.id,
+      summary: `Xóa bài «${deleted.topic}»`,
+      before: deleted,
+    });
     revalidateRoadmap(lesson?.course.hskLevel ?? null);
     return { ok: true };
   } catch (e) {
@@ -209,11 +278,11 @@ export async function reorderRoadmapLessonsAction(
   orderedIds: string[]
 ): Promise<Result> {
   try {
-    await requireAdmin();
+    const { actor } = await requireAdminActor();
     if (orderedIds.length === 0) return { ok: true };
     const lessons = await db.roadmapLesson.findMany({
       where: { id: { in: orderedIds } },
-      select: { id: true, courseId: true },
+      select: { id: true, courseId: true, order: true },
     });
     if (lessons.length !== orderedIds.length || lessons.some((l) => l.courseId !== courseId)) {
       return { ok: false, error: "Danh sách sắp xếp không hợp lệ." };
@@ -227,11 +296,185 @@ export async function reorderRoadmapLessonsAction(
         db.roadmapLesson.update({ where: { id }, data: { order: i + 1 } })
       ),
     ]);
+    await logAudit({
+      actor,
+      action: "UPDATE",
+      entity: "RoadmapLesson",
+      entityId: courseId,
+      summary: `Sắp xếp lại thứ tự bài`,
+      before: lessons.map((l) => ({ id: l.id, order: l.order })),
+      after: orderedIds.map((id, i) => ({ id, order: i + 1 })),
+    });
     revalidatePath("/admin/roadmap");
     revalidatePath("/roadmap");
     return { ok: true };
   } catch (e) {
     return { ok: false, error: e instanceof Error ? e.message : "Lỗi đổi thứ tự bài." };
+  }
+}
+
+// ───────────────────────── RoadmapChapter (Chương) ─────────────────────────
+// Chương là nguồn sự thật do admin quản lý. Mỗi thay đổi (đổi tên / đổi thứ tự /
+// xoá) phải đồng bộ lại bản sao `chapter` / `chapterOrder` trên các bài thuộc chương
+// để phía học viên (gom bài theo chương) luôn khớp.
+
+const chapterSchema = z.object({
+  title: z.string().trim().min(1, "Thiếu tên chương."),
+  titleZh: z.string().trim().default(""),
+});
+
+async function courseLevel(courseId: string): Promise<HSKLevel | null> {
+  const c = await db.course.findUnique({ where: { id: courseId }, select: { hskLevel: true } });
+  return c?.hskLevel ?? null;
+}
+
+/** Tạo chương mới cho khóa (order = chương lớn nhất + 1). */
+export async function createRoadmapChapterAction(fd: FormData): Promise<Result<{ id: string }>> {
+  try {
+    const { actor } = await requireAdminActor();
+    const courseId = optStr(fd, "courseId");
+    if (!courseId) return { ok: false, error: "Thiếu khóa." };
+    const parsed = chapterSchema.safeParse({
+      title: fd.get("title") ?? "",
+      titleZh: fd.get("titleZh") ?? "",
+    });
+    if (!parsed.success) return { ok: false, error: parsed.error.issues[0]?.message ?? "Dữ liệu không hợp lệ." };
+
+    const level = await courseLevel(courseId);
+    if (!level) return { ok: false, error: "Không tìm thấy khóa." };
+
+    const agg = await db.roadmapChapter.aggregate({ where: { courseId }, _max: { order: true } });
+    const order = (agg._max.order ?? 0) + 1;
+
+    const created = await db.roadmapChapter.create({
+      data: { courseId, order, title: parsed.data.title, titleZh: parsed.data.titleZh },
+    });
+    await logAudit({
+      actor,
+      action: "CREATE",
+      entity: "RoadmapChapter",
+      entityId: created.id,
+      summary: `Tạo chương «${created.title}»`,
+      after: created,
+    });
+    revalidateRoadmap(level);
+    return { ok: true, data: { id: created.id } };
+  } catch (e) {
+    return { ok: false, error: e instanceof Error ? e.message : "Lỗi tạo chương." };
+  }
+}
+
+/** Đổi tên chương + đồng bộ cache `chapter` (tên) trên các bài thuộc chương. */
+export async function updateRoadmapChapterAction(fd: FormData): Promise<Result> {
+  try {
+    const { actor } = await requireAdminActor();
+    const id = optStr(fd, "id");
+    if (!id) return { ok: false, error: "Thiếu chương." };
+    const parsed = chapterSchema.safeParse({
+      title: fd.get("title") ?? "",
+      titleZh: fd.get("titleZh") ?? "",
+    });
+    if (!parsed.success) return { ok: false, error: parsed.error.issues[0]?.message ?? "Dữ liệu không hợp lệ." };
+
+    const chapter = await db.roadmapChapter.findUnique({ where: { id } });
+    if (!chapter) return { ok: false, error: "Không tìm thấy chương." };
+
+    await db.$transaction([
+      db.roadmapChapter.update({
+        where: { id },
+        data: { title: parsed.data.title, titleZh: parsed.data.titleZh },
+      }),
+      db.roadmapLesson.updateMany({ where: { chapterId: id }, data: { chapter: parsed.data.title } }),
+    ]);
+    await logAudit({
+      actor,
+      action: "UPDATE",
+      entity: "RoadmapChapter",
+      entityId: id,
+      summary: `Sửa chương «${parsed.data.title}»`,
+      before: chapter,
+      after: { ...chapter, title: parsed.data.title, titleZh: parsed.data.titleZh },
+    });
+    revalidateRoadmap(await courseLevel(chapter.courseId));
+    return { ok: true };
+  } catch (e) {
+    return { ok: false, error: e instanceof Error ? e.message : "Lỗi cập nhật chương." };
+  }
+}
+
+/** Xoá chương — chỉ cho phép khi chương không còn bài (tránh bài mồ côi). */
+export async function deleteRoadmapChapterAction(id: string): Promise<Result> {
+  try {
+    const { actor } = await requireAdminActor();
+    const chapter = await db.roadmapChapter.findUnique({
+      where: { id },
+      select: { courseId: true, _count: { select: { lessons: true } } },
+    });
+    if (!chapter) return { ok: false, error: "Không tìm thấy chương." };
+    if (chapter._count.lessons > 0) {
+      return { ok: false, error: "Chương vẫn còn bài — hãy chuyển bài sang chương khác trước khi xoá." };
+    }
+    const deleted = await db.roadmapChapter.delete({ where: { id } });
+    await logAudit({
+      actor,
+      action: "DELETE",
+      entity: "RoadmapChapter",
+      entityId: deleted.id,
+      summary: `Xóa chương «${deleted.title}»`,
+      before: deleted,
+    });
+    revalidateRoadmap(await courseLevel(chapter.courseId));
+    return { ok: true };
+  } catch (e) {
+    return { ok: false, error: e instanceof Error ? e.message : "Lỗi xoá chương." };
+  }
+}
+
+/**
+ * Đổi thứ tự chương trong khóa. RoadmapChapter có @@unique([courseId, order]) nên
+ * gán order tạm (lệch lớn) trước rồi gán 1..n để tránh đụng ràng buộc. Sau khi gán
+ * order chuẩn, đồng bộ cache `chapterOrder` trên các bài của từng chương.
+ */
+export async function reorderRoadmapChaptersAction(
+  courseId: string,
+  orderedIds: string[]
+): Promise<Result> {
+  try {
+    const { actor } = await requireAdminActor();
+    if (orderedIds.length === 0) return { ok: true };
+    const chapters = await db.roadmapChapter.findMany({
+      where: { id: { in: orderedIds } },
+      select: { id: true, courseId: true, order: true },
+    });
+    if (chapters.length !== orderedIds.length || chapters.some((c) => c.courseId !== courseId)) {
+      return { ok: false, error: "Danh sách sắp xếp không hợp lệ." };
+    }
+    const OFFSET = 100000;
+    await db.$transaction([
+      ...orderedIds.map((id, i) =>
+        db.roadmapChapter.update({ where: { id }, data: { order: OFFSET + i + 1 } })
+      ),
+      ...orderedIds.map((id, i) =>
+        db.roadmapChapter.update({ where: { id }, data: { order: i + 1 } })
+      ),
+      // Đồng bộ cache chapterOrder của bài theo thứ tự chương mới.
+      ...orderedIds.map((id, i) =>
+        db.roadmapLesson.updateMany({ where: { chapterId: id }, data: { chapterOrder: i + 1 } })
+      ),
+    ]);
+    await logAudit({
+      actor,
+      action: "UPDATE",
+      entity: "RoadmapChapter",
+      entityId: courseId,
+      summary: `Sắp xếp lại thứ tự chương`,
+      before: chapters.map((c) => ({ id: c.id, order: c.order })),
+      after: orderedIds.map((id, i) => ({ id, order: i + 1 })),
+    });
+    revalidateRoadmap(await courseLevel(courseId));
+    return { ok: true };
+  } catch (e) {
+    return { ok: false, error: e instanceof Error ? e.message : "Lỗi đổi thứ tự chương." };
   }
 }
 
@@ -249,7 +492,7 @@ export async function saveRoadmapSectionAction(
   input: z.infer<typeof saveSectionSchema>
 ): Promise<Result<{ sectionId: string }>> {
   try {
-    await requireAdmin();
+    const { actor } = await requireAdminActor();
     const parsed = saveSectionSchema.safeParse(input);
     if (!parsed.success) return { ok: false, error: parsed.error.issues[0]?.message ?? "Dữ liệu không hợp lệ." };
     const { lessonId, skill, publish } = parsed.data;
@@ -259,12 +502,16 @@ export async function saveRoadmapSectionAction(
 
     const lesson = await db.roadmapLesson.findUnique({
       where: { id: lessonId },
-      select: { course: { select: { hskLevel: true } } },
+      select: { topic: true, course: { select: { hskLevel: true } } },
     });
     if (!lesson) return { ok: false, error: "Không tìm thấy bài." };
 
     const content = valid.data as Prisma.InputJsonValue;
     const skillEnum = skill as Skill;
+
+    const before = await db.roadmapSection.findUnique({
+      where: { lessonId_skill: { lessonId, skill: skillEnum } },
+    });
 
     const section = await db.roadmapSection.upsert({
       where: { lessonId_skill: { lessonId, skill: skillEnum } },
@@ -280,7 +527,15 @@ export async function saveRoadmapSectionAction(
         content,
         published: publish ?? false,
       },
-      select: { id: true },
+    });
+    await logAudit({
+      actor,
+      action: before ? "UPDATE" : "CREATE",
+      entity: "RoadmapSection",
+      entityId: section.id,
+      summary: `${before ? "Sửa" : "Tạo"} nội dung ${skill} bài «${lesson.topic}»`,
+      before: before ?? undefined,
+      after: section,
     });
     revalidateRoadmap(lesson.course.hskLevel);
     return { ok: true, data: { sectionId: section.id } };
@@ -295,10 +550,21 @@ export async function deleteRoadmapSectionAction(input: {
   skill: SkillKey;
 }): Promise<Result> {
   try {
-    await requireAdmin();
+    const { actor } = await requireAdminActor();
     const { lessonId, skill } = input;
     if (!SKILL_KEYS.includes(skill)) return { ok: false, error: "Kỹ năng không hợp lệ." };
+    const before = await db.roadmapSection.findMany({ where: { lessonId, skill: skill as Skill } });
     await db.roadmapSection.deleteMany({ where: { lessonId, skill: skill as Skill } });
+    if (before.length) {
+      await logAudit({
+        actor,
+        action: "DELETE",
+        entity: "RoadmapSection",
+        entityId: before[0]?.id ?? null,
+        summary: `Xóa nội dung ${skill} của bài ${lessonId}`,
+        before,
+      });
+    }
     revalidateRoadmap(null);
     return { ok: true };
   } catch (e) {

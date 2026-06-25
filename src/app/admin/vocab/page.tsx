@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { db } from "@/lib/db";
-import { requireAdmin } from "@/lib/admin-guard";
+import { requireAdminActor } from "@/lib/admin-guard";
+import { logAudit } from "@/lib/audit";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -18,10 +19,10 @@ import { updateUnitAction } from "@/server/actions/admin";
 
 async function createUnitAction(fd: FormData) {
   "use server";
-  await requireAdmin();
+  const { actor } = await requireAdminActor();
   const level = fd.get("hskLevel") as HSKLevel;
   const count = await prisma.vocabUnit.count({ where: { hskLevel: level } });
-  await prisma.vocabUnit.create({
+  const created = await prisma.vocabUnit.create({
     data: {
       title: fd.get("title") as string,
       titleZh: fd.get("titleZh") as string,
@@ -31,13 +32,29 @@ async function createUnitAction(fd: FormData) {
       published: false,
     },
   });
+  await logAudit({
+    actor,
+    action: "CREATE",
+    entity: "VocabUnit",
+    entityId: created.id,
+    summary: `Tạo unit từ vựng «${created.title}»`,
+    after: created,
+  });
   revalidatePath("/admin/vocab");
 }
 
 async function deleteUnitAction(id: string) {
   "use server";
-  await requireAdmin();
-  await prisma.vocabUnit.delete({ where: { id } });
+  const { actor } = await requireAdminActor();
+  const deleted = await prisma.vocabUnit.delete({ where: { id } });
+  await logAudit({
+    actor,
+    action: "DELETE",
+    entity: "VocabUnit",
+    entityId: deleted.id,
+    summary: `Xóa unit từ vựng «${deleted.title}»`,
+    before: deleted,
+  });
   revalidatePath("/admin/vocab");
 }
 

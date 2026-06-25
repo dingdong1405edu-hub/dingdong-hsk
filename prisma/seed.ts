@@ -509,6 +509,15 @@ async function seedRoadmap(testUserId: string) {
     let order = 0;
     for (let chi = 0; chi < c.chapters.length; chi++) {
       const ch = c.chapters[chi];
+      const chapterOrder = chi + 1;
+      // Upsert theo khoá duy nhất (courseId, order) — KHÔNG dùng id cố định — để hội tụ
+      // với chương do backfill tạo (id cuid) thay vì đụng @@unique([courseId, order]).
+      const chapter = await prisma.roadmapChapter.upsert({
+        where: { courseId_order: { courseId, order: chapterOrder } },
+        update: { title: ch.title, titleZh: ch.titleZh },
+        create: { courseId, order: chapterOrder, title: ch.title, titleZh: ch.titleZh },
+      });
+
       for (const t of ch.lessons) {
         order++;
         const lessonId = `rl-${slug}-${order}`;
@@ -519,8 +528,10 @@ async function seedRoadmap(testUserId: string) {
           topicZh: t.topicZh,
           description: `Khám phá chủ đề "${t.topic}" (${t.topicZh}) qua từ vựng, mẫu ngữ pháp và luyện nghe – nói – đọc – viết theo ngữ cảnh thực tế.`,
           icon: t.icon,
+          // chapterId = nguồn sự thật; chapter / chapterOrder = cache cho học viên.
+          chapterId: chapter.id,
           chapter: ch.title,
-          chapterOrder: chi + 1,
+          chapterOrder,
           xpReward: 20,
         };
         await prisma.roadmapLesson.upsert({

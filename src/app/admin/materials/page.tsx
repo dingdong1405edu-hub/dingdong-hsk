@@ -1,5 +1,6 @@
 import { db } from "@/lib/db";
-import { requireAdmin } from "@/lib/admin-guard";
+import { requireAdminActor } from "@/lib/admin-guard";
+import { logAudit } from "@/lib/audit";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -15,7 +16,7 @@ import { Plus, Trash2, Clock, FileText } from "lucide-react";
 
 async function createMaterialAction(fd: FormData): Promise<void> {
   "use server";
-  await requireAdmin();
+  const { actor } = await requireAdminActor();
   const category = fd.get("category") as MaterialCategory;
   const hskLevel = fd.get("hskLevel") as HSKLevel;
   const order = await db.material.count({ where: { category, hskLevel } });
@@ -25,7 +26,7 @@ async function createMaterialAction(fd: FormData): Promise<void> {
     .map((t) => t.trim())
     .filter(Boolean);
 
-  await db.material.create({
+  const created = await db.material.create({
     data: {
       title: fd.get("title") as string,
       titleZh: (fd.get("titleZh") as string) || null,
@@ -39,14 +40,30 @@ async function createMaterialAction(fd: FormData): Promise<void> {
       order: order + 1,
     },
   });
+  await logAudit({
+    actor,
+    action: "CREATE",
+    entity: "Material",
+    entityId: created.id,
+    summary: `Tạo tài liệu «${created.title}»`,
+    after: created,
+  });
   revalidatePath("/admin/materials");
   revalidatePath("/materials");
 }
 
 async function deleteMaterialAction(id: string): Promise<void> {
   "use server";
-  await requireAdmin();
-  await db.material.delete({ where: { id } });
+  const { actor } = await requireAdminActor();
+  const deleted = await db.material.delete({ where: { id } });
+  await logAudit({
+    actor,
+    action: "DELETE",
+    entity: "Material",
+    entityId: deleted.id,
+    summary: `Xóa tài liệu «${deleted.title}»`,
+    before: deleted,
+  });
   revalidatePath("/admin/materials");
   revalidatePath("/materials");
 }

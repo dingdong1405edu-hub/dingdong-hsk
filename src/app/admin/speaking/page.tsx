@@ -1,5 +1,6 @@
 import { db } from "@/lib/db";
-import { requireAdmin } from "@/lib/admin-guard";
+import { requireAdminActor } from "@/lib/admin-guard";
+import { logAudit } from "@/lib/audit";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -18,7 +19,7 @@ import { revalidatePath } from "next/cache";
 
 async function createSpeakingAction(fd: FormData) {
   "use server";
-  await requireAdmin();
+  const { actor } = await requireAdminActor();
   // Bọc JSON.parse để dữ liệu dán sai định dạng báo lỗi rõ ràng thay vì crash.
   const parseJson = (key: string, label: string) => {
     try {
@@ -27,7 +28,7 @@ async function createSpeakingAction(fd: FormData) {
       throw new Error(`${label} không phải JSON hợp lệ.`);
     }
   };
-  await prisma.speakingSet.create({
+  const created = await prisma.speakingSet.create({
     data: {
       title: fd.get("title") as string,
       hskLevel: fd.get("hskLevel") as HSKLevel,
@@ -37,6 +38,14 @@ async function createSpeakingAction(fd: FormData) {
       part3Questions: parseJson("part3Questions", "Part 3"),
       published: false,
     },
+  });
+  await logAudit({
+    actor,
+    action: "CREATE",
+    entity: "SpeakingSet",
+    entityId: created.id,
+    summary: `Tạo bộ luyện nói «${created.title || created.id}»`,
+    after: created,
   });
   revalidatePath("/admin/speaking");
 }

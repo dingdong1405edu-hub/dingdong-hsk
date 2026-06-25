@@ -1,7 +1,8 @@
 "use server";
 import { auth } from "@/lib/auth";
 import { db } from "@/lib/db";
-import { requireAdmin } from "@/lib/admin-guard";
+import { requireAdminActor } from "@/lib/admin-guard";
+import { logAudit } from "@/lib/audit";
 import { revalidatePath } from "next/cache";
 import { z } from "zod";
 import { WordReportKind, WordReportStatus } from "@prisma/client";
@@ -77,12 +78,22 @@ const moderateSchema = z.object({
 });
 
 export async function moderateWordReportAction(params: z.infer<typeof moderateSchema>) {
-  await requireAdmin();
+  const { actor } = await requireAdminActor();
   const parsed = moderateSchema.safeParse(params);
   if (!parsed.success) return { ok: false, error: "Dữ liệu không hợp lệ" };
   const { id, status, adminNote } = parsed.data;
   try {
-    await db.wordReport.update({ where: { id }, data: { status, adminNote: adminNote || null } });
+    const before = await db.wordReport.findUnique({ where: { id } });
+    const after = await db.wordReport.update({ where: { id }, data: { status, adminNote: adminNote || null } });
+    await logAudit({
+      actor,
+      action: "UPDATE",
+      entity: "WordReport",
+      entityId: after.id,
+      summary: `Sửa phản ánh từ vựng «${after.id}»`,
+      before,
+      after,
+    });
     revalidatePath("/admin/word-reports");
     return { ok: true };
   } catch {
@@ -91,9 +102,17 @@ export async function moderateWordReportAction(params: z.infer<typeof moderateSc
 }
 
 export async function deleteWordReportAction(id: string) {
-  await requireAdmin();
+  const { actor } = await requireAdminActor();
   try {
-    await db.wordReport.delete({ where: { id } });
+    const before = await db.wordReport.delete({ where: { id } });
+    await logAudit({
+      actor,
+      action: "DELETE",
+      entity: "WordReport",
+      entityId: before.id,
+      summary: `Xóa phản ánh từ vựng «${before.id}»`,
+      before,
+    });
     revalidatePath("/admin/word-reports");
     return { ok: true };
   } catch {

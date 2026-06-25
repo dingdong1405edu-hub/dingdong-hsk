@@ -89,6 +89,7 @@ model User {
   wordReports     WordReport[]
   savedWords      SavedWord[]
   feedbacks       Feedback[]
+  auditLogs       AuditLog[]
 }
 
 model Account {
@@ -578,33 +579,58 @@ model Course {
   createdAt   DateTime @default(now())
   updatedAt   DateTime @default(now()) @updatedAt
 
-  lessons RoadmapLesson[]
+  lessons  RoadmapLesson[]
+  chapters RoadmapChapter[]
 
   @@index([order])
 }
 
-/// Một bài trong lộ trình: một chủ đề, gom đủ 6 kỹ năng.
-/// `chapter` / `chapterOrder` gom các bài thành chương (banner trên map).
+/// Chương của một khóa HSK — gom các bài thành nhóm (banner trên map học viên).
+/// Đây là "nguồn sự thật" do admin quản lý; mỗi bài trỏ về chương qua `chapterId`.
+/// Hai trường `RoadmapLesson.chapter` / `chapterOrder` là BẢN SAO (cache) đồng bộ
+/// từ chương để phía học viên gom bài thành chương mà không phải đổi code.
+model RoadmapChapter {
+  id        String   @id @default(cuid())
+  courseId  String
+  course    Course   @relation(fields: [courseId], references: [id], onDelete: Cascade)
+  order     Int
+  title     String
+  titleZh   String   @default("")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now()) @updatedAt
+
+  lessons RoadmapLesson[]
+
+  @@unique([courseId, order])
+  @@index([courseId, order])
+}
+
+/// Một bài trong lộ trình: một chủ đề, gom đủ 7 kỹ năng.
+/// `chapterId` trỏ tới chương (nguồn sự thật). `chapter` / `chapterOrder` là cache
+/// đồng bộ từ chương để học viên gom bài thành chương mà không cần đổi code.
 model RoadmapLesson {
-  id           String   @id @default(cuid())
+  id           String          @id @default(cuid())
   courseId     String
-  course       Course   @relation(fields: [courseId], references: [id], onDelete: Cascade)
+  course       Course          @relation(fields: [courseId], references: [id], onDelete: Cascade)
   order        Int
   topic        String
   topicZh      String
-  description  String?  @db.Text
+  description  String?         @db.Text
   icon         String?
+  chapterId    String?
+  chapterRef   RoadmapChapter? @relation(fields: [chapterId], references: [id], onDelete: SetNull)
   chapter      String?
-  chapterOrder Int      @default(1)
-  xpReward     Int      @default(20)
-  createdAt    DateTime @default(now())
-  updatedAt    DateTime @default(now()) @updatedAt
+  chapterOrder Int             @default(1)
+  xpReward     Int             @default(20)
+  createdAt    DateTime        @default(now())
+  updatedAt    DateTime        @default(now()) @updatedAt
 
   sections RoadmapSection[]
   progress RoadmapProgress[]
 
   @@unique([courseId, order])
   @@index([courseId, chapterOrder, order])
+  @@index([chapterId])
 }
 
 /// Một kỹ năng trong bài (VOCAB | GRAMMAR | LISTENING | SPEAKING | READING | WRITING).
@@ -811,5 +837,39 @@ model Upload {
   data      Bytes // nội dung tệp (Postgres bytea)
   createdAt DateTime @default(now())
 
+  @@index([createdAt])
+}
+
+enum AuditAction {
+  CREATE // tạo bản ghi mới
+  UPDATE // sửa bản ghi
+  DELETE // xóa bản ghi
+}
+
+/// Nhật ký thao tác của quản trị viên (audit log) — ghi lại AI làm gì / sửa-xóa
+/// cái gì / lúc nào, phục vụ quản lý nhân sự và phòng "admin xấu xóa hết".
+/// `actorEmail`/`actorName` là SNAPSHOT người thực hiện (vẫn còn dù tài khoản bị
+/// xóa — khi đó `actorId` được set null). `before`/`after` lưu nội dung bản ghi
+/// TRƯỚC và SAU mỗi thay đổi (JSON) để xem lại / khôi phục thứ đã xóa.
+/// `entityId` KHÔNG có khóa ngoại nên bản ghi vẫn sống sót khi đối tượng bị xóa.
+/// Bản ghi cũ hơn AUDIT_RETENTION_DAYS (src/lib/audit.ts, mặc định 30 ngày) sẽ
+/// được dọn tự động mỗi khi mở trang /admin/history.
+model AuditLog {
+  id         String      @id @default(cuid())
+  actorId    String? // User.id người thực hiện (null nếu tài khoản đã bị xóa)
+  actorEmail String // snapshot email — luôn còn để truy người làm
+  actorName  String? // snapshot tên hiển thị tại thời điểm thao tác
+  action     AuditAction
+  entity     String // tên model bị tác động, VD "ReadingTest", "User"
+  entityId   String? // id bản ghi bị tác động (không FK — sống sót khi bị xóa)
+  summary    String      @db.Text // mô tả tiếng Việt, VD: Xóa bài đọc «...»
+  before     Json? // snapshot nội dung TRƯỚC khi sửa/xóa
+  after      Json? // snapshot nội dung SAU khi tạo/sửa
+  createdAt  DateTime    @default(now())
+
+  actor User? @relation(fields: [actorId], references: [id], onDelete: SetNull)
+
+  @@index([actorId, createdAt])
+  @@index([entity, createdAt])
   @@index([createdAt])
 }

@@ -19,6 +19,13 @@ import {
 export const LEVELS = ["HSK1", "HSK2", "HSK3", "HSK4", "HSK5", "HSK6"] as const;
 export type Level = (typeof LEVELS)[number];
 
+/**
+ * `chapterOrder` "ảo" cho bài CHƯA phân chương — đủ lớn để luôn xếp SAU mọi chương
+ * thật (chương thật đánh số 1..n). Nhờ vậy khi sắp theo (chapterOrder, order) các bài
+ * lẻ gom thành một nhóm "Chưa phân chương" ở cuối, không lẫn vào Chương 1.
+ */
+export const UNCHAPTERED_ORDER = 999999;
+
 export type SkillKey =
   | "VOCAB"
   | "GRAMMAR"

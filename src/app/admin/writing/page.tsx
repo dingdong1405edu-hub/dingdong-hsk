@@ -1,5 +1,6 @@
 import { db } from "@/lib/db";
-import { requireAdmin } from "@/lib/admin-guard";
+import { requireAdminActor } from "@/lib/admin-guard";
+import { logAudit } from "@/lib/audit";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -17,8 +18,8 @@ import { HSKLevel, WritingTaskType } from "@prisma/client";
 
 async function createWritingAction(fd: FormData): Promise<void> {
   "use server";
-  await requireAdmin();
-  await prisma.writingTask.create({
+  const { actor } = await requireAdminActor();
+  const created = await prisma.writingTask.create({
     data: {
       taskType: fd.get("taskType") as WritingTaskType,
       prompt: fd.get("prompt") as string,
@@ -30,6 +31,14 @@ async function createWritingAction(fd: FormData): Promise<void> {
       imageUrl: (fd.get("imageUrl") as string) || undefined,
       published: false,
     },
+  });
+  await logAudit({
+    actor,
+    action: "CREATE",
+    entity: "WritingTask",
+    entityId: created.id,
+    summary: `Tạo bài luyện viết «${created.prompt}»`,
+    after: created,
   });
   revalidatePath("/admin/writing");
 }

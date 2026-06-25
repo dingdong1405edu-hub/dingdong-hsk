@@ -1,5 +1,6 @@
 import { db } from "@/lib/db";
-import { requireAdmin } from "@/lib/admin-guard";
+import { requireAdminActor } from "@/lib/admin-guard";
+import { logAudit } from "@/lib/audit";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -16,8 +17,8 @@ import { db as prisma } from "@/lib/db";
 
 async function createHanziAction(fd: FormData) {
   "use server";
-  await requireAdmin();
-  await prisma.hanziCharacter.create({
+  const { actor } = await requireAdminActor();
+  const created = await prisma.hanziCharacter.create({
     data: {
       character: fd.get("character") as string,
       pinyin: fd.get("pinyin") as string,
@@ -31,13 +32,29 @@ async function createHanziAction(fd: FormData) {
       published: false,
     },
   });
+  await logAudit({
+    actor,
+    action: "CREATE",
+    entity: "HanziCharacter",
+    entityId: created.id,
+    summary: `Tạo chữ Hán «${created.character}»`,
+    after: created,
+  });
   revalidatePath("/admin/hanzi");
 }
 
 async function deleteHanziAction(id: string) {
   "use server";
-  await requireAdmin();
-  await prisma.hanziCharacter.delete({ where: { id } });
+  const { actor } = await requireAdminActor();
+  const deleted = await prisma.hanziCharacter.delete({ where: { id } });
+  await logAudit({
+    actor,
+    action: "DELETE",
+    entity: "HanziCharacter",
+    entityId: deleted.id,
+    summary: `Xóa chữ Hán «${deleted.character}»`,
+    before: deleted,
+  });
   revalidatePath("/admin/hanzi");
 }
 

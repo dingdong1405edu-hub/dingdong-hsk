@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { db } from "@/lib/db";
-import { requireAdmin } from "@/lib/admin-guard";
+import { requireAdminActor } from "@/lib/admin-guard";
+import { logAudit } from "@/lib/audit";
 import { notFound } from "next/navigation";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -21,7 +22,7 @@ const HSK_LEVELS = ["HSK1", "HSK2", "HSK3", "HSK4", "HSK5", "HSK6"];
 
 async function createQuestionAction(fd: FormData): Promise<void> {
   "use server";
-  await requireAdmin();
+  const { actor } = await requireAdminActor();
   const type = fd.get("type") as QuestionType;
   const readingId = fd.get("readingId") as string;
   const prompt = fd.get("prompt") as string;
@@ -80,7 +81,7 @@ async function createQuestionAction(fd: FormData): Promise<void> {
 
   // Append after existing questions so ordering is deterministic.
   const count = await prisma.question.count({ where: { readingId } });
-  await prisma.question.create({
+  const created = await prisma.question.create({
     data: {
       type,
       prompt,
@@ -91,6 +92,14 @@ async function createQuestionAction(fd: FormData): Promise<void> {
       readingId,
       order: count + 1,
     },
+  });
+  await logAudit({
+    actor,
+    action: "CREATE",
+    entity: "Question",
+    entityId: created.id,
+    summary: `Tạo câu hỏi «${prompt.slice(0, 40)}»`,
+    after: created,
   });
   revalidatePath(`/admin/reading/${readingId}`);
 }

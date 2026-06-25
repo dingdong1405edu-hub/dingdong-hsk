@@ -21,7 +21,10 @@ export default async function LessonEditorPage({ params }: Props) {
   const { courseId, lessonId } = await params;
   const lesson = await db.roadmapLesson.findUnique({
     where: { id: lessonId },
-    include: { course: true, sections: true },
+    include: {
+      course: { include: { chapters: { orderBy: { order: "asc" } } } },
+      sections: true,
+    },
   });
   if (!lesson || lesson.courseId !== courseId) notFound();
 
@@ -75,12 +78,25 @@ export default async function LessonEditorPage({ params }: Props) {
               <Input name="icon" defaultValue={lesson.icon ?? ""} placeholder="👋" />
             </div>
             <div className="space-y-1">
-              <Label>Tên chương</Label>
-              <Input name="chapter" defaultValue={lesson.chapter ?? ""} />
-            </div>
-            <div className="space-y-1">
-              <Label>Chương số</Label>
-              <Input name="chapterOrder" type="number" min={1} defaultValue={lesson.chapterOrder} />
+              <Label>Chương</Label>
+              <select
+                name="chapterId"
+                defaultValue={lesson.chapterId ?? ""}
+                disabled={lesson.course.chapters.length === 0}
+                className="flex h-9 w-full items-center rounded-md border border-input bg-transparent px-3 py-1 text-sm shadow-sm focus:outline-none focus:ring-1 focus:ring-ring disabled:cursor-not-allowed disabled:opacity-50"
+              >
+                <option value="">(Chưa phân chương)</option>
+                {lesson.course.chapters.map((ch) => (
+                  <option key={ch.id} value={ch.id}>
+                    Chương {ch.order}. {ch.title}
+                  </option>
+                ))}
+              </select>
+              {lesson.course.chapters.length === 0 && (
+                <p className="text-xs text-muted-foreground">
+                  Khóa chưa có chương — tạo chương ở trang khóa để gán bài.
+                </p>
+              )}
             </div>
             <div className="space-y-1">
               <Label>Thưởng XP</Label>

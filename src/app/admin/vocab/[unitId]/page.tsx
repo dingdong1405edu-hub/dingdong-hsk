@@ -3,7 +3,8 @@ import { notFound } from "next/navigation";
 import { revalidatePath } from "next/cache";
 import { Prisma } from "@prisma/client";
 import { db } from "@/lib/db";
-import { requireAdmin } from "@/lib/admin-guard";
+import { requireAdminActor } from "@/lib/admin-guard";
+import { logAudit } from "@/lib/audit";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -21,24 +22,42 @@ import type { VocabWordCard, WordExample } from "@/types";
 
 async function createVocabLessonAction(fd: FormData) {
   "use server";
-  await requireAdmin();
+  const { actor } = await requireAdminActor();
   const unitId = fd.get("unitId") as string;
   const title = ((fd.get("title") as string) || "").trim();
   const count = await db.vocabLesson.count({ where: { unitId } });
-  await db.vocabLesson.create({
+  const created = await db.vocabLesson.create({
     data: { unitId, title, order: count + 1, exercises: [] as Prisma.InputJsonValue, published: false },
+  });
+  await logAudit({
+    actor,
+    action: "CREATE",
+    entity: "VocabLesson",
+    entityId: created.id,
+    summary: `Tạo bài học từ vựng «${title || created.id}»`,
+    after: created,
   });
   revalidatePath(`/admin/vocab/${unitId}`);
 }
 
 async function updateUnitImageAction(fd: FormData) {
   "use server";
-  await requireAdmin();
+  const { actor } = await requireAdminActor();
   const unitId = fd.get("unitId") as string;
   const imageUrl = ((fd.get("imageUrl") as string) || "").trim();
-  await db.vocabUnit.update({
+  const before = await db.vocabUnit.findUnique({ where: { id: unitId } });
+  const updated = await db.vocabUnit.update({
     where: { id: unitId },
     data: { imageUrl: imageUrl || null },
+  });
+  await logAudit({
+    actor,
+    action: "UPDATE",
+    entity: "VocabUnit",
+    entityId: updated.id,
+    summary: `Sửa ảnh unit từ vựng «${updated.title || updated.id}»`,
+    before,
+    after: updated,
   });
   revalidatePath(`/admin/vocab/${unitId}`);
   revalidatePath("/admin/vocab");

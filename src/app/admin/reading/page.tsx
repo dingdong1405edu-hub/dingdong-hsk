@@ -1,5 +1,6 @@
 import { db } from "@/lib/db";
-import { requireAdmin } from "@/lib/admin-guard";
+import { requireAdminActor } from "@/lib/admin-guard";
+import { logAudit } from "@/lib/audit";
 import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -19,7 +20,7 @@ import { HSKLevel } from "@prisma/client";
 
 async function createReadingAction(fd: FormData): Promise<void> {
   "use server";
-  await requireAdmin();
+  const { actor } = await requireAdminActor();
   const created = await prisma.readingTest.create({
     data: {
       title: fd.get("title") as string,
@@ -30,6 +31,14 @@ async function createReadingAction(fd: FormData): Promise<void> {
       timeLimit: parseInt(fd.get("timeLimit") as string),
       published: false,
     },
+  });
+  await logAudit({
+    actor,
+    action: "CREATE",
+    entity: "ReadingTest",
+    entityId: created.id,
+    summary: `Tạo bài đọc «${created.title}»`,
+    after: created,
   });
   revalidatePath("/admin/reading");
   // Vào thẳng trang chi tiết — nơi form "Thêm câu hỏi" nằm ngay dưới bài đọc, để

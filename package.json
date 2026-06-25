@@ -12,6 +12,7 @@
     "db:migrate": "prisma migrate dev",
     "db:push": "prisma db push",
     "db:seed": "tsx prisma/seed.ts",
+    "db:backfill-chapters": "tsx prisma/backfill-chapters.ts",
     "db:studio": "prisma studio",
     "db:generate": "prisma generate"
   },

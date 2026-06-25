@@ -25,7 +25,10 @@ export default async function CourseMapPage({ params }: Props) {
     where: { hskLevel: level },
     include: {
       lessons: {
-        orderBy: { order: "asc" },
+        // Sắp theo (chương, thứ tự bài) để mỗi chương luôn là một khối liền mạch
+        // trên bản đồ học — không phụ thuộc vào lesson.order tuyệt đối (admin có thể
+        // gán/đổi chương mà không đụng order). Khớp @@index([courseId, chapterOrder, order]).
+        orderBy: [{ chapterOrder: "asc" }, { order: "asc" }],
         include: {
           sections: { select: { skill: true, published: true } },
           progress: { where: { userId }, select: { completed: true, skillsDone: true } },

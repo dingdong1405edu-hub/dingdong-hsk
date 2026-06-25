@@ -4,7 +4,8 @@ import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { z } from "zod";
 import { HSKLevel, Skill, QuestionType, Prisma } from "@prisma/client";
-import { requireAdmin } from "@/lib/admin-guard";
+import { requireAdminActor } from "@/lib/admin-guard";
+import { logAudit } from "@/lib/audit";
 import { generateReadingExplanation, isGradingConfigured } from "@/lib/groq";
 
 // Chỉ 3 kỹ năng xuất hiện trong đề thi thật.
@@ -31,7 +32,7 @@ const examSchema = z.object({
 });
 
 export async function createMockExamAction(fd: FormData): Promise<void> {
-  await requireAdmin();
+  const { actor } = await requireAdminActor();
   const data = examSchema.parse(Object.fromEntries(fd));
   const created = await db.mockExam.create({
     data: {
@@ -44,17 +45,26 @@ export async function createMockExamAction(fd: FormData): Promise<void> {
       published: false, // bản nháp
     },
   });
+  await logAudit({
+    actor,
+    action: "CREATE",
+    entity: "MockExam",
+    entityId: created.id,
+    summary: `Tạo đề thi «${created.title}»`,
+    after: created,
+  });
   revalidatePath("/admin/exam");
   redirect(`/admin/exam/${created.id}`);
 }
 
 export async function updateMockExamAction(fd: FormData): Promise<{ ok: boolean; error?: string }> {
   try {
-    await requireAdmin();
+    const { actor } = await requireAdminActor();
     const id = (fd.get("id") as string) || "";
     if (!id) return { ok: false, error: "Thiếu id đề thi." };
     const data = examSchema.parse(Object.fromEntries(fd));
-    await db.mockExam.update({
+    const before = await db.mockExam.findUnique({ where: { id } });
+    const updated = await db.mockExam.update({
       where: { id },
       data: {
         title: data.title,
@@ -64,6 +74,15 @@ export async function updateMockExamAction(fd: FormData): Promise<{ ok: boolean;
         totalTime: data.totalTime && data.totalTime > 0 ? data.totalTime * 60 : null,
       },
     });
+    await logAudit({
+      actor,
+      action: "UPDATE",
+      entity: "MockExam",
+      entityId: updated.id,
+      summary: `Sửa đề thi «${updated.title}»`,
+      before,
+      after: updated,
+    });
     rev(id);
     return { ok: true };
   } catch (e) {
@@ -72,8 +91,16 @@ export async function updateMockExamAction(fd: FormData): Promise<{ ok: boolean;
 }
 
 export async function deleteMockExamAction(id: string) {
-  await requireAdmin();
-  await db.mockExam.delete({ where: { id } });
+  const { actor } = await requireAdminActor();
+  const deleted = await db.mockExam.delete({ where: { id } });
+  await logAudit({
+    actor,
+    action: "DELETE",
+    entity: "MockExam",
+    entityId: deleted.id,
+    summary: `Xóa đề thi «${deleted.title}»`,
+    before: deleted,
+  });
   revalidatePath("/admin/exam");
   revalidatePath("/exam");
   return { ok: true };
@@ -82,7 +109,7 @@ export async function deleteMockExamAction(id: string) {
 // ===================== Phần (Section) =====================
 export async function createSectionAction(fd: FormData): Promise<{ ok: boolean; error?: string }> {
   try {
-    await requireAdmin();
+    const { actor } = await requireAdminActor();
     const examId = (fd.get("examId") as string) || "";
     const skill = fd.get("skill") as Skill;
     if (!examId) return { ok: false, error: "Thiếu id đề thi." };
@@ -90,7 +117,7 @@ export async function createSectionAction(fd: FormData): Promise<{ ok: boolean; 
       return { ok: false, error: "Kỹ năng không hợp lệ (chỉ Nghe/Đọc/Viết)." };
     }
     const count = await db.mockExamSection.count({ where: { examId } });
-    await db.mockExamSection.create({
+    const created = await db.mockExamSection.create({
       data: {
         examId,
         skill,
@@ -98,6 +125,14 @@ export async function createSectionAction(fd: FormData): Promise<{ ok: boolean; 
         instructions: optStr(fd, "instructions"),
         order: count + 1,
       },
+    });
+    await logAudit({
+      actor,
+      action: "CREATE",
+      entity: "MockExamSection",
+      entityId: created.id,
+      summary: `Tạo phần «${created.title || created.skill}»`,
+      after: created,
     });
     rev(examId);
     return { ok: true };
@@ -108,13 +143,23 @@ export async function createSectionAction(fd: FormData): Promise<{ ok: boolean; 
 
 export async function updateSectionAction(fd: FormData): Promise<{ ok: boolean; error?: string }> {
   try {
-    await requireAdmin();
+    const { actor } = await requireAdminActor();
     const id = (fd.get("id") as string) || "";
     const examId = (fd.get("examId") as string) || "";
     if (!id) return { ok: false, error: "Thiếu id phần." };
-    await db.mockExamSection.update({
+    const before = await db.mockExamSection.findUnique({ where: { id } });
+    const updated = await db.mockExamSection.update({
       where: { id },
       data: { title: optStr(fd, "title") ?? "", instructions: optStr(fd, "instructions") },
+    });
+    await logAudit({
+      actor,
+      action: "UPDATE",
+      entity: "MockExamSection",
+      entityId: updated.id,
+      summary: `Sửa phần «${updated.title || updated.skill}»`,
+      before,
+      after: updated,
     });
     rev(examId);
     return { ok: true };
@@ -124,8 +169,16 @@ export async function updateSectionAction(fd: FormData): Promise<{ ok: boolean; 
 }
 
 export async function deleteSectionAction(id: string, examId: string) {
-  await requireAdmin();
-  await db.mockExamSection.delete({ where: { id } });
+  const { actor } = await requireAdminActor();
+  const deleted = await db.mockExamSection.delete({ where: { id } });
+  await logAudit({
+    actor,
+    action: "DELETE",
+    entity: "MockExamSection",
+    entityId: deleted.id,
+    summary: `Xóa phần «${deleted.title || deleted.skill}»`,
+    before: deleted,
+  });
   rev(examId);
   return { ok: true };
 }
@@ -162,12 +215,20 @@ function partData(input: z.infer<typeof partSchema>) {
 // examId truyền kèm chỉ để revalidate đúng trang.
 export async function createPartAction(fd: FormData): Promise<{ ok: boolean; error?: string }> {
   try {
-    await requireAdmin();
+    const { actor } = await requireAdminActor();
     const examId = (fd.get("examId") as string) || "";
     const data = partSchema.parse(Object.fromEntries(fd));
     const count = await db.mockExamPart.count({ where: { sectionId: data.sectionId } });
-    await db.mockExamPart.create({
+    const created = await db.mockExamPart.create({
       data: { sectionId: data.sectionId, order: count + 1, ...partData(data) },
+    });
+    await logAudit({
+      actor,
+      action: "CREATE",
+      entity: "MockExamPart",
+      entityId: created.id,
+      summary: `Tạo tiểu phần «${created.title || created.id}»`,
+      after: created,
     });
     rev(examId);
     return { ok: true };
@@ -178,12 +239,22 @@ export async function createPartAction(fd: FormData): Promise<{ ok: boolean; err
 
 export async function updatePartAction(fd: FormData): Promise<{ ok: boolean; error?: string }> {
   try {
-    await requireAdmin();
+    const { actor } = await requireAdminActor();
     const id = (fd.get("id") as string) || "";
     const examId = (fd.get("examId") as string) || "";
     if (!id) return { ok: false, error: "Thiếu id tiểu phần." };
     const data = partSchema.parse(Object.fromEntries(fd));
-    await db.mockExamPart.update({ where: { id }, data: partData(data) });
+    const before = await db.mockExamPart.findUnique({ where: { id } });
+    const updated = await db.mockExamPart.update({ where: { id }, data: partData(data) });
+    await logAudit({
+      actor,
+      action: "UPDATE",
+      entity: "MockExamPart",
+      entityId: updated.id,
+      summary: `Sửa tiểu phần «${updated.title || updated.id}»`,
+      before,
+      after: updated,
+    });
     rev(examId);
     return { ok: true };
   } catch (e) {
@@ -192,8 +263,16 @@ export async function updatePartAction(fd: FormData): Promise<{ ok: boolean; err
 }
 
 export async function deletePartAction(id: string, examId: string) {
-  await requireAdmin();
-  await db.mockExamPart.delete({ where: { id } });
+  const { actor } = await requireAdminActor();
+  const deleted = await db.mockExamPart.delete({ where: { id } });
+  await logAudit({
+    actor,
+    action: "DELETE",
+    entity: "MockExamPart",
+    entityId: deleted.id,
+    summary: `Xóa tiểu phần «${deleted.title || deleted.id}»`,
+    before: deleted,
+  });
   rev(examId);
   return { ok: true };
 }
@@ -205,7 +284,7 @@ export async function createExamQuestionAction(
   fd: FormData,
 ): Promise<{ ok: boolean; error?: string }> {
   try {
-    await requireAdmin();
+    const { actor } = await requireAdminActor();
     const examId = (fd.get("examId") as string) || "";
     const examPartId = (fd.get("examPartId") as string) || "";
     const type = fd.get("type") as QuestionType;
@@ -266,7 +345,7 @@ export async function createExamQuestionAction(
     }
 
     const count = await db.question.count({ where: { examPartId } });
-    await db.question.create({
+    const created = await db.question.create({
       data: {
         type,
         prompt,
@@ -279,6 +358,14 @@ export async function createExamQuestionAction(
         order: count + 1,
       },
     });
+    await logAudit({
+      actor,
+      action: "CREATE",
+      entity: "Question",
+      entityId: created.id,
+      summary: `Tạo câu hỏi «${prompt.slice(0, 50)}»`,
+      after: created,
+    });
     rev(examId);
     return { ok: true };
   } catch (e) {
@@ -287,8 +374,16 @@ export async function createExamQuestionAction(
 }
 
 export async function deleteExamQuestionAction(questionId: string, examId: string) {
-  await requireAdmin();
-  await db.question.delete({ where: { id: questionId } });
+  const { actor } = await requireAdminActor();
+  const deleted = await db.question.delete({ where: { id: questionId } });
+  await logAudit({
+    actor,
+    action: "DELETE",
+    entity: "Question",
+    entityId: deleted.id,
+    summary: `Xóa câu hỏi «${deleted.prompt.slice(0, 50)}»`,
+    before: deleted,
+  });
   rev(examId);
   return { ok: true };
 }
@@ -299,18 +394,27 @@ export async function reorderMockExamsAction(
   orderedIds: string[],
 ): Promise<{ ok: boolean; error?: string }> {
   try {
-    await requireAdmin();
+    const { actor } = await requireAdminActor();
     if (orderedIds.length === 0) return { ok: true };
     const rows = await db.mockExam.findMany({
       where: { id: { in: orderedIds } },
-      select: { id: true, hskLevel: true },
+      select: { id: true, hskLevel: true, order: true },
     });
     if (rows.length !== orderedIds.length || rows.some((r) => r.hskLevel !== hskLevel)) {
       return { ok: false, error: "Danh sách sắp xếp không hợp lệ." };
     }
+    const before = [...rows].sort((a, b) => a.order - b.order).map((r) => r.id);
     await db.$transaction(
       orderedIds.map((id, i) => db.mockExam.update({ where: { id }, data: { order: i + 1 } })),
     );
+    await logAudit({
+      actor,
+      action: "UPDATE",
+      entity: "MockExam",
+      summary: `Sắp xếp lại thứ tự đề thi ${hskLevel}`,
+      before,
+      after: orderedIds,
+    });
     revalidatePath("/admin/exam");
     revalidatePath("/exam");
     return { ok: true };
