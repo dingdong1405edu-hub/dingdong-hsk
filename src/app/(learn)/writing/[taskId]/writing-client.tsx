@@ -51,7 +51,18 @@ const CRITERIA_LABELS: Record<string, string> = {
   coherence: "Mạch lạc 连贯",
 };
 
-export function WritingClient({ task }: { task: Task; userId: string }) {
+export function WritingClient({
+  task,
+  onGrade,
+}: {
+  task: Task;
+  userId?: string;
+  /** Chấm bài tuỳ biến (lộ trình). Nếu có → dùng thay gradeWritingAction. */
+  onGrade?: (args: {
+    submission: string;
+    durationSec: number;
+  }) => Promise<{ ok: boolean; result?: unknown; error?: string }>;
+}) {
   const [text, setText] = useState("");
   const [timeLeft, setTimeLeft] = useState(task.timeLimit);
   const [grading, setGrading] = useState(false);
@@ -100,11 +111,13 @@ export function WritingClient({ task }: { task: Task; userId: string }) {
     }
     setGrading(true);
     const duration = Math.round((Date.now() - startTime.current) / 1000);
-    const res = await gradeWritingAction({
-      taskId: task.id,
-      submission: text,
-      durationSec: duration,
-    });
+    const res = onGrade
+      ? await onGrade({ submission: text, durationSec: duration })
+      : await gradeWritingAction({
+          taskId: task.id,
+          submission: text,
+          durationSec: duration,
+        });
     setGrading(false);
     if (res.ok && res.result) {
       setResult(res.result as GradeResult);

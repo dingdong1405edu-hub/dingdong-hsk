@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { toast } from "sonner";
 import { Check, Lock, Sparkles, Star } from "lucide-react";
 import {
@@ -13,11 +14,13 @@ import {
 import { cn } from "@/lib/utils";
 import { SkillTile } from "./skill-tile";
 import { ProgressRing } from "./progress-ring";
-import { SKILL_META, type CourseTheme, type RoadmapLessonDTO } from "@/lib/roadmap";
+import { SKILL_META, type CourseTheme, type RoadmapLessonDTO, type SkillKey } from "@/lib/roadmap";
 
 interface LessonDetailDialogProps {
   lesson: RoadmapLessonDTO | null;
   levelLabel: string;
+  /** Slug cấp HSK (vd "hsk1") để dựng đường dẫn chơi từng phần. */
+  levelSlug: string;
   theme: CourseTheme;
   /** Bài bị khoá vì chưa mua gói lộ trình → hiện CTA nâng cấp thay vì kỹ năng. */
   locked: boolean;
@@ -30,22 +33,26 @@ interface LessonDetailDialogProps {
  * % hoàn thành và 6 kỹ năng (từ vựng, ngữ pháp, nghe, nói, đọc, viết).
  * Nội dung từng kỹ năng sẽ được nối sau (hiện báo toast giữ chỗ).
  */
-export function LessonDetailDialog({ lesson, levelLabel, theme, locked, upgradeHref, onOpenChange }: LessonDetailDialogProps) {
+export function LessonDetailDialog({ lesson, levelLabel, levelSlug, theme, locked, upgradeHref, onOpenChange }: LessonDetailDialogProps) {
+  const router = useRouter();
   const open = lesson !== null;
   const publishedBySkill = new Map((lesson?.sections ?? []).map((s) => [s.skill, s.published]));
   const doneSkills = new Set(lesson?.skillsDone ?? []);
 
-  const doneCount = SKILL_META.filter((m) => doneSkills.has(m.key)).length;
-  const pct = Math.round((doneCount / SKILL_META.length) * 100);
+  // Mẫu số động: chỉ tính các kỹ năng ĐÃ publish trong bài này (không cố định 7).
+  const playableSkills = SKILL_META.filter((m) => publishedBySkill.get(m.key));
+  const total = playableSkills.length;
+  const doneCount = playableSkills.filter((m) => doneSkills.has(m.key)).length;
+  const pct = total > 0 ? Math.round((doneCount / total) * 100) : 0;
 
-  function handleSkill(label: string, done: boolean, published: boolean) {
-    if (done) {
-      toast.success(`Bạn đã hoàn thành phần "${label}". Ôn lại sắp ra mắt! 🎉`);
-    } else if (published) {
-      toast.info(`Đang mở phần "${label}"…`);
-    } else {
+  function handleSkill(skill: SkillKey, label: string, published: boolean) {
+    if (!published) {
       toast.info(`Phần "${label}" đang được biên soạn — sắp ra mắt! ✨`);
+      return;
     }
+    if (!lesson) return;
+    onOpenChange(false);
+    router.push(`/roadmap/${levelSlug}/${lesson.id}/${skill.toLowerCase()}`);
   }
 
   return (
@@ -98,7 +105,7 @@ export function LessonDetailDialog({ lesson, levelLabel, theme, locked, upgradeH
               <Star className="h-3.5 w-3.5 fill-white" /> +{lesson?.xpReward ?? 20} XP
             </span>
             <span className="inline-flex items-center gap-1 rounded-full bg-white/15 px-2.5 py-1 tabular-nums backdrop-blur">
-              {doneCount}/{SKILL_META.length} kỹ năng
+              {doneCount}/{total} kỹ năng
             </span>
           </div>
 
@@ -148,13 +155,13 @@ export function LessonDetailDialog({ lesson, levelLabel, theme, locked, upgradeH
                       meta={meta}
                       published={published}
                       done={done}
-                      onClick={() => handleSkill(meta.label, done, published)}
+                      onClick={() => handleSkill(meta.key, meta.label, published)}
                     />
                   );
                 })}
               </div>
               <p className="mt-4 text-center text-[11px] text-muted-foreground">
-                Hoàn thành cả 6 kỹ năng để đạt 100% và mở khoá bài tiếp theo.
+                Hoàn thành tất cả kỹ năng đang mở để đạt 100% và mở khoá bài tiếp theo.
               </p>
             </>
           )}

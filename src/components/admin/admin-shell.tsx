@@ -15,6 +15,7 @@ import {
   MessagesSquare,
   GraduationCap,
   Library,
+  Route,
   Users,
   CreditCard,
   Flag,
@@ -53,6 +54,10 @@ const GROUPS: AdminNavGroup[] = [
       { href: "/admin/exam", label: "Thi thử", icon: GraduationCap },
       { href: "/admin/materials", label: "Tài liệu", icon: Library },
     ],
+  },
+  {
+    title: "Lộ trình",
+    items: [{ href: "/admin/roadmap", label: "Khóa & bài học", icon: Route }],
   },
   {
     title: "Hệ thống",

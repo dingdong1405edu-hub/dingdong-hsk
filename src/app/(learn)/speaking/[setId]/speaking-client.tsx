@@ -37,6 +37,16 @@ interface Sentence { text: string; pinyin: string }
 interface Passage { text: string; pinyin: string }
 interface QuestionItem { question: string; pinyin: string }
 
+/** Hàm chấm một đoạn ghi âm — mặc định gọi gradeSpeakingAction; lộ trình truyền bản riêng. */
+type GradeFn = (args: {
+  transcript: string;
+  referenceText: string | null;
+  part: "repeat" | "read" | "answer";
+  question: string | null;
+  index: number;
+  durationSec: number;
+}) => Promise<{ ok: boolean; result?: unknown; error?: string }>;
+
 function AudioRecorder({
   onRecorded,
   disabled,
@@ -126,13 +136,13 @@ function AudioRecorder({
 async function transcribeAndGrade(params: {
   blob: Blob;
   durationSec: number;
-  setId: string;
+  grade: GradeFn;
   referenceText: string | null;
   part: "repeat" | "read" | "answer";
   question: string | null;
   index: number;
 }): Promise<GradeResult> {
-  const { blob, durationSec, setId, referenceText, part, question, index } = params;
+  const { blob, durationSec, grade, referenceText, part, question, index } = params;
 
   // 1) Audio → transcript via Deepgram (multipart upload stays an API route).
   const fd = new FormData();
@@ -148,15 +158,7 @@ async function transcribeAndGrade(params: {
   }
 
   // 2) Transcript → score via Groq, persisted as an Attempt (server action).
-  const res = await gradeSpeakingAction({
-    setId,
-    transcript,
-    referenceText,
-    part,
-    question,
-    index,
-    durationSec,
-  });
+  const res = await grade({ transcript, referenceText, part, question, index, durationSec });
   if (!res.ok || !res.result) {
     throw new Error(res.error || "Chấm điểm thất bại");
   }
@@ -178,10 +180,39 @@ function ScoreBadge({ score }: { score: number }) {
   );
 }
 
-export function SpeakingClient({ set }: { set: SpeakingSetData; userId: string }) {
+export function SpeakingClient({
+  set,
+  gradeAction,
+  onFinish,
+}: {
+  set: SpeakingSetData;
+  userId?: string;
+  /** Chấm tuỳ biến (lộ trình). Nếu có → dùng thay gradeSpeakingAction. */
+  gradeAction?: GradeFn;
+  /** Nút "Hoàn thành phần Nói" (lộ trình). Nếu có → hiện nút ghi nhận hoàn thành. */
+  onFinish?: () => Promise<void> | void;
+}) {
   const sentences = set.part1Sentences as Sentence[];
   const passage = set.part2Passage as Passage;
   const questions = set.part3Questions as QuestionItem[];
+
+  const grade: GradeFn = gradeAction ?? ((args) => gradeSpeakingAction({ setId: set.id, ...args }));
+  const [finishing, setFinishing] = useState(false);
+  const [finished, setFinished] = useState(false);
+
+  async function handleFinish() {
+    if (!onFinish) return;
+    setFinishing(true);
+    try {
+      await onFinish();
+      setFinished(true);
+      toast.success("Đã hoàn thành phần Nói!");
+    } catch {
+      toast.error("Không ghi nhận được, thử lại sau.");
+    } finally {
+      setFinishing(false);
+    }
+  }
 
   const [part1Results, setPart1Results] = useState<(GradeResult | null)[]>(Array(sentences.length).fill(null));
   const [part1Loading, setPart1Loading] = useState<boolean[]>(Array(sentences.length).fill(false));
@@ -197,7 +228,7 @@ export function SpeakingClient({ set }: { set: SpeakingSetData; userId: string }
     setPart1Loading((l) => { const n = [...l]; n[idx] = true; return n; });
     try {
       const res = await transcribeAndGrade({
-        blob, durationSec, setId: set.id, referenceText: sentences[idx].text,
+        blob, durationSec, grade, referenceText: sentences[idx].text,
         part: "repeat", question: null, index: idx,
       });
       setPart1Results((r) => { const n = [...r]; n[idx] = res; return n; });
@@ -212,7 +243,7 @@ export function SpeakingClient({ set }: { set: SpeakingSetData; userId: string }
     setPart2Loading(true);
     try {
       const res = await transcribeAndGrade({
-        blob, durationSec, setId: set.id, referenceText: passage.text,
+        blob, durationSec, grade, referenceText: passage.text,
         part: "read", question: null, index: 0,
       });
       setPart2Result(res);
@@ -227,7 +258,7 @@ export function SpeakingClient({ set }: { set: SpeakingSetData; userId: string }
     setPart3Loading((l) => { const n = [...l]; n[idx] = true; return n; });
     try {
       const res = await transcribeAndGrade({
-        blob, durationSec, setId: set.id, referenceText: null,
+        blob, durationSec, grade, referenceText: null,
         part: "answer", question: questions[idx].question, index: idx,
       });
       setPart3Results((r) => { const n = [...r]; n[idx] = res; return n; });
@@ -381,6 +412,22 @@ export function SpeakingClient({ set }: { set: SpeakingSetData; userId: string }
           ))}
         </TabsContent>
       </Tabs>
+
+      {onFinish && (
+        <div className="flex flex-col items-center gap-2 rounded-2xl border bg-muted/30 p-4 text-center">
+          <p className="text-xs text-muted-foreground">
+            Luyện đủ 3 phần rồi bấm hoàn thành để ghi nhận phần Nói cho bài lộ trình.
+          </p>
+          <Button onClick={handleFinish} disabled={finishing || finished} className="gap-1.5">
+            {finishing ? (
+              <Loader2 className="h-4 w-4 animate-spin" />
+            ) : (
+              <CheckCircle2 className="h-4 w-4" />
+            )}
+            {finished ? "Đã hoàn thành" : "Hoàn thành phần Nói"}
+          </Button>
+        </div>
+      )}
     </div>
   );
 }

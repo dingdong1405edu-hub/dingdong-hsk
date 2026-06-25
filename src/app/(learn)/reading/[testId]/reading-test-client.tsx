@@ -45,7 +45,21 @@ const HIGHLIGHT_COLORS: { name: string; value: string }[] = [
   { name: "Hồng", value: "rgba(244, 114, 182, 0.45)" },
 ];
 
-export function ReadingTestClient({ test }: { test: ReadingTestData; userId: string }) {
+export function ReadingTestClient({
+  test,
+  onSubmit,
+  backHref = "/reading",
+}: {
+  test: ReadingTestData;
+  userId?: string;
+  /** Nộp bài tuỳ biến (lộ trình). Nếu có → dùng thay submitReadingAction. */
+  onSubmit?: (args: {
+    answers: Record<string, unknown>;
+    durationSec: number;
+  }) => Promise<{ ok: boolean; result?: { score: number; details: Record<string, boolean> } }>;
+  /** Đường dẫn nút "Thoát" (mặc định /reading). */
+  backHref?: string;
+}) {
   const { settings, setSettings } = useReadingSettings();
   const [showPinyin, setShowPinyin] = useState(false);
   const [answers, setAnswers] = useState<Record<string, unknown>>({});
@@ -253,7 +267,9 @@ export function ReadingTestClient({ test }: { test: ReadingTestData; userId: str
   async function handleSubmit() {
     if (submitting || submitted) return; // re-entrancy guard (no duplicate Attempt/XP)
     setSubmitting(true);
-    const res = await submitReadingAction({ testId: test.id, answers, durationSec: elapsed });
+    const res = onSubmit
+      ? await onSubmit({ answers, durationSec: elapsed })
+      : await submitReadingAction({ testId: test.id, answers, durationSec: elapsed });
     setSubmitting(false);
     if (res.ok && res.result) {
       setResult(res.result);
@@ -277,7 +293,7 @@ export function ReadingTestClient({ test }: { test: ReadingTestData; userId: str
     <>
       <TestShell
         subtitle="Đọc hiểu · Luyện tập"
-        backHref="/reading"
+        backHref={backHref}
         onSubmit={() => setReviewOpen(true)}
         submitting={submitting}
         submitted={submitted}
@@ -496,7 +512,7 @@ export function ReadingTestClient({ test }: { test: ReadingTestData; userId: str
 
                   {submitted && (
                     <Button asChild variant="outline" className="w-full">
-                      <Link href="/reading">Quay lại danh sách đề</Link>
+                      <Link href={backHref}>Quay lại danh sách đề</Link>
                     </Button>
                   )}
                 </div>

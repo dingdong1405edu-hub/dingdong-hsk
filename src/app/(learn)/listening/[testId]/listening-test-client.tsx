@@ -51,7 +51,21 @@ interface SavedItem {
 
 type ReviewFilter = "all" | "wrong";
 
-export function ListeningTestClient({ test }: { test: ListeningTestData; userId: string }) {
+export function ListeningTestClient({
+  test,
+  onSubmit,
+  backHref = "/listening",
+}: {
+  test: ListeningTestData;
+  userId?: string;
+  /** Nộp bài tuỳ biến (lộ trình). Nếu có → dùng thay submitListeningAction. */
+  onSubmit?: (args: {
+    answers: Record<string, unknown>;
+    durationSec: number;
+  }) => Promise<{ ok: boolean; result?: { score: number; details: Record<string, boolean> } }>;
+  /** Đường dẫn nút "Thoát" (mặc định /listening). */
+  backHref?: string;
+}) {
   const segments = useMemo(() => splitTranscript(test.transcript), [test.transcript]);
   const maxPlays = test.hskLevel === "HSK1" || test.hskLevel === "HSK2" ? 3 : 2;
 
@@ -204,7 +218,9 @@ export function ListeningTestClient({ test }: { test: ListeningTestData; userId:
     if (submitting || submitted) return;
     setSubmitting(true);
     audio.stop();
-    const res = await submitListeningAction({ testId: test.id, answers, durationSec: elapsed });
+    const res = onSubmit
+      ? await onSubmit({ answers, durationSec: elapsed })
+      : await submitListeningAction({ testId: test.id, answers, durationSec: elapsed });
     setSubmitting(false);
     if (res.ok && res.result) {
       setResult(res.result);
@@ -267,7 +283,7 @@ export function ListeningTestClient({ test }: { test: ListeningTestData; userId:
     <>
       <TestShell
         subtitle="Nghe hiểu · Luyện tập"
-        backHref="/listening"
+        backHref={backHref}
         onSubmit={() => setReviewOpen(true)}
         submitting={submitting}
         submitted={submitted}
@@ -508,7 +524,7 @@ export function ListeningTestClient({ test }: { test: ListeningTestData; userId:
                       <RefreshCw className="h-4 w-4" /> Làm lại từ đầu
                     </Button>
                     <Button asChild variant="ghost">
-                      <Link href="/listening">Quay lại danh sách đề</Link>
+                      <Link href={backHref}>Quay lại danh sách đề</Link>
                     </Button>
                   </div>
                 </div>

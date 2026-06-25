@@ -12,6 +12,7 @@ import {
   PenLine,
   Mic,
   Library,
+  Route,
   Activity,
   ArrowRight,
   CreditCard,
@@ -29,6 +30,7 @@ export default async function AdminPage() {
     writingCount,
     speakingCount,
     materialCount,
+    roadmapLessonCount,
     attemptCount,
     subscriptionCount,
     recentUsers,
@@ -42,6 +44,7 @@ export default async function AdminPage() {
     db.writingTask.count(),
     db.speakingSet.count(),
     db.material.count(),
+    db.roadmapLesson.count(),
     db.attempt.count(),
     db.subscription.count({ where: { expiresAt: { gt: new Date() } } }),
     db.user.findMany({
@@ -60,6 +63,7 @@ export default async function AdminPage() {
     { href: "/admin/writing", label: "Viết luận", icon: PenLine, count: writingCount, cls: "bg-rose-100 text-rose-600" },
     { href: "/admin/speaking", label: "Luyện nói", icon: Mic, count: speakingCount, cls: "bg-indigo-100 text-indigo-600" },
     { href: "/admin/materials", label: "Tài liệu", icon: Library, count: materialCount, cls: "bg-fuchsia-100 text-fuchsia-600" },
+    { href: "/admin/roadmap", label: "Lộ trình", icon: Route, count: roadmapLessonCount, cls: "bg-lime-100 text-lime-600" },
     { href: "/admin/users", label: "Người dùng", icon: Users, count: userCount, cls: "bg-sky-100 text-sky-600" },
     { href: "/admin/subscriptions", label: "Gói & Quyền lợi", icon: CreditCard, count: subscriptionCount, cls: "bg-green-100 text-green-600" },
   ];

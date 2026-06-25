@@ -1,6 +1,7 @@
 import {
   BookOpen,
   SpellCheck,
+  PenTool,
   Headphones,
   Mic,
   BookText,
@@ -21,10 +22,11 @@ export type Level = (typeof LEVELS)[number];
 export type SkillKey =
   | "VOCAB"
   | "GRAMMAR"
-  | "LISTENING"
-  | "SPEAKING"
+  | "HANZI"
   | "READING"
-  | "WRITING";
+  | "LISTENING"
+  | "WRITING"
+  | "SPEAKING";
 
 /** Theme từng khóa HSK — toàn class Tailwind dạng literal để JIT quét được. */
 export interface CourseTheme {
@@ -157,10 +159,11 @@ export interface SkillMeta {
 export const SKILL_META: SkillMeta[] = [
   { key: "VOCAB", label: "Từ vựng", labelZh: "词汇", icon: BookOpen, iconBg: "bg-emerald-100", iconText: "text-emerald-600" },
   { key: "GRAMMAR", label: "Ngữ pháp", labelZh: "语法", icon: SpellCheck, iconBg: "bg-sky-100", iconText: "text-sky-600" },
+  { key: "HANZI", label: "Chữ Hán", labelZh: "汉字", icon: PenTool, iconBg: "bg-amber-100", iconText: "text-amber-600" },
+  { key: "READING", label: "Đọc", labelZh: "阅读", icon: BookText, iconBg: "bg-orange-100", iconText: "text-orange-600" },
   { key: "LISTENING", label: "Nghe", labelZh: "听力", icon: Headphones, iconBg: "bg-violet-100", iconText: "text-violet-600" },
-  { key: "SPEAKING", label: "Nói", labelZh: "口语", icon: Mic, iconBg: "bg-rose-100", iconText: "text-rose-600" },
-  { key: "READING", label: "Đọc", labelZh: "阅读", icon: BookText, iconBg: "bg-amber-100", iconText: "text-amber-600" },
   { key: "WRITING", label: "Viết", labelZh: "写作", icon: PenLine, iconBg: "bg-teal-100", iconText: "text-teal-600" },
+  { key: "SPEAKING", label: "Nói", labelZh: "口语", icon: Mic, iconBg: "bg-rose-100", iconText: "text-rose-600" },
 ];
 
 export function levelToSlug(level: string): string {

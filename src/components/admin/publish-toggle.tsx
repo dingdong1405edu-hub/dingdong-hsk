@@ -19,7 +19,9 @@ export type PublishModel =
   | "writing"
   | "speaking"
   | "speakingTopic"
-  | "mockExam";
+  | "mockExam"
+  | "course"
+  | "roadmapSection";
 
 /**
  * Nút bật/tắt hiển thị một nội dung trên web học viên.

@@ -29,6 +29,14 @@ interface Props {
   onExit?: () => void;
   /** Chuyển sang chế độ "Ôn từ" ngay sau khi học xong. */
   onReviewNow?: () => void;
+  /** Ghi hoàn thành tuỳ biến (lộ trình). Nếu có → dùng thay completeLessonAction. */
+  onComplete?: (stats: {
+    correct: number;
+    total: number;
+    durationSec: number;
+  }) => Promise<{ ok: boolean; xpEarned?: number }>;
+  /** Tắt lưu vị trí học (bản sao trong lộ trình không có VocabProgress thật). */
+  disablePositionSave?: boolean;
 }
 
 type Phase = "learn" | "flashcards" | "done";
@@ -43,6 +51,8 @@ export function WordFlow({
   nextLessonId,
   onExit,
   onReviewNow,
+  onComplete,
+  disablePositionSave,
 }: Props) {
   const router = useRouter();
   const clampIdx = Math.min(Math.max(0, startIndex), Math.max(0, words.length - 1));
@@ -63,10 +73,10 @@ export function WordFlow({
   // Lưu vị trí đang học (nền) để "Học tiếp" đúng chỗ. Chỉ trong pha học và khi đã
   // có tiến triển (>0/0) — tránh tạo bản ghi tiến độ chỉ vì vừa mở bài.
   useEffect(() => {
-    if (phase !== "learn" || words.length === 0) return;
+    if (disablePositionSave || phase !== "learn" || words.length === 0) return;
     if (wordIndex === 0 && step === 0) return;
     void saveVocabPositionAction({ lessonId: lesson.id, wordIndex, step }).catch(() => {});
-  }, [phase, wordIndex, step, lesson.id, words.length]);
+  }, [phase, wordIndex, step, lesson.id, words.length, disablePositionSave]);
 
   // Empty lesson — nothing authored yet.
   if (words.length === 0) {
@@ -116,14 +126,16 @@ export function WordFlow({
   async function finishLesson() {
     const durationSec = Math.round((Date.now() - startTime) / 1000);
     const total = Math.max(1, words.length);
-    const res = await completeLessonAction({
-      lessonId: lesson.id,
-      skill: "vocab",
-      correct: total,
-      total,
-      heartsLost: 0,
-      durationSec,
-    });
+    const res = onComplete
+      ? await onComplete({ correct: total, total, durationSec })
+      : await completeLessonAction({
+          lessonId: lesson.id,
+          skill: "vocab",
+          correct: total,
+          total,
+          heartsLost: 0,
+          durationSec,
+        });
     if (res.ok) {
       setXpEarned(res.xpEarned ?? 0);
     } else {

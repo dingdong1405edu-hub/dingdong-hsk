@@ -9,6 +9,7 @@ import { ChapterPath } from "./chapter-path";
 import { LessonDetailDialog } from "./lesson-detail-dialog";
 import {
   themeFor,
+  levelToSlug,
   type LessonStatus,
   type RoadmapLessonDTO,
 } from "@/lib/roadmap";
@@ -212,6 +213,7 @@ export function RoadmapMap({
       <LessonDetailDialog
         lesson={selected}
         levelLabel={theme.label}
+        levelSlug={levelToSlug(level)}
         theme={theme}
         locked={selected?.accessLocked ?? false}
         upgradeHref={upgradeHref}

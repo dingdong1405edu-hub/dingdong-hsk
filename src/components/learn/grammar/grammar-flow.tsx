@@ -17,6 +17,12 @@ interface Props {
   lesson: { id: string; title: string };
   content: GrammarLessonContent;
   unitId: string;
+  /** Ghi hoàn thành tuỳ biến (lộ trình). Nếu có → dùng thay completeLessonAction. */
+  onComplete?: (stats: { correct: number; total: number; durationSec: number }) => Promise<{ ok: boolean }>;
+  /** Đường dẫn nút "Quay lại" (mặc định về unit Luyện kỹ năng). */
+  closeHref?: string;
+  /** Hiển thị nút "Làm bài kiểm tra" (mặc định true; lộ trình tắt vì không có trang test riêng). */
+  showTest?: boolean;
 }
 
 type Stage = "theory" | "practice" | "done";
@@ -35,11 +41,11 @@ function sectionHasPractice(s: GrammarSection): boolean {
  * bài tiếp theo (KHÔNG cần làm bài kiểm tra). Bài kiểm tra được TÁCH RIÊNG sang
  * trang .../test (nút "Làm bài kiểm tra"); chỉ ở đó mới có điểm kinh nghiệm.
  */
-export function GrammarFlow({ lesson, content, unitId }: Props) {
+export function GrammarFlow({ lesson, content, unitId, onComplete, closeHref: closeHrefProp, showTest = true }: Props) {
   const router = useRouter();
   const sections = content.sections;
-  const hasTest = content.test.questions.length > 0;
-  const closeHref = `/grammar/${unitId}`;
+  const hasTest = showTest && content.test.questions.length > 0;
+  const closeHref = closeHrefProp ?? `/grammar/${unitId}`;
   const testHref = `/grammar/${unitId}/lesson/${lesson.id}/test`;
 
   const theorySections = sections.filter(sectionHasTheory);
@@ -91,16 +97,18 @@ export function GrammarFlow({ lesson, content, unitId }: Props) {
     const correct = flashRef.current.correct;
     const total = Math.max(1, flashRef.current.correct + flashRef.current.wrong);
     // Hoàn thành luyện tập → mở khoá bài kế; KHÔNG cộng XP (XP chỉ từ bài kiểm tra).
-    const res = await completeLessonAction({
-      lessonId: lesson.id,
-      skill: "grammar",
-      correct,
-      total,
-      heartsLost: 0,
-      durationSec,
-      completed: true,
-      awardXp: false,
-    });
+    const res = onComplete
+      ? await onComplete({ correct, total, durationSec })
+      : await completeLessonAction({
+          lessonId: lesson.id,
+          skill: "grammar",
+          correct,
+          total,
+          heartsLost: 0,
+          durationSec,
+          completed: true,
+          awardXp: false,
+        });
     if (!res.ok) toast.error("Lỗi lưu kết quả");
     setStage("done");
   }

@@ -1150,7 +1150,9 @@ type ContentModel =
   | "writing"
   | "speaking"
   | "speakingTopic"
-  | "mockExam";
+  | "mockExam"
+  | "course"
+  | "roadmapSection";
 
 // Đường dẫn cần làm mới cache sau khi đổi trạng thái: trang admin (danh sách) và
 // trang học viên tương ứng. Dashboard học viên cũng đếm nội dung nên làm mới luôn.
@@ -1166,6 +1168,8 @@ const CONTENT_PATHS: Record<ContentModel, { admin: string; learner: string }> = 
   speaking: { admin: "/admin/speaking", learner: "/speaking" },
   speakingTopic: { admin: "/admin/speaking/topics", learner: "/speaking" },
   mockExam: { admin: "/admin/exam", learner: "/exam" },
+  course: { admin: "/admin/roadmap", learner: "/roadmap" },
+  roadmapSection: { admin: "/admin/roadmap", learner: "/roadmap" },
 };
 
 function revalidateContent(model: ContentModel) {
@@ -1217,6 +1221,12 @@ export async function setContentPublishedAction(
         break;
       case "mockExam":
         await db.mockExam.update({ where: { id }, data: { published } });
+        break;
+      case "course":
+        await db.course.update({ where: { id }, data: { published } });
+        break;
+      case "roadmapSection":
+        await db.roadmapSection.update({ where: { id }, data: { published } });
         break;
       default:
         return { ok: false, error: "Loại nội dung không hợp lệ." };
