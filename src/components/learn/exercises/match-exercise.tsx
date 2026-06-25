@@ -71,10 +71,10 @@ export function MatchExerciseUI({ exercise, onAnswer, disabled }: Props) {
               disabled={matched.has(zh)}
               className={cn(
                 "w-full p-3 rounded-xl border-2 font-chinese text-xl font-semibold transition-all",
-                matched.has(zh) && "opacity-30 border-green-300 bg-green-50",
+                matched.has(zh) && "opacity-30 border-green-300 dark:border-green-500/30 bg-green-50 dark:bg-green-500/15",
                 selected.zh === zh && !matched.has(zh) && "border-primary bg-primary/10",
-                wrong?.startsWith(zh) && "border-red-400 bg-red-50 animate-wrong",
-                !selected.zh || selected.zh === zh ? "" : "hover:border-zinc-300"
+                wrong?.startsWith(zh) && "border-red-400 dark:border-red-500/40 bg-red-50 dark:bg-red-500/15 animate-wrong",
+                !selected.zh || selected.zh === zh ? "" : "hover:border-border"
               )}
             >
               {zh}
@@ -90,9 +90,9 @@ export function MatchExerciseUI({ exercise, onAnswer, disabled }: Props) {
               disabled={matched.has(vi)}
               className={cn(
                 "w-full p-3 rounded-xl border-2 text-sm transition-all",
-                matched.has(vi) && "opacity-30 border-green-300 bg-green-50",
+                matched.has(vi) && "opacity-30 border-green-300 dark:border-green-500/30 bg-green-50 dark:bg-green-500/15",
                 selected.vi === vi && !matched.has(vi) && "border-primary bg-primary/10",
-                wrong?.endsWith(vi) && "border-red-400 bg-red-50 animate-wrong",
+                wrong?.endsWith(vi) && "border-red-400 dark:border-red-500/40 bg-red-50 dark:bg-red-500/15 animate-wrong",
               )}
             >
               {vi}

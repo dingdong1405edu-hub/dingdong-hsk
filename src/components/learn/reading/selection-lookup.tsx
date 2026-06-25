@@ -114,7 +114,7 @@ export function SelectionLookup({
   else style.top = anchor.y + 16;
 
   return (
-    <div ref={ref} style={style} className="animate-fade-in flex flex-col overflow-hidden rounded-2xl border bg-white shadow-xl">
+    <div ref={ref} style={style} className="animate-fade-in flex flex-col overflow-hidden rounded-2xl border bg-popover shadow-xl">
       <div className="flex items-center justify-between border-b px-3.5 py-2">
         <span className="font-chinese text-sm font-semibold">{anchor.text}</span>
         <button onClick={onClose} aria-label="Đóng" className="rounded-md p-1 text-muted-foreground hover:bg-muted">
@@ -144,7 +144,7 @@ export function SelectionLookup({
                     aria-label="Lưu vào sổ từ"
                     className={cn(
                       "shrink-0 rounded-md p-1.5 transition-colors",
-                      st === "saved" ? "text-emerald-600" : "text-muted-foreground hover:bg-primary/10 hover:text-primary",
+                      st === "saved" ? "text-emerald-600 dark:text-emerald-400" : "text-muted-foreground hover:bg-primary/10 hover:text-primary",
                     )}
                   >
                     {st === "saving" ? (

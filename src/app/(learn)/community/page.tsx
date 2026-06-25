@@ -6,7 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { BaoBuddy } from "@/components/marketing/bao-buddy";
 import { hskLevelLabel, cn } from "@/lib/utils";
 
-const MEDAL = ["bg-amber-400 text-amber-950", "bg-zinc-300 text-zinc-700", "bg-orange-300 text-orange-900"];
+const MEDAL = ["bg-amber-400 text-amber-950", "bg-zinc-300 text-zinc-800 dark:bg-zinc-400/30 dark:text-zinc-100", "bg-orange-300 text-orange-900"];
 
 export default async function CommunityPage() {
   const session = await auth();
@@ -22,7 +22,7 @@ export default async function CommunityPage() {
   return (
     <div className="space-y-6">
       {/* Banner */}
-      <div className="relative overflow-hidden rounded-2xl border border-green-100 bg-gradient-to-br from-green-50 to-white p-5 sm:p-6">
+      <div className="relative overflow-hidden rounded-2xl border border-green-100 bg-gradient-to-br from-green-50 to-white p-5 sm:p-6 dark:border-green-400/20 dark:from-green-500/10 dark:to-transparent">
         <div className="relative z-10 flex items-center gap-4">
           <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/10 text-primary shadow-sm">
             <Users2 className="h-7 w-7" />
@@ -34,7 +34,7 @@ export default async function CommunityPage() {
             </p>
           </div>
         </div>
-        <div className="pointer-events-none absolute -right-5 -top-8 select-none font-chinese text-[130px] leading-none text-black/[0.04]">
+        <div className="pointer-events-none absolute -right-5 -top-8 select-none font-chinese text-[130px] leading-none text-black/[0.04] dark:text-white/[0.04]">
           友
         </div>
       </div>

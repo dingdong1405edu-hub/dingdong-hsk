@@ -5,12 +5,12 @@ import { cn } from "@/lib/utils";
 import type { TranscriptSegment } from "@/lib/transcript";
 
 const SPEAKER_STYLES: Record<string, string> = {
-  A: "bg-teal-100 text-teal-700",
-  B: "bg-violet-100 text-violet-700",
+  A: "bg-teal-100 text-teal-700 dark:bg-teal-500/20 dark:text-teal-300",
+  B: "bg-violet-100 text-violet-700 dark:bg-violet-500/20 dark:text-violet-300",
 };
 
 function speakerStyle(speaker: string): string {
-  return SPEAKER_STYLES[speaker.toUpperCase()] ?? "bg-zinc-100 text-zinc-600";
+  return SPEAKER_STYLES[speaker.toUpperCase()] ?? "bg-muted text-muted-foreground";
 }
 
 interface TapescriptProps {
@@ -63,9 +63,9 @@ export function Tapescript({
               className={cn(
                 "group flex items-start gap-2 rounded-xl border p-2.5 transition-colors",
                 isCurrent
-                  ? "border-teal-400 bg-teal-50"
+                  ? "border-teal-400 bg-teal-50 dark:border-teal-500/40 dark:bg-teal-500/15"
                   : isEvidence
-                    ? "border-amber-200 bg-amber-50/60"
+                    ? "border-amber-200 bg-amber-50/60 dark:border-amber-400/25 dark:bg-amber-500/10"
                     : "border-transparent hover:bg-muted/50",
               )}
             >
@@ -91,7 +91,7 @@ export function Tapescript({
                     {qs!.map((n) => (
                       <span
                         key={n}
-                        className="rounded-full bg-amber-200/70 px-2 py-0.5 text-[10px] font-bold text-amber-800"
+                        className="rounded-full bg-amber-200/70 px-2 py-0.5 text-[10px] font-bold text-amber-800 dark:bg-amber-500/20 dark:text-amber-200"
                       >
                         Đáp án câu {n}
                       </span>
@@ -105,7 +105,7 @@ export function Tapescript({
                   type="button"
                   onClick={() => onPlaySegment(i)}
                   aria-label="Nghe lại câu này"
-                  className="shrink-0 rounded-lg p-1.5 text-muted-foreground opacity-0 transition-opacity hover:bg-teal-100 hover:text-teal-700 group-hover:opacity-100"
+                  className="shrink-0 rounded-lg p-1.5 text-muted-foreground opacity-0 transition-opacity hover:bg-teal-100 hover:text-teal-700 dark:hover:bg-teal-500/20 dark:hover:text-teal-300 group-hover:opacity-100"
                 >
                   <Volume2 className="h-4 w-4" />
                 </button>

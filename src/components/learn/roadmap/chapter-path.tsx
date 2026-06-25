@@ -90,13 +90,13 @@ export function ChapterPath({
           height={height}
           viewBox={`0 0 ${COL_W} ${height}`}
           fill="none"
-          className="absolute inset-0"
+          className="absolute inset-0 text-zinc-300 dark:text-zinc-700"
           aria-hidden
         >
           {/* Đường nền nét chấm */}
           <path
             d={fullD}
-            stroke="#cbd5e1"
+            stroke="currentColor"
             strokeWidth={6}
             strokeLinecap="round"
             strokeDasharray="1 18"

@@ -60,7 +60,7 @@ export function PinyinMatchExerciseUI({ exercise, onAnswer, disabled }: Props) {
                 "w-full p-4 rounded-xl border-2 font-chinese text-2xl font-bold transition-all",
                 matched.has(zh) && "opacity-30",
                 selZh === zh && "border-primary bg-primary/10",
-                wrong?.startsWith(zh) && "border-red-400 bg-red-50"
+                wrong?.startsWith(zh) && "border-red-400 dark:border-red-500/40 bg-red-50 dark:bg-red-500/15"
               )}
             >
               {zh}
@@ -78,7 +78,7 @@ export function PinyinMatchExerciseUI({ exercise, onAnswer, disabled }: Props) {
                 "w-full p-4 rounded-xl border-2 font-pinyin transition-all",
                 matched.has(py) && "opacity-30",
                 selPy === py && "border-primary bg-primary/10",
-                wrong?.endsWith(py) && "border-red-400 bg-red-50"
+                wrong?.endsWith(py) && "border-red-400 dark:border-red-500/40 bg-red-50 dark:bg-red-500/15"
               )}
             >
               {py}

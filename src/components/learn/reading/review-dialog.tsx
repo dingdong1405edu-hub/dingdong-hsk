@@ -78,12 +78,12 @@ export function ReviewDialog({
         <div className="space-y-4">
           {unanswered.length > 0 && (
             <div className="space-y-1.5">
-              <span className="flex items-center gap-1.5 text-sm font-semibold text-rose-600">
+              <span className="flex items-center gap-1.5 text-sm font-semibold text-rose-600 dark:text-rose-300">
                 <CircleHelp className="h-4 w-4" /> Chưa trả lời ({unanswered.length})
               </span>
               <Chips
                 nums={unanswered}
-                className="border-rose-300 bg-rose-50 text-rose-600"
+                className="border-rose-300 bg-rose-50 text-rose-600 dark:border-rose-500/30 dark:bg-rose-500/15 dark:text-rose-300"
                 onJump={onJump}
                 onOpenChange={onOpenChange}
               />
@@ -92,12 +92,12 @@ export function ReviewDialog({
 
           {flagged.length > 0 && (
             <div className="space-y-1.5">
-              <span className="flex items-center gap-1.5 text-sm font-semibold text-amber-600">
+              <span className="flex items-center gap-1.5 text-sm font-semibold text-amber-600 dark:text-amber-300">
                 <Flag className="h-4 w-4" /> Đã gắn cờ ({flagged.length})
               </span>
               <Chips
                 nums={flagged}
-                className="border-amber-300 bg-amber-50 text-amber-600"
+                className="border-amber-300 bg-amber-50 text-amber-600 dark:border-amber-400/30 dark:bg-amber-500/15 dark:text-amber-300"
                 onJump={onJump}
                 onOpenChange={onOpenChange}
               />
@@ -105,7 +105,7 @@ export function ReviewDialog({
           )}
 
           {unanswered.length === 0 && (
-            <p className="rounded-lg bg-emerald-50 px-3 py-2 text-sm font-medium text-emerald-700">
+            <p className="rounded-lg bg-emerald-50 px-3 py-2 text-sm font-medium text-emerald-700 dark:bg-emerald-500/15 dark:text-emerald-300">
               Tuyệt vời — bạn đã trả lời hết các câu hỏi! 🎉
             </p>
           )}

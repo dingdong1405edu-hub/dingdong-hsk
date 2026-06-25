@@ -31,7 +31,7 @@ export function TestCard({ href, title, level, tags, attempts, score, meta, seed
           href={pdfHref}
           aria-label="Tải PDF"
           title="Tải PDF"
-          className="absolute right-2 top-2 z-10 inline-flex items-center gap-1 rounded-full bg-white/95 px-2 py-1 text-[11px] font-semibold text-zinc-700 shadow transition-colors hover:bg-white"
+          className="absolute right-2 top-2 z-10 inline-flex items-center gap-1 rounded-full bg-card/95 px-2 py-1 text-[11px] font-semibold text-foreground shadow transition-colors hover:bg-card"
         >
           <FileDown className="h-3.5 w-3.5" /> PDF
         </Link>
@@ -66,7 +66,7 @@ export function TestCard({ href, title, level, tags, attempts, score, meta, seed
             </span>
           )}
           {typeof score === "number" && (
-            <span className="absolute bottom-2 right-2 rounded-full bg-white/95 px-2 py-0.5 text-[11px] font-bold text-emerald-700 shadow">
+            <span className="absolute bottom-2 right-2 rounded-full bg-card/95 px-2 py-0.5 text-[11px] font-bold text-emerald-700 shadow dark:text-emerald-300">
               {Math.round(score)}%
             </span>
           )}

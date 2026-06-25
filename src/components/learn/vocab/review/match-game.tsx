@@ -100,9 +100,9 @@ export function MatchGame({ words, onDone }: Props) {
     const isWrong = wrongId === tile.id;
     return cn(
       "flex min-h-[3.25rem] items-center justify-center rounded-xl border-2 px-3 py-3 text-center transition-all",
-      isMatched && "border-green-400 bg-green-50 text-green-600 opacity-60",
+      isMatched && "border-green-400 dark:border-green-500/40 bg-green-50 dark:bg-green-500/15 text-green-600 dark:text-green-300 opacity-60",
       !isMatched && isSelected && "border-primary bg-primary/10 ring-2 ring-primary/30",
-      !isMatched && isWrong && "border-red-500 bg-red-50",
+      !isMatched && isWrong && "border-red-500 bg-red-50 dark:bg-red-500/15",
       !isMatched && !isSelected && !isWrong && "border-border hover:border-primary/50 hover:bg-muted/40",
     );
   }

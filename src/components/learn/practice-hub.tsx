@@ -6,14 +6,14 @@ import { cn } from "@/lib/utils";
 export type Accent = "red" | "green" | "blue" | "amber" | "teal" | "rose" | "indigo" | "violet";
 
 const ACCENTS: Record<Accent, { text: string; iconBg: string; btn: string; banner: string }> = {
-  red: { text: "text-primary", iconBg: "bg-primary/10 text-primary", btn: "bg-primary hover:bg-primary/90", banner: "border-green-100 from-green-50 to-white" },
-  green: { text: "text-emerald-600", iconBg: "bg-emerald-100 text-emerald-700", btn: "bg-emerald-600 hover:bg-emerald-700", banner: "border-emerald-100 from-emerald-50 to-white" },
-  blue: { text: "text-sky-600", iconBg: "bg-sky-100 text-sky-700", btn: "bg-sky-600 hover:bg-sky-700", banner: "border-sky-100 from-sky-50 to-white" },
-  amber: { text: "text-amber-600", iconBg: "bg-amber-100 text-amber-700", btn: "bg-amber-500 hover:bg-amber-600", banner: "border-amber-100 from-amber-50 to-white" },
-  teal: { text: "text-teal-600", iconBg: "bg-teal-100 text-teal-700", btn: "bg-teal-600 hover:bg-teal-700", banner: "border-teal-100 from-teal-50 to-white" },
-  rose: { text: "text-rose-600", iconBg: "bg-rose-100 text-rose-700", btn: "bg-rose-500 hover:bg-rose-600", banner: "border-rose-100 from-rose-50 to-white" },
-  indigo: { text: "text-indigo-600", iconBg: "bg-indigo-100 text-indigo-700", btn: "bg-indigo-600 hover:bg-indigo-700", banner: "border-indigo-100 from-indigo-50 to-white" },
-  violet: { text: "text-violet-600", iconBg: "bg-violet-100 text-violet-700", btn: "bg-violet-600 hover:bg-violet-700", banner: "border-violet-100 from-violet-50 to-white" },
+  red: { text: "text-primary", iconBg: "bg-primary/10 text-primary", btn: "bg-primary hover:bg-primary/90", banner: "border-green-100 from-green-50 to-white dark:border-green-400/20 dark:from-green-500/10 dark:to-transparent" },
+  green: { text: "text-emerald-600", iconBg: "bg-emerald-100 text-emerald-700 dark:bg-emerald-500/15 dark:text-emerald-300", btn: "bg-emerald-600 hover:bg-emerald-700", banner: "border-emerald-100 from-emerald-50 to-white dark:border-emerald-400/20 dark:from-emerald-500/10 dark:to-transparent" },
+  blue: { text: "text-sky-600", iconBg: "bg-sky-100 text-sky-700 dark:bg-sky-500/15 dark:text-sky-300", btn: "bg-sky-600 hover:bg-sky-700", banner: "border-sky-100 from-sky-50 to-white dark:border-sky-400/20 dark:from-sky-500/10 dark:to-transparent" },
+  amber: { text: "text-amber-600", iconBg: "bg-amber-100 text-amber-700 dark:bg-amber-500/15 dark:text-amber-300", btn: "bg-amber-500 hover:bg-amber-600", banner: "border-amber-100 from-amber-50 to-white dark:border-amber-400/20 dark:from-amber-500/10 dark:to-transparent" },
+  teal: { text: "text-teal-600", iconBg: "bg-teal-100 text-teal-700 dark:bg-teal-500/15 dark:text-teal-300", btn: "bg-teal-600 hover:bg-teal-700", banner: "border-teal-100 from-teal-50 to-white dark:border-teal-400/20 dark:from-teal-500/10 dark:to-transparent" },
+  rose: { text: "text-rose-600", iconBg: "bg-rose-100 text-rose-700 dark:bg-rose-500/15 dark:text-rose-300", btn: "bg-rose-500 hover:bg-rose-600", banner: "border-rose-100 from-rose-50 to-white dark:border-rose-400/20 dark:from-rose-500/10 dark:to-transparent" },
+  indigo: { text: "text-indigo-600", iconBg: "bg-indigo-100 text-indigo-700 dark:bg-indigo-500/15 dark:text-indigo-300", btn: "bg-indigo-600 hover:bg-indigo-700", banner: "border-indigo-100 from-indigo-50 to-white dark:border-indigo-400/20 dark:from-indigo-500/10 dark:to-transparent" },
+  violet: { text: "text-violet-600", iconBg: "bg-violet-100 text-violet-700 dark:bg-violet-500/15 dark:text-violet-300", btn: "bg-violet-600 hover:bg-violet-700", banner: "border-violet-100 from-violet-50 to-white dark:border-violet-400/20 dark:from-violet-500/10 dark:to-transparent" },
 };
 
 interface PracticeHubProps {
@@ -69,7 +69,7 @@ export function PracticeHub({
             </Link>
           )}
         </div>
-        <div className="pointer-events-none absolute -right-5 -top-8 select-none font-chinese text-[130px] leading-none text-black/[0.04]">
+        <div className="pointer-events-none absolute -right-5 -top-8 select-none font-chinese text-[130px] leading-none text-foreground/[0.04] dark:text-white/[0.05]">
           {decoChar}
         </div>
       </div>

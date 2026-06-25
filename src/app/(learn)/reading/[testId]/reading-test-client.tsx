@@ -301,10 +301,10 @@ export function ReadingTestClient({
           <span
             className={cn(
               "inline-flex items-center gap-1.5 rounded-lg px-2.5 py-1.5 text-sm font-semibold tabular-nums",
-              overTime ? "bg-amber-100 text-amber-700" : "bg-muted",
+              overTime ? "bg-amber-100 text-amber-700 dark:bg-amber-500/15 dark:text-amber-300" : "bg-muted",
             )}
           >
-            <Clock className={cn("h-4 w-4", overTime ? "text-amber-600" : "text-muted-foreground")} />
+            <Clock className={cn("h-4 w-4", overTime ? "text-amber-600 dark:text-amber-300" : "text-muted-foreground")} />
             {formatDuration(elapsed)}
             <span className="hidden text-xs font-normal text-muted-foreground sm:inline">
               / đề xuất {formatDuration(test.timeLimit)}
@@ -343,7 +343,7 @@ export function ReadingTestClient({
               <span className="hidden lg:inline">Bút</span>
             </Button>
             {mode === "highlight" && (
-              <div className="flex items-center gap-1 rounded-lg border bg-white/70 px-1.5 py-1">
+              <div className="flex items-center gap-1 rounded-lg border bg-card/70 px-1.5 py-1">
                 {HIGHLIGHT_COLORS.map((c) => (
                   <button
                     key={c.value}
@@ -353,7 +353,7 @@ export function ReadingTestClient({
                     title={c.name}
                     className={cn(
                       "h-5 w-5 rounded-full border-2 transition-transform",
-                      highlightColor === c.value ? "scale-110 border-foreground" : "border-black/10",
+                      highlightColor === c.value ? "scale-110 border-foreground" : "border-black/10 dark:border-white/20",
                     )}
                     style={{ backgroundColor: c.value }}
                   />
@@ -390,7 +390,7 @@ export function ReadingTestClient({
       >
         <div className="flex h-full min-h-0 flex-col">
           {/* Segmented passage/questions switch — phones & iPad portrait */}
-          <div className="flex shrink-0 gap-1 border-b bg-white/80 p-1.5 backdrop-blur lg:hidden">
+          <div className="flex shrink-0 gap-1 border-b bg-card/80 p-1.5 backdrop-blur lg:hidden">
             <SegButton active={tab === "passage"} onClick={() => setTab("passage")} icon={BookOpen} label="Đoạn văn" />
             <SegButton
               active={tab === "questions"}
@@ -428,12 +428,12 @@ export function ReadingTestClient({
 
             <div className={cn("h-full min-h-0", tab === "questions" ? "block" : "hidden", "lg:block")}>
               <div className="flex h-full min-h-0 flex-col">
-                <div className="flex shrink-0 items-center justify-between border-b bg-white/70 px-4 py-2 backdrop-blur">
+                <div className="flex shrink-0 items-center justify-between border-b bg-card/70 px-4 py-2 backdrop-blur">
                   <span className="text-xs font-bold uppercase tracking-wide text-muted-foreground">
                     Câu hỏi · {total}
                   </span>
                   {submitted ? (
-                    <span className="rounded-full bg-emerald-100 px-2.5 py-0.5 text-xs font-bold text-emerald-700">
+                    <span className="rounded-full bg-emerald-100 px-2.5 py-0.5 text-xs font-bold text-emerald-700 dark:bg-emerald-500/15 dark:text-emerald-300">
                       {Math.round(result?.score ?? 0)}% · {correctCount}/{total}
                     </span>
                   ) : (

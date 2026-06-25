@@ -287,7 +287,7 @@ export default async function AdminUserDetailPage({ params }: Props) {
                       <div className="flex items-center gap-2">
                         <span className="font-medium">{planName ?? typeLabel}</span>
                         {active ? (
-                          <Badge variant="outline" className="border-green-300 text-green-700">
+                          <Badge variant="outline" className="border-green-300 text-green-700 dark:border-green-400/30 dark:text-green-400">
                             Còn hạn
                           </Badge>
                         ) : (

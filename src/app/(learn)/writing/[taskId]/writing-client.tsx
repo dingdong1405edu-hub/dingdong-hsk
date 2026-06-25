@@ -168,14 +168,14 @@ export function WritingClient({
           <Card>
             <CardHeader>
               <CardTitle className="text-base flex items-center gap-2">
-                <CheckCircle2 className="h-4 w-4 text-green-600" /> Điểm mạnh
+                <CheckCircle2 className="h-4 w-4 text-green-600 dark:text-green-400" /> Điểm mạnh
               </CardTitle>
             </CardHeader>
             <CardContent>
               <ul className="space-y-1.5 text-sm">
                 {result.strengths.map((s, i) => (
                   <li key={i} className="flex gap-2">
-                    <span className="text-green-600">✓</span>
+                    <span className="text-green-600 dark:text-green-400">✓</span>
                     <span>{s}</span>
                   </li>
                 ))}
@@ -195,9 +195,9 @@ export function WritingClient({
                     {ann.type && (
                       <Badge variant="secondary" className="font-chinese text-[10px]">{ann.type}</Badge>
                     )}
-                    <span className="font-chinese text-red-600 line-through">{ann.original}</span>
+                    <span className="font-chinese text-red-600 dark:text-red-400 line-through">{ann.original}</span>
                     <span>→</span>
-                    <span className="font-chinese text-green-700 font-semibold">{ann.correction}</span>
+                    <span className="font-chinese text-green-700 dark:text-green-300 font-semibold">{ann.correction}</span>
                   </div>
                   {ann.issue && <div className="text-muted-foreground mt-1 font-medium">{ann.issue}</div>}
                   <div className="text-muted-foreground mt-1">{ann.explanation}</div>
@@ -232,7 +232,7 @@ export function WritingClient({
         <Card>
           <CardHeader><CardTitle className="text-base">Bài sửa</CardTitle></CardHeader>
           <CardContent>
-            <div className="font-chinese text-sm leading-relaxed bg-green-50 rounded p-3">
+            <div className="font-chinese text-sm leading-relaxed bg-green-50 dark:bg-green-500/10 rounded p-3">
               {result.correctedVersion}
             </div>
           </CardContent>
@@ -278,17 +278,17 @@ export function WritingClient({
                 type="button"
                 onClick={() => setShowOutline((v) => !v)}
                 aria-expanded={showOutline}
-                className="inline-flex items-center gap-1.5 text-sm font-medium text-amber-600 hover:text-amber-700"
+                className="inline-flex items-center gap-1.5 text-sm font-medium text-amber-600 hover:text-amber-700 dark:text-amber-400 dark:hover:text-amber-300"
               >
                 <Lightbulb className="h-4 w-4" />
                 {showOutline ? "Ẩn dàn ý gợi ý" : "Gợi ý dàn ý"}
                 <ChevronDown className={`h-4 w-4 transition-transform ${showOutline ? "rotate-180" : ""}`} />
               </button>
               {showOutline && (
-                <ul className="mt-2 space-y-1.5 rounded-lg bg-amber-50 p-3 text-sm text-amber-900">
+                <ul className="mt-2 space-y-1.5 rounded-lg bg-amber-50 dark:bg-amber-500/10 p-3 text-sm text-amber-900 dark:text-amber-200">
                   {outlineItems.map((item, i) => (
                     <li key={i} className="flex gap-2">
-                      <span className="select-none text-amber-500">•</span>
+                      <span className="select-none text-amber-500 dark:text-amber-400">•</span>
                       <span className="whitespace-pre-line">{item}</span>
                     </li>
                   ))}

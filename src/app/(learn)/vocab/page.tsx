@@ -56,10 +56,10 @@ export default async function VocabPage() {
       {dueCount > 0 && (
         <Link
           href="/vocab/review"
-          className="mb-4 flex items-center justify-between gap-3 rounded-2xl border border-amber-200 bg-gradient-to-br from-amber-50 to-white p-4 transition-colors hover:border-amber-300"
+          className="mb-4 flex items-center justify-between gap-3 rounded-2xl border border-amber-200 bg-gradient-to-br from-amber-50 to-white p-4 transition-colors hover:border-amber-300 dark:border-amber-400/25 dark:from-amber-500/10 dark:to-transparent dark:hover:border-amber-400/40"
         >
           <div className="flex items-center gap-3">
-            <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-amber-100 text-amber-600">
+            <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-amber-100 text-amber-600 dark:bg-amber-500/15 dark:text-amber-300">
               <Sparkles className="h-5 w-5" />
             </div>
             <div>
@@ -69,7 +69,7 @@ export default async function VocabPage() {
               </p>
             </div>
           </div>
-          <ArrowRight className="h-5 w-5 shrink-0 text-amber-600" />
+          <ArrowRight className="h-5 w-5 shrink-0 text-amber-600 dark:text-amber-300" />
         </Link>
       )}
       {withStats.length === 0 ? (

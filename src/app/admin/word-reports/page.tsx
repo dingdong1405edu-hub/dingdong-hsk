@@ -10,9 +10,9 @@ import type { WordReportStatus } from "@prisma/client";
 export const dynamic = "force-dynamic";
 
 const STATUS_META: Record<WordReportStatus, { label: string; cls: string }> = {
-  PENDING: { label: "Chờ duyệt", cls: "bg-amber-100 text-amber-700" },
-  APPROVED: { label: "Đã duyệt", cls: "bg-emerald-100 text-emerald-700" },
-  REJECTED: { label: "Đã từ chối", cls: "bg-zinc-100 text-zinc-600" },
+  PENDING: { label: "Chờ duyệt", cls: "bg-amber-100 text-amber-700 dark:bg-amber-500/15 dark:text-amber-300" },
+  APPROVED: { label: "Đã duyệt", cls: "bg-emerald-100 text-emerald-700 dark:bg-emerald-500/15 dark:text-emerald-300" },
+  REJECTED: { label: "Đã từ chối", cls: "bg-muted text-muted-foreground" },
 };
 
 export default async function AdminWordReportsPage() {

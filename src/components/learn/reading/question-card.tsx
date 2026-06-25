@@ -48,8 +48,8 @@ export function QuestionCard({
         "relative rounded-2xl border bg-card p-4 pl-5 transition-colors",
         submitted
           ? isCorrect
-            ? "border-emerald-300"
-            : "border-rose-300"
+            ? "border-emerald-300 dark:border-emerald-500/40"
+            : "border-rose-300 dark:border-rose-500/40"
           : isCurrent
             ? "border-primary/50"
             : "border-border",
@@ -91,7 +91,7 @@ export function QuestionCard({
           className={cn(
             "shrink-0 rounded-lg border p-1.5 transition-colors",
             flagged
-              ? "border-amber-400 bg-amber-50 text-amber-600"
+              ? "border-amber-400 bg-amber-50 text-amber-600 dark:bg-amber-500/15 dark:text-amber-300"
               : "border-transparent text-muted-foreground hover:bg-muted",
           )}
         >
@@ -117,11 +117,11 @@ export function QuestionCard({
                 userAnswer === oi
                   ? submitted
                     ? oi === ca.index
-                      ? "border-emerald-500 bg-emerald-50"
-                      : "border-rose-400 bg-rose-50"
+                      ? "border-emerald-500 bg-emerald-50 dark:bg-emerald-500/15"
+                      : "border-rose-400 bg-rose-50 dark:bg-rose-500/15"
                     : "border-primary bg-primary/10"
                   : submitted && oi === ca.index
-                    ? "border-emerald-300 bg-emerald-50/50"
+                    ? "border-emerald-300 bg-emerald-50/50 dark:border-emerald-500/40 dark:bg-emerald-500/10"
                     : "hover:border-primary/50",
               )}
             >
@@ -162,11 +162,11 @@ export function QuestionCard({
                 userAnswer === val
                   ? submitted
                     ? val === ca.value
-                      ? "border-emerald-500 bg-emerald-50"
-                      : "border-rose-400 bg-rose-50"
+                      ? "border-emerald-500 bg-emerald-50 dark:bg-emerald-500/15"
+                      : "border-rose-400 bg-rose-50 dark:bg-rose-500/15"
                     : "border-primary bg-primary/10"
                   : submitted && val === ca.value
-                    ? "border-emerald-300 bg-emerald-50/50"
+                    ? "border-emerald-300 bg-emerald-50/50 dark:border-emerald-500/40 dark:bg-emerald-500/10"
                     : "hover:border-primary/50",
               )}
             >
@@ -186,11 +186,11 @@ export function QuestionCard({
             placeholder="Nhập câu trả lời…"
             className={cn(
               "font-chinese",
-              submitted && (isCorrect ? "border-emerald-400 bg-emerald-50" : "border-rose-300 bg-rose-50"),
+              submitted && (isCorrect ? "border-emerald-400 bg-emerald-50 dark:bg-emerald-500/15" : "border-rose-300 bg-rose-50 dark:bg-rose-500/15"),
             )}
           />
           {submitted && !isCorrect && correctText && (
-            <p className="text-xs text-emerald-700">
+            <p className="text-xs text-emerald-700 dark:text-emerald-300">
               Đáp án đúng: <span className="font-chinese font-semibold">{correctText}</span>
             </p>
           )}
@@ -210,28 +210,28 @@ export function QuestionCard({
           <button
             type="button"
             onClick={onShowEvidence}
-            className="mt-3 block w-full rounded-lg border border-emerald-200 bg-emerald-50 p-2.5 text-left text-xs text-emerald-800 transition-colors hover:border-emerald-400 hover:bg-emerald-100"
+            className="mt-3 block w-full rounded-lg border border-emerald-200 bg-emerald-50 p-2.5 text-left text-xs text-emerald-800 transition-colors hover:border-emerald-400 hover:bg-emerald-100 dark:border-emerald-500/25 dark:bg-emerald-500/15 dark:text-emerald-200 dark:hover:bg-emerald-500/25"
           >
             <span className="font-semibold">📍 Đáp án nằm ở đoạn:</span>{" "}
             <span className="font-chinese">{q.supportingQuote}</span>
             {q.quoteTranslation && (
-              <span className="mt-1 block italic text-emerald-700/80">“{q.quoteTranslation}”</span>
+              <span className="mt-1 block italic text-emerald-700/80 dark:text-emerald-300/80">“{q.quoteTranslation}”</span>
             )}
-            <span className="mt-1 block text-[11px] font-medium text-emerald-600">
+            <span className="mt-1 block text-[11px] font-medium text-emerald-600 dark:text-emerald-400">
               Bấm để xem &amp; tô sáng trong đoạn văn →
             </span>
           </button>
         ) : (
-          <div className="mt-3 rounded-lg border border-emerald-200 bg-emerald-50 p-2.5 text-xs text-emerald-800">
+          <div className="mt-3 rounded-lg border border-emerald-200 bg-emerald-50 p-2.5 text-xs text-emerald-800 dark:border-emerald-500/25 dark:bg-emerald-500/15 dark:text-emerald-200">
             <span className="font-semibold">📍 Đáp án nằm ở đoạn:</span>{" "}
             <span className="font-chinese">{q.supportingQuote}</span>
             {q.quoteTranslation && (
-              <span className="mt-1 block italic text-emerald-700/80">“{q.quoteTranslation}”</span>
+              <span className="mt-1 block italic text-emerald-700/80 dark:text-emerald-300/80">“{q.quoteTranslation}”</span>
             )}
           </div>
         ))}
       {submitted && q.explanation && (
-        <div className="mt-2 rounded-lg border border-amber-200 bg-amber-50 p-2.5 text-xs leading-relaxed text-amber-900">
+        <div className="mt-2 rounded-lg border border-amber-200 bg-amber-50 p-2.5 text-xs leading-relaxed text-amber-900 dark:border-amber-400/25 dark:bg-amber-500/15 dark:text-amber-200">
           <span className="font-semibold">💡 Giải thích:</span> {q.explanation}
         </div>
       )}

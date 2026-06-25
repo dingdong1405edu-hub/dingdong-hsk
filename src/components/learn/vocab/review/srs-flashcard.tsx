@@ -18,10 +18,10 @@ interface Props {
 }
 
 const RATINGS: { rating: SrsRating; label: string; hint: string; cls: string }[] = [
-  { rating: "again", label: "Quên", hint: "1 phút", cls: "border-red-300 text-red-700 hover:bg-red-50" },
-  { rating: "hard", label: "Khó", hint: "1 ngày", cls: "border-orange-300 text-orange-700 hover:bg-orange-50" },
-  { rating: "good", label: "Tốt", hint: "3 ngày", cls: "border-green-300 text-green-700 hover:bg-green-50" },
-  { rating: "easy", label: "Dễ", hint: "5 ngày+", cls: "border-sky-300 text-sky-700 hover:bg-sky-50" },
+  { rating: "again", label: "Quên", hint: "1 phút", cls: "border-red-300 dark:border-red-500/40 text-red-700 dark:text-red-300 hover:bg-red-50 dark:hover:bg-red-500/15" },
+  { rating: "hard", label: "Khó", hint: "1 ngày", cls: "border-orange-300 dark:border-orange-500/40 text-orange-700 dark:text-orange-300 hover:bg-orange-50 dark:hover:bg-orange-500/15" },
+  { rating: "good", label: "Tốt", hint: "3 ngày", cls: "border-green-300 dark:border-green-500/40 text-green-700 dark:text-green-300 hover:bg-green-50 dark:hover:bg-green-500/15" },
+  { rating: "easy", label: "Dễ", hint: "5 ngày+", cls: "border-sky-300 dark:border-sky-500/40 text-sky-700 dark:text-sky-300 hover:bg-sky-50 dark:hover:bg-sky-500/15" },
 ];
 
 /**

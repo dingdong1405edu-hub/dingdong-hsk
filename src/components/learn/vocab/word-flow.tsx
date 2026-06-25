@@ -175,7 +175,7 @@ export function WordFlow({
               Bạn đã học {words.length} từ trong bài “{lesson.title || "Từ vựng"}”.
             </p>
             {xpEarned !== null && xpEarned > 0 && (
-              <div className="font-semibold text-yellow-600">+{xpEarned} XP</div>
+              <div className="font-semibold text-yellow-600 dark:text-yellow-400">+{xpEarned} XP</div>
             )}
             <div className="grid gap-2 pt-2">
               {onReviewNow && (

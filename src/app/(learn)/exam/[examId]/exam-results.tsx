@@ -19,14 +19,18 @@ export function ExamResults({
       <div
         className={cn(
           "flex items-center justify-between gap-4 p-5",
-          passed ? "bg-gradient-to-br from-emerald-50 to-white" : "bg-gradient-to-br from-amber-50 to-white",
+          passed
+            ? "bg-gradient-to-br from-emerald-50 to-white dark:from-emerald-500/10 dark:to-transparent"
+            : "bg-gradient-to-br from-amber-50 to-white dark:from-amber-500/10 dark:to-transparent",
         )}
       >
         <div className="flex items-center gap-3">
           <div
             className={cn(
               "flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl",
-              passed ? "bg-emerald-100 text-emerald-600" : "bg-amber-100 text-amber-600",
+              passed
+                ? "bg-emerald-100 text-emerald-600 dark:bg-emerald-500/15 dark:text-emerald-300"
+                : "bg-amber-100 text-amber-600 dark:bg-amber-500/15 dark:text-amber-300",
             )}
           >
             <Trophy className="h-7 w-7" />
@@ -50,7 +54,12 @@ export function ExamResults({
           </div>
         </div>
         <div className="text-right">
-          <div className={cn("text-4xl font-extrabold", passed ? "text-emerald-600" : "text-amber-600")}>
+          <div
+            className={cn(
+              "text-4xl font-extrabold",
+              passed ? "text-emerald-600 dark:text-emerald-300" : "text-amber-600 dark:text-amber-300",
+            )}
+          >
             {overall}
           </div>
           <div className="text-xs text-muted-foreground">/ 100 · đạt ≥ 60</div>
@@ -73,7 +82,9 @@ export function ExamResults({
                 {s.correct}/{s.total} câu đúng
               </div>
             )}
-            {s.score === null && <div className="text-xs text-amber-600">Chưa chấm được</div>}
+            {s.score === null && (
+              <div className="text-xs text-amber-600 dark:text-amber-300">Chưa chấm được</div>
+            )}
           </div>
         ))}
       </div>

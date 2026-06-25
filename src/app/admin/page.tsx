@@ -55,17 +55,17 @@ export default async function AdminPage() {
   ]);
 
   const sections: { href: string; label: string; icon: LucideIcon; count: number; cls: string }[] = [
-    { href: "/admin/vocab", label: "Từ vựng", icon: BookOpen, count: vocabCount, cls: "bg-blue-100 text-blue-600" },
-    { href: "/admin/grammar", label: "Ngữ pháp", icon: SpellCheck, count: grammarCount, cls: "bg-violet-100 text-violet-600" },
-    { href: "/admin/hanzi", label: "Chữ Hán", icon: PenTool, count: hanziCount, cls: "bg-amber-100 text-amber-600" },
-    { href: "/admin/reading", label: "Đọc hiểu", icon: BookText, count: readingCount, cls: "bg-emerald-100 text-emerald-600" },
-    { href: "/admin/listening", label: "Nghe hiểu", icon: Headphones, count: listeningCount, cls: "bg-teal-100 text-teal-600" },
-    { href: "/admin/writing", label: "Viết luận", icon: PenLine, count: writingCount, cls: "bg-rose-100 text-rose-600" },
-    { href: "/admin/speaking", label: "Luyện nói", icon: Mic, count: speakingCount, cls: "bg-indigo-100 text-indigo-600" },
-    { href: "/admin/materials", label: "Tài liệu", icon: Library, count: materialCount, cls: "bg-fuchsia-100 text-fuchsia-600" },
-    { href: "/admin/roadmap", label: "Lộ trình", icon: Route, count: roadmapLessonCount, cls: "bg-lime-100 text-lime-600" },
-    { href: "/admin/users", label: "Người dùng", icon: Users, count: userCount, cls: "bg-sky-100 text-sky-600" },
-    { href: "/admin/subscriptions", label: "Gói & Quyền lợi", icon: CreditCard, count: subscriptionCount, cls: "bg-green-100 text-green-600" },
+    { href: "/admin/vocab", label: "Từ vựng", icon: BookOpen, count: vocabCount, cls: "bg-blue-100 text-blue-600 dark:bg-blue-500/15 dark:text-blue-300" },
+    { href: "/admin/grammar", label: "Ngữ pháp", icon: SpellCheck, count: grammarCount, cls: "bg-violet-100 text-violet-600 dark:bg-violet-500/15 dark:text-violet-300" },
+    { href: "/admin/hanzi", label: "Chữ Hán", icon: PenTool, count: hanziCount, cls: "bg-amber-100 text-amber-600 dark:bg-amber-500/15 dark:text-amber-300" },
+    { href: "/admin/reading", label: "Đọc hiểu", icon: BookText, count: readingCount, cls: "bg-emerald-100 text-emerald-600 dark:bg-emerald-500/15 dark:text-emerald-300" },
+    { href: "/admin/listening", label: "Nghe hiểu", icon: Headphones, count: listeningCount, cls: "bg-teal-100 text-teal-600 dark:bg-teal-500/15 dark:text-teal-300" },
+    { href: "/admin/writing", label: "Viết luận", icon: PenLine, count: writingCount, cls: "bg-rose-100 text-rose-600 dark:bg-rose-500/15 dark:text-rose-300" },
+    { href: "/admin/speaking", label: "Luyện nói", icon: Mic, count: speakingCount, cls: "bg-indigo-100 text-indigo-600 dark:bg-indigo-500/15 dark:text-indigo-300" },
+    { href: "/admin/materials", label: "Tài liệu", icon: Library, count: materialCount, cls: "bg-fuchsia-100 text-fuchsia-600 dark:bg-fuchsia-500/15 dark:text-fuchsia-300" },
+    { href: "/admin/roadmap", label: "Lộ trình", icon: Route, count: roadmapLessonCount, cls: "bg-lime-100 text-lime-600 dark:bg-lime-500/15 dark:text-lime-300" },
+    { href: "/admin/users", label: "Người dùng", icon: Users, count: userCount, cls: "bg-sky-100 text-sky-600 dark:bg-sky-500/15 dark:text-sky-300" },
+    { href: "/admin/subscriptions", label: "Gói & Quyền lợi", icon: CreditCard, count: subscriptionCount, cls: "bg-green-100 text-green-600 dark:bg-green-500/15 dark:text-green-300" },
   ];
 
   return (
@@ -77,20 +77,20 @@ export default async function AdminPage() {
 
       {/* Top stats */}
       <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
-        <StatCard icon={Users} cls="bg-sky-100 text-sky-600" label="Người dùng" value={userCount} />
+        <StatCard icon={Users} cls="bg-sky-100 text-sky-600 dark:bg-sky-500/15 dark:text-sky-300" label="Người dùng" value={userCount} />
         <StatCard
           icon={BookOpen}
-          cls="bg-blue-100 text-blue-600"
+          cls="bg-blue-100 text-blue-600 dark:bg-blue-500/15 dark:text-blue-300"
           label="Bài học / Đơn vị"
           value={vocabCount + grammarCount + hanziCount}
         />
         <StatCard
           icon={BookText}
-          cls="bg-emerald-100 text-emerald-600"
+          cls="bg-emerald-100 text-emerald-600 dark:bg-emerald-500/15 dark:text-emerald-300"
           label="Đề luyện tập"
           value={readingCount + listeningCount + writingCount + speakingCount}
         />
-        <StatCard icon={Activity} cls="bg-amber-100 text-amber-600" label="Lượt làm bài" value={attemptCount} />
+        <StatCard icon={Activity} cls="bg-amber-100 text-amber-600 dark:bg-amber-500/15 dark:text-amber-300" label="Lượt làm bài" value={attemptCount} />
       </div>
 
       {/* Manage sections */}

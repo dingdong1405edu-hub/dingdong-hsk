@@ -54,7 +54,7 @@ export function SentenceOrderExerciseUI({ exercise, onAnswer, disabled }: Props)
               key={`${w}-${i}`}
               layout
               onClick={() => removeWord(w, i)}
-              className="px-3 py-2 rounded-lg bg-primary/10 border border-primary/30 font-chinese font-semibold hover:bg-red-50 hover:border-red-300"
+              className="px-3 py-2 rounded-lg bg-primary/10 border border-primary/30 font-chinese font-semibold hover:bg-red-50 hover:border-red-300 dark:hover:bg-red-500/15 dark:hover:border-red-500/40"
             >
               {w}
             </motion.button>

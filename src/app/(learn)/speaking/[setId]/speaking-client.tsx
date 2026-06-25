@@ -166,7 +166,7 @@ async function transcribeAndGrade(params: {
 }
 
 function ScoreBadge({ score }: { score: number }) {
-  const color = score >= 80 ? "text-green-700" : score >= 60 ? "text-yellow-700" : "text-red-600";
+  const color = score >= 80 ? "text-green-700 dark:text-green-300" : score >= 60 ? "text-yellow-700 dark:text-yellow-300" : "text-red-600 dark:text-red-400";
   return (
     <motion.span
       key={score}
@@ -271,7 +271,7 @@ export function SpeakingClient({
 
   return (
     <div className="max-w-3xl mx-auto space-y-6">
-      <div className="relative overflow-hidden rounded-2xl border bg-gradient-to-br from-indigo-50 to-white p-5">
+      <div className="relative overflow-hidden rounded-2xl border bg-gradient-to-br from-indigo-50 to-white dark:from-indigo-500/10 dark:to-transparent p-5">
         <div className="flex items-center justify-between gap-3">
           <div className="flex items-center gap-3">
             <BaoBuddy size={60} pose={anyHigh ? "cheer" : "idle"} className="shrink-0" />
@@ -287,7 +287,7 @@ export function SpeakingClient({
             </Button>
           </div>
         </div>
-        <div className="pointer-events-none absolute -right-4 -top-6 select-none font-chinese text-[110px] leading-none text-black/[0.04]">
+        <div className="pointer-events-none absolute -right-4 -top-6 select-none font-chinese text-[110px] leading-none text-black/[0.04] dark:text-white/[0.04]">
           说
         </div>
       </div>

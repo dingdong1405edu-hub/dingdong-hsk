@@ -23,7 +23,7 @@ export function TheoryViewer({ section }: { section: TheorySection }) {
       <div className="space-y-1 text-center">
         <h2 className="text-2xl font-bold tracking-tight">{section.title}</h2>
         {section.titleZh && (
-          <p className="font-chinese text-lg text-violet-600">{section.titleZh}</p>
+          <p className="font-chinese text-lg text-violet-600 dark:text-violet-300">{section.titleZh}</p>
         )}
       </div>
 
@@ -41,11 +41,11 @@ export function TheoryViewer({ section }: { section: TheorySection }) {
 
       {/* Framed formula */}
       {section.structure && (
-        <div className="relative rounded-2xl border-2 border-violet-300 bg-gradient-to-br from-violet-50 to-white px-5 py-5 text-center shadow-sm">
+        <div className="relative rounded-2xl border-2 border-violet-300 dark:border-violet-500/30 bg-gradient-to-br from-violet-50 to-white dark:from-violet-500/15 dark:to-transparent px-5 py-5 text-center shadow-sm">
           <span className="absolute -top-2.5 left-4 rounded-full bg-violet-600 px-2.5 py-0.5 text-[11px] font-semibold uppercase tracking-wide text-white">
             Công thức
           </span>
-          <div className="font-chinese text-2xl font-bold leading-relaxed text-violet-900">
+          <div className="font-chinese text-2xl font-bold leading-relaxed text-violet-900 dark:text-violet-100">
             {section.structure}
           </div>
         </div>
@@ -53,7 +53,7 @@ export function TheoryViewer({ section }: { section: TheorySection }) {
 
       {/* Explanation callout */}
       {section.explanation && (
-        <div className="rounded-xl border-l-4 border-violet-400 bg-violet-50/60 px-4 py-3">
+        <div className="rounded-xl border-l-4 border-violet-400 dark:border-violet-500/40 bg-violet-50/60 dark:bg-violet-500/10 px-4 py-3">
           <p className="whitespace-pre-line text-[15px] leading-relaxed text-foreground/90">
             {section.explanation}
           </p>
@@ -67,9 +67,9 @@ export function TheoryViewer({ section }: { section: TheorySection }) {
             <Sparkles className="h-4 w-4 text-amber-500" /> Ví dụ theo ngữ cảnh
           </div>
           {section.examples.map((ex, i) => (
-            <Card key={i} className="overflow-hidden border-l-4 border-l-amber-300">
+            <Card key={i} className="overflow-hidden border-l-4 border-l-amber-300 dark:border-l-amber-500/40">
               <CardContent className="space-y-2 p-4">
-                <div className="inline-flex items-center gap-1.5 rounded-full bg-amber-100 px-2.5 py-0.5 text-xs font-medium text-amber-700">
+                <div className="inline-flex items-center gap-1.5 rounded-full bg-amber-100 dark:bg-amber-500/15 px-2.5 py-0.5 text-xs font-medium text-amber-700 dark:text-amber-300">
                   <MapPin className="h-3 w-3" /> {ex.situation}
                 </div>
                 {isImageUrl(ex.imageUrl) && (
@@ -89,15 +89,15 @@ export function TheoryViewer({ section }: { section: TheorySection }) {
                     type="button"
                     onClick={() => playWord({ hanzi: ex.hanzi })}
                     aria-label="Nghe ví dụ"
-                    className="mt-1 shrink-0 text-violet-400 transition-colors hover:text-violet-600"
+                    className="mt-1 shrink-0 text-violet-400 transition-colors hover:text-violet-600 dark:text-violet-300 dark:hover:text-violet-200"
                   >
                     <Volume2 className="h-4 w-4" />
                   </button>
                 </div>
-                <div className="font-serif text-sm text-violet-600">{ex.pinyin}</div>
+                <div className="font-serif text-sm text-violet-600 dark:text-violet-300">{ex.pinyin}</div>
                 <div className="text-sm text-foreground/80">{ex.meaning}</div>
                 {ex.note && (
-                  <div className="flex items-start gap-1.5 rounded-lg bg-amber-50 px-3 py-2 text-xs text-amber-700">
+                  <div className="flex items-start gap-1.5 rounded-lg bg-amber-50 dark:bg-amber-500/15 px-3 py-2 text-xs text-amber-700 dark:text-amber-300">
                     <Lightbulb className="mt-0.5 h-3.5 w-3.5 shrink-0" />
                     <span>{ex.note}</span>
                   </div>

@@ -52,7 +52,7 @@ export default async function ContactPage() {
               </a>
 
               <div className="flex items-start gap-3 rounded-lg p-2">
-                <span className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-amber-100 text-amber-600">
+                <span className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-amber-100 text-amber-600 dark:bg-amber-500/15 dark:text-amber-300">
                   <Clock className="h-4 w-4" />
                 </span>
                 <span>
@@ -62,7 +62,7 @@ export default async function ContactPage() {
               </div>
 
               <div className="flex items-start gap-3 rounded-lg p-2">
-                <span className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-emerald-100 text-emerald-600">
+                <span className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-emerald-100 text-emerald-600 dark:bg-emerald-500/15 dark:text-emerald-300">
                   <Info className="h-4 w-4" />
                 </span>
                 <span>
@@ -76,7 +76,7 @@ export default async function ContactPage() {
           </Card>
 
           {/* Gợi ý dùng trợ lý Bao cho câu hỏi học tập tức thời */}
-          <Card className="border-primary/30 bg-gradient-to-br from-primary/5 to-amber-50">
+          <Card className="border-primary/30 bg-gradient-to-br from-primary/5 to-amber-50 dark:to-amber-500/10">
             <CardContent className="flex items-start gap-3 p-4">
               <span className="text-2xl" aria-hidden>
                 🥟

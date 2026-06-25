@@ -160,7 +160,7 @@ export function GrammarFlow({ lesson, content, unitId, onComplete, closeHref: cl
             )}
 
             {hasTest && (
-              <div className="rounded-xl bg-violet-50 p-3 text-sm text-violet-800">
+              <div className="rounded-xl bg-violet-50 dark:bg-violet-500/15 p-3 text-sm text-violet-800 dark:text-violet-200">
                 Làm <b>bài kiểm tra</b> để kiểm tra lại và nhận điểm kinh nghiệm (cần đạt ≥ 80%).
               </div>
             )}

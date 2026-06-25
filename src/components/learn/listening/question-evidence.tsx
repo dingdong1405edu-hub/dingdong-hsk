@@ -26,9 +26,9 @@ export function QuestionEvidence({
   onCharClick,
 }: QuestionEvidenceProps) {
   return (
-    <div className="mt-3 rounded-xl border border-teal-200 bg-teal-50/60 p-3">
+    <div className="mt-3 rounded-xl border border-teal-200 dark:border-teal-500/25 bg-teal-50/60 dark:bg-teal-500/10 p-3">
       <div className="flex items-center justify-between gap-2">
-        <span className="inline-flex items-center gap-1.5 text-xs font-bold text-teal-700">
+        <span className="inline-flex items-center gap-1.5 text-xs font-bold text-teal-700 dark:text-teal-300">
           <MapPin className="h-3.5 w-3.5" /> Đáp án nằm ở đoạn này
         </span>
         <button
@@ -36,7 +36,7 @@ export function QuestionEvidence({
           onClick={onToggleSave}
           className={cn(
             "inline-flex items-center gap-1 rounded-lg px-2 py-1 text-xs font-semibold transition-colors",
-            saved ? "bg-amber-100 text-amber-700" : "text-muted-foreground hover:bg-muted",
+            saved ? "bg-amber-100 text-amber-700 dark:bg-amber-500/15 dark:text-amber-300" : "text-muted-foreground hover:bg-muted",
           )}
         >
           {saved ? <BookmarkCheck className="h-3.5 w-3.5" /> : <Bookmark className="h-3.5 w-3.5" />}
@@ -47,7 +47,7 @@ export function QuestionEvidence({
       {segment ? (
         <div className="mt-2 flex items-start gap-2">
           {segment.speaker && (
-            <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-white text-[10px] font-bold text-teal-700">
+            <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-card text-[10px] font-bold text-teal-700 dark:text-teal-300">
               {segment.speaker.toUpperCase()}
             </span>
           )}
@@ -59,7 +59,7 @@ export function QuestionEvidence({
               type="button"
               onClick={onPlay}
               aria-label="Nghe lại đoạn này"
-              className="shrink-0 rounded-lg border border-teal-300 bg-white p-1.5 text-teal-700 transition-colors hover:bg-teal-100"
+              className="shrink-0 rounded-lg border border-teal-300 dark:border-teal-500/40 bg-card p-1.5 text-teal-700 dark:text-teal-300 transition-colors hover:bg-teal-100 dark:hover:bg-teal-500/20"
             >
               <Volume2 className="h-4 w-4" />
             </button>

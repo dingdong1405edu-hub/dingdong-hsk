@@ -20,7 +20,9 @@ export function SkillTile({ meta, published, done, onClick }: SkillTileProps) {
       onClick={onClick}
       className={cn(
         "group flex items-center gap-3 rounded-xl border p-3 text-left transition-all duration-200 hover:-translate-y-0.5 hover:shadow-soft",
-        done ? "border-emerald-200 bg-emerald-50/60" : "border-border bg-card hover:border-primary/30",
+        done
+          ? "border-emerald-200 bg-emerald-50/60 dark:border-emerald-400/25 dark:bg-emerald-500/10"
+          : "border-border bg-card hover:border-primary/30",
       )}
     >
       <div className={cn("flex h-10 w-10 shrink-0 items-center justify-center rounded-xl", meta.iconBg, meta.iconText)}>
@@ -36,7 +38,7 @@ export function SkillTile({ meta, published, done, onClick }: SkillTileProps) {
         </div>
       </div>
       {done ? (
-        <Check className="h-5 w-5 shrink-0 text-emerald-600" strokeWidth={3} />
+        <Check className="h-5 w-5 shrink-0 text-emerald-600 dark:text-emerald-300" strokeWidth={3} />
       ) : published ? (
         <ChevronRight className="h-5 w-5 shrink-0 text-muted-foreground transition-transform group-hover:translate-x-0.5" />
       ) : (

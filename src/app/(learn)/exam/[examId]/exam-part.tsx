@@ -56,8 +56,8 @@ export function ExamPart(props: ExamPartProps) {
         </span>
       </div>
       {part.instructions && (
-        <div className="flex items-start gap-2 rounded-xl border border-sky-100 bg-sky-50/60 p-3 text-sm text-sky-900">
-          <Info className="mt-0.5 h-4 w-4 shrink-0 text-sky-600" />
+        <div className="flex items-start gap-2 rounded-xl border border-sky-100 bg-sky-50/60 p-3 text-sm text-sky-900 dark:border-sky-400/25 dark:bg-sky-500/10 dark:text-sky-200">
+          <Info className="mt-0.5 h-4 w-4 shrink-0 text-sky-600 dark:text-sky-300" />
           <p className="whitespace-pre-line font-chinese">{part.instructions}</p>
         </div>
       )}
@@ -81,7 +81,7 @@ export function ExamPart(props: ExamPartProps) {
 
       {/* Reading: passage */}
       {skill === "READING" && part.passage && (
-        <div className="rounded-xl border bg-[#fbf9f4] p-4">
+        <div className="rounded-xl border bg-[#fbf9f4] p-4 dark:bg-muted">
           <div className="font-chinese text-[17px] leading-loose">
             <PinyinText text={part.passage} showPinyin={showPinyin} onWordClick={onCharClick} />
           </div>
@@ -149,8 +149,8 @@ function EssayBlock({
   const progress = minChars > 0 ? Math.min(100, Math.round((charCount / minChars) * 100)) : 0;
 
   return (
-    <div className="space-y-3 rounded-xl border border-violet-100 bg-violet-50/40 p-4">
-      <div className="flex items-center gap-2 text-sm font-bold text-violet-700">
+    <div className="space-y-3 rounded-xl border border-violet-100 bg-violet-50/40 p-4 dark:border-violet-400/25 dark:bg-violet-500/10">
+      <div className="flex items-center gap-2 text-sm font-bold text-violet-700 dark:text-violet-300">
         <PenLine className="h-4 w-4" /> Bài viết
       </div>
       <p className="whitespace-pre-line text-sm">{part.writingPrompt}</p>
@@ -188,7 +188,7 @@ function EssayFeedback({ value, result }: { value: string; result: EssayResult |
           {value || <span className="text-muted-foreground">(Bạn chưa viết bài này)</span>}
         </div>
         {result && "ungraded" in result && (
-          <p className="text-xs text-amber-600">
+          <p className="text-xs text-amber-600 dark:text-amber-300">
             Bài viết đã lưu nhưng chưa chấm được bằng AI (thiếu cấu hình chấm điểm).
           </p>
         )}
@@ -199,8 +199,8 @@ function EssayFeedback({ value, result }: { value: string; result: EssayResult |
   return (
     <div className="space-y-3">
       <div className="flex items-center justify-between">
-        <span className="text-sm font-semibold text-violet-700">Kết quả phần viết</span>
-        <span className="text-2xl font-bold text-violet-700">{result.score}/100</span>
+        <span className="text-sm font-semibold text-violet-700 dark:text-violet-300">Kết quả phần viết</span>
+        <span className="text-2xl font-bold text-violet-700 dark:text-violet-300">{result.score}/100</span>
       </div>
       <div className="grid grid-cols-2 gap-2 sm:grid-cols-4">
         {Object.entries(result.criteria ?? {}).map(([key, val]) => {
@@ -217,9 +217,9 @@ function EssayFeedback({ value, result }: { value: string; result: EssayResult |
         <div className="space-y-2">
           {result.annotations.map((a, i) => (
             <div key={i} className="rounded-lg border bg-card p-2 text-sm">
-              <span className="font-chinese text-rose-600 line-through">{a.original}</span>
+              <span className="font-chinese text-rose-600 line-through dark:text-rose-400">{a.original}</span>
               <span className="mx-1">→</span>
-              <span className="font-chinese font-semibold text-emerald-700">{a.correction}</span>
+              <span className="font-chinese font-semibold text-emerald-700 dark:text-emerald-300">{a.correction}</span>
               {a.explanation && <p className="mt-1 text-xs text-muted-foreground">{a.explanation}</p>}
             </div>
           ))}
@@ -228,7 +228,7 @@ function EssayFeedback({ value, result }: { value: string; result: EssayResult |
       {result.correctedVersion && (
         <div>
           <div className="mb-1 text-xs font-semibold text-muted-foreground">Bài sửa</div>
-          <div className="rounded-lg bg-emerald-50 p-3 font-chinese text-sm leading-relaxed">
+          <div className="rounded-lg bg-emerald-50 p-3 font-chinese text-sm leading-relaxed dark:bg-emerald-500/10">
             {result.correctedVersion}
           </div>
         </div>

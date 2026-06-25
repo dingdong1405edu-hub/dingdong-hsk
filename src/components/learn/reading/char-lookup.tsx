@@ -114,7 +114,7 @@ export function CharLookup({
     <div
       ref={ref}
       style={style}
-      className="animate-fade-in overflow-y-auto rounded-2xl border bg-white p-3.5 shadow-xl"
+      className="animate-fade-in overflow-y-auto rounded-2xl border bg-popover p-3.5 text-popover-foreground shadow-xl"
     >
       <div className="flex items-start gap-3">
         <span className={cn("font-chinese text-4xl leading-none", toneColor(tone))}>{anchor.char}</span>
@@ -144,7 +144,7 @@ export function CharLookup({
               className={cn(
                 "mt-2.5 inline-flex w-full items-center justify-center gap-1.5 rounded-lg border py-1.5 text-xs font-semibold transition-colors",
                 saveState === "saved"
-                  ? "border-emerald-300 bg-emerald-50 text-emerald-700"
+                  ? "border-emerald-300 bg-emerald-50 text-emerald-700 dark:border-emerald-500/30 dark:bg-emerald-500/15 dark:text-emerald-300"
                   : "border-primary/40 text-primary hover:bg-primary/5",
               )}
             >

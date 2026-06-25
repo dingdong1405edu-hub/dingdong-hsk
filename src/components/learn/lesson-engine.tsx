@@ -125,19 +125,19 @@ export function LessonEngine({
             exit={{ y: 100, opacity: 0 }}
             className={`fixed bottom-0 left-0 right-0 p-6 border-t ${
               feedback === "correct"
-                ? "bg-green-50 border-green-200"
-                : "bg-red-50 border-red-200"
+                ? "bg-green-50 dark:bg-green-500/15 border-green-200 dark:border-green-500/25"
+                : "bg-red-50 dark:bg-red-500/15 border-red-200 dark:border-red-500/25"
             }`}
           >
             <div className="max-w-2xl mx-auto flex items-center justify-between">
               <div className="flex items-center gap-3">
                 {feedback === "correct" ? (
-                  <CheckCircle2 className="h-6 w-6 text-green-600" />
+                  <CheckCircle2 className="h-6 w-6 text-green-600 dark:text-green-300" />
                 ) : (
-                  <XCircle className="h-6 w-6 text-red-500" />
+                  <XCircle className="h-6 w-6 text-red-500 dark:text-red-300" />
                 )}
                 <div>
-                  <div className={`font-bold ${feedback === "correct" ? "text-green-700" : "text-red-600"}`}>
+                  <div className={`font-bold ${feedback === "correct" ? "text-green-700 dark:text-green-300" : "text-red-600 dark:text-red-300"}`}>
                     {feedback === "correct" ? "Chính xác!" : "Sai rồi!"}
                   </div>
                   {correctAnswer && (

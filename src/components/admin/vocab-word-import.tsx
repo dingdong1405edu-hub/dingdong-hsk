@@ -260,14 +260,14 @@ export function VocabWordImport({ lessonId, unitId, onImported }: Props) {
         {preview.length > 0 && (
           <div className="space-y-2">
             <div className="flex items-center gap-3 text-sm">
-              <span className="font-medium text-green-600">{validCount} hợp lệ</span>
+              <span className="font-medium text-green-600 dark:text-green-400">{validCount} hợp lệ</span>
               {skipCount > 0 && (
-                <span className="flex items-center gap-1 text-amber-600">
+                <span className="flex items-center gap-1 text-amber-600 dark:text-amber-400">
                   <AlertTriangle className="h-3.5 w-3.5" /> {skipCount} bị bỏ qua
                 </span>
               )}
             </div>
-            <div className="max-h-64 overflow-y-auto rounded-md border">
+            <div className="max-h-64 overflow-auto rounded-md border">
               <table className="w-full text-left text-sm">
                 <thead className="sticky top-0 bg-muted/80 text-xs">
                   <tr>

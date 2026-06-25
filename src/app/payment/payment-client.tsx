@@ -75,7 +75,7 @@ export function PaymentClient({
         )}
       >
         {plan.promoNote ? (
-          <Badge className="absolute -top-3 left-1/2 -translate-x-1/2 whitespace-nowrap shadow">
+          <Badge className="absolute -top-3 left-1/2 max-w-[calc(100%-1rem)] -translate-x-1/2 whitespace-nowrap shadow">
             {plan.promoNote}
           </Badge>
         ) : (
@@ -148,7 +148,7 @@ export function PaymentClient({
         </div>
 
         {!loggedIn && (
-          <div className="mx-auto mb-8 max-w-xl rounded-lg border border-amber-300 bg-amber-50 px-4 py-3 text-center text-sm text-amber-800">
+          <div className="mx-auto mb-8 max-w-xl rounded-lg border border-amber-300 bg-amber-50 px-4 py-3 text-center text-sm text-amber-800 dark:border-amber-400/30 dark:bg-amber-500/15 dark:text-amber-200">
             Bạn cần{" "}
             <Link href="/login" className="font-semibold underline">
               đăng nhập
@@ -157,7 +157,7 @@ export function PaymentClient({
           </div>
         )}
         {loggedIn && !configured && (
-          <div className="mx-auto mb-8 max-w-xl rounded-lg border border-amber-300 bg-amber-50 px-4 py-3 text-center text-sm text-amber-800">
+          <div className="mx-auto mb-8 max-w-xl rounded-lg border border-amber-300 bg-amber-50 px-4 py-3 text-center text-sm text-amber-800 dark:border-amber-400/30 dark:bg-amber-500/15 dark:text-amber-200">
             Cổng thanh toán đang được hoàn tất cấu hình. Bạn vẫn xem được bảng giá; nút thanh toán sẽ
             hoạt động ngay khi hoàn tất.
           </div>

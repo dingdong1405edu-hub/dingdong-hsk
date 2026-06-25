@@ -78,7 +78,7 @@ export default async function AdminHanziPage() {
             </div>
             <div className="space-y-1">
               <Label>HSK Level</Label>
-              <select name="hskLevel" className="flex h-9 w-full rounded-md border px-3 py-1 text-sm">
+              <select name="hskLevel" className="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-sm">
                 {["HSK1","HSK2","HSK3","HSK4","HSK5","HSK6"].map(l => <option key={l} value={l}>{l}</option>)}
               </select>
             </div>
@@ -135,7 +135,7 @@ export default async function AdminHanziPage() {
                       <div className="mt-2 flex flex-wrap items-center gap-2">
                         <PublishToggle model="hanzi" id={c.id} published={c.published} />
                         <form action={async () => { "use server"; await deleteHanziAction(c.id); }}>
-                          <Button type="submit" size="sm" variant="outline" className="text-red-500 hover:text-red-600">
+                          <Button type="submit" size="sm" variant="outline" className="text-destructive hover:text-destructive">
                             <Trash2 className="h-4 w-4" /> Xoá
                           </Button>
                         </form>
@@ -169,7 +169,7 @@ export default async function AdminHanziPage() {
                           </div>
                           <div className="space-y-1">
                             <Label>HSK Level</Label>
-                            <select name="hskLevel" defaultValue={c.hskLevel} className="flex h-9 w-full rounded-md border px-3 py-1 text-sm">
+                            <select name="hskLevel" defaultValue={c.hskLevel} className="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-sm">
                               {["HSK1","HSK2","HSK3","HSK4","HSK5","HSK6"].map(l => <option key={l} value={l}>{l}</option>)}
                             </select>
                           </div>

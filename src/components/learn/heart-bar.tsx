@@ -26,7 +26,7 @@ export function HeartBar({ hearts, maxHearts = 5, unlimited = false }: HeartBarP
             "h-5 w-5 transition-all",
             i < hearts
               ? "fill-rose-500 text-rose-500"
-              : "text-zinc-200 fill-zinc-200"
+              : "text-muted-foreground/40 fill-muted-foreground/30"
           )}
         />
       ))}

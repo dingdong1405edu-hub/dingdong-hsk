@@ -137,20 +137,24 @@ export function FlashcardPhase({ flashcards, closeHref, label, onReviewTheory, o
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: 100, opacity: 0 }}
             className={`fixed bottom-0 left-0 right-0 max-h-[55dvh] overflow-y-auto border-t p-6 ${
-              feedback === "correct" ? "border-green-200 bg-green-50" : "border-red-200 bg-red-50"
+              feedback === "correct"
+                ? "border-green-200 bg-green-50 dark:border-green-500/25 dark:bg-green-500/15"
+                : "border-red-200 bg-red-50 dark:border-red-500/25 dark:bg-red-500/15"
             }`}
           >
             <div className="mx-auto flex max-w-2xl items-start justify-between gap-4">
               <div className="flex min-w-0 items-start gap-3">
                 {feedback === "correct" ? (
-                  <CheckCircle2 className="mt-0.5 h-6 w-6 shrink-0 text-green-600" />
+                  <CheckCircle2 className="mt-0.5 h-6 w-6 shrink-0 text-green-600 dark:text-green-300" />
                 ) : (
-                  <XCircle className="mt-0.5 h-6 w-6 shrink-0 text-red-500" />
+                  <XCircle className="mt-0.5 h-6 w-6 shrink-0 text-red-500 dark:text-red-300" />
                 )}
                 <div className="min-w-0 space-y-1">
                   <div
                     className={`font-bold ${
-                      feedback === "correct" ? "text-green-700" : "text-red-600"
+                      feedback === "correct"
+                        ? "text-green-700 dark:text-green-300"
+                        : "text-red-600 dark:text-red-300"
                     }`}
                   >
                     {feedback === "correct" ? "Chính xác!" : "Chưa đúng"}

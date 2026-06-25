@@ -31,7 +31,7 @@ export function FillBlankExerciseUI({ exercise, onAnswer, disabled }: Props) {
           <span
             className={cn(
               "inline-block border-b-2 min-w-[3rem] px-2 mx-1",
-              selected === null ? "border-primary" : selected === exercise.blank ? "border-green-500 text-green-700" : "border-red-400 text-red-600"
+              selected === null ? "border-primary" : selected === exercise.blank ? "border-green-500 text-green-700 dark:text-green-300" : "border-red-400 text-red-600 dark:text-red-300"
             )}
           >
             {selected ?? "___"}
@@ -50,9 +50,9 @@ export function FillBlankExerciseUI({ exercise, onAnswer, disabled }: Props) {
             className={cn(
               "p-3 rounded-xl border-2 font-chinese font-semibold text-lg transition-all",
               selected === null && "hover:border-primary/50 hover:bg-primary/5",
-              selected === opt && opt === exercise.blank && "border-green-500 bg-green-50",
-              selected === opt && opt !== exercise.blank && "border-red-400 bg-red-50",
-              selected && selected !== opt && opt === exercise.blank && "border-green-300 bg-green-50/50"
+              selected === opt && opt === exercise.blank && "border-green-500 bg-green-50 dark:bg-green-500/15",
+              selected === opt && opt !== exercise.blank && "border-red-400 bg-red-50 dark:bg-red-500/15",
+              selected && selected !== opt && opt === exercise.blank && "border-green-300 bg-green-50/50 dark:bg-green-500/10"
             )}
           >
             {opt}

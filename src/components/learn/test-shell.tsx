@@ -46,9 +46,9 @@ export function TestShell({
     // `h-dvh` (dynamic viewport height) gives the overlay a definite height that
     // does NOT depend on the containing block — so the inner flex/scroll chain
     // can never collapse, and mobile browser chrome (URL bar) is handled cleanly.
-    <div className="fixed inset-0 z-50 flex h-dvh flex-col bg-[#faf7f2]">
+    <div className="fixed inset-0 z-50 flex h-dvh flex-col bg-background">
       {/* Top toolbar */}
-      <header className="flex h-14 shrink-0 items-center gap-2 border-b bg-white/90 px-3 backdrop-blur sm:gap-3 sm:px-4">
+      <header className="flex h-14 shrink-0 items-center gap-2 border-b bg-card/90 px-3 backdrop-blur sm:gap-3 sm:px-4">
         <Link
           href={backHref}
           className="flex items-center gap-1.5 rounded-lg px-2 py-1.5 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted"
@@ -91,7 +91,7 @@ export function TestShell({
 
       {/* Bottom question navigator */}
       {nav && (
-        <footer className="shrink-0 border-t bg-white/95 px-3 py-2.5 backdrop-blur sm:px-4">{nav}</footer>
+        <footer className="shrink-0 border-t bg-card/95 px-3 py-2.5 backdrop-blur sm:px-4">{nav}</footer>
       )}
     </div>
   );

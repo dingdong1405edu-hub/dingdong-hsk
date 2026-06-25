@@ -55,7 +55,7 @@ export default async function AdminUsersPage() {
                       {u.banned ? (
                         <Badge variant="destructive">Bị ban</Badge>
                       ) : (
-                        <Badge variant="outline" className="text-green-700 border-green-300">Hoạt động</Badge>
+                        <Badge variant="outline" className="text-green-700 border-green-300 dark:text-green-400 dark:border-green-400/30">Hoạt động</Badge>
                       )}
                     </td>
                     <td className="px-4 py-3">

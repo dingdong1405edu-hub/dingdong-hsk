@@ -205,7 +205,7 @@ export default async function AdminReadingDetailPage({ params }: Props) {
             <input type="hidden" name="readingId" value={test.id} />
             <div className="space-y-1">
               <Label>Loại câu hỏi</Label>
-              <select name="type" className="flex h-9 w-full rounded-md border px-3 py-1 text-sm">
+              <select name="type" className="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-sm">
                 <option value="MCQ">Trắc nghiệm (MCQ)</option>
                 <option value="TRUE_FALSE">Đúng / Sai</option>
                 <option value="FILL_BLANK">Điền chỗ trống</option>
@@ -230,7 +230,7 @@ export default async function AdminReadingDetailPage({ params }: Props) {
               </div>
               <div className="space-y-1">
                 <Label>Đúng/Sai · đáp án</Label>
-                <select name="correctBool" className="flex h-9 w-full rounded-md border px-3 py-1 text-sm">
+                <select name="correctBool" className="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-sm">
                   <option value="true">Đúng</option>
                   <option value="false">Sai</option>
                 </select>
@@ -272,7 +272,7 @@ export default async function AdminReadingDetailPage({ params }: Props) {
                     {q.type}
                   </Badge>
                   {q.supportingQuote && (
-                    <p className="rounded-md border border-emerald-200 bg-emerald-50 px-2 py-1 text-xs text-emerald-800">
+                    <p className="rounded-md border border-emerald-200 bg-emerald-50 px-2 py-1 text-xs text-emerald-800 dark:border-emerald-400/25 dark:bg-emerald-500/10 dark:text-emerald-300">
                       📍 <span className="font-chinese">{q.supportingQuote}</span>
                     </p>
                   )}

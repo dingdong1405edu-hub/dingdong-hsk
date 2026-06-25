@@ -89,8 +89,10 @@ export function McqCard({
                   "flex min-h-[3.25rem] items-center justify-center rounded-xl border-2 px-4 py-3 text-center transition-colors",
                   optionClass,
                   state === "idle" && "border-border hover:border-primary/60 hover:bg-muted/40",
-                  state === "correct" && "border-green-500 bg-green-50 text-green-700",
-                  state === "wrong" && "border-red-500 bg-red-50 text-red-700",
+                  state === "correct" &&
+                    "border-green-500 bg-green-50 text-green-700 dark:bg-green-500/15 dark:text-green-300",
+                  state === "wrong" &&
+                    "border-red-500 bg-red-50 text-red-700 dark:bg-red-500/15 dark:text-red-300",
                   answered && state === "idle" && "opacity-50",
                 )}
               >
@@ -104,7 +106,8 @@ export function McqCard({
       <div
         className={cn(
           "border-t py-4 transition-colors",
-          answered && (correct ? "bg-green-50" : "bg-red-50"),
+          answered &&
+            (correct ? "bg-green-50 dark:bg-green-500/15" : "bg-red-50 dark:bg-red-500/15"),
         )}
       >
         {answered ? (
@@ -112,7 +115,7 @@ export function McqCard({
             <div
               className={cn(
                 "flex items-center gap-2 font-semibold",
-                correct ? "text-green-700" : "text-red-700",
+                correct ? "text-green-700 dark:text-green-300" : "text-red-700 dark:text-red-300",
               )}
             >
               {correct ? <Check className="h-5 w-5" /> : <X className="h-5 w-5" />}

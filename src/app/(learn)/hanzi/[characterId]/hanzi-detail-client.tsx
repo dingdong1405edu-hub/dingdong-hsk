@@ -15,11 +15,11 @@ import type { HSKLevel } from "@prisma/client";
 // Full, static class strings so Tailwind's JIT actually generates them
 // (interpolated `bg-${color}-100` names are never emitted).
 const TONE_BADGE: Record<number, string> = {
-  1: "bg-red-100 text-red-700",
-  2: "bg-green-100 text-green-700",
-  3: "bg-blue-100 text-blue-700",
-  4: "bg-purple-100 text-purple-700",
-  0: "bg-zinc-100 text-zinc-700",
+  1: "bg-red-100 text-red-700 dark:bg-red-500/15 dark:text-red-300",
+  2: "bg-green-100 text-green-700 dark:bg-green-500/15 dark:text-green-300",
+  3: "bg-blue-100 text-blue-700 dark:bg-blue-500/15 dark:text-blue-300",
+  4: "bg-purple-100 text-purple-700 dark:bg-purple-500/15 dark:text-purple-300",
+  0: "bg-muted text-muted-foreground",
 };
 
 interface Example {

@@ -49,7 +49,7 @@ export function ChatPanel({
   return (
     <div className="flex h-full flex-col overflow-hidden rounded-2xl border bg-card shadow-2xl">
       {/* Header */}
-      <div className="flex items-center gap-3 border-b bg-gradient-to-r from-primary/10 to-amber-100/50 px-4 py-3">
+      <div className="flex items-center gap-3 border-b bg-gradient-to-r from-primary/10 to-amber-100/50 dark:to-amber-500/10 px-4 py-3">
         <BaoAvatar className="h-9 w-9" />
         <div className="min-w-0 flex-1 leading-tight">
           <div className="flex items-center gap-1.5 text-sm font-bold text-foreground">

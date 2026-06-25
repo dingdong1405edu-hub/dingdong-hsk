@@ -36,7 +36,7 @@ export default async function GrammarUnitPage({ params }: Props) {
           <p className="font-chinese text-muted-foreground">{unit.titleZh}</p>
         </div>
         <Link href={`/grammar/${unitId}/review`} className="shrink-0">
-          <Button variant="outline" size="sm" className="gap-1.5 border-violet-300 text-violet-700">
+          <Button variant="outline" size="sm" className="gap-1.5 border-violet-300 text-violet-700 dark:border-violet-400/25 dark:text-violet-300">
             <Repeat className="h-4 w-4" /> Ôn cả unit
           </Button>
         </Link>
@@ -61,7 +61,7 @@ export default async function GrammarUnitPage({ params }: Props) {
                   <div
                     className={`flex h-10 w-10 items-center justify-center rounded-full font-bold ${
                       done
-                        ? "bg-green-100 text-green-600"
+                        ? "bg-green-100 text-green-600 dark:bg-green-500/15 dark:text-green-300"
                         : available
                           ? "bg-primary/10 text-primary"
                           : "bg-muted text-muted-foreground"
@@ -85,13 +85,13 @@ export default async function GrammarUnitPage({ params }: Props) {
                       </Button>
                     </Link>
                     <Link href={`${base}/review`}>
-                      <Button size="sm" variant="outline" className="gap-1.5 border-violet-300 text-violet-700">
+                      <Button size="sm" variant="outline" className="gap-1.5 border-violet-300 text-violet-700 dark:border-violet-400/25 dark:text-violet-300">
                         <Repeat className="h-4 w-4" /> Ôn tập
                       </Button>
                     </Link>
                     {hasTest && (
                       <Link href={`${base}/test`}>
-                        <Button size="sm" variant="outline" className="gap-1.5 border-amber-300 text-amber-700">
+                        <Button size="sm" variant="outline" className="gap-1.5 border-amber-300 text-amber-700 dark:border-amber-400/25 dark:text-amber-300">
                           <ClipboardCheck className="h-4 w-4" /> Kiểm tra
                         </Button>
                       </Link>

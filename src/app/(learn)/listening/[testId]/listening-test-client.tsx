@@ -292,15 +292,15 @@ export function ListeningTestClient({
             <span
               className={cn(
                 "inline-flex items-center gap-1.5 rounded-lg px-2.5 py-1.5 text-sm font-semibold tabular-nums",
-                timerCritical ? "bg-rose-100 text-rose-700" : "bg-muted",
+                timerCritical ? "bg-rose-100 dark:bg-rose-500/15 text-rose-700 dark:text-rose-300" : "bg-muted",
               )}
             >
-              <Clock className={cn("h-4 w-4", timerCritical ? "text-rose-600" : "text-muted-foreground")} />
+              <Clock className={cn("h-4 w-4", timerCritical ? "text-rose-600 dark:text-rose-300" : "text-muted-foreground")} />
               {formatDuration(remaining)}
               <span className="hidden text-xs font-normal text-muted-foreground sm:inline">còn lại</span>
             </span>
           ) : (
-            <span className="inline-flex items-center gap-1.5 rounded-lg bg-emerald-100 px-2.5 py-1.5 text-sm font-bold text-emerald-700">
+            <span className="inline-flex items-center gap-1.5 rounded-lg bg-emerald-100 dark:bg-emerald-500/15 px-2.5 py-1.5 text-sm font-bold text-emerald-700 dark:text-emerald-300">
               {Math.round(result?.score ?? 0)}% · {correctCount}/{total}
             </span>
           )
@@ -337,9 +337,9 @@ export function ListeningTestClient({
         <div className="h-full overflow-y-auto">
           <div className="mx-auto max-w-2xl space-y-5 p-4 sm:p-6">
             {/* Title */}
-            <div className="flex items-center justify-between gap-3 rounded-2xl border border-teal-100 bg-gradient-to-r from-teal-50 to-emerald-50/40 p-3.5">
+            <div className="flex items-center justify-between gap-3 rounded-2xl border border-teal-100 dark:border-teal-400/25 bg-gradient-to-r from-teal-50 to-emerald-50/40 dark:from-teal-500/10 dark:to-emerald-500/5 p-3.5">
               <div className="flex items-center gap-2.5">
-                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-teal-100 text-teal-600">
+                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-teal-100 dark:bg-teal-500/15 text-teal-600 dark:text-teal-300">
                   <Headphones className="h-5 w-5" />
                 </span>
                 <h1 className="text-lg font-bold sm:text-xl">{test.title}</h1>
@@ -350,14 +350,14 @@ export function ListeningTestClient({
             </div>
 
             {/* Sticky audio player */}
-            <div className="sticky top-0 z-20 -mx-4 bg-[#faf7f2]/85 px-4 py-2 backdrop-blur sm:-mx-6 sm:px-6">
+            <div className="sticky top-0 z-20 -mx-4 bg-[#faf7f2]/85 dark:bg-background/85 px-4 py-2 backdrop-blur sm:-mx-6 sm:px-6">
               <AudioPlayer audio={audio} reviewMode={submitted} segmentCount={segments.length} />
             </div>
 
             {/* Honest empty-state: neither audio nor transcript exists */}
             {noContent && (
-              <div className="flex items-start gap-2 rounded-xl border border-amber-200 bg-amber-50 p-3 text-sm text-amber-800">
-                <AlertTriangle className="mt-0.5 h-4 w-4 shrink-0 text-amber-600" />
+              <div className="flex items-start gap-2 rounded-xl border border-amber-200 dark:border-amber-400/25 bg-amber-50 dark:bg-amber-500/15 p-3 text-sm text-amber-800 dark:text-amber-200">
+                <AlertTriangle className="mt-0.5 h-4 w-4 shrink-0 text-amber-600 dark:text-amber-300" />
                 <p>
                   Bài nghe này chưa có audio hoặc lời thoại. Bạn vẫn trả lời được câu hỏi, nhưng nên báo giáo viên bổ
                   sung nội dung.
@@ -367,7 +367,7 @@ export function ListeningTestClient({
 
             {/* Instructions (test mode) — kèm linh vật Bao chào học viên */}
             {!submitted && (
-              <div className="flex items-center gap-3 rounded-xl border border-teal-100 bg-teal-50/50 p-3 text-sm text-teal-900">
+              <div className="flex items-center gap-3 rounded-xl border border-teal-100 dark:border-teal-400/25 bg-teal-50/50 dark:bg-teal-500/10 p-3 text-sm text-teal-900 dark:text-teal-200">
                 <BaoBuddy size={54} pose="idle" className="shrink-0" aria-label="Bao chào bạn" />
                 <p>
                   {audio.available ? (
@@ -403,7 +403,7 @@ export function ListeningTestClient({
                   initial={{ opacity: 0, scale: 0.92, y: 10 }}
                   animate={{ opacity: 1, scale: 1, y: 0 }}
                   transition={{ type: "spring", stiffness: 220, damping: 18 }}
-                  className="relative overflow-hidden rounded-3xl border border-amber-200/70 bg-gradient-to-br from-amber-50 via-rose-50 to-teal-50 px-5 py-6 text-center shadow-sm"
+                  className="relative overflow-hidden rounded-3xl border border-amber-200/70 dark:border-amber-400/25 bg-gradient-to-br from-amber-50 via-rose-50 to-teal-50 dark:from-amber-500/10 dark:via-rose-500/10 dark:to-teal-500/10 px-5 py-6 text-center shadow-sm"
                 >
                   <BaoBuddy
                     size={120}
@@ -411,10 +411,10 @@ export function ListeningTestClient({
                     message={baoBubble(result.score)}
                     className="mx-auto"
                   />
-                  <div className="mt-1 text-4xl font-extrabold tracking-tight text-zinc-800">
+                  <div className="mt-1 text-4xl font-extrabold tracking-tight text-foreground">
                     {Math.round(result.score)}%
                   </div>
-                  <div className="mt-0.5 text-sm font-medium text-zinc-600">
+                  <div className="mt-0.5 text-sm font-medium text-muted-foreground">
                     {correctCount}/{total} câu đúng · {formatDuration(elapsed)}
                   </div>
                   <div className="mt-1.5 text-sm font-semibold text-primary">{baoLine(result.score)}</div>

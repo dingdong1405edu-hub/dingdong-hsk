@@ -409,7 +409,7 @@ export function TopicSpeakingClient({ topic }: { topic: TopicData }) {
       </div>
 
       {/* Topic banner */}
-      <div className="relative overflow-hidden rounded-2xl border bg-gradient-to-br from-indigo-50 to-white p-5">
+      <div className="relative overflow-hidden rounded-2xl border bg-gradient-to-br from-indigo-50 to-white p-5 dark:from-indigo-500/10 dark:to-transparent">
         <div className="flex items-start gap-4">
           <BaoBuddy size={70} pose={good ? "cheer" : "idle"} className="shrink-0" />
           <div className="min-w-0 flex-1">
@@ -420,7 +420,7 @@ export function TopicSpeakingClient({ topic }: { topic: TopicData }) {
             </p>
           </div>
         </div>
-        <div className="pointer-events-none absolute -right-4 -top-6 select-none font-chinese text-[110px] leading-none text-black/[0.04]">
+        <div className="pointer-events-none absolute -right-4 -top-6 select-none font-chinese text-[110px] leading-none text-black/[0.04] dark:text-white/[0.04]">
           说
         </div>
       </div>
@@ -455,7 +455,7 @@ export function TopicSpeakingClient({ topic }: { topic: TopicData }) {
             <button
               type="button"
               onClick={() => setShowOutline((v) => !v)}
-              className="inline-flex items-center gap-1.5 rounded-lg border border-emerald-300 bg-emerald-50 px-3 py-1.5 text-sm font-semibold text-emerald-700 transition hover:bg-emerald-100"
+              className="inline-flex items-center gap-1.5 rounded-lg border border-emerald-300 bg-emerald-50 px-3 py-1.5 text-sm font-semibold text-emerald-700 transition hover:bg-emerald-100 dark:border-emerald-400/30 dark:bg-emerald-500/10 dark:text-emerald-300 dark:hover:bg-emerald-500/20"
             >
               <ListTree className="h-4 w-4" /> {showOutline ? "Ẩn dàn ý" : "Gợi ý dàn ý"}
             </button>
@@ -468,7 +468,7 @@ export function TopicSpeakingClient({ topic }: { topic: TopicData }) {
                   transition={{ duration: 0.25 }}
                   className="overflow-hidden"
                 >
-                  <div className="mt-3 whitespace-pre-line rounded-xl border border-emerald-200 bg-emerald-50/50 p-3 text-sm text-emerald-900">
+                  <div className="mt-3 whitespace-pre-line rounded-xl border border-emerald-200 bg-emerald-50/50 p-3 text-sm text-emerald-900 dark:border-emerald-400/25 dark:bg-emerald-500/10 dark:text-emerald-200">
                     {topic.outline}
                   </div>
                 </motion.div>
@@ -483,7 +483,7 @@ export function TopicSpeakingClient({ topic }: { topic: TopicData }) {
             <button
               type="button"
               onClick={() => setShowHints((v) => !v)}
-              className="inline-flex items-center gap-1.5 rounded-lg border border-amber-300 bg-amber-50 px-3 py-1.5 text-sm font-semibold text-amber-700 transition hover:bg-amber-100"
+              className="inline-flex items-center gap-1.5 rounded-lg border border-amber-300 bg-amber-50 px-3 py-1.5 text-sm font-semibold text-amber-700 transition hover:bg-amber-100 dark:border-amber-400/30 dark:bg-amber-500/10 dark:text-amber-300 dark:hover:bg-amber-500/20"
             >
               <Lightbulb className="h-4 w-4" /> {showHints ? "Ẩn gợi ý" : "Xem gợi ý"}
             </button>
@@ -595,8 +595,8 @@ export function TopicSpeakingClient({ topic }: { topic: TopicData }) {
 
             {/* Overall feedback */}
             {result.overallFeedback && (
-              <div className="rounded-2xl border bg-indigo-50/60 p-4 text-sm">
-                <div className="mb-1 flex items-center gap-1.5 font-semibold text-indigo-700">
+              <div className="rounded-2xl border bg-indigo-50/60 p-4 text-sm dark:bg-indigo-500/10">
+                <div className="mb-1 flex items-center gap-1.5 font-semibold text-indigo-700 dark:text-indigo-300">
                   <Sparkles className="h-4 w-4" /> Nhận xét của AI
                 </div>
                 <p className="text-muted-foreground">{result.overallFeedback}</p>
@@ -607,8 +607,8 @@ export function TopicSpeakingClient({ topic }: { topic: TopicData }) {
             {(result.strengths.length > 0 || result.improvements.length > 0) && (
               <div className="grid gap-3 sm:grid-cols-2">
                 {result.strengths.length > 0 && (
-                  <div className="rounded-2xl border border-emerald-200 bg-emerald-50/50 p-4">
-                    <div className="mb-2 flex items-center gap-1.5 text-sm font-semibold text-emerald-700">
+                  <div className="rounded-2xl border border-emerald-200 bg-emerald-50/50 p-4 dark:border-emerald-400/25 dark:bg-emerald-500/10">
+                    <div className="mb-2 flex items-center gap-1.5 text-sm font-semibold text-emerald-700 dark:text-emerald-300">
                       <CheckCircle2 className="h-4 w-4" /> Điểm mạnh
                     </div>
                     <ul className="space-y-1 text-sm text-muted-foreground">
@@ -622,8 +622,8 @@ export function TopicSpeakingClient({ topic }: { topic: TopicData }) {
                   </div>
                 )}
                 {result.improvements.length > 0 && (
-                  <div className="rounded-2xl border border-amber-200 bg-amber-50/50 p-4">
-                    <div className="mb-2 flex items-center gap-1.5 text-sm font-semibold text-amber-700">
+                  <div className="rounded-2xl border border-amber-200 bg-amber-50/50 p-4 dark:border-amber-400/25 dark:bg-amber-500/10">
+                    <div className="mb-2 flex items-center gap-1.5 text-sm font-semibold text-amber-700 dark:text-amber-300">
                       <AlertCircle className="h-4 w-4" /> Cần cải thiện
                     </div>
                     <ul className="space-y-1 text-sm text-muted-foreground">
@@ -659,9 +659,9 @@ export function TopicSpeakingClient({ topic }: { topic: TopicData }) {
                   {result.annotations.map((a, i) => (
                     <div key={i} className="rounded-lg border bg-muted/30 p-3">
                       <div className="flex flex-wrap items-center gap-2 font-chinese">
-                        <span className="rounded bg-rose-100 px-1.5 py-0.5 text-rose-700 line-through">{a.original}</span>
+                        <span className="rounded bg-rose-100 px-1.5 py-0.5 text-rose-700 line-through dark:bg-rose-500/15 dark:text-rose-300">{a.original}</span>
                         <span className="text-muted-foreground">→</span>
-                        <span className="rounded bg-emerald-100 px-1.5 py-0.5 font-medium text-emerald-700">
+                        <span className="rounded bg-emerald-100 px-1.5 py-0.5 font-medium text-emerald-700 dark:bg-emerald-500/15 dark:text-emerald-300">
                           {a.correction}
                         </span>
                         {a.type && <Badge variant="outline" className="font-chinese text-[11px]">{a.type}</Badge>}

@@ -183,17 +183,17 @@ export function MockExamClient({ exam }: { exam: ExamData }) {
         onSubmit={() => setReviewOpen(true)}
         center={
           submitted ? (
-            <span className="inline-flex items-center gap-1.5 rounded-lg bg-emerald-100 px-2.5 py-1.5 text-sm font-bold text-emerald-700">
+            <span className="inline-flex items-center gap-1.5 rounded-lg bg-emerald-100 px-2.5 py-1.5 text-sm font-bold text-emerald-700 dark:bg-emerald-500/15 dark:text-emerald-300">
               {result?.overall ?? 0}/100
             </span>
           ) : (
             <span
               className={cn(
                 "inline-flex items-center gap-1.5 rounded-lg px-2.5 py-1.5 text-sm font-semibold tabular-nums",
-                timerCritical ? "bg-rose-100 text-rose-700" : "bg-muted",
+                timerCritical ? "bg-rose-100 text-rose-700 dark:bg-rose-500/15 dark:text-rose-300" : "bg-muted",
               )}
             >
-              <Clock className={cn("h-4 w-4", timerCritical ? "text-rose-600" : "text-muted-foreground")} />
+              <Clock className={cn("h-4 w-4", timerCritical ? "text-rose-600 dark:text-rose-300" : "text-muted-foreground")} />
               {hasLimit ? formatDuration(remaining as number) : formatDuration(elapsed)}
               <span className="hidden text-xs font-normal text-muted-foreground sm:inline">
                 {hasLimit ? "còn lại" : "đã làm"}
@@ -232,7 +232,7 @@ export function MockExamClient({ exam }: { exam: ExamData }) {
       >
         <div className="flex h-full min-h-0 flex-col">
           {/* Section tabs */}
-          <div className="flex shrink-0 gap-1 overflow-x-auto border-b bg-white/80 p-1.5 backdrop-blur">
+          <div className="flex shrink-0 gap-1 overflow-x-auto border-b bg-card/80 p-1.5 backdrop-blur">
             {exam.sections.map((s, i) => (
               <button
                 key={s.id}
@@ -247,7 +247,7 @@ export function MockExamClient({ exam }: { exam: ExamData }) {
                 <SectionIcon skill={s.skill} className="h-4 w-4" />
                 {sectionLabel(s.skill, s.title)}
                 {submitted && result?.sections[i]?.score !== null && (
-                  <span className="rounded-full bg-black/10 px-1.5 text-xs">
+                  <span className="rounded-full bg-black/10 px-1.5 text-xs dark:bg-white/15">
                     {result?.sections[i]?.score}
                   </span>
                 )}

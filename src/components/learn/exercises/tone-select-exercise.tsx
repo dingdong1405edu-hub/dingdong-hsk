@@ -38,9 +38,9 @@ export function ToneSelectExerciseUI({ exercise, onAnswer, disabled }: Props) {
             className={cn(
               "p-4 rounded-xl border-2 font-semibold transition-all",
               selected === null && "hover:border-primary/50 hover:bg-primary/5",
-              selected === idx && idx === exercise.correct && "border-green-500 bg-green-50",
-              selected === idx && idx !== exercise.correct && "border-red-400 bg-red-50",
-              selected !== null && selected !== idx && idx === exercise.correct && "border-green-300 bg-green-50/50"
+              selected === idx && idx === exercise.correct && "border-green-500 bg-green-50 dark:bg-green-500/15",
+              selected === idx && idx !== exercise.correct && "border-red-400 bg-red-50 dark:bg-red-500/15",
+              selected !== null && selected !== idx && idx === exercise.correct && "border-green-300 bg-green-50/50 dark:bg-green-500/10"
             )}
           >
             <span className={TONE_COLORS[idx] ?? ""}>{opt}</span>

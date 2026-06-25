@@ -54,8 +54,8 @@ function Block({ block }: { block: MaterialBlock }) {
 
     case "vocab":
       return (
-        <div className="overflow-hidden rounded-xl border">
-          <table className="w-full text-left text-sm">
+        <div className="overflow-x-auto rounded-xl border">
+          <table className="w-full min-w-full text-left text-sm">
             <thead className="bg-muted/50 text-xs uppercase tracking-wide text-muted-foreground">
               <tr>
                 <th className="px-4 py-2 font-semibold">Hán tự</th>
@@ -78,9 +78,9 @@ function Block({ block }: { block: MaterialBlock }) {
 
     case "note":
       return (
-        <div className="flex gap-3 rounded-xl border border-amber-200 bg-amber-50 p-4">
-          <Lightbulb className="mt-0.5 h-5 w-5 shrink-0 text-amber-500" />
-          <p className="text-[15px] leading-relaxed text-amber-900">{block.text}</p>
+        <div className="flex gap-3 rounded-xl border border-amber-200 bg-amber-50 p-4 dark:border-amber-400/25 dark:bg-amber-500/15">
+          <Lightbulb className="mt-0.5 h-5 w-5 shrink-0 text-amber-500 dark:text-amber-300" />
+          <p className="text-[15px] leading-relaxed text-amber-900 dark:text-amber-200">{block.text}</p>
         </div>
       );
 

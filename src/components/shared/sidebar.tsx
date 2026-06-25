@@ -196,17 +196,17 @@ function NavContent({ user, onNavigate }: { user: SidebarUser; onNavigate?: () =
           <span className="text-[12px] font-semibold text-muted-foreground">Giao diện</span>
           <ThemeToggle />
         </div>
-        <div className="flex items-center gap-2.5 rounded-xl bg-gradient-to-r from-amber-50 to-amber-100/60 p-2.5 ring-1 ring-amber-100">
-          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-white text-amber-500 shadow-sm">
+        <div className="flex items-center gap-2.5 rounded-xl bg-gradient-to-r from-amber-50 to-amber-100/60 dark:from-amber-500/15 dark:to-amber-500/5 p-2.5 ring-1 ring-amber-100 dark:ring-amber-400/25">
+          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-white dark:bg-card text-amber-500 shadow-sm">
             <Crown className="h-4 w-4" />
           </div>
           <div className="leading-tight">
-            <div className="text-[13px] font-bold text-amber-700">Premium</div>
-            <div className="text-[10px] text-amber-700/70">Mở khoá toàn bộ bài học</div>
+            <div className="text-[13px] font-bold text-amber-700 dark:text-amber-300">Premium</div>
+            <div className="text-[10px] text-amber-700/70 dark:text-amber-300/70">Mở khoá toàn bộ bài học</div>
           </div>
         </div>
-        <div className="flex items-center gap-3 rounded-xl bg-gradient-to-br from-primary/10 to-green-100/60 p-2.5">
-          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-white text-base shadow-sm">🎓</div>
+        <div className="flex items-center gap-3 rounded-xl bg-gradient-to-br from-primary/10 to-green-100/60 dark:to-green-500/10 p-2.5">
+          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-white dark:bg-card text-base shadow-sm">🎓</div>
           <div className="leading-tight">
             <div className="text-[10px] text-muted-foreground">Cấp độ mục tiêu</div>
             <div className="text-[13px] font-bold text-primary">{hskLevelLabel(user.hskLevel)}</div>

@@ -75,7 +75,7 @@ export function LessonHub({ lesson, unitId, words, reviews, resume, completed, n
       <div className="flex items-center gap-2">
         <h1 className="text-2xl font-bold">{lesson.title || "Từ vựng"}</h1>
         {completed && (
-          <span className="inline-flex items-center gap-1 rounded-full bg-green-100 px-2 py-0.5 text-xs font-medium text-green-700">
+          <span className="inline-flex items-center gap-1 rounded-full bg-green-100 px-2 py-0.5 text-xs font-medium text-green-700 dark:bg-green-500/15 dark:text-green-300">
             <CheckCircle2 className="h-3.5 w-3.5" /> Đã học
           </span>
         )}
@@ -141,7 +141,7 @@ export function LessonHub({ lesson, unitId, words, reviews, resume, completed, n
           <Card>
             <CardContent className="space-y-4 p-6">
               <div className="flex items-center gap-3">
-                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-amber-100 text-amber-600">
+                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-amber-100 text-amber-600 dark:bg-amber-500/15 dark:text-amber-300">
                   <Sparkles className="h-5 w-5" />
                 </div>
                 <div>
@@ -160,7 +160,7 @@ export function LessonHub({ lesson, unitId, words, reviews, resume, completed, n
                 <>
                   <div className="flex items-center gap-2 text-sm">
                     {dueCount > 0 ? (
-                      <span className="inline-flex items-center rounded-full bg-amber-100 px-2.5 py-0.5 font-medium text-amber-700">
+                      <span className="inline-flex items-center rounded-full bg-amber-100 px-2.5 py-0.5 font-medium text-amber-700 dark:bg-amber-500/15 dark:text-amber-300">
                         {dueCount} từ đến hạn ôn
                       </span>
                     ) : (

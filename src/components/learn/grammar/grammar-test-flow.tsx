@@ -91,7 +91,7 @@ export function GrammarTestFlow({ lesson, content, unitId }: Props) {
       <div className="flex min-h-[60vh] items-center justify-center">
         <Card className="w-full max-w-md text-center">
           <CardContent className="space-y-4 px-6 pb-6 pt-8">
-            <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-violet-100 text-violet-600">
+            <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-violet-100 text-violet-600 dark:bg-violet-500/15 dark:text-violet-300">
               <ClipboardCheck className="h-7 w-7" />
             </div>
             <h2 className="text-2xl font-bold">Bài kiểm tra</h2>
@@ -134,12 +134,12 @@ export function GrammarTestFlow({ lesson, content, unitId }: Props) {
             className="mx-auto"
           />
           <h2 className="text-2xl font-bold">{passed ? "Đạt rồi!" : "Chưa đạt, thử lại nhé!"}</h2>
-          <div className={cn("text-4xl font-bold", passed ? "text-primary" : "text-red-600")}>{pct}%</div>
+          <div className={cn("text-4xl font-bold", passed ? "text-primary" : "text-red-600 dark:text-red-300")}>{pct}%</div>
           <div className="text-sm text-muted-foreground">
             {result.correct}/{result.total} câu đúng · cần ≥ {PASS}%
           </div>
           {passed && xpEarned > 0 && (
-            <div className="inline-flex items-center gap-1.5 font-semibold text-yellow-600">
+            <div className="inline-flex items-center gap-1.5 font-semibold text-yellow-600 dark:text-yellow-400">
               <Trophy className="h-4 w-4" /> +{xpEarned} XP
             </div>
           )}
@@ -168,14 +168,16 @@ export function GrammarTestFlow({ lesson, content, unitId }: Props) {
               key={i}
               className={cn(
                 "rounded-2xl border p-4",
-                ok ? "border-emerald-300 bg-emerald-50/40" : "border-rose-300 bg-rose-50/40",
+                ok
+                  ? "border-emerald-300 bg-emerald-50/40 dark:border-emerald-500/30 dark:bg-emerald-500/10"
+                  : "border-rose-300 bg-rose-50/40 dark:border-rose-500/30 dark:bg-rose-500/10",
               )}
             >
               <div className="flex items-start gap-2">
                 {ok ? (
-                  <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-emerald-500" />
+                  <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-emerald-500 dark:text-emerald-400" />
                 ) : (
-                  <XCircle className="mt-0.5 h-5 w-5 shrink-0 text-rose-500" />
+                  <XCircle className="mt-0.5 h-5 w-5 shrink-0 text-rose-500 dark:text-rose-400" />
                 )}
                 <div className="min-w-0 flex-1">
                   <div className="text-[11px] font-semibold uppercase tracking-wide text-muted-foreground">
@@ -184,14 +186,14 @@ export function GrammarTestFlow({ lesson, content, unitId }: Props) {
                   <div className="font-chinese text-sm">{d.question}</div>
                   {d.questionPinyin && <div className="font-pinyin text-xs text-muted-foreground">{d.questionPinyin}</div>}
                   <div className="mt-1.5 text-sm">
-                    <span className="font-semibold text-emerald-700">Đáp án: </span>
+                    <span className="font-semibold text-emerald-700 dark:text-emerald-300">Đáp án: </span>
                     <span className="font-chinese">{d.answer}</span>
                   </div>
                   {d.explanation && (
                     <div className="mt-0.5 text-xs text-muted-foreground">💡 {d.explanation}</div>
                   )}
                   {!ok && (
-                    <div className="mt-1 text-xs font-medium text-rose-600">
+                    <div className="mt-1 text-xs font-medium text-rose-600 dark:text-rose-300">
                       Bạn trả lời {result.results[i] === undefined ? "chưa kịp / bỏ trống" : "chưa đúng"}.
                     </div>
                   )}

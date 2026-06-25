@@ -75,7 +75,7 @@ export function ImageUpload({ name = "imageUrl", defaultValue, className }: Imag
             <button
               type="button"
               onClick={() => inputRef.current?.click()}
-              className="rounded-lg bg-white/90 p-2 text-foreground shadow-sm transition hover:bg-white"
+              className="rounded-lg bg-background/90 p-2 text-foreground shadow-sm transition hover:bg-background"
               title="Đổi ảnh"
             >
               <ImagePlus className="h-4 w-4" />
@@ -83,7 +83,7 @@ export function ImageUpload({ name = "imageUrl", defaultValue, className }: Imag
             <button
               type="button"
               onClick={() => setUrl("")}
-              className="rounded-lg bg-white/90 p-2 text-destructive shadow-sm transition hover:bg-white"
+              className="rounded-lg bg-background/90 p-2 text-destructive shadow-sm transition hover:bg-background"
               title="Xoá ảnh"
             >
               <Trash2 className="h-4 w-4" />

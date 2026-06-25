@@ -57,7 +57,7 @@ export function AudioPlayer({
   const restartBlocked = !canStart;
 
   return (
-    <div className="rounded-2xl border bg-gradient-to-br from-teal-50/70 to-white p-4 shadow-sm">
+    <div className="rounded-2xl border bg-gradient-to-br from-teal-50/70 to-white dark:from-teal-500/10 dark:to-transparent p-4 shadow-sm">
       <div className="flex items-center gap-3 sm:gap-4">
         {/* Play / pause */}
         <button
@@ -66,7 +66,7 @@ export function AudioPlayer({
           aria-label={playing ? "Tạm dừng" : "Phát"}
           className={cn(
             "flex h-12 w-12 shrink-0 items-center justify-center rounded-full text-white shadow-md transition-transform active:scale-95",
-            mode === "none" || blocked ? "cursor-not-allowed bg-zinc-300" : "bg-teal-600 hover:bg-teal-700",
+            mode === "none" || blocked ? "cursor-not-allowed bg-muted" : "bg-teal-600 hover:bg-teal-700",
           )}
         >
           {playing ? <Pause className="h-6 w-6" /> : <Play className="h-6 w-6 translate-x-0.5" />}
@@ -84,9 +84,9 @@ export function AudioPlayer({
                 value={currentTime}
                 onChange={(e) => seek(Number(e.target.value))}
                 aria-label="Tua audio"
-                className="h-1.5 w-full cursor-pointer appearance-none rounded-full bg-teal-100 accent-teal-600"
+                className="h-1.5 w-full cursor-pointer appearance-none rounded-full bg-teal-100 dark:bg-teal-500/20 accent-teal-600"
                 style={{
-                  background: `linear-gradient(to right, rgb(13 148 136) ${mp3Progress}%, rgb(204 251 241) ${mp3Progress}%)`,
+                  backgroundImage: `linear-gradient(to right, rgb(13 148 136) ${mp3Progress}%, transparent ${mp3Progress}%)`,
                 }}
               />
               <div className="mt-1 flex items-center justify-between text-xs tabular-nums text-muted-foreground">
@@ -98,10 +98,10 @@ export function AudioPlayer({
             <div className="flex items-center gap-3">
               <Equalizer active={playing} />
               <div className="min-w-0 flex-1">
-                <div className="flex items-center gap-1.5 text-sm font-medium text-teal-700">
+                <div className="flex items-center gap-1.5 text-sm font-medium text-teal-700 dark:text-teal-300">
                   <Radio className="h-3.5 w-3.5" /> Giọng đọc tự động
                 </div>
-                <div className="mt-1 h-1.5 w-full overflow-hidden rounded-full bg-teal-100">
+                <div className="mt-1 h-1.5 w-full overflow-hidden rounded-full bg-teal-100 dark:bg-teal-500/20">
                   <div
                     className="h-full rounded-full bg-teal-500 transition-all duration-300"
                     style={{ width: `${ttsProgress}%` }}
@@ -110,7 +110,7 @@ export function AudioPlayer({
               </div>
             </div>
           ) : (
-            <div className="flex items-center gap-2 text-sm text-amber-600">
+            <div className="flex items-center gap-2 text-sm text-amber-600 dark:text-amber-300">
               <AlertTriangle className="h-4 w-4 shrink-0" />
               <span>Hiện không phát được audio trên thiết bị này.</span>
             </div>
@@ -126,8 +126,8 @@ export function AudioPlayer({
             className={cn(
               "flex h-9 w-9 shrink-0 items-center justify-center rounded-full border transition-colors",
               restartBlocked
-                ? "cursor-not-allowed text-zinc-300"
-                : "text-muted-foreground hover:border-teal-300 hover:text-teal-700",
+                ? "cursor-not-allowed text-muted-foreground/50"
+                : "text-muted-foreground hover:border-teal-300 hover:text-teal-700 dark:hover:text-teal-300",
             )}
           >
             <RotateCcw className="h-4 w-4" />
@@ -137,16 +137,16 @@ export function AudioPlayer({
 
       {/* Controls row */}
       {mode !== "none" && (
-        <div className="mt-3 flex flex-wrap items-center justify-between gap-2 border-t border-teal-100/70 pt-3">
+        <div className="mt-3 flex flex-wrap items-center justify-between gap-2 border-t border-teal-100/70 dark:border-teal-500/20 pt-3">
           {/* Play count */}
           <span
             className={cn(
               "inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-xs font-semibold",
               reviewMode
-                ? "bg-emerald-100 text-emerald-700"
+                ? "bg-emerald-100 text-emerald-700 dark:bg-emerald-500/15 dark:text-emerald-300"
                 : remainingPlays && remainingPlays > 0
-                  ? "bg-teal-100 text-teal-700"
-                  : "bg-rose-100 text-rose-700",
+                  ? "bg-teal-100 text-teal-700 dark:bg-teal-500/15 dark:text-teal-300"
+                  : "bg-rose-100 text-rose-700 dark:bg-rose-500/15 dark:text-rose-300",
             )}
           >
             <Volume2 className="h-3.5 w-3.5" />
@@ -164,7 +164,7 @@ export function AudioPlayer({
                   "rounded-md px-2 py-1 text-xs font-semibold transition-colors",
                   rate === s
                     ? "bg-teal-600 text-white"
-                    : "border text-muted-foreground hover:border-teal-300 hover:text-teal-700",
+                    : "border text-muted-foreground hover:border-teal-300 hover:text-teal-700 dark:hover:text-teal-300",
                 )}
               >
                 {s}x

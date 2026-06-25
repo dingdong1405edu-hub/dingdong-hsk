@@ -35,9 +35,9 @@ const TYPE_LABEL: Record<string, string> = {
 };
 
 function scoreTone(pct: number): string {
-  if (pct >= 80) return "text-green-600";
-  if (pct >= 50) return "text-amber-600";
-  return "text-red-600";
+  if (pct >= 80) return "text-green-600 dark:text-green-400";
+  if (pct >= 50) return "text-amber-600 dark:text-amber-400";
+  return "text-red-600 dark:text-red-400";
 }
 
 /**
@@ -146,14 +146,14 @@ export function GrammarReview({ title, exercises, closeHref }: Props) {
 
           {/* Đúng / Sai / Bỏ qua */}
           <div className="grid grid-cols-3 gap-2">
-            <div className="rounded-xl bg-green-50 p-3">
-              <CheckCircle2 className="mx-auto h-5 w-5 text-green-600" />
-              <div className="mt-1 text-lg font-bold text-green-700">{correct}</div>
+            <div className="rounded-xl bg-green-50 p-3 dark:bg-green-500/15">
+              <CheckCircle2 className="mx-auto h-5 w-5 text-green-600 dark:text-green-300" />
+              <div className="mt-1 text-lg font-bold text-green-700 dark:text-green-300">{correct}</div>
               <div className="text-[11px] text-muted-foreground">Đúng</div>
             </div>
-            <div className="rounded-xl bg-red-50 p-3">
-              <XCircle className="mx-auto h-5 w-5 text-red-500" />
-              <div className="mt-1 text-lg font-bold text-red-600">{wrong}</div>
+            <div className="rounded-xl bg-red-50 p-3 dark:bg-red-500/15">
+              <XCircle className="mx-auto h-5 w-5 text-red-500 dark:text-red-300" />
+              <div className="mt-1 text-lg font-bold text-red-600 dark:text-red-300">{wrong}</div>
               <div className="text-[11px] text-muted-foreground">Sai</div>
             </div>
             <div className="rounded-xl bg-muted p-3">

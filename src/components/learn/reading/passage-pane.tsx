@@ -114,7 +114,7 @@ export function PassagePane({
   return (
     <div className="flex h-full min-h-0 flex-col">
       {/* Pane header */}
-      <div className="flex shrink-0 items-center justify-between border-b bg-white/70 px-4 py-2 backdrop-blur">
+      <div className="flex shrink-0 items-center justify-between border-b bg-card/70 px-4 py-2 backdrop-blur">
         <span className="text-xs font-bold uppercase tracking-wide text-muted-foreground">Đoạn văn</span>
         <span className="rounded-full bg-muted px-2 py-0.5 text-[11px] font-semibold text-muted-foreground">
           {charCount} chữ

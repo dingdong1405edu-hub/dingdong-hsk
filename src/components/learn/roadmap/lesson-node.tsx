@@ -52,10 +52,10 @@ export function LessonNode({
         <motion.div
           animate={{ y: [0, -5, 0] }}
           transition={{ duration: 1.4, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute -top-9 left-1/2 z-20 -translate-x-1/2 whitespace-nowrap rounded-xl bg-white px-3 py-1 text-[11px] font-extrabold uppercase tracking-wide shadow-soft-lg"
+          className="absolute -top-9 left-1/2 z-20 -translate-x-1/2 whitespace-nowrap rounded-xl bg-white px-3 py-1 text-[11px] font-extrabold uppercase tracking-wide shadow-soft-lg dark:bg-zinc-100"
         >
           <span className={theme.accentText}>Bắt đầu</span>
-          <span className="absolute -bottom-1 left-1/2 h-2.5 w-2.5 -translate-x-1/2 rotate-45 bg-white" />
+          <span className="absolute -bottom-1 left-1/2 h-2.5 w-2.5 -translate-x-1/2 rotate-45 bg-white dark:bg-zinc-100" />
         </motion.div>
       )}
 
@@ -80,7 +80,7 @@ export function LessonNode({
         <span
           className={cn(
             "absolute inset-x-0 bottom-0 rounded-full",
-            locked ? "bg-zinc-300" : isTrophy ? "bg-amber-600" : theme.nodeBase,
+            locked ? "bg-zinc-300 dark:bg-zinc-900" : isTrophy ? "bg-amber-600" : theme.nodeBase,
           )}
           style={{ top: LEDGE }}
         />
@@ -89,7 +89,7 @@ export function LessonNode({
           className={cn(
             "absolute inset-x-0 top-0 flex items-center justify-center rounded-full text-3xl leading-none transition-transform duration-100 group-active:translate-y-[3px]",
             locked
-              ? "bg-zinc-200 text-zinc-400"
+              ? "bg-zinc-200 text-zinc-400 dark:bg-zinc-800 dark:text-zinc-500"
               : isTrophy
                 ? "bg-gradient-to-b from-amber-300 to-amber-500 text-white"
                 : cn(theme.nodeFace, "text-white"),

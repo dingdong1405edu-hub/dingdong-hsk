@@ -148,7 +148,7 @@ export function RoadmapMap({
 
       {/* Banner xem trước / nâng cấp (ẩn khi đã mở khoá đầy đủ) */}
       {!hasFullAccess && (
-        <div className={cn("flex flex-col gap-3 rounded-2xl border p-4 sm:flex-row sm:items-center sm:justify-between", theme.accentBorder, theme.accentSoft)}>
+        <div className={cn("flex flex-col gap-3 rounded-2xl border p-4 sm:flex-row sm:items-center sm:justify-between dark:border-foreground/15 dark:bg-foreground/[0.04]", theme.accentBorder, theme.accentSoft)}>
           <div className="flex items-start gap-3">
             <div className={cn("flex h-9 w-9 shrink-0 items-center justify-center rounded-xl text-white", theme.accentBg)}>
               <Sparkles className="h-4.5 w-4.5" />

@@ -234,11 +234,11 @@ export function ReviewFlow({ words, reviews, pool, title = "Ôn từ", onExit }:
             </p>
             <div className="flex justify-center gap-6 py-1 text-sm">
               <div>
-                <div className="text-2xl font-bold text-green-600">{remembered}</div>
+                <div className="text-2xl font-bold text-green-600 dark:text-green-400">{remembered}</div>
                 <div className="text-muted-foreground">Nhớ tốt</div>
               </div>
               <div>
-                <div className="text-2xl font-bold text-orange-500">{forgot}</div>
+                <div className="text-2xl font-bold text-orange-500 dark:text-orange-400">{forgot}</div>
                 <div className="text-muted-foreground">Cần ôn lại</div>
               </div>
             </div>

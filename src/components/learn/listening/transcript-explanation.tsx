@@ -9,18 +9,18 @@ import { BookOpenText } from "lucide-react";
 export function TranscriptExplanation({ text }: { text: string }) {
   const lines = text.split(/\r?\n/);
   return (
-    <div className="overflow-hidden rounded-2xl border border-violet-200 bg-gradient-to-b from-violet-50/70 to-white shadow-sm">
-      <div className="flex items-center gap-2 border-b border-violet-100 bg-violet-50/70 px-4 py-2.5 text-sm font-bold text-violet-700">
+    <div className="overflow-hidden rounded-2xl border border-violet-200 bg-gradient-to-b from-violet-50/70 to-white shadow-sm dark:border-violet-500/25 dark:from-violet-500/10 dark:to-transparent">
+      <div className="flex items-center gap-2 border-b border-violet-100 bg-violet-50/70 px-4 py-2.5 text-sm font-bold text-violet-700 dark:border-violet-500/20 dark:bg-violet-500/15 dark:text-violet-300">
         <BookOpenText className="h-4 w-4" /> Dịch &amp; giải thích lời thoại
       </div>
-      <div className="space-y-1.5 p-4 text-sm leading-relaxed text-zinc-700">
+      <div className="space-y-1.5 p-4 text-sm leading-relaxed text-zinc-700 dark:text-zinc-300">
         {lines.map((raw, i) => {
           const line = raw.trim();
           if (!line) return <div key={i} className="h-1" aria-hidden />;
           const header = line.match(/^—\s*(.+?)\s*—$/);
           if (header) {
             return (
-              <div key={i} className="pt-1.5 text-xs font-bold uppercase tracking-wide text-violet-600">
+              <div key={i} className="pt-1.5 text-xs font-bold uppercase tracking-wide text-violet-600 dark:text-violet-300">
                 {header[1]}
               </div>
             );
@@ -28,7 +28,7 @@ export function TranscriptExplanation({ text }: { text: string }) {
           if (line.startsWith("•")) {
             return (
               <div key={i} className="flex gap-1.5 pl-1 font-chinese">
-                <span className="text-violet-400">•</span>
+                <span className="text-violet-400 dark:text-violet-300">•</span>
                 <span>{line.replace(/^•\s*/, "")}</span>
               </div>
             );

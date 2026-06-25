@@ -43,7 +43,7 @@ export function GlobalReview({ words, reviews }: Props) {
 
       <Card>
         <CardContent className="space-y-4 p-6 text-center">
-          <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-amber-100 text-amber-600">
+          <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-amber-100 text-amber-600 dark:bg-amber-500/15 dark:text-amber-300">
             <Sparkles className="h-7 w-7" />
           </div>
           <h1 className="text-2xl font-bold">Ôn tập tổng hợp</h1>

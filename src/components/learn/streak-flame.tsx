@@ -9,7 +9,7 @@ export function StreakFlame({ streak }: StreakFlameProps) {
   return (
     <div className="flex items-center gap-1.5">
       <Flame
-        className={streak > 0 ? "h-6 w-6 text-orange-500 fill-orange-400" : "h-6 w-6 text-zinc-300"}
+        className={streak > 0 ? "h-6 w-6 text-orange-500 fill-orange-400" : "h-6 w-6 text-muted-foreground"}
       />
       <div>
         <div className="font-bold text-lg leading-none">{streak}</div>

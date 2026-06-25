@@ -46,7 +46,7 @@ export default async function GoalsPage() {
   return (
     <div className="space-y-6">
       {/* Banner */}
-      <div className="relative overflow-hidden rounded-2xl border border-green-100 bg-gradient-to-br from-green-50 to-white p-5 sm:p-6">
+      <div className="relative overflow-hidden rounded-2xl border border-green-100 bg-gradient-to-br from-green-50 to-white p-5 dark:border-green-400/20 dark:from-green-500/10 dark:to-transparent sm:p-6">
         <div className="relative z-10 flex items-center gap-4">
           <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/10 text-primary shadow-sm">
             <Target className="h-7 w-7" />
@@ -58,7 +58,7 @@ export default async function GoalsPage() {
             </p>
           </div>
         </div>
-        <div className="pointer-events-none absolute -right-5 -top-8 select-none font-chinese text-[130px] leading-none text-black/[0.04]">
+        <div className="pointer-events-none absolute -right-5 -top-8 select-none font-chinese text-[130px] leading-none text-black/[0.04] dark:text-white/[0.04]">
           标
         </div>
       </div>

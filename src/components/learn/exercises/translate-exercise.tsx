@@ -47,9 +47,9 @@ export function TranslateExerciseUI({ exercise, onAnswer, disabled }: Props) {
             className={cn(
               "w-full p-3 rounded-xl border-2 text-left font-chinese transition-all",
               selected === null && "hover:border-primary/50 hover:bg-primary/5",
-              selected === opt && opt === exercise.answer && "border-green-500 bg-green-50",
-              selected === opt && opt !== exercise.answer && "border-red-400 bg-red-50",
-              selected && selected !== opt && opt === exercise.answer && "border-green-300 bg-green-50/50"
+              selected === opt && opt === exercise.answer && "border-green-500 bg-green-50 dark:bg-green-500/15",
+              selected === opt && opt !== exercise.answer && "border-red-400 dark:border-red-500/40 bg-red-50 dark:bg-red-500/15",
+              selected && selected !== opt && opt === exercise.answer && "border-green-300 dark:border-green-500/40 bg-green-50/50 dark:bg-green-500/10"
             )}
           >
             {opt}

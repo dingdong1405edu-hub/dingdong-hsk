@@ -103,7 +103,7 @@ export default async function DashboardPage() {
 
       {/* Featured: Học theo lộ trình */}
       <Link href="/roadmap" className="group block">
-        <div className="relative overflow-hidden rounded-2xl border border-emerald-200/70 bg-gradient-to-r from-emerald-50 via-teal-50 to-sky-50 p-5 shadow-soft transition-all duration-200 hover:-translate-y-0.5 hover:shadow-soft-lg sm:p-6">
+        <div className="relative overflow-hidden rounded-2xl border border-emerald-200/70 bg-gradient-to-r from-emerald-50 via-teal-50 to-sky-50 p-5 shadow-soft transition-all duration-200 hover:-translate-y-0.5 hover:shadow-soft-lg dark:border-emerald-400/25 dark:from-emerald-500/10 dark:via-teal-500/10 dark:to-sky-500/10 sm:p-6">
           <div className="relative z-10 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
             <div className="flex items-center gap-4">
               <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-600 text-white shadow-soft">
@@ -143,13 +143,13 @@ export default async function DashboardPage() {
       <div>
         <h2 className="mb-3 text-lg font-semibold">Các module luyện tập</h2>
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-          <ModuleCard href="/vocab" icon="📚" title="Từ vựng" subtitle="HSK 1-6 • Duolingo-style" progress={vocabProgress} color="bg-blue-100" />
-          <ModuleCard href="/grammar" icon="📝" title="Ngữ pháp" subtitle="Cấu trúc câu, điền từ" progress={grammarProgress} color="bg-green-100" />
-          <ModuleCard href="/hanzi" icon="✍️" title="Chữ Hán" subtitle="Thứ tự nét + quiz" progress={hanziProgress} color="bg-purple-100" />
-          <ModuleCard href="/reading" icon="📖" title="Đọc hiểu" subtitle="Đoạn văn + câu hỏi" color="bg-amber-100" />
-          <ModuleCard href="/listening" icon="🎧" title="Nghe hiểu" subtitle="Audio + câu hỏi HSK" color="bg-teal-100" />
-          <ModuleCard href="/writing" icon="🖊️" title="Viết luận" subtitle="AI chấm ngữ pháp & từ vựng" color="bg-rose-100" />
-          <ModuleCard href="/speaking" icon="🎤" title="Luyện nói" subtitle="HSKK • AI chấm phát âm" color="bg-indigo-100" />
+          <ModuleCard href="/vocab" icon="📚" title="Từ vựng" subtitle="HSK 1-6 • Duolingo-style" progress={vocabProgress} color="bg-blue-100 dark:bg-blue-500/15" />
+          <ModuleCard href="/grammar" icon="📝" title="Ngữ pháp" subtitle="Cấu trúc câu, điền từ" progress={grammarProgress} color="bg-green-100 dark:bg-green-500/15" />
+          <ModuleCard href="/hanzi" icon="✍️" title="Chữ Hán" subtitle="Thứ tự nét + quiz" progress={hanziProgress} color="bg-purple-100 dark:bg-purple-500/15" />
+          <ModuleCard href="/reading" icon="📖" title="Đọc hiểu" subtitle="Đoạn văn + câu hỏi" color="bg-amber-100 dark:bg-amber-500/15" />
+          <ModuleCard href="/listening" icon="🎧" title="Nghe hiểu" subtitle="Audio + câu hỏi HSK" color="bg-teal-100 dark:bg-teal-500/15" />
+          <ModuleCard href="/writing" icon="🖊️" title="Viết luận" subtitle="AI chấm ngữ pháp & từ vựng" color="bg-rose-100 dark:bg-rose-500/15" />
+          <ModuleCard href="/speaking" icon="🎤" title="Luyện nói" subtitle="HSKK • AI chấm phát âm" color="bg-indigo-100 dark:bg-indigo-500/15" />
         </div>
       </div>
 

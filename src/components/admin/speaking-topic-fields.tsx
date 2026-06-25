@@ -254,16 +254,16 @@ export function SpeakingTopicForm({
       <input type="hidden" name="hints" value={JSON.stringify(cleanHints)} />
 
       {/* JSON quick-fill */}
-      <div className="rounded-xl border border-violet-200 bg-violet-50/40">
+      <div className="rounded-xl border border-violet-200 bg-violet-50/40 dark:border-violet-400/25 dark:bg-violet-500/10">
         <button
           type="button"
           onClick={() => setShowJson((v) => !v)}
-          className="flex w-full items-center gap-2 px-3 py-2 text-sm font-semibold text-violet-700"
+          className="flex w-full items-center gap-2 px-3 py-2 text-sm font-semibold text-violet-700 dark:text-violet-300"
         >
           <Braces className="h-4 w-4" /> Điền nhanh bằng JSON (dán 1 lần cho mọi ô chữ)
         </button>
         {showJson && (
-          <div className="space-y-3 border-t border-violet-200 p-3">
+          <div className="space-y-3 border-t border-violet-200 p-3 dark:border-violet-400/25">
             <Textarea
               value={jsonText}
               onChange={(e) => setJsonText(e.target.value)}
@@ -283,8 +283,8 @@ export function SpeakingTopicForm({
             </div>
 
             {/* Guide */}
-            <details className="rounded-lg border bg-white/70 p-2 text-xs">
-              <summary className="cursor-pointer font-medium text-violet-700">Hướng dẫn viết JSON</summary>
+            <details className="rounded-lg border bg-card/70 p-2 text-xs">
+              <summary className="cursor-pointer font-medium text-violet-700 dark:text-violet-300">Hướng dẫn viết JSON</summary>
               <div className="mt-2 space-y-2 text-muted-foreground">
                 <p>
                   Dán một <b>object</b> JSON. Các khoá hỗ trợ (đều không bắt buộc trừ <code>questionZh</code>):
@@ -505,7 +505,7 @@ export function SpeakingTopicForm({
           onClick={generateTranscriptFromAudio}
           disabled={busy || !audioUrl.trim()}
           title={!audioUrl.trim() ? "Cần có audio ở trên trước" : undefined}
-          className="inline-flex items-center gap-1.5 rounded-lg border border-sky-300 bg-sky-50 px-3 py-1.5 text-sm font-semibold text-sky-700 transition hover:bg-sky-100 disabled:cursor-not-allowed disabled:opacity-50"
+          className="inline-flex items-center gap-1.5 rounded-lg border border-sky-300 bg-sky-50 px-3 py-1.5 text-sm font-semibold text-sky-700 transition hover:bg-sky-100 disabled:cursor-not-allowed disabled:opacity-50 dark:border-sky-400/30 dark:bg-sky-500/10 dark:text-sky-300 dark:hover:bg-sky-500/20"
         >
           {transcribing ? <Loader2 className="h-4 w-4 animate-spin" /> : <FileAudio className="h-4 w-4" />}
           {transcribing ? "Đang tạo transcript…" : "Tạo transcript từ audio (Deepgram)"}

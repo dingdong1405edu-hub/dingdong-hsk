@@ -43,7 +43,7 @@ export default async function VocabUnitPage({ params }: Props) {
             <Card key={lesson.id}>
               <CardContent className="p-4 flex items-center justify-between">
                 <div className="flex items-center gap-3">
-                  <div className={`w-10 h-10 rounded-full flex items-center justify-center font-bold ${done ? "bg-green-100 text-green-600" : "bg-primary/10 text-primary"}`}>
+                  <div className={`w-10 h-10 rounded-full flex items-center justify-center font-bold ${done ? "bg-green-100 text-green-600 dark:bg-green-500/15 dark:text-green-300" : "bg-primary/10 text-primary"}`}>
                     {done ? <CheckCircle2 className="h-5 w-5" /> : idx + 1}
                   </div>
                   <div>
