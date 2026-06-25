@@ -29,6 +29,7 @@ enum Skill {
   VOCAB
   GRAMMAR
   HANZI
+  PINYIN // học phiên âm (声母/韵母/声调) cho người mới bắt đầu — dùng cho Attempt.skill
   MOCK // bài thi thử trọn bộ (MockExam) — dùng cho Attempt.skill
 }
 
@@ -80,6 +81,7 @@ model User {
   vocabReviews    VocabReview[]
   grammarProgress GrammarProgress[]
   hanziProgress   HanziProgress[]
+  pinyinProgress  PinyinProgress[]
   roadmapProgress RoadmapProgress[]
   attempts        Attempt[]
   payments        Payment[]
@@ -293,6 +295,26 @@ model HanziProgress {
   character HanziCharacter @relation(fields: [characterId], references: [id], onDelete: Cascade)
 
   @@unique([userId, characterId])
+}
+
+// Tiến độ học PHIÊN ÂM (cho người mới bắt đầu). `lessonId` là id tĩnh của bài học
+// định nghĩa trong src/lib/pinyin-lessons.ts (không phải bản ghi DB) — nội dung
+// phiên âm cố định trong code, chỉ tiến độ/điểm của học viên mới lưu ở đây.
+model PinyinProgress {
+  id        String   @id @default(cuid())
+  userId    String
+  lessonId  String // id bài học tĩnh (vd "pinyin-tones")
+  completed Boolean  @default(false)
+  bestScore Int      @default(0) // % đúng cao nhất đạt được
+  xpEarned  Int      @default(0)
+  attempts  Int      @default(0)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now()) @updatedAt
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, lessonId])
+  @@index([userId])
 }
 
 model ReadingTest {

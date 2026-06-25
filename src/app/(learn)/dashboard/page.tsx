@@ -145,7 +145,7 @@ export default async function DashboardPage() {
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           <ModuleCard href="/vocab" icon="📚" title="Từ vựng" subtitle="HSK 1-6 • Duolingo-style" progress={vocabProgress} color="bg-blue-100 dark:bg-blue-500/15" />
           <ModuleCard href="/grammar" icon="📝" title="Ngữ pháp" subtitle="Cấu trúc câu, điền từ" progress={grammarProgress} color="bg-green-100 dark:bg-green-500/15" />
-          <ModuleCard href="/hanzi" icon="✍️" title="Chữ Hán" subtitle="Thứ tự nét + quiz" progress={hanziProgress} color="bg-purple-100 dark:bg-purple-500/15" />
+          <ModuleCard href="/hanzi" icon="🔤" title="Chữ cái & phát âm" subtitle="Phiên âm (pinyin) + viết chữ Hán" progress={hanziProgress} color="bg-purple-100 dark:bg-purple-500/15" />
           <ModuleCard href="/reading" icon="📖" title="Đọc hiểu" subtitle="Đoạn văn + câu hỏi" color="bg-amber-100 dark:bg-amber-500/15" />
           <ModuleCard href="/listening" icon="🎧" title="Nghe hiểu" subtitle="Audio + câu hỏi HSK" color="bg-teal-100 dark:bg-teal-500/15" />
           <ModuleCard href="/writing" icon="🖊️" title="Viết luận" subtitle="AI chấm ngữ pháp & từ vựng" color="bg-rose-100 dark:bg-rose-500/15" />

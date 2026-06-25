@@ -24,6 +24,7 @@ const SKILL_LABEL: Record<Skill, string> = {
   VOCAB: "Từ vựng",
   GRAMMAR: "Ngữ pháp",
   HANZI: "Chữ Hán",
+  PINYIN: "Phiên âm",
   MOCK: "Thi thử",
 };
 
@@ -46,7 +47,7 @@ async function resolveAttemptTitles(
   attempts: { skill: Skill; refId: string }[]
 ): Promise<Map<string, string>> {
   const bySkill: Record<Skill, string[]> = {
-    READING: [], LISTENING: [], WRITING: [], SPEAKING: [], VOCAB: [], GRAMMAR: [], HANZI: [], MOCK: [],
+    READING: [], LISTENING: [], WRITING: [], SPEAKING: [], VOCAB: [], GRAMMAR: [], HANZI: [], PINYIN: [], MOCK: [],
   };
   for (const a of attempts) bySkill[a.skill].push(a.refId);
 

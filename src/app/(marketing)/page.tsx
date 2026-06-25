@@ -56,8 +56,8 @@ const features = [
   {
     icon: "✍️",
     cls: styles.iconWriting,
-    title: "Luyện Viết Chữ Hán",
-    desc: "Animation thứ tự nét bút, quiz vẽ lại từng nét trên ô 田字格 chuẩn như vở tập viết tiếng Trung.",
+    title: "Chữ Cái, Phát Âm & Viết Chữ Hán",
+    desc: "Học pinyin từ đầu bằng flashcard (thanh mẫu, vận mẫu, thanh điệu, âm dễ lẫn) cùng animation thứ tự nét bút trên ô 田字格.",
   },
   {
     icon: "🎙️",
