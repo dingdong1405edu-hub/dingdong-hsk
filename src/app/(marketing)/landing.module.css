@@ -191,28 +191,66 @@
   transition: color 0.25s ease;
 }
 .navLogin:hover { color: var(--green); }
+.navActions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Nút hamburger — chỉ hiện ở mobile (xem @media bên dưới) */
 .mobileBtn {
   display: none;
-  background: none;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  margin-right: -6px;
+  background: rgba(93, 119, 64, 0.08);
   border: none;
-  font-size: 28px;
+  border-radius: 12px;
   cursor: pointer;
   color: var(--ink);
   line-height: 1;
+  -webkit-tap-highlight-color: transparent;
+  transition: background 0.2s ease;
 }
+.mobileBtn:active { background: rgba(93, 119, 64, 0.18); }
+
+/* Lớp phủ tối phía sau menu mobile */
+.mobileBackdrop {
+  display: none;
+  position: fixed;
+  inset: 0;
+  border: none;
+  padding: 0;
+  background: rgba(20, 22, 31, 0.4);
+  opacity: 0;
+  pointer-events: none;     /* khi đóng: trong suốt & không chặn click */
+  transition: opacity 0.3s ease;
+  z-index: 990;             /* dưới navbar (1000) — bar & menu luôn nổi trên lớp phủ */
+  cursor: default;
+}
+.mobileBackdropOpen { opacity: 1; pointer-events: auto; }
+
+/* Menu mobile — dropdown trượt mượt, nổi đè lên nội dung (không đẩy layout) */
 .mobileMenu {
   display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
   flex-direction: column;
-  gap: 4px;
-  padding: 8px 20px 18px;
-  background: rgba(253, 248, 240, 0.98);
-  border-bottom: 1px solid rgba(93, 119, 64, 0.12);
+  gap: 2px;
+  padding: 10px 18px calc(16px + env(safe-area-inset-bottom, 0px));
+  background: rgba(253, 248, 240, 0.99);
+  border-top: 1px solid rgba(93, 119, 64, 0.1);
+  border-radius: 0 0 22px 22px;
+  box-shadow: 0 20px 40px rgba(42, 47, 69, 0.16);
 }
-.mobileMenuOpen { display: flex; }
 .mobileMenu :is(a, button) {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   width: 100%;
   text-align: left;
   background: none;
@@ -223,10 +261,26 @@
   font-weight: 700;
   font-size: 16px;
   font-family: inherit;
-  padding: 11px 6px;
+  padding: 13px 8px;
+  border-radius: 10px;
   cursor: pointer;
 }
+.mobileMenu :is(a, button):active { background: rgba(93, 119, 64, 0.08); }
 .mobileMenu :is(a, button):last-child { border-bottom: none; }
+/* Nút hành động chính trong menu (Học miễn phí / Vào học) */
+.mobileMenu .mobileCta {
+  justify-content: center;
+  margin-top: 8px;
+  padding: 14px 8px;
+  background: var(--green);
+  color: #fff;
+  border: none;
+  border-bottom: none;
+  border-radius: 14px;
+  font-weight: 800;
+  box-shadow: 0 6px 18px rgba(93, 119, 64, 0.35);
+}
+.mobileMenu .mobileCta:active { background: var(--green-dark); }
 
 /* ============ HERO ============ */
 .hero {
@@ -1166,17 +1220,59 @@
   .stepsGrid,
   .statsGrid { grid-template-columns: 1fr; }
   .footerGrid { grid-template-columns: 1fr; gap: 36px; }
+
+  /* ----- Navbar mobile ----- */
+  .navbar { padding: 0 16px; }
+  .navContainer { height: 62px; }
+  .navLogo { font-size: 18px; gap: 8px; }
+  .navLogoIcon { width: 36px; height: 36px; border-radius: 11px; }
+  .navActions { gap: 8px; }
   .navLinks { display: none; }
   .navLogin { display: none; }
-  .mobileBtn { display: block; }
-  .hero { min-height: auto; padding-bottom: 60px; }
+  .navCta { display: none; }            /* CTA chuyển vào trong menu → hết tràn ngang */
+  .mobileBtn { display: inline-flex; }
+
+  /* Lớp phủ + menu trượt (backdrop bắt đầu ngay dưới bar, không phủ lên bar) */
+  .mobileBackdrop {
+    display: block;
+    top: 62px;
+  }
+  .mobileMenu {
+    display: flex;
+    z-index: 999;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    visibility: hidden;
+    transform: translateY(-8px);
+    transition:
+      max-height 0.34s cubic-bezier(0.4, 0, 0.2, 1),
+      opacity 0.24s ease,
+      transform 0.28s ease,
+      visibility 0.34s;
+  }
+  .mobileMenuOpen {
+    max-height: min(80vh, 460px);
+    opacity: 1;
+    visibility: visible;
+    overflow-y: auto;
+    transform: translateY(0);
+  }
+
+  .hero { min-height: auto; padding-top: 62px; padding-bottom: 56px; }
   .heroTitle { font-size: 33px; }
   .sectionTitle { font-size: 30px; }
   .ctaContent h2 { font-size: 30px; }
   .section, .sectionCream, .statsSection, .cta { padding: 64px 0; }
   .sectionHeader { margin-bottom: 48px; }
-  .heroVisual { min-height: 300px; }
-  .heroVisualInner { max-width: 300px; }
+
+  /* Dải "Phù hợp với" — thu gọn khoảng cách cột để không tràn/cắt chữ */
+  .trusted { padding: 32px 0; }
+  .trustedLabel { font-size: 12px; margin-bottom: 16px; }
+  .trustedLogos { gap: 12px 22px; }
+  .trustedLogo { font-size: 15px; gap: 6px; }
+  .heroVisual { min-height: 280px; }
+  .heroVisualInner { max-width: 280px; }
   .btn { padding: 15px 26px; }
   .featureCard h3 { font-size: 18px; }
   .heroAbout { padding: 100px 0 50px; }
@@ -1193,6 +1289,29 @@
     font-size: 19px;
   }
   .founderTags { justify-content: center; }
+}
+
+/* Điện thoại nhỏ — nút CTA chiếm trọn bề ngang, chữ & khoảng cách gọn lại */
+@media (max-width: 430px) {
+  .container { padding: 0 16px; }
+  .heroContainer { padding: 0 16px; gap: 36px; }
+  .heroTitle { font-size: 29px; }
+  .heroDesc { font-size: 16px; }
+  .heroButtons { flex-direction: column; align-items: stretch; gap: 12px; }
+  .heroButtons .btn { width: 100%; justify-content: center; }
+  .heroStatsRow { gap: 18px; justify-content: space-between; margin-top: 28px; }
+  .heroStatNum { font-size: 22px; }
+  .heroVisual { min-height: 240px; }
+  .heroVisualInner { max-width: 230px; }
+  .sectionTitle { font-size: 26px; }
+  .sectionSubtitle { font-size: 16px; }
+  .sectionLabel { font-size: 12px; }
+  .ctaContent h2 { font-size: 26px; }
+  .ctaContent p { font-size: 16px; }
+  .btnWhite { width: 100%; justify-content: center; }
+  .featureCard { padding: 30px 24px; }
+  .testimonialCard { padding: 28px 24px; }
+  .stepCard { padding: 32px 24px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -1240,9 +1359,18 @@
 }
 :global(.dark) .mobileMenu {
   background: rgba(16, 18, 26, 0.98);
-  border-bottom-color: rgba(255, 255, 255, 0.08);
+  border-top-color: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
 }
 :global(.dark) .mobileMenu :is(a, button) { border-bottom-color: rgba(255, 255, 255, 0.06); }
+:global(.dark) .mobileMenu :is(a, button):active { background: rgba(255, 255, 255, 0.06); }
+:global(.dark) .mobileBtn { background: rgba(255, 255, 255, 0.08); }
+:global(.dark) .mobileBtn:active { background: rgba(255, 255, 255, 0.14); }
+/* CTA trong menu: nền xanh sâu để chữ trắng đủ tương phản (giống .navCta dark) */
+:global(.dark) .mobileMenu .mobileCta {
+  background: var(--green-dark);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
+}
 
 /* Hero + các section nền sáng cố định */
 :global(.dark) .hero {

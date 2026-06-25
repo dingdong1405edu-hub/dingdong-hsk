@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { signOut } from "next-auth/react";
-import { GraduationCap, LogOut } from "lucide-react";
+import { GraduationCap, LogOut, Menu, X } from "lucide-react";
 import { Logo } from "@/components/shared/logo";
 import { ThemeToggle } from "@/components/theme/theme-toggle";
 import styles from "../landing.module.css";
@@ -35,15 +35,34 @@ export function MarketingNav({ isAuthed = false }: { isAuthed?: boolean }) {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // Khi menu mobile mở: khoá cuộn nền, đóng bằng Esc, và tự đóng khi phóng to
+  // sang desktop (tránh menu kẹt mở khi xoay ngang / đổi kích thước).
+  useEffect(() => {
+    if (!open) return;
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    const onKey = (e: KeyboardEvent) => e.key === "Escape" && setOpen(false);
+    const onResize = () => window.innerWidth > 768 && setOpen(false);
+    window.addEventListener("keydown", onKey);
+    window.addEventListener("resize", onResize);
+    return () => {
+      document.body.style.overflow = prev;
+      window.removeEventListener("keydown", onKey);
+      window.removeEventListener("resize", onResize);
+    };
+  }, [open]);
+
   const logout = () => signOut({ callbackUrl: "/" });
+  const close = () => setOpen(false);
 
   return (
+    <>
     <nav
       className={`${styles.navbar}${scrolled ? ` ${styles.navbarScrolled}` : ""}`}
       aria-label="Điều hướng chính"
     >
       <div className={styles.navContainer}>
-        <Link href="/" className={styles.navLogo} aria-label="DingDong HSK — về trang chủ">
+        <Link href="/" className={styles.navLogo} aria-label="DingDong HSK — về trang chủ" onClick={close}>
           <Logo className={styles.navLogoIcon} />
           <span>
             DingDong <b>HSK</b>
@@ -62,7 +81,7 @@ export function MarketingNav({ isAuthed = false }: { isAuthed?: boolean }) {
           ))}
         </ul>
 
-        <div className="flex items-center gap-3 sm:gap-4">
+        <div className={styles.navActions}>
           <ThemeToggle />
           {isAuthed ? (
             <>
@@ -86,53 +105,67 @@ export function MarketingNav({ isAuthed = false }: { isAuthed?: boolean }) {
           <button
             type="button"
             className={styles.mobileBtn}
-            aria-label="Mở menu"
+            aria-label={open ? "Đóng menu" : "Mở menu"}
             aria-expanded={open}
             onClick={() => setOpen((v) => !v)}
           >
-            {open ? "✕" : "☰"}
+            {open ? <X className="h-6 w-6" aria-hidden="true" /> : <Menu className="h-6 w-6" aria-hidden="true" />}
           </button>
         </div>
       </div>
 
-      <div className={`${styles.mobileMenu}${open ? ` ${styles.mobileMenuOpen}` : ""}`}>
+      <div
+        id="mobile-menu"
+        className={`${styles.mobileMenu}${open ? ` ${styles.mobileMenuOpen}` : ""}`}
+      >
         {LINKS.map((l) =>
           isRoute(l.href) ? (
-            <Link key={l.href} href={l.href} onClick={() => setOpen(false)}>
+            <Link key={l.href} href={l.href} onClick={close}>
               {l.label}
             </Link>
           ) : (
-            <a key={l.href} href={l.href} onClick={() => setOpen(false)}>
+            <a key={l.href} href={l.href} onClick={close}>
               {l.label}
             </a>
           ),
         )}
         {isAuthed ? (
           <>
-            <Link href="/dashboard" onClick={() => setOpen(false)}>
-              <GraduationCap className="h-[18px] w-[18px]" aria-hidden="true" /> Vào học →
-            </Link>
             <button
               type="button"
               onClick={() => {
-                setOpen(false);
+                close();
                 logout();
               }}
             >
               <LogOut className="h-[18px] w-[18px]" aria-hidden="true" /> Đăng xuất
             </button>
+            <Link href="/dashboard" className={styles.mobileCta} onClick={close}>
+              <GraduationCap className="h-[18px] w-[18px]" aria-hidden="true" /> Vào học →
+            </Link>
           </>
         ) : (
           <>
-            <Link href="/login" onClick={() => setOpen(false)}>
+            <Link href="/login" onClick={close}>
               Đăng nhập
             </Link>
-            <Link href="/register" onClick={() => setOpen(false)}>
+            <Link href="/register" className={styles.mobileCta} onClick={close}>
               Học miễn phí →
             </Link>
           </>
         )}
       </div>
     </nav>
+
+    {/* Lớp phủ — đặt NGOÀI <nav> (navbar có backdrop-filter nên sẽ "giam" phần tử
+        fixed bên trong); để đây mới phủ đúng toàn màn hình. Chạm để đóng menu. */}
+    <button
+      type="button"
+      aria-hidden={!open}
+      tabIndex={-1}
+      className={`${styles.mobileBackdrop}${open ? ` ${styles.mobileBackdropOpen}` : ""}`}
+      onClick={close}
+    />
+    </>
   );
 }

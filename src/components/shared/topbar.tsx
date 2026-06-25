@@ -37,13 +37,14 @@ function Stat({ icon: Icon, value, className }: { icon: LucideIcon; value: numbe
 
 export function Topbar({ user, onMenu }: { user: TopbarUser; onMenu: () => void }) {
   return (
-    <header className="sticky top-0 z-30 flex h-16 items-center gap-3 border-b bg-background/80 px-4 backdrop-blur sm:px-6">
-      <Button variant="ghost" size="icon" className="-ml-2 lg:hidden" onClick={onMenu} aria-label="Mở menu">
+    <header className="sticky top-0 z-30 flex h-16 items-center gap-2 border-b bg-background/80 px-3 backdrop-blur sm:gap-3 sm:px-6">
+      <Button variant="ghost" size="icon" className="-ml-1 shrink-0 lg:hidden" onClick={onMenu} aria-label="Mở menu">
         <Menu className="h-5 w-5" />
       </Button>
-      <Link href="/" className="flex items-center gap-2 lg:hidden" aria-label="DingDong HSK — về trang chủ">
+      <Link href="/" className="flex shrink-0 items-center gap-2 lg:hidden" aria-label="DingDong HSK — về trang chủ">
         <Logo className="h-8 w-8" />
-        <span className="font-extrabold tracking-tight">DingDong</span>
+        {/* Ẩn chữ trên điện thoại rất nhỏ để chừa chỗ cho dải chỉ số (streak/tim/XP) */}
+        <span className="hidden font-extrabold tracking-tight min-[380px]:inline">DingDong</span>
       </Link>
 
       <div className="flex-1" />
@@ -56,7 +57,7 @@ export function Topbar({ user, onMenu }: { user: TopbarUser; onMenu: () => void 
         </Button>
       )}
 
-      <div className="flex items-center gap-1.5 sm:gap-2">
+      <div className="flex shrink-0 items-center gap-1.5 sm:gap-2">
         <Stat icon={Flame} value={user.streakDays} className="text-orange-500 fill-orange-400" />
         {user.unlimitedHearts ? (
           <div
@@ -76,7 +77,7 @@ export function Topbar({ user, onMenu }: { user: TopbarUser; onMenu: () => void 
 
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
-          <Button variant="ghost" size="icon" className="rounded-full">
+          <Button variant="ghost" size="icon" className="shrink-0 rounded-full">
             <Avatar className="h-9 w-9 border">
               <AvatarImage src={user.image ?? undefined} />
               <AvatarFallback className="bg-primary text-sm font-semibold text-primary-foreground">
