@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, Rocket, Sparkles } from "lucide-react";
+import { ArrowRight, GraduationCap, Rocket, Sparkles } from "lucide-react";
+import { auth } from "@/lib/auth";
 import { BaoMascot } from "@/components/marketing/bao-mascot";
 import { Logo } from "@/components/shared/logo";
 import { Reveal } from "@/components/motion/reveal";
@@ -133,7 +134,7 @@ const founder = {
   sign: "— A, với tất cả yêu thương 🥟", // MẪU
 };
 
-const footerCols = [
+const footerColsBase = [
   {
     title: "Học tập",
     links: [
@@ -152,22 +153,36 @@ const footerCols = [
       { label: "Giới thiệu", href: "/gioi-thieu" },
     ],
   },
-  {
-    title: "Tài khoản",
-    links: [
-      { label: "Đăng nhập", href: "/login" },
-      { label: "Đăng ký miễn phí", href: "/register" },
-      { label: "dingdong1405edu@gmail.com", href: "mailto:dingdong1405edu@gmail.com" },
-    ],
-  },
 ];
 
 const anchor = { scrollMarginTop: "96px" } as const;
 
-export default function AboutPage() {
+export default async function AboutPage() {
+  const session = await auth();
+  const isAuthed = !!session?.user;
+  const primaryHref = isAuthed ? "/dashboard" : "/register";
+
+  const footerCols = [
+    ...footerColsBase,
+    {
+      title: "Tài khoản",
+      links: isAuthed
+        ? [
+            { label: "Vào học", href: "/dashboard" },
+            { label: "Hồ sơ của tôi", href: "/profile" },
+            { label: "dingdong1405edu@gmail.com", href: "mailto:dingdong1405edu@gmail.com" },
+          ]
+        : [
+            { label: "Đăng nhập", href: "/login" },
+            { label: "Đăng ký miễn phí", href: "/register" },
+            { label: "dingdong1405edu@gmail.com", href: "mailto:dingdong1405edu@gmail.com" },
+          ],
+    },
+  ];
+
   return (
     <div className={styles.page}>
-      <MarketingNav />
+      <MarketingNav isAuthed={isAuthed} />
 
       {/* ============ HERO GIỚI THIỆU ============ */}
       <section
@@ -194,9 +209,15 @@ export default function AboutPage() {
               theo chuẩn HSK 1–6 &amp; HSKK — có AI đồng hành và chấm điểm mỗi ngày.
             </p>
             <div className={styles.heroButtons}>
-              <Link href="/register" className={`${styles.btn} ${styles.btnPrimary}`}>
-                <Rocket className="h-[18px] w-[18px]" aria-hidden="true" /> Bắt đầu miễn phí
-              </Link>
+              {isAuthed ? (
+                <Link href="/dashboard" className={`${styles.btn} ${styles.btnPrimary}`}>
+                  <GraduationCap className="h-[18px] w-[18px]" aria-hidden="true" /> Vào học ngay
+                </Link>
+              ) : (
+                <Link href="/register" className={`${styles.btn} ${styles.btnPrimary}`}>
+                  <Rocket className="h-[18px] w-[18px]" aria-hidden="true" /> Bắt đầu miễn phí
+                </Link>
+              )}
               <a href="#cau-chuyen" className={`${styles.btn} ${styles.btnSecondary}`}>
                 Đọc câu chuyện của DingDong <ArrowRight className="h-[18px] w-[18px]" aria-hidden="true" />
               </a>
@@ -433,15 +454,31 @@ export default function AboutPage() {
         <div className={styles.container}>
           <Reveal>
             <div className={styles.ctaContent}>
-              <h2 id="cta-title">Cùng DingDong Bắt Đầu Hôm Nay Nhé!</h2>
-              <p>
-                Tạo tài khoản miễn phí trong 30 giây và học bài tiếng Trung đầu tiên cùng bạn bánh
-                bao DingDong.
-              </p>
-              <Link href="/register" className={styles.btnWhite}>
-                <Rocket className="h-[18px] w-[18px]" aria-hidden="true" /> Đăng ký miễn phí ngay
-              </Link>
-              <p className={styles.ctaSub}>Không cần thẻ tín dụng · Học mọi lúc trên điện thoại.</p>
+              {isAuthed ? (
+                <>
+                  <h2 id="cta-title">Tiếp Tục Học Cùng DingDong Nhé!</h2>
+                  <p>
+                    Quay lại lộ trình của bạn và chinh phục bài học tiếng Trung tiếp theo cùng bạn
+                    bánh bao DingDong.
+                  </p>
+                  <Link href="/dashboard" className={styles.btnWhite}>
+                    <GraduationCap className="h-[18px] w-[18px]" aria-hidden="true" /> Vào học ngay
+                  </Link>
+                  <p className={styles.ctaSub}>Học mọi lúc trên điện thoại · Giữ vững chuỗi streak.</p>
+                </>
+              ) : (
+                <>
+                  <h2 id="cta-title">Cùng DingDong Bắt Đầu Hôm Nay Nhé!</h2>
+                  <p>
+                    Tạo tài khoản miễn phí trong 30 giây và học bài tiếng Trung đầu tiên cùng bạn bánh
+                    bao DingDong.
+                  </p>
+                  <Link href="/register" className={styles.btnWhite}>
+                    <Rocket className="h-[18px] w-[18px]" aria-hidden="true" /> Đăng ký miễn phí ngay
+                  </Link>
+                  <p className={styles.ctaSub}>Không cần thẻ tín dụng · Học mọi lúc trên điện thoại.</p>
+                </>
+              )}
             </div>
           </Reveal>
         </div>

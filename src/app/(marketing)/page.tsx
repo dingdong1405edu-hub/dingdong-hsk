@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, Rocket, Sparkles } from "lucide-react";
+import { ArrowRight, GraduationCap, Rocket, Sparkles } from "lucide-react";
+import { auth } from "@/lib/auth";
 import { BaoMascot } from "@/components/marketing/bao-mascot";
 import { Logo } from "@/components/shared/logo";
 import { Reveal } from "@/components/motion/reveal";
@@ -126,7 +127,7 @@ const testimonials = [
   },
 ];
 
-const footerCols = [
+const footerColsBase = [
   {
     title: "Học tập",
     links: [
@@ -146,22 +147,40 @@ const footerCols = [
       { label: "Giới thiệu", href: "/gioi-thieu" },
     ],
   },
-  {
-    title: "Tài khoản",
-    links: [
-      { label: "Đăng nhập", href: "/login" },
-      { label: "Đăng ký miễn phí", href: "/register" },
-      { label: "dingdong1405edu@gmail.com", href: "mailto:dingdong1405edu@gmail.com" },
-    ],
-  },
 ];
 
 const anchor = { scrollMarginTop: "96px" } as const;
 
-export default function LandingPage() {
+export default async function LandingPage() {
+  const session = await auth();
+  const isAuthed = !!session?.user;
+  const firstName = session?.user?.name?.trim().split(/\s+/).pop() ?? null;
+
+  // CTA chính đổi đích theo trạng thái đăng nhập — đã đăng nhập thì vào thẳng
+  // khu vực học, KHÔNG bắt đăng nhập lại.
+  const primaryHref = isAuthed ? "/dashboard" : "/register";
+
+  const footerCols = [
+    ...footerColsBase,
+    {
+      title: "Tài khoản",
+      links: isAuthed
+        ? [
+            { label: "Vào học", href: "/dashboard" },
+            { label: "Hồ sơ của tôi", href: "/profile" },
+            { label: "dingdong1405edu@gmail.com", href: "mailto:dingdong1405edu@gmail.com" },
+          ]
+        : [
+            { label: "Đăng nhập", href: "/login" },
+            { label: "Đăng ký miễn phí", href: "/register" },
+            { label: "dingdong1405edu@gmail.com", href: "mailto:dingdong1405edu@gmail.com" },
+          ],
+    },
+  ];
+
   return (
     <div className={styles.page}>
-      <MarketingNav />
+      <MarketingNav isAuthed={isAuthed} />
 
       {/* ============ HERO ============ */}
       <section className={styles.hero} id="hero" aria-labelledby="hero-title">
@@ -171,7 +190,12 @@ export default function LandingPage() {
           <div className={styles.heroContent}>
             <div className={styles.heroBadge}>
               <span className={styles.dot} />
-              <Sparkles className="h-3.5 w-3.5" aria-hidden="true" /> Học cùng AI thông minh
+              <Sparkles className="h-3.5 w-3.5" aria-hidden="true" />{" "}
+              {isAuthed
+                ? firstName
+                  ? `Chào mừng trở lại, ${firstName}!`
+                  : "Chào mừng trở lại!"
+                : "Học cùng AI thông minh"}
             </div>
             <h1 id="hero-title" className={styles.heroTitle}>
               Học Tiếng Trung<br />
@@ -183,9 +207,15 @@ export default function LandingPage() {
               Hán, đọc – nghe – viết – nói HSK 1–6 &amp; HSKK, được AI chấm điểm và đồng hành mỗi ngày.
             </p>
             <div className={styles.heroButtons}>
-              <Link href="/register" className={`${styles.btn} ${styles.btnPrimary}`}>
-                <Rocket className="h-[18px] w-[18px]" aria-hidden="true" /> Bắt đầu miễn phí
-              </Link>
+              {isAuthed ? (
+                <Link href="/dashboard" className={`${styles.btn} ${styles.btnPrimary}`}>
+                  <GraduationCap className="h-[18px] w-[18px]" aria-hidden="true" /> Vào học ngay
+                </Link>
+              ) : (
+                <Link href="/register" className={`${styles.btn} ${styles.btnPrimary}`}>
+                  <Rocket className="h-[18px] w-[18px]" aria-hidden="true" /> Bắt đầu miễn phí
+                </Link>
+              )}
               <a href="#features" className={`${styles.btn} ${styles.btnSecondary}`}>
                 Khám phá tính năng <ArrowRight className="h-[18px] w-[18px]" aria-hidden="true" />
               </a>
@@ -246,7 +276,11 @@ export default function LandingPage() {
           <div className={styles.featuresGrid}>
             {features.map((f, i) => (
               <Reveal key={f.title} delay={(i % 3) * 0.08} className="h-full">
-                <Link href="/register" className={styles.featureCard} aria-label={`${f.title} — bắt đầu học miễn phí`}>
+                <Link
+                  href={primaryHref}
+                  className={styles.featureCard}
+                  aria-label={isAuthed ? `${f.title} — vào học` : `${f.title} — bắt đầu học miễn phí`}
+                >
                   <div className={`${styles.featureIcon} ${f.cls}`} aria-hidden>
                     {f.icon}
                   </div>
@@ -388,11 +422,23 @@ export default function LandingPage() {
         <div className={styles.container}>
           <Reveal>
             <div className={styles.ctaContent}>
-              <h2 id="cta-title">Sẵn Sàng Chinh Phục Tiếng Trung?</h2>
-              <p>Tạo tài khoản miễn phí và bắt đầu bài học đầu tiên cùng DingDong ngay hôm nay.</p>
-              <Link href="/register" className={styles.btnWhite}>
-                <Rocket className="h-[18px] w-[18px]" aria-hidden="true" /> Đăng ký miễn phí ngay
-              </Link>
+              {isAuthed ? (
+                <>
+                  <h2 id="cta-title">Tiếp Tục Hành Trình Của Bạn!</h2>
+                  <p>Quay lại bài học, giữ vững chuỗi streak và chinh phục mốc HSK tiếp theo cùng DingDong.</p>
+                  <Link href="/dashboard" className={styles.btnWhite}>
+                    <GraduationCap className="h-[18px] w-[18px]" aria-hidden="true" /> Vào học ngay
+                  </Link>
+                </>
+              ) : (
+                <>
+                  <h2 id="cta-title">Sẵn Sàng Chinh Phục Tiếng Trung?</h2>
+                  <p>Tạo tài khoản miễn phí và bắt đầu bài học đầu tiên cùng DingDong ngay hôm nay.</p>
+                  <Link href="/register" className={styles.btnWhite}>
+                    <Rocket className="h-[18px] w-[18px]" aria-hidden="true" /> Đăng ký miễn phí ngay
+                  </Link>
+                </>
+              )}
             </div>
           </Reveal>
         </div>

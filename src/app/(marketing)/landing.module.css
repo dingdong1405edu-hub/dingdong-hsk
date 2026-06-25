@@ -158,6 +158,9 @@
 .navLinks a:hover::after { width: 100%; }
 .navLinks a:hover { color: var(--green); }
 .navCta {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
   background: var(--green) !important;
   color: white !important;
   padding: 10px 22px !important;
@@ -173,10 +176,19 @@
 }
 .navCta::after { display: none !important; }
 .navLogin {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-family: inherit;
   text-decoration: none;
   color: var(--ink);
   font-weight: 700;
   font-size: 15px;
+  transition: color 0.25s ease;
 }
 .navLogin:hover { color: var(--green); }
 .mobileBtn {
@@ -197,15 +209,24 @@
   border-bottom: 1px solid rgba(93, 119, 64, 0.12);
 }
 .mobileMenuOpen { display: flex; }
-.mobileMenu a {
+.mobileMenu :is(a, button) {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  border-bottom: 1px solid rgba(93, 119, 64, 0.08);
   text-decoration: none;
   color: var(--ink);
   font-weight: 700;
   font-size: 16px;
+  font-family: inherit;
   padding: 11px 6px;
-  border-bottom: 1px solid rgba(93, 119, 64, 0.08);
+  cursor: pointer;
 }
-.mobileMenu a:last-child { border-bottom: none; }
+.mobileMenu :is(a, button):last-child { border-bottom: none; }
 
 /* ============ HERO ============ */
 .hero {
@@ -412,7 +433,7 @@
 .navLogo:focus-visible,
 .navLinks a:focus-visible,
 .mobileBtn:focus-visible,
-.mobileMenu a:focus-visible,
+.mobileMenu :is(a, button):focus-visible,
 .backToTop:focus-visible {
   outline: 3px solid var(--ink);
   outline-offset: 3px;
@@ -1221,7 +1242,7 @@
   background: rgba(16, 18, 26, 0.98);
   border-bottom-color: rgba(255, 255, 255, 0.08);
 }
-:global(.dark) .mobileMenu a { border-bottom-color: rgba(255, 255, 255, 0.06); }
+:global(.dark) .mobileMenu :is(a, button) { border-bottom-color: rgba(255, 255, 255, 0.06); }
 
 /* Hero + các section nền sáng cố định */
 :global(.dark) .hero {

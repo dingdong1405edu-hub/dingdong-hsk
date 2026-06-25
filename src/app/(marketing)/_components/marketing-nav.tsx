@@ -2,6 +2,8 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { signOut } from "next-auth/react";
+import { GraduationCap, LogOut } from "lucide-react";
 import { Logo } from "@/components/shared/logo";
 import { ThemeToggle } from "@/components/theme/theme-toggle";
 import styles from "../landing.module.css";
@@ -17,8 +19,12 @@ const LINKS = [
 /** Anchor hash (#...) → thẻ <a>; route thuần (/gioi-thieu) → <Link> của Next. */
 const isRoute = (href: string) => href.startsWith("/") && !href.includes("#");
 
-/** Thanh điều hướng cố định — đổ bóng khi cuộn, có menu mobile. */
-export function MarketingNav() {
+/**
+ * Thanh điều hướng cố định — đổ bóng khi cuộn, có menu mobile.
+ * `isAuthed` được suy ra ở server (qua `auth()`) nên không bị nhấp nháy: đã đăng
+ * nhập thì hiện "Vào học" + "Đăng xuất"; chưa thì hiện "Đăng nhập" + "Học miễn phí".
+ */
+export function MarketingNav({ isAuthed = false }: { isAuthed?: boolean }) {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
 
@@ -28,6 +34,8 @@ export function MarketingNav() {
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  const logout = () => signOut({ callbackUrl: "/" });
 
   return (
     <nav
@@ -56,12 +64,25 @@ export function MarketingNav() {
 
         <div className="flex items-center gap-3 sm:gap-4">
           <ThemeToggle />
-          <Link href="/login" className={styles.navLogin}>
-            Đăng nhập
-          </Link>
-          <Link href="/register" className={styles.navCta}>
-            Học miễn phí
-          </Link>
+          {isAuthed ? (
+            <>
+              <button type="button" onClick={logout} className={styles.navLogin}>
+                <LogOut className="h-4 w-4" aria-hidden="true" /> Đăng xuất
+              </button>
+              <Link href="/dashboard" className={styles.navCta}>
+                <GraduationCap className="h-[18px] w-[18px]" aria-hidden="true" /> Vào học
+              </Link>
+            </>
+          ) : (
+            <>
+              <Link href="/login" className={styles.navLogin}>
+                Đăng nhập
+              </Link>
+              <Link href="/register" className={styles.navCta}>
+                Học miễn phí
+              </Link>
+            </>
+          )}
           <button
             type="button"
             className={styles.mobileBtn}
@@ -86,12 +107,31 @@ export function MarketingNav() {
             </a>
           ),
         )}
-        <Link href="/login" onClick={() => setOpen(false)}>
-          Đăng nhập
-        </Link>
-        <Link href="/register" onClick={() => setOpen(false)}>
-          Học miễn phí →
-        </Link>
+        {isAuthed ? (
+          <>
+            <Link href="/dashboard" onClick={() => setOpen(false)}>
+              <GraduationCap className="h-[18px] w-[18px]" aria-hidden="true" /> Vào học →
+            </Link>
+            <button
+              type="button"
+              onClick={() => {
+                setOpen(false);
+                logout();
+              }}
+            >
+              <LogOut className="h-[18px] w-[18px]" aria-hidden="true" /> Đăng xuất
+            </button>
+          </>
+        ) : (
+          <>
+            <Link href="/login" onClick={() => setOpen(false)}>
+              Đăng nhập
+            </Link>
+            <Link href="/register" onClick={() => setOpen(false)}>
+              Học miễn phí →
+            </Link>
+          </>
+        )}
       </div>
     </nav>
   );
