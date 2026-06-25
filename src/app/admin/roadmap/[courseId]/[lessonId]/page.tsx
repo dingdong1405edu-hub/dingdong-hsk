@@ -114,6 +114,7 @@ export default async function LessonEditorPage({ params }: Props) {
                 key={meta.key}
                 lessonId={lesson.id}
                 skill={meta.key}
+                hskLevel={lesson.course.hskLevel}
                 sectionId={sec?.id ?? null}
                 published={sec?.published ?? false}
                 initialContent={sec?.content ?? null}

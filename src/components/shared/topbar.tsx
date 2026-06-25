@@ -13,6 +13,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { cn } from "@/lib/utils";
 import { Logo } from "@/components/shared/logo";
+import { ThemeToggle } from "@/components/theme/theme-toggle";
 
 interface TopbarUser {
   name?: string | null;
@@ -70,6 +71,8 @@ export function Topbar({ user, onMenu }: { user: TopbarUser; onMenu: () => void 
         )}
         <Stat icon={Star} value={user.xp} className="text-amber-500 fill-amber-400" />
       </div>
+
+      <ThemeToggle className="hidden sm:inline-flex" />
 
       <DropdownMenu>
         <DropdownMenuTrigger asChild>

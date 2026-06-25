@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { Logo } from "@/components/shared/logo";
+import { ThemeToggle } from "@/components/theme/theme-toggle";
 import styles from "../landing.module.css";
 
 const LINKS = [
@@ -53,7 +54,8 @@ export function MarketingNav() {
           ))}
         </ul>
 
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-3 sm:gap-4">
+          <ThemeToggle />
           <Link href="/login" className={styles.navLogin}>
             Đăng nhập
           </Link>

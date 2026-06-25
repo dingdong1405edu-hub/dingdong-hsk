@@ -119,6 +119,8 @@
 /* Bare mode ngồi trên nền hero sáng: khói cao hơn + xanh ô-liu đậm để "bốc lên" rõ ràng */
 .bare .steam { top: -12%; height: 46%; width: 66%; }
 .bare .wisp { stroke: rgba(93, 119, 64, 0.75); stroke-width: 8; }
+/* Nền hero tối: khói sáng lên cho dễ thấy. */
+:global(.dark) .bare .wisp { stroke: rgba(176, 200, 150, 0.6); }
 @keyframes rise {
   0%   { opacity: 0;   transform: translateY(20%) scale(0.7); }
   25%  { opacity: 0.8; }

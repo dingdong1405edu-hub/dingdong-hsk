@@ -1,5 +1,7 @@
 "use client";
+import { useState } from "react";
 import { Plus, Trash2 } from "lucide-react";
+import { toast } from "sonner";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
@@ -29,8 +31,51 @@ export function SpeakingSectionEditor({
     onChange({ ...merged, part2Passage: p && p.text.trim() ? p : null });
   }
 
+  const [json, setJson] = useState("");
+  function applyJson() {
+    try {
+      const o = JSON.parse(json) as {
+        part1Sentences?: Array<{ text?: unknown; pinyin?: unknown }>;
+        part2Passage?: { text?: unknown; pinyin?: unknown } | null;
+        part3Questions?: Array<{ question?: unknown; pinyin?: unknown }>;
+      };
+      const p1 = Array.isArray(o.part1Sentences)
+        ? o.part1Sentences.map((s) => ({ text: String(s?.text ?? ""), pinyin: String(s?.pinyin ?? "") }))
+        : [];
+      const p2 =
+        o.part2Passage && typeof o.part2Passage === "object"
+          ? { text: String(o.part2Passage.text ?? ""), pinyin: String(o.part2Passage.pinyin ?? "") }
+          : null;
+      const p3 = Array.isArray(o.part3Questions)
+        ? o.part3Questions.map((q) => ({ question: String(q?.question ?? ""), pinyin: String(q?.pinyin ?? "") }))
+        : [];
+      onChange({ part1Sentences: p1, part2Passage: p2 && p2.text.trim() ? p2 : null, part3Questions: p3 });
+      toast.success("Đã áp dụng JSON.");
+      setJson("");
+    } catch {
+      toast.error("JSON không hợp lệ.");
+    }
+  }
+
   return (
     <div className="space-y-4">
+      <details className="rounded-xl border bg-muted/20 p-3">
+        <summary className="cursor-pointer text-sm font-medium">Điền nhanh bằng JSON</summary>
+        <div className="mt-2 space-y-2">
+          <Textarea
+            value={json}
+            onChange={(e) => setJson(e.target.value)}
+            placeholder={
+              '{ "part1Sentences": [{"text":"你好","pinyin":"Nǐ hǎo"}], "part2Passage": {"text":"…","pinyin":"…"}, "part3Questions": [{"question":"你好吗？","pinyin":"Nǐ hǎo ma?"}] }'
+            }
+            className="min-h-24 font-mono text-xs"
+          />
+          <Button type="button" size="sm" variant="outline" onClick={applyJson}>
+            Áp dụng JSON
+          </Button>
+        </div>
+      </details>
+
       {/* Phần 1: Lặp câu */}
       <div className="space-y-2">
         <Label className="text-xs font-semibold">Phần 1 · Lặp câu (复述)</Label>

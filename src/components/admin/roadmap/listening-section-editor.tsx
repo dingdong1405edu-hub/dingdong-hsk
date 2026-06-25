@@ -1,21 +1,67 @@
 "use client";
+import { useState } from "react";
+import { toast } from "sonner";
+import { Loader2, FileAudio, Wand2 } from "lucide-react";
+import type { HSKLevel } from "@prisma/client";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
+import { Button } from "@/components/ui/button";
 import { MediaField } from "./media-field";
 import { QuestionRows } from "./question-rows";
+import { RoadmapQuestionsImporter } from "./questions-importer";
+import { transcribeListeningAudioAction } from "@/server/actions/admin";
+import { generateRoadmapTranscriptExplanationAction } from "@/server/actions/roadmap-admin";
 import type { ListeningSectionContent, RoadmapQuestion } from "@/lib/roadmap-content";
 
 export function ListeningSectionEditor({
   value,
   onChange,
+  hskLevel,
 }: {
   value: unknown;
   onChange: (v: unknown) => void;
+  hskLevel: HSKLevel;
 }) {
   const v = (value ?? {}) as Partial<ListeningSectionContent>;
   function set(patch: Partial<ListeningSectionContent>) {
     onChange({ ...v, ...patch });
+  }
+  const questions = (v.questions ?? []) as RoadmapQuestion[];
+
+  const [transcribing, setTranscribing] = useState(false);
+  const [translating, setTranslating] = useState(false);
+
+  async function handleTranscribe() {
+    if (!v.audioUrl) {
+      toast.error("Chưa có audio để tạo transcript.");
+      return;
+    }
+    setTranscribing(true);
+    const res = await transcribeListeningAudioAction(v.audioUrl);
+    setTranscribing(false);
+    if (res.ok) {
+      set({ transcript: res.transcript });
+      toast.success("Đã tạo transcript từ audio.");
+    } else {
+      toast.error(res.error);
+    }
+  }
+
+  async function handleTranslate() {
+    if (!v.transcript?.trim()) {
+      toast.error("Chưa có lời thoại để dịch.");
+      return;
+    }
+    setTranslating(true);
+    const res = await generateRoadmapTranscriptExplanationAction({ transcript: v.transcript, hskLevel });
+    setTranslating(false);
+    if (res.ok && res.data) {
+      set({ transcriptExplanation: res.data.text });
+      toast.success("Đã dịch & giải thích lời thoại.");
+    } else {
+      toast.error(res.ok ? "Lỗi dịch lời thoại." : res.error);
+    }
   }
 
   return (
@@ -44,7 +90,13 @@ export function ListeningSectionEditor({
         </p>
       </div>
       <div className="space-y-1">
-        <Label className="text-xs">Lời thoại (transcript)</Label>
+        <div className="flex items-center justify-between gap-2">
+          <Label className="text-xs">Lời thoại (transcript)</Label>
+          <Button type="button" size="sm" variant="outline" onClick={handleTranscribe} disabled={transcribing} className="h-7 gap-1.5 text-xs">
+            {transcribing ? <Loader2 className="h-3.5 w-3.5 animate-spin" /> : <FileAudio className="h-3.5 w-3.5" />}
+            Tạo transcript từ audio
+          </Button>
+        </div>
         <Textarea
           value={v.transcript ?? ""}
           onChange={(e) => set({ transcript: e.target.value || null })}
@@ -53,7 +105,13 @@ export function ListeningSectionEditor({
         />
       </div>
       <div className="space-y-1">
-        <Label className="text-xs">Dịch &amp; giải thích lời thoại (tuỳ chọn — hiện sau khi nộp)</Label>
+        <div className="flex items-center justify-between gap-2">
+          <Label className="text-xs">Dịch &amp; giải thích lời thoại (hiện sau khi nộp)</Label>
+          <Button type="button" size="sm" variant="outline" onClick={handleTranslate} disabled={translating} className="h-7 gap-1.5 text-xs">
+            {translating ? <Loader2 className="h-3.5 w-3.5 animate-spin" /> : <Wand2 className="h-3.5 w-3.5 text-primary" />}
+            AI dịch &amp; giải thích
+          </Button>
+        </div>
         <Textarea
           value={v.transcriptExplanation ?? ""}
           onChange={(e) => set({ transcriptExplanation: e.target.value || null })}
@@ -67,8 +125,14 @@ export function ListeningSectionEditor({
       </div>
       <div className="space-y-1.5">
         <Label className="text-xs font-semibold">Câu hỏi</Label>
+        <RoadmapQuestionsImporter
+          skill="LISTENING"
+          source={v.transcript ?? ""}
+          hskLevel={hskLevel}
+          onImport={(qs) => set({ questions: [...questions, ...qs] })}
+        />
         <QuestionRows
-          value={(v.questions ?? []) as RoadmapQuestion[]}
+          value={questions}
           onChange={(qs) => set({ questions: qs })}
           quoteLabel="Trích lời thoại chứng minh đáp án (tuỳ chọn)"
         />

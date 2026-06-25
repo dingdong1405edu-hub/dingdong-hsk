@@ -1,14 +1,39 @@
 "use client";
+import { useState } from "react";
 import { Plus, Trash2 } from "lucide-react";
+import { toast } from "sonner";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
+import { Textarea } from "@/components/ui/textarea";
 import { toPinyin, getTone } from "@/lib/pinyin";
 import { ExampleRows } from "./example-rows";
 import type { HanziSectionContent, WordExample } from "@/lib/roadmap-content";
 
 type Char = HanziSectionContent["characters"][number];
 const selectCls = "h-8 rounded-md border border-input bg-transparent px-2 text-sm";
+
+/** Cột: Hán tự · Pinyin (trống = tự sinh) · Nghĩa · Số nét. Mỗi dòng một chữ. */
+function parseHanziPaste(text: string): Char[] {
+  return text
+    .split(/\r?\n/)
+    .map((l) => l.trim())
+    .filter(Boolean)
+    .map((line) => {
+      const cells = (line.includes("\t") ? line.split("\t") : line.split(",")).map((c) => c.trim());
+      const character = cells[0] ?? "";
+      const pinyin = cells[1] || (character ? toPinyin(character) : "");
+      return {
+        character,
+        pinyin,
+        tone: getTone(pinyin),
+        meaning: cells[2] ?? "",
+        strokeCount: Number(cells[3]) || 0,
+        examples: [] as WordExample[],
+      };
+    })
+    .filter((c) => c.character && c.meaning && /\p{Script=Han}/u.test(c.character));
+}
 
 export function HanziSectionEditor({
   value,
@@ -19,6 +44,18 @@ export function HanziSectionEditor({
 }) {
   const v = (value ?? {}) as Partial<HanziSectionContent>;
   const chars: Char[] = Array.isArray(v.characters) ? (v.characters as Char[]) : [];
+  const [paste, setPaste] = useState("");
+
+  function importPaste() {
+    const parsed = parseHanziPaste(paste);
+    if (parsed.length === 0) {
+      toast.error("Không có dòng hợp lệ (cần Hán tự + nghĩa).");
+      return;
+    }
+    setChars([...chars, ...parsed]);
+    toast.success(`Đã thêm ${parsed.length} chữ.`);
+    setPaste("");
+  }
 
   function setChars(next: Char[]) {
     onChange({ ...v, characters: next });
@@ -41,6 +78,24 @@ export function HanziSectionEditor({
       <p className="text-xs text-muted-foreground">
         Mỗi chữ Hán có animation thứ tự nét (tải tự động theo chữ). Người học xem nét → tô lại → viết lại từ trí nhớ.
       </p>
+
+      <details className="rounded-xl border bg-muted/20 p-3">
+        <summary className="cursor-pointer text-sm font-medium">Nhập hàng loạt</summary>
+        <div className="mt-2 space-y-2">
+          <Textarea
+            value={paste}
+            onChange={(e) => setPaste(e.target.value)}
+            placeholder={"你\tnǐ\tBạn\t7\n我\twǒ\tTôi\t7"}
+            className="min-h-24 font-mono text-xs"
+          />
+          <p className="text-[11px] text-muted-foreground">
+            Mỗi dòng: <b>Hán tự</b> · Pinyin (trống = tự sinh) · <b>Nghĩa</b> · Số nét. Ngăn cách bằng Tab hoặc dấu phẩy.
+          </p>
+          <Button type="button" size="sm" variant="outline" onClick={importPaste}>
+            <Plus className="h-3.5 w-3.5" /> Thêm vào danh sách
+          </Button>
+        </div>
+      </details>
       {chars.map((c, i) => (
         <div key={i} className="space-y-2 rounded-xl border bg-card p-3">
           <div className="flex items-center justify-between">

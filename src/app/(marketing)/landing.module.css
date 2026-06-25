@@ -1182,3 +1182,93 @@
   .heroBadge .dot,
   .backToTopVisible { animation: none !important; }
 }
+
+/* ============ DARK MODE ============
+ * Trang chủ dùng CSS module hardcode màu sáng. Khi <html> có class `.dark`
+ * (do ThemeProvider/inline-script đặt), ta:
+ *  1) Lật các biến màu chữ/nền sang tông tối (kem trên than xanh).
+ *  2) Ghi đè các bề mặt dùng `white`/gradient sáng cố định.
+ * Lưu ý: `--green` được làm SÁNG để dùng làm CHỮ/viền accent; còn các NÚT/DẢI
+ * nền xanh đổi sang `--green-dark` (sâu) để chữ trắng vẫn đủ tương phản.
+ */
+:global(.dark) .page {
+  --ink: #ece7d9;
+  --ink-light: #c7c2b4;
+  --bg-cream: #14161f;
+  --text-dark: #ece7d9;
+  --text-light: #a5a193;
+  --green: #8fb265;
+  --green-light: #a3c47b;
+  --green-dark: #46602f;
+  --shadow-sm: 0 2px 12px rgba(0, 0, 0, 0.45);
+  --shadow-md: 0 8px 28px rgba(0, 0, 0, 0.55);
+  --shadow-lg: 0 20px 50px rgba(0, 0, 0, 0.6);
+
+  background: #0f111a;
+  color: var(--text-dark);
+}
+
+/* Navbar / mobile menu */
+:global(.dark) .navbar {
+  background: rgba(16, 18, 26, 0.82);
+  border-bottom-color: rgba(255, 255, 255, 0.08);
+}
+:global(.dark) .navbarScrolled {
+  background: rgba(16, 18, 26, 0.95);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
+}
+:global(.dark) .mobileMenu {
+  background: rgba(16, 18, 26, 0.98);
+  border-bottom-color: rgba(255, 255, 255, 0.08);
+}
+:global(.dark) .mobileMenu a { border-bottom-color: rgba(255, 255, 255, 0.06); }
+
+/* Hero + các section nền sáng cố định */
+:global(.dark) .hero {
+  background: linear-gradient(180deg, #161b14 0%, #14161f 48%, #0f111a 100%);
+}
+:global(.dark) .trusted {
+  background: #14161f;
+  border-bottom-color: rgba(255, 255, 255, 0.06);
+}
+:global(.dark) .section { background: #0f111a; }
+:global(.dark) .stepCard { background: #1a1d27; }
+:global(.dark) .featureCard:hover { border-color: rgba(255, 255, 255, 0.12); }
+
+/* Nút/dải nền xanh — giữ chữ trắng nên dùng green-dark sâu */
+:global(.dark) .btnPrimary { background: var(--green-dark); }
+:global(.dark) .btnPrimary:hover { background: #3a4d27; }
+:global(.dark) .btnSecondary { background: transparent; }
+:global(.dark) .navCta { background: var(--green-dark) !important; }
+:global(.dark) .navCta:hover { background: #3a4d27 !important; }
+:global(.dark) .stepNumber { background: var(--green-dark); }
+:global(.dark) .statsSection { background: var(--green-dark); }
+:global(.dark) .testimonialAvatar { background: var(--green-dark); }
+:global(.dark) .backToTop { background: var(--green-dark); }
+:global(.dark) .cta {
+  background: linear-gradient(135deg, var(--green-dark) 0%, #34461f 100%);
+}
+:global(.dark) .founderAvatar {
+  background: linear-gradient(135deg, var(--green-dark), #5b7a3a);
+}
+
+/* Footer giữ tối dù --ink (chữ) đã lật sáng */
+:global(.dark) .footer { background: #0b0d14; }
+
+/* Trang Giới thiệu */
+:global(.dark) .aboutChip {
+  background: #1a1d27;
+  border-color: rgba(255, 255, 255, 0.12);
+}
+:global(.dark) .founderCard {
+  background: #1a1d27;
+  border-color: rgba(255, 255, 255, 0.08);
+}
+:global(.dark) .founderTag { border-color: rgba(143, 178, 101, 0.3); }
+:global(.dark) .founderQuote { color: var(--green-light); }
+:global(.dark) .aboutSplitProblem { border-color: rgba(255, 255, 255, 0.08); }
+:global(.dark) .aboutSplitSolution {
+  background: linear-gradient(135deg, #18241a, #141d12);
+  border-color: rgba(143, 178, 101, 0.25);
+}
+:global(.dark) .editNote { background: rgba(255, 226, 122, 0.1); }

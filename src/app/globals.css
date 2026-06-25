@@ -30,26 +30,32 @@
   }
 
   .dark {
-    --background: 230 18% 9%;
-    --foreground: 40 30% 96%;
-    --card: 230 18% 9%;
-    --card-foreground: 40 30% 96%;
-    --popover: 230 18% 9%;
-    --popover-foreground: 40 30% 96%;
-    --primary: 88 32% 52%;
-    --primary-foreground: 92 40% 10%;
-    --secondary: 90 8% 18%;
-    --secondary-foreground: 40 30% 96%;
-    --muted: 90 8% 18%;
-    --muted-foreground: 80 8% 64%;
-    --accent: 88 12% 20%;
-    --accent-foreground: 40 30% 96%;
-    --destructive: 0 62.8% 30.6%;
+    /* Nền than xanh ấm, chữ kem; thẻ SÁNG hơn nền để tách lớp rõ ràng. */
+    --background: 225 18% 8%;
+    --foreground: 40 28% 92%;
+    --card: 224 16% 12%;
+    --card-foreground: 40 28% 92%;
+    --popover: 224 16% 11%;
+    --popover-foreground: 40 28% 92%;
+    --primary: 88 42% 58%;
+    --primary-foreground: 92 45% 9%;
+    --secondary: 222 12% 17%;
+    --secondary-foreground: 40 24% 90%;
+    --muted: 222 12% 16%;
+    --muted-foreground: 80 8% 62%;
+    --accent: 90 14% 20%;
+    --accent-foreground: 40 26% 92%;
+    --destructive: 0 60% 47%;
     --destructive-foreground: 0 0% 98%;
-    --border: 90 8% 20%;
-    --input: 90 8% 20%;
-    --ring: 88 32% 52%;
+    --border: 220 12% 20%;
+    --input: 220 12% 22%;
+    --ring: 88 42% 58%;
   }
+
+  /* Khai báo color-scheme theo class để form control (input/scrollbar) hợp tông
+     và để trình duyệt KHÔNG tự đảo màu trang (auto-dark). */
+  :root { color-scheme: light; }
+  .dark { color-scheme: dark; }
 }
 
 @layer base {
@@ -59,6 +65,9 @@
   html {
     scroll-behavior: smooth;
     -webkit-text-size-adjust: 100%;
+    /* "Đóng khung": chặn mọi phần tử tràn ngang gây cuộn trái-phải trên mobile.
+       `clip` (không phải `hidden`) để KHÔNG phá `position: sticky`. */
+    overflow-x: clip;
   }
   body {
     @apply bg-background text-foreground;
@@ -66,6 +75,8 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
+    overflow-x: clip;
+    max-width: 100%;
   }
   /* Display typeface for headings — Nunito, đồng bộ với trang chủ */
   h1, h2, h3, h4, h5, h6, .font-display {
@@ -94,6 +105,12 @@
     linear-gradient(rgba(93, 119, 64, 0.06) 1px, transparent 1px),
     linear-gradient(90deg, rgba(93, 119, 64, 0.06) 1px, transparent 1px);
   background-size: 46px 46px;
+}
+.dark .hero-grid {
+  background-color: hsl(225 18% 9%);
+  background-image:
+    linear-gradient(rgba(160, 190, 130, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(160, 190, 130, 0.05) 1px, transparent 1px);
 }
 
 /* ===== Peaceful green design system — backgrounds, glass, gradients, effects ===== */
@@ -137,6 +154,14 @@
   -webkit-backdrop-filter: blur(14px) saturate(1.4);
   border: 1px solid hsl(88 30% 78% / 0.45);
 }
+.dark .glass {
+  background: hsl(224 16% 14% / 0.6);
+  border: 1px solid hsl(0 0% 100% / 0.08);
+}
+.dark .glass-green {
+  background: linear-gradient(150deg, hsl(90 22% 18% / 0.7), hsl(88 20% 14% / 0.6));
+  border: 1px solid hsl(88 24% 40% / 0.3);
+}
 
 /* Green gradient text (on light bg) */
 .text-gradient-green {
@@ -144,6 +169,12 @@
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+}
+/* Trên nền tối: sáng dải xanh lên để chữ gradient không bị chìm. */
+.dark .text-gradient-green {
+  background: linear-gradient(105deg, hsl(90 46% 70%), hsl(82 44% 64%) 55%, hsl(78 42% 60%));
+  -webkit-background-clip: text;
+  background-clip: text;
 }
 
 /* Light/mint gradient text (on dark-green bg) */
@@ -241,6 +272,15 @@
     linear-gradient(90deg, transparent 49%, #ddd 49%, #ddd 51%, transparent 51%);
   border: 2px solid #ccc;
 }
+.dark .tianzi-grid {
+  background-color: hsl(224 16% 13%);
+  background-image:
+    linear-gradient(45deg, transparent 49%, #3a3f4d 49%, #3a3f4d 51%, transparent 51%),
+    linear-gradient(-45deg, transparent 49%, #3a3f4d 49%, #3a3f4d 51%, transparent 51%),
+    linear-gradient(transparent 49%, #3a3f4d 49%, #3a3f4d 51%, transparent 51%),
+    linear-gradient(90deg, transparent 49%, #3a3f4d 49%, #3a3f4d 51%, transparent 51%);
+  border-color: #44495a;
+}
 
 /* Ruby pinyin */
 ruby rt {
@@ -249,6 +289,7 @@ ruby rt {
   color: #6b7280;
   letter-spacing: 0.05em;
 }
+.dark ruby rt { color: #9aa0ad; }
 
 /* ===== Reading workspace (exam-grade, CD-IELTS style) ===== */
 .reading-surface {
@@ -305,6 +346,18 @@ ruby rt {
   animation: wrong-shake 0.3s ease-in-out;
   background-color: #fee2e2 !important;
   border-color: #ef4444 !important;
+}
+
+/* Trên nền tối: dùng nền màu trong suốt nhẹ + chữ sáng để vẫn đọc rõ. */
+.dark .animate-correct {
+  background-color: rgba(34, 197, 94, 0.18) !important;
+  border-color: #22c55e !important;
+  color: #bbf7d0 !important;
+}
+.dark .animate-wrong {
+  background-color: rgba(239, 68, 68, 0.18) !important;
+  border-color: #ef4444 !important;
+  color: #fecaca !important;
 }
 
 @keyframes correct-pulse {

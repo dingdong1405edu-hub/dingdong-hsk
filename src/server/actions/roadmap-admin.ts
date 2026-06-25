@@ -9,6 +9,12 @@ import { HSKLevel, Prisma, Skill } from "@prisma/client";
 import { requireAdmin } from "@/lib/admin-guard";
 import { LEVELS, type SkillKey } from "@/lib/roadmap";
 import { validateSectionContent } from "@/lib/roadmap-content";
+import {
+  generateReadingQuestions,
+  generateListeningQuestions,
+  generateTranscriptExplanation,
+  isGradingConfigured,
+} from "@/lib/groq";
 
 type Result<T = unknown> = { ok: true; data?: T } | { ok: false; error: string };
 
@@ -297,5 +303,83 @@ export async function deleteRoadmapSectionAction(input: {
     return { ok: true };
   } catch (e) {
     return { ok: false, error: e instanceof Error ? e.message : "Lỗi xoá nội dung." };
+  }
+}
+
+// ───────────── AI hỗ trợ soạn Đọc / Nghe (sinh câu hỏi, dịch lời thoại) ─────────────
+// Khác phiên bản ở admin.ts: nhận NỘI DUNG trực tiếp (đoạn văn / lời thoại / cấp HSK)
+// thay vì id bản ghi DB, vì nội dung lộ trình nằm trong RoadmapSection.content.
+
+function clampCount(n: number): number {
+  return Math.max(1, Math.min(20, Math.round(n) || 5));
+}
+
+export async function generateRoadmapReadingQuestionsAction(input: {
+  passage: string;
+  hskLevel: HSKLevel;
+  count: number;
+}): Promise<Result<{ json: string }>> {
+  try {
+    await requireAdmin();
+    if (!isGradingConfigured()) return { ok: false, error: "Máy chủ chưa cấu hình GROQ_API_KEY." };
+    const passage = (input.passage || "").trim();
+    if (!passage) return { ok: false, error: "Chưa có đoạn văn để AI tạo câu hỏi." };
+    const questions = await generateReadingQuestions({
+      passage,
+      hskLevel: input.hskLevel,
+      count: clampCount(input.count),
+    });
+    if (!questions.length) return { ok: false, error: "AI chưa tạo được câu hỏi nào — thử lại." };
+    return { ok: true, data: { json: JSON.stringify(questions, null, 2) } };
+  } catch (e) {
+    return { ok: false, error: e instanceof Error ? e.message : "Lỗi gọi AI (Groq)." };
+  }
+}
+
+export async function generateRoadmapListeningQuestionsAction(input: {
+  transcript: string;
+  hskLevel: HSKLevel;
+  count: number;
+}): Promise<Result<{ json: string }>> {
+  try {
+    await requireAdmin();
+    if (!isGradingConfigured()) return { ok: false, error: "Máy chủ chưa cấu hình GROQ_API_KEY." };
+    const transcript = (input.transcript || "").trim();
+    if (!transcript) return { ok: false, error: "Chưa có lời thoại để AI tạo câu hỏi." };
+    const questions = await generateListeningQuestions({
+      transcript,
+      hskLevel: input.hskLevel,
+      count: clampCount(input.count),
+    });
+    if (!questions.length) return { ok: false, error: "AI chưa tạo được câu hỏi nào — thử lại." };
+    return { ok: true, data: { json: JSON.stringify(questions, null, 2) } };
+  } catch (e) {
+    return { ok: false, error: e instanceof Error ? e.message : "Lỗi gọi AI (Groq)." };
+  }
+}
+
+export async function generateRoadmapTranscriptExplanationAction(input: {
+  transcript: string;
+  hskLevel: HSKLevel;
+}): Promise<Result<{ text: string }>> {
+  try {
+    await requireAdmin();
+    if (!isGradingConfigured()) return { ok: false, error: "Máy chủ chưa cấu hình GROQ_API_KEY." };
+    const transcript = (input.transcript || "").trim();
+    if (!transcript) return { ok: false, error: "Chưa có lời thoại để AI dịch." };
+    const ex = await generateTranscriptExplanation({ transcript, hskLevel: input.hskLevel });
+    if (!ex.translation && ex.vocab.length === 0) return { ok: false, error: "AI chưa dịch được — thử lại." };
+    const parts: string[] = [];
+    if (ex.summary) parts.push(ex.summary);
+    if (ex.translation) parts.push(`— Dịch lời thoại —\n${ex.translation}`);
+    if (ex.vocab.length) {
+      const lines = ex.vocab
+        .map((v) => `• ${v.zh}${v.pinyin ? ` (${v.pinyin})` : ""} — ${v.vi}`)
+        .join("\n");
+      parts.push(`— Từ vựng —\n${lines}`);
+    }
+    return { ok: true, data: { text: parts.join("\n\n") } };
+  } catch (e) {
+    return { ok: false, error: e instanceof Error ? e.message : "Lỗi gọi AI (Groq)." };
   }
 }

@@ -26,6 +26,7 @@ import {
 } from "lucide-react";
 import { cn, hskLevelLabel } from "@/lib/utils";
 import { Logo } from "@/components/shared/logo";
+import { ThemeToggle } from "@/components/theme/theme-toggle";
 
 interface NavItem {
   href: string;
@@ -191,6 +192,10 @@ function NavContent({ user, onNavigate }: { user: SidebarUser; onNavigate?: () =
 
       {/* Bottom cards */}
       <div className="space-y-2 border-t p-3">
+        <div className="flex items-center justify-between rounded-xl bg-muted/50 px-3 py-1.5">
+          <span className="text-[12px] font-semibold text-muted-foreground">Giao diện</span>
+          <ThemeToggle />
+        </div>
         <div className="flex items-center gap-2.5 rounded-xl bg-gradient-to-r from-amber-50 to-amber-100/60 p-2.5 ring-1 ring-amber-100">
           <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-white text-amber-500 shadow-sm">
             <Crown className="h-4 w-4" />

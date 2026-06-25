@@ -95,6 +95,23 @@ export function GrammarSectionEditor({
           <CheckCircle2 className="h-3.5 w-3.5" /> {stat}
         </p>
       ) : null}
+
+      <details className="rounded-xl border bg-muted/20 p-3 text-xs">
+        <summary className="cursor-pointer font-medium">Hướng dẫn cấu trúc &amp; loại bài tập</summary>
+        <div className="mt-2 space-y-1.5 text-muted-foreground">
+          <p>
+            Mỗi <code>section</code> gồm: <b>title</b>, <b>explanation</b> (lý thuyết), <b>examples</b> (tình huống) và{" "}
+            <b>exercises</b> (minigame luyện tập). <code>test.questions</code> là bài kiểm tra (để trống nếu không cần).
+          </p>
+          <p>Các loại bài tập (mỗi câu tự chứa đáp án đúng):</p>
+          <ul className="ml-4 list-disc space-y-0.5">
+            <li><code>fill_blank</code>: {`{ sentence: "我___学生", blank: "是", options: [...] }`}</li>
+            <li><code>sentence_order</code>: {`{ words: [...], answer: "我是学生" }`}</li>
+            <li><code>translate</code>: {`{ direction: "vi_to_zh"|"zh_to_vi", prompt, answer, options: [...] }`}</li>
+            <li><code>toneSelect</code>: {`{ word, pinyin, question, options: [...], correct: 0 }`}</li>
+          </ul>
+        </div>
+      </details>
     </div>
   );
 }

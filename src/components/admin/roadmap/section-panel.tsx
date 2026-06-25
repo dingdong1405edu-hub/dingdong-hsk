@@ -2,6 +2,7 @@
 import { useState, useTransition } from "react";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
+import type { HSKLevel } from "@prisma/client";
 import { ChevronDown, Save, Eye, Trash2, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -24,12 +25,13 @@ import { SpeakingSectionEditor } from "./speaking-section-editor";
 interface Props {
   lessonId: string;
   skill: SkillKey;
+  hskLevel: HSKLevel;
   sectionId: string | null;
   published: boolean;
   initialContent: unknown;
 }
 
-export function SectionPanel({ lessonId, skill, sectionId, published, initialContent }: Props) {
+export function SectionPanel({ lessonId, skill, hskLevel, sectionId, published, initialContent }: Props) {
   const meta = SKILL_META.find((m) => m.key === skill)!;
   const Icon = meta.icon;
   const router = useRouter();
@@ -75,9 +77,9 @@ export function SectionPanel({ lessonId, skill, sectionId, published, initialCon
       case "HANZI":
         return <HanziSectionEditor {...p} />;
       case "READING":
-        return <ReadingSectionEditor {...p} />;
+        return <ReadingSectionEditor {...p} hskLevel={hskLevel} />;
       case "LISTENING":
-        return <ListeningSectionEditor {...p} />;
+        return <ListeningSectionEditor {...p} hskLevel={hskLevel} />;
       case "WRITING":
         return <WritingSectionEditor {...p} />;
       case "SPEAKING":

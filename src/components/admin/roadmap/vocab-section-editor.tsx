@@ -5,6 +5,7 @@ import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { toPinyin } from "@/lib/pinyin";
 import { ExampleRows } from "./example-rows";
+import { RoadmapVocabImport } from "./vocab-import";
 import type { VocabSectionContent, WordExample } from "@/lib/roadmap-content";
 
 type Word = VocabSectionContent["words"][number];
@@ -34,10 +35,12 @@ export function VocabSectionEditor({
 
   return (
     <div className="space-y-3">
-      <p className="text-xs text-muted-foreground">
-        Mỗi từ gồm chữ Hán, pinyin, nghĩa và ví dụ. Người học sẽ học theo từng từ: xem thẻ → tập viết nét → nhớ
-        lại → ôn flashcard.
-      </p>
+      <div className="flex items-center justify-between gap-2">
+        <p className="text-xs text-muted-foreground">
+          Mỗi từ gồm chữ Hán, pinyin, nghĩa và ví dụ. Học viên học từng từ: xem thẻ → tập viết → nhớ lại → flashcard.
+        </p>
+        <RoadmapVocabImport onImport={(ws) => setWords([...words, ...ws])} />
+      </div>
       {words.map((w, i) => (
         <div key={i} className="space-y-2 rounded-xl border bg-card p-3">
           <div className="flex items-center justify-between">

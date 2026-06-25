@@ -1,22 +1,27 @@
 "use client";
+import type { HSKLevel } from "@prisma/client";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { MediaField } from "./media-field";
 import { QuestionRows } from "./question-rows";
+import { RoadmapQuestionsImporter } from "./questions-importer";
 import type { ReadingSectionContent, RoadmapQuestion } from "@/lib/roadmap-content";
 
 export function ReadingSectionEditor({
   value,
   onChange,
+  hskLevel,
 }: {
   value: unknown;
   onChange: (v: unknown) => void;
+  hskLevel: HSKLevel;
 }) {
   const v = (value ?? {}) as Partial<ReadingSectionContent>;
   function set(patch: Partial<ReadingSectionContent>) {
     onChange({ ...v, ...patch });
   }
+  const questions = (v.questions ?? []) as RoadmapQuestion[];
 
   return (
     <div className="space-y-3">
@@ -58,8 +63,14 @@ export function ReadingSectionEditor({
       </div>
       <div className="space-y-1.5">
         <Label className="text-xs font-semibold">Câu hỏi</Label>
+        <RoadmapQuestionsImporter
+          skill="READING"
+          source={v.passage ?? ""}
+          hskLevel={hskLevel}
+          onImport={(qs) => set({ questions: [...questions, ...qs] })}
+        />
         <QuestionRows
-          value={(v.questions ?? []) as RoadmapQuestion[]}
+          value={questions}
           onChange={(qs) => set({ questions: qs })}
           quoteLabel="Trích đoạn văn chứng minh đáp án (tuỳ chọn)"
         />
