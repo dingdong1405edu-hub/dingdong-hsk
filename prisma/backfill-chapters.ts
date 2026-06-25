@@ -16,6 +16,10 @@ import { PrismaClient } from "@prisma/client";
 
 const prisma = new PrismaClient();
 
+// Phải khớp UNCHAPTERED_ORDER trong src/lib/roadmap.ts: bài CHƯA phân chương dùng
+// chapterOrder sentinel này — backfill BỎ QUA chúng (đừng biến chúng thành chương thật).
+const UNCHAPTERED_ORDER = 999999;
+
 async function main() {
   const courses = await prisma.course.findMany({
     include: { lessons: { orderBy: { order: "asc" } } },
@@ -25,8 +29,10 @@ async function main() {
   let lessonsLinked = 0;
 
   for (const course of courses) {
-    // Chỉ những bài chưa gán chương (idempotent khi chạy lại).
-    const lessons = course.lessons.filter((l) => !l.chapterId);
+    // Chỉ migrate bài LEGACY chưa gán chương; bỏ qua bài cố ý để "Chưa phân chương".
+    const lessons = course.lessons.filter(
+      (l) => !l.chapterId && l.chapterOrder !== UNCHAPTERED_ORDER
+    );
     if (lessons.length === 0) continue;
 
     // Tên gợi ý cho mỗi order = tên `chapter` đầu tiên không rỗng của order đó.

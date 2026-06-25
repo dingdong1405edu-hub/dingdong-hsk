@@ -39,6 +39,8 @@ function buildPath(pts: Point[]): string {
 interface ChapterPathProps {
   index: number;
   title: string;
+  /** Nhóm "Chưa phân chương" — ẩn nhãn "Chương N". */
+  unchaptered?: boolean;
   lessons: RoadmapLessonDTO[];
   statuses: LessonStatus[];
   /** Lệch pha sóng sin để đường đi nối liền mạch giữa các chương. */
@@ -51,6 +53,7 @@ interface ChapterPathProps {
 export function ChapterPath({
   index,
   title,
+  unchaptered = false,
   lessons,
   statuses,
   phaseOffset,
@@ -82,7 +85,7 @@ export function ChapterPath({
 
   return (
     <section className="space-y-3">
-      <ChapterBanner index={index} title={title} theme={theme} done={doneInChapter} total={lessons.length} />
+      <ChapterBanner index={index} title={title} unchaptered={unchaptered} theme={theme} done={doneInChapter} total={lessons.length} />
 
       <div className="relative mx-auto" style={{ width: COL_W, height }}>
         <svg
@@ -150,7 +153,7 @@ export function ChapterPath({
             status={chapterComplete ? "done" : "locked"}
             theme={theme}
             size={SIZE}
-            label={`Phần thưởng chương ${index}`}
+            label={unchaptered ? "Phần thưởng" : `Phần thưởng chương ${index}`}
             onClick={() => onTrophy(chapterComplete)}
           />
         </div>

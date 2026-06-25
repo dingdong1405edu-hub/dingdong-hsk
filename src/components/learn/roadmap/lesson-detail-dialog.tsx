@@ -98,8 +98,7 @@ export function LessonDetailDialog({ lesson, levelLabel, levelSlug, theme, locke
           {/* Thông tin: chương · XP · số kỹ năng đã xong */}
           <div className="relative z-10 mt-3 flex flex-wrap items-center gap-2 text-[11px] font-semibold">
             <span className="inline-flex max-w-full items-center gap-1 truncate rounded-full bg-white/15 px-2.5 py-1 backdrop-blur">
-              📖 Chương {lesson?.chapterOrder}
-              {lesson?.chapter ? ` · ${lesson.chapter}` : ""}
+              📖 {lesson?.chapter ? `Chương ${lesson.chapterOrder} · ${lesson.chapter}` : "Chưa phân chương"}
             </span>
             <span className="inline-flex items-center gap-1 rounded-full bg-white/15 px-2.5 py-1 backdrop-blur">
               <Star className="h-3.5 w-3.5 fill-white" /> +{lesson?.xpReward ?? 20} XP

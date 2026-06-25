@@ -30,6 +30,7 @@ interface RoadmapMapProps {
 interface Chapter {
   order: number;
   title: string;
+  unchaptered: boolean; // nhóm "Chưa phân chương" (bài chưa gán chương nào)
   lessons: RoadmapLessonDTO[];
   startIndex: number; // chỉ số toàn cục của bài đầu chương
   phaseOffset: number; // lệch pha sóng (gồm cả node phần thưởng các chương trước)
@@ -71,7 +72,9 @@ export function RoadmapMap({
       if (!last || last.order !== l.chapterOrder) {
         out.push({
           order: l.chapterOrder,
-          title: l.chapter ?? `Chương ${l.chapterOrder}`,
+          // chapter=null ⟺ bài chưa phân chương (chương thật luôn có tên trong cache).
+          title: l.chapter ?? "Chưa phân chương",
+          unchaptered: l.chapter == null,
           lessons: [l],
           startIndex: i,
           phaseOffset: 0,
@@ -188,6 +191,7 @@ export function RoadmapMap({
               <ChapterPath
                 index={ch.order}
                 title={ch.title}
+                unchaptered={ch.unchaptered}
                 lessons={ch.lessons}
                 statuses={statuses}
                 phaseOffset={ch.phaseOffset}

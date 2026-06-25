@@ -288,8 +288,7 @@ export default async function AdminCoursePage({ params }: Props) {
                           </div>
                           <div className="mt-1 flex flex-wrap items-center gap-2">
                             <Badge variant="outline" className="text-[11px]">
-                              Chương {lesson.chapterOrder}
-                              {lesson.chapter ? ` · ${lesson.chapter}` : ""}
+                              {lesson.chapter ? `Chương ${lesson.chapterOrder} · ${lesson.chapter}` : "Chưa phân chương"}
                             </Badge>
                             <span className="text-xs text-muted-foreground">
                               {publishedCount}/{TOTAL_SKILLS} phần đang hiện

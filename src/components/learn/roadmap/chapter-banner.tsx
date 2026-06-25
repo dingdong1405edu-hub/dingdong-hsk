@@ -7,13 +7,15 @@ import type { CourseTheme } from "@/lib/roadmap";
 interface ChapterBannerProps {
   index: number;
   title: string;
+  /** Nhóm "Chưa phân chương" — không hiện nhãn "Chương N". */
+  unchaptered?: boolean;
   theme: CourseTheme;
   done: number;
   total: number;
 }
 
 /** Banner đầu mỗi chương trên bản đồ học (kiểu "unit" của Duolingo). */
-export function ChapterBanner({ index, title, theme, done, total }: ChapterBannerProps) {
+export function ChapterBanner({ index, title, unchaptered = false, theme, done, total }: ChapterBannerProps) {
   return (
     <div
       className={cn(
@@ -24,7 +26,7 @@ export function ChapterBanner({ index, title, theme, done, total }: ChapterBanne
       <div className="relative z-10 flex items-center justify-between gap-3">
         <div className="min-w-0">
           <div className="text-[11px] font-bold uppercase tracking-[0.18em] text-white/80">
-            Chương {index}
+            {unchaptered ? "Bài lẻ" : `Chương ${index}`}
           </div>
           <div className="truncate text-lg font-extrabold leading-tight">{title}</div>
         </div>
