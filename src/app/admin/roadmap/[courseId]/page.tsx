@@ -10,6 +10,7 @@ import { Badge } from "@/components/ui/badge";
 import { ImageUpload } from "@/components/admin/image-upload";
 import { PublishToggle } from "@/components/admin/publish-toggle";
 import { ReorderList, type ReorderItem } from "@/components/admin/reorder-list";
+import { RoadmapLessonBulkImport } from "@/components/admin/roadmap/lesson-bulk-import";
 import { hskLevelLabel } from "@/lib/utils";
 import { SKILL_META } from "@/lib/roadmap";
 import {
@@ -194,9 +195,12 @@ export default async function AdminCoursePage({ params }: Props) {
       {/* Thêm bài */}
       <Card>
         <CardHeader>
-          <CardTitle className="flex items-center gap-2 text-base">
-            <Plus className="h-4 w-4" /> Thêm bài học
-          </CardTitle>
+          <div className="flex flex-wrap items-center justify-between gap-2">
+            <CardTitle className="flex items-center gap-2 text-base">
+              <Plus className="h-4 w-4" /> Thêm bài học
+            </CardTitle>
+            <RoadmapLessonBulkImport courseId={course.id} />
+          </div>
         </CardHeader>
         <CardContent>
           <form

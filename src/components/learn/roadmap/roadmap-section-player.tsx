@@ -10,15 +10,19 @@ import { ListeningTestClient } from "@/app/(learn)/listening/[testId]/listening-
 import { WritingClient } from "@/app/(learn)/writing/[taskId]/writing-client";
 import { SpeakingClient } from "@/app/(learn)/speaking/[setId]/speaking-client";
 import { parseGrammarContent } from "@/lib/grammar";
-import { roadmapQuestionId } from "@/lib/roadmap-content";
+import {
+  roadmapQuestionId,
+  normalizeReadingContent,
+  normalizeListeningContent,
+} from "@/lib/roadmap-content";
 import type {
   VocabSectionContent,
   HanziSectionContent,
-  ReadingSectionContent,
-  ListeningSectionContent,
   WritingSectionContent,
   SpeakingSectionContent,
 } from "@/lib/roadmap-content";
+import { RoadmapMultiReadingPlayer } from "./roadmap-multi-reading-player";
+import { RoadmapMultiListeningPlayer } from "./roadmap-multi-listening-player";
 import {
   completeRoadmapSectionAction,
   submitRoadmapReadingAction,
@@ -122,17 +126,32 @@ export function RoadmapSectionPlayer({ skill, lessonId, sectionId, hskLevel, tit
     }
 
     case "READING": {
-      const c = content as ReadingSectionContent;
+      const c = normalizeReadingContent(content);
+      // Nhiều đoạn → trình chạy lần lượt (chấm chung); một đoạn → trình Đọc gốc.
+      if (c.passages.length > 1) {
+        return (
+          <RoadmapMultiReadingPlayer
+            sectionId={sectionId}
+            lessonId={lessonId}
+            hskLevel={hskLevel}
+            title={c.title}
+            passages={c.passages}
+            timeLimit={c.timeLimit}
+            backHref={backHref}
+          />
+        );
+      }
+      const p = c.passages[0] ?? { passage: "", questions: [] };
       const test: ReadingTestData = {
         id: sectionId,
         title: c.title,
-        titleZh: c.titleZh ?? "",
+        titleZh: p.titleZh ?? c.titleZh ?? "",
         hskLevel,
-        passage: c.passage,
-        passagePinyin: c.passagePinyin ?? null,
-        imageUrl: c.imageUrl ?? null,
+        passage: p.passage,
+        passagePinyin: p.passagePinyin ?? null,
+        imageUrl: p.imageUrl ?? null,
         timeLimit: c.timeLimit ?? 600,
-        questions: (c.questions ?? []).map(
+        questions: (p.questions ?? []).map(
           (q, i): ReadingQuestion => ({
             id: roadmapQuestionId(i),
             type: q.type as QuestionType,
@@ -162,17 +181,31 @@ export function RoadmapSectionPlayer({ skill, lessonId, sectionId, hskLevel, tit
     }
 
     case "LISTENING": {
-      const c = content as ListeningSectionContent;
+      const c = normalizeListeningContent(content);
+      if (c.clips.length > 1) {
+        return (
+          <RoadmapMultiListeningPlayer
+            sectionId={sectionId}
+            lessonId={lessonId}
+            hskLevel={hskLevel}
+            title={c.title}
+            clips={c.clips}
+            timeLimit={c.timeLimit}
+            backHref={backHref}
+          />
+        );
+      }
+      const cl = c.clips[0] ?? { audioUrl: "", questions: [] };
       const test: ListeningTestData = {
         id: sectionId,
         title: c.title,
         hskLevel,
-        audioUrl: c.audioUrl ?? "",
-        transcript: c.transcript ?? null,
-        transcriptExplanation: c.transcriptExplanation ?? null,
-        imageUrl: c.imageUrl ?? null,
+        audioUrl: cl.audioUrl ?? "",
+        transcript: cl.transcript ?? null,
+        transcriptExplanation: cl.transcriptExplanation ?? null,
+        imageUrl: cl.imageUrl ?? null,
         timeLimit: c.timeLimit ?? 180,
-        questions: (c.questions ?? []).map(
+        questions: (cl.questions ?? []).map(
           (q, i): ListeningQuestion => ({
             id: roadmapQuestionId(i),
             type: q.type as QuestionType,

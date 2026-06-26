@@ -2,6 +2,7 @@
 import { CheckCircle2, XCircle, Flag } from "lucide-react";
 import { PinyinText } from "@/components/learn/pinyin-text";
 import { Input } from "@/components/ui/input";
+import { AnswerExplanation } from "@/components/learn/answer-explanation";
 import { cn } from "@/lib/utils";
 import type { ReadingOption, ReadingQuestion } from "./types";
 
@@ -230,11 +231,7 @@ export function QuestionCard({
             )}
           </div>
         ))}
-      {submitted && q.explanation && (
-        <div className="mt-2 rounded-lg border border-amber-200 bg-amber-50 p-2.5 text-xs leading-relaxed text-amber-900 dark:border-amber-400/25 dark:bg-amber-500/15 dark:text-amber-200">
-          <span className="font-semibold">💡 Giải thích:</span> {q.explanation}
-        </div>
-      )}
+      {submitted && <AnswerExplanation explanation={q.explanation} className="mt-2" />}
     </div>
   );
 }

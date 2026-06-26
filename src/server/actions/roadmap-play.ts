@@ -220,7 +220,7 @@ export async function submitRoadmapReadingAction(input: {
   const parsed = readingContentSchema.safeParse(section.content);
   if (!parsed.success) return { ok: false, error: "Nội dung đọc hiểu không hợp lệ." };
 
-  const result = gradeQuestions(parsed.data.questions, input.answers);
+  const result = gradeQuestions(parsed.data.passages[0]?.questions ?? [], input.answers);
   const rec = await recordSkillDone(user.id, user.role, section.lessonId, "READING", {
     score: result.score,
     durationSec: input.durationSec,
@@ -228,6 +228,27 @@ export async function submitRoadmapReadingAction(input: {
   });
   if ("error" in rec) return { ok: false, error: rec.error };
   return { ok: true, result };
+}
+
+/**
+ * Chấm RIÊNG một đoạn của phần Đọc nhiều-đoạn (KHÔNG ghi DB). Trình chạy nhiều đoạn
+ * gọi lần lượt rồi gọi completeRoadmapSectionAction để ghi hoàn thành (điểm trung bình).
+ */
+export async function gradeRoadmapReadingPassageAction(input: {
+  sectionId: string;
+  passageIndex: number;
+  answers: Record<string, unknown>;
+  durationSec?: number;
+}): Promise<Ok<{ result: { score: number; details: Record<string, boolean> } }> | Err> {
+  const user = await requireUser();
+  if (!user) return { ok: false, error: "Unauthorized" };
+  const section = await loadSection(input.sectionId, Skill.READING);
+  if (!section) return { ok: false, error: "Không tìm thấy nội dung." };
+  const parsed = readingContentSchema.safeParse(section.content);
+  if (!parsed.success) return { ok: false, error: "Nội dung đọc hiểu không hợp lệ." };
+  const passage = parsed.data.passages[input.passageIndex];
+  if (!passage) return { ok: false, error: "Không tìm thấy đoạn đọc." };
+  return { ok: true, result: gradeQuestions(passage.questions, input.answers) };
 }
 
 // ───────────── Nghe hiểu ─────────────
@@ -244,7 +265,7 @@ export async function submitRoadmapListeningAction(input: {
   const parsed = listeningContentSchema.safeParse(section.content);
   if (!parsed.success) return { ok: false, error: "Nội dung nghe hiểu không hợp lệ." };
 
-  const result = gradeQuestions(parsed.data.questions, input.answers);
+  const result = gradeQuestions(parsed.data.clips[0]?.questions ?? [], input.answers);
   const rec = await recordSkillDone(user.id, user.role, section.lessonId, "LISTENING", {
     score: result.score,
     durationSec: input.durationSec,
@@ -252,6 +273,24 @@ export async function submitRoadmapListeningAction(input: {
   });
   if ("error" in rec) return { ok: false, error: rec.error };
   return { ok: true, result };
+}
+
+/** Chấm RIÊNG một clip của phần Nghe nhiều-đoạn (KHÔNG ghi DB). */
+export async function gradeRoadmapListeningClipAction(input: {
+  sectionId: string;
+  clipIndex: number;
+  answers: Record<string, unknown>;
+  durationSec?: number;
+}): Promise<Ok<{ result: { score: number; details: Record<string, boolean> } }> | Err> {
+  const user = await requireUser();
+  if (!user) return { ok: false, error: "Unauthorized" };
+  const section = await loadSection(input.sectionId, Skill.LISTENING);
+  if (!section) return { ok: false, error: "Không tìm thấy nội dung." };
+  const parsed = listeningContentSchema.safeParse(section.content);
+  if (!parsed.success) return { ok: false, error: "Nội dung nghe hiểu không hợp lệ." };
+  const clip = parsed.data.clips[input.clipIndex];
+  if (!clip) return { ok: false, error: "Không tìm thấy đoạn nghe." };
+  return { ok: true, result: gradeQuestions(clip.questions, input.answers) };
 }
 
 // ───────────── Viết luận — chấm bằng AI rồi ghi hoàn thành ─────────────

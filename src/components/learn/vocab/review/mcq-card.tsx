@@ -4,6 +4,7 @@ import { Check, X, Volume2, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { playWord } from "@/lib/speech";
+import { AnswerExplanation } from "@/components/learn/answer-explanation";
 import type { VocabWordCard } from "@/types";
 
 export type OptionKind = "hanzi" | "pinyin" | "text";
@@ -20,6 +21,8 @@ export interface McqCardProps {
   audioWord?: VocabWordCard | null;
   /** Tự phát audio khi vào (mặc định false; bài "nghe" bật true). */
   autoPlay?: boolean;
+  /** Giải thích đáp án (dựng từ dữ liệu từ: chữ + pinyin + nghĩa + ví dụ). */
+  explanation?: string | null;
   onAnswered: (correct: boolean) => void;
 }
 
@@ -36,6 +39,7 @@ export function McqCard({
   correctIndex,
   audioWord,
   autoPlay,
+  explanation,
   onAnswered,
 }: McqCardProps) {
   const [picked, setPicked] = useState<number | null>(null);
@@ -111,19 +115,22 @@ export function McqCard({
         )}
       >
         {answered ? (
-          <div className="flex items-center justify-between gap-3">
-            <div
-              className={cn(
-                "flex items-center gap-2 font-semibold",
-                correct ? "text-green-700 dark:text-green-300" : "text-red-700 dark:text-red-300",
-              )}
-            >
-              {correct ? <Check className="h-5 w-5" /> : <X className="h-5 w-5" />}
-              {correct ? "Chính xác!" : "Chưa đúng — xem đáp án đúng"}
+          <div className="space-y-3">
+            <div className="flex items-center justify-between gap-3">
+              <div
+                className={cn(
+                  "flex items-center gap-2 font-semibold",
+                  correct ? "text-green-700 dark:text-green-300" : "text-red-700 dark:text-red-300",
+                )}
+              >
+                {correct ? <Check className="h-5 w-5" /> : <X className="h-5 w-5" />}
+                {correct ? "Chính xác!" : "Chưa đúng — xem đáp án đúng"}
+              </div>
+              <Button onClick={() => onAnswered(correct)}>
+                Tiếp tục <ArrowRight className="ml-1.5 h-4 w-4" />
+              </Button>
             </div>
-            <Button onClick={() => onAnswered(correct)}>
-              Tiếp tục <ArrowRight className="ml-1.5 h-4 w-4" />
-            </Button>
+            <AnswerExplanation explanation={explanation} />
           </div>
         ) : (
           <p className="text-center text-xs text-muted-foreground">Chọn một đáp án</p>

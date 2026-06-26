@@ -7,6 +7,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { toPinyin } from "@/lib/pinyin";
+import { buildSpeakingContent } from "@/lib/roadmap-authoring";
 import type { SpeakingSectionContent } from "@/lib/roadmap-content";
 
 type Sentence = { text: string; pinyin: string };
@@ -34,23 +35,9 @@ export function SpeakingSectionEditor({
   const [json, setJson] = useState("");
   function applyJson() {
     try {
-      const o = JSON.parse(json) as {
-        part1Sentences?: Array<{ text?: unknown; pinyin?: unknown }>;
-        part2Passage?: { text?: unknown; pinyin?: unknown } | null;
-        part3Questions?: Array<{ question?: unknown; pinyin?: unknown }>;
-      };
-      const p1 = Array.isArray(o.part1Sentences)
-        ? o.part1Sentences.map((s) => ({ text: String(s?.text ?? ""), pinyin: String(s?.pinyin ?? "") }))
-        : [];
-      const p2 =
-        o.part2Passage && typeof o.part2Passage === "object"
-          ? { text: String(o.part2Passage.text ?? ""), pinyin: String(o.part2Passage.pinyin ?? "") }
-          : null;
-      const p3 = Array.isArray(o.part3Questions)
-        ? o.part3Questions.map((q) => ({ question: String(q?.question ?? ""), pinyin: String(q?.pinyin ?? "") }))
-        : [];
-      onChange({ part1Sentences: p1, part2Passage: p2 && p2.text.trim() ? p2 : null, part3Questions: p3 });
-      toast.success("Đã áp dụng JSON.");
+      // buildSpeakingContent tự sinh pinyin cho câu/đoạn còn thiếu.
+      onChange(buildSpeakingContent(JSON.parse(json)));
+      toast.success("Đã áp dụng JSON (pinyin tự sinh nếu thiếu).");
       setJson("");
     } catch {
       toast.error("JSON không hợp lệ.");

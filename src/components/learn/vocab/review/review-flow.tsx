@@ -62,6 +62,15 @@ function shuffle<T>(arr: T[]): T[] {
   return a;
 }
 
+/** Dựng "giải thích đáp án" cho MCQ ôn từ ngay từ dữ liệu của từ (chữ + pinyin +
+ *  nghĩa + 1 ví dụ) — để câu trắc nghiệm nào cũng có nút giải thích, kể cả khi đúng. */
+function wordExplanation(word: VocabWordCard): string {
+  let s = `${word.hanzi} (${word.pinyin}) — ${word.meaning}`;
+  const ex = word.examples?.[0];
+  if (ex) s += `. Ví dụ: ${ex.hanzi} (${ex.pinyin}) — ${ex.meaning}`;
+  return s;
+}
+
 function feasibleVariants(word: VocabWordCard, poolSize: number): Variant[] {
   const v: Variant[] = [];
   if (poolSize >= 2) v.push("meaning", "hanzi", "pinyin", "listen");
@@ -301,6 +310,7 @@ export function ReviewFlow({ words, reviews, pool, title = "Ôn từ", onExit }:
               correctIndex={current.q.correctIndex}
               audioWord={current.q.audioWord}
               autoPlay={current.q.autoPlay}
+              explanation={wordExplanation(current.word)}
               onAnswered={(correct) => onMcqAnswered(current, correct)}
             />
           )}

@@ -48,7 +48,10 @@ const HIGHLIGHT_COLORS: { name: string; value: string }[] = [
 export function ReadingTestClient({
   test,
   onSubmit,
+  onContinue,
+  continueLabel,
   backHref = "/reading",
+  passThreshold,
 }: {
   test: ReadingTestData;
   userId?: string;
@@ -57,8 +60,13 @@ export function ReadingTestClient({
     answers: Record<string, unknown>;
     durationSec: number;
   }) => Promise<{ ok: boolean; result?: { score: number; details: Record<string, boolean> } }>;
+  /** Lộ trình nhiều đoạn: sau khi nộp, hiện nút đi tiếp thay cho "Quay lại danh sách đề". */
+  onContinue?: () => void;
+  continueLabel?: string;
   /** Đường dẫn nút "Thoát" (mặc định /reading). */
   backHref?: string;
+  /** Lộ trình: ngưỡng "qua môn" để hiện nhãn Đạt/Chưa đạt trên màn kết quả. */
+  passThreshold?: number;
 }) {
   const { settings, setSettings } = useReadingSettings();
   const [showPinyin, setShowPinyin] = useState(false);
@@ -476,6 +484,7 @@ export function ReadingTestClient({
                         total={total}
                         level={test.hskLevel}
                         elapsedLabel={`${formatDuration(elapsed)} đã làm`}
+                        passThreshold={passThreshold}
                       />
                       <div className="flex gap-1.5">
                         <FilterButton active={reviewFilter === "all"} onClick={() => setReviewFilter("all")} label={`Tất cả · ${total}`} />
@@ -510,11 +519,16 @@ export function ReadingTestClient({
                     );
                   })}
 
-                  {submitted && (
-                    <Button asChild variant="outline" className="w-full">
-                      <Link href={backHref}>Quay lại danh sách đề</Link>
-                    </Button>
-                  )}
+                  {submitted &&
+                    (onContinue ? (
+                      <Button className="w-full" onClick={onContinue}>
+                        {continueLabel ?? "Tiếp tục"}
+                      </Button>
+                    ) : (
+                      <Button asChild variant="outline" className="w-full">
+                        <Link href={backHref}>Quay lại danh sách đề</Link>
+                      </Button>
+                    ))}
                 </div>
               </div>
             </div>

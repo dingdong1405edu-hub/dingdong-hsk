@@ -54,7 +54,10 @@ type ReviewFilter = "all" | "wrong";
 export function ListeningTestClient({
   test,
   onSubmit,
+  onContinue,
+  continueLabel,
   backHref = "/listening",
+  passThreshold,
 }: {
   test: ListeningTestData;
   userId?: string;
@@ -63,8 +66,13 @@ export function ListeningTestClient({
     answers: Record<string, unknown>;
     durationSec: number;
   }) => Promise<{ ok: boolean; result?: { score: number; details: Record<string, boolean> } }>;
+  /** Lộ trình nhiều đoạn: sau khi nộp, hiện nút đi tiếp thay cho "Quay lại danh sách đề". */
+  onContinue?: () => void;
+  continueLabel?: string;
   /** Đường dẫn nút "Thoát" (mặc định /listening). */
   backHref?: string;
+  /** Lộ trình: ngưỡng "qua môn" để hiện nhãn Đạt/Chưa đạt trên màn kết quả. */
+  passThreshold?: number;
 }) {
   const segments = useMemo(() => splitTranscript(test.transcript), [test.transcript]);
   const maxPlays = test.hskLevel === "HSK1" || test.hskLevel === "HSK2" ? 3 : 2;
@@ -425,6 +433,7 @@ export function ListeningTestClient({
                   total={total}
                   level={test.hskLevel}
                   elapsedLabel={`${formatDuration(elapsed)} đã làm`}
+                  passThreshold={passThreshold}
                 />
                 <div className="flex gap-1.5">
                   <FilterButton active={reviewFilter === "all"} onClick={() => setReviewFilter("all")} label={`Tất cả · ${total}`} />
@@ -523,9 +532,15 @@ export function ListeningTestClient({
                     <Button variant="outline" className="gap-1.5" onClick={() => window.location.reload()}>
                       <RefreshCw className="h-4 w-4" /> Làm lại từ đầu
                     </Button>
-                    <Button asChild variant="ghost">
-                      <Link href={backHref}>Quay lại danh sách đề</Link>
-                    </Button>
+                    {onContinue ? (
+                      <Button className="gap-1.5" onClick={onContinue}>
+                        {continueLabel ?? "Tiếp tục"}
+                      </Button>
+                    ) : (
+                      <Button asChild variant="ghost">
+                        <Link href={backHref}>Quay lại danh sách đề</Link>
+                      </Button>
+                    )}
                   </div>
                 </div>
               </div>

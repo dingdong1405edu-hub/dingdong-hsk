@@ -1,6 +1,7 @@
 "use client";
 import { Clock } from "lucide-react";
 import { cn, hskBadgeClass, hskLevelLabel } from "@/lib/utils";
+import { PassStatus } from "@/components/learn/roadmap/pass-status";
 
 interface ResultsSummaryProps {
   score: number;
@@ -8,9 +9,11 @@ interface ResultsSummaryProps {
   total: number;
   level: string;
   elapsedLabel?: string;
+  /** Nếu có (ngữ cảnh lộ trình): hiện nhãn "Đạt/Chưa đạt" theo ngưỡng %. */
+  passThreshold?: number;
 }
 
-export function ResultsSummary({ score, correct, total, level, elapsedLabel }: ResultsSummaryProps) {
+export function ResultsSummary({ score, correct, total, level, elapsedLabel, passThreshold }: ResultsSummaryProps) {
   const pct = Math.round(score);
   const r = 26;
   const circumference = 2 * Math.PI * r;
@@ -53,6 +56,7 @@ export function ResultsSummary({ score, correct, total, level, elapsedLabel }: R
             <Clock className="h-3.5 w-3.5" /> {elapsedLabel}
           </p>
         )}
+        {passThreshold != null && <PassStatus score={pct} threshold={passThreshold} className="mt-1.5" />}
       </div>
     </div>
   );

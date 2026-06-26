@@ -9,6 +9,7 @@ import { Progress } from "@/components/ui/progress";
 import { BaoBuddy } from "@/components/marketing/bao-buddy";
 import { countChineseChars, hskLevelLabel, formatDuration } from "@/lib/utils";
 import { gradeWritingAction } from "@/server/actions/writing";
+import { PassStatus } from "@/components/learn/roadmap/pass-status";
 import { Clock, Loader2, Lightbulb, ChevronDown, CheckCircle2, ArrowUpCircle } from "lucide-react";
 import type { HSKLevel, WritingTaskType } from "@prisma/client";
 
@@ -54,6 +55,7 @@ const CRITERIA_LABELS: Record<string, string> = {
 export function WritingClient({
   task,
   onGrade,
+  passThreshold,
 }: {
   task: Task;
   userId?: string;
@@ -62,6 +64,8 @@ export function WritingClient({
     submission: string;
     durationSec: number;
   }) => Promise<{ ok: boolean; result?: unknown; error?: string }>;
+  /** Lộ trình: ngưỡng "qua môn" để hiện nhãn Đạt/Chưa đạt trên màn kết quả. */
+  passThreshold?: number;
 }) {
   const [text, setText] = useState("");
   const [timeLeft, setTimeLeft] = useState(task.timeLimit);
@@ -138,11 +142,12 @@ export function WritingClient({
         />
         <div className="flex items-center justify-between">
           <h2 className="text-xl font-bold">Kết quả chấm bài</h2>
-          <div className="text-right">
+          <div className="flex flex-col items-end gap-1.5">
             <div className="text-4xl font-bold text-primary">{result.score}/100</div>
             {result.bandLabel && (
-              <div className="text-xs font-medium text-muted-foreground mt-0.5">{result.bandLabel}</div>
+              <div className="text-xs font-medium text-muted-foreground">{result.bandLabel}</div>
             )}
+            {passThreshold != null && <PassStatus score={result.score} threshold={passThreshold} />}
           </div>
         </div>
 

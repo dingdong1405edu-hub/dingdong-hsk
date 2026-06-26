@@ -10,6 +10,7 @@ import { requireAdmin, requireAdminActor } from "@/lib/admin-guard";
 import { logAudit } from "@/lib/audit";
 import { LEVELS, UNCHAPTERED_ORDER, type SkillKey } from "@/lib/roadmap";
 import { validateSectionContent } from "@/lib/roadmap-content";
+import { parseLessonsBundle, buildSectionContent } from "@/lib/roadmap-authoring";
 import {
   generateReadingQuestions,
   generateListeningQuestions,
@@ -569,6 +570,120 @@ export async function deleteRoadmapSectionAction(input: {
     return { ok: true };
   } catch (e) {
     return { ok: false, error: e instanceof Error ? e.message : "Lỗi xoá nội dung." };
+  }
+}
+
+// ───────────── Nhập BÀI HÀNG LOẠT từ JSON (mỗi bài gồm nhiều kỹ năng) ─────────────
+
+export interface BulkLessonsResult {
+  ok: boolean;
+  error?: string;
+  lessonsCreated?: number;
+  sectionsCreated?: number;
+  warnings?: string[];
+}
+
+/**
+ * Tạo HÀNG LOẠT bài trong một khóa từ một mảng JSON. Mỗi phần tử có metadata bài
+ * + content thô của các kỹ năng (reading/listening/speaking/vocab/…). Nội dung
+ * Đọc/Nghe/Nói được chuẩn hoá + tự sinh pinyin trước khi validate & lưu. Section
+ * không hợp lệ sẽ bị bỏ qua kèm cảnh báo (bài vẫn được tạo để admin sửa sau).
+ */
+export async function bulkImportRoadmapLessonsAction(input: {
+  courseId: string;
+  json: string;
+  publish?: boolean;
+}): Promise<BulkLessonsResult> {
+  try {
+    const { actor } = await requireAdminActor();
+    const course = await db.course.findUnique({
+      where: { id: input.courseId },
+      select: { id: true, hskLevel: true, chapters: { select: { id: true, title: true, order: true } } },
+    });
+    if (!course) return { ok: false, error: "Không tìm thấy khóa." };
+
+    let bundle;
+    try {
+      bundle = parseLessonsBundle(JSON.parse(input.json));
+    } catch (e) {
+      return { ok: false, error: e instanceof Error ? e.message : "JSON không hợp lệ." };
+    }
+
+    // Khớp chương theo TÊN (không tự tạo chương mới).
+    const chapterByTitle = new Map(course.chapters.map((c) => [c.title.trim().toLowerCase(), c]));
+
+    const agg = await db.roadmapLesson.aggregate({ where: { courseId: course.id }, _max: { order: true } });
+    let nextOrder = (agg._max.order ?? 0) + 1;
+
+    const warnings: string[] = [];
+    let lessonsCreated = 0;
+    let sectionsCreated = 0;
+    const publish = input.publish ?? false;
+
+    for (const item of bundle) {
+      const ch = item.chapter ? chapterByTitle.get(item.chapter.toLowerCase()) : undefined;
+      if (item.chapter && !ch) warnings.push(`Bài «${item.topic}»: không thấy chương «${item.chapter}» — để chưa phân chương.`);
+      const chapterFields = ch
+        ? { chapterId: ch.id, chapter: ch.title, chapterOrder: ch.order }
+        : { chapterId: null, chapter: null, chapterOrder: UNCHAPTERED_ORDER };
+
+      const lesson = await db.roadmapLesson.create({
+        data: {
+          courseId: course.id,
+          order: nextOrder++,
+          topic: item.topic,
+          topicZh: item.topicZh,
+          icon: item.icon ?? null,
+          description: item.description ?? null,
+          ...chapterFields,
+          xpReward: item.xpReward,
+        },
+        select: { id: true },
+      });
+      lessonsCreated++;
+
+      for (const skill of Object.keys(item.sections) as SkillKey[]) {
+        const raw = item.sections[skill];
+        if (raw === undefined) continue;
+        try {
+          const built = buildSectionContent(skill, raw, item.topic);
+          const valid = validateSectionContent(skill, built);
+          if (!valid.ok) {
+            warnings.push(`Bài «${item.topic}» · ${skill}: ${valid.error}`);
+            continue;
+          }
+          await db.roadmapSection.upsert({
+            where: { lessonId_skill: { lessonId: lesson.id, skill: skill as Skill } },
+            update: { content: valid.data as Prisma.InputJsonValue, order: SKILL_ORDER[skill], published: publish },
+            create: {
+              lessonId: lesson.id,
+              skill: skill as Skill,
+              order: SKILL_ORDER[skill],
+              content: valid.data as Prisma.InputJsonValue,
+              published: publish,
+            },
+          });
+          sectionsCreated++;
+        } catch (e) {
+          warnings.push(`Bài «${item.topic}» · ${skill}: ${e instanceof Error ? e.message : "lỗi nội dung"}`);
+        }
+      }
+    }
+
+    if (lessonsCreated === 0) return { ok: false, error: "Không tạo được bài nào — kiểm tra JSON." };
+
+    await logAudit({
+      actor,
+      action: "CREATE",
+      entity: "RoadmapLesson",
+      entityId: course.id,
+      summary: `Nhập hàng loạt ${lessonsCreated} bài (${sectionsCreated} phần) vào khóa`,
+      after: { lessonsCreated, sectionsCreated, warnings: warnings.slice(0, 20) },
+    });
+    revalidateRoadmap(course.hskLevel);
+    return { ok: true, lessonsCreated, sectionsCreated, warnings };
+  } catch (e) {
+    return { ok: false, error: e instanceof Error ? e.message : "Lỗi nhập hàng loạt." };
   }
 }
 

@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { FlowHeader } from "./flow-header";
 import { ExerciseRenderer } from "../exercises/exercise-renderer";
+import { AnswerExplanation } from "../answer-explanation";
 import type { Exercise } from "@/types";
 
 /** Outcome of a single drilled card — fuels the detailed per-type score the
@@ -175,12 +176,8 @@ export function FlashcardPhase({ flashcards, closeHref, label, onReviewTheory, o
                       </span>
                     </div>
                   )}
-                  {feedback === "wrong" && exercise?.explanation && (
-                    <div className="text-sm leading-relaxed text-muted-foreground">
-                      <span className="font-medium text-foreground">Giải thích: </span>
-                      {exercise.explanation}
-                    </div>
-                  )}
+                  {/* Giải thích hiện cho CẢ câu đúng lẫn sai — không chỉ mỗi "Chính xác". */}
+                  <AnswerExplanation explanation={exercise?.explanation} className="mt-1" />
                 </div>
               </div>
               <Button

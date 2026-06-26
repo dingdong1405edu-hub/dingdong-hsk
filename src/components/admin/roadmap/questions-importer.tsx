@@ -7,7 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import type { HSKLevel } from "@prisma/client";
-import type { RoadmapQuestion } from "@/lib/roadmap-content";
+import { authoringToRoadmapQuestions, type RoadmapQuestion } from "@/lib/roadmap-content";
 import {
   generateRoadmapReadingQuestionsAction,
   generateRoadmapListeningQuestionsAction,
@@ -18,52 +18,6 @@ const PLACEHOLDER = `[
   { "type": "TRUE_FALSE", "prompt": "作者喜欢运动。", "answer": true, "explanation": "..." },
   { "type": "FILL_BLANK", "prompt": "作者每天早上去 ___ 跑步。", "answer": "公园", "accepted": ["公园里"] }
 ]`;
-
-/** Chuyển JSON tác giả (MCQ/TRUE_FALSE/FILL_BLANK với `answer`) → RoadmapQuestion[]. */
-function authoringToRoadmapQuestions(jsonText: string): RoadmapQuestion[] {
-  const arr: unknown = JSON.parse(jsonText);
-  if (!Array.isArray(arr)) throw new Error("JSON phải là một mảng câu hỏi [].");
-  const out: RoadmapQuestion[] = [];
-  for (const raw of arr) {
-    if (!raw || typeof raw !== "object") continue;
-    const r = raw as Record<string, unknown>;
-    const type = String(r.type ?? "").toUpperCase();
-    const prompt = typeof r.prompt === "string" ? r.prompt.trim() : "";
-    if (!prompt) continue;
-    const base = {
-      prompt,
-      promptTranslation: typeof r.promptTranslation === "string" ? r.promptTranslation : undefined,
-      explanation: typeof r.explanation === "string" ? r.explanation : undefined,
-      supportingQuote: typeof r.supportingQuote === "string" ? r.supportingQuote : undefined,
-      quoteTranslation: typeof r.quoteTranslation === "string" ? r.quoteTranslation : undefined,
-    };
-    if (type === "MCQ") {
-      const opts = Array.isArray(r.options) ? r.options.map((o) => String(o)) : [];
-      if (opts.length < 2) continue;
-      const tr = Array.isArray(r.optionsTranslation) ? r.optionsTranslation.map((o) => String(o)) : [];
-      const answer = typeof r.answer === "number" ? r.answer : 0;
-      out.push({
-        ...base,
-        type: "MCQ",
-        options: opts.map((t, i) => ({ text: t, ...(tr[i] ? { translation: tr[i] } : {}) })),
-        correctAnswer: { index: Math.max(0, Math.min(opts.length - 1, answer)) },
-      });
-    } else if (type === "TRUE_FALSE") {
-      out.push({ ...base, type: "TRUE_FALSE", correctAnswer: { value: r.answer === true || r.answer === "true" } });
-    } else if (type === "FILL_BLANK" || type === "SHORT_ANSWER") {
-      out.push({
-        ...base,
-        type: "FILL_BLANK",
-        correctAnswer: {
-          text: typeof r.answer === "string" ? r.answer : "",
-          accepted: Array.isArray(r.accepted) ? r.accepted.map((a) => String(a)) : [],
-        },
-      });
-    }
-  }
-  if (out.length === 0) throw new Error("Không có câu hỏi hợp lệ trong JSON.");
-  return out;
-}
 
 export function RoadmapQuestionsImporter({
   skill,
@@ -103,7 +57,11 @@ export function RoadmapQuestionsImporter({
       return;
     }
     try {
-      const qs = authoringToRoadmapQuestions(json);
+      const qs = authoringToRoadmapQuestions(JSON.parse(json));
+      if (qs.length === 0) {
+        toast.error("Không có câu hỏi hợp lệ trong JSON.");
+        return;
+      }
       onImport(qs);
       toast.success(`Đã thêm ${qs.length} câu hỏi.`);
       setJson("");

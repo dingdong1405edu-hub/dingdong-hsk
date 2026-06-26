@@ -155,6 +155,9 @@ export function LessonDetailDialog({ lesson, levelLabel, levelSlug, theme, locke
                       published={published}
                       done={done}
                       onClick={() => handleSkill(meta.key, meta.label, published)}
+                      pdfHref={
+                        published && lesson ? `/roadmap-pdf/${lesson.id}/${meta.key.toLowerCase()}` : undefined
+                      }
                     />
                   );
                 })}

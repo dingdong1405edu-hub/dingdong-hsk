@@ -14,6 +14,7 @@ import { WordCard } from "./word-card";
 import { StrokeQuiz } from "./stroke-quiz";
 import { FlashcardDeck } from "./flashcard-deck";
 import { BaoBuddy } from "@/components/marketing/bao-buddy";
+import { PassStatus } from "@/components/learn/roadmap/pass-status";
 import type { VocabWordCard } from "@/types";
 
 interface Props {
@@ -37,6 +38,8 @@ interface Props {
   }) => Promise<{ ok: boolean; xpEarned?: number }>;
   /** Tắt lưu vị trí học (bản sao trong lộ trình không có VocabProgress thật). */
   disablePositionSave?: boolean;
+  /** Lộ trình: ngưỡng "qua môn" → hiện kết quả % + nhãn Đạt/Chưa đạt ở màn hoàn thành. */
+  passThreshold?: number;
 }
 
 type Phase = "learn" | "flashcards" | "done";
@@ -53,6 +56,7 @@ export function WordFlow({
   onReviewNow,
   onComplete,
   disablePositionSave,
+  passThreshold,
 }: Props) {
   const router = useRouter();
   const clampIdx = Math.min(Math.max(0, startIndex), Math.max(0, words.length - 1));
@@ -61,6 +65,7 @@ export function WordFlow({
   const [wordIndex, setWordIndex] = useState(clampIdx);
   const [step, setStep] = useState(clampStep); // 0 card · 1 trace · 2 recall
   const [xpEarned, setXpEarned] = useState<number | null>(null);
+  const [resultPct, setResultPct] = useState<number | null>(null);
   const [startTime] = useState(Date.now());
 
   const word = words[wordIndex];
@@ -126,6 +131,8 @@ export function WordFlow({
   async function finishLesson() {
     const durationSec = Math.round((Date.now() - startTime) / 1000);
     const total = Math.max(1, words.length);
+    // Luồng "Học từ" đi hết là hoàn thành → 100% (không có câu sai để trừ).
+    setResultPct(100);
     const res = onComplete
       ? await onComplete({ correct: total, total, durationSec })
       : await completeLessonAction({
@@ -174,6 +181,12 @@ export function WordFlow({
             <p className="text-sm text-muted-foreground">
               Bạn đã học {words.length} từ trong bài “{lesson.title || "Từ vựng"}”.
             </p>
+            {passThreshold != null && resultPct != null && (
+              <div className="flex flex-col items-center gap-1.5">
+                <div className="text-3xl font-extrabold text-primary">Kết quả: {resultPct}%</div>
+                <PassStatus score={resultPct} threshold={passThreshold} />
+              </div>
+            )}
             {xpEarned !== null && xpEarned > 0 && (
               <div className="font-semibold text-yellow-600 dark:text-yellow-400">+{xpEarned} XP</div>
             )}

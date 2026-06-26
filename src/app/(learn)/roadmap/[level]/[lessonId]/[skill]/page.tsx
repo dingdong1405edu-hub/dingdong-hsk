@@ -2,7 +2,7 @@ import { auth } from "@/lib/auth";
 import { db } from "@/lib/db";
 import { notFound, redirect } from "next/navigation";
 import Link from "next/link";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, FileDown } from "lucide-react";
 import { Skill } from "@prisma/client";
 import { slugToLevel, SKILL_META, type SkillKey } from "@/lib/roadmap";
 import { getEntitlements, isRoadmapLessonLocked } from "@/lib/entitlements";
@@ -58,6 +58,14 @@ export default async function RoadmapSectionPlayPage({ params }: Props) {
           <span className="text-sm text-muted-foreground">
             · {meta.label} · {lesson.topic}
           </span>
+          <Link
+            href={`/roadmap-pdf/${lessonId}/${skillKey.toLowerCase()}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="ml-auto inline-flex items-center gap-1.5 rounded-lg border border-border px-2.5 py-1.5 text-xs font-semibold text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+          >
+            <FileDown className="h-4 w-4" /> Tải PDF
+          </Link>
         </div>
       )}
       <RoadmapSectionPlayer
