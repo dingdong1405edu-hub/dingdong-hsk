@@ -7,7 +7,9 @@
 // free-typed exercises.
 import type {
   Exercise,
+  FormulaPart,
   GrammarLessonContent,
+  GrammarMistake,
   GrammarSection,
   GrammarTest,
   SituationalExample,
@@ -31,8 +33,40 @@ function arr<T>(v: unknown): T[] {
   return Array.isArray(v) ? (v as T[]) : [];
 }
 
+/** Coerce the optional formula breakdown — drops parts without a `part` label and
+ *  returns undefined for an empty/missing list so the UI can `if (breakdown)`. */
+function normalizeBreakdown(raw: unknown): FormulaPart[] | undefined {
+  if (!Array.isArray(raw)) return undefined;
+  const parts = raw
+    .map((item): FormulaPart | null => {
+      const p = (item && typeof item === "object" ? item : {}) as Record<string, unknown>;
+      const part = str(p.part).trim();
+      if (!part) return null;
+      return { part, pinyin: optStr(p.pinyin), role: optStr(p.role), meaning: str(p.meaning) };
+    })
+    .filter((p): p is FormulaPart => p !== null);
+  return parts.length ? parts : undefined;
+}
+
+/** Coerce the optional common-mistakes list — keeps a row if it has either side. */
+function normalizeMistakes(raw: unknown): GrammarMistake[] | undefined {
+  if (!Array.isArray(raw)) return undefined;
+  const list = raw
+    .map((item): GrammarMistake | null => {
+      const m = (item && typeof item === "object" ? item : {}) as Record<string, unknown>;
+      const wrong = str(m.wrong).trim();
+      const right = str(m.right).trim();
+      if (!wrong && !right) return null;
+      return { wrong, right, note: optStr(m.note) };
+    })
+    .filter((m): m is GrammarMistake => m !== null);
+  return list.length ? list : undefined;
+}
+
 /** Coerce one section to the type contract — crucially guaranteeing `examples`
- *  and `exercises` are always arrays so the UI can map over them safely. */
+ *  and `exercises` are always arrays so the UI can map over them safely, and
+ *  preserving the optional theory fields (breakdown/usage/mistakes) that the
+ *  viewer renders — these would otherwise be dropped here at play time. */
 function normalizeSection(raw: unknown): GrammarSection {
   const s = (raw && typeof raw === "object" ? raw : {}) as Record<string, unknown>;
   return {
@@ -40,7 +74,10 @@ function normalizeSection(raw: unknown): GrammarSection {
     title: str(s.title),
     titleZh: optStr(s.titleZh),
     structure: optStr(s.structure),
+    breakdown: normalizeBreakdown(s.breakdown),
     explanation: str(s.explanation),
+    usage: optStr(s.usage),
+    mistakes: normalizeMistakes(s.mistakes),
     imageUrl: optStr(s.imageUrl),
     examples: arr<SituationalExample>(s.examples),
     exercises: arr<Exercise>(s.exercises),

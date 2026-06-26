@@ -4,11 +4,13 @@ import { isIP } from "node:net";
 import { db } from "@/lib/db";
 import { revalidatePath } from "next/cache";
 import { z } from "zod";
-import { HSKLevel, Prisma, QuestionType, Role, SubscriptionType, WritingTaskType } from "@prisma/client";
+import { HSKLevel, MaterialCategory, Prisma, QuestionType, Role, SubscriptionType, WritingTaskType } from "@prisma/client";
 import { getPlan } from "@/lib/payment-plans";
 import { requireAdmin, requireAdminActor } from "@/lib/admin-guard";
 import { logAudit, entityLabel } from "@/lib/audit";
 import { parseGrammarContent } from "@/lib/grammar";
+import { parseMaterialContent } from "@/lib/materials";
+import { toPinyin } from "@/lib/pinyin";
 import {
   generateReadingQuestions,
   generateListeningQuestions,
@@ -2051,4 +2053,559 @@ export async function updateUnitAction(
   } catch (e) {
     return { ok: false, error: e instanceof Error ? e.message : "Lỗi cập nhật unit." };
   }
+}
+
+// ===================================================================
+//  NHẬP HÀNG LOẠT CẢ BÀI (whole-item bulk import) — đọc / nghe / nói /
+//  chủ đề nói / viết / tài liệu.
+//  Mỗi action nhận MỘT chuỗi JSON = MẢNG các mục ĐẦY ĐỦ (kèm câu hỏi lồng
+//  nhau nếu có) để admin tạo nhiều bài cùng lúc — "thần tốc". Mọi mục mới
+//  đều ở trạng thái Bản nháp (published:false) — admin xuất bản sau khi rà
+//  lại. Không cần nhập pinyin/thanh điệu — máy tự sinh khi hiển thị.
+//  Trả về { ok, created, totalQuestions? } | { ok:false, error }.
+// ===================================================================
+
+export type BulkImportResult =
+  | { ok: true; created: number; totalQuestions?: number }
+  | { ok: false; error: string };
+
+/** Ép giá trị đã qua zod (có thể chứa optional → undefined) thành Json an toàn cho Prisma. */
+const asJson = (v: unknown): Prisma.InputJsonValue => v as Prisma.InputJsonValue;
+
+/** Parse + kiểm tra đầu vào là MẢNG JSON không rỗng (thông báo lỗi tiếng Việt rõ ràng). */
+function parseJsonArray(jsonText: string): { ok: true; data: unknown[] } | { ok: false; error: string } {
+  let raw: unknown;
+  try {
+    raw = JSON.parse(jsonText);
+  } catch {
+    return { ok: false, error: "JSON không hợp lệ — kiểm tra lại dấu ngoặc/dấu phẩy." };
+  }
+  if (!Array.isArray(raw)) return { ok: false, error: "Cần một MẢNG JSON, ví dụ: [ { … }, { … } ]." };
+  if (raw.length === 0) return { ok: false, error: "Mảng JSON đang rỗng — chưa có mục nào." };
+  return { ok: true, data: raw };
+}
+
+/** Gói thông báo lỗi của zod thành câu tiếng Việt + vị trí (bài thứ mấy, field nào). */
+function zodWhere(issue: { path: (string | number)[]; message: string } | undefined): string {
+  if (!issue) return "JSON sai cấu trúc.";
+  const idx = typeof issue.path[0] === "number" ? `bài #${(issue.path[0] as number) + 1}` : "";
+  const field = issue.path.slice(1).join(".");
+  const at = [idx, field].filter(Boolean).join(" · ");
+  return `JSON sai cấu trúc${at ? ` (${at})` : ""} — ${issue.message}`;
+}
+
+type BulkQuestion = z.infer<typeof bulkQuestionSchema>;
+
+/** Dựng dữ liệu một câu hỏi (scalar) cho createMany — dùng chung cho bài đọc & bài nghe. */
+function questionScalarData(
+  q: BulkQuestion,
+  order: number,
+): Omit<Prisma.QuestionCreateManyInput, "readingId" | "listeningId" | "examPartId"> {
+  const base = {
+    prompt: q.prompt,
+    promptTranslation: q.promptTranslation || null,
+    explanation: q.explanation,
+    supportingQuote: q.supportingQuote,
+    quoteTranslation: q.quoteTranslation || null,
+    order,
+  };
+  if (q.type === "MCQ") {
+    return { ...base, type: QuestionType.MCQ, options: mcqOptions(q.options, q.optionsTranslation), correctAnswer: { index: q.answer } };
+  }
+  if (q.type === "TRUE_FALSE") {
+    return { ...base, type: QuestionType.TRUE_FALSE, options: Prisma.JsonNull, correctAnswer: { value: q.answer } };
+  }
+  return { ...base, type: QuestionType.FILL_BLANK, options: Prisma.JsonNull, correctAnswer: { text: q.answer, accepted: q.accepted ?? [] } };
+}
+
+/** Kiểm tra chỉ số đáp án MCQ nằm trong số lựa chọn (zod không bắt được liên-field này). */
+function checkMcqIndexes(questions: BulkQuestion[], where: string): string | null {
+  for (let i = 0; i < questions.length; i++) {
+    const q = questions[i];
+    if (q.type === "MCQ" && q.answer >= q.options.length) {
+      return `${where} câu ${i + 1} (MCQ): "answer" (${q.answer}) vượt quá số lựa chọn (${q.options.length}).`;
+    }
+  }
+  return null;
+}
+
+// ----- Đọc hiểu -----
+const bulkReadingTestSchema = z.object({
+  title: z.string().trim().min(1, "thiếu title (tiêu đề VI)"),
+  titleZh: z.string().trim().min(1, "thiếu titleZh (tiêu đề ZH)"),
+  hskLevel: z.nativeEnum(HSKLevel),
+  passage: z.string().trim().min(1, "thiếu passage (đoạn văn)"),
+  passagePinyin: z.string().trim().optional(),
+  timeLimit: z.coerce.number().int().min(30).default(600),
+  imageUrl: z.string().trim().optional(),
+  questions: z.array(bulkQuestionSchema).max(50, "tối đa 50 câu hỏi/bài").optional().default([]),
+});
+const bulkReadingTestsSchema = z.array(bulkReadingTestSchema).min(1).max(100, "Tối đa 100 bài mỗi lần.");
+
+export async function bulkImportReadingTestsAction(jsonText: string): Promise<BulkImportResult> {
+  const { actor } = await requireAdminActor();
+  const parsed = parseJsonArray(jsonText);
+  if (!parsed.ok) return parsed;
+  const result = bulkReadingTestsSchema.safeParse(parsed.data);
+  if (!result.success) return { ok: false, error: zodWhere(result.error.issues[0]) };
+  const tests = result.data;
+
+  for (let t = 0; t < tests.length; t++) {
+    const err = checkMcqIndexes(tests[t].questions, `Bài #${t + 1}:`);
+    if (err) return { ok: false, error: err };
+  }
+
+  // Thứ tự hiển thị: nối tiếp sau các bài hiện có trong cùng cấp, giữ đúng thứ tự dán.
+  const nextOrder = new Map<HSKLevel, number>();
+  for (const lv of new Set(tests.map((t) => t.hskLevel))) {
+    nextOrder.set(lv, (await db.readingTest.count({ where: { hskLevel: lv } })) + 1);
+  }
+
+  let totalQuestions = 0;
+  let firstId = "";
+  try {
+    await db.$transaction(
+      async (tx) => {
+        for (const t of tests) {
+          const order = nextOrder.get(t.hskLevel)!;
+          nextOrder.set(t.hskLevel, order + 1);
+          const created = await tx.readingTest.create({
+            data: {
+              title: t.title,
+              titleZh: t.titleZh,
+              hskLevel: t.hskLevel,
+              passage: t.passage,
+              passagePinyin: t.passagePinyin?.trim() ? t.passagePinyin : null,
+              imageUrl: t.imageUrl?.trim() ? t.imageUrl : null,
+              timeLimit: t.timeLimit,
+              order,
+              published: false,
+            },
+          });
+          if (!firstId) firstId = created.id;
+          if (t.questions.length) {
+            await tx.question.createMany({
+              data: t.questions.map((q, i) => ({ ...questionScalarData(q, i + 1), readingId: created.id })),
+            });
+            totalQuestions += t.questions.length;
+          }
+        }
+      },
+      { timeout: 120000, maxWait: 20000 },
+    );
+  } catch (e) {
+    console.error("bulkImportReadingTests error:", e);
+    return { ok: false, error: "Lỗi lưu vào cơ sở dữ liệu — chưa có bài nào được tạo." };
+  }
+
+  await logAudit({
+    actor,
+    action: "CREATE",
+    entity: "ReadingTest",
+    entityId: firstId || "bulk",
+    summary: `Nhập hàng loạt ${tests.length} ${entityLabel("ReadingTest")} (${totalQuestions} câu hỏi)`,
+    after: { count: tests.length, totalQuestions },
+  });
+  revalidatePath("/admin/reading");
+  return { ok: true, created: tests.length, totalQuestions };
+}
+
+// ----- Nghe hiểu -----
+const bulkListeningTestSchema = z.object({
+  title: z.string().trim().min(1, "thiếu title (tiêu đề)"),
+  hskLevel: z.nativeEnum(HSKLevel),
+  audioUrl: z.string().trim().optional(),
+  transcript: z.string().trim().optional(),
+  transcriptExplanation: z.string().trim().optional(),
+  timeLimit: z.coerce.number().int().min(30).default(300),
+  imageUrl: z.string().trim().optional(),
+  questions: z.array(bulkQuestionSchema).max(50, "tối đa 50 câu hỏi/bài").optional().default([]),
+});
+const bulkListeningTestsSchema = z.array(bulkListeningTestSchema).min(1).max(100, "Tối đa 100 bài mỗi lần.");
+
+export async function bulkImportListeningTestsAction(jsonText: string): Promise<BulkImportResult> {
+  const { actor } = await requireAdminActor();
+  const parsed = parseJsonArray(jsonText);
+  if (!parsed.ok) return parsed;
+  const result = bulkListeningTestsSchema.safeParse(parsed.data);
+  if (!result.success) return { ok: false, error: zodWhere(result.error.issues[0]) };
+  const tests = result.data;
+
+  for (let t = 0; t < tests.length; t++) {
+    const err = checkMcqIndexes(tests[t].questions, `Bài #${t + 1}:`);
+    if (err) return { ok: false, error: err };
+  }
+
+  const nextOrder = new Map<HSKLevel, number>();
+  for (const lv of new Set(tests.map((t) => t.hskLevel))) {
+    nextOrder.set(lv, (await db.listeningTest.count({ where: { hskLevel: lv } })) + 1);
+  }
+
+  let totalQuestions = 0;
+  let firstId = "";
+  try {
+    await db.$transaction(
+      async (tx) => {
+        for (const t of tests) {
+          const order = nextOrder.get(t.hskLevel)!;
+          nextOrder.set(t.hskLevel, order + 1);
+          const created = await tx.listeningTest.create({
+            data: {
+              title: t.title,
+              hskLevel: t.hskLevel,
+              audioUrl: t.audioUrl?.trim() ? t.audioUrl.trim() : "",
+              transcript: t.transcript?.trim() ? t.transcript : null,
+              transcriptExplanation: t.transcriptExplanation?.trim() ? t.transcriptExplanation : null,
+              imageUrl: t.imageUrl?.trim() ? t.imageUrl : null,
+              timeLimit: t.timeLimit,
+              order,
+              published: false,
+            },
+          });
+          if (!firstId) firstId = created.id;
+          if (t.questions.length) {
+            await tx.question.createMany({
+              data: t.questions.map((q, i) => ({ ...questionScalarData(q, i + 1), listeningId: created.id })),
+            });
+            totalQuestions += t.questions.length;
+          }
+        }
+      },
+      { timeout: 120000, maxWait: 20000 },
+    );
+  } catch (e) {
+    console.error("bulkImportListeningTests error:", e);
+    return { ok: false, error: "Lỗi lưu vào cơ sở dữ liệu — chưa có bài nào được tạo." };
+  }
+
+  await logAudit({
+    actor,
+    action: "CREATE",
+    entity: "ListeningTest",
+    entityId: firstId || "bulk",
+    summary: `Nhập hàng loạt ${tests.length} ${entityLabel("ListeningTest")} (${totalQuestions} câu hỏi)`,
+    after: { count: tests.length, totalQuestions },
+  });
+  revalidatePath("/admin/listening");
+  return { ok: true, created: tests.length, totalQuestions };
+}
+
+// ----- Luyện nói HSKK (SpeakingSet) -----
+const speakingLineSchema = z.object({
+  text: z.string().trim().min(1),
+  pinyin: z.string().trim().optional(),
+  vi: z.string().trim().optional(),
+});
+const speakingQuestionSchema = z.object({
+  question: z.string().trim().min(1),
+  pinyin: z.string().trim().optional(),
+  vi: z.string().trim().optional(),
+});
+const bulkSpeakingSetSchema = z.object({
+  title: z.string().trim().optional().default(""),
+  hskLevel: z.nativeEnum(HSKLevel),
+  imageUrl: z.string().trim().optional(),
+  part1Sentences: z.array(speakingLineSchema).optional().default([]),
+  // Khi có part2Passage thì BẮT BUỘC có text (speakingLineSchema yêu cầu text) —
+  // tránh lưu {} khiến trang luyện nói đọc passage.text = undefined. Bỏ qua → mặc định rỗng an toàn.
+  part2Passage: speakingLineSchema.default({ text: "" }),
+  part3Questions: z.array(speakingQuestionSchema).optional().default([]),
+});
+const bulkSpeakingSetsSchema = z.array(bulkSpeakingSetSchema).min(1).max(200, "Tối đa 200 bộ mỗi lần.");
+
+// Tự sinh pinyin từ Hán tự khi admin bỏ trống (đúng triết lý "máy tự sinh pinyin"
+// của app) — đồng thời tránh hiển thị "undefined" ở trang luyện nói.
+function fillLinePinyin(l: { text: string; pinyin?: string; vi?: string }) {
+  return {
+    text: l.text,
+    pinyin: l.pinyin?.trim() ? l.pinyin.trim() : l.text ? toPinyin(l.text) : "",
+    ...(l.vi ? { vi: l.vi } : {}),
+  };
+}
+function fillQuestionPinyin(q: { question: string; pinyin?: string; vi?: string }) {
+  return {
+    question: q.question,
+    pinyin: q.pinyin?.trim() ? q.pinyin.trim() : q.question ? toPinyin(q.question) : "",
+    ...(q.vi ? { vi: q.vi } : {}),
+  };
+}
+
+export async function bulkImportSpeakingSetsAction(jsonText: string): Promise<BulkImportResult> {
+  const { actor } = await requireAdminActor();
+  const parsed = parseJsonArray(jsonText);
+  if (!parsed.ok) return parsed;
+  const result = bulkSpeakingSetsSchema.safeParse(parsed.data);
+  if (!result.success) return { ok: false, error: zodWhere(result.error.issues[0]) };
+  const sets = result.data;
+
+  const nextOrder = new Map<HSKLevel, number>();
+  for (const lv of new Set(sets.map((s) => s.hskLevel))) {
+    nextOrder.set(lv, (await db.speakingSet.count({ where: { hskLevel: lv } })) + 1);
+  }
+
+  const creates = sets.map((s) => {
+    const order = nextOrder.get(s.hskLevel)!;
+    nextOrder.set(s.hskLevel, order + 1);
+    return db.speakingSet.create({
+      data: {
+        title: s.title || "",
+        hskLevel: s.hskLevel,
+        imageUrl: s.imageUrl?.trim() ? s.imageUrl : null,
+        part1Sentences: asJson(s.part1Sentences.map(fillLinePinyin)),
+        part2Passage: asJson(fillLinePinyin(s.part2Passage)),
+        part3Questions: asJson(s.part3Questions.map(fillQuestionPinyin)),
+        order,
+        published: false,
+      },
+    });
+  });
+
+  let created: { id: string }[];
+  try {
+    created = await db.$transaction(creates);
+  } catch (e) {
+    console.error("bulkImportSpeakingSets error:", e);
+    return { ok: false, error: "Lỗi lưu vào cơ sở dữ liệu — chưa có bộ nào được tạo." };
+  }
+
+  await logAudit({
+    actor,
+    action: "CREATE",
+    entity: "SpeakingSet",
+    entityId: created[0]?.id || "bulk",
+    summary: `Nhập hàng loạt ${created.length} ${entityLabel("SpeakingSet")}`,
+    after: { count: created.length },
+  });
+  revalidatePath("/admin/speaking");
+  return { ok: true, created: created.length };
+}
+
+// ----- Nói theo chủ đề (SpeakingTopic) -----
+const topicHintSchema = z.object({
+  text: z.string().trim().min(1),
+  pinyin: z.string().trim().optional(),
+  vi: z.string().trim().optional(),
+});
+const bulkSpeakingTopicSchema = z.object({
+  title: z.string().trim().optional().default(""),
+  hskLevel: z.nativeEnum(HSKLevel),
+  topic: z.string().trim().optional().default(""),
+  questionZh: z.string().trim().min(1, "thiếu questionZh (câu hỏi tiếng Trung)"),
+  questionPinyin: z.string().trim().optional(),
+  questionVi: z.string().trim().optional(),
+  outline: z.string().trim().optional(),
+  audioUrl: z.string().trim().optional(),
+  transcript: z.string().trim().optional(),
+  hints: z.array(topicHintSchema).optional().default([]),
+  sampleAnswer: z.string().trim().optional(),
+  sampleAnswerPinyin: z.string().trim().optional(),
+  minChars: z.coerce.number().int().min(0).optional().default(0),
+  prepSeconds: z.coerce.number().int().min(0).optional().default(0),
+  imageUrl: z.string().trim().optional(),
+});
+const bulkSpeakingTopicsSchema = z.array(bulkSpeakingTopicSchema).min(1).max(200, "Tối đa 200 chủ đề mỗi lần.");
+
+export async function bulkImportSpeakingTopicsAction(jsonText: string): Promise<BulkImportResult> {
+  const { actor } = await requireAdminActor();
+  const parsed = parseJsonArray(jsonText);
+  if (!parsed.ok) return parsed;
+  const result = bulkSpeakingTopicsSchema.safeParse(parsed.data);
+  if (!result.success) return { ok: false, error: zodWhere(result.error.issues[0]) };
+  const topics = result.data;
+
+  const nextOrder = new Map<HSKLevel, number>();
+  for (const lv of new Set(topics.map((t) => t.hskLevel))) {
+    nextOrder.set(lv, (await db.speakingTopic.count({ where: { hskLevel: lv } })) + 1);
+  }
+
+  const creates = topics.map((t) => {
+    const order = nextOrder.get(t.hskLevel)!;
+    nextOrder.set(t.hskLevel, order + 1);
+    return db.speakingTopic.create({
+      data: {
+        title: t.title || "",
+        hskLevel: t.hskLevel,
+        topic: t.topic || "",
+        questionZh: t.questionZh,
+        questionPinyin: t.questionPinyin || null,
+        questionVi: t.questionVi || null,
+        outline: t.outline || null,
+        audioUrl: t.audioUrl || null,
+        transcript: t.transcript || null,
+        hints: asJson(t.hints),
+        sampleAnswer: t.sampleAnswer || null,
+        sampleAnswerPinyin: t.sampleAnswerPinyin || null,
+        minChars: t.minChars,
+        prepSeconds: t.prepSeconds,
+        imageUrl: t.imageUrl?.trim() ? t.imageUrl : null,
+        order,
+        published: false,
+      },
+    });
+  });
+
+  let created: { id: string }[];
+  try {
+    created = await db.$transaction(creates);
+  } catch (e) {
+    console.error("bulkImportSpeakingTopics error:", e);
+    return { ok: false, error: "Lỗi lưu vào cơ sở dữ liệu — chưa có chủ đề nào được tạo." };
+  }
+
+  await logAudit({
+    actor,
+    action: "CREATE",
+    entity: "SpeakingTopic",
+    entityId: created[0]?.id || "bulk",
+    summary: `Nhập hàng loạt ${created.length} ${entityLabel("SpeakingTopic")}`,
+    after: { count: created.length },
+  });
+  revalidatePath("/admin/speaking/topics");
+  revalidatePath("/speaking");
+  return { ok: true, created: created.length };
+}
+
+// ----- Viết luận (WritingTask) -----
+const bulkWritingTaskSchema = z.object({
+  taskType: z.nativeEnum(WritingTaskType),
+  prompt: z.string().trim().min(1, "thiếu prompt (đề bài VI)"),
+  promptZh: z.string().trim().optional(),
+  outline: z.string().trim().optional(),
+  minChars: z.coerce.number().int().min(1).optional().default(50),
+  timeLimit: z.coerce.number().int().min(30).optional().default(900),
+  hskLevel: z.nativeEnum(HSKLevel),
+  imageUrl: z.string().trim().optional(),
+});
+const bulkWritingTasksSchema = z.array(bulkWritingTaskSchema).min(1).max(200, "Tối đa 200 bài mỗi lần.");
+
+export async function bulkImportWritingTasksAction(jsonText: string): Promise<BulkImportResult> {
+  const { actor } = await requireAdminActor();
+  const parsed = parseJsonArray(jsonText);
+  if (!parsed.ok) return parsed;
+  const result = bulkWritingTasksSchema.safeParse(parsed.data);
+  if (!result.success) return { ok: false, error: zodWhere(result.error.issues[0]) };
+  const tasks = result.data;
+
+  const nextOrder = new Map<HSKLevel, number>();
+  for (const lv of new Set(tasks.map((t) => t.hskLevel))) {
+    nextOrder.set(lv, (await db.writingTask.count({ where: { hskLevel: lv } })) + 1);
+  }
+
+  const creates = tasks.map((t) => {
+    const order = nextOrder.get(t.hskLevel)!;
+    nextOrder.set(t.hskLevel, order + 1);
+    return db.writingTask.create({
+      data: {
+        taskType: t.taskType,
+        prompt: t.prompt,
+        promptZh: t.promptZh || null,
+        outline: t.outline?.trim() ? t.outline.trim() : null,
+        minChars: t.minChars,
+        timeLimit: t.timeLimit,
+        hskLevel: t.hskLevel,
+        imageUrl: t.imageUrl?.trim() ? t.imageUrl : null,
+        order,
+        published: false,
+      },
+    });
+  });
+
+  let created: { id: string }[];
+  try {
+    created = await db.$transaction(creates);
+  } catch (e) {
+    console.error("bulkImportWritingTasks error:", e);
+    return { ok: false, error: "Lỗi lưu vào cơ sở dữ liệu — chưa có bài nào được tạo." };
+  }
+
+  await logAudit({
+    actor,
+    action: "CREATE",
+    entity: "WritingTask",
+    entityId: created[0]?.id || "bulk",
+    summary: `Nhập hàng loạt ${created.length} ${entityLabel("WritingTask")}`,
+    after: { count: created.length },
+  });
+  revalidatePath("/admin/writing");
+  return { ok: true, created: created.length };
+}
+
+// ----- Tài liệu (Material) -----
+// `content` chấp nhận CẢ HAI: chuỗi markup (như form thường — # tiêu đề, - danh
+// sách, > ghi chú, 汉字 | pinyin | nghĩa) HOẶC mảng block đã cấu trúc sẵn.
+// `tags` chấp nhận mảng chuỗi HOẶC chuỗi ngăn bằng dấu phẩy.
+const materialBlockSchema = z.object({ type: z.string().trim().min(1) }).passthrough();
+const bulkMaterialSchema = z.object({
+  title: z.string().trim().min(1, "thiếu title (tiêu đề VI)"),
+  titleZh: z.string().trim().optional(),
+  category: z.nativeEnum(MaterialCategory),
+  hskLevel: z.nativeEnum(HSKLevel),
+  summary: z.string().trim().min(1, "thiếu summary (tóm tắt)"),
+  imageUrl: z.string().trim().optional(),
+  content: z.union([z.string(), z.array(materialBlockSchema).min(1)]),
+  tags: z.union([z.string(), z.array(z.string())]).optional(),
+  readMinutes: z.coerce.number().int().min(1).optional().default(5),
+});
+const bulkMaterialsSchema = z.array(bulkMaterialSchema).min(1).max(200, "Tối đa 200 tài liệu mỗi lần.");
+
+export async function bulkImportMaterialsAction(jsonText: string): Promise<BulkImportResult> {
+  const { actor } = await requireAdminActor();
+  const parsed = parseJsonArray(jsonText);
+  if (!parsed.ok) return parsed;
+  const result = bulkMaterialsSchema.safeParse(parsed.data);
+  if (!result.success) return { ok: false, error: zodWhere(result.error.issues[0]) };
+  const materials = result.data;
+
+  // Thứ tự hiển thị tính theo (phân loại + cấp HSK) như createMaterialAction.
+  const nextOrder = new Map<string, number>();
+  for (const m of materials) {
+    const key = `${m.category}|${m.hskLevel}`;
+    if (!nextOrder.has(key)) {
+      nextOrder.set(key, (await db.material.count({ where: { category: m.category, hskLevel: m.hskLevel } })) + 1);
+    }
+  }
+
+  const creates = materials.map((m) => {
+    const key = `${m.category}|${m.hskLevel}`;
+    const order = nextOrder.get(key)!;
+    nextOrder.set(key, order + 1);
+    const blocks = typeof m.content === "string" ? parseMaterialContent(m.content) : m.content;
+    const tags = Array.isArray(m.tags)
+      ? m.tags.map((t) => t.trim()).filter(Boolean)
+      : (m.tags ?? "").split(",").map((t) => t.trim()).filter(Boolean);
+    return db.material.create({
+      data: {
+        title: m.title,
+        titleZh: m.titleZh || null,
+        category: m.category,
+        hskLevel: m.hskLevel,
+        summary: m.summary,
+        imageUrl: m.imageUrl?.trim() ? m.imageUrl : null,
+        content: asJson(blocks),
+        tags: asJson(tags),
+        readMinutes: m.readMinutes,
+        order,
+      },
+    });
+  });
+
+  let created: { id: string }[];
+  try {
+    created = await db.$transaction(creates);
+  } catch (e) {
+    console.error("bulkImportMaterials error:", e);
+    return { ok: false, error: "Lỗi lưu vào cơ sở dữ liệu — chưa có tài liệu nào được tạo." };
+  }
+
+  await logAudit({
+    actor,
+    action: "CREATE",
+    entity: "Material",
+    entityId: created[0]?.id || "bulk",
+    summary: `Nhập hàng loạt ${created.length} ${entityLabel("Material")}`,
+    after: { count: created.length },
+  });
+  revalidatePath("/admin/materials");
+  revalidatePath("/materials");
+  return { ok: true, created: created.length };
 }

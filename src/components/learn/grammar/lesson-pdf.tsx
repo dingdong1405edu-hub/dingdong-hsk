@@ -191,7 +191,15 @@ function ScopeButton({
 }
 
 function TheoryBlock({ section, index }: { section: TheorySection; index: number }) {
-  const hasBody = section.structure || section.explanation || section.examples.length;
+  const breakdown = section.breakdown ?? [];
+  const mistakes = section.mistakes ?? [];
+  const hasBody =
+    section.structure ||
+    section.explanation ||
+    section.examples.length ||
+    breakdown.length ||
+    section.usage ||
+    mistakes.length;
   if (!hasBody) return null;
   return (
     <div className="break-inside-avoid space-y-2">
@@ -204,8 +212,40 @@ function TheoryBlock({ section, index }: { section: TheorySection; index: number
           {section.structure}
         </div>
       )}
+      {breakdown.length > 0 && (
+        <table className="w-full border-collapse text-[13px]">
+          <tbody>
+            {breakdown.map((p, i) => (
+              <tr key={i} className="border-b border-zinc-100 align-top">
+                <td className="whitespace-nowrap py-1 pr-2 font-chinese font-bold text-zinc-900">{p.part}</td>
+                <td className="whitespace-nowrap py-1 pr-2 font-serif text-violet-600">{p.pinyin}</td>
+                <td className="whitespace-nowrap py-1 pr-2 text-zinc-500">{p.role}</td>
+                <td className="py-1 text-zinc-700">{p.meaning}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      )}
+      {section.usage && (
+        <p className="text-zinc-700">
+          <span className="font-semibold text-sky-700">Khi nào dùng: </span>
+          {section.usage}
+        </p>
+      )}
       {section.explanation && (
         <p className="whitespace-pre-line text-zinc-700">{section.explanation}</p>
+      )}
+      {mistakes.length > 0 && (
+        <ul className="space-y-1">
+          {mistakes.map((m, i) => (
+            <li key={i} className="text-[13px] text-zinc-700">
+              <span className="font-chinese text-red-600 line-through">{m.wrong}</span>
+              <span className="mx-1">→</span>
+              <span className="font-chinese font-semibold text-green-700">{m.right}</span>
+              {m.note && <span className="text-zinc-500"> — {m.note}</span>}
+            </li>
+          ))}
+        </ul>
       )}
       {section.examples.length > 0 && (
         <ul className="space-y-1.5">

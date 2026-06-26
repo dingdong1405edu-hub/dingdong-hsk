@@ -20,7 +20,16 @@
                 "title": "Câu khẳng định với 是",
                 "titleZh": "“是”字句",
                 "structure": "A + 是 + B",
+                "breakdown": [
+                  { "part": "A", "role": "Chủ ngữ", "meaning": "Người hoặc vật được nói đến, đứng đầu câu (我 tôi, 他 anh ấy, 这 đây…)." },
+                  { "part": "是", "pinyin": "shì", "role": "Động từ 'là'", "meaning": "Nối A với B để khẳng định 'A chính là B'. Không đổi theo ngôi hay thì như tiếng Anh." },
+                  { "part": "B", "role": "Danh từ", "meaning": "Danh tính/loại của A — cái mà A chính là (学生 học sinh, 老师 giáo viên…)." }
+                ],
                 "explanation": "是 (shì) nghĩa là 'là', dùng để nối chủ ngữ (A) với một danh từ (B) nhằm khẳng định A chính là B. Đây là động từ liên kết quan trọng nhất trong tiếng Trung.",
+                "usage": "Dùng khi giới thiệu hoặc khẳng định danh tính, nghề nghiệp, quốc tịch, quan hệ — kiểu câu 'A là B'.",
+                "mistakes": [
+                  { "wrong": "我是高兴。", "right": "我很高兴。", "note": "是 chỉ nối với danh từ; với tính từ (高兴 vui) phải dùng 很." }
+                ],
                 "examples": [
                   {
                     "situation": "Khi giới thiệu bản thân",
@@ -65,8 +74,17 @@
               {
                 "id": "u1l1-note",
                 "title": "Lưu ý: 是 đi với danh từ",
-                "structure": "A + 是 + danh từ  (KHÔNG dùng với tính từ)",
-                "explanation": "是 chỉ nối với danh từ, không dùng trước tính từ. Để nói 'rất vui' ta dùng 很 chứ không dùng 是. Sai phổ biến: ❌ 我是高兴 → ✔ 我很高兴.",
+                "structure": "A + 是 + danh từ",
+                "breakdown": [
+                  { "part": "A", "role": "Chủ ngữ", "meaning": "Người hoặc vật được nói đến." },
+                  { "part": "是", "pinyin": "shì", "role": "Động từ 'là'", "meaning": "Chỉ nối A với một DANH TỪ ở phía sau." },
+                  { "part": "danh từ", "role": "Vị ngữ danh từ", "meaning": "Phải là danh từ (người/vật), KHÔNG được là tính từ." }
+                ],
+                "explanation": "是 chỉ nối với danh từ, không dùng trước tính từ. Để nói 'rất vui' ta dùng 很 chứ không dùng 是.",
+                "usage": "Sau chủ ngữ là DANH TỪ (nghề, vật, danh tính) → dùng 是. Nếu sau đó là TÍNH TỪ (vui, đẹp, cao…) → KHÔNG dùng 是 mà dùng 很.",
+                "mistakes": [
+                  { "wrong": "我是高兴。", "right": "我很高兴。", "note": "高兴 (vui) là tính từ → dùng 很, không dùng 是." }
+                ],
                 "examples": [
                   {
                     "situation": "Phân biệt với tính từ",
@@ -143,7 +161,17 @@
                 "title": "Diễn tả sự sở hữu với 有",
                 "titleZh": "“有”字句",
                 "structure": "A + 有 + (số lượng) + B",
+                "breakdown": [
+                  { "part": "A", "role": "Chủ ngữ", "meaning": "Người sở hữu (我 tôi, 他 anh ấy…)." },
+                  { "part": "有", "pinyin": "yǒu", "role": "Động từ 'có'", "meaning": "Diễn tả A sở hữu/có B. Phủ định bằng 没 (没有), KHÔNG bao giờ dùng 不有." },
+                  { "part": "số lượng", "role": "Tùy chọn", "meaning": "Số đếm + lượng từ (一个 một cái, 三本 ba quyển…). Bỏ được nếu không cần nói rõ số." },
+                  { "part": "B", "role": "Tân ngữ", "meaning": "Vật/người được sở hữu (朋友 bạn, 书 sách…)." }
+                ],
                 "explanation": "有 (yǒu) nghĩa là 'có', diễn tả việc A sở hữu B.",
+                "usage": "Dùng khi nói ai đó 'có' cái gì — sở hữu đồ vật, người thân, hoặc một số lượng nào đó.",
+                "mistakes": [
+                  { "wrong": "我不有钱。", "right": "我没有钱。", "note": "Động từ 有 chỉ phủ định bằng 没, không dùng 不." }
+                ],
                 "examples": [
                   {
                     "situation": "Khi nói về bạn bè",
@@ -174,7 +202,17 @@
                 "id": "u1l2-liangci",
                 "title": "Lượng từ đi cùng 有",
                 "structure": "有 + số + lượng từ (个/本/只) + danh từ",
+                "breakdown": [
+                  { "part": "有", "pinyin": "yǒu", "role": "Động từ 'có'", "meaning": "Mở đầu cụm chỉ số lượng sở hữu." },
+                  { "part": "số", "role": "Số đếm", "meaning": "一 (1), 三 (3)… — số lượng của vật." },
+                  { "part": "lượng từ", "role": "Bắt buộc", "meaning": "Từ phân loại đứng GIỮA số và danh từ: 个 (cái/người chung), 本 (quyển sách), 只 (con vật nhỏ)." },
+                  { "part": "danh từ", "role": "Vật được đếm", "meaning": "Đối tượng cần đếm (书 sách, 猫 mèo…)." }
+                ],
                 "explanation": "Sau 有 và số đếm thường cần một lượng từ trước danh từ: 个 (cái/người chung), 本 (quyển sách), 只 (con vật nhỏ).",
+                "usage": "Trong tiếng Trung, hễ đếm danh từ là phải chèn lượng từ giữa số và danh từ — khác tiếng Việt có thể nói thẳng 'ba sách'.",
+                "mistakes": [
+                  { "wrong": "我有三书。", "right": "我有三本书。", "note": "Phải có lượng từ 本 giữa số 三 và danh từ 书." }
+                ],
                 "examples": [
                   {
                     "situation": "Khi đếm sách",
@@ -244,7 +282,16 @@
                 "id": "u1l3-bu",
                 "title": "Phủ định với 不",
                 "structure": "Chủ ngữ + 不 + động từ / 是",
+                "breakdown": [
+                  { "part": "Chủ ngữ", "role": "Người/vật", "meaning": "Đối tượng thực hiện (hoặc không thực hiện) hành động." },
+                  { "part": "不", "pinyin": "bù", "role": "Phó từ phủ định", "meaning": "Đứng NGAY TRƯỚC động từ/是 để phủ định. Đọc biến điệu thành 'bú' khi trước thanh 4 (不是 bú shì)." },
+                  { "part": "động từ / 是", "role": "Bị phủ định", "meaning": "Động từ thường (去 đi, 喜欢 thích…) hoặc 是. Dùng cho hiện tại, tương lai, thói quen." }
+                ],
                 "explanation": "不 (bù) đặt trước động từ thường và 是 để phủ định. Dùng cho hành động ở hiện tại, tương lai hoặc thói quen.",
+                "usage": "Dùng 不 để phủ định mọi động từ thường và 是 (我不是… / 他不去…). Riêng động từ 有 thì KHÔNG dùng 不.",
+                "mistakes": [
+                  { "wrong": "我不有钱。", "right": "我没有钱。", "note": "Động từ 有 phải phủ định bằng 没, không phải 不." }
+                ],
                 "examples": [
                   {
                     "situation": "Phủ định 是",
@@ -283,7 +330,16 @@
                 "id": "u1l3-mei",
                 "title": "Phủ định với 没",
                 "structure": "Chủ ngữ + 没 + 有",
+                "breakdown": [
+                  { "part": "Chủ ngữ", "role": "Người/vật", "meaning": "Đối tượng không sở hữu cái gì." },
+                  { "part": "没", "pinyin": "méi", "role": "Phó từ phủ định", "meaning": "Dùng RIÊNG để phủ định 有. Ghép thành 没有 = 'không có'." },
+                  { "part": "有", "pinyin": "yǒu", "role": "Động từ 'có'", "meaning": "Động từ bị phủ định: 没 + 有 = 没有 (không có)." }
+                ],
                 "explanation": "Riêng động từ 有 (có) PHẢI phủ định bằng 没 (méi), tuyệt đối không dùng 不有. 没有 nghĩa là 'không có'.",
+                "usage": "Khi muốn nói 'không có', luôn dùng 没有. Đây là ngoại lệ: chỉ mỗi 有 dùng 没, các động từ khác dùng 不.",
+                "mistakes": [
+                  { "wrong": "我不有手机。", "right": "我没有手机。", "note": "不有 là sai tuyệt đối — 有 chỉ đi với 没." }
+                ],
                 "examples": [
                   {
                     "situation": "Phủ định sở hữu",
@@ -372,7 +428,15 @@
                 "title": "Câu hỏi có/không với 吗",
                 "titleZh": "“吗”字疑问句",
                 "structure": "Câu trần thuật + 吗 ？",
+                "breakdown": [
+                  { "part": "Câu trần thuật", "role": "Câu gốc", "meaning": "Một câu kể bình thường, giữ NGUYÊN trật tự (你是中国人 / 你有书…)." },
+                  { "part": "吗", "pinyin": "ma", "role": "Trợ từ nghi vấn", "meaning": "Đặt ở CUỐI câu (trước dấu ？) để biến câu kể thành câu hỏi có/không." }
+                ],
                 "explanation": "Thêm trợ từ 吗 (ma) vào cuối một câu trần thuật để biến nó thành câu hỏi có/không. Cấu trúc câu giữ nguyên, chỉ thêm 吗 ở cuối.",
+                "usage": "Cách dễ nhất để đặt câu hỏi: lấy câu kể có sẵn rồi thêm 吗 ở cuối. Không cần đảo từ như tiếng Anh.",
+                "mistakes": [
+                  { "wrong": "你吗是中国人？", "right": "你是中国人吗？", "note": "吗 luôn nằm CUỐI câu, không chen vào giữa." }
+                ],
                 "examples": [
                   {
                     "situation": "Hỏi về quốc tịch",
@@ -463,7 +527,15 @@
                 "title": "Hỏi 'cái gì' với 什么",
                 "titleZh": "疑问代词“什么”",
                 "structure": "... + 什么 + (danh từ) ？",
+                "breakdown": [
+                  { "part": "什么", "pinyin": "shénme", "role": "Đại từ nghi vấn", "meaning": "Nghĩa 'cái gì / gì'. Đặt ĐÚNG vị trí của thông tin cần hỏi, KHÔNG đảo lên đầu câu." },
+                  { "part": "danh từ", "role": "Tùy chọn", "meaning": "Có thể đứng ngay sau 什么 để hỏi 'gì' về vật đó (什么名字 = tên gì, 什么书 = sách gì)." }
+                ],
                 "explanation": "什么 (shénme) nghĩa là 'cái gì / gì'. Khác với tiếng Việt, trật tự từ trong câu hỏi giữ NGUYÊN như câu trần thuật — 什么 đứng đúng ở vị trí của thông tin cần hỏi, không đảo lên đầu câu.",
+                "usage": "Dùng 什么 để hỏi về SỰ VẬT. Đặt nó ngay tại chỗ mà câu trả lời sẽ điền vào (这是什么 → 这是书).",
+                "mistakes": [
+                  { "wrong": "什么这是？", "right": "这是什么？", "note": "Không đảo 什么 lên đầu — giữ trật tự như câu kể 这是 + 什么." }
+                ],
                 "examples": [
                   {
                     "situation": "Hỏi về một vật",
@@ -555,7 +627,16 @@
                 "id": "u2l3-hen",
                 "title": "Phó từ mức độ 很",
                 "structure": "Chủ ngữ + 很 + tính từ",
+                "breakdown": [
+                  { "part": "Chủ ngữ", "role": "Người/vật", "meaning": "Đối tượng được miêu tả (我 tôi, 天气 thời tiết…)." },
+                  { "part": "很", "pinyin": "hěn", "role": "Phó từ mức độ", "meaning": "Nghĩa 'rất', đứng TRƯỚC tính từ. Thường gần như bắt buộc để câu nghe trọn vẹn, dù không nhấn mạnh nhiều." },
+                  { "part": "tính từ", "role": "Vị ngữ", "meaning": "Từ miêu tả tính chất (高兴 vui, 热 nóng…). KHÔNG dùng 是 trước tính từ." }
+                ],
                 "explanation": "很 (hěn) nghĩa là 'rất', đặt TRƯỚC tính từ. Trong tiếng Trung, tính từ làm vị ngữ thường cần một phó từ mức độ như 很 đứng trước, không cần dùng 是.",
+                "usage": "Khi miêu tả ai đó/cái gì 'thế nào' (vui, đẹp, nóng…), dùng 很 + tính từ thay cho 是.",
+                "mistakes": [
+                  { "wrong": "我是高兴。", "right": "我很高兴。", "note": "Tính từ 高兴 không đi với 是 — phải dùng 很." }
+                ],
                 "examples": [
                   {
                     "situation": "Diễn tả cảm xúc",
@@ -596,7 +677,16 @@
                 "id": "u2l3-ye",
                 "title": "Phó từ 也 (cũng)",
                 "structure": "Chủ ngữ + 也 + động từ / 很 + tính từ",
+                "breakdown": [
+                  { "part": "Chủ ngữ", "role": "Người/vật", "meaning": "Đối tượng 'cũng' giống như điều vừa nhắc tới." },
+                  { "part": "也", "pinyin": "yě", "role": "Phó từ 'cũng'", "meaning": "Đứng SAU chủ ngữ và TRƯỚC động từ (hoặc trước 很). Không bao giờ đặt cuối câu." },
+                  { "part": "động từ / tính từ", "role": "Vị ngữ", "meaning": "Phần lặp lại ý: động từ (也是, 也喜欢) hoặc 很 + tính từ (也很高兴). Khi là tính từ, 也 đứng trước 很." }
+                ],
                 "explanation": "也 (yě) nghĩa là 'cũng', luôn đặt TRƯỚC động từ hoặc phó từ 很, và đứng SAU chủ ngữ. Không đặt 也 ở cuối câu.",
+                "usage": "Dùng 也 khi muốn nói ai đó 'cũng' như người/điều vừa nhắc tới. Thứ tự cố định: chủ ngữ → 也 → (很) → động từ/tính từ.",
+                "mistakes": [
+                  { "wrong": "我高兴也。", "right": "我也很高兴。", "note": "也 đứng sau chủ ngữ và trước 很 — không đặt cuối câu." }
+                ],
                 "examples": [
                   {
                     "situation": "Bổ sung thông tin giống nhau",

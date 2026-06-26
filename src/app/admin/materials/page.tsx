@@ -10,9 +10,24 @@ import { Badge } from "@/components/ui/badge";
 import { ImageUpload } from "@/components/admin/image-upload";
 import { hskLevelLabel } from "@/lib/utils";
 import { MATERIAL_CATEGORIES, categoryMeta, parseMaterialContent } from "@/lib/materials";
+import { bulkImportMaterialsAction } from "@/server/actions/admin";
+import { BulkItemImport } from "@/components/admin/bulk-item-import";
 import { HSKLevel, MaterialCategory, Prisma } from "@prisma/client";
 import { revalidatePath } from "next/cache";
 import { Plus, Trash2, Clock, FileText } from "lucide-react";
+
+const MATERIAL_SAMPLE = `[
+  {
+    "title": "Cách dùng 了",
+    "titleZh": "了的用法",
+    "category": "GRAMMAR",
+    "hskLevel": "HSK2",
+    "summary": "Tổng quan về trợ từ 了 trong tiếng Trung.",
+    "readMinutes": 5,
+    "tags": ["ngữ pháp", "了"],
+    "content": "# Giới thiệu\\n了 là một trợ từ quan trọng.\\n- Dùng sau động từ chỉ hành động hoàn thành\\n- Dùng cuối câu chỉ sự thay đổi\\n> Lưu ý: 了 không phải lúc nào cũng là quá khứ.\\n我吃了饭 | wǒ chī le fàn | Tôi đã ăn cơm"
+  }
+]`;
 
 async function createMaterialAction(fd: FormData): Promise<void> {
   "use server";
@@ -75,11 +90,22 @@ export default async function AdminMaterialsPage() {
 
   return (
     <div className="space-y-6">
-      <div>
-        <h1 className="text-2xl font-bold">Tài liệu học tập</h1>
-        <p className="mt-1 text-sm text-muted-foreground">
-          Quản lý tài liệu, ghi chú ngữ pháp, mẹo thi và bài đọc văn hóa cho người học.
-        </p>
+      <div className="flex flex-wrap items-start justify-between gap-3">
+        <div>
+          <h1 className="text-2xl font-bold">Tài liệu học tập</h1>
+          <p className="mt-1 text-sm text-muted-foreground">
+            Quản lý tài liệu, ghi chú ngữ pháp, mẹo thi và bài đọc văn hóa cho người học.
+          </p>
+        </div>
+        <BulkItemImport
+          action={bulkImportMaterialsAction}
+          title="Nhập hàng loạt tài liệu"
+          unitNoun="tài liệu"
+          draft={false}
+          sampleJson={MATERIAL_SAMPLE}
+          sampleFileName="mau-tai-lieu.json"
+          description="Mỗi mục = 1 tài liệu: title · category (GRAMMAR | VOCABULARY | HANZI | PRONUNCIATION | EXAM_TIPS | CULTURE | CONVERSATION) · hskLevel · summary · content (chuỗi markup '# - > 汉字|pinyin|nghĩa' hoặc mảng block); tùy chọn titleZh · tags · readMinutes."
+        />
       </div>
 
       {/* Create form */}

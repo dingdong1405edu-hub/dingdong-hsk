@@ -10,8 +10,29 @@ import { ImageUpload } from "@/components/admin/image-upload";
 import { PublishToggle } from "@/components/admin/publish-toggle";
 import { ReorderList } from "@/components/admin/reorder-list";
 import { hskLevelLabel } from "@/lib/utils";
-import { deleteSpeakingAction, updateSpeakingAction } from "@/server/actions/admin";
+import {
+  deleteSpeakingAction,
+  updateSpeakingAction,
+  bulkImportSpeakingSetsAction,
+} from "@/server/actions/admin";
+import { BulkItemImport } from "@/components/admin/bulk-item-import";
 import { Trash2, Plus, MessagesSquare } from "lucide-react";
+
+const SPEAKING_SET_SAMPLE = `[
+  {
+    "title": "HSKK sơ cấp - Bài 1",
+    "hskLevel": "HSK1",
+    "part1Sentences": [
+      { "text": "你好", "pinyin": "Nǐ hǎo" },
+      { "text": "谢谢你", "pinyin": "Xièxie nǐ" }
+    ],
+    "part2Passage": { "text": "我叫小明，今年十岁，是学生。", "pinyin": "Wǒ jiào Xiǎomíng, jīnnián shí suì, shì xuésheng." },
+    "part3Questions": [
+      { "question": "你叫什么名字？", "pinyin": "Nǐ jiào shénme míngzi?" },
+      { "question": "你今年多大？", "pinyin": "Nǐ jīnnián duō dà?" }
+    ]
+  }
+]`;
 import Link from "next/link";
 import { db as prisma } from "@/lib/db";
 import { HSKLevel } from "@prisma/client";
@@ -64,13 +85,23 @@ export default async function AdminSpeakingPage() {
 
   return (
     <div className="space-y-6">
-      <div className="flex items-center justify-between gap-3">
+      <div className="flex flex-wrap items-center justify-between gap-3">
         <h1 className="text-2xl font-bold">Bộ luyện nói HSKK</h1>
-        <Link href="/admin/speaking/topics">
-          <Button variant="outline" size="sm">
-            <MessagesSquare className="mr-1 h-4 w-4" /> Nói theo chủ đề
-          </Button>
-        </Link>
+        <div className="flex flex-wrap items-center gap-2">
+          <BulkItemImport
+            action={bulkImportSpeakingSetsAction}
+            title="Nhập hàng loạt bộ nói HSKK"
+            unitNoun="bộ nói"
+            sampleJson={SPEAKING_SET_SAMPLE}
+            sampleFileName="mau-bo-noi.json"
+            description="Mỗi mục = 1 bộ nói: title (tùy chọn) · hskLevel · part1Sentences[] (lặp câu) · part2Passage{} (đọc đoạn) · part3Questions[] (trả lời). Mỗi câu/đoạn có { text/question, pinyin? } — bỏ trống pinyin máy sẽ tự sinh."
+          />
+          <Link href="/admin/speaking/topics">
+            <Button variant="outline" size="sm">
+              <MessagesSquare className="mr-1 h-4 w-4" /> Nói theo chủ đề
+            </Button>
+          </Link>
+        </div>
       </div>
       <Card>
         <CardHeader><CardTitle className="text-base"><Plus className="h-4 w-4 inline mr-2" />Thêm bộ nói</CardTitle></CardHeader>

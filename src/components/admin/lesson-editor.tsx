@@ -41,7 +41,16 @@ const GRAMMAR_TEMPLATE = `{
       "title": "Câu khẳng định với 是 (shì)",
       "titleZh": "“是”字句",
       "structure": "A + 是 + B",
+      "breakdown": [
+        { "part": "A", "role": "Chủ ngữ", "meaning": "Người hoặc vật được nói đến (我, 他, 这…)." },
+        { "part": "是", "pinyin": "shì", "role": "Động từ 'là'", "meaning": "Nối A với B, khẳng định A chính là B." },
+        { "part": "B", "role": "Danh từ", "meaning": "Cái mà A chính là (老师, 学生…)." }
+      ],
       "explanation": "是 (shì) nghĩa là 'là', nối chủ ngữ với danh từ để khẳng định A là B.",
+      "usage": "Dùng khi giới thiệu hoặc khẳng định danh tính, nghề nghiệp, quan hệ ('A là B').",
+      "mistakes": [
+        { "wrong": "我是高兴。", "right": "我很高兴。", "note": "是 không đi với tính từ — dùng 很 trước tính từ." }
+      ],
       "examples": [
         {
           "situation": "Khi giới thiệu nghề nghiệp",
@@ -118,9 +127,10 @@ export function LessonEditor({ skill, unitId, lesson }: Props) {
         {isGrammar ? (
           <p className="text-[11px] text-muted-foreground">
             Object gồm <code>sections</code> (mỗi phần: <code>title</code>, <code>structure</code>,{" "}
-            <code>explanation</code>, <code>examples</code>, <code>imageUrl</code> tùy chọn, và{" "}
-            <code>exercises</code> — bài tập của chính phần đó) và <code>test</code> (bài kiểm tra —
-            tách riêng khỏi luồng học, đạt ≥ 80% mới được điểm kinh nghiệm).{" "}
+            <code>breakdown</code> — giải nghĩa từng phần công thức, <code>explanation</code>,{" "}
+            <code>usage</code>, <code>mistakes</code>, <code>examples</code>, <code>imageUrl</code> tùy
+            chọn, và <code>exercises</code> — bài tập của chính phần đó) và <code>test</code> (bài kiểm
+            tra — tách riêng khỏi luồng học, đạt ≥ 80% mới được điểm kinh nghiệm).{" "}
             <b>
               Mỗi điểm ngữ pháp nên có đủ 8 minigame: 2× chọn từ (fill_blank), 2× sắp xếp câu
               (sentence_order), 2× dịch Việt→Trung (translate vi_to_zh), 2× dịch Trung→Việt

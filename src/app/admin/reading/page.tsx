@@ -12,7 +12,8 @@ import { ImageUpload } from "@/components/admin/image-upload";
 import { PublishToggle } from "@/components/admin/publish-toggle";
 import { ReorderList, type ReorderItem } from "@/components/admin/reorder-list";
 import { hskLevelLabel } from "@/lib/utils";
-import { deleteReadingAction } from "@/server/actions/admin";
+import { deleteReadingAction, bulkImportReadingTestsAction } from "@/server/actions/admin";
+import { BulkItemImport } from "@/components/admin/bulk-item-import";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { db as prisma } from "@/lib/db";
@@ -47,6 +48,21 @@ async function createReadingAction(fd: FormData): Promise<void> {
 }
 import { Trash2, Plus, ChevronRight } from "lucide-react";
 
+const READING_SAMPLE = `[
+  {
+    "title": "Cuối tuần của tôi",
+    "titleZh": "我的周末",
+    "hskLevel": "HSK3",
+    "timeLimit": 600,
+    "passage": "周末我去了公园。早上我和朋友一起跑步，下午我们一起看了电影。",
+    "questions": [
+      { "type": "MCQ", "prompt": "作者周末去了哪里？", "options": ["公园", "学校", "商店", "医院"], "answer": 0, "explanation": "Đoạn văn nói tác giả đi công viên." },
+      { "type": "TRUE_FALSE", "prompt": "作者下午看了电影。", "answer": true },
+      { "type": "FILL_BLANK", "prompt": "作者和朋友一起去 ___。", "answer": "跑步", "accepted": ["跑步了"] }
+    ]
+  }
+]`;
+
 export default async function AdminReadingPage() {
   const tests = await db.readingTest.findMany({
     orderBy: [{ hskLevel: "asc" }, { order: "asc" }, { createdAt: "desc" }],
@@ -62,7 +78,18 @@ export default async function AdminReadingPage() {
 
   return (
     <div className="space-y-6">
-      <h1 className="text-2xl font-bold">Bài đọc hiểu</h1>
+      <div className="flex flex-wrap items-center justify-between gap-3">
+        <h1 className="text-2xl font-bold">Bài đọc hiểu</h1>
+        <BulkItemImport
+          action={bulkImportReadingTestsAction}
+          title="Nhập hàng loạt bài đọc"
+          unitNoun="bài đọc"
+          hasQuestions
+          sampleJson={READING_SAMPLE}
+          sampleFileName="mau-bai-doc.json"
+          description="Mỗi mục = 1 bài đọc đầy đủ: title (VI) · titleZh (ZH) · hskLevel · passage (đoạn văn) · timeLimit (giây, tùy chọn) · questions[]. Câu hỏi: MCQ (kèm options + answer là chỉ số từ 0), TRUE_FALSE (answer true/false), FILL_BLANK (answer là chữ Hán). Không cần nhập pinyin — máy tự sinh."
+        />
+      </div>
 
       {/* Create form */}
       <Card>

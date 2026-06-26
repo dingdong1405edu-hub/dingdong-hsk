@@ -11,10 +11,34 @@ import { ImageUpload } from "@/components/admin/image-upload";
 import { PublishToggle } from "@/components/admin/publish-toggle";
 import { ReorderList } from "@/components/admin/reorder-list";
 import { hskLevelLabel } from "@/lib/utils";
-import { deleteWritingAction, updateWritingAction } from "@/server/actions/admin";
+import {
+  deleteWritingAction,
+  updateWritingAction,
+  bulkImportWritingTasksAction,
+} from "@/server/actions/admin";
+import { BulkItemImport } from "@/components/admin/bulk-item-import";
 import { revalidatePath } from "next/cache";
 import { db as prisma } from "@/lib/db";
 import { HSKLevel, WritingTaskType } from "@prisma/client";
+
+const WRITING_SAMPLE = `[
+  {
+    "taskType": "FREE",
+    "hskLevel": "HSK3",
+    "prompt": "Hãy viết về một ngày bình thường của bạn.",
+    "promptZh": "请写一写你普通的一天。",
+    "minChars": 80,
+    "timeLimit": 900
+  },
+  {
+    "taskType": "GUIDED",
+    "hskLevel": "HSK4",
+    "prompt": "Viết đoạn văn về kế hoạch cuối tuần.",
+    "outline": "- Mở bài: dự định\\n- Thân bài: làm gì, với ai\\n- Kết bài: mong đợi",
+    "minChars": 120,
+    "timeLimit": 1200
+  }
+]`;
 
 async function createWritingAction(fd: FormData): Promise<void> {
   "use server";
@@ -60,7 +84,17 @@ export default async function AdminWritingPage() {
 
   return (
     <div className="space-y-6">
-      <h1 className="text-2xl font-bold">Bài luyện viết</h1>
+      <div className="flex flex-wrap items-center justify-between gap-3">
+        <h1 className="text-2xl font-bold">Bài luyện viết</h1>
+        <BulkItemImport
+          action={bulkImportWritingTasksAction}
+          title="Nhập hàng loạt bài viết"
+          unitNoun="bài viết"
+          sampleJson={WRITING_SAMPLE}
+          sampleFileName="mau-bai-viet.json"
+          description="Mỗi mục = 1 bài viết: taskType (FREE | GUIDED | PICTURE_DESCRIPTION) · prompt (đề bài VI) · hskLevel; tùy chọn promptZh · outline (dàn ý) · minChars · timeLimit (giây)."
+        />
+      </div>
       <Card>
         <CardHeader><CardTitle className="text-base"><Plus className="h-4 w-4 inline mr-2" />Thêm bài viết</CardTitle></CardHeader>
         <CardContent>

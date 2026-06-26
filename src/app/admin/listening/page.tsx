@@ -10,10 +10,29 @@ import { ListeningAudioFields } from "@/components/admin/listening-audio-fields"
 import { PublishToggle } from "@/components/admin/publish-toggle";
 import { ReorderList, type ReorderItem } from "@/components/admin/reorder-list";
 import { hskLevelLabel } from "@/lib/utils";
-import { createListeningAction, deleteListeningAction } from "@/server/actions/admin";
+import {
+  createListeningAction,
+  deleteListeningAction,
+  bulkImportListeningTestsAction,
+} from "@/server/actions/admin";
+import { BulkItemImport } from "@/components/admin/bulk-item-import";
 import { redirect } from "next/navigation";
 import { Trash2, Plus, ChevronRight, Headphones, Volume2 } from "lucide-react";
 import type { HSKLevel } from "@prisma/client";
+
+const LISTENING_SAMPLE = `[
+  {
+    "title": "Hội thoại chào hỏi",
+    "hskLevel": "HSK1",
+    "audioUrl": "",
+    "transcript": "你好，我叫小明。你叫什么名字？",
+    "timeLimit": 300,
+    "questions": [
+      { "type": "MCQ", "prompt": "他叫什么名字？", "options": ["小明", "小红", "小李"], "answer": 0 },
+      { "type": "TRUE_FALSE", "prompt": "他们在打电话。", "answer": false }
+    ]
+  }
+]`;
 
 export default async function AdminListeningPage() {
   const tests = await db.listeningTest.findMany({
@@ -30,9 +49,20 @@ export default async function AdminListeningPage() {
 
   return (
     <div className="space-y-6">
-      <div className="flex items-center gap-2">
-        <Headphones className="h-6 w-6 text-teal-600" />
-        <h1 className="text-2xl font-bold">Bài nghe hiểu</h1>
+      <div className="flex flex-wrap items-center justify-between gap-3">
+        <div className="flex items-center gap-2">
+          <Headphones className="h-6 w-6 text-teal-600" />
+          <h1 className="text-2xl font-bold">Bài nghe hiểu</h1>
+        </div>
+        <BulkItemImport
+          action={bulkImportListeningTestsAction}
+          title="Nhập hàng loạt bài nghe"
+          unitNoun="bài nghe"
+          hasQuestions
+          sampleJson={LISTENING_SAMPLE}
+          sampleFileName="mau-bai-nghe.json"
+          description="Mỗi mục = 1 bài nghe: title · hskLevel · audioUrl (tùy chọn — để trống rồi tải MP3 sau) · transcript (tùy chọn) · timeLimit (giây) · questions[]. Câu hỏi cùng định dạng bài đọc: MCQ / TRUE_FALSE / FILL_BLANK. Không cần nhập pinyin — máy tự sinh."
+        />
       </div>
 
       <Card>

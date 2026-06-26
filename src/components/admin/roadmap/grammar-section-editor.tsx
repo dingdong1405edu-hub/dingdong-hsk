@@ -13,7 +13,16 @@ const TEMPLATE = `{
       "title": "Câu khẳng định với 是",
       "titleZh": "是字句",
       "structure": "A + 是 + B",
-      "explanation": "是 (shì) nghĩa là 'là', nối chủ ngữ với danh từ.",
+      "breakdown": [
+        { "part": "A", "role": "Chủ ngữ", "meaning": "Người hoặc vật được nói đến (我, 他, 这…)." },
+        { "part": "是", "pinyin": "shì", "role": "Động từ 'là'", "meaning": "Nối A với B, khẳng định A chính là B." },
+        { "part": "B", "role": "Danh từ", "meaning": "Cái mà A chính là (老师, 学生…)." }
+      ],
+      "explanation": "是 (shì) nghĩa là 'là', nối chủ ngữ với danh từ để khẳng định A là B.",
+      "usage": "Dùng khi giới thiệu hoặc khẳng định danh tính, nghề nghiệp, quan hệ ('A là B').",
+      "mistakes": [
+        { "wrong": "我是高兴。", "right": "我很高兴。", "note": "是 không đi với tính từ — dùng 很 trước tính từ." }
+      ],
       "examples": [
         { "situation": "Giới thiệu nghề", "hanzi": "他是老师。", "pinyin": "tā shì lǎoshī", "meaning": "Anh ấy là giáo viên." }
       ],
@@ -100,8 +109,16 @@ export function GrammarSectionEditor({
         <summary className="cursor-pointer font-medium">Hướng dẫn cấu trúc &amp; loại bài tập</summary>
         <div className="mt-2 space-y-1.5 text-muted-foreground">
           <p>
-            Mỗi <code>section</code> gồm: <b>title</b>, <b>explanation</b> (lý thuyết), <b>examples</b> (tình huống) và{" "}
+            Mỗi <code>section</code> gồm: <b>title</b>, <b>structure</b> (công thức), <b>breakdown</b> (giải
+            nghĩa <i>từng phần</i> của công thức — phần quan trọng nhất cho người mới), <b>explanation</b>,{" "}
+            <b>usage</b> (khi nào dùng), <b>mistakes</b> (lỗi thường gặp), <b>examples</b> (tình huống) và{" "}
             <b>exercises</b> (minigame luyện tập). <code>test.questions</code> là bài kiểm tra (để trống nếu không cần).
+          </p>
+          <p className="rounded-lg border border-violet-200 bg-violet-50/60 p-2 dark:border-violet-400/25 dark:bg-violet-500/10">
+            <b>breakdown</b> là mảng theo đúng thứ tự công thức, mỗi phần:{" "}
+            <code>{`{ "part": "是", "pinyin": "shì", "role": "Động từ 'là'", "meaning": "Nối A với B" }`}</code>.
+            Mỗi phần sẽ thành một thẻ màu riêng, khớp màu với ô trong công thức.{" "}
+            <b>mistakes</b>: <code>{`{ "wrong": "我是高兴", "right": "我很高兴", "note": "..." }`}</code>.
           </p>
           <p>Các loại bài tập (mỗi câu tự chứa đáp án đúng):</p>
           <ul className="ml-4 list-disc space-y-0.5">

@@ -14,9 +14,28 @@ import {
   createSpeakingTopicAction,
   updateSpeakingTopicAction,
   deleteSpeakingTopicAction,
+  bulkImportSpeakingTopicsAction,
 } from "@/server/actions/admin";
+import { BulkItemImport } from "@/components/admin/bulk-item-import";
 import { Trash2, Plus, ArrowLeft, MessagesSquare } from "lucide-react";
 import { HSKLevel } from "@prisma/client";
+
+const SPEAKING_TOPIC_SAMPLE = `[
+  {
+    "title": "Sở thích",
+    "hskLevel": "HSK4",
+    "topic": "爱好 — Sở thích",
+    "questionZh": "请谈谈你的爱好。",
+    "questionPinyin": "Qǐng tántan nǐ de àihào.",
+    "questionVi": "Hãy nói về sở thích của bạn.",
+    "outline": "- Sở thích là gì\\n- Vì sao thích\\n- Thời gian dành cho nó",
+    "hints": [
+      { "text": "打篮球", "pinyin": "dǎ lánqiú", "vi": "chơi bóng rổ" }
+    ],
+    "minChars": 80,
+    "prepSeconds": 10
+  }
+]`;
 
 // Bọc về Promise<void> để dùng làm `action` của <form> trong client component.
 async function createAction(fd: FormData) {
@@ -56,11 +75,21 @@ export default async function AdminSpeakingTopicsPage() {
         <h1 className="flex items-center gap-2 text-2xl font-bold">
           <MessagesSquare className="h-6 w-6 text-indigo-600" /> Nói theo chủ đề (HSKK)
         </h1>
-        <Link href="/admin/speaking">
-          <Button variant="outline" size="sm">
-            <ArrowLeft className="mr-1 h-4 w-4" /> Bộ luyện nói
-          </Button>
-        </Link>
+        <div className="flex flex-wrap items-center gap-2">
+          <BulkItemImport
+            action={bulkImportSpeakingTopicsAction}
+            title="Nhập hàng loạt chủ đề nói"
+            unitNoun="chủ đề"
+            sampleJson={SPEAKING_TOPIC_SAMPLE}
+            sampleFileName="mau-chu-de-noi.json"
+            description="Mỗi mục = 1 chủ đề: hskLevel + questionZh (bắt buộc); tùy chọn title · topic · questionPinyin · questionVi · outline · hints[] ({text,pinyin?,vi?}) · sampleAnswer · minChars · prepSeconds. MP3 (audioUrl) tải lên sau."
+          />
+          <Link href="/admin/speaking">
+            <Button variant="outline" size="sm">
+              <ArrowLeft className="mr-1 h-4 w-4" /> Bộ luyện nói
+            </Button>
+          </Link>
+        </div>
       </div>
       <p className="text-sm text-muted-foreground">
         Giám khảo đặt câu hỏi mở theo chủ đề (kèm MP3 + transcript + gợi ý + dàn ý). Học viên ghi âm trả lời thành một

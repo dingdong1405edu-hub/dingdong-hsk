@@ -97,14 +97,45 @@ export interface SituationalExample {
   imageUrl?: string;
 }
 
-/** The theory (display) fields of one grammar section: a single structure
- *  broken out with a framed formula, explanation, optional image and examples. */
+/** One labelled component of a grammar formula. Glosses a single slot/word of
+ *  the `structure` so a beginner sees what EVERY part means — not just the bare
+ *  formula. Listed in formula order; the viewer colours each part + its card. */
+export interface FormulaPart {
+  /** The slot or word exactly as it appears in the formula (e.g. "A", "是", "B"). */
+  part: string;
+  /** Pinyin for a literal Chinese token (optional — omit for placeholders A/B). */
+  pinyin?: string;
+  /** Short grammatical role, e.g. "Chủ ngữ", "Động từ 'là'", "Danh từ". */
+  role?: string;
+  /** Plain-Vietnamese meaning — what this part does in the sentence. */
+  meaning: string;
+}
+
+/** A common learner mistake for a grammar point: the wrong form, the corrected
+ *  form, and an optional one-line reason. Rendered as a ❌ sai / ✔ đúng row. */
+export interface GrammarMistake {
+  wrong: string;
+  right: string;
+  note?: string;
+}
+
+/** The theory (display) fields of one grammar section: a framed formula with an
+ *  optional per-part breakdown, a "when to use" note, the explanation, common
+ *  mistakes, an optional image and the situational examples. */
 export interface TheorySection {
   id: string;
   title: string;
   titleZh?: string;
   structure?: string;
+  /** Per-part gloss of the formula, in formula order. When present the viewer
+   *  shows an annotated card for each part; when absent it just colours the
+   *  formula tokens. Optional + backward compatible. */
+  breakdown?: FormulaPart[];
   explanation: string;
+  /** When/why to use this structure — its own "Khi nào dùng" callout. */
+  usage?: string;
+  /** Common mistakes, shown as ❌ sai / ✔ đúng rows. */
+  mistakes?: GrammarMistake[];
   /** Optional illustration for the whole section (URL or hosted path). */
   imageUrl?: string;
   examples: SituationalExample[];

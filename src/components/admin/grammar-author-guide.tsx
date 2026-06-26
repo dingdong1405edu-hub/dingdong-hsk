@@ -65,8 +65,15 @@ export function GrammarAuthorGuide() {
                 <Field name="id">mã ngắn, duy nhất trong bài (vd: "shi-1").</Field>
                 <Field name="title">tiêu đề tiếng Việt của phần.</Field>
                 <Field name="titleZh">tiêu đề chữ Hán (tùy chọn).</Field>
-                <Field name="structure">công thức ngữ pháp — sẽ được đóng khung nổi bật (vd: "A + 是 + B").</Field>
-                <Field name="explanation">giải thích bằng tiếng Việt (bắt buộc).</Field>
+                <Field name="structure">công thức ngữ pháp — sẽ được tách thành các ô màu nổi bật, mỗi phần một màu (vd: "A + 是 + B").</Field>
+                <Field name="breakdown">
+                  <b>(rất nên có)</b> mảng giải nghĩa <i>từng phần</i> của công thức, theo đúng thứ tự — mỗi phần
+                  thành một thẻ màu riêng (khớp màu với ô trong công thức). Đây là thứ giúp người mới hiểu
+                  công thức, không chỉ nhìn công thức suông.
+                </Field>
+                <Field name="explanation">giải thích chung bằng tiếng Việt (bắt buộc). Xuống dòng + bắt đầu bằng "- " để tạo gạch đầu dòng.</Field>
+                <Field name="usage">(tùy chọn) khi nào / vì sao dùng cấu trúc này — hiện thành ô "Khi nào dùng" riêng.</Field>
+                <Field name="mistakes">(tùy chọn) mảng lỗi thường gặp — hiện thành ô ❌ sai / ✔ đúng.</Field>
                 <Field name="imageUrl">link ảnh minh hoạ (tùy chọn) — dán URL ảnh đã có trên mạng (vd: https://abc.com/anh.png). Bỏ field này nếu không có ảnh. Mỗi ví dụ cũng có thể có imageUrl riêng.</Field>
                 <Field name="examples">mảng ví dụ theo ngữ cảnh (có thể để [] nếu chưa có).</Field>
                 <Field name="exercises">
@@ -74,6 +81,29 @@ export function GrammarAuthorGuide() {
                   2× fill_blank, 2× sentence_order, 2× translate vi_to_zh, 2× translate zh_to_vi.
                 </Field>
               </ul>
+              <div className="rounded-lg border border-violet-200 bg-violet-50/60 p-3 dark:border-violet-400/25 dark:bg-violet-500/10">
+                <p className="font-medium text-violet-900 dark:text-violet-200">
+                  ⭐ breakdown — giải nghĩa từng phần công thức (nên có cho mọi bài)
+                </p>
+                <p className="mt-1 text-[12px] text-muted-foreground">
+                  Liệt kê theo <b>đúng thứ tự công thức</b>. Mỗi phần gồm <code>part</code> (ký hiệu/chữ
+                  trong công thức), <code>pinyin</code> (tùy chọn, cho chữ Hán), <code>role</code> (vai trò
+                  ngắn) và <code>meaning</code> (giải thích dễ hiểu).
+                </p>
+                <Code>{`"structure": "A + 是 + B",
+"breakdown": [
+  { "part": "A", "role": "Chủ ngữ", "meaning": "Người/vật được nói đến (我, 他…)." },
+  { "part": "是", "pinyin": "shì", "role": "Động từ 'là'", "meaning": "Nối A với B, khẳng định A chính là B." },
+  { "part": "B", "role": "Danh từ", "meaning": "Cái mà A chính là (老师, 学生…)." }
+]`}</Code>
+              </div>
+
+              <p className="text-muted-foreground">usage (khi nào dùng) &amp; mistakes (lỗi thường gặp) — tùy chọn:</p>
+              <Code>{`"usage": "Dùng khi giới thiệu/khẳng định danh tính, nghề nghiệp ('A là B').",
+"mistakes": [
+  { "wrong": "我是高兴。", "right": "我很高兴。", "note": "是 không đi với tính từ — dùng 很." }
+]`}</Code>
+
               <p className="text-muted-foreground">Mỗi ví dụ trong examples:</p>
               <Code>{`{
   "situation": "Khi giới thiệu nghề nghiệp",
