@@ -674,6 +674,57 @@ Trả về JSON đúng cấu trúc sau (không thêm gì ngoài JSON):
   return { explanation: asStr(p.explanation), supportingQuote: asStr(p.supportingQuote) };
 }
 
+// ===== Hán-Việt dictionary lookup (click-to-lookup trong bài đọc) =====
+// Bảng HanziCharacter chỉ có vài chữ được seed/curate, nên khi học viên bấm vào
+// một chữ chưa có, ta sinh nghĩa bằng AI rồi cache lại (xem hanzi-lookup.ts).
+const HANZI_LOOKUP_SYSTEM = `Bạn là TỪ ĐIỂN Hán-Việt cho người Việt học tiếng Trung. Cho MỘT chữ Hán giản thể, trả về pinyin (có dấu thanh), nghĩa tiếng Việt NGẮN GỌN, cấp HSK ước lượng và 1-2 ví dụ. Output CHỈ một JSON object compact — không markdown, không code fences, không <think>, không chữ thừa.
+- "pinyin": pinyin có dấu thanh; nếu chữ nhiều âm, chọn âm phổ biến nhất.
+- "meaning": nghĩa tiếng Việt ngắn (có thể 2-3 nghĩa chính, cách nhau bằng dấu phẩy). KHÔNG giải thích dài dòng.
+- "hskLevel": một trong "HSK1".."HSK6" (ước lượng độ phổ biến của chữ).
+- "examples": 1-2 phần tử {"sentence":"<từ/cụm giản thể chứa chữ này>","pinyin":"<pinyin cụm, có dấu>","meaning":"<nghĩa tiếng Việt>"}.
+Output ĐÚNG cấu trúc: {"pinyin":"...","meaning":"...","hskLevel":"HSK1","examples":[{"sentence":"...","pinyin":"...","meaning":"..."}]}
+/no_think`;
+
+export interface HanziLookupGen {
+  pinyin: string;
+  meaning: string;
+  hskLevel: string;
+  examples: Array<{ sentence: string; pinyin: string; meaning: string }>;
+}
+
+/**
+ * Sinh pinyin + nghĩa tiếng Việt + ví dụ cho MỘT chữ Hán bằng Groq. Trả `null`
+ * khi không cấu hình được/AI hỏng để bên gọi xử lý nhẹ nhàng (popup vẫn hiện
+ * pinyin tính ở client). hskLevel được kiểm tra, mặc định "HSK3" nếu AI trả sai.
+ */
+export async function generateHanziLookup(character: string): Promise<HanziLookupGen | null> {
+  const ch = character?.trim();
+  if (!ch) return null;
+  let parsed: unknown;
+  try {
+    parsed = await runGroqJson({
+      models: GRADING_MODELS,
+      system: HANZI_LOOKUP_SYSTEM,
+      maxTokens: 512,
+      temperature: 0.2,
+      user: `Chữ Hán: ${ch}\nTrả về JSON đúng cấu trúc đã nêu, nghĩa bằng tiếng Việt.`,
+    });
+  } catch {
+    return null;
+  }
+  const p = isRecord(parsed) ? parsed : {};
+  const meaning = asStr(p.meaning).trim();
+  if (!meaning) return null; // không có nghĩa thì coi như tra hỏng
+  const hsk = asStr(p.hskLevel).trim().toUpperCase();
+  const hskLevel = /^HSK[1-6]$/.test(hsk) ? hsk : "HSK3";
+  const examples = (Array.isArray(p.examples) ? p.examples : [])
+    .filter(isRecord)
+    .map((e) => ({ sentence: asStr(e.sentence), pinyin: asStr(e.pinyin), meaning: asStr(e.meaning) }))
+    .filter((e) => e.sentence)
+    .slice(0, 3);
+  return { pinyin: asStr(p.pinyin).trim(), meaning, hskLevel, examples };
+}
+
 const READING_QUESTIONS_SYSTEM = `You are a certified HSK (汉语水平考试) reading-comprehension examiner who writes exam questions for Vietnamese learners.
 
 Your job: read ONE Chinese passage and write high-quality reading-comprehension questions answerable from the passage ALONE.

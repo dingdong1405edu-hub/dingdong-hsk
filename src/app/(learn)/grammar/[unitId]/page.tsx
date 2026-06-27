@@ -96,11 +96,11 @@ export default async function GrammarUnitPage({ params }: Props) {
                         </Button>
                       </Link>
                     )}
-                    <Link href={`/grammar-pdf/${unitId}/${lesson.id}`}>
-                      <Button size="sm" variant="ghost" className="gap-1.5 text-muted-foreground">
+                    <Button asChild size="sm" variant="ghost" className="gap-1.5 text-muted-foreground">
+                      <a href={`/api/pdf/grammar/${unitId}/${lesson.id}`} download>
                         <FileDown className="h-4 w-4" /> Tải PDF
-                      </Button>
-                    </Link>
+                      </a>
+                    </Button>
                   </div>
                 ) : (
                   <p className="text-xs text-muted-foreground">Hoàn thành bài trước để mở khoá.</p>

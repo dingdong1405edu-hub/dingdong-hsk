@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { Check, ChevronRight, FileDown } from "lucide-react";
 import { cn } from "@/lib/utils";
 import type { SkillMeta } from "@/lib/roadmap";
@@ -50,16 +49,15 @@ export function SkillTile({ meta, published, done, onClick, pdfHref }: SkillTile
         )}
       </button>
       {pdfHref && published && (
-        <Link
+        <a
           href={pdfHref}
-          target="_blank"
-          rel="noopener noreferrer"
+          download
           title="Tải PDF"
           aria-label={`Tải PDF ${meta.label}`}
           className="flex shrink-0 items-center gap-1 rounded-lg border border-border px-2 py-1.5 text-[11px] font-semibold text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
         >
           <FileDown className="h-4 w-4" /> PDF
-        </Link>
+        </a>
       )}
     </div>
   );

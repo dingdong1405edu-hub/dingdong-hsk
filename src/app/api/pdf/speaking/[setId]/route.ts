@@ -1,11 +1,13 @@
+import { createElement } from "react";
+import { NextRequest } from "next/server";
 import { auth } from "@/lib/auth";
 import { db } from "@/lib/db";
-import { notFound, redirect } from "next/navigation";
 import { SpeakingPdf } from "@/components/learn/speaking/speaking-pdf";
+import { renderPdfResponse } from "@/lib/pdf/render";
+import { pdfError, pdfNotFound, pdfUnauthorized } from "@/lib/pdf/responses";
 
-interface Props {
-  params: Promise<{ setId: string }>;
-}
+export const runtime = "nodejs";
+export const dynamic = "force-dynamic";
 
 function toSentences(raw: unknown): { text: string; pinyin?: string }[] {
   if (!Array.isArray(raw)) return [];
@@ -31,24 +33,27 @@ function toQuestions(raw: unknown): { question: string; pinyin?: string }[] {
     .filter((q) => q.question);
 }
 
-export default async function SpeakingPdfPage({ params }: Props) {
-  const { setId } = await params;
+export async function GET(_req: NextRequest, { params }: { params: Promise<{ setId: string }> }) {
   const session = await auth();
-  if (!session?.user) redirect("/login");
+  if (!session?.user) return pdfUnauthorized();
+  const { setId } = await params;
 
   const set = await db.speakingSet.findUnique({ where: { id: setId } });
-  if (!set || !set.published) notFound();
+  if (!set || !set.published) return pdfNotFound();
 
-  return (
-    <div className="min-h-screen bg-muted/20 px-4 py-6">
-      <SpeakingPdf
-        title={set.title || "Bài luyện nói"}
-        hskLevel={set.hskLevel}
-        part1={toSentences(set.part1Sentences)}
-        part2={toPassage(set.part2Passage)}
-        part3={toQuestions(set.part3Questions)}
-        backHref="/speaking"
-      />
-    </div>
-  );
+  const title = set.title || "Bài luyện nói";
+  try {
+    return await renderPdfResponse(
+      createElement(SpeakingPdf, {
+        title,
+        hskLevel: set.hskLevel,
+        part1: toSentences(set.part1Sentences),
+        part2: toPassage(set.part2Passage),
+        part3: toQuestions(set.part3Questions),
+      }),
+      `DingDong HSK - Luyen noi - ${title}`,
+    );
+  } catch (err) {
+    return pdfError(err);
+  }
 }

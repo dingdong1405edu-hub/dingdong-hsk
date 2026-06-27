@@ -1,4 +1,6 @@
-"use client";
+import * as React from "react";
+import { PDF, PDF_FONT } from "@/lib/pdf/theme";
+import { PdfNumChip, PdfTag, PdfAnswer, PdfAnswerLine } from "@/components/learn/pdf/pdf-document";
 
 export interface PdfQuestion {
   id: string;
@@ -12,6 +14,14 @@ export interface PdfQuestion {
 }
 
 const OPT_LETTERS = ["A", "B", "C", "D", "E", "F"];
+
+const TYPE_LABEL: Record<string, string> = {
+  MCQ: "Trắc nghiệm",
+  FILL_BLANK: "Điền khuyết",
+  TRUE_FALSE: "Đúng / Sai",
+  MATCHING: "Nối",
+  SHORT_ANSWER: "Tự luận ngắn",
+};
 
 function optionTexts(options: unknown): string[] {
   if (!Array.isArray(options)) return [];
@@ -38,50 +48,66 @@ function answerText(q: PdfQuestion, opts: string[]): string {
 /** Bảng câu hỏi + đáp án (answer key) cho PDF Đọc/Nghe. */
 export function PdfQuestionList({ questions }: { questions: PdfQuestion[] }) {
   if (questions.length === 0) {
-    return <p className="text-sm text-zinc-500">Chưa có câu hỏi.</p>;
+    return <p style={{ fontSize: 13, color: PDF.muted }}>Chưa có câu hỏi.</p>;
   }
   return (
-    <ol className="space-y-3">
+    <ol style={{ display: "flex", flexDirection: "column", gap: 10 }}>
       {questions.map((q, i) => {
         const opts = optionTexts(q.options);
         const ans = answerText(q, opts);
         return (
-          <li key={q.id} className="break-inside-avoid rounded-lg border border-zinc-200 p-3">
-            <div className="mb-1 flex items-center gap-2">
-              <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-zinc-100 text-xs font-bold text-zinc-600">
-                {i + 1}
-              </span>
-              <span className="text-[11px] font-semibold uppercase tracking-wide text-zinc-400">{q.type}</span>
+          <li
+            key={q.id}
+            style={{
+              breakInside: "avoid",
+              border: `1px solid ${PDF.line}`,
+              background: PDF.paperTint,
+              borderRadius: 10,
+              padding: 12,
+            }}
+          >
+            <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 6 }}>
+              <PdfNumChip n={i + 1} size={20} />
+              <PdfTag>{TYPE_LABEL[q.type] ?? q.type}</PdfTag>
             </div>
-            <div className="font-chinese text-[15px] text-zinc-900">{q.prompt}</div>
-            {q.promptPinyin && <div className="font-serif text-xs text-violet-600">{q.promptPinyin}</div>}
-            {opts.length > 0 && (
-              <ul className="mt-1.5 grid grid-cols-2 gap-x-4 gap-y-0.5">
-                {opts.map((o, oi) => (
-                  <li key={oi} className="font-chinese text-zinc-700">
-                    <span className="text-zinc-400">{OPT_LETTERS[oi] ?? oi + 1}.</span> {o}
-                  </li>
-                ))}
-              </ul>
-            )}
-            <div className="mt-2 border-t border-dashed border-zinc-200 pt-2">
-              <div className="text-sm">
-                <span className="font-semibold text-green-700">Đáp án: </span>
-                <span className="font-chinese">{ans || "— (xem trên dingdonghsk.com)"}</span>
+            <div style={{ fontFamily: PDF_FONT.chinese, fontSize: 15, color: PDF.ink }}>{q.prompt}</div>
+            {q.promptPinyin && (
+              <div style={{ fontFamily: PDF_FONT.pinyin, fontSize: 12, color: PDF.brand, marginTop: 2 }}>
+                {q.promptPinyin}
               </div>
+            )}
+            {opts.length > 0 && (
+              <div
+                style={{
+                  marginTop: 7,
+                  display: "grid",
+                  gridTemplateColumns: "1fr 1fr",
+                  columnGap: 16,
+                  rowGap: 3,
+                }}
+              >
+                {opts.map((o, oi) => (
+                  <div key={oi} style={{ fontFamily: PDF_FONT.chinese, fontSize: 13, color: PDF.ink2 }}>
+                    <span style={{ color: PDF.faint, fontWeight: 700 }}>{OPT_LETTERS[oi] ?? oi + 1}.</span> {o}
+                  </div>
+                ))}
+              </div>
+            )}
+            <PdfAnswer>
+              <PdfAnswerLine>{ans || "— (xem trên dingdonghsk.com)"}</PdfAnswerLine>
               {q.supportingQuote && (
-                <div className="mt-0.5 text-[13px] text-emerald-700">
-                  <span className="font-semibold">Dẫn chứng: </span>
-                  <span className="font-chinese">{q.supportingQuote}</span>
+                <div style={{ marginTop: 3, fontSize: 12.5, color: PDF.correct }}>
+                  <span style={{ fontWeight: 700 }}>Dẫn chứng: </span>
+                  <span style={{ fontFamily: PDF_FONT.chinese }}>{q.supportingQuote}</span>
                 </div>
               )}
               {q.explanation && (
-                <div className="mt-0.5 text-[13px] text-zinc-600">
-                  <span className="font-semibold text-zinc-700">Giải thích: </span>
+                <div style={{ marginTop: 3, fontSize: 12.5, color: PDF.ink2 }}>
+                  <span style={{ fontWeight: 700, color: PDF.ink }}>Giải thích: </span>
                   {q.explanation}
                 </div>
               )}
-            </div>
+            </PdfAnswer>
           </li>
         );
       })}

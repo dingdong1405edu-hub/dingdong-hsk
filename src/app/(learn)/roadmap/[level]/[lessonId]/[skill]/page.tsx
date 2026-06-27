@@ -58,14 +58,13 @@ export default async function RoadmapSectionPlayPage({ params }: Props) {
           <span className="text-sm text-muted-foreground">
             · {meta.label} · {lesson.topic}
           </span>
-          <Link
-            href={`/roadmap-pdf/${lessonId}/${skillKey.toLowerCase()}`}
-            target="_blank"
-            rel="noopener noreferrer"
+          <a
+            href={`/api/pdf/roadmap/${lessonId}/${skillKey.toLowerCase()}`}
+            download
             className="ml-auto inline-flex items-center gap-1.5 rounded-lg border border-border px-2.5 py-1.5 text-xs font-semibold text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
           >
             <FileDown className="h-4 w-4" /> Tải PDF
-          </Link>
+          </a>
         </div>
       )}
       <RoadmapSectionPlayer

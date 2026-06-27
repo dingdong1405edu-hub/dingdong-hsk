@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import { X, BookmarkPlus, BookmarkCheck, Loader2 } from "lucide-react";
 import { toast } from "sonner";
 import { getTone } from "@/lib/pinyin";
@@ -42,7 +43,11 @@ export function CharLookup({
   const [info, setInfo] = useState<HanziLookupResult | null>(null);
   const [loading, setLoading] = useState(true);
   const [saveState, setSaveState] = useState<"idle" | "saving" | "saved">("idle");
+  // Portal-to-body needs the DOM; gate the portal on mount (matches TestShell).
+  const [mounted, setMounted] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => setMounted(true), []);
 
   useEffect(() => {
     let active = true;
@@ -110,7 +115,13 @@ export function CharLookup({
 
   const example = firstExample(info?.examples);
 
-  return (
+  if (!mounted) return null;
+
+  // Portaled to <body> so the popup escapes the (learn) DashboardShell <main>,
+  // whose entrance transform (`animate-fade-up`) would otherwise become the
+  // containing block for this `position: fixed` element and trap it in a lower
+  // stacking context — hidden behind the full-screen TestShell overlay.
+  return createPortal(
     <div
       ref={ref}
       style={style}
@@ -162,6 +173,7 @@ export function CharLookup({
           <span className="text-xs text-muted-foreground">Chưa có nghĩa trong từ điển.</span>
         )}
       </div>
-    </div>
+    </div>,
+    document.body,
   );
 }

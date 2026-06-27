@@ -28,8 +28,13 @@ function fillPinyin(text: string, pinyin?: unknown): string {
  */
 export function buildReadingContent(input: unknown, fallbackTitle = ""): unknown {
   let obj: Record<string, unknown>;
-  if (Array.isArray(input)) obj = { passages: input };
-  else if (input && typeof input === "object") obj = { ...(input as Record<string, unknown>) };
+  if (Array.isArray(input)) {
+    // Chấp nhận cả MẢNG "bài đọc đầy đủ" ([{ title, titleZh, passage, questions }, …])
+    // — đúng định dạng JSON nhập hàng loạt ở /admin/reading. Mỗi phần tử thành 1 đoạn;
+    // tiêu đề/thời gian của PHẦN lấy từ phần tử đầu (titleZh riêng mỗi đoạn vẫn giữ).
+    const first = (input.find((x) => x && typeof x === "object") ?? {}) as Record<string, unknown>;
+    obj = { passages: input, title: first.title, titleZh: first.titleZh, timeLimit: first.timeLimit };
+  } else if (input && typeof input === "object") obj = { ...(input as Record<string, unknown>) };
   else throw new Error("Nội dung đọc phải là object hoặc mảng đoạn.");
 
   const norm = normalizeReadingContent(obj);
@@ -63,8 +68,12 @@ export function buildReadingContent(input: unknown, fallbackTitle = ""): unknown
  */
 export function buildListeningContent(input: unknown, fallbackTitle = ""): unknown {
   let obj: Record<string, unknown>;
-  if (Array.isArray(input)) obj = { clips: input };
-  else if (input && typeof input === "object") obj = { ...(input as Record<string, unknown>) };
+  if (Array.isArray(input)) {
+    // Chấp nhận cả MẢNG "bài nghe đầy đủ" ([{ title, audioUrl, transcript, questions }, …]).
+    // Mỗi phần tử thành 1 đoạn nghe; tiêu đề/thời gian của PHẦN lấy từ phần tử đầu.
+    const first = (input.find((x) => x && typeof x === "object") ?? {}) as Record<string, unknown>;
+    obj = { clips: input, title: first.title, timeLimit: first.timeLimit };
+  } else if (input && typeof input === "object") obj = { ...(input as Record<string, unknown>) };
   else throw new Error("Nội dung nghe phải là object hoặc mảng đoạn.");
 
   const norm = normalizeListeningContent(obj);

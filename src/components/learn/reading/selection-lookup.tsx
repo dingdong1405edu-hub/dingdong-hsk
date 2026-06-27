@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import { X, BookmarkPlus, BookmarkCheck, Loader2 } from "lucide-react";
 import { toast } from "sonner";
 import { getTone } from "@/lib/pinyin";
@@ -36,7 +37,11 @@ export function SelectionLookup({
 }) {
   const [entries, setEntries] = useState<Entry[] | null>(null);
   const [savedChars, setSavedChars] = useState<Record<string, "saving" | "saved">>({});
+  // Portal-to-body needs the DOM; gate the portal on mount (matches TestShell).
+  const [mounted, setMounted] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => setMounted(true), []);
 
   useEffect(() => {
     let active = true;
@@ -113,7 +118,12 @@ export function SelectionLookup({
   if (placeAbove) style.bottom = vh - anchor.y + 14;
   else style.top = anchor.y + 16;
 
-  return (
+  if (!mounted) return null;
+
+  // Portaled to <body> so the popup escapes the (learn) DashboardShell <main>
+  // transform (containing block for `position: fixed`) — otherwise it's trapped
+  // in a lower stacking context, hidden behind the full-screen TestShell overlay.
+  return createPortal(
     <div ref={ref} style={style} className="animate-fade-in flex flex-col overflow-hidden rounded-2xl border bg-popover shadow-xl">
       <div className="flex items-center justify-between border-b px-3.5 py-2">
         <span className="font-chinese text-sm font-semibold">{anchor.text}</span>
@@ -161,6 +171,7 @@ export function SelectionLookup({
           </ul>
         )}
       </div>
-    </div>
+    </div>,
+    document.body,
   );
 }

@@ -371,36 +371,5 @@ ruby rt {
   75% { transform: translateX(6px); }
 }
 
-/* ===== Print: the lesson PDF handout (Tải PDF) =====
-   The /grammar-pdf page renders OUTSIDE the dashboard shell, so the document is
-   the only real content. We keep `.print-document` in normal flow (no absolute
-   positioning) so multi-page lessons paginate correctly, and just hide the
-   on-screen toolbar + flatten the card chrome. */
-/* Footer "dingdonghsk.com" — chỉ hiện khi in; vị trí fixed nên LẶP LẠI ở chân
-   MỖI TRANG in (Chrome/Edge). Theo yêu cầu: footer NHỎ, nằm DƯỚI BÊN TRÁI, chỉ
-   ghi "dingdonghsk.com" — không viền, không căn giữa, không gì khác. @page margin
-   chừa chỗ để footer không đè nội dung.
-   LƯU Ý: dòng URL/ngày tháng mà trình duyệt tự thêm khi in KHÔNG thể tắt bằng
-   CSS — bỏ tích "Headers and footers" (Đầu trang & chân trang) trong hộp thoại in. */
-.print-footer { display: none; }
-@media print {
-  @page { margin: 1.4cm; }
-  html, body { background: #fff !important; }
-  .no-print { display: none !important; }
-  .print-document {
-    margin: 0 !important;
-    padding: 0 !important;
-    border: 0 !important;
-    border-radius: 0 !important;
-    box-shadow: none !important;
-  }
-  .print-footer {
-    display: block;
-    position: fixed;
-    bottom: 0.5cm;
-    left: 1.4cm;
-    text-align: left;
-    font-size: 8pt;
-    color: #9ca3af;
-  }
-}
+/* PDF "Tải PDF" giờ tạo ở server bằng Chromium không giao diện (xem src/lib/pdf/*
+   và /api/pdf/*) — không còn dùng window.print() nên không cần print CSS ở đây. */

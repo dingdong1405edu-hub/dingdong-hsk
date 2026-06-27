@@ -59,11 +59,11 @@ export default async function VocabUnitPage({ params }: Props) {
                       {done ? "Ôn lại" : "Bắt đầu"}
                     </Button>
                   </Link>
-                  <Link href={`/vocab-pdf/${unitId}/${lesson.id}`}>
-                    <Button size="sm" variant="ghost" className="gap-1.5 text-muted-foreground">
+                  <Button asChild size="sm" variant="ghost" className="gap-1.5 text-muted-foreground">
+                    <a href={`/api/pdf/vocab/${unitId}/${lesson.id}`} download>
                       <FileDown className="h-4 w-4" /> PDF
-                    </Button>
-                  </Link>
+                    </a>
+                  </Button>
                 </div>
               </CardContent>
             </Card>

@@ -1,32 +1,42 @@
-"use client";
-import { PrintableDoc } from "@/components/learn/printable-doc";
+import * as React from "react";
+import { PdfDocument, PdfSection, PdfNotice } from "@/components/learn/pdf/pdf-document";
 import { PdfQuestionList, type PdfQuestion } from "@/components/learn/pdf/pdf-question-list";
+import { PDF, PDF_FONT } from "@/lib/pdf/theme";
 
 interface Props {
   title: string;
   hskLevel: string;
   transcript?: string | null;
   questions: PdfQuestion[];
-  backHref: string;
 }
 
 /** PDF nghe hiểu: ghi chú nghe online + lời thoại (transcript) + câu hỏi & đáp án. */
-export function ListeningPdf({ title, hskLevel, transcript, questions, backHref }: Props) {
+export function ListeningPdf({ title, hskLevel, transcript, questions }: Props) {
   return (
-    <PrintableDoc title={title} hskLevel={hskLevel} backHref={backHref}>
-      <p className="mb-5 rounded-lg border border-amber-200 bg-amber-50 px-3 py-2 text-[13px] text-amber-800">
-        🎧 Nghe phần âm thanh trực tiếp tại dingdonghsk.com (bản PDF chỉ có lời thoại &amp; đáp án).
-      </p>
+    <PdfDocument kicker="Nghe hiểu · 听力" title={title} hskLevel={hskLevel}>
+      <PdfNotice>
+        🎧 Nghe phần âm thanh trực tiếp tại <b>dingdonghsk.com</b> — bản PDF chỉ gồm lời thoại &amp; đáp án.
+      </PdfNotice>
       {transcript && (
-        <section className="mb-8 space-y-2">
-          <h2 className="text-base font-bold text-violet-700">Lời thoại (transcript)</h2>
-          <p className="whitespace-pre-line font-chinese text-[15px] leading-loose text-zinc-900">{transcript}</p>
-        </section>
+        <PdfSection title="Lời thoại" titleZh="听力原文">
+          <div
+            style={{
+              borderRadius: 10,
+              border: `1px solid ${PDF.line}`,
+              borderLeft: `3px solid ${PDF.brand}`,
+              background: PDF.paperTint,
+              padding: "12px 14px",
+            }}
+          >
+            <p style={{ whiteSpace: "pre-line", fontFamily: PDF_FONT.chinese, fontSize: 15, lineHeight: 1.9, color: PDF.ink }}>
+              {transcript}
+            </p>
+          </div>
+        </PdfSection>
       )}
-      <section className="space-y-3">
-        <h2 className="text-base font-bold text-violet-700">Câu hỏi &amp; đáp án</h2>
+      <PdfSection title="Câu hỏi & đáp án" titleZh="问题与答案">
         <PdfQuestionList questions={questions} />
-      </section>
-    </PrintableDoc>
+      </PdfSection>
+    </PdfDocument>
   );
 }

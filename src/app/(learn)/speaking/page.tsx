@@ -116,7 +116,7 @@ export default async function SpeakingPage() {
                   score={bestMap.get(set.id) ?? null}
                   seed={set.id}
                   imageUrl={set.imageUrl}
-                  pdfHref={`/speaking-pdf/${set.id}`}
+                  pdfHref={`/api/pdf/speaking/${set.id}`}
                 />
               ))}
             </div>

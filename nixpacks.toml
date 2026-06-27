@@ -1,5 +1,14 @@
 [phases.setup]
-nixPkgs = ["nodejs_20"]
+# `chromium`: cần cho việc tạo PDF (puppeteer-core KHÔNG tự tải Chromium). Gói nix
+# cung cấp binary chromium thật trên mọi base image (apt `chromium` trên Ubuntu là
+# bản snap rỗng → không chạy được headless). src/lib/pdf/browser.ts tự dò `chromium`
+# trên PATH lúc chạy.
+nixPkgs = ["nodejs_20", "chromium"]
+# Font tiếng Trung + emoji cài qua APT (fontconfig tự quét /usr/share/fonts nên
+# Chromium tìm thấy). Đây là DỰ PHÒNG offline: bản render vẫn nạp Noto từ Google
+# Fonts, nhưng nếu egress tới Google chậm/lỗi thì có font hệ thống để chữ Hán KHÔNG
+# bị ô vuông (tofu). 'fonts-noto-cjk' → "Noto Sans CJK SC" (đã có trong PDF_FONT).
+aptPkgs = ["fonts-noto-cjk", "fonts-noto-color-emoji"]
 
 [phases.install]
 # --include=dev: Nixpacks runs the install phase with NODE_ENV=production, which
