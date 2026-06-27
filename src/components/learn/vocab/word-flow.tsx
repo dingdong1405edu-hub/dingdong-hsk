@@ -13,6 +13,7 @@ import { saveVocabPositionAction } from "@/server/actions/vocab-review";
 import { WordCard } from "./word-card";
 import { StrokeQuiz } from "./stroke-quiz";
 import { FlashcardDeck } from "./flashcard-deck";
+import { playWord } from "@/lib/speech";
 import { BaoBuddy } from "@/components/marketing/bao-buddy";
 import { PassStatus } from "@/components/learn/roadmap/pass-status";
 import type { VocabWordCard } from "@/types";
@@ -82,6 +83,19 @@ export function WordFlow({
     if (wordIndex === 0 && step === 0) return;
     void saveVocabPositionAction({ lessonId: lesson.id, wordIndex, step }).catch(() => {});
   }, [phase, wordIndex, step, lesson.id, words.length, disablePositionSave]);
+
+  // Tự đọc từ khi vào bước viết chữ Hán ("Viết theo nét" / "Tự viết") — giống
+  // bước "Học từ" đã tự đọc — để người học vừa viết vừa nghe, dễ nhớ hơn.
+  // Phụ thuộc theo trường nguyên thuỷ (không phải object `word`) vì lộ trình
+  // dựng lại mảng `words` mỗi lần render → tránh phát lại liên tục.
+  const wordHanzi = word?.hanzi;
+  const wordAudioUrl = word?.audioUrl;
+  useEffect(() => {
+    if (phase !== "learn" || !wordHanzi) return;
+    if (step === 1 || step === 2) {
+      playWord({ hanzi: wordHanzi, audioUrl: wordAudioUrl });
+    }
+  }, [phase, step, wordHanzi, wordAudioUrl]);
 
   // Empty lesson — nothing authored yet.
   if (words.length === 0) {
