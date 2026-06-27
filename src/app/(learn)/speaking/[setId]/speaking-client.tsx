@@ -10,6 +10,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { hskLevelLabel } from "@/lib/utils";
 import { gradeSpeakingAction } from "@/server/actions/speaking";
 import { BaoBuddy } from "@/components/marketing/bao-buddy";
+import { PassStatus } from "@/components/learn/roadmap/pass-status";
 import { Mic, Square, Loader2, CheckCircle2 } from "lucide-react";
 import type { HSKLevel } from "@prisma/client";
 
@@ -184,13 +185,16 @@ export function SpeakingClient({
   set,
   gradeAction,
   onFinish,
+  passThreshold,
 }: {
   set: SpeakingSetData;
   userId?: string;
   /** Chấm tuỳ biến (lộ trình). Nếu có → dùng thay gradeSpeakingAction. */
   gradeAction?: GradeFn;
-  /** Nút "Hoàn thành phần Nói" (lộ trình). Nếu có → hiện nút ghi nhận hoàn thành. */
-  onFinish?: () => Promise<void> | void;
+  /** Nút "Hoàn thành phần Nói" (lộ trình). Nhận điểm trung bình các đoạn đã chấm. */
+  onFinish?: (score: number) => Promise<void> | void;
+  /** Lộ trình: ngưỡng "qua môn" → hiện kết quả % + nhãn Đạt/Chưa đạt sau khi hoàn thành. */
+  passThreshold?: number;
 }) {
   const sentences = set.part1Sentences as Sentence[];
   const passage = set.part2Passage as Passage;
@@ -199,20 +203,7 @@ export function SpeakingClient({
   const grade: GradeFn = gradeAction ?? ((args) => gradeSpeakingAction({ setId: set.id, ...args }));
   const [finishing, setFinishing] = useState(false);
   const [finished, setFinished] = useState(false);
-
-  async function handleFinish() {
-    if (!onFinish) return;
-    setFinishing(true);
-    try {
-      await onFinish();
-      setFinished(true);
-      toast.success("Đã hoàn thành phần Nói!");
-    } catch {
-      toast.error("Không ghi nhận được, thử lại sau.");
-    } finally {
-      setFinishing(false);
-    }
-  }
+  const [finalScore, setFinalScore] = useState<number | null>(null);
 
   const [part1Results, setPart1Results] = useState<(GradeResult | null)[]>(Array(sentences.length).fill(null));
   const [part1Loading, setPart1Loading] = useState<boolean[]>(Array(sentences.length).fill(false));
@@ -222,7 +213,29 @@ export function SpeakingClient({
   const [part3Loading, setPart3Loading] = useState<boolean[]>(Array(questions.length).fill(false));
   const [showPinyin, setShowPinyin] = useState(false);
 
-  const anyHigh = [...part1Results, part2Result, ...part3Results].some((r) => r != null && r.score >= 80);
+  const gradedScores = [...part1Results, part2Result, ...part3Results]
+    .filter((r): r is GradeResult => r != null)
+    .map((r) => r.score);
+  const anyHigh = gradedScores.some((s) => s >= 80);
+  /** Điểm tổng phần Nói = trung bình các đoạn đã chấm (0 nếu chưa ghi âm đoạn nào). */
+  const overallScore = gradedScores.length
+    ? Math.round(gradedScores.reduce((a, b) => a + b, 0) / gradedScores.length)
+    : 0;
+
+  async function handleFinish() {
+    if (!onFinish) return;
+    setFinishing(true);
+    try {
+      await onFinish(overallScore);
+      setFinalScore(overallScore);
+      setFinished(true);
+      toast.success("Đã hoàn thành phần Nói!");
+    } catch {
+      toast.error("Không ghi nhận được, thử lại sau.");
+    } finally {
+      setFinishing(false);
+    }
+  }
 
   async function gradePart1(idx: number, blob: Blob, durationSec: number) {
     setPart1Loading((l) => { const n = [...l]; n[idx] = true; return n; });
@@ -415,9 +428,17 @@ export function SpeakingClient({
 
       {onFinish && (
         <div className="flex flex-col items-center gap-2 rounded-2xl border bg-muted/30 p-4 text-center">
-          <p className="text-xs text-muted-foreground">
-            Luyện đủ 3 phần rồi bấm hoàn thành để ghi nhận phần Nói cho bài lộ trình.
-          </p>
+          {finished && finalScore != null ? (
+            <>
+              <div className="text-3xl font-extrabold text-primary">Kết quả: {finalScore}%</div>
+              <p className="text-xs text-muted-foreground">Điểm trung bình các đoạn đã ghi âm.</p>
+              {passThreshold != null && <PassStatus score={finalScore} threshold={passThreshold} />}
+            </>
+          ) : (
+            <p className="text-xs text-muted-foreground">
+              Luyện đủ 3 phần rồi bấm hoàn thành để ghi nhận phần Nói cho bài lộ trình.
+            </p>
+          )}
           <Button onClick={handleFinish} disabled={finishing || finished} className="gap-1.5">
             {finishing ? (
               <Loader2 className="h-4 w-4 animate-spin" />

@@ -621,52 +621,57 @@ export async function bulkImportRoadmapLessonsAction(input: {
     const publish = input.publish ?? false;
 
     for (const item of bundle) {
-      const ch = item.chapter ? chapterByTitle.get(item.chapter.toLowerCase()) : undefined;
-      if (item.chapter && !ch) warnings.push(`Bài «${item.topic}»: không thấy chương «${item.chapter}» — để chưa phân chương.`);
-      const chapterFields = ch
-        ? { chapterId: ch.id, chapter: ch.title, chapterOrder: ch.order }
-        : { chapterId: null, chapter: null, chapterOrder: UNCHAPTERED_ORDER };
+      // Một bài lỗi (vd đụng ràng buộc order) → cảnh báo & bỏ qua, KHÔNG làm hỏng cả mẻ.
+      try {
+        const ch = item.chapter ? chapterByTitle.get(item.chapter.toLowerCase()) : undefined;
+        if (item.chapter && !ch) warnings.push(`Bài «${item.topic}»: không thấy chương «${item.chapter}» — để chưa phân chương.`);
+        const chapterFields = ch
+          ? { chapterId: ch.id, chapter: ch.title, chapterOrder: ch.order }
+          : { chapterId: null, chapter: null, chapterOrder: UNCHAPTERED_ORDER };
 
-      const lesson = await db.roadmapLesson.create({
-        data: {
-          courseId: course.id,
-          order: nextOrder++,
-          topic: item.topic,
-          topicZh: item.topicZh,
-          icon: item.icon ?? null,
-          description: item.description ?? null,
-          ...chapterFields,
-          xpReward: item.xpReward,
-        },
-        select: { id: true },
-      });
-      lessonsCreated++;
+        const lesson = await db.roadmapLesson.create({
+          data: {
+            courseId: course.id,
+            order: nextOrder++,
+            topic: item.topic,
+            topicZh: item.topicZh,
+            icon: item.icon ?? null,
+            description: item.description ?? null,
+            ...chapterFields,
+            xpReward: item.xpReward,
+          },
+          select: { id: true },
+        });
+        lessonsCreated++;
 
-      for (const skill of Object.keys(item.sections) as SkillKey[]) {
-        const raw = item.sections[skill];
-        if (raw === undefined) continue;
-        try {
-          const built = buildSectionContent(skill, raw, item.topic);
-          const valid = validateSectionContent(skill, built);
-          if (!valid.ok) {
-            warnings.push(`Bài «${item.topic}» · ${skill}: ${valid.error}`);
-            continue;
+        for (const skill of Object.keys(item.sections) as SkillKey[]) {
+          const raw = item.sections[skill];
+          if (raw === undefined) continue;
+          try {
+            const built = buildSectionContent(skill, raw, item.topic);
+            const valid = validateSectionContent(skill, built);
+            if (!valid.ok) {
+              warnings.push(`Bài «${item.topic}» · ${skill}: ${valid.error}`);
+              continue;
+            }
+            await db.roadmapSection.upsert({
+              where: { lessonId_skill: { lessonId: lesson.id, skill: skill as Skill } },
+              update: { content: valid.data as Prisma.InputJsonValue, order: SKILL_ORDER[skill], published: publish },
+              create: {
+                lessonId: lesson.id,
+                skill: skill as Skill,
+                order: SKILL_ORDER[skill],
+                content: valid.data as Prisma.InputJsonValue,
+                published: publish,
+              },
+            });
+            sectionsCreated++;
+          } catch (e) {
+            warnings.push(`Bài «${item.topic}» · ${skill}: ${e instanceof Error ? e.message : "lỗi nội dung"}`);
           }
-          await db.roadmapSection.upsert({
-            where: { lessonId_skill: { lessonId: lesson.id, skill: skill as Skill } },
-            update: { content: valid.data as Prisma.InputJsonValue, order: SKILL_ORDER[skill], published: publish },
-            create: {
-              lessonId: lesson.id,
-              skill: skill as Skill,
-              order: SKILL_ORDER[skill],
-              content: valid.data as Prisma.InputJsonValue,
-              published: publish,
-            },
-          });
-          sectionsCreated++;
-        } catch (e) {
-          warnings.push(`Bài «${item.topic}» · ${skill}: ${e instanceof Error ? e.message : "lỗi nội dung"}`);
         }
+      } catch (e) {
+        warnings.push(`Bài «${item.topic}»: ${e instanceof Error ? e.message : "lỗi tạo bài"}`);
       }
     }
 

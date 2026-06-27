@@ -23,6 +23,7 @@ import type {
 } from "@/lib/roadmap-content";
 import { RoadmapMultiReadingPlayer } from "./roadmap-multi-reading-player";
 import { RoadmapMultiListeningPlayer } from "./roadmap-multi-listening-player";
+import { ROADMAP_PASS_THRESHOLD } from "./pass-status";
 import {
   completeRoadmapSectionAction,
   submitRoadmapReadingAction,
@@ -66,6 +67,7 @@ export function RoadmapSectionPlayer({ skill, lessonId, sectionId, hskLevel, tit
           words={words}
           unitId=""
           disablePositionSave
+          passThreshold={ROADMAP_PASS_THRESHOLD}
           onExit={() => router.push(backHref)}
           onComplete={async (s) => {
             const r = await completeRoadmapSectionAction({
@@ -90,6 +92,7 @@ export function RoadmapSectionPlayer({ skill, lessonId, sectionId, hskLevel, tit
           unitId=""
           showTest={false}
           closeHref={backHref}
+          passThreshold={ROADMAP_PASS_THRESHOLD}
           onComplete={async (s) => {
             const r = await completeRoadmapSectionAction({
               lessonId,
@@ -138,6 +141,7 @@ export function RoadmapSectionPlayer({ skill, lessonId, sectionId, hskLevel, tit
             passages={c.passages}
             timeLimit={c.timeLimit}
             backHref={backHref}
+            passThreshold={ROADMAP_PASS_THRESHOLD}
           />
         );
       }
@@ -171,6 +175,7 @@ export function RoadmapSectionPlayer({ skill, lessonId, sectionId, hskLevel, tit
         <ReadingTestClient
           test={test}
           backHref={backHref}
+          passThreshold={ROADMAP_PASS_THRESHOLD}
           onSubmit={async ({ answers, durationSec }) => {
             const r = await submitRoadmapReadingAction({ sectionId, answers, durationSec });
             router.refresh();
@@ -192,6 +197,7 @@ export function RoadmapSectionPlayer({ skill, lessonId, sectionId, hskLevel, tit
             clips={c.clips}
             timeLimit={c.timeLimit}
             backHref={backHref}
+            passThreshold={ROADMAP_PASS_THRESHOLD}
           />
         );
       }
@@ -225,6 +231,7 @@ export function RoadmapSectionPlayer({ skill, lessonId, sectionId, hskLevel, tit
         <ListeningTestClient
           test={test}
           backHref={backHref}
+          passThreshold={ROADMAP_PASS_THRESHOLD}
           onSubmit={async ({ answers, durationSec }) => {
             const r = await submitRoadmapListeningAction({ sectionId, answers, durationSec });
             router.refresh();
@@ -250,6 +257,7 @@ export function RoadmapSectionPlayer({ skill, lessonId, sectionId, hskLevel, tit
       return (
         <WritingClient
           task={task}
+          passThreshold={ROADMAP_PASS_THRESHOLD}
           onGrade={async ({ submission, durationSec }) => {
             const r = await gradeRoadmapWritingAction({ sectionId, submission, durationSec });
             router.refresh();
@@ -272,9 +280,10 @@ export function RoadmapSectionPlayer({ skill, lessonId, sectionId, hskLevel, tit
       return (
         <SpeakingClient
           set={set}
+          passThreshold={ROADMAP_PASS_THRESHOLD}
           gradeAction={async (args) => gradeRoadmapSpeakingAction({ sectionId, ...args })}
-          onFinish={async () => {
-            const r = await completeRoadmapSectionAction({ lessonId, skill: "SPEAKING" });
+          onFinish={async (score) => {
+            const r = await completeRoadmapSectionAction({ lessonId, skill: "SPEAKING", score });
             if (!r.ok) throw new Error(r.error);
             router.refresh();
           }}

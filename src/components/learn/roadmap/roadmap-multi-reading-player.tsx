@@ -2,7 +2,7 @@
 // Lộ trình — phần Đọc NHIỀU đoạn: chạy lại trình Đọc một-đoạn cho từng đoạn,
 // làm lần lượt, mỗi đoạn chấm riêng; xong đoạn cuối thì ghi hoàn thành với điểm
 // TRUNG BÌNH các đoạn (chấm chung). Tái dùng ReadingTestClient qua onContinue.
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
 import type { HSKLevel, QuestionType } from "@prisma/client";
@@ -22,6 +22,7 @@ interface Props {
   passages: ReadingPassageContent[];
   timeLimit: number;
   backHref: string;
+  passThreshold?: number;
 }
 
 export function RoadmapMultiReadingPlayer({
@@ -32,6 +33,7 @@ export function RoadmapMultiReadingPlayer({
   passages,
   timeLimit,
   backHref,
+  passThreshold,
 }: Props) {
   const router = useRouter();
   const total = passages.length;
@@ -39,10 +41,10 @@ export function RoadmapMultiReadingPlayer({
   const [scores, setScores] = useState<number[]>(() => passages.map(() => -1));
   const [durations, setDurations] = useState<number[]>(() => passages.map(() => 0));
   const [finalizing, setFinalizing] = useState(false);
+  const finalizingRef = useRef(false);
 
   const p = passages[index];
   const isLast = index === total - 1;
-  const perTime = Math.max(60, Math.round(timeLimit / total));
 
   const test: ReadingTestData = {
     id: `${sectionId}-p${index}`,
@@ -52,7 +54,8 @@ export function RoadmapMultiReadingPlayer({
     passage: p.passage,
     passagePinyin: p.passagePinyin ?? null,
     imageUrl: p.imageUrl ?? null,
-    timeLimit: perTime,
+    // Mỗi đoạn được trọn thời gian đề xuất (không chia nhỏ) — tránh cắt giờ quá ngắn.
+    timeLimit,
     questions: (p.questions ?? []).map(
       (q, i): ReadingQuestion => ({
         id: roadmapQuestionId(i),
@@ -71,7 +74,8 @@ export function RoadmapMultiReadingPlayer({
   };
 
   async function finalize() {
-    if (finalizing) return;
+    if (finalizingRef.current) return; // chống double-tap tạo 2 Attempt
+    finalizingRef.current = true;
     setFinalizing(true);
     const valid = scores.filter((s) => s >= 0);
     const avg = valid.length ? Math.round(valid.reduce((a, b) => a + b, 0) / valid.length) : 0;
@@ -82,12 +86,13 @@ export function RoadmapMultiReadingPlayer({
       score: avg,
       durationSec: totalDuration,
     });
-    setFinalizing(false);
     if (r.ok) {
       toast.success(`Hoàn thành phần Đọc · ${avg}%`);
       router.push(backHref);
       router.refresh();
     } else {
+      finalizingRef.current = false;
+      setFinalizing(false);
       toast.error(r.error);
     }
   }
@@ -97,6 +102,7 @@ export function RoadmapMultiReadingPlayer({
       key={index}
       test={test}
       backHref={backHref}
+      passThreshold={passThreshold}
       onSubmit={async ({ answers, durationSec }) => {
         const r = await gradeRoadmapReadingPassageAction({
           sectionId,

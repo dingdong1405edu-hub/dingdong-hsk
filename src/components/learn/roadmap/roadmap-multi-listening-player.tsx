@@ -2,7 +2,7 @@
 // Lộ trình — phần Nghe NHIỀU đoạn: chạy lại trình Nghe một-đoạn cho từng clip,
 // làm lần lượt, mỗi clip chấm riêng; xong clip cuối ghi hoàn thành với điểm
 // TRUNG BÌNH (chấm chung). Tái dùng ListeningTestClient qua onContinue.
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
 import type { HSKLevel, QuestionType } from "@prisma/client";
@@ -22,6 +22,7 @@ interface Props {
   clips: ListeningClipContent[];
   timeLimit: number;
   backHref: string;
+  passThreshold?: number;
 }
 
 export function RoadmapMultiListeningPlayer({
@@ -32,6 +33,7 @@ export function RoadmapMultiListeningPlayer({
   clips,
   timeLimit,
   backHref,
+  passThreshold,
 }: Props) {
   const router = useRouter();
   const total = clips.length;
@@ -39,10 +41,10 @@ export function RoadmapMultiListeningPlayer({
   const [scores, setScores] = useState<number[]>(() => clips.map(() => -1));
   const [durations, setDurations] = useState<number[]>(() => clips.map(() => 0));
   const [finalizing, setFinalizing] = useState(false);
+  const finalizingRef = useRef(false);
 
   const c = clips[index];
   const isLast = index === total - 1;
-  const perTime = Math.max(60, Math.round(timeLimit / total));
 
   const test: ListeningTestData = {
     id: `${sectionId}-c${index}`,
@@ -52,7 +54,8 @@ export function RoadmapMultiListeningPlayer({
     transcript: c.transcript ?? null,
     transcriptExplanation: c.transcriptExplanation ?? null,
     imageUrl: c.imageUrl ?? null,
-    timeLimit: perTime,
+    // Mỗi đoạn nghe được trọn thời gian (Nghe tự nộp khi hết giờ — không chia nhỏ kẻo cắt giờ quá ngắn).
+    timeLimit,
     questions: (c.questions ?? []).map(
       (q, i): ListeningQuestion => ({
         id: roadmapQuestionId(i),
@@ -71,7 +74,8 @@ export function RoadmapMultiListeningPlayer({
   };
 
   async function finalize() {
-    if (finalizing) return;
+    if (finalizingRef.current) return; // chống double-tap tạo 2 Attempt
+    finalizingRef.current = true;
     setFinalizing(true);
     const valid = scores.filter((s) => s >= 0);
     const avg = valid.length ? Math.round(valid.reduce((a, b) => a + b, 0) / valid.length) : 0;
@@ -82,12 +86,13 @@ export function RoadmapMultiListeningPlayer({
       score: avg,
       durationSec: totalDuration,
     });
-    setFinalizing(false);
     if (r.ok) {
       toast.success(`Hoàn thành phần Nghe · ${avg}%`);
       router.push(backHref);
       router.refresh();
     } else {
+      finalizingRef.current = false;
+      setFinalizing(false);
       toast.error(r.error);
     }
   }
@@ -97,6 +102,7 @@ export function RoadmapMultiListeningPlayer({
       key={index}
       test={test}
       backHref={backHref}
+      passThreshold={passThreshold}
       onSubmit={async ({ answers, durationSec }) => {
         const r = await gradeRoadmapListeningClipAction({
           sectionId,

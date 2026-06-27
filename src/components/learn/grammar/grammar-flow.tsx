@@ -11,6 +11,7 @@ import { completeLessonAction } from "@/server/actions/lesson";
 import { SectionTheory } from "./section-theory";
 import { FlashcardPhase, type FlashResult } from "./flashcard-phase";
 import { TheoryReviewDialog } from "./theory-review-dialog";
+import { PassStatus } from "@/components/learn/roadmap/pass-status";
 import type { GrammarLessonContent, GrammarSection } from "@/types";
 
 interface Props {
@@ -23,6 +24,8 @@ interface Props {
   closeHref?: string;
   /** Hiển thị nút "Làm bài kiểm tra" (mặc định true; lộ trình tắt vì không có trang test riêng). */
   showTest?: boolean;
+  /** Lộ trình: ngưỡng "qua môn" → hiện kết quả % + nhãn Đạt/Chưa đạt ở màn hoàn thành. */
+  passThreshold?: number;
 }
 
 type Stage = "theory" | "practice" | "done";
@@ -41,7 +44,7 @@ function sectionHasPractice(s: GrammarSection): boolean {
  * bài tiếp theo (KHÔNG cần làm bài kiểm tra). Bài kiểm tra được TÁCH RIÊNG sang
  * trang .../test (nút "Làm bài kiểm tra"); chỉ ở đó mới có điểm kinh nghiệm.
  */
-export function GrammarFlow({ lesson, content, unitId, onComplete, closeHref: closeHrefProp, showTest = true }: Props) {
+export function GrammarFlow({ lesson, content, unitId, onComplete, closeHref: closeHrefProp, showTest = true, passThreshold }: Props) {
   const router = useRouter();
   const sections = content.sections;
   const hasTest = showTest && content.test.questions.length > 0;
@@ -65,6 +68,7 @@ export function GrammarFlow({ lesson, content, unitId, onComplete, closeHref: cl
   const [reviewOpen, setReviewOpen] = useState(false);
   const flashRef = useRef<FlashResult>({ correct: 0, wrong: 0, skipped: 0 });
   const [startTime] = useState(Date.now());
+  const [resultPct, setResultPct] = useState<number | null>(null);
   const savedRef = useRef(false);
 
   // Bài chỉ có bài kiểm tra (không phần lý thuyết/luyện tập) → đánh dấu hoàn thành
@@ -95,7 +99,10 @@ export function GrammarFlow({ lesson, content, unitId, onComplete, closeHref: cl
     savedRef.current = true;
     const durationSec = Math.round((Date.now() - startTime) / 1000);
     const correct = flashRef.current.correct;
-    const total = Math.max(1, flashRef.current.correct + flashRef.current.wrong);
+    const graded = flashRef.current.correct + flashRef.current.wrong;
+    const total = Math.max(1, graded);
+    // Chỉ có % "qua môn" khi thực sự có câu luyện tập (bài chỉ-lý-thuyết thì không chấm).
+    setResultPct(graded > 0 ? Math.round((correct / total) * 100) : null);
     // Hoàn thành luyện tập → mở khoá bài kế; KHÔNG cộng XP (XP chỉ từ bài kiểm tra).
     const res = onComplete
       ? await onComplete({ correct, total, durationSec })
@@ -152,6 +159,13 @@ export function GrammarFlow({ lesson, content, unitId, onComplete, closeHref: cl
             <p className="text-sm text-muted-foreground">
               Bạn đã hoàn thành bài “{lesson.title || "Ngữ pháp"}”. Bài tiếp theo đã được mở khoá.
             </p>
+
+            {passThreshold != null && resultPct != null && (
+              <div className="flex flex-col items-center gap-1.5">
+                <div className="text-3xl font-extrabold text-primary">Kết quả: {resultPct}%</div>
+                <PassStatus score={resultPct} threshold={passThreshold} />
+              </div>
+            )}
 
             {(flash.correct > 0 || flash.wrong > 0 || flash.skipped > 0) && (
               <div className="text-xs text-muted-foreground">
