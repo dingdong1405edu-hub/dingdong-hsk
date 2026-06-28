@@ -185,6 +185,31 @@
 @keyframes wobble  { 0%, 100% { transform: rotate(-2.5deg); } 50% { transform: rotate(2.5deg); } }
 @keyframes breathe { 0%, 100% { transform: scale(1, 1); }     50% { transform: scale(1.05, 0.95); } }
 
+/* --- Tay (paw) — hai mẩu tròn nhỏ hai bên, nằm sau thân; vẫy khi con trỏ lại gần --- */
+.arm {
+  position: absolute;
+  z-index: 1;
+  bottom: 30%;
+  width: 17%;
+  aspect-ratio: 1;
+  box-sizing: border-box;
+  background: var(--bun);
+  border: 4px solid var(--ink);
+  border-radius: 48% 48% 50% 50%;
+}
+.armL { left: 6%; transform: rotate(10deg); }
+.armR { right: 6%; transform: rotate(-10deg); }
+.happy .armR {
+  bottom: 46%;
+  right: 2%;
+  transform-origin: 50% 100%;
+  animation: waveArm 0.8s ease-in-out infinite;
+}
+@keyframes waveArm {
+  0%, 100% { transform: rotate(-20deg); }
+  50%      { transform: rotate(18deg); }
+}
+
 .bunSvg { width: 100%; display: block; overflow: visible; position: relative; z-index: 2; }
 .bunBody { fill: var(--bun); stroke: var(--ink); stroke-width: 5; stroke-linejoin: round; }
 .bunShadow { fill: var(--bun-sh); opacity: 0.55; }
@@ -315,5 +340,5 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .bubble, .wisp, .bounce, .wobble, .squish, .cheek, .spark { animation: none; }
+  .bubble, .wisp, .bounce, .wobble, .squish, .cheek, .spark, .happy .armR { animation: none; }
 }

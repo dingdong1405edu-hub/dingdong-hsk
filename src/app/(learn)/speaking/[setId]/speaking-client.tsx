@@ -9,6 +9,7 @@ import { Progress } from "@/components/ui/progress";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { hskLevelLabel } from "@/lib/utils";
 import { gradeSpeakingAction } from "@/server/actions/speaking";
+import { emitBao } from "@/lib/bao-bus";
 import { BaoBuddy } from "@/components/marketing/bao-buddy";
 import { PassStatus } from "@/components/learn/roadmap/pass-status";
 import { Mic, Square, Loader2, CheckCircle2 } from "lucide-react";
@@ -159,6 +160,7 @@ async function transcribeAndGrade(params: {
   }
 
   // 2) Transcript → score via Groq, persisted as an Attempt (server action).
+  emitBao("thinking");
   const res = await grade({ transcript, referenceText, part, question, index, durationSec });
   if (!res.ok || !res.result) {
     throw new Error(res.error || "Chấm điểm thất bại");

@@ -120,6 +120,41 @@ export function buildSpeakingContent(input: unknown): unknown {
   return { part1Sentences: p1, part2Passage: p2, part3Questions: p3 };
 }
 
+// ───────────────────────── WRITING (写作) ─────────────────────────
+
+/**
+ * Chuẩn hoá content Viết. Nhận: object `{ taskType?, prompt, promptZh?, outline?,
+ * imageUrl?, minChars?, timeLimit? }` HOẶC mảng (lấy phần tử đầu hợp lệ — khớp
+ * định dạng JSON nhập hàng loạt ở /admin/writing). Điền mặc định, chuẩn hoá taskType.
+ */
+export function buildWritingContent(input: unknown): unknown {
+  const src = Array.isArray(input)
+    ? (input.find((x) => x && typeof x === "object") ?? {})
+    : input && typeof input === "object"
+      ? input
+      : {};
+  const o = src as Record<string, unknown>;
+  const prompt = typeof o.prompt === "string" ? o.prompt.trim() : "";
+  if (!prompt) throw new Error("Thiếu đề bài (prompt).");
+  const tt = String(o.taskType ?? "FREE").toUpperCase();
+  const taskType =
+    tt === "GUIDED" || tt === "PICTURE_DESCRIPTION" ? tt : "FREE";
+  const str = (val: unknown) => (typeof val === "string" && val.trim() ? val.trim() : null);
+  const num = (val: unknown, dflt: number) => {
+    const n = typeof val === "number" ? val : Number(val);
+    return Number.isFinite(n) && n >= 0 ? Math.floor(n) : dflt;
+  };
+  return {
+    taskType,
+    prompt,
+    promptZh: str(o.promptZh),
+    outline: str(o.outline),
+    imageUrl: str(o.imageUrl),
+    minChars: num(o.minChars, 50),
+    timeLimit: num(o.timeLimit, 900),
+  };
+}
+
 // ───────────────────────── Bộ bài hàng loạt (bulk lessons) ─────────────────────────
 
 import type { SkillKey } from "@/lib/roadmap";
@@ -143,8 +178,10 @@ export function buildSectionContent(skill: SkillKey, raw: unknown, fallbackTitle
       return buildListeningContent(raw, fallbackTitle);
     case "SPEAKING":
       return buildSpeakingContent(raw);
+    case "WRITING":
+      return buildWritingContent(raw);
     default:
-      // VOCAB / GRAMMAR / HANZI / WRITING: admin cung cấp đúng shape, để validate lo.
+      // VOCAB / GRAMMAR / HANZI: admin cung cấp đúng shape, để validate lo.
       return raw;
   }
 }

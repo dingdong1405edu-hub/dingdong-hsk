@@ -1,7 +1,11 @@
 import * as React from "react";
 import { PDF, PDF_FONT } from "@/lib/pdf/theme";
-import { getLogoDataUri } from "@/lib/pdf/logo";
 import { hskLevelLabel } from "@/lib/utils";
+
+/* Logo dùng đường dẫn tĩnh để component render được cả trên TRÌNH DUYỆT (trang xem
+ * trước) lẫn server. Khi tạo PDF, src/lib/pdf/render.tsx thay "/logo-hsk.png" bằng
+ * data-URI (vì page.setContent không có base URL). */
+const LOGO_SRC = "/logo-hsk.png";
 
 /* Khung & các mảnh dựng dùng chung cho mọi tài liệu PDF. Toàn bộ dùng INLINE
  * STYLE (không Tailwind) để render độc lập qua renderToStaticMarkup → Chromium.
@@ -20,7 +24,6 @@ interface DocProps {
 
 /** Tài liệu PDF: dải header thương hiệu + khối tiêu đề + nội dung. */
 export function PdfDocument({ kicker, title, titleZh, subtitle, hskLevel, children }: DocProps) {
-  const logo = getLogoDataUri();
   return (
     <div style={{ fontFamily: PDF_FONT.sans, color: PDF.ink, fontSize: 13, lineHeight: 1.55 }}>
       {/* Dải header thương hiệu */}
@@ -50,12 +53,8 @@ export function PdfDocument({ kicker, title, titleZh, subtitle, hskLevel, childr
               boxShadow: "0 2px 6px rgba(0,0,0,0.12)",
             }}
           >
-            {logo ? (
-              // eslint-disable-next-line @next/next/no-img-element -- data-URI nhúng trong PDF (không qua next/image)
-              <img src={logo} alt="DingDong HSK" style={{ width: 34, height: 34, objectFit: "contain" }} />
-            ) : (
-              <span style={{ fontSize: 22 }}>🥟</span>
-            )}
+            {/* eslint-disable-next-line @next/next/no-img-element -- data-URI nhúng trong PDF / ảnh tĩnh khi xem trước */}
+            <img src={LOGO_SRC} alt="DingDong HSK" style={{ width: 34, height: 34, objectFit: "contain" }} />
           </div>
           <div style={{ lineHeight: 1.15 }}>
             <div style={{ fontSize: 18, fontWeight: 800, letterSpacing: "-0.02em" }}>DingDong HSK</div>

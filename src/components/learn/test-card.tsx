@@ -27,15 +27,14 @@ export function TestCard({ href, title, level, tags, attempts, score, meta, seed
   return (
     <div className="group relative block">
       {pdfHref && (
-        <a
+        <Link
           href={pdfHref}
-          download
           aria-label="Tải PDF"
           title="Tải PDF"
           className="absolute right-2 top-2 z-10 inline-flex items-center gap-1 rounded-full bg-card/95 px-2 py-1 text-[11px] font-semibold text-foreground shadow transition-colors hover:bg-card"
         >
           <FileDown className="h-3.5 w-3.5" /> PDF
-        </a>
+        </Link>
       )}
       <Link href={href} className="block">
       <div className="h-full overflow-hidden rounded-2xl border border-border/60 bg-card shadow-soft transition-all duration-200 hover:-translate-y-1 hover:border-primary/30 hover:shadow-soft-lg">

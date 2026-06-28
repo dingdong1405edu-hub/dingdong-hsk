@@ -14,6 +14,7 @@ import { WordCard } from "./word-card";
 import { StrokeQuiz } from "./stroke-quiz";
 import { FlashcardDeck } from "./flashcard-deck";
 import { playWord } from "@/lib/speech";
+import { emitBao } from "@/lib/bao-bus";
 import { BaoBuddy } from "@/components/marketing/bao-buddy";
 import { PassStatus } from "@/components/learn/roadmap/pass-status";
 import type { VocabWordCard } from "@/types";
@@ -163,6 +164,7 @@ export function WordFlow({
       toast.error("Lỗi lưu kết quả");
       setXpEarned(0);
     }
+    emitBao("complete");
     setPhase("done");
   }
 

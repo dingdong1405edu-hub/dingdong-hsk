@@ -121,6 +121,8 @@ export function BaoMascot({ transparent = false }: { transparent?: boolean }) {
             <div className={styles.bounce}>
               <div className={styles.wobble}>
                 <div ref={squishRef} className={styles.squish}>
+                  <div className={`${styles.arm} ${styles.armL}`} aria-hidden />
+                  <div className={`${styles.arm} ${styles.armR}`} aria-hidden />
                   <svg className={styles.bunSvg} viewBox="0 0 300 300" aria-label="Linh vật bánh bao">
                     <path
                       className={styles.bunBody}

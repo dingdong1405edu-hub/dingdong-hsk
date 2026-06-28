@@ -21,6 +21,7 @@ import type { ListeningTestData } from "@/components/learn/listening/types";
 import { splitTranscript, findEvidenceIndex } from "@/lib/transcript";
 import { cn, formatDuration, hskBadgeClass, hskLevelLabel } from "@/lib/utils";
 import { submitListeningAction } from "@/server/actions/listening";
+import { emitBao } from "@/lib/bao-bus";
 
 /** Câu chúc tiếng Trung của Bao (bóng thoại) theo điểm số. */
 function baoBubble(score: number): string {
@@ -239,6 +240,8 @@ export function ListeningTestClient({
       } catch {
         /* ignore */
       }
+      const passMark = passThreshold ?? 80;
+      emitBao(res.result.score >= passMark ? "celebrate" : "complete");
       toast.success(auto ? `Hết giờ! Bạn đạt ${Math.round(res.result.score)}%` : `Bạn đạt ${Math.round(res.result.score)}%`);
     } else {
       toast.error("Lỗi nộp bài, thử lại sau");

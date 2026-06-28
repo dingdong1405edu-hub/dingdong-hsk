@@ -1,5 +1,6 @@
 import * as React from "react";
 import { htmlToPdf } from "@/lib/pdf/browser";
+import { getLogoDataUri } from "@/lib/pdf/logo";
 
 /**
  * Nạp `react-dom/server` ĐỘNG lúc chạy. Next (App Router) chặn import TĨNH
@@ -69,7 +70,10 @@ function asciiFileName(name: string): string {
 export async function renderPdfResponse(node: React.ReactElement, fileName: string): Promise<Response> {
   const title = fileName;
   const renderToStaticMarkup = await getRenderToStaticMarkup();
-  const markup = renderToStaticMarkup(node);
+  let markup = renderToStaticMarkup(node);
+  // setContent không có base URL → nhúng logo dạng data-URI thay cho đường dẫn tĩnh.
+  const logo = getLogoDataUri();
+  if (logo) markup = markup.split('src="/logo-hsk.png"').join(`src="${logo}"`);
   const html = buildHtmlDocument(markup, title);
   const pdf = await htmlToPdf(html);
 

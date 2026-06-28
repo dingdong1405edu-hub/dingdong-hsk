@@ -97,9 +97,9 @@ export default async function GrammarUnitPage({ params }: Props) {
                       </Link>
                     )}
                     <Button asChild size="sm" variant="ghost" className="gap-1.5 text-muted-foreground">
-                      <a href={`/api/pdf/grammar/${unitId}/${lesson.id}`} download>
+                      <Link href={`/grammar-pdf/${unitId}/${lesson.id}`}>
                         <FileDown className="h-4 w-4" /> Tải PDF
-                      </a>
+                      </Link>
                     </Button>
                   </div>
                 ) : (

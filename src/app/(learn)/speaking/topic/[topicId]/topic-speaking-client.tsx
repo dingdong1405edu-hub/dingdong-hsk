@@ -6,6 +6,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { BaoBuddy } from "@/components/marketing/bao-buddy";
+import { emitBao } from "@/lib/bao-bus";
 import { hskLevelLabel } from "@/lib/utils";
 import { gradeSpeakingTopicAction } from "@/server/actions/speaking";
 import type { TopicHint } from "@/components/admin/speaking-topic-fields";

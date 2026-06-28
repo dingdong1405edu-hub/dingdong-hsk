@@ -76,7 +76,7 @@ export default async function ListeningPage() {
                 score={bestMap.get(test.id) ?? null}
                 seed={test.id}
                 imageUrl={test.imageUrl}
-                pdfHref={`/api/pdf/listening/${test.id}`}
+                pdfHref={`/listening-pdf/${test.id}`}
               />
             );
           })}

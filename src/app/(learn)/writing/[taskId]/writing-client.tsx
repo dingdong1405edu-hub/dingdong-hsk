@@ -9,6 +9,7 @@ import { Progress } from "@/components/ui/progress";
 import { BaoBuddy } from "@/components/marketing/bao-buddy";
 import { countChineseChars, hskLevelLabel, formatDuration } from "@/lib/utils";
 import { gradeWritingAction } from "@/server/actions/writing";
+import { emitBao } from "@/lib/bao-bus";
 import { PassStatus } from "@/components/learn/roadmap/pass-status";
 import { Clock, Loader2, Lightbulb, ChevronDown, CheckCircle2, ArrowUpCircle } from "lucide-react";
 import type { HSKLevel, WritingTaskType } from "@prisma/client";
@@ -114,6 +115,7 @@ export function WritingClient({
       return;
     }
     setGrading(true);
+    emitBao("thinking");
     const duration = Math.round((Date.now() - startTime.current) / 1000);
     const res = onGrade
       ? await onGrade({ submission: text, durationSec: duration })
@@ -124,7 +126,10 @@ export function WritingClient({
         });
     setGrading(false);
     if (res.ok && res.result) {
-      setResult(res.result as GradeResult);
+      const graded = res.result as GradeResult;
+      setResult(graded);
+      const highScore = passThreshold != null ? graded.score >= passThreshold : graded.score >= 80;
+      emitBao(highScore ? "celebrate" : "complete");
       localStorage.removeItem(`writing-draft-${task.id}`);
     } else {
       toast.error(res.error ?? "Lỗi chấm bài");

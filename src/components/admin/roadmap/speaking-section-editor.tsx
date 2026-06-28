@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { Plus, Trash2 } from "lucide-react";
+import { Plus, Trash2, FileJson } from "lucide-react";
 import { toast } from "sonner";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -12,6 +12,18 @@ import type { SpeakingSectionContent } from "@/lib/roadmap-content";
 
 type Sentence = { text: string; pinyin: string };
 type QItem = { question: string; pinyin: string };
+
+const FULL_JSON_PLACEHOLDER = `{
+  "part1Sentences": [
+    { "text": "你好，很高兴认识你。", "pinyin": "Nǐ hǎo, hěn gāoxìng rènshi nǐ." },
+    { "text": "谢谢你的帮助。" }
+  ],
+  "part2Passage": { "text": "我叫王明，今年二十岁，是一名学生……" },
+  "part3Questions": [
+    { "question": "你喜欢学习汉语吗？" },
+    { "question": "你的家乡在哪里？" }
+  ]
+}`;
 
 export function SpeakingSectionEditor({
   value,
@@ -46,19 +58,27 @@ export function SpeakingSectionEditor({
 
   return (
     <div className="space-y-4">
-      <details className="rounded-xl border bg-muted/20 p-3">
-        <summary className="cursor-pointer text-sm font-medium">Điền nhanh bằng JSON</summary>
+      {/* Dán JSON cả phần Nói: Phần 1 (lặp câu) + Phần 2 (đọc đoạn) + Phần 3 (trả lời) */}
+      <details className="rounded-xl border border-primary/30 bg-primary/5 p-3">
+        <summary className="cursor-pointer text-sm font-semibold text-primary">
+          <FileJson className="mr-1 inline h-4 w-4" /> Dán JSON cả phần (Phần 1 + 2 + 3)
+        </summary>
         <div className="mt-2 space-y-2">
           <Textarea
             value={json}
             onChange={(e) => setJson(e.target.value)}
-            placeholder={
-              '{ "part1Sentences": [{"text":"你好","pinyin":"Nǐ hǎo"}], "part2Passage": {"text":"…","pinyin":"…"}, "part3Questions": [{"question":"你好吗？","pinyin":"Nǐ hǎo ma?"}] }'
-            }
-            className="min-h-24 font-mono text-xs"
+            placeholder={FULL_JSON_PLACEHOLDER}
+            className="min-h-40 font-mono text-xs"
+            spellCheck={false}
           />
-          <Button type="button" size="sm" variant="outline" onClick={applyJson}>
-            Áp dụng JSON
+          <p className="text-[11px] text-muted-foreground">
+            Một object: <code>part1Sentences</code> (mảng câu lặp lại) ·{" "}
+            <code>part2Passage</code> (đoạn đọc) · <code>part3Questions</code> (mảng câu hỏi trả lời).
+            Mỗi câu/đoạn có <code>text</code>/<code>question</code> + <code>pinyin</code> tuỳ chọn —{" "}
+            bỏ trống pinyin máy tự sinh. Dán sẽ <b>thay toàn bộ</b> nội dung phần Nói bên dưới.
+          </p>
+          <Button type="button" size="sm" variant="outline" onClick={applyJson} className="gap-1.5">
+            <FileJson className="h-4 w-4" /> Áp dụng JSON
           </Button>
         </div>
       </details>

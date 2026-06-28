@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -15,6 +15,7 @@ import {
   type SrsRating,
 } from "@/lib/srs";
 import { reviewWordAction } from "@/server/actions/vocab-review";
+import { emitBao } from "@/lib/bao-bus";
 import { McqCard, type OptionKind } from "./mcq-card";
 import { SrsFlashcard } from "./srs-flashcard";
 import { MatchGame } from "./match-game";
@@ -181,6 +182,7 @@ export function ReviewFlow({ words, reviews, pool, title = "Ôn từ", onExit }:
   const [done, setDone] = useState(0);
   const [remembered, setRemembered] = useState(0);
   const [forgot, setForgot] = useState(0);
+  const finishedRef = useRef(false);
 
   const total = Math.max(1, session.totalGraded);
   const current = queue[index];
@@ -189,7 +191,21 @@ export function ReviewFlow({ words, reviews, pool, title = "Ôn từ", onExit }:
   const progress = queue.length > 0 ? Math.round((index / queue.length) * 100) : 0;
 
   function advance() {
-    setIndex((i) => i + 1);
+    const nextIndex = index + 1;
+    // Dùng updater để đọc độ dài hàng đợi (đã gồm thẻ vừa học lại) + số từ nhớ tốt
+    // mới nhất, biết chính xác khi rời task cuối → phát đúng MỘT lần kết thúc phiên.
+    setQueue((q) => {
+      const finishing = nextIndex >= q.length;
+      setRemembered((r) => {
+        if (finishing && !finishedRef.current) {
+          finishedRef.current = true;
+          emitBao(r / total >= 0.8 ? "celebrate" : "complete");
+        }
+        return r;
+      });
+      return q;
+    });
+    setIndex(nextIndex);
   }
   function requeue(word: VocabWordCard) {
     setQueue((q) => [...q, { kind: "flashcard", word, isNew: false, grade: false }]);
@@ -211,6 +227,7 @@ export function ReviewFlow({ words, reviews, pool, title = "Ôn từ", onExit }:
     advance();
   }
   function onMcqAnswered(task: Extract<Task, { kind: "mcq" }>, correct: boolean) {
+    emitBao(correct ? "correct" : "wrong");
     const q = correctnessToQuality(correct);
     if (!correct) requeue(task.word);
     grade(task.word, q);

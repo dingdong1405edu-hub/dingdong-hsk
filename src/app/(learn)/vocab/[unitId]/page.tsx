@@ -60,9 +60,9 @@ export default async function VocabUnitPage({ params }: Props) {
                     </Button>
                   </Link>
                   <Button asChild size="sm" variant="ghost" className="gap-1.5 text-muted-foreground">
-                    <a href={`/api/pdf/vocab/${unitId}/${lesson.id}`} download>
+                    <Link href={`/vocab-pdf/${unitId}/${lesson.id}`}>
                       <FileDown className="h-4 w-4" /> PDF
-                    </a>
+                    </Link>
                   </Button>
                 </div>
               </CardContent>

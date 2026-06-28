@@ -1,9 +1,9 @@
 "use client";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { MessageCircle } from "lucide-react";
 import { useBaoChat } from "./use-bao-chat";
 import { ChatPanel } from "./chat-panel";
+import { BaoCompanion } from "@/components/marketing/bao-companion";
 
 /**
  * Bong bóng trợ lý "Bao" nổi ở góc phải dưới mọi trang trong khu vực học. Sở hữu
@@ -26,27 +26,18 @@ export function ChatWidget({ userName }: { userName?: string | null }) {
 
   return (
     <>
-      {/* Nút mở */}
+      {/* Nút mở = chính linh vật Bao (động, phản ứng theo bài học) */}
       <AnimatePresence>
         {!open && (
-          <motion.button
-            type="button"
-            onClick={() => setOpen(true)}
+          <motion.div
             initial={{ scale: 0, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0, opacity: 0 }}
             transition={{ type: "spring", stiffness: 400, damping: 25 }}
-            aria-label="Mở trợ lý học tập Bao"
-            className="fixed bottom-5 right-5 z-40 flex h-14 w-14 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-lg shadow-primary/30 transition-transform hover:scale-105 active:scale-95"
+            className="fixed bottom-5 right-5 z-40"
           >
-            <MessageCircle className="h-6 w-6" />
-            <span
-              className="absolute -right-0.5 -top-0.5 flex h-5 w-5 items-center justify-center rounded-full bg-amber-300 text-[11px] shadow ring-2 ring-card"
-              aria-hidden
-            >
-              🥟
-            </span>
-          </motion.button>
+            <BaoCompanion onOpen={() => setOpen(true)} />
+          </motion.div>
         )}
       </AnimatePresence>
 

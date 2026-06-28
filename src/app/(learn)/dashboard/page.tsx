@@ -96,7 +96,7 @@ export default async function DashboardPage() {
         </div>
         <BaoBuddy
           size={88}
-          pose="idle"
+          pose="wave"
           className="pointer-events-none absolute bottom-2 right-4 z-10 hidden sm:block"
         />
       </div>

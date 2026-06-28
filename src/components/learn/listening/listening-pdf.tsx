@@ -1,6 +1,7 @@
 import * as React from "react";
 import { PdfDocument, PdfSection, PdfNotice } from "@/components/learn/pdf/pdf-document";
 import { PdfQuestionList, type PdfQuestion } from "@/components/learn/pdf/pdf-question-list";
+import type { PassageScope } from "@/components/learn/reading/reading-pdf";
 import { PDF, PDF_FONT } from "@/lib/pdf/theme";
 
 interface Props {
@@ -8,16 +9,17 @@ interface Props {
   hskLevel: string;
   transcript?: string | null;
   questions: PdfQuestion[];
+  scope?: PassageScope;
 }
 
 /** PDF nghe hiểu: ghi chú nghe online + lời thoại (transcript) + câu hỏi & đáp án. */
-export function ListeningPdf({ title, hskLevel, transcript, questions }: Props) {
+export function ListeningPdf({ title, hskLevel, transcript, questions, scope = "both" }: Props) {
   return (
     <PdfDocument kicker="Nghe hiểu · 听力" title={title} hskLevel={hskLevel}>
       <PdfNotice>
         🎧 Nghe phần âm thanh trực tiếp tại <b>dingdonghsk.com</b> — bản PDF chỉ gồm lời thoại &amp; đáp án.
       </PdfNotice>
-      {transcript && (
+      {scope !== "questions" && transcript && (
         <PdfSection title="Lời thoại" titleZh="听力原文">
           <div
             style={{
@@ -34,9 +36,11 @@ export function ListeningPdf({ title, hskLevel, transcript, questions }: Props) 
           </div>
         </PdfSection>
       )}
-      <PdfSection title="Câu hỏi & đáp án" titleZh="问题与答案">
-        <PdfQuestionList questions={questions} />
-      </PdfSection>
+      {scope !== "passage" && (
+        <PdfSection title="Câu hỏi & đáp án" titleZh="问题与答案">
+          <PdfQuestionList questions={questions} />
+        </PdfSection>
+      )}
     </PdfDocument>
   );
 }

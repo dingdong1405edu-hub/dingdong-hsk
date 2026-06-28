@@ -76,7 +76,7 @@ export default async function ReadingPage() {
                 score={bestMap.get(test.id) ?? null}
                 seed={test.id}
                 imageUrl={test.imageUrl}
-                pdfHref={`/api/pdf/reading/${test.id}`}
+                pdfHref={`/reading-pdf/${test.id}`}
               />
             );
           })}

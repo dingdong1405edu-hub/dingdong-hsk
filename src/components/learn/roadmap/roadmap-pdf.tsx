@@ -1,6 +1,6 @@
 import * as React from "react";
 import { PdfDocument, PdfSection, PdfNotice } from "@/components/learn/pdf/pdf-document";
-import { PdfPassage } from "@/components/learn/reading/reading-pdf";
+import { PdfPassage, type PassageScope } from "@/components/learn/reading/reading-pdf";
 import { PdfQuestionList, type PdfQuestion } from "@/components/learn/pdf/pdf-question-list";
 import { roadmapQuestionId, type RoadmapQuestion } from "@/lib/roadmap-content";
 
@@ -31,21 +31,25 @@ export function RoadmapReadingPdf({
   titleZh,
   hskLevel,
   passages,
+  scope = "both",
 }: {
   title: string;
   titleZh?: string;
   hskLevel: string;
   passages: PassageData[];
+  scope?: PassageScope;
 }) {
   const multi = passages.length > 1;
   return (
     <PdfDocument kicker="Đọc hiểu · 阅读" title={title || "Bài đọc hiểu"} titleZh={titleZh} hskLevel={hskLevel}>
       {passages.map((p, i) => (
         <PdfSection key={i} title={multi ? `Đoạn ${i + 1}` : "Đoạn văn"} titleZh={p.titleZh || (multi ? undefined : "短文")}>
-          <PdfPassage passage={p.passage} pinyin={p.passagePinyin} />
-          <div style={{ marginTop: 10 }}>
-            <PdfQuestionList questions={p.questions} />
-          </div>
+          {scope !== "questions" && <PdfPassage passage={p.passage} pinyin={p.passagePinyin} />}
+          {scope !== "passage" && (
+            <div style={{ marginTop: scope === "questions" ? 0 : 10 }}>
+              <PdfQuestionList questions={p.questions} />
+            </div>
+          )}
         </PdfSection>
       ))}
     </PdfDocument>
@@ -63,10 +67,12 @@ export function RoadmapListeningPdf({
   title,
   hskLevel,
   clips,
+  scope = "both",
 }: {
   title: string;
   hskLevel: string;
   clips: ClipData[];
+  scope?: PassageScope;
 }) {
   const multi = clips.length > 1;
   return (
@@ -76,10 +82,12 @@ export function RoadmapListeningPdf({
       </PdfNotice>
       {clips.map((c, i) => (
         <PdfSection key={i} title={multi ? `Đoạn nghe ${i + 1}${c.title ? ` · ${c.title}` : ""}` : "Lời thoại"} titleZh={multi ? undefined : "听力原文"}>
-          {c.transcript && <PdfPassage passage={c.transcript} />}
-          <div style={{ marginTop: 10 }}>
-            <PdfQuestionList questions={c.questions} />
-          </div>
+          {scope !== "questions" && c.transcript && <PdfPassage passage={c.transcript} />}
+          {scope !== "passage" && (
+            <div style={{ marginTop: scope === "questions" ? 0 : 10 }}>
+              <PdfQuestionList questions={c.questions} />
+            </div>
+          )}
         </PdfSection>
       ))}
     </PdfDocument>

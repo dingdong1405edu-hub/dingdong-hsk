@@ -139,14 +139,19 @@ export async function htmlToPdf(html: string): Promise<Uint8Array> {
     try {
       await page.evaluate(async () => {
         const d = document as unknown as {
-          fonts: { ready: Promise<unknown>; load: (font: string) => Promise<unknown> };
+          fonts: { ready: Promise<unknown>; load: (font: string, text?: string) => Promise<unknown> };
+          body: { innerText: string };
         };
-        await Promise.all([
-          d.fonts.load("400 15px 'Noto Sans SC'"),
-          d.fonts.load("700 15px 'Noto Sans SC'"),
-          d.fonts.load("700 18px 'Nunito'"),
-          d.fonts.load("400 12px 'Noto Serif'"),
-        ]).catch(() => {});
+        // Google Fonts phục vụ Noto Sans SC theo NHIỀU subset unicode-range; load
+        // kèm CHÍNH văn bản của trang để buộc nạp đúng subset chứa chữ Hán đang
+        // dùng (nếu không, fonts.ready có thể xong trước khi subset chữ Hán tải).
+        const text = d.body?.innerText || "";
+        const jobs: Promise<unknown>[] = [];
+        for (const f of ["Noto Sans SC", "Noto Serif", "Nunito"]) {
+          jobs.push(d.fonts.load(`400 16px '${f}'`, text));
+          jobs.push(d.fonts.load(`700 16px '${f}'`, text));
+        }
+        await Promise.all(jobs).catch(() => {});
         await d.fonts.ready;
       });
     } catch {

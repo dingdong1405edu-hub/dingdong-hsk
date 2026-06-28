@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { CheckCircle2, XCircle, SkipForward } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { emitBao } from "@/lib/bao-bus";
 import { FlowHeader } from "./flow-header";
 import { ExerciseRenderer } from "../exercises/exercise-renderer";
 import { AnswerExplanation } from "../answer-explanation";
@@ -62,6 +63,7 @@ export function FlashcardPhase({ flashcards, closeHref, label, onReviewTheory, o
   function handleAnswer(isCorrect: boolean, answer?: string) {
     if (feedback !== null) return;
     detailsRef.current.push({ type: String(exercise?.type ?? ""), outcome: isCorrect ? "correct" : "wrong" });
+    emitBao(isCorrect ? "correct" : "wrong");
     if (isCorrect) {
       setFeedback("correct");
       setCorrect((c) => c + 1);

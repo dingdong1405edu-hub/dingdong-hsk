@@ -10,6 +10,7 @@ import { BaoBuddy } from "@/components/marketing/bao-buddy";
 import { cn } from "@/lib/utils";
 import type { PinyinLesson } from "@/lib/pinyin-lessons";
 import { completePinyinLessonAction } from "@/server/actions/pinyin";
+import { emitBao } from "@/lib/bao-bus";
 import { TeachCardView, ListenCardView, DiscriminateCardView, ToneCardView } from "./pinyin-cards";
 
 type Feedback = "correct" | "wrong" | null;
@@ -33,6 +34,7 @@ export function PinyinFlow({ lesson }: { lesson: PinyinLesson }) {
     if (feedback !== null) return;
     if (isCorrect) correctRef.current += 1;
     setFeedback(isCorrect ? "correct" : "wrong");
+    emitBao(isCorrect ? "correct" : "wrong");
   }
 
   async function finish() {
@@ -44,6 +46,7 @@ export function PinyinFlow({ lesson }: { lesson: PinyinLesson }) {
     setSaving(false);
     const xp = res.ok ? res.xpEarned ?? 0 : 0;
     setResult({ correct, score, xp });
+    emitBao(score >= 60 ? "celebrate" : "complete");
     if (xp > 0) toast.success(`+${xp} XP — ${lesson.title}`);
   }
 

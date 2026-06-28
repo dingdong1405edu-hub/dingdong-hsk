@@ -15,6 +15,7 @@ import {
   Eraser,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { emitBao } from "@/lib/bao-bus";
 import { TestShell } from "@/components/learn/test-shell";
 import { cn, formatDuration } from "@/lib/utils";
 import { submitReadingAction } from "@/server/actions/reading";
@@ -275,6 +276,7 @@ export function ReadingTestClient({
   async function handleSubmit() {
     if (submitting || submitted) return; // re-entrancy guard (no duplicate Attempt/XP)
     setSubmitting(true);
+    emitBao("thinking");
     const res = onSubmit
       ? await onSubmit({ answers, durationSec: elapsed })
       : await submitReadingAction({ testId: test.id, answers, durationSec: elapsed });
@@ -289,6 +291,7 @@ export function ReadingTestClient({
       } catch {
         /* ignore */
       }
+      emitBao(res.result.score >= (passThreshold ?? 80) ? "celebrate" : "complete");
       toast.success(`Bạn đạt ${Math.round(res.result.score)}%`);
     } else {
       toast.error("Lỗi nộp bài, thử lại sau");
