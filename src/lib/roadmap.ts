@@ -193,7 +193,9 @@ export function themeFor(level: string): CourseTheme {
 
 // ===== DTO truyền từ server → client (đã serialize, không chứa Date/Prisma) =====
 
-export type LessonStatus = "done" | "current" | "locked";
+// done = đã xong · current = bài kế tiếp đang mở (có hiệu ứng "Bắt đầu") ·
+// available = mở sẵn nhưng chưa học (admin bỏ khoá tuần tự để test) · locked = khoá.
+export type LessonStatus = "done" | "current" | "available" | "locked";
 
 export interface RoadmapSectionDTO {
   skill: SkillKey;

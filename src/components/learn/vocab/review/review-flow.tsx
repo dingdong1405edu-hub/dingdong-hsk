@@ -29,7 +29,20 @@ interface Props {
   /** Kho từ để lấy đáp án nhiễu (mặc định = words). */
   pool?: VocabWordCard[];
   title?: string;
+  /**
+   * Ghi nhận lượt ôn (cập nhật lịch SRS). Mặc định ghi vào VocabReview theo
+   * `word.id` (từ vựng Luyện kỹ năng). Lộ trình truyền hàm riêng để ghi vào
+   * RoadmapWordReview theo `word.hanzi`. Gọi nền (fire-and-forget).
+   */
+  persist?: (word: VocabWordCard, quality: number) => void;
+  /** Cho phép "Phản ánh từ này" trên flashcard — tắt ở lộ trình (từ là JSON). */
+  reportable?: boolean;
   onExit: () => void;
+}
+
+/** Ghi mặc định cho từ vựng Luyện kỹ năng (VocabReview theo wordId). */
+function defaultPersist(word: VocabWordCard, quality: number) {
+  void reviewWordAction({ wordId: word.id, quality }).catch(() => {});
 }
 
 // ── Mô tả task trong hàng đợi ──────────────────────────────────────────────────
@@ -174,7 +187,15 @@ function buildSession(words: VocabWordCard[], reviews: WordReviewState[], pool: 
   return { queue, totalGraded: ordered.length, early };
 }
 
-export function ReviewFlow({ words, reviews, pool, title = "Ôn từ", onExit }: Props) {
+export function ReviewFlow({
+  words,
+  reviews,
+  pool,
+  title = "Ôn từ",
+  persist = defaultPersist,
+  reportable = true,
+  onExit,
+}: Props) {
   const distractorPool = pool ?? words;
   const [session] = useState<Session>(() => buildSession(words, reviews, distractorPool));
   const [queue, setQueue] = useState<Task[]>(session.queue);
@@ -215,7 +236,7 @@ export function ReviewFlow({ words, reviews, pool, title = "Ôn từ", onExit }:
     setRemembered((n) => n + (ok ? 1 : 0));
     setForgot((n) => n + (ok ? 0 : 1));
     setDone((n) => n + 1);
-    void reviewWordAction({ wordId: word.id, quality }).catch(() => {});
+    persist(word, quality);
   }
 
   function onFlashcardRate(task: Extract<Task, { kind: "flashcard" }>, rating: SrsRating) {
@@ -314,6 +335,7 @@ export function ReviewFlow({ words, reviews, pool, title = "Ôn từ", onExit }:
             <SrsFlashcard
               word={current.word}
               isNew={current.isNew}
+              allowReport={reportable}
               onRate={(rating) => onFlashcardRate(current, rating)}
             />
           )}

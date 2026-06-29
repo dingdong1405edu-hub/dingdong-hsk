@@ -3,7 +3,7 @@
 import { useMemo, useState } from "react";
 import Link from "next/link";
 import { toast } from "sonner";
-import { ArrowLeft, Trophy, Lock, Sparkles } from "lucide-react";
+import { ArrowLeft, Trophy, Lock, Sparkles, ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { ChapterPath } from "./chapter-path";
 import { LessonDetailDialog } from "./lesson-detail-dialog";
@@ -25,6 +25,10 @@ interface RoadmapMapProps {
   upgradePlanId: string | null;
   /** Số bài đầu được học miễn phí. */
   freePreviewCount: number;
+  /** Số từ vựng lộ trình đến hạn ôn (SRS) — >0 thì hiện banner "Ôn tập tổng hợp". */
+  reviewDueCount?: number;
+  /** Admin: bỏ khoá tuần tự — bấm vào bài nào cũng vào được (để test nội dung). */
+  freeNavigation?: boolean;
 }
 
 interface Chapter {
@@ -45,9 +49,12 @@ export function RoadmapMap({
   hasFullAccess,
   upgradePlanId,
   freePreviewCount,
+  reviewDueCount = 0,
+  freeNavigation = false,
 }: RoadmapMapProps) {
   const theme = themeFor(level);
   const [selected, setSelected] = useState<RoadmapLessonDTO | null>(null);
+  const slug = levelToSlug(level);
 
   const total = lessons.length;
   const doneCount = lessons.filter((l) => l.completed).length;
@@ -56,11 +63,15 @@ export function RoadmapMap({
 
   const upgradeHref = upgradePlanId ? `/payment?plan=${upgradePlanId}` : "/payment";
 
-  // Bài bị khoá vì chưa mua luôn hiển thị "locked"; còn lại theo tiến độ.
+  // Bài bị khoá vì chưa mua luôn hiển thị "locked"; còn lại theo tiến độ tuần tự.
+  // Admin (freeNavigation): các bài chưa xong đều "available" — mở sẵn để test,
+  // không cần hoàn thành bài/chương trước.
   const statusFor = (index: number): LessonStatus => {
     const l = lessons[index];
     if (l.accessLocked) return "locked";
-    return l.completed ? "done" : index === currentIndex ? "current" : "locked";
+    if (l.completed) return "done";
+    if (index === currentIndex) return "current";
+    return freeNavigation ? "available" : "locked";
   };
 
   // Gom bài thành chương, giữ nguyên thứ tự; tính lệch pha cho sóng sin liền mạch.
@@ -173,6 +184,27 @@ export function RoadmapMap({
             <Lock className="h-4 w-4" /> Mở khoá lộ trình
           </Link>
         </div>
+      )}
+
+      {/* Ôn tập tổng hợp: gom mọi từ vựng lộ trình đến hạn ôn (SRS) */}
+      {reviewDueCount > 0 && (
+        <Link
+          href={`/roadmap/review?level=${slug}`}
+          className="flex items-center justify-between gap-3 rounded-2xl border border-amber-200 bg-gradient-to-br from-amber-50 to-white p-4 transition-colors hover:border-amber-300 dark:border-amber-400/25 dark:from-amber-500/10 dark:to-transparent dark:hover:border-amber-400/40"
+        >
+          <div className="flex items-center gap-3">
+            <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-amber-100 text-amber-600 dark:bg-amber-500/15 dark:text-amber-300">
+              <Sparkles className="h-5 w-5" />
+            </div>
+            <div>
+              <div className="font-semibold">Ôn tập tổng hợp</div>
+              <p className="text-sm text-muted-foreground">
+                {reviewDueCount} từ lộ trình đến hạn ôn — lặp lại ngắt quãng để nhớ lâu.
+              </p>
+            </div>
+          </div>
+          <ArrowRight className="h-5 w-5 shrink-0 text-amber-600 dark:text-amber-300" />
+        </Link>
       )}
 
       {/* Bản đồ các chương */}

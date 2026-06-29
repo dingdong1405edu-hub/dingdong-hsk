@@ -370,6 +370,7 @@ export function TopicSpeakingClient({ topic }: { topic: TopicData }) {
 
   async function handleRecorded(blob: Blob, durationSec: number) {
     setPhase("grading");
+    emitBao("thinking");
     try {
       const fd = new FormData();
       fd.append("audio", blob, "answer.webm");
@@ -383,8 +384,10 @@ export function TopicSpeakingClient({ topic }: { topic: TopicData }) {
 
       const res = await gradeSpeakingTopicAction({ topicId: topic.id, transcript, durationSec });
       if (!res.ok || !res.result) throw new Error(res.error || "Chấm điểm thất bại");
-      setResult(res.result as SpeakingTopicGradeResult);
+      const graded = res.result as SpeakingTopicGradeResult;
+      setResult(graded);
       setPhase("done");
+      emitBao(graded.score >= 80 ? "celebrate" : "complete");
     } catch (e) {
       toast.error(e instanceof Error ? e.message : "Lỗi chấm điểm");
       setPhase("idle");

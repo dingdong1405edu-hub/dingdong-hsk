@@ -6,6 +6,7 @@ import { ClipboardCheck, CheckCircle2, XCircle, Trophy, RotateCcw } from "lucide
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { BaoBuddy } from "@/components/marketing/bao-buddy";
+import { emitBao } from "@/lib/bao-bus";
 import { GrammarTestRunner, type TestResult } from "./grammar-test-runner";
 import { submitGrammarTestAction } from "@/server/actions/lesson";
 import { describeExercise } from "@/lib/grammar";
@@ -65,18 +66,20 @@ export function GrammarTestFlow({ lesson, content, unitId }: Props) {
     });
     setSubmitting(false);
     const pct = Math.round((result.correct / Math.max(1, result.total)) * 100);
+    const passed = res.ok ? res.passed ?? pct >= PASS : pct >= PASS;
     if (res.ok) {
       setOutcome({
         result,
-        passed: res.passed ?? pct >= PASS,
+        passed,
         pct: res.pct ?? pct,
         xpEarned: res.xpEarned ?? 0,
         alreadyAwarded: res.alreadyAwarded ?? false,
       });
     } else {
       toast.error("Lỗi lưu kết quả");
-      setOutcome({ result, passed: pct >= PASS, pct, xpEarned: 0, alreadyAwarded: false });
+      setOutcome({ result, passed, pct, xpEarned: 0, alreadyAwarded: false });
     }
+    emitBao(passed ? "celebrate" : "complete");
     setStage("result");
   }
 

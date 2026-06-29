@@ -1,0 +1,4334 @@
+{
+  "source": "HSK1_DocHieu_Bai135 (BAI 9-35)",
+  "generatedFor": "course-hsk1 lessons order 9-35 READING",
+  "lessons": [
+    {
+      "bai": 9,
+      "topicZh": "颜色",
+      "topicVi": "Màu sắc",
+      "passages": [
+        {
+          "passage": "我喜欢很多颜色。我有一件红色的衣服、一条黑色的裤子、一双白色的鞋。我妹妹喜欢粉红色，她有很多粉红色的东西。",
+          "titleZh": "颜色",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "我的裤子是什么颜色的？",
+              "options": [
+                {
+                  "text": "红色"
+                },
+                {
+                  "text": "白色"
+                },
+                {
+                  "text": "黑色"
+                },
+                {
+                  "text": "粉红色"
+                }
+              ],
+              "correctAnswer": {
+                "index": 2
+              },
+              "explanation": "Đáp án đúng là 黑色 (hēisè - màu đen). Trong đoạn có câu \"一条黑色的裤子\" nghĩa là \"một cái quần màu đen\". Lưu ý lượng từ 条 (tiáo) dùng cho vật dài như quần (裤子), và trợ từ 的 nối màu sắc với danh vật: 黑色 + 的 + 裤子. Các màu 红色 (đỏ) là của 衣服 (áo), 白色 (trắng) là của 鞋 (giày), còn 粉红色 (hồng) là màu em gái thích, nên đều sai."
+            },
+            {
+              "type": "MCQ",
+              "prompt": "我妹妹喜欢什么颜色？",
+              "options": [
+                {
+                  "text": "粉红色"
+                },
+                {
+                  "text": "黑色"
+                },
+                {
+                  "text": "白色"
+                },
+                {
+                  "text": "红色"
+                }
+              ],
+              "correctAnswer": {
+                "index": 0
+              },
+              "explanation": "Đáp án đúng là 粉红色 (fěnhóngsè - màu hồng). Câu \"我妹妹喜欢粉红色\" nghĩa là \"em gái tôi thích màu hồng\", và \"她有很多粉红色的东西\" (em có nhiều đồ màu hồng). Chữ 喜欢 (xǐhuan) nghĩa là \"thích\". Các màu còn lại 黑色, 白色, 红色 là màu đồ vật của \"tôi\" chứ không phải màu em gái thích, nên sai nhé!"
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "我有一双白色的鞋。",
+              "correctAnswer": {
+                "value": true
+              },
+              "explanation": "Nhận định này ĐÚNG. Đoạn văn ghi rõ \"一双白色的鞋\" nghĩa là \"một đôi giày màu trắng\". Hãy nhớ lượng từ 双 (shuāng - đôi) dùng cho vật đi theo cặp như giày (鞋), tất, đũa; và 白色 (báisè) là màu trắng. Cấu trúc 白色的鞋 = giày màu trắng, với 的 nối màu sắc và danh từ."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "我妹妹有很多黑色的东西。",
+              "correctAnswer": {
+                "value": false
+              },
+              "explanation": "Nhận định này SAI. Theo đoạn văn, em gái có nhiều đồ màu hồng: \"她有很多粉红色的东西\" (em có nhiều đồ màu hồng - 粉红色), chứ không phải màu đen (黑色). Chữ 东西 (dōngxi) nghĩa là \"đồ vật\", còn 很多 (hěn duō) là \"rất nhiều\". Màu đen trong bài là của cái quần của \"tôi\" thôi."
+            },
+            {
+              "type": "FILL_BLANK",
+              "prompt": "我有一___红色的衣服。",
+              "correctAnswer": {
+                "text": "件",
+                "accepted": [
+                  "件"
+                ]
+              },
+              "explanation": "Đáp án là 件 (jiàn). Trong đoạn có câu \"一件红色的衣服\" nghĩa là \"một cái áo màu đỏ\". 件 là lượng từ chuyên dùng cho quần áo phần thân trên như áo (衣服), áo khoác. So sánh với 条 dùng cho quần/váy và 双 dùng cho giày - đây chính là điểm ngữ pháp trọng tâm về lượng từ của bài học!"
+            }
+          ]
+        },
+        {
+          "passage": "今天我穿白色的衬衫、黑色的裤子。我妹妹穿一条红色的裙子，她的鞋是白色的。我们都喜欢漂亮的衣服。",
+          "titleZh": "颜色",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "今天我穿什么颜色的衬衫？",
+              "options": [
+                {
+                  "text": "红色"
+                },
+                {
+                  "text": "黑色"
+                },
+                {
+                  "text": "白色"
+                },
+                {
+                  "text": "粉红色"
+                }
+              ],
+              "correctAnswer": {
+                "index": 2
+              },
+              "explanation": "Đáp án đúng là 白色 (báisè - màu trắng). Câu \"今天我穿白色的衬衫\" nghĩa là \"hôm nay tôi mặc áo sơ mi màu trắng\". Chữ 穿 (chuān) nghĩa là \"mặc\", còn 衬衫 (chènshān) là \"áo sơ mi\". Màu 黑色 (đen) là của cái quần (裤子), 红色 (đỏ) là màu váy của em gái, nên các phương án đó sai."
+            },
+            {
+              "type": "MCQ",
+              "prompt": "我妹妹穿的裙子是什么颜色的？",
+              "options": [
+                {
+                  "text": "白色"
+                },
+                {
+                  "text": "红色"
+                },
+                {
+                  "text": "黑色"
+                },
+                {
+                  "text": "粉红色"
+                }
+              ],
+              "correctAnswer": {
+                "index": 1
+              },
+              "explanation": "Đáp án đúng là 红色 (hóngsè - màu đỏ). Đoạn văn ghi \"我妹妹穿一条红色的裙子\" nghĩa là \"em gái tôi mặc một cái váy màu đỏ\". Chú ý lượng từ 条 (tiáo) dùng cho váy (裙子) vì nó là vật dạng dài. Màu 白色 (trắng) là màu giày của em (鞋), còn 黑色 là quần của \"tôi\", nên đều không đúng nhé!"
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "我妹妹的鞋是白色的。",
+              "correctAnswer": {
+                "value": true
+              },
+              "explanation": "Nhận định này ĐÚNG. Đoạn văn viết \"她的鞋是白色的\" nghĩa là \"giày của em ấy màu trắng\". Ở đây 她的 (tā de) nghĩa là \"của em ấy\", và cấu trúc \"...是白色的\" (là màu trắng) dùng 是...的 để nói về màu sắc. Chữ 鞋 (xié) là \"giày\", 白色 (báisè) là \"màu trắng\"."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "今天我穿白色的裤子。",
+              "correctAnswer": {
+                "value": false
+              },
+              "explanation": "Nhận định này SAI. Theo đoạn văn, \"tôi\" mặc quần màu đen: \"黑色的裤子\" (quần màu đen - 黑色), còn màu trắng (白色) là của cái áo sơ mi (衬衫). Hãy chú ý phân biệt: 衬衫 là 白色 (áo trắng), 裤子 là 黑色 (quần đen). Đừng nhầm màu của hai món đồ này nhé!"
+            },
+            {
+              "type": "FILL_BLANK",
+              "prompt": "我们都喜欢___的衣服。",
+              "correctAnswer": {
+                "text": "漂亮",
+                "accepted": [
+                  "漂亮"
+                ]
+              },
+              "explanation": "Đáp án là 漂亮 (piàoliang - đẹp, xinh đẹp). Câu cuối đoạn \"我们都喜欢漂亮的衣服\" nghĩa là \"chúng tôi đều thích quần áo đẹp\". Chữ 都 (dōu) nghĩa là \"đều, cùng\", và trợ từ 的 nối tính từ 漂亮 với danh từ 衣服 (quần áo): 漂亮的衣服 = quần áo đẹp. Đây là cách dùng 的 để nối tính từ với danh từ rất phổ biến!"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "bai": 10,
+      "topicZh": "我会说汉语",
+      "topicVi": "Năng lực (会)",
+      "passages": [
+        {
+          "passage": "我会说汉语，也会说一点儿英语。我哥哥会开车，我不会。我妹妹会唱歌、会跳舞，她唱歌很好。我们都会做饭。",
+          "titleZh": "我会说汉语",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "我哥哥会做什么？",
+              "options": [
+                {
+                  "text": "唱歌"
+                },
+                {
+                  "text": "开车"
+                },
+                {
+                  "text": "跳舞"
+                },
+                {
+                  "text": "说英语"
+                }
+              ],
+              "correctAnswer": {
+                "index": 1
+              },
+              "explanation": "Đáp án đúng là 开车 (kāi chē = lái xe). Trong đoạn có câu 我哥哥会开车 nghĩa là 'Anh trai tôi biết lái xe'. Chữ 会 (huì) ở đây nghĩa là 'biết làm gì đó (do học mà có kỹ năng)', đứng trước động từ. Các phương án 唱歌 (hát) và 跳舞 (nhảy) là của em gái, còn 说英语 (nói tiếng Anh) là của người kể, nên đều sai."
+            },
+            {
+              "type": "MCQ",
+              "prompt": "谁唱歌很好？",
+              "options": [
+                {
+                  "text": "我"
+                },
+                {
+                  "text": "我哥哥"
+                },
+                {
+                  "text": "我妹妹"
+                },
+                {
+                  "text": "我们"
+                }
+              ],
+              "correctAnswer": {
+                "index": 2
+              },
+              "explanation": "Đáp án đúng là 我妹妹 (wǒ mèimei = em gái tôi). Đoạn văn viết 我妹妹会唱歌、会跳舞，她唱歌很好, nghĩa là 'Em gái tôi biết hát, biết nhảy, em hát rất hay'. Chữ 很 (hěn = rất) bổ nghĩa cho 好 (hǎo = tốt/hay). Người kể (我) chỉ nói biết nói tiếng Trung và một chút tiếng Anh, còn anh trai (哥哥) biết lái xe, nên các phương án kia đều không khớp với đoạn."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "我会说一点儿英语。",
+              "correctAnswer": {
+                "value": true
+              },
+              "explanation": "Nhận định này ĐÚNG. Câu mở đầu đoạn viết 我会说汉语，也会说一点儿英语 nghĩa là 'Tôi biết nói tiếng Trung, cũng biết nói một chút tiếng Anh'. Chú ý chữ 也 (yě = cũng) nối hai khả năng, và 一点儿 (yìdiǎnr = một chút) chỉ mức độ ít. Vì vậy việc 'tôi biết nói một chút tiếng Anh' hoàn toàn phù hợp với đoạn."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "我也会开车。",
+              "correctAnswer": {
+                "value": false
+              },
+              "explanation": "Nhận định này SAI. Đoạn viết 我哥哥会开车，我不会 nghĩa là 'Anh trai tôi biết lái xe, còn tôi thì không (biết)'. Cụm 不会 (bú huì) là dạng phủ định của 会, nghĩa là 'không biết làm'. Do người kể nói rõ 我不会 nên không thể nói 'tôi cũng biết lái xe' được."
+            },
+            {
+              "type": "FILL_BLANK",
+              "prompt": "我们都会___饭。",
+              "correctAnswer": {
+                "text": "做",
+                "accepted": [
+                  "做饭"
+                ]
+              },
+              "explanation": "Đáp án là 做 (zuò = làm/nấu). Câu gốc trong đoạn là 我们都会做饭 nghĩa là 'Chúng tôi đều biết nấu ăn'. 做饭 (zuò fàn) là cụm cố định nghĩa 'nấu cơm/nấu ăn'. Chú ý chữ 都 (dōu = đều) nhấn mạnh tất cả mọi người, kết hợp với 会 thể hiện khả năng chung của cả nhà."
+            }
+          ]
+        },
+        {
+          "passage": "我朋友很会做饭。他会做中国菜，也会做越南菜。我不会做饭，我会写汉字。我们都想学做菜。",
+          "titleZh": "我会说汉语",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "我朋友会做什么菜？",
+              "options": [
+                {
+                  "text": "只会做中国菜"
+                },
+                {
+                  "text": "中国菜和越南菜"
+                },
+                {
+                  "text": "只会做越南菜"
+                },
+                {
+                  "text": "都不会做"
+                }
+              ],
+              "correctAnswer": {
+                "index": 1
+              },
+              "explanation": "Đáp án đúng là 中国菜和越南菜 (món Trung và món Việt). Đoạn viết 他会做中国菜，也会做越南菜 nghĩa là 'Anh ấy biết nấu món Trung, cũng biết nấu món Việt'. Chữ 也 (yě = cũng) cho thấy anh ấy biết cả hai loại, nên các phương án 'chỉ món Trung', 'chỉ món Việt' hay 'đều không biết' đều sai so với đoạn."
+            },
+            {
+              "type": "MCQ",
+              "prompt": "\"我\"会做什么？",
+              "options": [
+                {
+                  "text": "做饭"
+                },
+                {
+                  "text": "做中国菜"
+                },
+                {
+                  "text": "写汉字"
+                },
+                {
+                  "text": "开车"
+                }
+              ],
+              "correctAnswer": {
+                "index": 2
+              },
+              "explanation": "Đáp án đúng là 写汉字 (xiě Hànzì = viết chữ Hán). Đoạn viết 我不会做饭，我会写汉字 nghĩa là 'Tôi không biết nấu ăn, tôi biết viết chữ Hán'. Ở đây 不会 (không biết) đối lập với 会 (biết): người kể không biết nấu ăn nhưng biết viết chữ. Vì vậy 做饭 và 做中国菜 là sai, còn 开车 không hề được nhắc tới trong đoạn."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "我朋友很会做饭。",
+              "correctAnswer": {
+                "value": true
+              },
+              "explanation": "Nhận định này ĐÚNG. Câu đầu đoạn viết 我朋友很会做饭 nghĩa là 'Bạn tôi rất giỏi nấu ăn'. Ở đây 很会 (hěn huì) nhấn mạnh khả năng làm tốt một việc (rất biết/rất giỏi làm gì đó), khác với 会 bình thường chỉ là 'biết'. Vì câu này có ngay trong đoạn nên nhận định là đúng."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "我会做饭。",
+              "correctAnswer": {
+                "value": false
+              },
+              "explanation": "Nhận định này SAI. Đoạn viết rõ 我不会做饭 nghĩa là 'Tôi không biết nấu ăn'. Cụm 不会 (bú huì) là dạng phủ định của 会, nên không thể nói 'tôi biết nấu ăn'. Người kể chỉ biết 写汉字 (viết chữ Hán) thôi, vì vậy nhận định trái với nội dung đoạn."
+            },
+            {
+              "type": "FILL_BLANK",
+              "prompt": "我们都___学做菜。",
+              "correctAnswer": {
+                "text": "想",
+                "accepted": [
+                  "想学",
+                  "想学做菜"
+                ]
+              },
+              "explanation": "Đáp án là 想 (xiǎng = muốn). Câu gốc là 我们都想学做菜 nghĩa là 'Chúng tôi đều muốn học nấu ăn'. Chữ 想 đứng trước động từ thể hiện nguyện vọng 'muốn làm gì', còn 都 (dōu = đều) nhấn mạnh tất cả mọi người. Phân biệt rõ: 会 là 'biết làm' (đã có kỹ năng), còn 想 là 'muốn làm' (mong muốn), nên ở đây phải điền 想."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "bai": 11,
+      "topicZh": "我想喝茶",
+      "topicVi": "Mong muốn (想/要)",
+      "passages": [
+        {
+          "passage": "现在我很渴，想喝茶。我妹妹想喝牛奶，她不喜欢喝茶。我们家有很多饮料：水、茶、咖啡、果汁。爸爸每天早上喝一杯咖啡。",
+          "titleZh": "我想喝茶",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "我现在很渴，想喝什么？",
+              "options": [
+                {
+                  "text": "喝牛奶"
+                },
+                {
+                  "text": "喝茶"
+                },
+                {
+                  "text": "喝咖啡"
+                },
+                {
+                  "text": "喝果汁"
+                }
+              ],
+              "correctAnswer": {
+                "index": 1
+              },
+              "explanation": "Đáp án đúng là B 喝茶 (uống trà). Câu đầu đoạn viết \"我很渴，想喝茶\" nghĩa là \"tôi rất khát, muốn uống trà\". Chữ 渴 (kě) nghĩa là \"khát\", còn cấu trúc trọng tâm 想 (xiǎng) + động từ diễn tả \"muốn làm gì\". Các phương án sữa, cà phê, nước ép tuy có trong nhà nhưng không phải thứ \"tôi\" muốn uống lúc này."
+            },
+            {
+              "type": "MCQ",
+              "prompt": "爸爸每天早上喝什么？",
+              "options": [
+                {
+                  "text": "喝一杯咖啡"
+                },
+                {
+                  "text": "喝一杯牛奶"
+                },
+                {
+                  "text": "喝一杯茶"
+                },
+                {
+                  "text": "喝一杯水"
+                }
+              ],
+              "correctAnswer": {
+                "index": 0
+              },
+              "explanation": "Đáp án đúng là A 喝一杯咖啡 (uống một cốc cà phê). Câu cuối đoạn nói \"爸爸每天早上喝一杯咖啡\", trong đó 每天早上 (měi tiān zǎoshang) là \"mỗi sáng\" và 一杯 (yì bēi) là \"một cốc\". Bố uống cà phê chứ không phải sữa, trà hay nước nên các phương án còn lại đều sai."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "我妹妹想喝牛奶。",
+              "correctAnswer": {
+                "value": true
+              },
+              "explanation": "Nhận định này ĐÚNG. Đoạn văn viết rõ \"我妹妹想喝牛奶，她不喜欢喝茶\" nghĩa là \"em gái tôi muốn uống sữa, em không thích uống trà\". Ở đây 想 (xiǎng) thể hiện mong muốn, còn 牛奶 (niúnǎi) là \"sữa bò\", khớp đúng với câu khẳng định."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "我妹妹很喜欢喝茶。",
+              "correctAnswer": {
+                "value": false
+              },
+              "explanation": "Nhận định này SAI. Đoạn văn ghi \"她不喜欢喝茶\" tức \"em ấy không thích uống trà\". Chữ 不 (bù) là phủ định đặt trước 喜欢 (xǐhuan, \"thích\"), nên nói em gái thích uống trà là trái ngược với bài. Em gái muốn uống sữa (牛奶) mới đúng."
+            },
+            {
+              "type": "FILL_BLANK",
+              "prompt": "现在我很渴，想___茶。",
+              "correctAnswer": {
+                "text": "喝",
+                "accepted": [
+                  "喝"
+                ]
+              },
+              "explanation": "Đáp án là 喝 (hē) nghĩa là \"uống\". Câu gốc \"想喝茶\" dùng cấu trúc trọng tâm 想 + động từ để diễn tả \"muốn uống trà\". Với đồ uống như 茶 (trà), 牛奶 (sữa), 咖啡 (cà phê) ta luôn dùng động từ 喝, khác với đồ ăn thì dùng 吃 (chī)."
+            }
+          ]
+        },
+        {
+          "passage": "中午我很饿，想吃饭。我要一碗米饭、一个鱼。我不想喝啤酒，想喝水。我妹妹要一杯果汁。",
+          "titleZh": "我想喝茶",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "中午我很饿，想做什么？",
+              "options": [
+                {
+                  "text": "想喝啤酒"
+                },
+                {
+                  "text": "想喝果汁"
+                },
+                {
+                  "text": "想吃饭"
+                },
+                {
+                  "text": "想喝牛奶"
+                }
+              ],
+              "correctAnswer": {
+                "index": 2
+              },
+              "explanation": "Đáp án đúng là C 想吃饭 (muốn ăn cơm). Câu đầu đoạn viết \"中午我很饿，想吃饭\", trong đó 饿 (è) là \"đói\" và 吃饭 (chī fàn) là \"ăn cơm\". Vì đói nên muốn ăn chứ không phải uống; chữ 想 (xiǎng) lại nhấn mạnh mong muốn. Các phương án về bia, nước ép, sữa đều là đồ uống nên không hợp với việc \"đói\"."
+            },
+            {
+              "type": "MCQ",
+              "prompt": "我妹妹要什么？",
+              "options": [
+                {
+                  "text": "一杯果汁"
+                },
+                {
+                  "text": "一碗米饭"
+                },
+                {
+                  "text": "一个鱼"
+                },
+                {
+                  "text": "一杯啤酒"
+                }
+              ],
+              "correctAnswer": {
+                "index": 0
+              },
+              "explanation": "Đáp án đúng là A 一杯果汁 (một cốc nước ép). Câu cuối đoạn nói \"我妹妹要一杯果汁\", với 要 (yào) nghĩa là \"muốn/gọi\" và 果汁 (guǒzhī) là \"nước ép\". Cơm và cá là thứ \"tôi\" gọi, còn bia thì \"tôi\" không muốn uống, nên các phương án kia đều sai."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "我要一碗米饭和一个鱼。",
+              "correctAnswer": {
+                "value": true
+              },
+              "explanation": "Nhận định này ĐÚNG. Đoạn văn viết \"我要一碗米饭、一个鱼\" nghĩa là \"tôi muốn một bát cơm, một con cá\". Ở đây 要 (yào) là \"muốn/gọi món\", 一碗 (yì wǎn) là lượng từ \"một bát\" còn 一个 (yí gè) là \"một (con/cái)\", khớp đúng với câu khẳng định."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "我想喝啤酒。",
+              "correctAnswer": {
+                "value": false
+              },
+              "explanation": "Nhận định này SAI. Bài viết \"我不想喝啤酒，想喝水\" tức \"tôi không muốn uống bia, muốn uống nước\". Cụm 不想 (bù xiǎng) là phủ định của 想, nghĩa là \"không muốn\", nên nói \"tôi muốn uống bia\" là ngược lại với đoạn văn. Thực ra \"tôi\" muốn uống nước (水)."
+            },
+            {
+              "type": "FILL_BLANK",
+              "prompt": "我不想喝啤酒，___喝水。",
+              "correctAnswer": {
+                "text": "想",
+                "accepted": [
+                  "想"
+                ]
+              },
+              "explanation": "Đáp án là 想 (xiǎng) nghĩa là \"muốn\". Câu gốc \"我不想喝啤酒，想喝水\" dùng cặp 不想…想 để đối lập \"không muốn… (mà) muốn…\". Đây chính là điểm ngữ pháp trọng tâm của bài: 想 + động từ diễn tả mong muốn, và thêm 不 phía trước để phủ định."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "bai": 12,
+      "topicZh": "爱好",
+      "topicVi": "Sở thích",
+      "passages": [
+        {
+          "passage": "我有很多爱好。我喜欢看书，也喜欢听音乐。周末我和朋友一起打球、游泳。我妹妹喜欢看电影。我们都喜欢运动。",
+          "titleZh": "爱好",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "我妹妹喜欢做什么？",
+              "options": [
+                {
+                  "text": "看书"
+                },
+                {
+                  "text": "听音乐"
+                },
+                {
+                  "text": "看电影"
+                },
+                {
+                  "text": "游泳"
+                }
+              ],
+              "correctAnswer": {
+                "index": 2
+              },
+              "explanation": "Đáp án đúng là 看电影 (kàn diànyǐng – xem phim). Trong đoạn có câu '我妹妹喜欢看电影' nghĩa là 'Em gái tôi thích xem phim'. Chữ 妹妹 (mèimei) là 'em gái', 喜欢 (xǐhuan) là 'thích'. Các phương án 看书 (đọc sách), 听音乐 (nghe nhạc) là sở thích của người kể '我', còn 游泳 (bơi) là việc làm cuối tuần cùng bạn, nên đều không phải sở thích riêng của em gái."
+            },
+            {
+              "type": "MCQ",
+              "prompt": "周末“我”和朋友一起做什么？",
+              "options": [
+                {
+                  "text": "看电影"
+                },
+                {
+                  "text": "打球、游泳"
+                },
+                {
+                  "text": "听音乐"
+                },
+                {
+                  "text": "跳舞"
+                }
+              ],
+              "correctAnswer": {
+                "index": 1
+              },
+              "explanation": "Đáp án đúng là 打球、游泳 (dǎqiú, yóuyǒng – chơi bóng và bơi). Đoạn viết '周末我和朋友一起打球、游泳', trong đó 周末 (zhōumò) là 'cuối tuần', 一起 (yìqǐ) là 'cùng nhau'. Cấu trúc 和...一起 (hé...yìqǐ) nghĩa là 'cùng với ai làm gì'. Các lựa chọn khác như 看电影 hay 听音乐 là sở thích chứ không phải hoạt động cuối tuần với bạn, còn 跳舞 không hề xuất hiện trong đoạn này."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "“我”喜欢听音乐。",
+              "correctAnswer": {
+                "value": true
+              },
+              "explanation": "Nhận định này ĐÚNG. Đoạn văn có câu '我喜欢看书，也喜欢听音乐' nghĩa là 'Tôi thích đọc sách, cũng thích nghe nhạc'. Chú ý chữ 也 (yě – cũng) ở đây nối hai sở thích lại với nhau: 喜欢 A 也喜欢 B (thích A cũng thích B). Vì vậy 'tôi thích nghe nhạc' là đúng với nội dung bài."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "我们都喜欢看电影。",
+              "correctAnswer": {
+                "value": false
+              },
+              "explanation": "Nhận định này SAI. Câu cuối đoạn là '我们都喜欢运动' nghĩa là 'Chúng tôi đều thích thể thao (运动 yùndòng)', chứ không phải 看电影 (xem phim). Chữ 都 (dōu – đều) nhấn mạnh tất cả mọi người cùng thích thể thao. Xem phim chỉ là sở thích riêng của em gái, nên nói 'chúng tôi đều thích xem phim' là không đúng."
+            },
+            {
+              "type": "FILL_BLANK",
+              "prompt": "我们都喜欢___。",
+              "correctAnswer": {
+                "text": "运动",
+                "accepted": [
+                  "运动。"
+                ]
+              },
+              "explanation": "Từ cần điền là 运动 (yùndòng – thể thao/vận động). Câu gốc trong đoạn là '我们都喜欢运动'. Đây là câu thể hiện điểm ngữ pháp trọng tâm với chữ 都 (dōu – đều): 我们都喜欢... có nghĩa 'chúng tôi đều thích...', dùng để nói nhiều người cùng có chung một sở thích. Cả nhà tuy mỗi người thích một thứ nhưng điểm chung là đều thích vận động."
+            }
+          ]
+        },
+        {
+          "passage": "我哥哥的爱好是打球，他每天下午都去打球。我的爱好是看书，我有很多书。妹妹喜欢跳舞、唱歌。我们的爱好都不一样。",
+          "titleZh": "爱好",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "哥哥的爱好是什么？",
+              "options": [
+                {
+                  "text": "看书"
+                },
+                {
+                  "text": "打球"
+                },
+                {
+                  "text": "唱歌"
+                },
+                {
+                  "text": "跳舞"
+                }
+              ],
+              "correctAnswer": {
+                "index": 1
+              },
+              "explanation": "Đáp án đúng là 打球 (dǎqiú – chơi bóng). Đoạn mở đầu bằng '我哥哥的爱好是打球' nghĩa là 'Sở thích của anh trai tôi là chơi bóng'. Chữ 哥哥 (gēge) là 'anh trai', 爱好 (àihào) là 'sở thích', cấu trúc ...的爱好是... nghĩa là 'sở thích của ... là ...'. Phương án 看书 là sở thích của '我', còn 唱歌、跳舞 là sở thích của em gái."
+            },
+            {
+              "type": "MCQ",
+              "prompt": "哥哥什么时候去打球？",
+              "options": [
+                {
+                  "text": "每天上午"
+                },
+                {
+                  "text": "周末"
+                },
+                {
+                  "text": "每天下午"
+                },
+                {
+                  "text": "晚上"
+                }
+              ],
+              "correctAnswer": {
+                "index": 2
+              },
+              "explanation": "Đáp án đúng là 每天下午 (měitiān xiàwǔ – mỗi chiều). Đoạn viết '他每天下午都去打球' nghĩa là 'mỗi chiều anh ấy đều đi chơi bóng'. Chữ 每天 (měitiān) là 'mỗi ngày', 下午 (xiàwǔ) là 'buổi chiều', và 都 (dōu) ở đây nhấn mạnh 'chiều nào cũng' đi. Các phương án 上午 (buổi sáng), 晚上 (buổi tối) hay 周末 (cuối tuần) đều không khớp với đoạn."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "妹妹喜欢跳舞、唱歌。",
+              "correctAnswer": {
+                "value": true
+              },
+              "explanation": "Nhận định này ĐÚNG. Đoạn có câu '妹妹喜欢跳舞、唱歌' nghĩa là 'Em gái thích nhảy và hát'. Chữ 跳舞 (tiàowǔ) là 'nhảy múa', 唱歌 (chànggē) là 'hát'. Câu này dùng 喜欢 (xǐhuan – thích) để nói về sở thích, hoàn toàn trùng khớp với nội dung bài nên là đúng."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "我们的爱好都一样。",
+              "correctAnswer": {
+                "value": false
+              },
+              "explanation": "Nhận định này SAI. Câu cuối đoạn là '我们的爱好都不一样' nghĩa là 'Sở thích của chúng tôi đều khác nhau'. Chữ 不一样 (bù yíyàng) nghĩa là 'không giống nhau', còn 一样 (yíyàng) là 'giống nhau'. Vì có chữ 不 (bù – không) phủ định, nên nói 'sở thích đều giống nhau' là ngược với ý của bài."
+            },
+            {
+              "type": "FILL_BLANK",
+              "prompt": "我们的爱好都___。",
+              "correctAnswer": {
+                "text": "不一样",
+                "accepted": [
+                  "不一样。"
+                ]
+              },
+              "explanation": "Từ cần điền là 不一样 (bù yíyàng – không giống nhau/khác nhau). Câu gốc là '我们的爱好都不一样'. Ở đây chữ 都 (dōu – đều) kết hợp với 不一样 để nói mỗi người trong nhà có một sở thích riêng (anh thích chơi bóng, tôi thích đọc sách, em gái thích nhảy hát). Cấu trúc ...都不一样 nghĩa là 'tất cả đều khác nhau', là điểm nhấn ngữ pháp của câu."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "bai": 13,
+      "topicZh": "今天几号？",
+      "topicVi": "Ngày, Tháng, Thứ",
+      "passages": [
+        {
+          "passage": "今天是五月二十号，星期五。明天星期六，我不上班。这个星期天是我妈妈的生日。下个月有一个中国节日。",
+          "titleZh": "今天几号？",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "今天是几月几号？",
+              "options": [
+                {
+                  "text": "五月二十号"
+                },
+                {
+                  "text": "五月六号"
+                },
+                {
+                  "text": "六月二十号"
+                },
+                {
+                  "text": "三月八号"
+                }
+              ],
+              "correctAnswer": {
+                "index": 0
+              },
+              "explanation": "Đáp án đúng là 五月二十号 (ngày 20 tháng 5). Câu đầu đoạn ghi rõ '今天是五月二十号' — trong đó 月 (yuè) là 'tháng', 号 (hào) là 'ngày'. Đây chính là điểm ngữ pháp trọng tâm của bài: dùng 月 cho tháng và 号 cho ngày. Các phương án còn lại đều có số tháng hoặc số ngày không khớp với đoạn nên sai."
+            },
+            {
+              "type": "MCQ",
+              "prompt": "这个星期天是谁的生日？",
+              "options": [
+                {
+                  "text": "爸爸"
+                },
+                {
+                  "text": "我"
+                },
+                {
+                  "text": "妈妈"
+                },
+                {
+                  "text": "老师"
+                }
+              ],
+              "correctAnswer": {
+                "index": 2
+              },
+              "explanation": "Đáp án đúng là 妈妈 (mẹ). Đoạn viết '这个星期天是我妈妈的生日' nghĩa là 'Chủ nhật tuần này là sinh nhật mẹ tôi'. Ở đây 生日 (shēngrì) là 'sinh nhật', còn 星期天 (xīngqītiān) là 'Chủ nhật' — liên quan tới cách nói thứ trong tuần (星期). Đoạn không nhắc tới sinh nhật của bố, của tôi hay của cô giáo, nên ba phương án kia đều sai."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "明天是星期六。",
+              "correctAnswer": {
+                "value": true
+              },
+              "explanation": "Nhận định này ĐÚNG. Đoạn ghi '明天星期六' nghĩa là 'Ngày mai thứ Bảy'. Trong đó 明天 (míngtiān) là 'ngày mai' và 星期六 (xīngqīliù) là 'thứ Bảy'. Cấu trúc 星期 + số chính là cách nói thứ trong tuần mà bài đang học, vì vậy câu khẳng định khớp hoàn toàn với đoạn."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "明天我上班。",
+              "correctAnswer": {
+                "value": false
+              },
+              "explanation": "Nhận định này SAI. Đoạn nói rõ '明天星期六，我不上班' — 'Ngày mai thứ Bảy, tôi KHÔNG đi làm'. Chữ 不 (bù) mang nghĩa phủ định 'không', còn 上班 (shàngbān) là 'đi làm'. Vì có 不 nên người nói không đi làm vào ngày mai, do đó câu 'tôi đi làm' là sai."
+            },
+            {
+              "type": "FILL_BLANK",
+              "prompt": "下个月有一个中国___日。",
+              "correctAnswer": {
+                "text": "节",
+                "accepted": []
+              },
+              "explanation": "Từ cần điền là 节 (jié), tạo thành 节日 (jiérì) nghĩa là 'ngày lễ, ngày tết'. Câu gốc trong đoạn là '下个月有一个中国节日' — 'Tháng sau có một ngày lễ Trung Quốc'. Ở đây 下个月 (xià ge yuè) là 'tháng sau', gắn với điểm ngữ pháp 月 của bài. Bạn nhớ ghép 节 + 日 để được từ 节日 nhé."
+            }
+          ]
+        },
+        {
+          "passage": "我的生日是三月八号。今年三月八号是星期一。爸爸的生日是十月。我们家每年都一起过生日。",
+          "titleZh": "今天几号？",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "我的生日是几月几号？",
+              "options": [
+                {
+                  "text": "十月八号"
+                },
+                {
+                  "text": "三月一号"
+                },
+                {
+                  "text": "三月八号"
+                },
+                {
+                  "text": "八月三号"
+                }
+              ],
+              "correctAnswer": {
+                "index": 2
+              },
+              "explanation": "Đáp án đúng là 三月八号 (ngày 8 tháng 3). Câu mở đầu đoạn ghi '我的生日是三月八号' — 'Sinh nhật tôi là ngày 8 tháng 3'. Hãy nhớ thứ tự tiếng Trung là 月 (tháng) đứng trước, 号 (ngày) đứng sau, đúng điểm ngữ pháp của bài. Các phương án kia đảo số hoặc đổi tháng nên không khớp với đoạn."
+            },
+            {
+              "type": "MCQ",
+              "prompt": "今年三月八号是星期几？",
+              "options": [
+                {
+                  "text": "星期一"
+                },
+                {
+                  "text": "星期二"
+                },
+                {
+                  "text": "星期三"
+                },
+                {
+                  "text": "星期天"
+                }
+              ],
+              "correctAnswer": {
+                "index": 0
+              },
+              "explanation": "Đáp án đúng là 星期一 (thứ Hai). Đoạn viết '今年三月八号是星期一' nghĩa là 'Năm nay ngày 8 tháng 3 là thứ Hai'. Khi hỏi thứ mấy ta dùng 星期几 (xīngqī jǐ), và trả lời bằng 星期 + số: 星期一 là thứ Hai. Các thứ khác (二/三/天) không được nhắc tới trong đoạn nên sai."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "爸爸的生日是十月。",
+              "correctAnswer": {
+                "value": true
+              },
+              "explanation": "Nhận định này ĐÚNG. Đoạn ghi rõ '爸爸的生日是十月' — 'Sinh nhật bố là tháng 10'. Trong đó 十月 (shí yuè) là 'tháng 10', dùng 月 để chỉ tháng đúng như trọng tâm ngữ pháp của bài. Vì câu khẳng định trùng khớp với đoạn nên đáp án là đúng."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "我们家不一起过生日。",
+              "correctAnswer": {
+                "value": false
+              },
+              "explanation": "Nhận định này SAI. Đoạn nói '我们家每年都一起过生日' — 'Nhà tôi năm nào cũng cùng nhau tổ chức sinh nhật'. Ở đây 每年 (měi nián) là 'mỗi năm', 一起 (yìqǐ) là 'cùng nhau', 过生日 (guò shēngrì) là 'tổ chức/đón sinh nhật'. Vì cả nhà CÙNG NHAU đón sinh nhật, nên câu 'không cùng nhau' là sai."
+            },
+            {
+              "type": "FILL_BLANK",
+              "prompt": "我们家每年都一起___生日。",
+              "correctAnswer": {
+                "text": "过",
+                "accepted": []
+              },
+              "explanation": "Từ cần điền là 过 (guò), tạo thành cụm 过生日 nghĩa là 'tổ chức/đón sinh nhật'. Câu gốc là '我们家每年都一起过生日'. Động từ 过 đi với 生日 rất thường gặp khi nói về ngày sinh nhật. Bạn nhớ cụm cố định 过生日 để diễn đạt việc mừng sinh nhật nhé."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "bai": 14,
+      "topicZh": "现在几点？",
+      "topicVi": "Giờ giấc",
+      "passages": [
+        {
+          "passage": "我每天早上六点半起床。七点吃早饭，八点上班。中午十二点吃午饭。下午六点下班，回家。晚上十一点睡觉。",
+          "titleZh": "现在几点？",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "我每天早上几点起床？",
+              "options": [
+                {
+                  "text": "五点"
+                },
+                {
+                  "text": "六点半"
+                },
+                {
+                  "text": "七点"
+                },
+                {
+                  "text": "八点"
+                }
+              ],
+              "correctAnswer": {
+                "index": 1
+              },
+              "explanation": "Đáp án đúng là 六点半 (6h30). Trong đoạn có câu \"我每天早上六点半起床\": 早上 (zǎoshang) là buổi sáng, 起床 (qǐchuáng) là thức dậy, còn 六点半 nghĩa là \"6 giờ rưỡi\" (点 = giờ, 半 = rưỡi/30 phút). Đây chính là điểm ngữ pháp trọng tâm của bài: dùng 点/半 để nói giờ gắn với hành động trong ngày. Các phương án khác sai vì 七点 là giờ ăn sáng, 八点 là giờ đi làm, còn 五点 không xuất hiện trong đoạn."
+            },
+            {
+              "type": "MCQ",
+              "prompt": "中午十二点，我做什么？",
+              "options": [
+                {
+                  "text": "上班"
+                },
+                {
+                  "text": "起床"
+                },
+                {
+                  "text": "吃午饭"
+                },
+                {
+                  "text": "睡觉"
+                }
+              ],
+              "correctAnswer": {
+                "index": 2
+              },
+              "explanation": "Đáp án đúng là 吃午饭 (ăn trưa). Câu trong đoạn ghi rõ \"中午十二点吃午饭\": 中午 (zhōngwǔ) là buổi trưa, 十二点 là 12 giờ, 午饭 (wǔfàn) là bữa trưa và 吃 (chī) là ăn. Các phương án còn lại đều ứng với mốc giờ khác trong đoạn: 上班 (đi làm) lúc 8h, 起床 (dậy) lúc 6h30, còn 睡觉 (ngủ) lúc 11h tối, nên đều sai."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "我晚上十一点睡觉。",
+              "correctAnswer": {
+                "value": true
+              },
+              "explanation": "Nhận định này ĐÚNG. Câu cuối đoạn viết \"晚上十一点睡觉\": 晚上 (wǎnshang) là buổi tối, 十一点 là 11 giờ, 睡觉 (shuìjiào) là đi ngủ. Hành động khớp hoàn toàn với đoạn nên đây là câu đúng. Lưu ý cấu trúc \"mốc giờ + hành động\" (十一点 + 睡觉) chính là điểm ngữ pháp trọng tâm của bài."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "我下午六点上班。",
+              "correctAnswer": {
+                "value": false
+              },
+              "explanation": "Nhận định này SAI. Trong đoạn, lúc \"下午六点\" (6h chiều) tôi 下班 (xiàbān - tan làm) chứ không phải 上班 (shàngbān - đi làm). Hai từ này dễ nhầm: 上班 là bắt đầu đi làm (lúc 8h sáng), còn 下班 là tan làm/hết giờ làm. Vì đoạn ghi \"下午六点下班\" nên khẳng định 6h chiều đi làm là sai."
+            },
+            {
+              "type": "FILL_BLANK",
+              "prompt": "我每天早上六点___起床。",
+              "correctAnswer": {
+                "text": "半",
+                "accepted": [
+                  "半。"
+                ]
+              },
+              "explanation": "Từ cần điền là 半 (bàn), nghĩa là \"rưỡi/30 phút\". Câu gốc trong đoạn là \"我每天早上六点半起床\" tức dậy lúc 6 giờ rưỡi. Đây đúng là điểm ngữ pháp trọng tâm: 点 chỉ giờ chẵn còn 半 thêm vào để chỉ \"rưỡi\" (六点半 = 6h30). Bạn nhớ cấu trúc \"số + 点 + 半\" để diễn đạt giờ rưỡi nhé."
+            }
+          ]
+        },
+        {
+          "passage": "现在是下午三点。我妹妹四点半下课，五点回家。我晚上七点吃晚饭，八点看电视，十一点睡觉。",
+          "titleZh": "现在几点？",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "现在是几点？",
+              "options": [
+                {
+                  "text": "下午三点"
+                },
+                {
+                  "text": "四点半"
+                },
+                {
+                  "text": "五点"
+                },
+                {
+                  "text": "晚上七点"
+                }
+              ],
+              "correctAnswer": {
+                "index": 0
+              },
+              "explanation": "Đáp án đúng là 下午三点 (3h chiều). Câu mở đầu đoạn ghi \"现在是下午三点\": 现在 (xiànzài) là bây giờ, 下午 (xiàwǔ) là buổi chiều, 三点 là 3 giờ. Các phương án khác là mốc giờ của hành động khác: 四点半 là giờ em gái tan học, 五点 là giờ em gái về nhà, 晚上七点 là giờ tôi ăn tối, nên đều không phải giờ hiện tại."
+            },
+            {
+              "type": "MCQ",
+              "prompt": "我妹妹几点下课？",
+              "options": [
+                {
+                  "text": "三点"
+                },
+                {
+                  "text": "五点"
+                },
+                {
+                  "text": "四点半"
+                },
+                {
+                  "text": "七点"
+                }
+              ],
+              "correctAnswer": {
+                "index": 2
+              },
+              "explanation": "Đáp án đúng là 四点半 (4h30). Đoạn viết \"我妹妹四点半下课\": 妹妹 (mèimei) là em gái, 下课 (xiàkè) là tan học/hết giờ học, và 四点半 là 4 giờ rưỡi (点 = giờ, 半 = rưỡi). Các phương án khác sai vì 三点 là giờ hiện tại, 五点 là lúc em gái về nhà (回家), còn 七点 là giờ tôi ăn tối."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "我妹妹五点回家。",
+              "correctAnswer": {
+                "value": true
+              },
+              "explanation": "Nhận định này ĐÚNG. Đoạn ghi rõ \"五点回家\": 五点 là 5 giờ, 回家 (huíjiā) là về nhà. Mốc giờ và hành động khớp với đoạn nên câu này đúng. Bạn để ý chuỗi thời gian của em gái: 四点半下课 (4h30 tan học) rồi 五点回家 (5h về nhà) - đúng theo cấu trúc \"giờ + hành động\" của bài."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "我八点吃晚饭。",
+              "correctAnswer": {
+                "value": false
+              },
+              "explanation": "Nhận định này SAI. Theo đoạn, lúc 八点 (8 giờ) tôi 看电视 (kàn diànshì - xem tivi) chứ không phải ăn tối. Bữa tối 吃晚饭 (chī wǎnfàn) diễn ra lúc 七点 (7h) như câu \"我晚上七点吃晚饭\". Vì vậy khẳng định 8h ăn tối là sai - đó là giờ xem tivi."
+            },
+            {
+              "type": "FILL_BLANK",
+              "prompt": "我晚上七点吃晚饭，八点看电视，十一点___。",
+              "correctAnswer": {
+                "text": "睡觉",
+                "accepted": [
+                  "睡觉。"
+                ]
+              },
+              "explanation": "Từ cần điền là 睡觉 (shuìjiào - đi ngủ). Câu gốc trong đoạn là \"...八点看电视，十一点睡觉\", tức 11h thì đi ngủ. Đây là chuỗi hành động trong ngày gắn với mốc giờ (七点吃晚饭 → 八点看电视 → 十一点睡觉) - đúng điểm ngữ pháp trọng tâm \"点 + hành động\". Bạn nhớ 睡觉 luôn dùng cho hành động đi ngủ nhé."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "bai": 15,
+      "topicZh": "一天的生活",
+      "topicVi": "Một ngày",
+      "passages": [
+        {
+          "passage": "我的一天很忙。早上我先起床，然后洗澡、吃早饭。我每天八点上班，下午六点下班。晚上我看一会儿电视，然后睡觉。周末我休息，不上班。",
+          "titleZh": "一天的生活",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "\"我\"每天几点上班？",
+              "options": [
+                {
+                  "text": "七点"
+                },
+                {
+                  "text": "八点"
+                },
+                {
+                  "text": "六点"
+                },
+                {
+                  "text": "九点"
+                }
+              ],
+              "correctAnswer": {
+                "index": 1
+              },
+              "explanation": "Đáp án đúng là 八点 (bā diǎn - 8 giờ). Trong đoạn có câu '我每天八点上班' nghĩa là 'mỗi ngày tôi đi làm lúc 8 giờ'. Chữ 上班 (shàng bān) nghĩa là 'đi làm', còn 下班 (xià bān) là 'tan làm'. Phương án 六点 (6 giờ) là giờ tan làm (下午六点下班) chứ không phải giờ đi làm, nên em chú ý đừng nhầm nhé!"
+            },
+            {
+              "type": "MCQ",
+              "prompt": "晚上\"我\"先做什么，然后睡觉？",
+              "options": [
+                {
+                  "text": "洗澡"
+                },
+                {
+                  "text": "吃早饭"
+                },
+                {
+                  "text": "看电视"
+                },
+                {
+                  "text": "上班"
+                }
+              ],
+              "correctAnswer": {
+                "index": 2
+              },
+              "explanation": "Đáp án đúng là 看电视 (kàn diànshì - xem tivi). Câu '晚上我看一会儿电视，然后睡觉' nghĩa là 'tối tôi xem tivi một lát, rồi đi ngủ'. Đây chính là điểm ngữ pháp trọng tâm: cấu trúc 先...然后... (trước... rồi...) dùng để diễn tả trình tự việc làm. Các phương án 洗澡 (tắm) và 吃早饭 (ăn sáng) là việc buổi sáng, còn 上班 (đi làm) cũng không phải việc buổi tối, nên đều sai."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "\"我\"周末不上班。",
+              "correctAnswer": {
+                "value": true
+              },
+              "explanation": "Nhận định này ĐÚNG. Câu cuối đoạn '周末我休息，不上班' nghĩa là 'cuối tuần tôi nghỉ, không đi làm'. Chữ 周末 (zhōumò) là 'cuối tuần', 休息 (xiūxi) là 'nghỉ ngơi', và 不上班 nghĩa là 'không đi làm'. Vậy nội dung khớp hoàn toàn với đoạn văn nên là đúng nhé!"
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "\"我\"的一天很忙。",
+              "correctAnswer": {
+                "value": true
+              },
+              "explanation": "Nhận định này ĐÚNG. Ngay câu mở đầu đoạn đã viết '我的一天很忙' nghĩa là 'một ngày của tôi rất bận'. Chữ 忙 (máng) nghĩa là 'bận', còn 很 (hěn) là phó từ chỉ mức độ 'rất'. Vì câu khẳng định trùng khớp với đoạn nên đáp án là đúng."
+            },
+            {
+              "type": "FILL_BLANK",
+              "prompt": "早上我先起床，___洗澡、吃早饭。",
+              "correctAnswer": {
+                "text": "然后",
+                "accepted": [
+                  "然后，",
+                  "然后,"
+                ]
+              },
+              "explanation": "Từ cần điền là 然后 (ránhòu - rồi/sau đó). Đây là điểm ngữ pháp trọng tâm của bài: cấu trúc 先...然后... dùng để nối hai hành động theo trình tự thời gian, 先 (xiān) là 'trước', 然后 là 'sau đó'. Trong đoạn, câu gốc là '早上我先起床，然后洗澡、吃早饭' (sáng tôi dậy trước, rồi tắm, ăn sáng), nên chỗ trống chính là 然后."
+            }
+          ]
+        },
+        {
+          "passage": "我妹妹是学生。她每天七点起床，先吃早饭，然后去学校。她上午有四节课，中午在学校吃饭，下午回家做作业。",
+          "titleZh": "一天的生活",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "\"我\"妹妹每天几点起床？",
+              "options": [
+                {
+                  "text": "八点"
+                },
+                {
+                  "text": "六点"
+                },
+                {
+                  "text": "七点"
+                },
+                {
+                  "text": "九点"
+                }
+              ],
+              "correctAnswer": {
+                "index": 2
+              },
+              "explanation": "Đáp án đúng là 七点 (qī diǎn - 7 giờ). Câu '她每天七点起床' nghĩa là 'mỗi ngày em dậy lúc 7 giờ'. Chữ 起床 (qǐ chuáng) nghĩa là 'thức dậy / ra khỏi giường'. Các phương án 八点, 六点, 九点 đều không xuất hiện làm giờ dậy trong đoạn, nên em hãy bám sát con số trong bài để chọn nhé!"
+            },
+            {
+              "type": "MCQ",
+              "prompt": "\"我\"妹妹上午有几节课？",
+              "options": [
+                {
+                  "text": "四节课"
+                },
+                {
+                  "text": "三节课"
+                },
+                {
+                  "text": "五节课"
+                },
+                {
+                  "text": "两节课"
+                }
+              ],
+              "correctAnswer": {
+                "index": 0
+              },
+              "explanation": "Đáp án đúng là 四节课 (sì jié kè - 4 tiết học). Câu '她上午有四节课' nghĩa là 'buổi sáng em có 4 tiết'. Chữ 节 (jié) là lượng từ dùng cho 'tiết học', 课 (kè) là 'tiết/bài học', 上午 (shàngwǔ) là 'buổi sáng'. Các con số khác như 三 (3), 五 (5), 两 (2) đều không khớp với đoạn nên sai."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "\"我\"妹妹中午在家吃饭。",
+              "correctAnswer": {
+                "value": false
+              },
+              "explanation": "Nhận định này SAI. Đoạn viết '中午在学校吃饭' nghĩa là 'buổi trưa ăn cơm ở trường', chứ không phải ở nhà. Chữ 学校 (xuéxiào) là 'trường học', còn 家 (jiā) là 'nhà' — hai địa điểm khác nhau. Em gái chỉ '下午回家做作业' (chiều mới về nhà làm bài tập), còn bữa trưa thì ở trường, nên nhận định 'ăn cơm ở nhà' là sai nhé!"
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "\"我\"妹妹是学生。",
+              "correctAnswer": {
+                "value": true
+              },
+              "explanation": "Nhận định này ĐÚNG. Câu mở đầu đoạn '我妹妹是学生' nghĩa là 'em gái tôi là học sinh'. Chữ 妹妹 (mèimei) là 'em gái', 学生 (xuésheng) là 'học sinh', và 是 (shì) là động từ 'là'. Nội dung trùng khớp với đoạn nên đáp án đúng."
+            },
+            {
+              "type": "FILL_BLANK",
+              "prompt": "她每天七点起床，先吃早饭，___去学校。",
+              "correctAnswer": {
+                "text": "然后",
+                "accepted": [
+                  "然后，",
+                  "然后,"
+                ]
+              },
+              "explanation": "Từ cần điền là 然后 (ránhòu - rồi/sau đó). Đây là điểm ngữ pháp trọng tâm 先...然后... diễn tả thứ tự hành động: 先吃早饭 (ăn sáng trước), 然后去学校 (rồi đi học). Câu gốc trong đoạn là '先吃早饭，然后去学校', nên chỗ trống chính là 然后, dùng để nối việc thứ hai sau việc thứ nhất."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "bai": 16,
+      "topicZh": "明天天气怎么样？",
+      "topicVi": "Thời tiết",
+      "passages": [
+        {
+          "passage": "今天天气很好，不冷也不热。昨天下雨了，很冷。明天天气怎么样？明天是晴天，有一点儿风。我喜欢春天，春天很暖和。",
+          "titleZh": "明天天气怎么样？",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "今天天气怎么样？",
+              "options": [
+                {
+                  "text": "很冷"
+                },
+                {
+                  "text": "很好，不冷也不热"
+                },
+                {
+                  "text": "下雨了"
+                },
+                {
+                  "text": "很热"
+                }
+              ],
+              "correctAnswer": {
+                "index": 1
+              },
+              "explanation": "Đáp án đúng là '很好，不冷也不热' (rất đẹp, không lạnh cũng không nóng). Câu mở đầu đoạn viết '今天天气很好，不冷也不热' nên hôm nay thời tiết đẹp. Lưu ý cấu trúc '不…也不…' (không... cũng không...) dùng để phủ định cả hai vế. Phương án '很冷' và '下雨了' là nói về hôm qua (昨天下雨了，很冷), còn '很热' trái với đoạn văn."
+            },
+            {
+              "type": "MCQ",
+              "prompt": "明天天气怎么样？",
+              "options": [
+                {
+                  "text": "下雪"
+                },
+                {
+                  "text": "下雨"
+                },
+                {
+                  "text": "晴天，有一点儿风"
+                },
+                {
+                  "text": "很冷"
+                }
+              ],
+              "correctAnswer": {
+                "index": 2
+              },
+              "explanation": "Đáp án đúng là '晴天，有一点儿风' (trời nắng, có chút gió). Đoạn viết '明天是晴天，有一点儿风' — '晴天' là trời nắng, '一点儿' là một chút. Đây là câu trả lời cho '明天天气怎么样？' (Ngày mai thời tiết thế nào?). Các phương án còn lại (下雪 có tuyết, 下雨 mưa, 很冷 rất lạnh) đều không khớp mô tả về ngày mai."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "昨天下雨了，很冷。",
+              "correctAnswer": {
+                "value": true
+              },
+              "explanation": "Nhận định này ĐÚNG. Đoạn văn viết rõ '昨天下雨了，很冷' — '昨天' là hôm qua, '下雨' là mưa, '冷' là lạnh. Chữ '了' đặt sau '下雨' diễn tả hành động đã hoàn thành, nên hiểu là hôm qua trời đã mưa và rất lạnh."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "我喜欢冬天。",
+              "correctAnswer": {
+                "value": false
+              },
+              "explanation": "Nhận định này SAI. Đoạn văn viết '我喜欢春天，春天很暖和' — '喜欢' là thích, '春天' là mùa xuân, '暖和' là ấm áp. Người viết thích MÙA XUÂN chứ không phải mùa đông (冬天), nên câu '我喜欢冬天' không đúng. (Trong đoạn 1 không hề nhắc tới 冬天.)"
+            },
+            {
+              "type": "FILL_BLANK",
+              "prompt": "我喜欢春天，春天很___。",
+              "correctAnswer": {
+                "text": "暖和",
+                "accepted": [
+                  "暖和。"
+                ]
+              },
+              "explanation": "Từ cần điền là '暖和' (ấm áp). Câu gốc trong đoạn là '春天很暖和'. '暖和' là tính từ chỉ thời tiết ấm, thường dùng tả mùa xuân. Mẫu '很 + tính từ' (很暖和) — phó từ '很' (rất) đứng trước tính từ — là cấu trúc cơ bản HSK1."
+            }
+          ]
+        },
+        {
+          "passage": "我家在北京。北京的冬天很冷，常常下雪。夏天很热。我喜欢秋天，秋天不冷不热，很舒服。今天下雨了，我不想出门。",
+          "titleZh": "明天天气怎么样？",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "我家在哪儿？",
+              "options": [
+                {
+                  "text": "上海"
+                },
+                {
+                  "text": "北京"
+                },
+                {
+                  "text": "南京"
+                },
+                {
+                  "text": "广州"
+                }
+              ],
+              "correctAnswer": {
+                "index": 1
+              },
+              "explanation": "Đáp án đúng là '北京' (Bắc Kinh). Câu đầu đoạn viết '我家在北京' — '家' là nhà, '在' là ở/tại (chỉ vị trí). Vậy nhà người viết ở Bắc Kinh. Các thành phố khác (上海 Thượng Hải, 南京 Nam Kinh, 广州 Quảng Châu) không được nhắc tới, là phương án nhiễu."
+            },
+            {
+              "type": "MCQ",
+              "prompt": "北京的冬天天气怎么样？",
+              "options": [
+                {
+                  "text": "很热"
+                },
+                {
+                  "text": "很舒服"
+                },
+                {
+                  "text": "不冷不热"
+                },
+                {
+                  "text": "很冷，常常下雪"
+                }
+              ],
+              "correctAnswer": {
+                "index": 3
+              },
+              "explanation": "Đáp án đúng là '很冷，常常下雪' (rất lạnh, thường có tuyết). Đoạn viết '北京的冬天很冷，常常下雪' — '冬天' là mùa đông, '常常' là thường xuyên, '下雪' là rơi tuyết. '很热' là tả mùa hè (夏天很热), còn '不冷不热' và '很舒服' là tả mùa thu (秋天不冷不热，很舒服), nên đều sai khi nói về mùa đông."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "北京的夏天很热。",
+              "correctAnswer": {
+                "value": true
+              },
+              "explanation": "Nhận định này ĐÚNG. Đoạn văn viết '夏天很热' — '夏天' là mùa hè, '热' là nóng. Phó từ '很' (rất) đứng trước tính từ '热' nhấn mạnh mức độ. Vậy mùa hè ở Bắc Kinh rất nóng."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "我喜欢夏天。",
+              "correctAnswer": {
+                "value": false
+              },
+              "explanation": "Nhận định này SAI. Đoạn văn viết '我喜欢秋天，秋天不冷不热，很舒服' — người viết thích MÙA THU (秋天) vì không lạnh không nóng, rất dễ chịu (舒服). Vì vậy câu '我喜欢夏天' (Tôi thích mùa hè) không đúng."
+            },
+            {
+              "type": "FILL_BLANK",
+              "prompt": "今天下雨了，我不想___。",
+              "correctAnswer": {
+                "text": "出门",
+                "accepted": [
+                  "出门。"
+                ]
+              },
+              "explanation": "Từ cần điền là '出门' (ra ngoài, ra khỏi nhà). Câu gốc là '今天下雨了，我不想出门' — '下雨了' là trời đã mưa, '不想' là không muốn. Vì hôm nay trời mưa nên người viết không muốn ra ngoài. Cấu trúc '不想 + động từ' (不想出门) diễn tả ý 'không muốn làm gì đó', mẫu câu HSK1."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "bai": 17,
+      "topicZh": "买东西，多少钱？",
+      "topicVi": "Tiền & Mua sắm",
+      "passages": [
+        {
+          "passage": "今天我去商店买东西。这件衣服一百块，太贵了。那件衣服便宜，五十块。我买了那件。我给售货员一百块，她找我五十块。",
+          "titleZh": "买东西，多少钱？",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "这件衣服多少钱？",
+              "options": [
+                {
+                  "text": "五十块"
+                },
+                {
+                  "text": "一百块"
+                },
+                {
+                  "text": "三十块"
+                },
+                {
+                  "text": "十五块"
+                }
+              ],
+              "correctAnswer": {
+                "index": 1
+              },
+              "explanation": "Đáp án đúng là 一百块 (100 tệ). Trong đoạn có câu 这件衣服一百块 nghĩa là 'cái áo này 100 tệ'. Chữ 块 (kuài) là đơn vị tiền tệ thông dụng trong khẩu ngữ tiếng Trung, tương đương 'đồng/tệ'. Mẫu câu hỏi giá là 多少钱 (bao nhiêu tiền). Các phương án 五十块 (50 tệ) là giá cái áo kia (那件衣服), còn 三十块 và 十五块 không xuất hiện cho cái áo này nên đều sai."
+            },
+            {
+              "type": "MCQ",
+              "prompt": "售货员找了“我”多少钱？",
+              "options": [
+                {
+                  "text": "一百块"
+                },
+                {
+                  "text": "三十块"
+                },
+                {
+                  "text": "五十块"
+                },
+                {
+                  "text": "二十块"
+                }
+              ],
+              "correctAnswer": {
+                "index": 2
+              },
+              "explanation": "Đáp án đúng là 五十块 (50 tệ). Câu cuối đoạn 她找我五十块 nghĩa là 'cô ấy thối lại tôi 50 tệ'. Động từ 找 (zhǎo) ở đây mang nghĩa 'thối/trả lại tiền thừa' - đây chính là điểm ngữ pháp trọng tâm của bài. Vì 'tôi' mua áo 50 tệ và đưa 100 tệ, nên được thối lại 100−50=50 tệ. Phương án 一百块 là số tiền đưa ra (我给售货员一百块), không phải tiền thối; 三十块 và 二十块 không có trong đoạn."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "那件衣服很便宜。",
+              "correctAnswer": {
+                "value": true
+              },
+              "explanation": "Nhận định này ĐÚNG. Trong đoạn có câu 那件衣服便宜，五十块 nghĩa là 'cái áo kia rẻ, 50 tệ'. Chữ 便宜 (piányi) nghĩa là 'rẻ', trái nghĩa với 贵 (guì) là 'đắt'. Cái áo kia chỉ 50 tệ nên đúng là rẻ, và 'tôi' đã chọn mua nó (我买了那件)."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "“我”买了一百块的衣服。",
+              "correctAnswer": {
+                "value": false
+              },
+              "explanation": "Nhận định này SAI. Đoạn văn nói 那件衣服便宜，五十块。我买了那件 nghĩa là 'cái áo kia rẻ, 50 tệ. Tôi mua cái kia'. Vậy 'tôi' mua cái áo 50 tệ chứ không phải cái 100 tệ (cái 100 tệ bị chê 太贵了 - đắt quá). Lưu ý từ 那件 (cái kia) đối lập với 这件 (cái này) giúp xác định 'tôi' mua cái nào."
+            },
+            {
+              "type": "FILL_BLANK",
+              "prompt": "我给售货员一百块，她___我五十块。",
+              "correctAnswer": {
+                "text": "找",
+                "accepted": [
+                  "找"
+                ]
+              },
+              "explanation": "Đáp án đúng là 找 (zhǎo). Câu gốc trong đoạn là 她找我五十块 - 'cô ấy thối lại tôi 50 tệ'. Đây là điểm ngữ pháp trọng tâm: động từ 找 ngoài nghĩa 'tìm' còn có nghĩa 'thối/trả lại tiền thừa' khi mua bán. Cấu trúc thường gặp là 找 + người + số tiền (找我五十块 = thối cho tôi 50 tệ)."
+            }
+          ]
+        },
+        {
+          "passage": "今天我去超市买东西。我买了一些水果、牛奶和蔬菜，一共三十五块。我给售货员五十块，她找我十五块。",
+          "titleZh": "买东西，多少钱？",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "“我”今天去哪儿买东西？",
+              "options": [
+                {
+                  "text": "商店"
+                },
+                {
+                  "text": "学校"
+                },
+                {
+                  "text": "超市"
+                },
+                {
+                  "text": "医院"
+                }
+              ],
+              "correctAnswer": {
+                "index": 2
+              },
+              "explanation": "Đáp án đúng là 超市 (siêu thị). Câu đầu đoạn 今天我去超市买东西 nghĩa là 'hôm nay tôi đi siêu thị mua đồ'. Chữ 超市 (chāoshì) là 'siêu thị'. Phương án 商店 (cửa hàng) là nơi mua đồ ở đoạn 1, không phải đoạn này; 学校 (trường học) và 医院 (bệnh viện) đều không liên quan đến việc mua đồ trong đoạn."
+            },
+            {
+              "type": "MCQ",
+              "prompt": "“我”买的东西一共多少钱？",
+              "options": [
+                {
+                  "text": "十五块"
+                },
+                {
+                  "text": "五十块"
+                },
+                {
+                  "text": "三十五块"
+                },
+                {
+                  "text": "二十五块"
+                }
+              ],
+              "correctAnswer": {
+                "index": 2
+              },
+              "explanation": "Đáp án đúng là 三十五块 (35 tệ). Đoạn có câu 一共三十五块 nghĩa là 'tổng cộng 35 tệ'. Từ 一共 (yígòng) nghĩa là 'tổng cộng, cả thảy', và 多少钱 là cách hỏi giá tiền. Phương án 五十块 là số tiền 'tôi' đưa cho nhân viên (我给售货员五十块), 十五块 là tiền được thối lại (她找我十五块), còn 二十五块 không có trong đoạn."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "“我”买了水果、牛奶和蔬菜。",
+              "correctAnswer": {
+                "value": true
+              },
+              "explanation": "Nhận định này ĐÚNG. Đoạn văn viết 我买了一些水果、牛奶和蔬菜 nghĩa là 'tôi mua một ít trái cây, sữa và rau'. Trong đó 水果 là trái cây, 牛奶 là sữa, 蔬菜 là rau. Liên từ 和 (hé) nghĩa là 'và' dùng để nối các danh từ với nhau."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "售货员找了“我”五十块。",
+              "correctAnswer": {
+                "value": false
+              },
+              "explanation": "Nhận định này SAI. Đoạn nói 我给售货员五十块，她找我十五块 - 'tôi đưa nhân viên 50 tệ, cô ấy thối lại tôi 15 tệ'. Vậy số tiền được thối (找) là 十五块 (15 tệ), còn 五十块 (50 tệ) là số tiền 'tôi' ĐƯA RA chứ không phải tiền thối. Cần phân biệt 给 (đưa) với 找 (thối lại): 50 tệ đưa − 35 tệ tiền hàng = 15 tệ thối lại."
+            },
+            {
+              "type": "FILL_BLANK",
+              "prompt": "我买了一些水果、牛奶和蔬菜，一共三十五___。",
+              "correctAnswer": {
+                "text": "块",
+                "accepted": [
+                  "块"
+                ]
+              },
+              "explanation": "Đáp án đúng là 块 (kuài). Câu gốc là 一共三十五块 - 'tổng cộng 35 tệ'. Đây là điểm ngữ pháp trọng tâm: 块 là đơn vị tiền tệ trong khẩu ngữ (tương đương 元 yuán trong văn viết), luôn đứng sau con số để chỉ số tiền, ví dụ 三十五块 = 35 tệ."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "bai": 18,
+      "topicZh": "她买了不少衣服",
+      "topicVi": "Mua quần áo (了)",
+      "passages": [
+        {
+          "passage": "昨天我和妈妈去商场买衣服。妈妈买了不少衣服：两件衬衫、一条裙子。我买了一双鞋，这双鞋是黑色的，很漂亮。我们买了很多东西。",
+          "titleZh": "她买了不少衣服",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "妈妈买了什么衣服？",
+              "options": [
+                {
+                  "text": "一双鞋"
+                },
+                {
+                  "text": "两件衬衫和一条裙子"
+                },
+                {
+                  "text": "一条裤子"
+                },
+                {
+                  "text": "一件黑色的衣服"
+                }
+              ],
+              "correctAnswer": {
+                "index": 1
+              },
+              "explanation": "Đáp án đúng là 两件衬衫和一条裙子 (hai cái áo sơ mi và một cái váy). Đoạn văn ghi rõ '妈妈买了不少衣服：两件衬衫、一条裙子'. Chữ 买了 (mǎi le) nghĩa là 'đã mua' — trợ từ 了 chỉ hành động đã hoàn thành, đi kèm lượng từ 件 (jiàn, dùng cho áo) và 条 (tiáo, dùng cho váy/quần). Các phương án còn lại sai vì 一双鞋 (một đôi giày) là do người kể (我) mua chứ không phải mẹ; còn 裤子 (quần) và 黑色的衣服 (áo màu đen) không phải thứ mẹ mua."
+            },
+            {
+              "type": "MCQ",
+              "prompt": "我买的鞋是什么颜色的？",
+              "options": [
+                {
+                  "text": "白色的"
+                },
+                {
+                  "text": "红色的"
+                },
+                {
+                  "text": "黑色的"
+                },
+                {
+                  "text": "黄色的"
+                }
+              ],
+              "correctAnswer": {
+                "index": 2
+              },
+              "explanation": "Đáp án đúng là 黑色的 (màu đen). Đoạn văn viết '我买了一双鞋，这双鞋是黑色的' — đôi giày tôi mua màu đen. Chữ 黑色 (hēisè) nghĩa là 'màu đen', và cấu trúc 是…的 dùng để nhấn mạnh đặc điểm (ở đây là màu sắc). Các màu 白色 (trắng), 红色 (đỏ), 黄色 (vàng) đều không được nhắc tới nên là phương án nhiễu sai."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "我和妈妈昨天去商场买衣服。",
+              "correctAnswer": {
+                "value": true
+              },
+              "explanation": "Nhận định này ĐÚNG. Câu mở đầu đoạn văn là '昨天我和妈妈去商场买衣服' (Hôm qua tôi và mẹ đi trung tâm thương mại mua quần áo). Chữ 昨天 (zuótiān) là 'hôm qua', 商场 (shāngchǎng) là 'trung tâm thương mại', 买衣服 (mǎi yīfu) là 'mua quần áo' — tất cả khớp hoàn toàn với câu khẳng định."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "这双鞋很难看。",
+              "correctAnswer": {
+                "value": false
+              },
+              "explanation": "Nhận định này SAI. Đoạn văn viết '这双鞋是黑色的，很漂亮' — đôi giày này màu đen, rất đẹp. Chữ 漂亮 (piàoliang) nghĩa là 'đẹp', trái nghĩa với 难看 (nánkàn, xấu/khó nhìn) trong câu khẳng định. Vì đoạn nói giày 'rất đẹp' nên nói nó 'rất xấu' là sai."
+            },
+            {
+              "type": "FILL_BLANK",
+              "prompt": "妈妈买___不少衣服。",
+              "correctAnswer": {
+                "text": "了",
+                "accepted": [
+                  "了。"
+                ]
+              },
+              "explanation": "Đáp án là 了 (le). Câu gốc trong đoạn là '妈妈买了不少衣服' (Mẹ đã mua không ít quần áo). Đây chính là điểm ngữ pháp trọng tâm của bài: trợ từ 了 đặt ngay sau động từ 买 (mua) để diễn tả hành động ĐÃ HOÀN THÀNH. Cụm 不少 (bù shǎo) nghĩa là 'không ít', tức là rất nhiều."
+            }
+          ]
+        },
+        {
+          "passage": "这件衣服太贵了，那件便宜一点儿。我试穿了那件，很合适。我买了一件衬衫和一条裤子。我妹妹买了一双新鞋。",
+          "titleZh": "她买了不少衣服",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "我试穿了哪件衣服？",
+              "options": [
+                {
+                  "text": "贵的那件"
+                },
+                {
+                  "text": "便宜的那件"
+                },
+                {
+                  "text": "一条裙子"
+                },
+                {
+                  "text": "一双鞋"
+                }
+              ],
+              "correctAnswer": {
+                "index": 1
+              },
+              "explanation": "Đáp án đúng là 便宜的那件 (cái rẻ kia). Đoạn viết '那件便宜一点儿。我试穿了那件，很合适' — cái kia rẻ hơn một chút, tôi mặc thử cái kia, rất vừa. Chữ 试穿 (shìchuān) nghĩa là 'mặc thử', 便宜 (piányi) là 'rẻ', 合适 (héshì) là 'vừa/phù hợp'. Phương án 贵的那件 sai vì người kể chê 'cái này đắt quá' (太贵了) chứ không mặc thử nó; 裙子 và 鞋 không liên quan đến việc thử ở câu này."
+            },
+            {
+              "type": "MCQ",
+              "prompt": "我妹妹买了什么？",
+              "options": [
+                {
+                  "text": "一件衬衫"
+                },
+                {
+                  "text": "一条裤子"
+                },
+                {
+                  "text": "一双新鞋"
+                },
+                {
+                  "text": "一条裙子"
+                }
+              ],
+              "correctAnswer": {
+                "index": 2
+              },
+              "explanation": "Đáp án đúng là 一双新鞋 (một đôi giày mới). Câu cuối đoạn là '我妹妹买了一双新鞋'. Lượng từ 双 (shuāng) dùng cho vật đi theo cặp như giày dép, 新 (xīn) nghĩa là 'mới'. Các phương án 衬衫 (áo sơ mi) và 裤子 (quần) là thứ người kể (我) mua, còn 裙子 (váy) hoàn toàn không xuất hiện trong đoạn 2 nên đều sai."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "这件衣服很便宜。",
+              "correctAnswer": {
+                "value": false
+              },
+              "explanation": "Nhận định này SAI. Đoạn văn mở đầu bằng '这件衣服太贵了' — cái áo này đắt quá. Chữ 贵 (guì) nghĩa là 'đắt', còn 太…了 (tài…le) là cấu trúc nhấn mạnh 'quá…'. Vì đoạn nói cái này 'đắt quá' nên khẳng định nó 'rất rẻ' (便宜, piányi) là trái ngược và sai."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "我试穿那件衣服的时候，觉得很合适。",
+              "correctAnswer": {
+                "value": true
+              },
+              "explanation": "Nhận định này ĐÚNG. Đoạn văn viết '我试穿了那件，很合适' — tôi mặc thử cái kia, rất vừa. Chữ 合适 (héshì) nghĩa là 'vừa vặn/phù hợp', cho thấy quần áo mặc lên thấy hợp. Vì vậy câu khẳng định 'khi mặc thử cảm thấy rất vừa' là đúng với nội dung đoạn."
+            },
+            {
+              "type": "FILL_BLANK",
+              "prompt": "我买___一件衬衫和一条裤子。",
+              "correctAnswer": {
+                "text": "了",
+                "accepted": [
+                  "了。"
+                ]
+              },
+              "explanation": "Đáp án là 了 (le). Câu gốc trong đoạn là '我买了一件衬衫和一条裤子' (Tôi đã mua một cái áo sơ mi và một cái quần). Đây là điểm ngữ pháp trọng tâm: 了 đứng sau động từ 买 để chỉ hành động ĐÃ HOÀN THÀNH. Lưu ý lượng từ đi cùng: 件 (jiàn) cho 衬衫 (áo sơ mi) và 条 (tiáo) cho 裤子 (quần)."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "bai": 19,
+      "topicZh": "在饭馆",
+      "topicVi": "Gọi món",
+      "passages": [
+        {
+          "passage": "中午我和朋友去饭馆吃饭。服务员给我们菜单。我点了一个鱼、一碗米饭。朋友要了一碗面条。这儿的菜很好吃，我们都很喜欢。",
+          "titleZh": "在饭馆",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "我和朋友什么时候去饭馆吃饭？",
+              "options": [
+                {
+                  "text": "早上"
+                },
+                {
+                  "text": "中午"
+                },
+                {
+                  "text": "晚上"
+                },
+                {
+                  "text": "下午"
+                }
+              ],
+              "correctAnswer": {
+                "index": 1
+              },
+              "explanation": "Đáp án đúng là 中午 (zhōngwǔ) nghĩa là \"buổi trưa\", vì câu đầu đoạn viết \"中午我和朋友去饭馆吃饭\" (Trưa tôi cùng bạn đến quán ăn). Các phương án 早上 (buổi sáng), 晚上 (buổi tối), 下午 (buổi chiều) đều là thời gian khác nên sai. Bạn nhớ học cụm chỉ thời gian này nhé, chúng rất hay gặp trong đề HSK1."
+            },
+            {
+              "type": "MCQ",
+              "prompt": "\"我\"点了什么？",
+              "options": [
+                {
+                  "text": "一碗面条"
+                },
+                {
+                  "text": "一碗汤"
+                },
+                {
+                  "text": "一个鱼和一碗米饭"
+                },
+                {
+                  "text": "很多饺子"
+                }
+              ],
+              "correctAnswer": {
+                "index": 2
+              },
+              "explanation": "Đáp án đúng là 一个鱼和一碗米饭 (một con cá và một bát cơm), vì đoạn viết \"我点了一个鱼、一碗米饭\". Ở đây 点 (diǎn) nghĩa là \"gọi món\", chú ý lượng từ: 个 (gè) dùng cho cá, 碗 (wǎn = bát) dùng cho cơm. Phương án 一碗面条 (một bát mì) là món của người bạn, còn 汤 (canh) và 饺子 (sủi cảo) không có ở đoạn 1 nên sai."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "服务员给我们菜单。",
+              "correctAnswer": {
+                "value": true
+              },
+              "explanation": "Nhận định này ĐÚNG vì đoạn văn viết rõ \"服务员给我们菜单\" (Phục vụ đưa chúng tôi thực đơn). 服务员 (fúwùyuán) là \"nhân viên phục vụ\", 菜单 (càidān) là \"thực đơn\", còn 给 (gěi) nghĩa là \"đưa/cho\". Đây đều là từ vựng trọng tâm của bài gọi món nên bạn hãy ghi nhớ kỹ nhé."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "朋友要了一碗米饭。",
+              "correctAnswer": {
+                "value": false
+              },
+              "explanation": "Nhận định này SAI. Đoạn văn viết \"朋友要了一碗面条\", tức người bạn gọi một bát MÌ (面条 miàntiáo), chứ không phải một bát cơm (米饭 mǐfàn). Người gọi 米饭 là \"我\" (tôi). Động từ 要 (yào) ở đây cũng có nghĩa \"gọi/yêu cầu\" giống 点, bạn lưu ý phân biệt món của từng người nhé."
+            },
+            {
+              "type": "FILL_BLANK",
+              "prompt": "我点了一个鱼、一___米饭。",
+              "correctAnswer": {
+                "text": "碗",
+                "accepted": []
+              },
+              "explanation": "Từ cần điền là 碗 (wǎn) nghĩa là \"bát\", vì đoạn viết \"一碗米饭\" (một bát cơm). 碗 là lượng từ dùng cho những món đựng trong bát như cơm, mì, canh; còn cá thì dùng lượng từ 个. Đây chính là điểm ngữ pháp trọng tâm 碗/个 của bài, bạn nhớ chọn đúng lượng từ theo món ăn nhé."
+            }
+          ]
+        },
+        {
+          "passage": "晚上我们一家人去饭馆吃饭。爸爸点了一个鱼、一个鸡。妈妈要了一碗汤。我喜欢吃饺子，点了很多饺子。这家饭馆的菜很好吃。",
+          "titleZh": "在饭馆",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "晚上谁去饭馆吃饭？",
+              "options": [
+                {
+                  "text": "我和朋友"
+                },
+                {
+                  "text": "我们一家人"
+                },
+                {
+                  "text": "爸爸和妈妈"
+                },
+                {
+                  "text": "服务员"
+                }
+              ],
+              "correctAnswer": {
+                "index": 1
+              },
+              "explanation": "Đáp án đúng là 我们一家人 (cả nhà chúng tôi), vì đoạn mở đầu bằng \"晚上我们一家人去饭馆吃饭\". 一家人 (yì jiā rén) nghĩa là \"cả nhà, cả gia đình\". Phương án 我和朋友 là của đoạn 1, còn 爸爸和妈妈 chỉ là một phần gia đình nên chưa đủ; 服务员 thì không đi ăn nên sai."
+            },
+            {
+              "type": "MCQ",
+              "prompt": "妈妈要了什么？",
+              "options": [
+                {
+                  "text": "一碗汤"
+                },
+                {
+                  "text": "一个鸡"
+                },
+                {
+                  "text": "很多饺子"
+                },
+                {
+                  "text": "一个鱼"
+                }
+              ],
+              "correctAnswer": {
+                "index": 0
+              },
+              "explanation": "Đáp án đúng là 一碗汤 (một bát canh), vì đoạn viết \"妈妈要了一碗汤\". 汤 (tāng) nghĩa là \"canh\" và dùng lượng từ 碗 (bát). Các món còn lại có người khác gọi: 鸡 (gà) và 鱼 (cá) do bố gọi, còn 饺子 (sủi cảo) do \"我\" gọi, nên các phương án đó đều sai theo đoạn văn."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "爸爸点了一个鱼和一个鸡。",
+              "correctAnswer": {
+                "value": true
+              },
+              "explanation": "Nhận định này ĐÚNG vì đoạn văn viết \"爸爸点了一个鱼、一个鸡\" (Bố gọi một con cá, một con gà). 鸡 (jī) là \"gà\", 鱼 (yú) là \"cá\", cả hai đều dùng lượng từ 个 (gè). Động từ 点 (diǎn) ở đây nghĩa là \"gọi món\" — đúng trọng tâm bài học gọi món, bạn nhớ nhé."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "我喜欢吃汤，点了很多汤。",
+              "correctAnswer": {
+                "value": false
+              },
+              "explanation": "Nhận định này SAI. Đoạn văn viết \"我喜欢吃饺子，点了很多饺子\", tức \"tôi\" thích ăn 饺子 (jiǎozi = sủi cảo) và gọi nhiều sủi cảo, chứ không phải canh (汤). Người gọi 汤 là mẹ. Cụm 喜欢吃 (xǐhuan chī) nghĩa là \"thích ăn\", bạn lưu ý đọc kỹ để không nhầm món của từng người nhé."
+            },
+            {
+              "type": "FILL_BLANK",
+              "prompt": "妈妈要了一___汤。",
+              "correctAnswer": {
+                "text": "碗",
+                "accepted": []
+              },
+              "explanation": "Từ cần điền là 碗 (wǎn) nghĩa là \"bát\", vì đoạn viết \"一碗汤\" (một bát canh). Canh là món nước nên dùng lượng từ 碗, trong khi cá và gà lại dùng lượng từ 个. Đây là điểm ngữ pháp trọng tâm 碗/个 của bài: hãy chọn lượng từ phù hợp với từng loại món ăn nhé."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "bai": 20,
+      "topicZh": "饮食拓展",
+      "topicVi": "Đồ ăn & Thức uống",
+      "passages": [
+        {
+          "passage": "我喜欢吃水果，每天吃一个苹果。我不太喜欢吃肉，喜欢吃蔬菜。我妹妹喜欢吃蛋糕，蛋糕很甜。这个橙子有点儿酸。",
+          "titleZh": "饮食拓展",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "\"我\"每天吃什么水果？",
+              "options": [
+                {
+                  "text": "香蕉"
+                },
+                {
+                  "text": "苹果"
+                },
+                {
+                  "text": "西瓜"
+                },
+                {
+                  "text": "橙子"
+                }
+              ],
+              "correctAnswer": {
+                "index": 1
+              },
+              "explanation": "Đáp án đúng là 苹果 (píngguǒ - quả táo). Trong đoạn có câu 每天吃一个苹果 (mỗi ngày ăn một quả táo), trong đó 每天 nghĩa là 'mỗi ngày' và 一个苹果 là 'một quả táo'. Các phương án 香蕉 (chuối), 西瓜 (dưa hấu) không hề xuất hiện trong đoạn này; còn 橙子 (cam) tuy có nhắc đến nhưng chỉ nói nó hơi chua (有点儿酸) chứ không phải thứ ăn mỗi ngày nhé!"
+            },
+            {
+              "type": "MCQ",
+              "prompt": "妹妹喜欢吃的蛋糕味道怎么样？",
+              "options": [
+                {
+                  "text": "酸"
+                },
+                {
+                  "text": "辣"
+                },
+                {
+                  "text": "甜"
+                },
+                {
+                  "text": "咸"
+                }
+              ],
+              "correctAnswer": {
+                "index": 2
+              },
+              "explanation": "Đáp án đúng là 甜 (tián - ngọt). Đoạn viết 妹妹喜欢吃蛋糕，蛋糕很甜 (em gái thích ăn bánh kem, bánh rất ngọt), trong đó 很甜 là 'rất ngọt'. Đây là điểm vị giác trọng tâm của bài: 甜 (ngọt), 酸 (chua), 咸 (mặn), 辣 (cay). Phương án 酸 (chua) là vị của quả cam, còn 辣 (cay) và 咸 (mặn) không xuất hiện trong đoạn."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "我很喜欢吃肉。",
+              "correctAnswer": {
+                "value": false
+              },
+              "explanation": "Nhận định này SAI. Đoạn nói rõ 我不太喜欢吃肉 (tôi không thích ăn thịt lắm), trong đó 不太 nghĩa là 'không... lắm' - một cách diễn đạt phủ định nhẹ rất hay gặp ở HSK1. Vậy nên nói '很喜欢吃肉' (rất thích ăn thịt) là trái với đoạn văn rồi nhé!"
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "这个橙子有点儿酸。",
+              "correctAnswer": {
+                "value": true
+              },
+              "explanation": "Nhận định này ĐÚNG. Câu cuối đoạn viết nguyên văn 这个橙子有点儿酸 (quả cam này hơi chua). Ở đây 有点儿 nghĩa là 'hơi, một chút' (mang sắc thái không như ý), còn 酸 (suān) là vị 'chua' - một trong các vị giác trọng tâm của bài học."
+            },
+            {
+              "type": "FILL_BLANK",
+              "prompt": "我喜欢吃水果，每天吃一个___。",
+              "correctAnswer": {
+                "text": "苹果",
+                "accepted": [
+                  "苹果。"
+                ]
+              },
+              "explanation": "Đáp án là 苹果 (píngguǒ - quả táo). Câu gốc trong đoạn là 每天吃一个苹果 (mỗi ngày ăn một quả táo). Lưu ý lượng từ 个 (gè) dùng để đếm 苹果, và mẫu câu 喜欢吃 + đồ ăn (thích ăn...) là cấu trúc trọng tâm thể hiện sở thích ăn uống của bài này."
+            }
+          ]
+        },
+        {
+          "passage": "我每天都吃水果，喜欢吃苹果、香蕉和西瓜。我不喜欢吃糖，糖太甜了。我妈妈做的菜很好吃，不太咸，也不太辣。",
+          "titleZh": "饮食拓展",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "下面哪个水果\"我\"喜欢吃？",
+              "options": [
+                {
+                  "text": "橙子"
+                },
+                {
+                  "text": "香蕉"
+                },
+                {
+                  "text": "蛋糕"
+                },
+                {
+                  "text": "蔬菜"
+                }
+              ],
+              "correctAnswer": {
+                "index": 1
+              },
+              "explanation": "Đáp án đúng là 香蕉 (xiāngjiāo - chuối). Đoạn viết 喜欢吃苹果、香蕉和西瓜 (thích ăn táo, chuối và dưa hấu), trong đó 和 nghĩa là 'và' dùng để nối các danh từ. Trong 4 phương án chỉ có 香蕉 nằm trong danh sách trái cây 'tôi' thích. Phương án 橙子 (cam) thuộc đoạn 1, còn 蛋糕 (bánh kem) là đồ ngọt và 蔬菜 (rau) đều không phải trái cây và không được nhắc tới ở đoạn này."
+            },
+            {
+              "type": "MCQ",
+              "prompt": "\"我\"为什么不喜欢吃糖？",
+              "options": [
+                {
+                  "text": "糖太咸了"
+                },
+                {
+                  "text": "糖太辣了"
+                },
+                {
+                  "text": "糖太酸了"
+                },
+                {
+                  "text": "糖太甜了"
+                }
+              ],
+              "correctAnswer": {
+                "index": 3
+              },
+              "explanation": "Đáp án đúng là 糖太甜了 (kẹo ngọt quá). Đoạn viết 我不喜欢吃糖，糖太甜了, với cấu trúc 太...了 (tài...le) nghĩa là 'quá, ... quá' diễn tả mức độ cao. Vì 糖 (kẹo) quá 甜 (ngọt) nên 'tôi' không thích. Các vị 咸 (mặn), 辣 (cay), 酸 (chua) đều không phải lý do trong đoạn này nhé!"
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "妈妈做的菜很好吃。",
+              "correctAnswer": {
+                "value": true
+              },
+              "explanation": "Nhận định này ĐÚNG. Đoạn viết 我妈妈做的菜很好吃 (món mẹ tôi nấu rất ngon), trong đó 做的菜 nghĩa là 'món ăn (do mẹ) nấu' và 好吃 (hǎochī) nghĩa là 'ngon' (ghép từ 好 'tốt' + 吃 'ăn'). 很好吃 là 'rất ngon', đúng với nhận định."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "妈妈做的菜太辣了。",
+              "correctAnswer": {
+                "value": false
+              },
+              "explanation": "Nhận định này SAI. Đoạn nói 不太咸，也不太辣 (không mặn lắm, cũng không cay lắm), trong đó 不太 là 'không... lắm' và 也 nghĩa là 'cũng'. Vậy món của mẹ KHÔNG cay, nên nói '太辣了' (cay quá) là ngược lại với đoạn văn rồi nhé! Hãy chú ý phân biệt 咸 (mặn) và 辣 (cay)."
+            },
+            {
+              "type": "FILL_BLANK",
+              "prompt": "我妈妈做的菜很好吃，不太咸，也不太___。",
+              "correctAnswer": {
+                "text": "辣",
+                "accepted": [
+                  "辣。"
+                ]
+              },
+              "explanation": "Đáp án là 辣 (là - cay). Câu gốc là 不太咸，也不太辣 (không mặn lắm, cũng không cay lắm). Đây là hai vị giác trọng tâm của bài: 咸 (mặn) và 辣 (cay). Cấu trúc 不太 + tính từ nghĩa là 'không... lắm', giúp diễn tả mức độ vừa phải một cách lịch sự."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "bai": 21,
+      "topicZh": "你儿子在哪儿工作？",
+      "topicVi": "Hỏi địa điểm",
+      "passages": [
+        {
+          "passage": "我家在北京。我在一个公司工作。我家附近有商店、银行和医院。我每天坐地铁上班。我们公司在火车站旁边。",
+          "titleZh": "你儿子在哪儿工作？",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "\"我\"在哪儿工作？",
+              "options": [
+                {
+                  "text": "在医院"
+                },
+                {
+                  "text": "在商店"
+                },
+                {
+                  "text": "在一个公司"
+                },
+                {
+                  "text": "在银行"
+                }
+              ],
+              "correctAnswer": {
+                "index": 2
+              },
+              "explanation": "Đáp án đúng là C \"在一个公司\" (ở một công ty). Đoạn văn viết rõ \"我在一个公司工作\" — chữ 在 (zài) nghĩa là \"ở/tại\", đứng trước địa điểm để chỉ nơi diễn ra hành động, còn 工作 (gōngzuò) là \"làm việc\". Các phương án 医院 (bệnh viện), 商店 (cửa hàng), 银行 (ngân hàng) chỉ là những nơi \"gần nhà\" (附近) chứ không phải nơi làm việc, nên đều sai nhé!"
+            },
+            {
+              "type": "MCQ",
+              "prompt": "\"我\"每天怎么上班？",
+              "options": [
+                {
+                  "text": "坐地铁"
+                },
+                {
+                  "text": "坐火车"
+                },
+                {
+                  "text": "坐飞机"
+                },
+                {
+                  "text": "坐船"
+                }
+              ],
+              "correctAnswer": {
+                "index": 0
+              },
+              "explanation": "Đáp án đúng là A \"坐地铁\" (đi tàu điện ngầm). Câu \"我每天坐地铁上班\" cho biết mỗi ngày tôi đi làm bằng 地铁 (dìtiě - tàu điện ngầm); 坐 (zuò) nghĩa là \"ngồi/đi (bằng phương tiện)\". Đoạn văn có nhắc tới 火车站 (ga tàu) nhưng đó là chỗ cạnh công ty, không phải phương tiện đi lại, nên các đáp án 火车/飞机/船 đều không có trong bài."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "我家附近有商店、银行和医院。",
+              "correctAnswer": {
+                "value": true
+              },
+              "explanation": "Nhận định này ĐÚNG. Đoạn văn viết nguyên văn \"我家附近有商店、银行和医院\" — chữ 附近 (fùjìn) nghĩa là \"gần đây, vùng lân cận\", còn 有 (yǒu) là \"có\". Câu cho biết gần nhà tôi có cửa hàng, ngân hàng và bệnh viện, trùng khớp hoàn toàn với nội dung bài nên là đúng."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "我们公司在医院旁边。",
+              "correctAnswer": {
+                "value": false
+              },
+              "explanation": "Nhận định này SAI. Theo đoạn văn, \"我们公司在火车站旁边\" — công ty ở cạnh 火车站 (ga tàu) chứ không phải cạnh 医院 (bệnh viện). Chú ý cấu trúc \"在 + địa điểm + 旁边\" nghĩa là \"ở bên cạnh...\"; ở đây địa điểm phải là 火车站, nên câu nói cạnh bệnh viện là không đúng."
+            },
+            {
+              "type": "FILL_BLANK",
+              "prompt": "我们公司在火车站___。",
+              "correctAnswer": {
+                "text": "旁边",
+                "accepted": [
+                  "旁边。"
+                ]
+              },
+              "explanation": "Đáp án đúng là 旁边 (pángbiān - bên cạnh). Câu gốc trong bài là \"我们公司在火车站旁边\", dùng cấu trúc trọng tâm \"在 + địa điểm + 旁边\" để chỉ vị trí \"ở cạnh ga tàu\". Đây chính là điểm ngữ pháp focus của bài: 在 đi với địa điểm, kết hợp các từ chỉ vị trí như 旁边 (bên cạnh) hay 附近 (gần đó)."
+            }
+          ]
+        },
+        {
+          "passage": "我们学校很大，学校里有图书馆、教室和办公室。我每天在图书馆看书。老师的办公室在二楼。学校旁边有一个公园。",
+          "titleZh": "你儿子在哪儿工作？",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "\"我\"每天在哪儿看书？",
+              "options": [
+                {
+                  "text": "在教室"
+                },
+                {
+                  "text": "在办公室"
+                },
+                {
+                  "text": "在图书馆"
+                },
+                {
+                  "text": "在公园"
+                }
+              ],
+              "correctAnswer": {
+                "index": 2
+              },
+              "explanation": "Đáp án đúng là C \"在图书馆\" (ở thư viện). Đoạn văn viết \"我每天在图书馆看书\" — 图书馆 (túshūguǎn) là \"thư viện\", 看书 (kàn shū) là \"đọc sách\". Cấu trúc \"在 + địa điểm + động từ\" cho biết nơi diễn ra hành động đọc sách. 教室 (phòng học), 办公室 (văn phòng), 公园 (công viên) có xuất hiện trong bài nhưng không phải nơi đọc sách, nên đều sai."
+            },
+            {
+              "type": "MCQ",
+              "prompt": "老师的办公室在哪儿？",
+              "options": [
+                {
+                  "text": "在一楼"
+                },
+                {
+                  "text": "在二楼"
+                },
+                {
+                  "text": "在图书馆"
+                },
+                {
+                  "text": "在公园"
+                }
+              ],
+              "correctAnswer": {
+                "index": 1
+              },
+              "explanation": "Đáp án đúng là B \"在二楼\" (ở tầng hai). Câu \"老师的办公室在二楼\" nói rõ văn phòng (办公室 bàngōngshì) của thầy giáo ở 二楼 (èr lóu - tầng hai); 楼 (lóu) nghĩa là \"tầng/lầu\". Bài không hề nhắc tới 一楼 (tầng một), còn 图书馆 và 公园 là những nơi khác, nên các phương án còn lại đều không đúng."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "学校里有图书馆、教室和办公室。",
+              "correctAnswer": {
+                "value": true
+              },
+              "explanation": "Nhận định này ĐÚNG. Đoạn văn viết \"学校里有图书馆、教室和办公室\" — chữ 里 (lǐ) nghĩa là \"bên trong\", \"学校里\" tức là \"trong trường\". Câu cho biết trong trường có thư viện, phòng học và văn phòng, đúng y như nội dung bài nên đáp án là đúng nhé!"
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "学校旁边有一个医院。",
+              "correctAnswer": {
+                "value": false
+              },
+              "explanation": "Nhận định này SAI. Theo đoạn văn, \"学校旁边有一个公园\" — cạnh trường có một 公园 (gōngyuán - công viên), không phải 医院 (bệnh viện). Hãy chú ý cụm \"... 旁边有 ...\" chỉ vị trí bên cạnh; ở đây thứ nằm cạnh trường là công viên, nên nói có bệnh viện là sai."
+            },
+            {
+              "type": "FILL_BLANK",
+              "prompt": "学校___有一个公园。",
+              "correctAnswer": {
+                "text": "旁边",
+                "accepted": [
+                  "旁边。"
+                ]
+              },
+              "explanation": "Đáp án đúng là 旁边 (pángbiān - bên cạnh). Câu gốc trong bài là \"学校旁边有一个公园\", dùng cấu trúc chỉ vị trí \"địa điểm + 旁边\" để diễn đạt \"cạnh trường có một công viên\". Đây là điểm ngữ pháp focus của bài: các từ chỉ vị trí như 旁边 (bên cạnh) và 附近 (gần đó) thường đi kèm địa điểm để cho biết một nơi nằm ở đâu."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "bai": 22,
+      "topicZh": "我能坐这儿吗？",
+      "topicVi": "Xin phép (能)",
+      "passages": [
+        {
+          "passage": "A：请问，我能坐这儿吗？ B：可以，请坐。 A：这儿能用电脑吗？ B：能。这儿不能抽烟。 A：好的，谢谢你！",
+          "titleZh": "我能坐这儿吗？",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "这儿不能做什么？",
+              "options": [
+                {
+                  "text": "坐"
+                },
+                {
+                  "text": "用电脑"
+                },
+                {
+                  "text": "抽烟"
+                },
+                {
+                  "text": "说话"
+                }
+              ],
+              "correctAnswer": {
+                "index": 2
+              },
+              "explanation": "Đáp án đúng là 抽烟 (chōu yān = hút thuốc). Trong đoạn, B nói rõ '这儿不能抽烟' (Ở đây KHÔNG được hút thuốc), trong đó 不能 (bù néng) là phủ định của 能, nghĩa là 'không được/không thể'. Còn 坐 (ngồi) và 用电脑 (dùng máy tính) đều được phép vì B trả lời '可以, 请坐' và '能', nên các phương án này sai. Bài này luyện cách dùng 能/可以 để xin phép nhé!"
+            },
+            {
+              "type": "MCQ",
+              "prompt": "A想坐哪儿？",
+              "options": [
+                {
+                  "text": "这儿"
+                },
+                {
+                  "text": "那儿"
+                },
+                {
+                  "text": "家里"
+                },
+                {
+                  "text": "学校"
+                }
+              ],
+              "correctAnswer": {
+                "index": 0
+              },
+              "explanation": "Đáp án đúng là 这儿 (zhèr = ở đây/chỗ này). Ngay câu đầu A hỏi '我能坐这儿吗？' (Tôi ngồi đây được không?), trong đó 这儿 chỉ chỗ gần người nói. Các từ 那儿 (chỗ kia), 家里 (ở nhà), 学校 (trường học) đều không xuất hiện trong đoạn nên sai. Mẫu câu '能 + động từ + 吗?' chính là cách lịch sự để xin phép đó!"
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "这儿能用电脑。",
+              "correctAnswer": {
+                "value": true
+              },
+              "explanation": "Nhận định này ĐÚNG. Khi A hỏi '这儿能用电脑吗？' (Ở đây dùng máy tính được không?), B trả lời gọn là '能' (néng = được/có thể). 用电脑 nghĩa là 'dùng máy tính'. Vì B khẳng định '能' nên việc dùng máy tính ở đây là được phép. Câu trả lời ngắn '能' chính là cách đáp lại câu hỏi xin phép trong tiếng Trung."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "A不能坐这儿。",
+              "correctAnswer": {
+                "value": false
+              },
+              "explanation": "Nhận định này SAI. Khi A xin phép '我能坐这儿吗？', B đã trả lời '可以, 请坐' (kě yǐ, qǐng zuò = Được, mời ngồi). 可以 và 能 đều mang nghĩa 'được phép', còn 请坐 là lời mời ngồi lịch sự. Vậy A HOÀN TOÀN được ngồi đây, nên câu '不能坐' (không được ngồi) là sai."
+            },
+            {
+              "type": "FILL_BLANK",
+              "prompt": "请问，我___坐这儿吗？",
+              "correctAnswer": {
+                "text": "能",
+                "accepted": [
+                  "能?",
+                  "能？"
+                ]
+              },
+              "explanation": "Từ cần điền là 能 (néng = có thể/được). Đây là điểm ngữ pháp trọng tâm của bài: dùng 能 trong mẫu '能 + động từ + 吗?' để xin phép một cách lịch sự. Cả câu '我能坐这儿吗？' nghĩa là 'Tôi ngồi đây được không?'. 请问 (xin hỏi) đứng đầu càng làm câu thêm lịch sự nhé!"
+            }
+          ]
+        },
+        {
+          "passage": "A：老师，我能问您一个问题吗？ B：可以，你说。 A：我可以用一下您的电脑吗？ B：可以。 A：谢谢老师！",
+          "titleZh": "我能坐这儿吗？",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "A想用谁的电脑？",
+              "options": [
+                {
+                  "text": "同学的"
+                },
+                {
+                  "text": "老师的"
+                },
+                {
+                  "text": "妈妈的"
+                },
+                {
+                  "text": "朋友的"
+                }
+              ],
+              "correctAnswer": {
+                "index": 1
+              },
+              "explanation": "Đáp án đúng là 老师的 (lǎoshī de = của thầy/cô giáo). A hỏi '我可以用一下您的电脑吗？' (Em dùng máy tính của thầy một lát được không?), trong đó 您 (nín) là cách xưng hô kính trọng và A gọi là 老师, nên 'máy tính' đó là của thầy. Các phương án 同学 (bạn học), 妈妈 (mẹ), 朋友 (bạn) đều không có trong đoạn nên sai."
+            },
+            {
+              "type": "MCQ",
+              "prompt": "老师同意A问问题吗？",
+              "options": [
+                {
+                  "text": "不可以"
+                },
+                {
+                  "text": "不知道"
+                },
+                {
+                  "text": "可以"
+                },
+                {
+                  "text": "不能"
+                }
+              ],
+              "correctAnswer": {
+                "index": 2
+              },
+              "explanation": "Đáp án đúng là 可以 (kě yǐ = được/đồng ý). Khi A hỏi '我能问您一个问题吗？' (Em hỏi thầy một câu được không?), thầy đáp '可以, 你说' (Được, em nói đi). 同意 nghĩa là 'đồng ý'; vì thầy nói 可以 nên thầy đồng ý. Các phương án 不可以/不能 (không được) và 不知道 (không biết) đều trái với lời thầy nên sai."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "A可以用老师的电脑。",
+              "correctAnswer": {
+                "value": true
+              },
+              "explanation": "Nhận định này ĐÚNG. A xin phép '我可以用一下您的电脑吗？' và thầy trả lời '可以' (được). 用一下 nghĩa là 'dùng một chút/một lát', còn 您的电脑 là 'máy tính của thầy'. Vì thầy đã đồng ý '可以' nên A được phép dùng máy tính của thầy. 可以 ở đây vừa dùng để hỏi xin phép vừa dùng để đáp lại."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "A问了老师两个问题。",
+              "correctAnswer": {
+                "value": false
+              },
+              "explanation": "Nhận định này SAI. A nói rõ '我能问您一个问题吗？' — 一个问题 nghĩa là 'MỘT câu hỏi', chứ không phải 两个 (hai). 一 (yī) = một, 两 (liǎng) = hai, và 个 (gè) là lượng từ. Vì trong đoạn chỉ nhắc 'một câu hỏi' nên nói 'hai câu hỏi' là không đúng với văn bản."
+            },
+            {
+              "type": "FILL_BLANK",
+              "prompt": "我___用一下您的电脑吗？",
+              "correctAnswer": {
+                "text": "可以",
+                "accepted": [
+                  "可以?",
+                  "可以？"
+                ]
+              },
+              "explanation": "Từ cần điền là 可以 (kě yǐ = có thể/được phép). Đây đúng điểm ngữ pháp focus: dùng 可以 để xin phép, tương tự 能. Cả câu '我可以用一下您的电脑吗？' nghĩa là 'Em dùng máy tính của thầy một lát được không?'. Lưu ý 您 (cách gọi lịch sự của 你) và 一下 (làm một chút) khiến lời xin phép thêm nhã nhặn nhé!"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "bai": 23,
+      "topicZh": "家里",
+      "topicVi": "Phòng ốc & Đồ vật",
+      "passages": [
+        {
+          "passage": "这是我的房间。房间里有床、桌子和椅子。桌子上有电脑。我的书在书架上。窗户旁边有空调，夏天很凉快。",
+          "titleZh": "家里",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "桌子上有什么？",
+              "options": [
+                {
+                  "text": "床"
+                },
+                {
+                  "text": "电脑"
+                },
+                {
+                  "text": "空调"
+                },
+                {
+                  "text": "椅子"
+                }
+              ],
+              "correctAnswer": {
+                "index": 1
+              },
+              "explanation": "Đáp án đúng là 电脑 (diànnǎo - máy tính). Đoạn văn viết '桌子上有电脑' nghĩa là 'Trên bàn có máy tính'. Cấu trúc trọng tâm là vị trí + 有: 桌子(bàn) + 上(trên) + 有(có) → 'trên bàn có'. Các phương án khác đều có trong phòng nhưng không nằm trên bàn: 床(giường) và 椅子(ghế) chỉ là đồ vật chung trong phòng (房间里有床、桌子和椅子), còn 空调(điều hòa) ở cạnh cửa sổ (窗户旁边)."
+            },
+            {
+              "type": "MCQ",
+              "prompt": "空调在哪儿？",
+              "options": [
+                {
+                  "text": "桌子上"
+                },
+                {
+                  "text": "书架上"
+                },
+                {
+                  "text": "窗户旁边"
+                },
+                {
+                  "text": "床上"
+                }
+              ],
+              "correctAnswer": {
+                "index": 2
+              },
+              "explanation": "Đáp án đúng là 窗户旁边 (chuānghu pángbiān - cạnh cửa sổ). Đoạn văn viết '窗户旁边有空调' nghĩa là 'Cạnh cửa sổ có điều hòa'. Từ 旁边(pángbiān) nghĩa là 'bên cạnh', là từ chỉ vị trí trọng tâm của bài. Các phương án khác đều sai: 桌子上(trên bàn) có máy tính (电脑), 书架上(trên giá sách) có sách (我的书在书架上), còn 床上(trên giường) không được nhắc đến."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "我的书在书架上。",
+              "correctAnswer": {
+                "value": true
+              },
+              "explanation": "Nhận định này ĐÚNG. Đoạn văn viết rõ '我的书在书架上' nghĩa là 'Sách của tôi ở trên giá sách'. Ở đây dùng cấu trúc 在 (zài - ở) để chỉ vị trí: 书(sách) + 在(ở) + 书架(giá sách) + 上(trên). Lưu ý 在...上 cũng là một cách diễn đạt vị trí giống nhóm 有...上 của bài (bàn về 'cái gì ở đâu')."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "房间里有沙发。",
+              "correctAnswer": {
+                "value": false
+              },
+              "explanation": "Nhận định này SAI. Trong phòng (房间里) chỉ có 床(giường)、桌子(bàn) 和 椅子(ghế), không hề có 沙发(shāfā - sofa). Sofa thuộc về phòng khách (客厅 ở đoạn khác) chứ không phải phòng ngủ này. Hãy chú ý cấu trúc 房间里有... (trong phòng có...) để liệt kê đúng các đồ vật được nhắc tới."
+            },
+            {
+              "type": "FILL_BLANK",
+              "prompt": "窗户___有空调，夏天很凉快。",
+              "correctAnswer": {
+                "text": "旁边",
+                "accepted": []
+              },
+              "explanation": "Từ cần điền là 旁边 (pángbiān - bên cạnh). Câu gốc trong đoạn là '窗户旁边有空调' nghĩa là 'Cạnh cửa sổ có điều hòa'. 旁边 là từ chỉ vị trí trọng tâm của bài (cùng nhóm với 上 'trên', 里 'trong'). Cả câu nói rằng cạnh cửa sổ có điều hòa nên mùa hè (夏天) rất mát (很凉快)."
+            }
+          ]
+        },
+        {
+          "passage": "我家有三个房间。我和妹妹的房间里有两张床、一个书架。客厅里有沙发和电视。厨房里有冰箱。我家很舒服。",
+          "titleZh": "家里",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "我家有几个房间？",
+              "options": [
+                {
+                  "text": "一个"
+                },
+                {
+                  "text": "两个"
+                },
+                {
+                  "text": "三个"
+                },
+                {
+                  "text": "四个"
+                }
+              ],
+              "correctAnswer": {
+                "index": 2
+              },
+              "explanation": "Đáp án đúng là 三个 (sān gè - ba phòng). Đoạn văn mở đầu bằng '我家有三个房间' nghĩa là 'Nhà tôi có ba phòng'. Chú ý lượng từ 个(gè) dùng để đếm 房间(phòng): 三个房间 = ba phòng. Đây là điểm ngữ pháp trọng tâm về cách dùng lượng từ. Các con số khác (一/两/四) đều không khớp với đoạn."
+            },
+            {
+              "type": "MCQ",
+              "prompt": "厨房里有什么？",
+              "options": [
+                {
+                  "text": "冰箱"
+                },
+                {
+                  "text": "电视"
+                },
+                {
+                  "text": "沙发"
+                },
+                {
+                  "text": "书架"
+                }
+              ],
+              "correctAnswer": {
+                "index": 0
+              },
+              "explanation": "Đáp án đúng là 冰箱 (bīngxiāng - tủ lạnh). Đoạn văn viết '厨房里有冰箱' nghĩa là 'Trong bếp có tủ lạnh'. Cấu trúc 厨房里有... = 'trong bếp có...', với 里(lǐ) là từ chỉ vị trí 'bên trong'. Các phương án khác đặt sai chỗ: 电视(tivi) và 沙发(sofa) ở phòng khách (客厅里有沙发和电视), còn 书架(giá sách) ở phòng ngủ (房间里有...一个书架)."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "客厅里有沙发和电视。",
+              "correctAnswer": {
+                "value": true
+              },
+              "explanation": "Nhận định này ĐÚNG. Đoạn văn viết '客厅里有沙发和电视' nghĩa là 'Phòng khách có sofa và tivi'. Từ 和(hé) nghĩa là 'và', dùng để nối hai danh từ 沙发(sofa) và 电视(tivi). Cấu trúc 客厅里有... cho biết những đồ vật có trong phòng khách (客厅)."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "我和妹妹的房间里有三张床。",
+              "correctAnswer": {
+                "value": false
+              },
+              "explanation": "Nhận định này SAI. Đoạn văn viết '我和妹妹的房间里有两张床' nghĩa là phòng của tôi và em gái có HAI cái giường (两张床), không phải ba (三张). Hãy chú ý lượng từ 张(zhāng) dùng cho 床(giường): đây là điểm ngữ pháp trọng tâm về lượng từ, và con số phải khớp là 两 (hai) chứ không phải 三 (ba)."
+            },
+            {
+              "type": "FILL_BLANK",
+              "prompt": "我和妹妹的房间里有两___床、一个书架。",
+              "correctAnswer": {
+                "text": "张",
+                "accepted": []
+              },
+              "explanation": "Từ cần điền là 张 (zhāng). Câu gốc là '房间里有两张床' nghĩa là 'trong phòng có hai cái giường'. 张 là lượng từ dùng cho các vật phẳng, rộng như 床(giường)、桌子(bàn). Đây là điểm ngữ pháp trọng tâm: 床 đi với 张, còn 书架 đi với 个 (一个书架). Dùng đúng lượng từ là kỹ năng quan trọng của bài này."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "bai": 24,
+      "topicZh": "问路",
+      "topicVi": "Hỏi đường",
+      "passages": [
+        {
+          "passage": "A：请问，去火车站怎么走？ B：一直往前走，到红绿灯往左拐。 A：火车站离这儿远吗？ B：不远，很近。 A：谢谢你！",
+          "titleZh": "问路",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "A 想去哪儿？",
+              "options": [
+                {
+                  "text": "医院"
+                },
+                {
+                  "text": "火车站"
+                },
+                {
+                  "text": "学校"
+                },
+                {
+                  "text": "商店"
+                }
+              ],
+              "correctAnswer": {
+                "index": 1
+              },
+              "explanation": "Đáp án đúng là 火车站 (huǒchēzhàn = ga tàu/nhà ga). Ngay câu đầu A hỏi \"去火车站怎么走？\" nghĩa là \"Đến ga tàu đi thế nào?\". Mẫu câu trọng tâm của bài là \"...怎么走？\" (zěnme zǒu = đi thế nào) dùng để hỏi đường. Các phương án 医院 (bệnh viện), 学校 (trường học), 商店 (cửa hàng) đều không xuất hiện trong đoạn nên đều sai."
+            },
+            {
+              "type": "MCQ",
+              "prompt": "到红绿灯以后，要往哪边拐？",
+              "options": [
+                {
+                  "text": "往左拐"
+                },
+                {
+                  "text": "往右拐"
+                },
+                {
+                  "text": "往前走"
+                },
+                {
+                  "text": "往后走"
+                }
+              ],
+              "correctAnswer": {
+                "index": 0
+              },
+              "explanation": "Đáp án đúng là 往左拐 (wǎng zuǒ guǎi = rẽ trái). B chỉ đường: \"到红绿灯往左拐\" nghĩa là \"đến đèn giao thông thì rẽ trái\". Đây chính là điểm ngữ pháp focus: 往 + phương hướng + 拐 (rẽ về hướng nào). 红绿灯 (hónglǜdēng) là đèn giao thông. Phương án 往右拐 (rẽ phải) là hướng ngược lại nên sai; 往前走/往后走 là đi thẳng/đi lùi chứ không phải rẽ."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "火车站离这儿很近。",
+              "correctAnswer": {
+                "value": true
+              },
+              "explanation": "Nhận định này ĐÚNG. Khi A hỏi \"火车站离这儿远吗？\" (Ga tàu cách đây có xa không?), B trả lời \"不远，很近\" nghĩa là \"không xa, rất gần\". Mẫu câu \"A 离 B 远/近\" (lí = cách) là điểm ngữ pháp đo khoảng cách trong bài. 近 (jìn) nghĩa là gần, nên câu khẳng định ga tàu rất gần là chính xác."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "去火车站要往右拐。",
+              "correctAnswer": {
+                "value": false
+              },
+              "explanation": "Nhận định này SAI. Trong đoạn, B nói rõ \"到红绿灯往左拐\" tức là rẽ TRÁI (往左拐), chứ không phải rẽ phải (往右拐). 左 (zuǒ) là trái, 右 (yòu) là phải — hai hướng ngược nhau. Đây là chỗ dễ nhầm nên em hãy chú ý phân biệt 左/右 nhé."
+            },
+            {
+              "type": "FILL_BLANK",
+              "prompt": "一直往前走，到红绿灯往___拐。",
+              "correctAnswer": {
+                "text": "左",
+                "accepted": [
+                  "左拐",
+                  "往左拐"
+                ]
+              },
+              "explanation": "Đáp án là 左 (zuǒ = trái). Câu gốc trong đoạn là \"到红绿灯往左拐\" — đến đèn giao thông thì rẽ trái. Cấu trúc chỉ đường \"往 + hướng + 拐\" là trọng tâm của bài: 往左拐 (rẽ trái), 往右拐 (rẽ phải). Vì đoạn 1 chỉ đường đến ga tàu là rẽ trái nên chỗ trống phải điền 左."
+            }
+          ]
+        },
+        {
+          "passage": "A：请问，医院在哪儿？ B：医院在前面。你一直往前走，到红绿灯往右拐。 A：医院离这儿远吗？ B：不远，很近。 A：谢谢你！",
+          "titleZh": "问路",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "A 想去哪儿？",
+              "options": [
+                {
+                  "text": "火车站"
+                },
+                {
+                  "text": "学校"
+                },
+                {
+                  "text": "医院"
+                },
+                {
+                  "text": "饭店"
+                }
+              ],
+              "correctAnswer": {
+                "index": 2
+              },
+              "explanation": "Đáp án đúng là 医院 (yīyuàn = bệnh viện). Câu mở đầu A hỏi \"医院在哪儿？\" nghĩa là \"Bệnh viện ở đâu?\". Mẫu câu \"...在哪儿？\" (zài nǎr = ở đâu) dùng để hỏi vị trí. Các phương án 火车站 (ga tàu), 学校 (trường học), 饭店 (nhà hàng/khách sạn) đều không được nhắc tới trong đoạn 2 nên đều sai."
+            },
+            {
+              "type": "MCQ",
+              "prompt": "到红绿灯以后，要往哪边拐？",
+              "options": [
+                {
+                  "text": "往右拐"
+                },
+                {
+                  "text": "往左拐"
+                },
+                {
+                  "text": "往前走"
+                },
+                {
+                  "text": "一直走"
+                }
+              ],
+              "correctAnswer": {
+                "index": 0
+              },
+              "explanation": "Đáp án đúng là 往右拐 (wǎng yòu guǎi = rẽ phải). B chỉ đường tới bệnh viện: \"到红绿灯往右拐\" nghĩa là \"đến đèn giao thông thì rẽ phải\". Đây là điểm ngữ pháp focus 往 + hướng + 拐. 右 (yòu) là phải. Phương án 往左拐 (rẽ trái) là hướng ngược lại nên sai; 往前走/一直走 nghĩa là đi thẳng chứ không phải rẽ."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "医院离这儿很远。",
+              "correctAnswer": {
+                "value": false
+              },
+              "explanation": "Nhận định này SAI. Khi A hỏi \"医院离这儿远吗？\" (Bệnh viện cách đây có xa không?), B trả lời \"不远，很近\" nghĩa là \"không xa, rất gần\". 远 (yuǎn) là xa, 近 (jìn) là gần. Vì đoạn nói bệnh viện 很近 (rất gần), nên khẳng định \"很远\" (rất xa) là không đúng."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "医院在前面。",
+              "correctAnswer": {
+                "value": true
+              },
+              "explanation": "Nhận định này ĐÚNG. B trả lời rõ ràng \"医院在前面\" nghĩa là \"Bệnh viện ở phía trước\". 前面 (qiánmiàn) nghĩa là phía trước. Mẫu câu \"...在 + vị trí\" (zài = ở) dùng để nói nơi chốn. Sau đó B còn dặn đi thẳng (一直往前走) rồi rẽ phải, khẳng định bệnh viện nằm ở phía trước là chính xác."
+            },
+            {
+              "type": "FILL_BLANK",
+              "prompt": "你一直往前走，到红绿灯往___拐。",
+              "correctAnswer": {
+                "text": "右",
+                "accepted": [
+                  "右拐",
+                  "往右拐"
+                ]
+              },
+              "explanation": "Đáp án là 右 (yòu = phải). Câu gốc trong đoạn là \"到红绿灯往右拐\" — đến đèn giao thông thì rẽ phải. Cấu trúc chỉ đường \"往 + hướng + 拐\" là trọng tâm của bài. Khác với đoạn 1 (rẽ trái đến ga tàu), đoạn 2 chỉ đường đến bệnh viện là rẽ phải, nên chỗ trống phải điền 右. Em nhớ phân biệt 左 (trái) và 右 (phải) nhé."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "bai": 25,
+      "topicZh": "交通",
+      "topicVi": "Phương tiện giao thông",
+      "passages": [
+        {
+          "passage": "我每天坐地铁上班，很方便。我哥哥有车，他开车上班。我妹妹的学校很近，她骑自行车去。坐飞机很快，机票很贵。",
+          "titleZh": "交通",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "\"我\"每天怎么上班？",
+              "options": [
+                {
+                  "text": "开车"
+                },
+                {
+                  "text": "坐地铁"
+                },
+                {
+                  "text": "骑自行车"
+                },
+                {
+                  "text": "坐飞机"
+                }
+              ],
+              "correctAnswer": {
+                "index": 1
+              },
+              "explanation": "Đáp án đúng là 坐地铁 (zuò dìtiě - đi tàu điện ngầm). Câu mở đầu nói rõ \"我每天坐地铁上班\" nghĩa là \"Mỗi ngày tôi đi tàu điện ngầm đi làm\". Em chú ý động từ 坐 (zuò) dùng cho phương tiện mình NGỒI lên (tàu, xe buýt, máy bay). Các phương án khác là việc của người trong nhà: 开车 (lái xe) là của anh trai, 骑自行车 (đạp xe) là của em gái, còn 坐飞机 chỉ được nhắc đến chung chứ không phải cách \"tôi\" đi làm."
+            },
+            {
+              "type": "MCQ",
+              "prompt": "妹妹怎么去学校？",
+              "options": [
+                {
+                  "text": "骑自行车"
+                },
+                {
+                  "text": "开车"
+                },
+                {
+                  "text": "坐飞机"
+                },
+                {
+                  "text": "坐地铁"
+                }
+              ],
+              "correctAnswer": {
+                "index": 0
+              },
+              "explanation": "Đáp án đúng là 骑自行车 (qí zìxíngchē - đạp xe đạp). Đoạn văn viết \"我妹妹的学校很近，她骑自行车去\" tức là \"Trường em gái tôi rất gần, em đạp xe đi\". Em nhớ động từ 骑 (qí) dùng cho phương tiện mình ngồi dạng giạng (dang) hai chân như xe đạp, xe máy, ngựa - khác với 坐 (ngồi). Vì trường gần (近 jìn) nên đi xe đạp là hợp lý; còn 开车 là của anh trai, 坐地铁 là của \"tôi\"."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "坐飞机很快。",
+              "correctAnswer": {
+                "value": true
+              },
+              "explanation": "Nhận định này ĐÚNG. Câu cuối đoạn viết \"坐飞机很快\" nghĩa là \"Đi máy bay rất nhanh\". Chữ 快 (kuài) nghĩa là \"nhanh\". Đây là điểm ngữ pháp trọng tâm: dùng tính từ 快 để miêu tả tốc độ của phương tiện. Đoạn cũng nói thêm 机票很贵 (vé máy bay đắt), nhưng câu hỏi chỉ hỏi về \"nhanh\" nên đáp án là Đúng."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "哥哥坐地铁上班。",
+              "correctAnswer": {
+                "value": false
+              },
+              "explanation": "Nhận định này SAI. Đoạn văn nói \"我哥哥有车，他开车上班\" tức là \"Anh trai tôi có xe, anh ấy LÁI XE đi làm\", chứ không phải đi tàu điện ngầm. Người đi tàu điện ngầm (坐地铁) là \"tôi\". Em phân biệt: 开车 (kāi chē - lái xe) dùng động từ 开 cho người tự điều khiển xe ô tô, khác với 坐 (ngồi lên phương tiện do người khác lái)."
+            },
+            {
+              "type": "FILL_BLANK",
+              "prompt": "我妹妹的学校很近，她___自行车去。",
+              "correctAnswer": {
+                "text": "骑",
+                "accepted": []
+              },
+              "explanation": "Đáp án là 骑 (qí - cưỡi/đạp). Cụm \"骑自行车\" nghĩa là \"đạp xe đạp\". Đây chính là điểm ngữ pháp trọng tâm của bài: chọn đúng động từ đi với phương tiện. Với xe đạp, xe máy (loại mình ngồi dạng hai chân) ta dùng 骑; còn với tàu, ô tô, máy bay thì dùng 坐 hoặc 开. Vì trường gần (近) nên em gái đạp xe đi là hợp lý."
+            }
+          ]
+        },
+        {
+          "passage": "我家离公司很远。我每天坐地铁去上班，要一个小时。我妹妹的学校很近，她走路去。周末我们一家人开车去公园。",
+          "titleZh": "交通",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "\"我\"家离公司怎么样？",
+              "options": [
+                {
+                  "text": "很近"
+                },
+                {
+                  "text": "很快"
+                },
+                {
+                  "text": "很远"
+                },
+                {
+                  "text": "很贵"
+                }
+              ],
+              "correctAnswer": {
+                "index": 2
+              },
+              "explanation": "Đáp án đúng là 很远 (hěn yuǎn - rất xa). Câu đầu đoạn viết \"我家离公司很远\" nghĩa là \"Nhà tôi cách công ty rất xa\". Em chú ý cấu trúc 离 (lí - cách) dùng để nói khoảng cách giữa hai nơi: A 离 B 很远/很近. Phương án 很近 (gần) là trái nghĩa, dành cho trường em gái; còn 快 (nhanh) và 贵 (đắt) không miêu tả khoảng cách nên đều sai."
+            },
+            {
+              "type": "MCQ",
+              "prompt": "\"我\"坐地铁上班要多长时间？",
+              "options": [
+                {
+                  "text": "一个小时"
+                },
+                {
+                  "text": "两个小时"
+                },
+                {
+                  "text": "十分钟"
+                },
+                {
+                  "text": "一天"
+                }
+              ],
+              "correctAnswer": {
+                "index": 0
+              },
+              "explanation": "Đáp án đúng là 一个小时 (yí ge xiǎoshí - một tiếng đồng hồ). Đoạn văn viết \"我每天坐地铁去上班，要一个小时\" tức là \"Mỗi ngày tôi đi tàu điện ngầm đi làm, mất một tiếng\". Chữ 要 (yào) ở đây nghĩa là \"cần/mất (thời gian)\", còn 小时 (xiǎoshí) là \"giờ/tiếng\". Các con số khác (hai tiếng, mười phút, một ngày) đều không xuất hiện trong đoạn nên sai."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "妹妹走路去学校。",
+              "correctAnswer": {
+                "value": true
+              },
+              "explanation": "Nhận định này ĐÚNG. Đoạn văn viết \"我妹妹的学校很近，她走路去\" nghĩa là \"Trường em gái tôi rất gần, em đi bộ\". Cụm 走路 (zǒu lù) nghĩa là \"đi bộ\". Vì trường rất gần (近 jìn) nên đi bộ là hợp lý - đây là điểm ngữ pháp trọng tâm gắn cách di chuyển với khoảng cách xa/gần."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "周末一家人坐飞机去公园。",
+              "correctAnswer": {
+                "value": false
+              },
+              "explanation": "Nhận định này SAI. Câu cuối đoạn viết \"周末我们一家人开车去公园\" nghĩa là \"Cuối tuần cả nhà tôi LÁI XE đi công viên\", chứ không phải đi máy bay. Đoạn 2 hoàn toàn không nhắc đến 飞机 (máy bay). Em phân biệt 开车 (lái xe ô tô) với 坐飞机 (đi máy bay) - đây đều là cách nói phương tiện nhưng dùng động từ khác nhau."
+            },
+            {
+              "type": "FILL_BLANK",
+              "prompt": "周末我们一家人___去公园。",
+              "correctAnswer": {
+                "text": "开车",
+                "accepted": []
+              },
+              "explanation": "Đáp án là 开车 (kāi chē - lái xe). Câu gốc là \"周末我们一家人开车去公园\" nghĩa là \"Cuối tuần cả nhà tôi lái xe đi công viên\". Đây là điểm ngữ pháp trọng tâm: động từ 开 dùng cho việc tự điều khiển xe ô tô (开车). Em so sánh với 坐 (ngồi lên phương tiện người khác lái), 骑 (cưỡi/đạp xe), 走路 (đi bộ) để chọn đúng động từ cho từng phương tiện."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "bai": 26,
+      "topicZh": "我是坐飞机来的",
+      "topicVi": "Cấu trúc 是…的",
+      "passages": [
+        {
+          "passage": "我朋友从美国来。他是上个星期来的，是坐飞机来的。他跟他妈妈一起来的。他们要在北京住一个月。",
+          "titleZh": "我是坐飞机来的",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "我朋友是怎么来的？",
+              "options": [
+                {
+                  "text": "坐火车来的"
+                },
+                {
+                  "text": "坐飞机来的"
+                },
+                {
+                  "text": "坐车来的"
+                },
+                {
+                  "text": "走来的"
+                }
+              ],
+              "correctAnswer": {
+                "index": 1
+              },
+              "explanation": "Đáp án đúng là 坐飞机来的 (đến bằng máy bay). Trong đoạn có câu 他是坐飞机来的 — chữ 飞机 (fēijī) nghĩa là 'máy bay', 坐 (zuò) là 'ngồi/đi bằng (phương tiện)'. Đây chính là cấu trúc 是…的 dùng để nhấn mạnh CÁCH THỨC đến: 是 + 坐飞机 + 来 + 的. Các phương án khác như 火车 (tàu hỏa) hay 走 (đi bộ) đều không được nhắc tới trong đoạn nên sai."
+            },
+            {
+              "type": "MCQ",
+              "prompt": "我朋友是什么时候来的？",
+              "options": [
+                {
+                  "text": "上个月"
+                },
+                {
+                  "text": "今天"
+                },
+                {
+                  "text": "上个星期"
+                },
+                {
+                  "text": "明天"
+                }
+              ],
+              "correctAnswer": {
+                "index": 2
+              },
+              "explanation": "Đáp án đúng là 上个星期 (tuần trước). Câu trong đoạn là 他是上个星期来的 — 上个星期 (shàng ge xīngqī) nghĩa là 'tuần trước'. Cấu trúc 是…的 ở đây nhấn mạnh THỜI GIAN của hành động đã xảy ra. Lưu ý đừng nhầm với 上个月 (tháng trước) — đó là chi tiết ở đoạn 2; còn 今天 (hôm nay) và 明天 (ngày mai) không hề xuất hiện trong đoạn 1."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "我朋友是跟他妈妈一起来的。",
+              "correctAnswer": {
+                "value": true
+              },
+              "explanation": "Nhận định này ĐÚNG. Đoạn văn ghi rõ 他跟他妈妈一起来的 — 跟…一起 (gēn…yìqǐ) nghĩa là 'cùng với…', 妈妈 (māma) là 'mẹ'. Cấu trúc 是…的 (ở đây chữ 是 được lược bớt, vẫn mang nghĩa nhấn mạnh) nói rõ NGƯỜI CÙNG ĐI: anh ấy đến cùng với mẹ của mình, nên câu khẳng định là chính xác."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "他们要在北京住一年。",
+              "correctAnswer": {
+                "value": false
+              },
+              "explanation": "Nhận định này SAI. Đoạn văn viết 他们要在北京住一个月 — tức họ ở Bắc Kinh 一个月 (yí ge yuè = một THÁNG), chứ không phải 一年 (yì nián = một NĂM). Hãy chú ý phân biệt 月 (tháng) và 年 (năm) — đây là hai từ chỉ thời gian rất hay bị nhầm ở cấp HSK1."
+            },
+            {
+              "type": "FILL_BLANK",
+              "prompt": "他是上个星期来的，是___飞机来的。",
+              "correctAnswer": {
+                "text": "坐",
+                "accepted": [
+                  "坐"
+                ]
+              },
+              "explanation": "Từ cần điền là 坐 (zuò). Cụm 坐飞机 nghĩa là 'đi bằng máy bay' — 坐 vốn nghĩa là 'ngồi', khi đi với phương tiện thì hiểu là 'đi bằng/đáp'. Trong cấu trúc 是…的 nhấn mạnh cách thức (是 + 坐飞机 + 来 + 的), động từ 坐 là từ khóa thể hiện phương tiện di chuyển. Câu gốc trong đoạn là 是坐飞机来的."
+            }
+          ]
+        },
+        {
+          "passage": "A：你是什么时候来北京的？ B：我是上个月来的。 A：你是一个人来的吗？ B：不是，我是跟朋友一起来的。我们是坐火车来的。",
+          "titleZh": "我是坐飞机来的",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "B是什么时候来北京的？",
+              "options": [
+                {
+                  "text": "上个星期"
+                },
+                {
+                  "text": "今天"
+                },
+                {
+                  "text": "上个月"
+                },
+                {
+                  "text": "这个星期"
+                }
+              ],
+              "correctAnswer": {
+                "index": 2
+              },
+              "explanation": "Đáp án đúng là 上个月 (tháng trước). B trả lời 我是上个月来的 — 上个月 (shàng ge yuè) nghĩa là 'tháng trước'. Đây là câu trả lời cho câu hỏi 你是什么时候来北京的? dùng cấu trúc 是…的 để hỏi và đáp về THỜI GIAN. Đừng nhầm với 上个星期 (tuần trước) vốn là chi tiết của đoạn 1."
+            },
+            {
+              "type": "MCQ",
+              "prompt": "B是怎么来北京的？",
+              "options": [
+                {
+                  "text": "坐飞机来的"
+                },
+                {
+                  "text": "坐火车来的"
+                },
+                {
+                  "text": "走来的"
+                },
+                {
+                  "text": "坐船来的"
+                }
+              ],
+              "correctAnswer": {
+                "index": 1
+              },
+              "explanation": "Đáp án đúng là 坐火车来的 (đến bằng tàu hỏa). B nói 我们是坐火车来的 — 火车 (huǒchē) nghĩa là 'tàu hỏa'. Cấu trúc 是 + 坐火车 + 来 + 的 nhấn mạnh phương tiện di chuyển. Lưu ý 飞机 (máy bay) là cách bạn ở đoạn 1 đã đi, còn ở đoạn 2 B đi bằng 火车 — hai phương tiện khác nhau."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "B是一个人来北京的。",
+              "correctAnswer": {
+                "value": false
+              },
+              "explanation": "Nhận định này SAI. Khi A hỏi 你是一个人来的吗? (Bạn đến một mình à?), B trả lời 不是 (Không phải) rồi nói thêm 我是跟朋友一起来的 — tức đến CÙNG với bạn (跟朋友一起). Vì vậy B không đến một mình. Chú ý 一个人 (yí ge rén) nghĩa là 'một mình/một người'."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "B是跟朋友一起来的。",
+              "correctAnswer": {
+                "value": true
+              },
+              "explanation": "Nhận định này ĐÚNG. B nói rõ 我是跟朋友一起来的 — 跟朋友一起 (gēn péngyou yìqǐ) nghĩa là 'cùng với bạn'. Cấu trúc 是…的 ở đây nhấn mạnh NGƯỜI CÙNG ĐI. Đây cũng giải thích vì sao B đáp 不是 cho câu hỏi 'đến một mình à', vì thực ra B đi cùng bạn."
+            },
+            {
+              "type": "FILL_BLANK",
+              "prompt": "我是___朋友一起来的。我们是坐火车来的。",
+              "correctAnswer": {
+                "text": "跟",
+                "accepted": [
+                  "跟"
+                ]
+              },
+              "explanation": "Từ cần điền là 跟 (gēn). Cụm 跟…一起 nghĩa là 'cùng với…', là cách diễn đạt 'đi cùng ai đó'. Trong cấu trúc 是…的 nhấn mạnh người cùng đi (是 + 跟朋友一起 + 来 + 的), giới từ 跟 chính là từ khóa. Câu gốc trong đoạn là 我是跟朋友一起来的."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "bai": 27,
+      "topicZh": "打电话",
+      "topicVi": "Gọi điện thoại",
+      "passages": [
+        {
+          "passage": "A：喂，你好！请问王老师在吗？ B：对不起，他不在。你是谁？ A：我是他的学生。我下午再打。 B：好的。 A：谢谢，再见！",
+          "titleZh": "打电话",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "A 想找谁？",
+              "options": [
+                {
+                  "text": "李红"
+                },
+                {
+                  "text": "王老师"
+                },
+                {
+                  "text": "大卫"
+                },
+                {
+                  "text": "学生"
+                }
+              ],
+              "correctAnswer": {
+                "index": 1
+              },
+              "explanation": "Đáp án đúng là 王老师 (Wáng lǎoshī - thầy Vương). Ngay câu đầu A nói '请问王老师在吗？' nghĩa là 'Cho hỏi thầy Vương có đó không?'. Cấu trúc '请问...在吗？' là cách hỏi lịch sự khi gọi điện để tìm một người: 请问 (cho hỏi) + tên người + 在吗 (có ở đó không). Các phương án còn lại đều không xuất hiện như người A muốn tìm trong đoạn này."
+            },
+            {
+              "type": "MCQ",
+              "prompt": "A 是王老师的什么人？",
+              "options": [
+                {
+                  "text": "老师"
+                },
+                {
+                  "text": "朋友"
+                },
+                {
+                  "text": "学生"
+                },
+                {
+                  "text": "妈妈"
+                }
+              ],
+              "correctAnswer": {
+                "index": 2
+              },
+              "explanation": "Đáp án đúng là 学生 (xuéshēng - học sinh). A tự giới thiệu '我是他的学生' nghĩa là 'Tôi là học sinh của thầy ấy'. Ở đây 他的 (tā de - của thầy ấy) dùng 的 để chỉ quan hệ sở hữu, còn 是 là động từ 'là'. Các đáp án 老师 (thầy giáo), 朋友 (bạn), 妈妈 (mẹ) đều không khớp với lời A nói nên sai."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "王老师现在不在。",
+              "correctAnswer": {
+                "value": true
+              },
+              "explanation": "Nhận định này ĐÚNG. B trả lời '对不起，他不在' nghĩa là 'Xin lỗi, thầy không có ở đây'. 不在 (bù zài) nghĩa là 'không có mặt/không ở đó', là dạng phủ định của 在 (zài - ở, có mặt) bằng cách thêm 不 phía trước. Vì vậy đúng là thầy Vương hiện không có ở đó."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "A 说他明天再打电话。",
+              "correctAnswer": {
+                "value": false
+              },
+              "explanation": "Nhận định này SAI. A nói '我下午再打' nghĩa là 'Chiều tôi gọi lại', tức là 下午 (xiàwǔ - buổi chiều) chứ không phải 明天 (míngtiān - ngày mai). Chữ 再 (zài) ở đây nghĩa là 'lại, một lần nữa', diễn tả hành động sẽ lặp lại. Vì thời gian trong câu là 'chiều' chứ không phải 'ngày mai' nên nhận định này không đúng."
+            },
+            {
+              "type": "FILL_BLANK",
+              "prompt": "对不起，他不在。你是___？",
+              "correctAnswer": {
+                "text": "谁",
+                "accepted": [
+                  "谁?",
+                  "谁？"
+                ]
+              },
+              "explanation": "Từ cần điền là 谁 (shéi - ai). Câu '你是谁？' nghĩa là 'Bạn là ai?', đây là cách hỏi danh tính người gọi rất thường gặp khi nghe điện thoại. 谁 là đại từ nghi vấn dùng để hỏi về người. Khi ai đó gọi đến mà chưa biết là ai, người nghe thường hỏi '你是谁？' để xác định danh tính."
+            }
+          ]
+        },
+        {
+          "passage": "A：喂，你好！请问是李红吗？ B：是，我是李红。你是谁？ A：我是大卫。你今天晚上有空吗？ B：有空。 A：我们一起去看电影吧。",
+          "titleZh": "打电话",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "A 打电话找谁？",
+              "options": [
+                {
+                  "text": "王老师"
+                },
+                {
+                  "text": "大卫"
+                },
+                {
+                  "text": "李红"
+                },
+                {
+                  "text": "老师"
+                }
+              ],
+              "correctAnswer": {
+                "index": 2
+              },
+              "explanation": "Đáp án đúng là 李红 (Lǐ Hóng). A hỏi '请问是李红吗？' nghĩa là 'Cho hỏi có phải Lý Hồng không?', và B xác nhận '是，我是李红'. Cấu trúc '请问是...吗？' dùng để hỏi xác nhận đúng người mình muốn gặp hay không. 大卫 (David) chính là người gọi (A), còn 王老师 thuộc đoạn 1 nên không đúng."
+            },
+            {
+              "type": "MCQ",
+              "prompt": "A 想和李红一起做什么？",
+              "options": [
+                {
+                  "text": "看电影"
+                },
+                {
+                  "text": "打电话"
+                },
+                {
+                  "text": "看老师"
+                },
+                {
+                  "text": "学习"
+                }
+              ],
+              "correctAnswer": {
+                "index": 0
+              },
+              "explanation": "Đáp án đúng là 看电影 (kàn diànyǐng - xem phim). Cuối đoạn A nói '我们一起去看电影吧' nghĩa là 'Chúng ta cùng đi xem phim nhé'. Ở đây 一起 (yìqǐ) nghĩa là 'cùng nhau', và trợ từ 吧 (ba) ở cuối câu thể hiện lời đề nghị, rủ rê. Các phương án còn lại không phải hoạt động mà A đề nghị nên đều sai."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "李红今天晚上有空。",
+              "correctAnswer": {
+                "value": true
+              },
+              "explanation": "Nhận định này ĐÚNG. Khi A hỏi '你今天晚上有空吗？' (Tối nay bạn rảnh không?), Lý Hồng trả lời '有空' nghĩa là 'Có rảnh'. Cụm 有空 (yǒu kòng) nghĩa là 'có thời gian rảnh', dùng để hỏi và trả lời về việc người ta có rảnh hay không. Vì Lý Hồng đáp '有空' nên nhận định này đúng."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "打电话的人是李红。",
+              "correctAnswer": {
+                "value": false
+              },
+              "explanation": "Nhận định này SAI. Người gọi điện (A) tự giới thiệu '我是大卫' nghĩa là 'Tôi là David', còn 李红 mới là người nghe điện thoại (B). Trong hội thoại điện thoại, A là người chủ động gọi và hỏi '请问是李红吗？', cho thấy A đang tìm Lý Hồng chứ không phải chính là Lý Hồng. Vì vậy nhận định này không đúng."
+            },
+            {
+              "type": "FILL_BLANK",
+              "prompt": "你今天晚上有___吗？",
+              "correctAnswer": {
+                "text": "空",
+                "accepted": [
+                  "空?",
+                  "空？"
+                ]
+              },
+              "explanation": "Từ cần điền là 空 (kòng - thời gian rảnh). Câu '你今天晚上有空吗？' nghĩa là 'Tối nay bạn có rảnh không?'. Cụm 有空 (yǒu kòng) là cách diễn đạt quen thuộc để hỏi ai đó có rảnh hay không, thường dùng khi muốn rủ ai đi đâu. Đây chính là điểm ngữ pháp trọng tâm của bài, nên nhớ kỹ mẫu câu 有空吗？ nhé."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "bai": 28,
+      "topicZh": "约会与邀请",
+      "topicVi": "Hẹn gặp & Lời mời",
+      "passages": [
+        {
+          "passage": "A：明天是周末，我们一起去看电影，好吗？ B：好！几点见？ A：下午两点，在公园门口见，行吗？ B：没问题，明天见！",
+          "titleZh": "约会与邀请",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "他们打算明天做什么？",
+              "options": [
+                {
+                  "text": "去看电影"
+                },
+                {
+                  "text": "去吃饭"
+                },
+                {
+                  "text": "去公园跑步"
+                },
+                {
+                  "text": "去朋友家"
+                }
+              ],
+              "correctAnswer": {
+                "index": 0
+              },
+              "explanation": "Đáp án đúng là 去看电影 (đi xem phim). Trong đoạn, A nói '我们一起去看电影，好吗？' nghĩa là 'chúng ta cùng đi xem phim nhé?'. Chữ 电影 (diànyǐng) nghĩa là 'phim/điện ảnh', 看电影 là 'xem phim'. Cấu trúc '...，好吗？' là cách hỏi 'nhé/được không?' để rủ rê lịch sự, đúng điểm ngữ pháp trọng tâm. Các phương án khác như ăn cơm, chạy bộ ở công viên, đến nhà bạn đều không được nhắc tới."
+            },
+            {
+              "type": "MCQ",
+              "prompt": "他们几点见面？",
+              "options": [
+                {
+                  "text": "上午两点"
+                },
+                {
+                  "text": "下午两点"
+                },
+                {
+                  "text": "下午三点"
+                },
+                {
+                  "text": "晚上两点"
+                }
+              ],
+              "correctAnswer": {
+                "index": 1
+              },
+              "explanation": "Đáp án đúng là 下午两点 (2 giờ chiều). A nói rõ '下午两点，在公园门口见' nghĩa là '2 giờ chiều, gặp ở cổng công viên'. Chữ 下午 (xiàwǔ) là 'buổi chiều', 两点 (liǎng diǎn) là '2 giờ' — lưu ý người Trung dùng 两 chứ không dùng 二 khi nói giờ. Các lựa chọn 上午 (buổi sáng), 晚上 (buổi tối) hay 三点 (3 giờ) đều sai vì trái với thông tin trong đoạn."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "他们在公园门口见面。",
+              "correctAnswer": {
+                "value": true
+              },
+              "explanation": "Nhận định này ĐÚNG. A nói '在公园门口见，行吗？' nghĩa là 'gặp ở cổng công viên, được không?'. Chữ 公园 (gōngyuán) là 'công viên', 门口 (ménkǒu) là 'cổng/cửa ra vào'. Cấu trúc '...，行吗？' cũng là cách hỏi 'được không?' tương tự 好吗?, thể hiện điểm ngữ pháp xin ý kiến khi hẹn gặp."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "明天不是周末。",
+              "correctAnswer": {
+                "value": false
+              },
+              "explanation": "Nhận định này SAI. Ngay câu đầu A nói '明天是周末' nghĩa là 'mai là cuối tuần'. Câu hỏi viết '明天不是周末' (mai không phải cuối tuần), thêm chữ 不 (bù) phủ định nên trái ngược với đoạn. Chữ 周末 (zhōumò) nghĩa là 'cuối tuần', vì vậy nhận định phải là sai."
+            },
+            {
+              "type": "FILL_BLANK",
+              "prompt": "明天是周末，我们一起去看电影，___？",
+              "correctAnswer": {
+                "text": "好吗",
+                "accepted": [
+                  "好吗？",
+                  "好吗?"
+                ]
+              },
+              "explanation": "Từ cần điền là 好吗 (hǎo ma) nghĩa là 'được không/nhé'. Đây chính là điểm ngữ pháp trọng tâm của bài: dùng '好吗？' ở cuối câu để rủ rê, đề nghị một cách lịch sự, mong người nghe đồng ý. Trong đoạn còn có '行吗？' và '没问题' cùng nhóm chức năng này. Người Việt có thể nhớ 好吗 ≈ '...nhé?', còn 没问题 ≈ 'không vấn đề gì/OK'."
+            }
+          ]
+        },
+        {
+          "passage": "明天是我的生日。我想请朋友们来我家吃饭。我打电话给大卫，请他来。大卫说他一定来，我很高兴。",
+          "titleZh": "约会与邀请",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "明天是什么日子？",
+              "options": [
+                {
+                  "text": "周末"
+                },
+                {
+                  "text": "我的生日"
+                },
+                {
+                  "text": "大卫的生日"
+                },
+                {
+                  "text": "星期一"
+                }
+              ],
+              "correctAnswer": {
+                "index": 1
+              },
+              "explanation": "Đáp án đúng là 我的生日 (sinh nhật của tôi). Câu đầu đoạn viết '明天是我的生日' nghĩa là 'mai là sinh nhật của tôi'. Chữ 生日 (shēngrì) là 'sinh nhật', 我的 (wǒ de) là 'của tôi'. Lưu ý đó là sinh nhật của người kể chứ không phải của 大卫 (David), nên phương án 'sinh nhật của David' là bẫy sai; 周末 và 星期一 cũng không được nhắc tới."
+            },
+            {
+              "type": "MCQ",
+              "prompt": "\"我\"想请朋友们来家里做什么？",
+              "options": [
+                {
+                  "text": "看电影"
+                },
+                {
+                  "text": "打电话"
+                },
+                {
+                  "text": "吃饭"
+                },
+                {
+                  "text": "学习"
+                }
+              ],
+              "correctAnswer": {
+                "index": 2
+              },
+              "explanation": "Đáp án đúng là 吃饭 (ăn cơm). Đoạn viết '我想请朋友们来我家吃饭' nghĩa là 'tôi muốn mời các bạn đến nhà tôi ăn cơm'. Đây là cấu trúc trọng tâm '请...来...' (mời ai đó đến...): 请 (qǐng) là 'mời', 来 (lái) là 'đến', 吃饭 (chī fàn) là 'ăn cơm'. Chữ 打电话 (gọi điện) tuy có xuất hiện nhưng chỉ là hành động để mời, không phải mục đích mời bạn đến nhà."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "\"我\"给大卫打电话，请他来。",
+              "correctAnswer": {
+                "value": true
+              },
+              "explanation": "Nhận định này ĐÚNG. Đoạn viết '我打电话给大卫，请他来' nghĩa là 'tôi gọi điện cho David, mời anh ấy đến'. Chữ 打电话 (dǎ diànhuà) là 'gọi điện thoại', 请他来 là 'mời anh ấy đến' — đúng cấu trúc '请...来'. Vì vậy nhận định khớp hoàn toàn với đoạn."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "大卫说他不能来。",
+              "correctAnswer": {
+                "value": false
+              },
+              "explanation": "Nhận định này SAI. Đoạn viết '大卫说他一定来' nghĩa là 'David nói anh ấy nhất định sẽ đến'. Chữ 一定 (yídìng) là 'nhất định/chắc chắn', cho thấy David CÓ đến. Câu hỏi viết '他不能来' (anh ấy không thể đến) với 不能 (bù néng = không thể) nên trái ngược với đoạn, vì thế là sai. Cũng nhờ vậy mà người kể '很高兴' (rất vui)."
+            },
+            {
+              "type": "FILL_BLANK",
+              "prompt": "我想___朋友们来我家吃饭。",
+              "correctAnswer": {
+                "text": "请",
+                "accepted": []
+              },
+              "explanation": "Từ cần điền là 请 (qǐng) nghĩa là 'mời'. Đây là điểm ngữ pháp trọng tâm của bài: cấu trúc '请 + ai + 来 + làm gì' để mời ai đó đến làm việc gì, ví dụ '请朋友们来吃饭' = 'mời các bạn đến ăn cơm'. Chữ 请 ngoài nghĩa 'mời' còn dùng khi nói lịch sự (请坐 = mời ngồi, 请问 = xin hỏi), là một chữ rất quan trọng ở HSK1."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "bai": 29,
+      "topicZh": "身体与看病",
+      "topicVi": "Cơ thể & Khám bệnh",
+      "passages": [
+        {
+          "passage": "今天我不舒服。我头疼，也有点儿发烧。妈妈带我去医院。医生说我感冒了，要吃药、多休息。我今天不上班了。",
+          "titleZh": "身体与看病",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "今天\"我\"为什么去医院？",
+              "options": [
+                {
+                  "text": "我想买东西"
+                },
+                {
+                  "text": "我不舒服"
+                },
+                {
+                  "text": "我去上班"
+                },
+                {
+                  "text": "我去看朋友"
+                }
+              ],
+              "correctAnswer": {
+                "index": 1
+              },
+              "explanation": "Đáp án đúng là B \"我不舒服\" (tôi không khỏe). Ngay câu đầu đoạn văn viết \"今天我不舒服\" nghĩa là \"Hôm nay tôi không khỏe\", và sau đó mẹ đưa đi bệnh viện vì lý do đó. Cụm \"不舒服\" (bù shūfu) là điểm ngữ pháp trọng tâm, dùng để diễn tả trạng thái cơ thể mệt mỏi, ốm. Các phương án mua đồ (买东西), đi làm (上班) hay thăm bạn (看朋友) đều không được nhắc tới làm lý do đi bệnh viện nên đều sai."
+            },
+            {
+              "type": "MCQ",
+              "prompt": "医生说\"我\"怎么了？",
+              "options": [
+                {
+                  "text": "我感冒了"
+                },
+                {
+                  "text": "我很好"
+                },
+                {
+                  "text": "我饿了"
+                },
+                {
+                  "text": "我累了"
+                }
+              ],
+              "correctAnswer": {
+                "index": 0
+              },
+              "explanation": "Đáp án đúng là A \"我感冒了\" (tôi bị cảm). Trong đoạn có câu \"医生说我感冒了\" nghĩa là \"Bác sĩ nói tôi bị cảm\". Chữ \"感冒\" (gǎnmào) nghĩa là cảm cúm, còn trợ từ \"了\" cuối câu cho biết một trạng thái đã xảy ra. Phương án \"很好\" (rất khỏe) trái ngược với nội dung; \"饿了\" (đói) và \"累了\" (mệt) không được bác sĩ nói đến nên đều sai."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "医生说\"我\"要吃药、多休息。",
+              "correctAnswer": {
+                "value": true
+              },
+              "explanation": "Nhận định này ĐÚNG. Đoạn văn viết rõ \"要吃药、多休息\" nghĩa là \"phải uống thuốc, nghỉ ngơi nhiều\". Chữ \"吃药\" (chī yào) là \"uống thuốc\" (người Trung dùng động từ 吃 - ăn cho việc uống thuốc), còn \"休息\" (xiūxi) là nghỉ ngơi, \"多\" (duō) nghĩa là nhiều. Đây đều là lời dặn của bác sĩ trong bài nên nhận định khớp hoàn toàn."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "\"我\"今天去上班了。",
+              "correctAnswer": {
+                "value": false
+              },
+              "explanation": "Nhận định này SAI. Câu cuối đoạn ghi \"我今天不上班了\" nghĩa là \"Hôm nay tôi không đi làm nữa\". Cấu trúc \"不...了\" (bù...le) diễn tả sự thay đổi: trước định đi làm nhưng giờ không đi nữa. Vì đang ốm và phải nghỉ ngơi nên nhân vật không đi làm, do đó nói \"đã đi làm\" là ngược với bài."
+            },
+            {
+              "type": "FILL_BLANK",
+              "prompt": "我头疼，也有点儿___。",
+              "correctAnswer": {
+                "text": "发烧",
+                "accepted": [
+                  "发烧。",
+                  "发烧了"
+                ]
+              },
+              "explanation": "Từ cần điền là \"发烧\" (fāshāo) nghĩa là \"sốt\". Trong đoạn có câu \"我头疼，也有点儿发烧\" tức \"Tôi đau đầu, cũng hơi sốt\". Cụm \"有点儿\" (yǒudiǎnr) đứng trước tính từ/động từ để diễn tả mức độ \"hơi, một chút\" theo nghĩa không như ý. \"发烧\" là một trong các triệu chứng trọng tâm của bài cùng với \"头疼\" (đau đầu) và \"感冒\" (cảm)."
+            }
+          ]
+        },
+        {
+          "passage": "我妹妹今天不舒服。她头疼、发烧，不想吃饭。妈妈带她去医院。医生说她感冒了，要多喝水、多休息，还要吃药。",
+          "titleZh": "身体与看病",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "谁今天不舒服？",
+              "options": [
+                {
+                  "text": "妈妈"
+                },
+                {
+                  "text": "医生"
+                },
+                {
+                  "text": "妹妹"
+                },
+                {
+                  "text": "爸爸"
+                }
+              ],
+              "correctAnswer": {
+                "index": 2
+              },
+              "explanation": "Đáp án đúng là C \"妹妹\" (em gái). Câu mở đầu đoạn viết \"我妹妹今天不舒服\" nghĩa là \"Hôm nay em gái tôi không khỏe\". Chữ \"妹妹\" (mèimei) là em gái, còn \"不舒服\" là không khỏe. \"妈妈\" (mẹ) là người đưa em đi viện, \"医生\" (bác sĩ) là người khám, còn \"爸爸\" (bố) không hề xuất hiện trong đoạn nên đều sai."
+            },
+            {
+              "type": "MCQ",
+              "prompt": "医生让妹妹做什么？",
+              "options": [
+                {
+                  "text": "多喝水、多休息"
+                },
+                {
+                  "text": "多上班"
+                },
+                {
+                  "text": "多买东西"
+                },
+                {
+                  "text": "多看电视"
+                }
+              ],
+              "correctAnswer": {
+                "index": 0
+              },
+              "explanation": "Đáp án đúng là A \"多喝水、多休息\" (uống nhiều nước, nghỉ ngơi nhiều). Đoạn viết \"要多喝水、多休息，还要吃药\" - đây là lời dặn của bác sĩ. Chữ \"喝水\" (hē shuǐ) là uống nước, \"休息\" (xiūxi) là nghỉ ngơi, và \"多\" (duō) nghĩa là nhiều. Các phương án đi làm (上班), mua đồ (买东西) hay xem tivi (看电视) không được bác sĩ nhắc tới, ngược lại em đang ốm nên cần nghỉ, vì vậy đều sai."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "妹妹不想吃饭。",
+              "correctAnswer": {
+                "value": true
+              },
+              "explanation": "Nhận định này ĐÚNG. Đoạn văn có câu \"她头疼、发烧，不想吃饭\" nghĩa là \"Em đau đầu, sốt, không muốn ăn cơm\". Cụm \"不想\" (bù xiǎng) nghĩa là \"không muốn\", còn \"吃饭\" (chī fàn) là ăn cơm. Vì đang bị cảm và sốt nên em không muốn ăn, đúng như câu khẳng định này."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "爸爸带妹妹去医院。",
+              "correctAnswer": {
+                "value": false
+              },
+              "explanation": "Nhận định này SAI. Đoạn văn viết \"妈妈带她去医院\" nghĩa là \"Mẹ đưa em đi bệnh viện\", chứ không phải bố. Động từ \"带\" (dài) nghĩa là dẫn, đưa đi, còn \"她\" (tā) chỉ em gái. Trong cả đoạn không hề có \"爸爸\" (bố), nên nói bố đưa đi là sai với nội dung."
+            },
+            {
+              "type": "FILL_BLANK",
+              "prompt": "医生说她___了，要多喝水、多休息。",
+              "correctAnswer": {
+                "text": "感冒",
+                "accepted": [
+                  "感冒了"
+                ]
+              },
+              "explanation": "Từ cần điền là \"感冒\" (gǎnmào) nghĩa là \"cảm cúm\". Trong đoạn có câu \"医生说她感冒了\" tức \"Bác sĩ nói em bị cảm\". Trợ từ \"了\" (le) đứng sau cho biết tình trạng đã xảy ra (ở đây chữ 了 đã có sẵn sau chỗ trống nên chỉ cần điền \"感冒\"). \"感冒\" là điểm ngữ pháp trọng tâm của bài về chủ đề khám bệnh, đi cùng các triệu chứng \"头疼\" (đau đầu) và \"发烧\" (sốt) đã nêu phía trước."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "bai": 30,
+      "topicZh": "他在学做中国菜呢",
+      "topicVi": "Đang diễn ra (在…呢)",
+      "passages": [
+        {
+          "passage": "现在是晚上八点，我在家。爸爸正在看电视，妈妈在做饭。我哥哥在他的房间里玩游戏，我妹妹在写作业。我在听音乐呢。",
+          "titleZh": "他在学做中国菜呢",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "爸爸正在做什么？",
+              "options": [
+                {
+                  "text": "看电视"
+                },
+                {
+                  "text": "做饭"
+                },
+                {
+                  "text": "玩游戏"
+                },
+                {
+                  "text": "写作业"
+                }
+              ],
+              "correctAnswer": {
+                "index": 0
+              },
+              "explanation": "Đáp án đúng là 看电视 (kàn diànshì - xem tivi). Trong đoạn có câu 爸爸正在看电视 (Bố đang xem tivi), cấu trúc 正在... (呢) nghĩa là 'đang' diễn ra một hành động. Các phương án khác đều sai: 做饭 (nấu cơm) là việc mẹ làm, 玩游戏 (chơi game) là anh trai, còn 写作业 (làm bài tập) là em gái."
+            },
+            {
+              "type": "MCQ",
+              "prompt": "妹妹在哪儿？她在做什么？",
+              "options": [
+                {
+                  "text": "在房间里玩游戏"
+                },
+                {
+                  "text": "在听音乐"
+                },
+                {
+                  "text": "在写作业"
+                },
+                {
+                  "text": "在做饭"
+                }
+              ],
+              "correctAnswer": {
+                "index": 2
+              },
+              "explanation": "Đáp án đúng là 在写作业 (zài xiě zuòyè - đang làm bài tập). Đoạn văn viết 我妹妹在写作业 (em gái tôi đang làm bài tập). Chữ 在 đứng trước động từ diễn tả hành động đang xảy ra. Phương án 在房间里玩游戏 là của anh trai (哥哥在他的房间里玩游戏), 听音乐 là của 'tôi', còn 做饭 là của mẹ nên đều sai."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "妈妈在做饭。",
+              "correctAnswer": {
+                "value": true
+              },
+              "explanation": "Nhận định này ĐÚNG. Trong đoạn có câu 妈妈在做饭 (mā ma zài zuò fàn - mẹ đang nấu cơm). Cấu trúc 在 + động từ (做饭) thể hiện hành động đang diễn ra, đúng với điểm ngữ pháp trọng tâm 在...呢 của bài. Vậy nên câu khẳng định khớp hoàn toàn với đoạn văn."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "现在是早上八点。",
+              "correctAnswer": {
+                "value": false
+              },
+              "explanation": "Nhận định này SAI. Đoạn văn mở đầu bằng 现在是晚上八点 (xiàn zài shì wǎn shang bā diǎn - bây giờ là 8 giờ TỐI), chứ không phải 早上 (zǎo shang - buổi sáng). Hãy chú ý phân biệt 晚上 (buổi tối) và 早上 (buổi sáng) - chỉ khác một chữ nhưng nghĩa hoàn toàn trái ngược."
+            },
+            {
+              "type": "FILL_BLANK",
+              "prompt": "我在___音乐呢。",
+              "correctAnswer": {
+                "text": "听",
+                "accepted": [
+                  "听"
+                ]
+              },
+              "explanation": "Đáp án là 听 (tīng - nghe). Câu gốc trong đoạn là 我在听音乐呢 (tôi đang nghe nhạc). Cấu trúc 在 + động từ + 呢 là cách nhấn mạnh hành động ĐANG diễn ra, là điểm ngữ pháp trọng tâm của bài. 听音乐 (nghe nhạc) là cụm từ cố định, nên động từ cần điền là 听."
+            }
+          ]
+        },
+        {
+          "passage": "现在是星期天下午，我们都在家。爸爸在看报纸，妈妈正在打扫房间。哥哥在上网，妹妹在写信。我在做作业呢。",
+          "titleZh": "他在学做中国菜呢",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "妈妈正在做什么？",
+              "options": [
+                {
+                  "text": "看报纸"
+                },
+                {
+                  "text": "打扫房间"
+                },
+                {
+                  "text": "上网"
+                },
+                {
+                  "text": "写信"
+                }
+              ],
+              "correctAnswer": {
+                "index": 1
+              },
+              "explanation": "Đáp án đúng là 打扫房间 (dǎsǎo fángjiān - dọn dẹp phòng). Đoạn văn viết 妈妈正在打扫房间 (mẹ đang dọn phòng), với 正在 nhấn mạnh hành động đang xảy ra. Các phương án khác đều thuộc về người khác: 看报纸 (đọc báo) là bố, 上网 (lên mạng) là anh trai, còn 写信 (viết thư) là em gái."
+            },
+            {
+              "type": "MCQ",
+              "prompt": "现在是什么时候？",
+              "options": [
+                {
+                  "text": "星期六上午"
+                },
+                {
+                  "text": "星期六晚上"
+                },
+                {
+                  "text": "星期天下午"
+                },
+                {
+                  "text": "星期天晚上"
+                }
+              ],
+              "correctAnswer": {
+                "index": 2
+              },
+              "explanation": "Đáp án đúng là 星期天下午 (xīngqītiān xiàwǔ - chiều Chủ nhật). Câu đầu đoạn ghi rõ 现在是星期天下午 (bây giờ là chiều Chủ nhật). 星期天 nghĩa là Chủ nhật, 下午 là buổi chiều. Các đáp án khác sai vì nhầm thứ (星期六 là thứ Bảy) hoặc nhầm buổi (上午 sáng, 晚上 tối)."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "哥哥在上网。",
+              "correctAnswer": {
+                "value": true
+              },
+              "explanation": "Nhận định này ĐÚNG. Đoạn văn có câu 哥哥在上网 (gē ge zài shàng wǎng - anh trai đang lên mạng). Cấu trúc 在 + động từ (上网) thể hiện hành động đang diễn ra, đúng với điểm ngữ pháp 在...呢 của bài. Vậy câu khẳng định hoàn toàn khớp với đoạn."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "爸爸正在看电视。",
+              "correctAnswer": {
+                "value": false
+              },
+              "explanation": "Nhận định này SAI. Trong đoạn 2, bố đang 看报纸 (kàn bàozhǐ - đọc báo) chứ không phải 看电视 (xem tivi). Đừng nhầm với đoạn 1 nhé - ở đoạn 1 bố mới xem tivi. Hãy chú ý đọc kỹ từng đoạn: 报纸 (báo giấy) khác với 电视 (tivi)."
+            },
+            {
+              "type": "FILL_BLANK",
+              "prompt": "妹妹在写___。",
+              "correctAnswer": {
+                "text": "信",
+                "accepted": [
+                  "信"
+                ]
+              },
+              "explanation": "Đáp án là 信 (xìn - thư). Câu gốc trong đoạn là 妹妹在写信 (em gái đang viết thư). Cấu trúc 在 + động từ thể hiện hành động đang diễn ra. 写信 (viết thư) là cụm từ thường gặp; lưu ý phân biệt với 写作业 (làm bài tập), nên từ cần điền chính xác là 信."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "bai": 31,
+      "topicZh": "有与没有",
+      "topicVi": "Sở hữu & Tồn tại",
+      "passages": [
+        {
+          "passage": "我们班有二十个学生。教室里有桌子和椅子，还有一个电脑。桌子上有书，没有水。我有很多中国朋友，没有美国朋友。",
+          "titleZh": "有与没有",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "我们班有多少个学生？",
+              "options": [
+                {
+                  "text": "十个"
+                },
+                {
+                  "text": "二十个"
+                },
+                {
+                  "text": "三十个"
+                },
+                {
+                  "text": "五个"
+                }
+              ],
+              "correctAnswer": {
+                "index": 1
+              },
+              "explanation": "Đáp án đúng là 二十个 (èr shí gè - 20). Trong đoạn có câu 我们班有二十个学生 nghĩa là 'Lớp tôi có 20 học sinh'. Chữ 有 (yǒu) nghĩa là 'có', dùng để diễn tả sự sở hữu/tồn tại - đây chính là điểm ngữ pháp trọng tâm của bài. Các lựa chọn 十个 (10), 三十个 (30), 五个 (5) đều không khớp với con số trong đoạn nên sai."
+            },
+            {
+              "type": "MCQ",
+              "prompt": "桌子上有什么？",
+              "options": [
+                {
+                  "text": "水"
+                },
+                {
+                  "text": "电脑"
+                },
+                {
+                  "text": "书"
+                },
+                {
+                  "text": "椅子"
+                }
+              ],
+              "correctAnswer": {
+                "index": 2
+              },
+              "explanation": "Đáp án đúng là 书 (shū - sách). Đoạn viết 桌子上有书，没有水 nghĩa là 'Trên bàn có sách, không có nước'. Cấu trúc 有 (có) đối lập với 没有 (méi yǒu - không có) giúp ta phân biệt rõ: trên bàn CÓ sách nhưng KHÔNG có nước (水). Vì vậy 水 sai. 电脑 (máy tính) và 椅子 (ghế) thì ở trong phòng học (教室里) chứ không phải trên bàn, nên cũng sai."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "教室里有一个电脑。",
+              "correctAnswer": {
+                "value": true
+              },
+              "explanation": "Nhận định này ĐÚNG. Đoạn có câu 还有一个电脑 nghĩa là 'còn có một máy tính'. Chữ 有 (yǒu) khẳng định sự tồn tại của 电脑 (diàn nǎo - máy tính) trong 教室 (jiào shì - phòng học), kèm lượng từ 一个 (một cái). Vì vậy câu khẳng định 'Trong phòng học có một máy tính' là chính xác."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "我有很多美国朋友。",
+              "correctAnswer": {
+                "value": false
+              },
+              "explanation": "Nhận định này SAI. Đoạn viết 我有很多中国朋友，没有美国朋友 nghĩa là 'Tôi có nhiều bạn Trung Quốc, không có bạn Mỹ'. Cụm 没有美国朋友 (không có bạn Mỹ) phủ định hoàn toàn, nên nói 'Tôi có nhiều bạn Mỹ (美国朋友)' là sai. Hãy chú ý cặp 有/没有 để xác định đúng-sai nhé."
+            },
+            {
+              "type": "FILL_BLANK",
+              "prompt": "桌子上有书，___水。",
+              "correctAnswer": {
+                "text": "没有",
+                "accepted": [
+                  "没有水"
+                ]
+              },
+              "explanation": "Đáp án đúng là 没有 (méi yǒu - không có). Câu gốc trong đoạn là 桌子上有书，没有水 ('Trên bàn có sách, không có nước'). Đây là điểm ngữ pháp trọng tâm: 没有 là dạng phủ định của 有 (có). Khác với tiếng Việt, trong tiếng Trung ta KHÔNG dùng 不有 mà phải dùng 没有 để nói 'không có'. Hãy nhớ kỹ quy tắc này nhé."
+            }
+          ]
+        },
+        {
+          "passage": "我们学校很大，有图书馆，也有公园。我们班有三十个学生。我有很多中国朋友，没有很多时间见面。我家附近有商店，没有银行。",
+          "titleZh": "有与没有",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "我们学校里有什么？",
+              "options": [
+                {
+                  "text": "银行"
+                },
+                {
+                  "text": "商店"
+                },
+                {
+                  "text": "图书馆和公园"
+                },
+                {
+                  "text": "医院"
+                }
+              ],
+              "correctAnswer": {
+                "index": 2
+              },
+              "explanation": "Đáp án đúng là 图书馆和公园 (thư viện và công viên). Đoạn viết 我们学校很大，有图书馆，也有公园 nghĩa là 'Trường tôi rất to, có thư viện, cũng có công viên'. Chữ 有 (yǒu - có) cùng với 也有 (cũng có) cho biết trường có cả hai. 银行 (ngân hàng) và 商店 (cửa hàng) là ở gần nhà (家附近) chứ không phải ở trường; 医院 (bệnh viện) không hề được nhắc tới nên sai."
+            },
+            {
+              "type": "MCQ",
+              "prompt": "我家附近有什么？",
+              "options": [
+                {
+                  "text": "商店"
+                },
+                {
+                  "text": "银行"
+                },
+                {
+                  "text": "图书馆"
+                },
+                {
+                  "text": "公园"
+                }
+              ],
+              "correctAnswer": {
+                "index": 0
+              },
+              "explanation": "Đáp án đúng là 商店 (shāng diàn - cửa hàng). Đoạn có câu 我家附近有商店，没有银行 nghĩa là 'Gần nhà tôi có cửa hàng, không có ngân hàng'. Cặp 有/没有 cho thấy gần nhà CÓ cửa hàng nhưng KHÔNG có 银行 (ngân hàng), nên 银行 sai. Còn 图书馆 (thư viện) và 公园 (công viên) là ở trường học (学校) chứ không phải gần nhà, nên cũng sai."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "我们班有三十个学生。",
+              "correctAnswer": {
+                "value": true
+              },
+              "explanation": "Nhận định này ĐÚNG. Đoạn viết rõ 我们班有三十个学生 nghĩa là 'Lớp tôi có 30 học sinh'. Chữ 有 (yǒu - có) đi với số đếm 三十 (30) và lượng từ 个 cùng danh từ 学生 (học sinh). Vì câu khẳng định trùng khớp nguyên văn với đoạn nên là đúng."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "我有很多时间见面。",
+              "correctAnswer": {
+                "value": false
+              },
+              "explanation": "Nhận định này SAI. Đoạn viết 我有很多中国朋友，没有很多时间见面 nghĩa là 'Tôi có nhiều bạn Trung Quốc, nhưng không có nhiều thời gian gặp nhau'. Cụm 没有很多时间 (không có nhiều thời gian) là phủ định, nên nói 'Tôi có nhiều thời gian gặp nhau' là trái với đoạn. Chú ý chữ 没有 đứng trước 很多时间 để xác định đúng nghĩa nhé."
+            },
+            {
+              "type": "FILL_BLANK",
+              "prompt": "我家附近有商店，___银行。",
+              "correctAnswer": {
+                "text": "没有",
+                "accepted": [
+                  "没有银行"
+                ]
+              },
+              "explanation": "Đáp án đúng là 没有 (méi yǒu - không có). Câu gốc là 我家附近有商店，没有银行 ('Gần nhà tôi có cửa hàng, không có ngân hàng'). Đây là điểm ngữ pháp trọng tâm của bài: 没有 là dạng phủ định của 有. Vế trước dùng 有 (có cửa hàng), vế sau dùng 没有 (không có ngân hàng) tạo thế tương phản. Hãy nhớ phủ định của 有 luôn là 没有 chứ không phải 不有 nhé."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "bai": 32,
+      "topicZh": "各种疑问句",
+      "topicVi": "Tổng hợp câu hỏi",
+      "passages": [
+        {
+          "passage": "A：你好！你叫什么名字？ B：我叫小红。 A：你是哪国人？ B：我是中国人。你呢？ A：我是越南人。你喜欢喝茶还是咖啡？ B：我喜欢喝茶。",
+          "titleZh": "各种疑问句",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "小红是哪国人？",
+              "options": [
+                {
+                  "text": "越南人"
+                },
+                {
+                  "text": "中国人"
+                },
+                {
+                  "text": "美国人"
+                },
+                {
+                  "text": "日本人"
+                }
+              ],
+              "correctAnswer": {
+                "index": 1
+              },
+              "explanation": "Đáp án đúng là 中国人 (người Trung Quốc). Trong đoạn, khi A hỏi 你是哪国人？(Bạn là người nước nào?), B (Tiểu Hồng) trả lời 我是中国人 (Tôi là người Trung Quốc). Đây chính là điểm ngữ pháp focus với từ để hỏi 哪 (nào) trong câu 哪国人 (người nước nào). Phương án 越南人 (người Việt Nam) là sai vì đó là quốc tịch của A, còn 美国人/日本人 không hề được nhắc tới trong bài nhé!"
+            },
+            {
+              "type": "MCQ",
+              "prompt": "小红喜欢喝什么？",
+              "options": [
+                {
+                  "text": "咖啡"
+                },
+                {
+                  "text": "水"
+                },
+                {
+                  "text": "茶"
+                },
+                {
+                  "text": "牛奶"
+                }
+              ],
+              "correctAnswer": {
+                "index": 2
+              },
+              "explanation": "Đáp án đúng là 茶 (trà). A hỏi 你喜欢喝茶还是咖啡？(Bạn thích uống trà hay cà phê?) — đây là mẫu câu hỏi lựa chọn với 还是 (hay/hoặc), một điểm ngữ pháp trọng tâm của bài. B đáp 我喜欢喝茶 (Tôi thích uống trà), nên chọn 茶. Phương án 咖啡 (cà phê) là một trong hai lựa chọn nhưng B không chọn nó; còn 水 (nước) và 牛奶 (sữa) không xuất hiện trong đoạn."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "A是越南人。",
+              "correctAnswer": {
+                "value": true
+              },
+              "explanation": "Nhận định này ĐÚNG. Trong đoạn, A nói rõ 我是越南人 (Tôi là người Việt Nam). Chữ 越南 nghĩa là Việt Nam, 人 nghĩa là người, ghép lại thành 越南人 (người Việt Nam). Bạn lưu ý phân biệt: A là người Việt Nam, còn B (Tiểu Hồng) là người Trung Quốc nhé!"
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "小红喜欢喝咖啡。",
+              "correctAnswer": {
+                "value": false
+              },
+              "explanation": "Nhận định này SAI. Khi được hỏi 你喜欢喝茶还是咖啡？(thích trà hay cà phê?), Tiểu Hồng trả lời 我喜欢喝茶 — cô ấy thích uống 茶 (trà), chứ không phải 咖啡 (cà phê). Đây là mẫu câu hỏi lựa chọn với 还是, người trả lời sẽ chọn MỘT trong hai vế, và ở đây Tiểu Hồng đã chọn trà."
+            },
+            {
+              "type": "FILL_BLANK",
+              "prompt": "你喜欢喝茶___咖啡？",
+              "correctAnswer": {
+                "text": "还是",
+                "accepted": []
+              },
+              "explanation": "Từ cần điền là 还是 (háishi), nghĩa là 'hay/hoặc', dùng trong câu hỏi lựa chọn để đưa ra hai phương án cho người nghe chọn. Cấu trúc là: A 还是 B？(A hay B?). Đây chính là điểm ngữ pháp trọng tâm của bài. Lưu ý phân biệt với 或者 (cũng nghĩa là 'hoặc' nhưng dùng trong câu trần thuật, không phải câu hỏi)."
+            }
+          ]
+        },
+        {
+          "passage": "A：你是学生吗？ B：是，我是大学生。 A：你为什么学习汉语？ B：因为我喜欢中国，想去中国工作。 A：你什么时候去中国？ B：明年。",
+          "titleZh": "各种疑问句",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "B为什么学习汉语？",
+              "options": [
+                {
+                  "text": "因为他喜欢中国"
+                },
+                {
+                  "text": "因为他是老师"
+                },
+                {
+                  "text": "因为他在中国"
+                },
+                {
+                  "text": "因为他喜欢咖啡"
+                }
+              ],
+              "correctAnswer": {
+                "index": 0
+              },
+              "explanation": "Đáp án đúng là 因为他喜欢中国 (Vì anh ấy thích Trung Quốc). A hỏi 你为什么学习汉语？(Tại sao bạn học tiếng Trung?) — dùng từ để hỏi nguyên nhân 为什么 (tại sao). B đáp 因为我喜欢中国 (Vì tôi thích Trung Quốc). Cặp 为什么...因为... (tại sao...vì...) là điểm ngữ pháp focus. Các phương án khác (là giáo viên, đang ở Trung Quốc, thích cà phê) đều không có trong đoạn."
+            },
+            {
+              "type": "MCQ",
+              "prompt": "B什么时候去中国？",
+              "options": [
+                {
+                  "text": "今天"
+                },
+                {
+                  "text": "今年"
+                },
+                {
+                  "text": "明年"
+                },
+                {
+                  "text": "明天"
+                }
+              ],
+              "correctAnswer": {
+                "index": 2
+              },
+              "explanation": "Đáp án đúng là 明年 (năm sau). A hỏi 你什么时候去中国？(Khi nào bạn đi Trung Quốc?) — dùng từ để hỏi thời gian 什么时候 (khi nào), một điểm ngữ pháp trọng tâm. B trả lời 明年 (míngnián - năm sau). Hãy phân biệt các từ chỉ thời gian: 今天 (hôm nay), 今年 (năm nay), 明天 (ngày mai) và 明年 (năm sau) — chữ 明 đi với 年 là 'năm sau', đi với 天 là 'ngày mai' nhé!"
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "B是大学生。",
+              "correctAnswer": {
+                "value": true
+              },
+              "explanation": "Nhận định này ĐÚNG. Khi A hỏi 你是学生吗？(Bạn là học sinh à?), B đáp 是，我是大学生 (Đúng, tôi là sinh viên). Chữ 大学 nghĩa là 'đại học', thêm 生 (người học) thành 大学生 (sinh viên đại học). Vậy nên B đúng là một 大学生."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "B想去中国工作。",
+              "correctAnswer": {
+                "value": true
+              },
+              "explanation": "Nhận định này ĐÚNG. B nói 想去中国工作 (muốn đi Trung Quốc làm việc). Trong đó 想 nghĩa là 'muốn', 去 là 'đi', 工作 là 'làm việc'. B học tiếng Trung vì thích Trung Quốc và mong muốn sang đó làm việc, nên nhận định này hoàn toàn khớp với nội dung đoạn văn."
+            },
+            {
+              "type": "FILL_BLANK",
+              "prompt": "你___学习汉语？",
+              "correctAnswer": {
+                "text": "为什么",
+                "accepted": []
+              },
+              "explanation": "Từ cần điền là 为什么 (wèishénme), nghĩa là 'tại sao', dùng để hỏi nguyên nhân, lý do. Đây là điểm ngữ pháp trọng tâm của bài. Câu trả lời thường bắt đầu bằng 因为 (vì/bởi vì), tạo thành cặp hô ứng 为什么...因为... (tại sao...vì...). Trong đoạn, A hỏi 你为什么学习汉语？và B đáp 因为我喜欢中国."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "bai": 33,
+      "topicZh": "都与也",
+      "topicVi": "Trạng từ 都/也",
+      "passages": [
+        {
+          "passage": "我和我妹妹都是学生。我们都喜欢看书。我喜欢运动，我妹妹也喜欢运动。我们都不喜欢看电视。我爸爸妈妈也都工作。",
+          "titleZh": "都与也",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "\"我\"和妹妹是什么人？",
+              "options": [
+                {
+                  "text": "老师"
+                },
+                {
+                  "text": "学生"
+                },
+                {
+                  "text": "医生"
+                },
+                {
+                  "text": "工人"
+                }
+              ],
+              "correctAnswer": {
+                "index": 1
+              },
+              "explanation": "Đáp án đúng là 学生 (xuésheng - học sinh). Câu đầu đoạn viết \"我和我妹妹都是学生\" nghĩa là \"Tôi và em gái tôi đều là học sinh\". Chú ý chữ 都 (dōu - đều) cho thấy cả hai người cùng chung một thân phận. Các phương án 老师 (giáo viên), 医生 (bác sĩ), 工人 (công nhân) đều không được nhắc tới trong đoạn nên sai nhé."
+            },
+            {
+              "type": "MCQ",
+              "prompt": "下面哪个是\"我\"和妹妹都不喜欢的？",
+              "options": [
+                {
+                  "text": "看书"
+                },
+                {
+                  "text": "运动"
+                },
+                {
+                  "text": "看电视"
+                },
+                {
+                  "text": "工作"
+                }
+              ],
+              "correctAnswer": {
+                "index": 2
+              },
+              "explanation": "Đáp án đúng là 看电视 (kàn diànshì - xem tivi). Đoạn văn viết \"我们都不喜欢看电视\" - \"Chúng tôi đều không thích xem tivi\". Ở đây 都 + 不 (đều + không) nhấn mạnh cả hai chị em cùng không thích. Ngược lại 看书 (đọc sách) và 运动 (thể thao) là những thứ họ thích, còn 工作 (đi làm) là việc của bố mẹ, nên ba phương án này đều sai."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "\"我\"妹妹也喜欢运动。",
+              "correctAnswer": {
+                "value": true
+              },
+              "explanation": "Nhận định này ĐÚNG. Đoạn văn viết \"我喜欢运动，我妹妹也喜欢运动\" nghĩa là \"Tôi thích thể thao, em gái tôi CŨNG thích thể thao\". Chữ 也 (yě - cũng) dùng để diễn tả một người làm/thích giống người trước đó, đây chính là điểm ngữ pháp trọng tâm của bài. Vì vậy em gái cũng thích vận động là hoàn toàn chính xác."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "\"我\"的爸爸妈妈都不工作。",
+              "correctAnswer": {
+                "value": false
+              },
+              "explanation": "Nhận định này SAI. Câu cuối đoạn viết \"我爸爸妈妈也都工作\" - \"Bố mẹ tôi cũng đều đi làm\", chứ không phải không đi làm. Để ý cụm 也都 (cũng đều): 也 (cũng) nối tiếp ý trước, còn 都 (đều) chỉ cả bố lẫn mẹ. Vì cả hai người đều có đi làm nên câu khẳng định \"đều không đi làm\" là không đúng."
+            },
+            {
+              "type": "FILL_BLANK",
+              "prompt": "我和我妹妹___是学生。",
+              "correctAnswer": {
+                "text": "都",
+                "accepted": []
+              },
+              "explanation": "Từ cần điền là 都 (dōu - đều). Câu gốc trong đoạn là \"我和我妹妹都是学生\". Khi chủ ngữ gồm nhiều người/vật (ở đây là \"tôi và em gái\"), ta dùng 都 đặt trước động từ để diễn tả \"tất cả đều...\". Đây chính là điểm ngữ pháp trọng tâm của bài nên bạn hãy nhớ kỹ vị trí của 都 đứng trước 是 nhé."
+            }
+          ]
+        },
+        {
+          "passage": "我家有四口人，我们都喜欢运动。爸爸喜欢打球，妈妈也喜欢打球。我和妹妹都喜欢游泳。周末我们常常一起去公园运动。",
+          "titleZh": "都与也",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "\"我\"家有几口人？",
+              "options": [
+                {
+                  "text": "三口人"
+                },
+                {
+                  "text": "四口人"
+                },
+                {
+                  "text": "五口人"
+                },
+                {
+                  "text": "六口人"
+                }
+              ],
+              "correctAnswer": {
+                "index": 1
+              },
+              "explanation": "Đáp án đúng là 四口人 (sì kǒu rén - bốn người). Câu mở đầu viết \"我家有四口人\" - \"Nhà tôi có bốn người\". Trong tiếng Trung, 口 (kǒu) là lượng từ chuyên dùng để đếm số người trong gia đình. Các con số 三 (ba), 五 (năm), 六 (sáu) không khớp với đoạn nên đều sai."
+            },
+            {
+              "type": "MCQ",
+              "prompt": "\"我\"和妹妹都喜欢做什么？",
+              "options": [
+                {
+                  "text": "打球"
+                },
+                {
+                  "text": "看书"
+                },
+                {
+                  "text": "游泳"
+                },
+                {
+                  "text": "看电视"
+                }
+              ],
+              "correctAnswer": {
+                "index": 2
+              },
+              "explanation": "Đáp án đúng là 游泳 (yóuyǒng - bơi lội). Đoạn văn viết \"我和妹妹都喜欢游泳\" - \"Tôi và em gái đều thích bơi\". Chữ 都 (đều) nhấn mạnh cả hai chị em cùng thích. Còn 打球 (chơi bóng) là sở thích của bố mẹ, còn 看书 (đọc sách) và 看电视 (xem tivi) không hề được nhắc đến trong đoạn này nên đều sai."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "妈妈也喜欢打球。",
+              "correctAnswer": {
+                "value": true
+              },
+              "explanation": "Nhận định này ĐÚNG. Đoạn văn viết \"爸爸喜欢打球，妈妈也喜欢打球\" nghĩa là \"Bố thích chơi bóng, mẹ CŨNG thích chơi bóng\". Chữ 也 (yě - cũng) cho thấy mẹ có cùng sở thích với bố. Đây là cách dùng 也 điển hình của bài học, nên khẳng định mẹ cũng thích chơi bóng là chính xác."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "周末\"我们\"常常一起去公园运动。",
+              "correctAnswer": {
+                "value": true
+              },
+              "explanation": "Nhận định này ĐÚNG. Câu cuối đoạn viết \"周末我们常常一起去公园运动\" - \"Cuối tuần chúng tôi thường cùng nhau đi công viên tập thể thao\". Trong đó 周末 (cuối tuần), 常常 (thường), 一起 (cùng nhau), 公园 (công viên) đều khớp với nhận định. Vì vậy câu này hoàn toàn đúng với nội dung đoạn văn."
+            },
+            {
+              "type": "FILL_BLANK",
+              "prompt": "我家有四口人，我们___喜欢运动。",
+              "correctAnswer": {
+                "text": "都",
+                "accepted": []
+              },
+              "explanation": "Từ cần điền là 都 (dōu - đều). Câu gốc trong đoạn là \"我们都喜欢运动\". Vì 我们 (chúng tôi) chỉ nhiều người, nên dùng 都 đặt trước động từ 喜欢 để nói \"tất cả mọi người đều thích\". Đây là điểm ngữ pháp trọng tâm 都 của bài; bạn lưu ý 都 luôn đứng trước động từ nhé."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "bai": 34,
+      "topicZh": "不与没(有)",
+      "topicVi": "Phủ định 不/没",
+      "passages": [
+        {
+          "passage": "今天我不舒服，没去上班。我没吃早饭，不想吃东西。妈妈给我做了饭，我不饿。我没喝咖啡，喝了一点儿水。我想休息。",
+          "titleZh": "不与没(有)",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "我今天为什么没去上班？",
+              "options": [
+                {
+                  "text": "因为我不舒服"
+                },
+                {
+                  "text": "因为我很忙"
+                },
+                {
+                  "text": "因为我去喝咖啡了"
+                },
+                {
+                  "text": "因为我去吃早饭了"
+                }
+              ],
+              "correctAnswer": {
+                "index": 0
+              },
+              "explanation": "Đáp án đúng là 因为我不舒服 (vì tôi không khỏe). Trong đoạn có câu 今天我不舒服，没去上班 nghĩa là 'Hôm nay tôi không khỏe, không đi làm'. Chữ 不舒服 (bù shūfu) nghĩa là 'không khỏe, khó chịu trong người'. Lưu ý điểm ngữ pháp: dùng 不 cho trạng thái 舒服 (không khỏe), còn 没 dùng cho việc 去上班 (đã không xảy ra việc đi làm). Các phương án khác (很忙 bận, 去喝咖啡 đi uống cà phê, 去吃早饭 đi ăn sáng) đều không được nhắc tới trong đoạn nên sai."
+            },
+            {
+              "type": "MCQ",
+              "prompt": "我喝了什么？",
+              "options": [
+                {
+                  "text": "咖啡"
+                },
+                {
+                  "text": "牛奶"
+                },
+                {
+                  "text": "一点儿水"
+                },
+                {
+                  "text": "茶"
+                }
+              ],
+              "correctAnswer": {
+                "index": 2
+              },
+              "explanation": "Đáp án đúng là 一点儿水 (một chút nước). Đoạn văn viết 我没喝咖啡，喝了一点儿水 nghĩa là 'Tôi không uống cà phê, uống một chút nước'. Chữ 喝 (hē) là 'uống', 水 (shuǐ) là 'nước', 一点儿 (yìdiǎnr) là 'một chút'. Ở đây 没喝咖啡 dùng 没 vì hành động uống cà phê đã KHÔNG xảy ra; phương án 咖啡 (cà phê) chính là cái bạn KHÔNG uống nên sai, còn 牛奶 (sữa) và 茶 (trà) hoàn toàn không xuất hiện trong đoạn."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "妈妈给我做了饭。",
+              "correctAnswer": {
+                "value": true
+              },
+              "explanation": "Nhận định này ĐÚNG. Đoạn văn có câu 妈妈给我做了饭，我不饿 nghĩa là 'Mẹ nấu cơm cho tôi, tôi không đói'. Chữ 做 (zuò) là 'làm/nấu', 饭 (fàn) là 'cơm', cấu trúc 给我 (gěi wǒ) nghĩa là 'cho tôi'. Vì việc nấu cơm đã thực sự xảy ra nên dùng 做了 với trợ từ 了 chỉ hành động hoàn thành, khác với 不饿 (không đói) dùng 不 để phủ định trạng thái."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "今天我吃了早饭。",
+              "correctAnswer": {
+                "value": false
+              },
+              "explanation": "Nhận định này SAI. Đoạn văn nói rõ 我没吃早饭 nghĩa là 'Tôi chưa/không ăn sáng'. Chữ 早饭 (zǎofàn) là 'bữa sáng', 吃 (chī) là 'ăn'. Điểm ngữ pháp quan trọng: 没吃 dùng 没 vì hành động ăn đã KHÔNG xảy ra trong thực tế, nên nói 'tôi đã ăn sáng' là trái với đoạn văn."
+            },
+            {
+              "type": "FILL_BLANK",
+              "prompt": "我没吃早饭，___想吃东西。",
+              "correctAnswer": {
+                "text": "不",
+                "accepted": []
+              },
+              "explanation": "Đáp án đúng là 不. Câu gốc trong đoạn là 我没吃早饭，不想吃东西 nghĩa là 'Tôi chưa ăn sáng, không muốn ăn gì'. Đây chính là điểm ngữ pháp trọng tâm: 没 đứng trước 吃 (đã không ăn — một sự việc xảy ra trong quá khứ), còn 不 đứng trước 想 (không muốn — phủ định ý chí, mong muốn). Vì thế chỗ trống phải điền 不 chứ không phải 没 nhé."
+            }
+          ]
+        },
+        {
+          "passage": "昨天我没去上班，因为我不舒服。今天我好一点儿了，还不能去工作。我没吃早饭，不想吃东西。我想在家休息，不想出门。",
+          "titleZh": "不与没(有)",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "昨天我为什么没去上班？",
+              "options": [
+                {
+                  "text": "因为我想出门"
+                },
+                {
+                  "text": "因为我不舒服"
+                },
+                {
+                  "text": "因为我去工作了"
+                },
+                {
+                  "text": "因为我吃了早饭"
+                }
+              ],
+              "correctAnswer": {
+                "index": 1
+              },
+              "explanation": "Đáp án đúng là 因为我不舒服 (vì tôi không khỏe). Đoạn văn mở đầu bằng 昨天我没去上班，因为我不舒服 nghĩa là 'Hôm qua tôi không đi làm, vì tôi không khỏe'. Chữ 因为 (yīnwèi) là 'vì/bởi vì' dùng để nêu lý do. Chú ý cách dùng: 没去上班 dùng 没 vì việc đi làm đã không xảy ra, còn 不舒服 dùng 不 cho trạng thái cơ thể. Các phương án khác đều mâu thuẫn với đoạn."
+            },
+            {
+              "type": "MCQ",
+              "prompt": "今天我想做什么？",
+              "options": [
+                {
+                  "text": "去上班"
+                },
+                {
+                  "text": "出门"
+                },
+                {
+                  "text": "在家休息"
+                },
+                {
+                  "text": "去工作"
+                }
+              ],
+              "correctAnswer": {
+                "index": 2
+              },
+              "explanation": "Đáp án đúng là 在家休息 (nghỉ ở nhà). Đoạn văn viết 我想在家休息，不想出门 nghĩa là 'Tôi muốn ở nhà nghỉ, không muốn ra ngoài'. Chữ 在家 (zài jiā) là 'ở nhà', 休息 (xiūxi) là 'nghỉ ngơi', 出门 (chū mén) là 'ra ngoài'. Phương án 出门 sai vì câu dùng 不想出门 (không muốn ra ngoài); còn 去上班 và 去工作 cũng sai vì đoạn nói 还不能去工作 (vẫn chưa thể đi làm), tức không phải điều 'muốn làm'."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "今天我好一点儿了。",
+              "correctAnswer": {
+                "value": true
+              },
+              "explanation": "Nhận định này ĐÚNG. Đoạn văn có câu 今天我好一点儿了 nghĩa là 'Hôm nay tôi đỡ hơn một chút'. Chữ 好 (hǎo) ở đây mang nghĩa 'khỏe/đỡ hơn', 一点儿 (yìdiǎnr) là 'một chút', và trợ từ 了 (le) chỉ sự thay đổi trạng thái. Vì tình trạng sức khỏe đã có chuyển biến nên nói 'hôm nay tôi đỡ hơn một chút' là chính xác."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "今天我能去工作了。",
+              "correctAnswer": {
+                "value": false
+              },
+              "explanation": "Nhận định này SAI. Đoạn văn viết 今天我好一点儿了，还不能去工作 nghĩa là 'Hôm nay tôi đỡ hơn một chút, vẫn chưa thể đi làm'. Cụm 还不能 (hái bù néng) nghĩa là 'vẫn chưa thể', trong đó 能 (néng) là 'có thể'. Vì dùng 不能 để phủ định khả năng, nên nói 'hôm nay tôi có thể đi làm' là ngược với đoạn."
+            },
+            {
+              "type": "FILL_BLANK",
+              "prompt": "我想在家休息，___想出门。",
+              "correctAnswer": {
+                "text": "不",
+                "accepted": []
+              },
+              "explanation": "Đáp án đúng là 不. Câu gốc là 我想在家休息，不想出门 nghĩa là 'Tôi muốn ở nhà nghỉ, không muốn ra ngoài'. Đây là điểm ngữ pháp trọng tâm của bài: 不 dùng để phủ định ý muốn, sở thích (不想 = không muốn), nên đi với động từ 想 (muốn). Khác với 没 (chỉ việc chưa/không xảy ra trong thực tế), ở đây ta đang nói về mong muốn nên bắt buộc dùng 不 nhé."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "bai": 35,
+      "topicZh": "总复习 + 模拟考",
+      "topicVi": "Ôn tập tổng hợp",
+      "passages": [
+        {
+          "passage": "我叫王明，今年二十岁，是大学生。我家在北京，家里有四口人：爸爸、妈妈、妹妹和我。我会说汉语，也会一点儿英语。我每天八点上课，下午回家。我喜欢看书、听音乐。周末我常常和朋友一起去公园。明天是我妈妈的生日，我想给她买一个生日蛋糕。",
+          "titleZh": "总复习 + 模拟考",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "王明今年多大？",
+              "options": [
+                {
+                  "text": "十岁"
+                },
+                {
+                  "text": "二十岁"
+                },
+                {
+                  "text": "二十五岁"
+                },
+                {
+                  "text": "四岁"
+                }
+              ],
+              "correctAnswer": {
+                "index": 1
+              },
+              "explanation": "Đáp án đúng là 二十岁 (èrshí suì) = 20 tuổi. Trong đoạn có câu 今年二十岁 (jīnnián èrshí suì) = năm nay 20 tuổi, với 今年 nghĩa là 'năm nay' và 岁 là từ chỉ tuổi. Các phương án 十岁 (10 tuổi), 二十五岁 (25 tuổi — đây là tuổi của David ở đoạn 2) và 四岁 (4 tuổi — thực ra 四口人 nghĩa là 4 người trong nhà chứ không phải tuổi) đều sai vì không khớp với đoạn."
+            },
+            {
+              "type": "MCQ",
+              "prompt": "王明的家在哪儿？",
+              "options": [
+                {
+                  "text": "美国"
+                },
+                {
+                  "text": "公园"
+                },
+                {
+                  "text": "北京"
+                },
+                {
+                  "text": "大学"
+                }
+              ],
+              "correctAnswer": {
+                "index": 2
+              },
+              "explanation": "Đáp án đúng là 北京 (Běijīng) = Bắc Kinh. Câu 我家在北京 dùng cấu trúc '在 + địa điểm' để chỉ vị trí, trong đó 在 (zài) nghĩa là 'ở/tại'. 美国 (Mỹ) là quê của David ở đoạn 2, 公园 (công viên) là nơi đi chơi cuối tuần, còn 大学 (đại học) chỉ liên quan đến 大学生 (sinh viên) chứ không phải nơi nhà ở, nên ba phương án này đều sai."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "王明会说一点儿英语。",
+              "correctAnswer": {
+                "value": true
+              },
+              "explanation": "Nhận định này ĐÚNG. Đoạn văn viết 我会说汉语，也会一点儿英语 = tôi biết nói tiếng Trung, cũng biết một chút tiếng Anh. Ở đây 会 (huì) diễn tả khả năng đã học được ('biết làm gì'), còn 一点儿 (yìdiǎnr) nghĩa là 'một chút'. Vì vậy nói Vương Minh biết một chút tiếng Anh là hoàn toàn khớp với đoạn."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "王明家里有五口人。",
+              "correctAnswer": {
+                "value": false
+              },
+              "explanation": "Nhận định này SAI. Đoạn văn nói rõ 家里有四口人 = trong nhà có 4 người (bố, mẹ, em gái và tôi), chứ không phải 5 người. Lưu ý lượng từ 口 (kǒu) là từ chuyên dùng để đếm số người trong gia đình. Vì số đúng là 四 (4) nên câu nói 五口人 (5 người) là không đúng."
+            },
+            {
+              "type": "FILL_BLANK",
+              "prompt": "明天是我妈妈的___，我想给她买一个生日蛋糕。",
+              "correctAnswer": {
+                "text": "生日",
+                "accepted": [
+                  "生日。"
+                ]
+              },
+              "explanation": "Từ cần điền là 生日 (shēngrì) = sinh nhật. Câu gốc trong đoạn là 明天是我妈妈的生日 = ngày mai là sinh nhật của mẹ tôi. Chữ 的 (de) ở đây là trợ từ sở hữu, nối 妈妈 (mẹ) với 生日 để tạo nghĩa 'sinh nhật của mẹ'. Đây cũng là lý do tiếp theo bạn muốn mua 生日蛋糕 (bánh sinh nhật) cho mẹ."
+            }
+          ]
+        },
+        {
+          "passage": "我有一个好朋友，他叫大卫，是美国人。他今年二十五岁，在北京工作。他会说汉语，也会做中国菜。他每天坐地铁上班。周末他喜欢去公园跑步，也喜欢和朋友一起看电影。他很喜欢北京。",
+          "titleZh": "总复习 + 模拟考",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "大卫是哪国人？",
+              "options": [
+                {
+                  "text": "中国人"
+                },
+                {
+                  "text": "美国人"
+                },
+                {
+                  "text": "英国人"
+                },
+                {
+                  "text": "北京人"
+                }
+              ],
+              "correctAnswer": {
+                "index": 1
+              },
+              "explanation": "Đáp án đúng là 美国人 (Měiguó rén) = người Mỹ. Đoạn viết 他叫大卫，是美国人, trong đó cấu trúc '是 + ...人' dùng để nói quốc tịch (国 nghĩa là 'nước/quốc gia', 人 là 'người'). 中国人 (người Trung Quốc) sai vì David chỉ biết nói tiếng Trung chứ không phải người Trung Quốc, 英国人 (người Anh) và 北京人 (người Bắc Kinh — chỉ là nơi anh làm việc chứ không phải quê) đều không khớp với đoạn."
+            },
+            {
+              "type": "MCQ",
+              "prompt": "大卫每天怎么上班？",
+              "options": [
+                {
+                  "text": "坐地铁"
+                },
+                {
+                  "text": "跑步"
+                },
+                {
+                  "text": "看电影"
+                },
+                {
+                  "text": "做菜"
+                }
+              ],
+              "correctAnswer": {
+                "index": 0
+              },
+              "explanation": "Đáp án đúng là 坐地铁 (zuò dìtiě) = đi tàu điện ngầm. Câu 他每天坐地铁上班 dùng động từ 坐 (zuò, nghĩa 'ngồi/đi bằng phương tiện') để diễn tả cách di chuyển, với 上班 nghĩa là 'đi làm'. 跑步 (chạy bộ) và 看电影 (xem phim) là hoạt động cuối tuần, còn 做菜 (nấu ăn) là một kỹ năng của David, nên cả ba đều không phải cách anh đi làm."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "大卫会做中国菜。",
+              "correctAnswer": {
+                "value": true
+              },
+              "explanation": "Nhận định này ĐÚNG. Đoạn văn viết 他会说汉语，也会做中国菜 = anh ấy biết nói tiếng Trung, cũng biết nấu món Trung. Động từ 做 (zuò) ở đây nghĩa là 'làm/nấu', kết hợp 做菜 thành 'nấu ăn', và 中国菜 là 'món ăn Trung Quốc'. Vì vậy nói David biết nấu món Trung là chính xác."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "大卫不喜欢北京。",
+              "correctAnswer": {
+                "value": false
+              },
+              "explanation": "Nhận định này SAI. Câu cuối đoạn nói 他很喜欢北京 = anh ấy rất thích Bắc Kinh, trong đó 很 (hěn) là phó từ chỉ mức độ 'rất'. Nhận định lại dùng 不喜欢 (không thích) — chữ 不 (bù) phủ định động từ — nên trái ngược hoàn toàn với ý của đoạn, vì thế là sai."
+            },
+            {
+              "type": "FILL_BLANK",
+              "prompt": "周末他喜欢去公园___，也喜欢和朋友一起看电影。",
+              "correctAnswer": {
+                "text": "跑步",
+                "accepted": [
+                  "跑步。"
+                ]
+              },
+              "explanation": "Từ cần điền là 跑步 (pǎobù) = chạy bộ. Câu gốc là 周末他喜欢去公园跑步 = cuối tuần anh ấy thích đi công viên chạy bộ. Cấu trúc 去 + 地点 + 动作 (đi + nơi chốn + làm gì), tức 去公园跑步 nghĩa là 'đi công viên (để) chạy bộ'. Đây là một trong hai hoạt động cuối tuần của David cùng với 看电影 (xem phim)."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

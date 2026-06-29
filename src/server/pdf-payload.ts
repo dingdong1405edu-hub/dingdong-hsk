@@ -6,6 +6,8 @@ import {
   vocabContentSchema,
   hanziContentSchema,
   writingContentSchema,
+  writingReorderContentSchema,
+  isReorderWriting,
   speakingContentSchema,
   normalizeReadingContent,
   normalizeListeningContent,
@@ -268,6 +270,21 @@ export async function loadRoadmapPayload(lessonId: string, skillSlug: string, us
       break;
     }
     case "WRITING": {
+      // "连词成句" (sắp xếp câu): in thẻ từ cho sẵn + câu đúng & bản dịch.
+      if (isReorderWriting(content)) {
+        const p = writingReorderContentSchema.safeParse(content);
+        if (!p.success) return { status: "notfound" };
+        payload = {
+          kind: "roadmap-writing-reorder",
+          props: {
+            title: lesson.topic,
+            titleZh: lesson.topicZh || p.data.title || null,
+            hskLevel,
+            sentences: p.data.sentences.map((s) => ({ words: s.words, answer: s.answer, translation: s.translation })),
+          },
+        };
+        break;
+      }
       const p = writingContentSchema.safeParse(content);
       if (!p.success) return { status: "notfound" };
       const d = p.data;

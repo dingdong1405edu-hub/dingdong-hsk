@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { BaoBuddy } from "@/components/marketing/bao-buddy";
+import { emitBao } from "@/lib/bao-bus";
 import { FlashcardPhase, type FlashResult } from "./flashcard-phase";
 import type { Exercise } from "@/types";
 
@@ -88,6 +89,9 @@ export function GrammarReview({ title, exercises, closeHref }: Props) {
         closeHref={closeHref}
         label={`Ôn tập · ${title}`}
         onDone={(r) => {
+          const totalCards = r.correct + r.wrong + r.skipped;
+          const pct = totalCards > 0 ? Math.round((r.correct / totalCards) * 100) : 0;
+          emitBao(pct >= 80 ? "celebrate" : "complete");
           setResult(r);
           setStage("done");
         }}

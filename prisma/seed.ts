@@ -290,39 +290,115 @@ const ROADMAP_COURSES: RoadmapCourse[] = [
     level: HSKLevel.HSK2,
     title: "Cuộc sống thường nhật",
     titleZh: "日常生活",
-    description: "Mở rộng vốn từ quanh học tập, đi lại, sức khỏe và cảm xúc để giao tiếp tự nhiên hơn.",
+    description: "595 từ vựng HSK2 qua 35 bài: sở thích, du lịch, thói quen, mua sắm, ăn uống, đi lại, so sánh và trải nghiệm.",
+    // 12 Phần × (2–4 bài) = 35 bài, khớp PDF "TỪ VỰNG HSK2 — 35 BÀI".
+    // Nội dung Từ vựng nạp riêng qua prisma/load-roadmap-vocab-HSK2.ts (id bài: rl-hsk2-1..35).
     chapters: [
       {
-        title: "Học tập & Công việc",
-        titleZh: "学习与工作",
+        title: "Phần I · Sở thích, du lịch & số lượng",
+        titleZh: "",
         lessons: [
-          { topic: "Lớp học", topicZh: "教室", icon: "🏫" },
-          { topic: "Môn học", topicZh: "科目", icon: "📚" },
-          { topic: "Nghề nghiệp", topicZh: "职业", icon: "💼" },
-          { topic: "Đồng nghiệp & Bạn bè", topicZh: "同事与朋友", icon: "🤝" },
-          { topic: "Lịch làm việc", topicZh: "日程", icon: "⏰" },
+          { topic: "Sở thích & du lịch", topicZh: "我想去旅游", icon: "🧳" },
+          { topic: "Lựa chọn tốt nhất", topicZh: "去北京旅游最好", icon: "🌏" },
+          { topic: "Số lượng ước lượng", topicZh: "你要几个？多少钱？", icon: "🔢" },
         ],
       },
       {
-        title: "Đi lại & Địa điểm",
-        titleZh: "出行与地点",
+        title: "Phần II · Thói quen & sức khỏe",
+        titleZh: "",
         lessons: [
-          { topic: "Phương tiện giao thông", topicZh: "交通工具", icon: "🚌" },
-          { topic: "Hỏi đường", topicZh: "问路", icon: "🧭" },
-          { topic: "Thành phố & Nông thôn", topicZh: "城市与乡村", icon: "🏙️" },
-          { topic: "Du lịch", topicZh: "旅游", icon: "✈️" },
-          { topic: "Khách sạn", topicZh: "酒店", icon: "🏨" },
+          { topic: "Thói quen hằng ngày", topicZh: "我每天六点起床", icon: "⏰" },
+          { topic: "Hỏi thăm sức khỏe", topicZh: "你是不是病了？", icon: "🤒" },
+          { topic: "Tâm trạng & cảm giác", topicZh: "我有点儿累", icon: "😟" },
         ],
       },
       {
-        title: "Sức khỏe & Cảm xúc",
-        titleZh: "健康与情感",
+        title: "Phần III · Mô tả đồ vật & vị trí",
+        titleZh: "",
         lessons: [
-          { topic: "Cơ thể", topicZh: "身体", icon: "🫀" },
-          { topic: "Đi khám bệnh", topicZh: "看病", icon: "🩺" },
-          { topic: "Thời tiết", topicZh: "天气", icon: "🌤️" },
-          { topic: "Cảm xúc", topicZh: "情绪", icon: "😊" },
-          { topic: "Mời & Hẹn gặp", topicZh: "邀请与约会", icon: "📨" },
+          { topic: "Mô tả & sở hữu", topicZh: "左边红色的是我的", icon: "🎨" },
+          { topic: "Hành động ngắn", topicZh: "等我一下", icon: "✋" },
+          { topic: "Cảm thán", topicZh: "这个真漂亮！", icon: "😍" },
+        ],
+      },
+      {
+        title: "Phần IV · Công việc & quan hệ",
+        titleZh: "",
+        lessons: [
+          { topic: "Giới thiệu & quen biết", topicZh: "我来介绍一下", icon: "🤝" },
+          { topic: "Công việc & giúp đỡ", topicZh: "他帮我介绍了工作", icon: "💼" },
+          { topic: "Nhấn mạnh thông tin", topicZh: "我是去年来的", icon: "📌" },
+          { topic: "Thời điểm & hoàn thành", topicZh: "下班的时候", icon: "🕕" },
+        ],
+      },
+      {
+        title: "Phần V · Mua sắm",
+        titleZh: "",
+        lessons: [
+          { topic: "Mua sắm & đề nghị", topicZh: "买这件衣服吧", icon: "🛍️" },
+          { topic: "Giá cả & mặc cả", topicZh: "太贵了，便宜点儿吧", icon: "💰" },
+          { topic: "Lưỡng lự", topicZh: "我还想再看看", icon: "🤔" },
+        ],
+      },
+      {
+        title: "Phần VI · Ăn uống & lý do",
+        titleZh: "",
+        lessons: [
+          { topic: "Ăn uống & hỏi lý do", topicZh: "你怎么不吃了？", icon: "🍽️" },
+          { topic: "Nhân quả", topicZh: "因为太辣，所以…", icon: "🌶️" },
+          { topic: "Nhấn mạnh toàn thể", topicZh: "个个都好吃", icon: "🍱" },
+        ],
+      },
+      {
+        title: "Phần VII · Khoảng cách & đi lại",
+        titleZh: "",
+        lessons: [
+          { topic: "Khoảng cách", topicZh: "你家离公司远吗？", icon: "📏" },
+          { topic: "Đi lại & ngữ khí", topicZh: "我还在等车呢", icon: "🚌" },
+          { topic: "Lộ trình & hướng", topicZh: "从家到公司", icon: "🗺️" },
+        ],
+      },
+      {
+        title: "Phần VIII · Quyết định & yêu cầu",
+        titleZh: "",
+        lessons: [
+          { topic: "Suy nghĩ & quyết định", topicZh: "让我想想再说", icon: "💭" },
+          { topic: "Đề nghị lịch sự", topicZh: "你帮我一下，好吗？", icon: "🙏" },
+          { topic: "Nhắc nhở & tìm đồ", topicZh: "别找了，在桌子上呢", icon: "🔍" },
+        ],
+      },
+      {
+        title: "Phần IX · Học tập & kết quả",
+        titleZh: "",
+        lessons: [
+          { topic: "Kế hoạch học tập", topicZh: "我打算好好复习", icon: "📚" },
+          { topic: "Kết quả công việc", topicZh: "题太多，我没做完", icon: "✍️" },
+          { topic: "Tiếp nhận thông tin", topicZh: "我听懂了，也看见了", icon: "👂" },
+          { topic: "Thứ tự", topicZh: "这是第几课？", icon: "🔢" },
+        ],
+      },
+      {
+        title: "Phần X · So sánh & đánh giá",
+        titleZh: "",
+        lessons: [
+          { topic: "So sánh", topicZh: "他比我大三岁", icon: "⚖️" },
+          { topic: "Đánh giá hành động", topicZh: "你穿得太少了", icon: "👕" },
+          { topic: "Suy đoán", topicZh: "明天可能会下雨", icon: "🌧️" },
+        ],
+      },
+      {
+        title: "Phần XI · Trạng thái & trải nghiệm",
+        titleZh: "",
+        lessons: [
+          { topic: "Trạng thái tồn tại", topicZh: "门开着呢", icon: "🚪" },
+          { topic: "Trải nghiệm quá khứ", topicZh: "你看过那个电影吗？", icon: "🎬" },
+        ],
+      },
+      {
+        title: "Phần XII · Sự kiện sắp tới & ôn tập",
+        titleZh: "",
+        lessons: [
+          { topic: "Sự kiện sắp tới & ôn tập", topicZh: "新年就要到了", icon: "🎉" },
         ],
       },
     ],

@@ -1,0 +1,2775 @@
+{
+  "lessons": [
+    {
+      "bai": 1,
+      "clips": [
+        {
+          "dialogueIndex": 1,
+          "transcript": "A：你打算去哪儿旅游？\nB：我想去北京。\nA：为什么？\nB：我觉得北京很美。",
+          "transcriptExplanation": "A: Bạn định đi đâu du lịch? / B: Tôi muốn đi Bắc Kinh. / A: Tại sao? / B: Tôi thấy Bắc Kinh rất đẹp.",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "B 想去哪儿旅游？",
+              "options": [
+                {
+                  "text": "北京"
+                },
+                {
+                  "text": "上海"
+                },
+                {
+                  "text": "长城"
+                },
+                {
+                  "text": "广州"
+                }
+              ],
+              "correctAnswer": {
+                "index": 0
+              },
+              "explanation": "B nói \"我想去北京\" (Tôi muốn đi Bắc Kinh)."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "B 觉得北京很美。",
+              "correctAnswer": {
+                "value": true
+              },
+              "explanation": "B nói \"我觉得北京很美\" (Tôi thấy Bắc Kinh rất đẹp), nên đúng."
+            }
+          ]
+        },
+        {
+          "dialogueIndex": 2,
+          "transcript": "A：旅游是你的爱好吗？\nB：是，我很喜欢旅游。\nA：你想去哪个城市？\nB：我想去长城，听说很有名。",
+          "transcriptExplanation": "A: Du lịch là sở thích của bạn à? / B: Đúng, tôi rất thích du lịch. / A: Bạn muốn đi thành phố nào? / B: Tôi muốn đi Trường Thành, nghe nói rất nổi tiếng.",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "B 想去哪儿？",
+              "options": [
+                {
+                  "text": "长城"
+                },
+                {
+                  "text": "北京"
+                },
+                {
+                  "text": "学校"
+                },
+                {
+                  "text": "医院"
+                }
+              ],
+              "correctAnswer": {
+                "index": 0
+              },
+              "explanation": "B nói \"我想去长城\" (Tôi muốn đi Trường Thành)."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "B 不喜欢旅游。",
+              "correctAnswer": {
+                "value": false
+              },
+              "explanation": "B nói \"我很喜欢旅游\" (Tôi rất thích du lịch), nên câu này sai."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "bai": 2,
+      "clips": [
+        {
+          "dialogueIndex": 1,
+          "transcript": "A：去北京旅游，几月最好？\nB：九月最好，天气很舒服。\nA：为什么？\nB：九月不冷不热，很凉快。",
+          "transcriptExplanation": "A: Đi Bắc Kinh du lịch, tháng mấy là tốt nhất? / B: Tháng 9 tốt nhất, thời tiết rất dễ chịu. / A: Tại sao? / B: Tháng 9 không lạnh không nóng, rất mát mẻ.",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "去北京旅游，几月最好？",
+              "options": [
+                {
+                  "text": "九月"
+                },
+                {
+                  "text": "三月"
+                },
+                {
+                  "text": "六月"
+                },
+                {
+                  "text": "十二月"
+                }
+              ],
+              "correctAnswer": {
+                "index": 0
+              },
+              "explanation": "B nói \"九月最好\" (Tháng 9 tốt nhất)."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "九月天气很舒服。",
+              "correctAnswer": {
+                "value": true
+              },
+              "explanation": "B nói \"九月最好，天气很舒服\" và \"不冷不热，很凉快\", nên đúng."
+            }
+          ]
+        },
+        {
+          "dialogueIndex": 2,
+          "transcript": "A：这几个地方，哪个最美？\nB：我觉得长城最美。\nA：那我们先去长城吧。\nB：好，没问题。",
+          "transcriptExplanation": "A: Mấy nơi này, nơi nào đẹp nhất? / B: Tôi thấy Trường Thành đẹp nhất. / A: Vậy chúng ta đi Trường Thành trước nhé. / B: Được, không vấn đề gì.",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "B 觉得哪个地方最美？",
+              "options": [
+                {
+                  "text": "长城"
+                },
+                {
+                  "text": "北京"
+                },
+                {
+                  "text": "九月"
+                },
+                {
+                  "text": "城市"
+                }
+              ],
+              "correctAnswer": {
+                "index": 0
+              },
+              "explanation": "B nói \"我觉得长城最美\" (Tôi thấy Trường Thành đẹp nhất)."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "他们决定先去长城。",
+              "correctAnswer": {
+                "value": true
+              },
+              "explanation": "A nói \"那我们先去长城吧\" và B đáp \"好，没问题\", nên họ quyết định đi Trường Thành trước."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "bai": 3,
+      "clips": [
+        {
+          "dialogueIndex": 1,
+          "transcript": "A：你要几张票？\nB：我要两张。\nA：一共多少钱？\nB：一共一百块。",
+          "transcriptExplanation": "A: Bạn muốn mấy vé? / B: Tôi muốn hai vé. / A: Tổng cộng bao nhiêu tiền? / B: Tổng cộng một trăm tệ.",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "B 要几张票？",
+              "options": [
+                {
+                  "text": "两张"
+                },
+                {
+                  "text": "一张"
+                },
+                {
+                  "text": "三张"
+                },
+                {
+                  "text": "四张"
+                }
+              ],
+              "correctAnswer": {
+                "index": 0
+              },
+              "explanation": "B nói \"我要两张\" (Tôi muốn hai vé)."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "一共一百块。",
+              "correctAnswer": {
+                "value": true
+              },
+              "explanation": "B nói \"一共一百块\" (Tổng cộng một trăm tệ), nên đúng."
+            }
+          ]
+        },
+        {
+          "dialogueIndex": 2,
+          "transcript": "A：这个西瓜多少钱一斤？\nB：三块钱一斤。\nA：我要两斤。\nB：好，一共六块。",
+          "transcriptExplanation": "A: Dưa hấu này bao nhiêu tiền một cân? / B: Ba tệ một cân. / A: Tôi muốn hai cân. / B: Được, tổng cộng sáu tệ.",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "西瓜多少钱一斤？",
+              "options": [
+                {
+                  "text": "三块"
+                },
+                {
+                  "text": "两块"
+                },
+                {
+                  "text": "六块"
+                },
+                {
+                  "text": "一百块"
+                }
+              ],
+              "correctAnswer": {
+                "index": 0
+              },
+              "explanation": "B nói \"三块钱一斤\" (Ba tệ một cân)."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "买西瓜一共六块。",
+              "correctAnswer": {
+                "value": true
+              },
+              "explanation": "A muốn 两斤 (hai cân), B nói \"一共六块\" (tổng cộng sáu tệ), nên đúng."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "bai": 4,
+      "clips": [
+        {
+          "dialogueIndex": 1,
+          "transcript": "A：你每天几点起床？\nB：我每天六点起床。\nA：起床以后做什么？\nB：我先跑步，然后洗澡。",
+          "transcriptExplanation": "A: Mỗi ngày mấy giờ bạn dậy? / B: Mỗi ngày tôi dậy lúc 6 giờ. / A: Dậy rồi làm gì? / B: Tôi chạy bộ trước, rồi đi tắm.",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "B 每天几点起床？",
+              "options": [
+                {
+                  "text": "五点"
+                },
+                {
+                  "text": "六点"
+                },
+                {
+                  "text": "七点"
+                },
+                {
+                  "text": "八点"
+                }
+              ],
+              "correctAnswer": {
+                "index": 1
+              },
+              "explanation": "B nói \"我每天六点起床\" (Mỗi ngày tôi dậy lúc 6 giờ)."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "B 起床以后先跑步。",
+              "correctAnswer": {
+                "value": true
+              },
+              "explanation": "B nói \"我先跑步，然后洗澡\" (Tôi chạy bộ trước, rồi đi tắm)."
+            }
+          ]
+        },
+        {
+          "dialogueIndex": 2,
+          "transcript": "A：你身体真好！\nB：因为我每天锻炼。\nA：你每天都运动吗？\nB：对，运动让人健康。",
+          "transcriptExplanation": "A: Sức khỏe bạn thật tốt! / B: Vì tôi rèn luyện mỗi ngày. / A: Ngày nào bạn cũng vận động à? / B: Đúng, vận động khiến người ta khỏe.",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "B 的身体为什么很好？",
+              "options": [
+                {
+                  "text": "因为他每天锻炼"
+                },
+                {
+                  "text": "因为他每天睡觉"
+                },
+                {
+                  "text": "因为他每天吃药"
+                },
+                {
+                  "text": "因为他每天休息"
+                }
+              ],
+              "correctAnswer": {
+                "index": 0
+              },
+              "explanation": "B nói \"因为我每天锻炼\" (Vì tôi rèn luyện mỗi ngày)."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "B 每天都运动。",
+              "correctAnswer": {
+                "value": true
+              },
+              "explanation": "B trả lời \"对，运动让人健康\" khi được hỏi \"你每天都运动吗？\" (Đúng, ngày nào cũng vận động)."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "bai": 5,
+      "clips": [
+        {
+          "dialogueIndex": 1,
+          "transcript": "A：你脸色不好，是不是病了？\nB：我有点儿头疼。\nA：你发烧了吗？\nB：有一点儿。",
+          "transcriptExplanation": "A: Sắc mặt bạn không tốt, có phải bị ốm không? / B: Tôi hơi đau đầu. / A: Bạn bị sốt à? / B: Hơi sốt.",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "B 哪里不舒服？",
+              "options": [
+                {
+                  "text": "头疼"
+                },
+                {
+                  "text": "肚子疼"
+                },
+                {
+                  "text": "嗓子疼"
+                },
+                {
+                  "text": "牙疼"
+                }
+              ],
+              "correctAnswer": {
+                "index": 0
+              },
+              "explanation": "B nói \"我有点儿头疼\" (Tôi hơi đau đầu)."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "B 有一点儿发烧。",
+              "correctAnswer": {
+                "value": true
+              },
+              "explanation": "Khi A hỏi \"你发烧了吗？\" B trả lời \"有一点儿\" (Hơi sốt)."
+            }
+          ]
+        },
+        {
+          "dialogueIndex": 2,
+          "transcript": "A：你是不是感冒了？\nB：是，我感冒了。\nA：你应该去医院。\nB：好，我下午去。",
+          "transcriptExplanation": "A: Bạn có phải bị cảm không? / B: Đúng, tôi bị cảm rồi. / A: Bạn nên đi bệnh viện. / B: Được, chiều tôi đi.",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "B 什么时候去医院？",
+              "options": [
+                {
+                  "text": "上午"
+                },
+                {
+                  "text": "中午"
+                },
+                {
+                  "text": "下午"
+                },
+                {
+                  "text": "晚上"
+                }
+              ],
+              "correctAnswer": {
+                "index": 2
+              },
+              "explanation": "B nói \"好，我下午去\" (Được, chiều tôi đi)."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "B 感冒了。",
+              "correctAnswer": {
+                "value": true
+              },
+              "explanation": "B nói \"是，我感冒了\" (Đúng, tôi bị cảm rồi)."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "bai": 6,
+      "clips": [
+        {
+          "dialogueIndex": 1,
+          "transcript": "A：你今天心情怎么样？\nB：我有点儿累。\nA：为什么？\nB：今天工作太多了。",
+          "transcriptExplanation": "A: Hôm nay tâm trạng bạn thế nào? / B: Tôi hơi mệt. / A: Tại sao? / B: Hôm nay nhiều việc quá.",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "B 今天为什么累？",
+              "options": [
+                {
+                  "text": "工作太多了"
+                },
+                {
+                  "text": "睡得太少了"
+                },
+                {
+                  "text": "走得太多了"
+                },
+                {
+                  "text": "吃得太少了"
+                }
+              ],
+              "correctAnswer": {
+                "index": 0
+              },
+              "explanation": "B nói \"今天工作太多了\" (Hôm nay nhiều việc quá)."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "B 今天有点儿累。",
+              "correctAnswer": {
+                "value": true
+              },
+              "explanation": "B nói \"我有点儿累\" (Tôi hơi mệt)."
+            }
+          ]
+        },
+        {
+          "dialogueIndex": 2,
+          "transcript": "A：你怎么了？看起来不太高兴。\nB：我有点儿难过。\nA：别难过，会好的。\nB：谢谢你。",
+          "transcriptExplanation": "A: Bạn sao vậy? Trông không vui lắm. / B: Tôi hơi buồn. / A: Đừng buồn, sẽ ổn thôi. / B: Cảm ơn bạn.",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "B 现在心情怎么样？",
+              "options": [
+                {
+                  "text": "很高兴"
+                },
+                {
+                  "text": "有点儿难过"
+                },
+                {
+                  "text": "很生气"
+                },
+                {
+                  "text": "很累"
+                }
+              ],
+              "correctAnswer": {
+                "index": 1
+              },
+              "explanation": "B nói \"我有点儿难过\" (Tôi hơi buồn)."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "A 让 B 别难过。",
+              "correctAnswer": {
+                "value": true
+              },
+              "explanation": "A nói \"别难过，会好的\" (Đừng buồn, sẽ ổn thôi)."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "bai": 7,
+      "clips": [
+        {
+          "dialogueIndex": 1,
+          "transcript": "A：左边红色的杯子是你的吗？\nB：对，红色的是我的。\nA：那黑色的呢？\nB：黑色的是小明的。",
+          "transcriptExplanation": "A: Cái cốc đỏ bên trái là của bạn à? / B: Đúng, cái màu đỏ là của tôi. / A: Vậy cái màu đen thì sao? / B: Cái màu đen là của Tiểu Minh.",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "黑色的杯子是谁的？",
+              "options": [
+                {
+                  "text": "小明的"
+                },
+                {
+                  "text": "我的"
+                },
+                {
+                  "text": "老师的"
+                },
+                {
+                  "text": "他妈妈的"
+                }
+              ],
+              "correctAnswer": {
+                "index": 0
+              },
+              "explanation": "B nói \"黑色的是小明的\" (Cái màu đen là của Tiểu Minh)."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "红色的杯子是B的。",
+              "options": [],
+              "correctAnswer": {
+                "value": true
+              },
+              "explanation": "B trả lời \"对，红色的是我的\" (Đúng, cái màu đỏ là của tôi)."
+            }
+          ]
+        },
+        {
+          "dialogueIndex": 2,
+          "transcript": "A：这个新手机是谁的？\nB：是我的。\nA：真漂亮！\nB：谢谢，是新买的。",
+          "transcriptExplanation": "A: Cái điện thoại mới này của ai? / B: Của tôi. / A: Thật đẹp! / B: Cảm ơn, là mới mua đấy.",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "他们在说什么？",
+              "options": [
+                {
+                  "text": "一个新手机"
+                },
+                {
+                  "text": "一本书"
+                },
+                {
+                  "text": "一杯水"
+                },
+                {
+                  "text": "一件衣服"
+                }
+              ],
+              "correctAnswer": {
+                "index": 0
+              },
+              "explanation": "A hỏi \"这个新手机是谁的？\" (Cái điện thoại mới này của ai?)."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "这个手机是新买的。",
+              "options": [],
+              "correctAnswer": {
+                "value": true
+              },
+              "explanation": "B nói \"谢谢，是新买的\" (Cảm ơn, là mới mua đấy)."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "bai": 8,
+      "clips": [
+        {
+          "dialogueIndex": 1,
+          "transcript": "A：请等我一下。\nB：好，你去哪儿？\nA：我去买点儿东西，很快回来。\nB：好，我在这儿等你。",
+          "transcriptExplanation": "A: Đợi tôi một lát. / B: Được, bạn đi đâu? / A: Tôi đi mua chút đồ, về ngay. / B: Được, tôi đợi bạn ở đây.",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "A要去做什么？",
+              "options": [
+                {
+                  "text": "去买东西"
+                },
+                {
+                  "text": "去上班"
+                },
+                {
+                  "text": "去睡觉"
+                },
+                {
+                  "text": "去看医生"
+                }
+              ],
+              "correctAnswer": {
+                "index": 0
+              },
+              "explanation": "A nói \"我去买点儿东西，很快回来\" (Tôi đi mua chút đồ, về ngay)."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "B在这儿等A。",
+              "options": [],
+              "correctAnswer": {
+                "value": true
+              },
+              "explanation": "B nói \"好，我在这儿等你\" (Được, tôi đợi bạn ở đây)."
+            }
+          ]
+        },
+        {
+          "dialogueIndex": 2,
+          "transcript": "A：这件衣服我能试试吗？\nB：当然可以，你试一下吧。\nA：在哪儿试？\nB：在那边。",
+          "transcriptExplanation": "A: Cái áo này tôi mặc thử được không? / B: Đương nhiên được, bạn thử một chút đi. / A: Thử ở đâu? / B: Ở bên kia.",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "A想做什么？",
+              "options": [
+                {
+                  "text": "试一件衣服"
+                },
+                {
+                  "text": "买一个手机"
+                },
+                {
+                  "text": "喝水"
+                },
+                {
+                  "text": "看书"
+                }
+              ],
+              "correctAnswer": {
+                "index": 0
+              },
+              "explanation": "A hỏi \"这件衣服我能试试吗？\" (Cái áo này tôi mặc thử được không?)."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "B不让A试衣服。",
+              "options": [],
+              "correctAnswer": {
+                "value": false
+              },
+              "explanation": "B nói \"当然可以，你试一下吧\" (Đương nhiên được, bạn thử đi) — tức là cho phép."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "bai": 9,
+      "clips": [
+        {
+          "dialogueIndex": 1,
+          "transcript": "A：你看，这个杯子真漂亮！\nB：对，好看极了。\nA：多少钱？\nB：不太贵。",
+          "transcriptExplanation": "A: Bạn xem, cái cốc này thật đẹp! / B: Đúng, đẹp cực kỳ. / A: Bao nhiêu tiền? / B: Không đắt lắm.",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "这个杯子贵吗？",
+              "options": [
+                {
+                  "text": "不太贵"
+                },
+                {
+                  "text": "很贵"
+                },
+                {
+                  "text": "非常贵"
+                },
+                {
+                  "text": "不知道"
+                }
+              ],
+              "correctAnswer": {
+                "index": 0
+              },
+              "explanation": "B trả lời \"不太贵\" (Không đắt lắm)."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "他们觉得这个杯子很漂亮。",
+              "options": [],
+              "correctAnswer": {
+                "value": true
+              },
+              "explanation": "A nói \"这个杯子真漂亮！\" và B đáp \"好看极了\" (đẹp cực kỳ)."
+            }
+          ]
+        },
+        {
+          "dialogueIndex": 2,
+          "transcript": "A：今天天气真好！\nB：好极了，我们出去玩吧。\nA：去哪儿？\nB：去公园。",
+          "transcriptExplanation": "A: Hôm nay thời tiết thật đẹp! / B: Tốt cực kỳ, chúng ta đi chơi đi. / A: Đi đâu? / B: Đi công viên.",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "他们要去哪儿？",
+              "options": [
+                {
+                  "text": "公园"
+                },
+                {
+                  "text": "商店"
+                },
+                {
+                  "text": "学校"
+                },
+                {
+                  "text": "家"
+                }
+              ],
+              "correctAnswer": {
+                "index": 0
+              },
+              "explanation": "B trả lời \"去公园\" (Đi công viên)."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "今天天气很好。",
+              "options": [],
+              "correctAnswer": {
+                "value": true
+              },
+              "explanation": "A nói \"今天天气真好！\" (Hôm nay thời tiết thật đẹp)."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "bai": 10,
+      "clips": [
+        {
+          "dialogueIndex": 1,
+          "transcript": "A：我来介绍一下，这是我的朋友小明。\nB：你好，认识你很高兴。\nA：他是我的同事。\nB：欢迎欢迎。",
+          "transcriptExplanation": "A: Để tôi giới thiệu, đây là bạn tôi Tiểu Minh. / B: Xin chào, rất vui được quen bạn. / A: Anh ấy là đồng nghiệp của tôi. / B: Hoan nghênh.",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "小明是谁？",
+              "options": [
+                {
+                  "text": "A的朋友"
+                },
+                {
+                  "text": "A的老师"
+                },
+                {
+                  "text": "B的哥哥"
+                },
+                {
+                  "text": "B的同事"
+                }
+              ],
+              "correctAnswer": {
+                "index": 0
+              },
+              "explanation": "A nói \"这是我的朋友小明\" (đây là bạn tôi Tiểu Minh), nên Tiểu Minh là bạn của A."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "小明是A的同事。",
+              "correctAnswer": {
+                "value": true
+              },
+              "explanation": "A nói \"他是我的同事\" (anh ấy là đồng nghiệp của tôi), nên đúng."
+            }
+          ]
+        },
+        {
+          "dialogueIndex": 2,
+          "transcript": "A：这是你的猫吗？\nB：对，它叫小白。\nA：它真可爱！\nB：是，我很喜欢它。",
+          "transcriptExplanation": "A: Đây là mèo của bạn à? / B: Đúng, nó tên Tiểu Bạch. / A: Nó thật đáng yêu! / B: Đúng, tôi rất thích nó.",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "这只猫叫什么名字？",
+              "options": [
+                {
+                  "text": "小白"
+                },
+                {
+                  "text": "小明"
+                },
+                {
+                  "text": "小黑"
+                },
+                {
+                  "text": "小花"
+                }
+              ],
+              "correctAnswer": {
+                "index": 0
+              },
+              "explanation": "B nói \"它叫小白\" (nó tên Tiểu Bạch), nên tên con mèo là 小白."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "B很喜欢这只猫。",
+              "correctAnswer": {
+                "value": true
+              },
+              "explanation": "B nói \"我很喜欢它\" (tôi rất thích nó), nên đúng."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "bai": 11,
+      "clips": [
+        {
+          "dialogueIndex": 1,
+          "transcript": "A：你的工作是他帮你找的吗？\nB：对，他帮我介绍了工作。\nA：真好！\nB：是，老板让我下星期上班。",
+          "transcriptExplanation": "A: Công việc của bạn là anh ấy giúp tìm à? / B: Đúng, anh ấy giúp tôi giới thiệu việc làm. / A: Thật tốt! / B: Đúng, sếp bảo tôi tuần sau đi làm.",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "B什么时候上班？",
+              "options": [
+                {
+                  "text": "下星期"
+                },
+                {
+                  "text": "今天"
+                },
+                {
+                  "text": "明天"
+                },
+                {
+                  "text": "下午"
+                }
+              ],
+              "correctAnswer": {
+                "index": 0
+              },
+              "explanation": "B nói \"老板让我下星期上班\" (sếp bảo tôi tuần sau đi làm), nên là 下星期."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "他帮B介绍了工作。",
+              "correctAnswer": {
+                "value": true
+              },
+              "explanation": "B nói \"他帮我介绍了工作\" (anh ấy giúp tôi giới thiệu việc làm), nên đúng."
+            }
+          ]
+        },
+        {
+          "dialogueIndex": 2,
+          "transcript": "A：经理叫我们开会。\nB：什么时候？\nA：下午两点。\nB：好，我准备一下。",
+          "transcriptExplanation": "A: Quản lý bảo chúng ta họp. / B: Khi nào? / A: 2 giờ chiều. / B: Được, tôi chuẩn bị một chút.",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "他们几点开会？",
+              "options": [
+                {
+                  "text": "下午两点"
+                },
+                {
+                  "text": "上午两点"
+                },
+                {
+                  "text": "下午三点"
+                },
+                {
+                  "text": "中午十二点"
+                }
+              ],
+              "correctAnswer": {
+                "index": 0
+              },
+              "explanation": "A nói \"下午两点\" (2 giờ chiều) khi B hỏi khi nào họp, nên là 下午两点."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "是经理叫他们开会的。",
+              "correctAnswer": {
+                "value": true
+              },
+              "explanation": "A nói \"经理叫我们开会\" (quản lý bảo chúng ta họp), nên đúng."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "bai": 12,
+      "clips": [
+        {
+          "dialogueIndex": 1,
+          "transcript": "A：你是什么时候来北京的？\nB：我是去年来的。\nA：你是怎么来的？\nB：我是坐飞机来的。",
+          "transcriptExplanation": "A: Bạn đến Bắc Kinh khi nào? / B: Tôi đến năm ngoái đấy. / A: Bạn đến bằng cách nào? / B: Tôi đến bằng máy bay.",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "B是怎么来北京的？",
+              "options": [
+                {
+                  "text": "坐飞机"
+                },
+                {
+                  "text": "坐火车"
+                },
+                {
+                  "text": "坐船"
+                },
+                {
+                  "text": "开车"
+                }
+              ],
+              "correctAnswer": {
+                "index": 0
+              },
+              "explanation": "B nói \"我是坐飞机来的\" (tôi đến bằng máy bay), nên là 坐飞机."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "B是去年来北京的。",
+              "correctAnswer": {
+                "value": true
+              },
+              "explanation": "B nói \"我是去年来的\" (tôi đến năm ngoái đấy), nên đúng."
+            }
+          ]
+        },
+        {
+          "dialogueIndex": 2,
+          "transcript": "A：你是一个人来的吗？\nB：不是，我是跟朋友一起来的。\nA：你们是从哪儿来的？\nB：我们是从越南来的。",
+          "transcriptExplanation": "A: Bạn đến một mình à? / B: Không, tôi đến cùng bạn. / A: Các bạn đến từ đâu? / B: Chúng tôi đến từ Việt Nam.",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "他们是从哪儿来的？",
+              "options": [
+                {
+                  "text": "越南"
+                },
+                {
+                  "text": "北京"
+                },
+                {
+                  "text": "中国"
+                },
+                {
+                  "text": "美国"
+                }
+              ],
+              "correctAnswer": {
+                "index": 0
+              },
+              "explanation": "B nói \"我们是从越南来的\" (chúng tôi đến từ Việt Nam), nên là 越南."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "B是一个人来的。",
+              "correctAnswer": {
+                "value": false
+              },
+              "explanation": "B nói \"不是，我是跟朋友一起来的\" (không, tôi đến cùng bạn), nên sai."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "bai": 13,
+      "clips": [
+        {
+          "dialogueIndex": 1,
+          "transcript": "A：你什么时候最累？\nB：下班的时候最累。\nA：你现在吃饭了吗？\nB：我已经吃了。",
+          "transcriptExplanation": "A: Bạn mệt nhất lúc nào? / B: Lúc tan làm mệt nhất. / A: Giờ bạn ăn cơm chưa? / B: Tôi đã ăn rồi.",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "B什么时候最累？",
+              "options": [
+                {
+                  "text": "下班的时候"
+                },
+                {
+                  "text": "上班的时候"
+                },
+                {
+                  "text": "上课的时候"
+                },
+                {
+                  "text": "吃饭的时候"
+                }
+              ],
+              "correctAnswer": {
+                "index": 0
+              },
+              "explanation": "B nói \"下班的时候最累\" (lúc tan làm mệt nhất), nên là 下班的时候."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "B已经吃饭了。",
+              "correctAnswer": {
+                "value": true
+              },
+              "explanation": "B nói \"我已经吃了\" (tôi đã ăn rồi), nên đúng."
+            }
+          ]
+        },
+        {
+          "dialogueIndex": 2,
+          "transcript": "A：你来的时候，我还没到。\nB：对，我等了你一会儿。\nA：对不起，路上堵车了。\nB：没关系。",
+          "transcriptExplanation": "A: Lúc bạn đến, tôi vẫn chưa tới. / B: Đúng, tôi đợi bạn một lát. / A: Xin lỗi, trên đường tắc xe. / B: Không sao.",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "A为什么迟到了？",
+              "options": [
+                {
+                  "text": "路上堵车"
+                },
+                {
+                  "text": "睡过头了"
+                },
+                {
+                  "text": "天气不好"
+                },
+                {
+                  "text": "找不到路"
+                }
+              ],
+              "correctAnswer": {
+                "index": 0
+              },
+              "explanation": "A nói \"对不起，路上堵车了\" (xin lỗi, trên đường tắc xe), nên lý do là 路上堵车."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "B等了A一会儿。",
+              "correctAnswer": {
+                "value": true
+              },
+              "explanation": "B nói \"我等了你一会儿\" (tôi đợi bạn một lát), nên đúng."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "bai": 14,
+      "clips": [
+        {
+          "dialogueIndex": 1,
+          "transcript": "A：这件衣服很好看，你买吧。\nB：多少钱？\nA：一百五十块。\nB：好，我买这件。",
+          "transcriptExplanation": "A: Cái áo này rất đẹp, bạn mua đi. / B: Bao nhiêu tiền? / A: 150 tệ. / B: Được, tôi mua cái này.",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "这件衣服多少钱？",
+              "options": [
+                {
+                  "text": "一百块"
+                },
+                {
+                  "text": "一百五十块"
+                },
+                {
+                  "text": "一百八十块"
+                },
+                {
+                  "text": "两百块"
+                }
+              ],
+              "correctAnswer": {
+                "index": 1
+              },
+              "explanation": "A nói \"一百五十块\" (150 tệ)."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "B最后买了这件衣服。",
+              "correctAnswer": {
+                "value": true
+              },
+              "explanation": "B nói \"好，我买这件\" (Được, tôi mua cái này)."
+            }
+          ]
+        },
+        {
+          "dialogueIndex": 2,
+          "transcript": "A：你看这条裙子怎么样？\nB：很漂亮，你试试吧。\nA：好，我试一下。\nB：颜色也很合适。",
+          "transcriptExplanation": "A: Bạn xem cái váy này thế nào? / B: Rất đẹp, bạn thử đi. / A: Được, tôi thử một chút. / B: Màu cũng rất hợp.",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "他们在说什么？",
+              "options": [
+                {
+                  "text": "一条裙子"
+                },
+                {
+                  "text": "一件衣服"
+                },
+                {
+                  "text": "一双鞋"
+                },
+                {
+                  "text": "一个菜"
+                }
+              ],
+              "correctAnswer": {
+                "index": 0
+              },
+              "explanation": "A hỏi \"你看这条裙子怎么样？\" (cái váy)."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "B觉得这条裙子的颜色很合适。",
+              "correctAnswer": {
+                "value": true
+              },
+              "explanation": "B nói \"颜色也很合适\" (Màu cũng rất hợp)."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "bai": 15,
+      "clips": [
+        {
+          "dialogueIndex": 1,
+          "transcript": "A：这个太贵了，便宜点儿吧。\nB：那一百块吧。\nA：还是有点儿贵。\nB：好，九十块，不能再便宜了。",
+          "transcriptExplanation": "A: Cái này đắt quá, rẻ chút đi. / B: Vậy một trăm tệ nhé. / A: Vẫn hơi đắt. / B: Được, 90 tệ, không rẻ hơn được nữa.",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "最后多少钱？",
+              "options": [
+                {
+                  "text": "一百块"
+                },
+                {
+                  "text": "九十块"
+                },
+                {
+                  "text": "八十块"
+                },
+                {
+                  "text": "一百八十块"
+                }
+              ],
+              "correctAnswer": {
+                "index": 1
+              },
+              "explanation": "B nói cuối cùng \"九十块，不能再便宜了\" (90 tệ)."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "A觉得东西太贵了。",
+              "correctAnswer": {
+                "value": true
+              },
+              "explanation": "A nói \"这个太贵了，便宜点儿吧\" (đắt quá, rẻ chút đi)."
+            }
+          ]
+        },
+        {
+          "dialogueIndex": 2,
+          "transcript": "A：这双鞋多少钱？\nB：两百块。\nA：太贵了，便宜点儿就买。\nB：那就一百八。",
+          "transcriptExplanation": "A: Đôi giày này bao nhiêu tiền? / B: 200 tệ. / A: Đắt quá, rẻ chút thì tôi mua. / B: Vậy 180 tệ.",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "这双鞋原来多少钱？",
+              "options": [
+                {
+                  "text": "一百块"
+                },
+                {
+                  "text": "一百八"
+                },
+                {
+                  "text": "两百块"
+                },
+                {
+                  "text": "九十块"
+                }
+              ],
+              "correctAnswer": {
+                "index": 2
+              },
+              "explanation": "B nói giá ban đầu \"两百块\" (200 tệ)."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "B最后便宜到了一百八。",
+              "correctAnswer": {
+                "value": true
+              },
+              "explanation": "B nói \"那就一百八\" (Vậy 180 tệ)."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "bai": 16,
+      "clips": [
+        {
+          "dialogueIndex": 1,
+          "transcript": "A：你买这件吗？\nB：我还想再看看。\nA：这件很好看。\nB：我再考虑一下。",
+          "transcriptExplanation": "A: Bạn mua cái này à? / B: Tôi vẫn muốn xem thêm. / A: Cái này rất đẹp. / B: Tôi cân nhắc thêm chút.",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "B想做什么？",
+              "options": [
+                {
+                  "text": "马上买这件"
+                },
+                {
+                  "text": "再看看，考虑一下"
+                },
+                {
+                  "text": "不买东西了"
+                },
+                {
+                  "text": "买别的颜色"
+                }
+              ],
+              "correctAnswer": {
+                "index": 1
+              },
+              "explanation": "B nói \"我还想再看看\" và \"我再考虑一下\" (muốn xem thêm và cân nhắc)."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "B已经决定买这件了。",
+              "correctAnswer": {
+                "value": false
+              },
+              "explanation": "B còn lưỡng lự, nói \"我再考虑一下\" (cân nhắc thêm), chưa quyết định."
+            }
+          ]
+        },
+        {
+          "dialogueIndex": 2,
+          "transcript": "A：你决定了吗？\nB：还没有，我还想看看别的。\nA：好，慢慢看。\nB：谢谢。",
+          "transcriptExplanation": "A: Bạn quyết định chưa? / B: Vẫn chưa, tôi vẫn muốn xem cái khác. / A: Được, xem từ từ. / B: Cảm ơn.",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "B决定了吗？",
+              "options": [
+                {
+                  "text": "决定了"
+                },
+                {
+                  "text": "还没有"
+                },
+                {
+                  "text": "不买了"
+                },
+                {
+                  "text": "买了别的"
+                }
+              ],
+              "correctAnswer": {
+                "index": 1
+              },
+              "explanation": "B nói \"还没有，我还想看看别的\" (Vẫn chưa)."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "A让B慢慢看。",
+              "correctAnswer": {
+                "value": true
+              },
+              "explanation": "A nói \"好，慢慢看\" (Được, xem từ từ)."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "bai": 17,
+      "clips": [
+        {
+          "dialogueIndex": 1,
+          "transcript": "A：你怎么不吃了？\nB：我吃饱了。\nA：这个菜不好吃吗？\nB：不是，很好吃，可是我饱了。",
+          "transcriptExplanation": "A: Sao bạn không ăn nữa? / B: Tôi no rồi. / A: Món này không ngon à? / B: Không, rất ngon, nhưng tôi no rồi.",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "B为什么不吃了？",
+              "options": [
+                {
+                  "text": "因为菜不好吃"
+                },
+                {
+                  "text": "因为他吃饱了"
+                },
+                {
+                  "text": "因为菜太辣"
+                },
+                {
+                  "text": "因为他不喜欢"
+                }
+              ],
+              "correctAnswer": {
+                "index": 1
+              },
+              "explanation": "B nói '我吃饱了' và '可是我饱了' — anh ấy không ăn nữa vì đã no."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "这个菜不好吃。",
+              "correctAnswer": {
+                "value": false
+              },
+              "explanation": "B nói '不是，很好吃' — món ăn rất ngon, nên câu này sai."
+            }
+          ]
+        },
+        {
+          "dialogueIndex": 2,
+          "transcript": "A：这个菜怎么这么辣？\nB：因为放了很多辣的东西。\nA：我不太能吃辣。\nB：那你少吃点儿。",
+          "transcriptExplanation": "A: Món này sao cay thế? / B: Vì cho nhiều đồ cay. / A: Tôi không ăn cay được lắm. / B: Vậy bạn ăn ít thôi.",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "这个菜为什么这么辣？",
+              "options": [
+                {
+                  "text": "因为放了很多辣的东西"
+                },
+                {
+                  "text": "因为放了很多盐"
+                },
+                {
+                  "text": "因为放了很多糖"
+                },
+                {
+                  "text": "因为菜不新鲜"
+                }
+              ],
+              "correctAnswer": {
+                "index": 0
+              },
+              "explanation": "B trả lời '因为放了很多辣的东西' — vì cho nhiều đồ cay."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "A很能吃辣。",
+              "correctAnswer": {
+                "value": false
+              },
+              "explanation": "A nói '我不太能吃辣' — A không ăn cay được lắm, nên câu này sai."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "bai": 18,
+      "clips": [
+        {
+          "dialogueIndex": 1,
+          "transcript": "A：你怎么没吃这个菜？\nB：因为太辣了，所以我没吃。\nA：那你吃别的吧。\nB：好。",
+          "transcriptExplanation": "A: Sao bạn không ăn món này? / B: Vì cay quá nên tôi không ăn. / A: Vậy bạn ăn món khác đi. / B: Được.",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "B为什么没吃这个菜？",
+              "options": [
+                {
+                  "text": "因为太贵了"
+                },
+                {
+                  "text": "因为太辣了"
+                },
+                {
+                  "text": "因为太咸了"
+                },
+                {
+                  "text": "因为吃饱了"
+                }
+              ],
+              "correctAnswer": {
+                "index": 1
+              },
+              "explanation": "B nói '因为太辣了，所以我没吃' — vì cay quá nên không ăn."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "A让B吃别的菜。",
+              "correctAnswer": {
+                "value": true
+              },
+              "explanation": "A nói '那你吃别的吧' — A bảo B ăn món khác, nên câu này đúng."
+            }
+          ]
+        },
+        {
+          "dialogueIndex": 2,
+          "transcript": "A：你昨天怎么没来？\nB：因为我生病了，所以没来。\nA：现在好点儿了吗？\nB：好多了，谢谢。",
+          "transcriptExplanation": "A: Hôm qua sao bạn không đến? / B: Vì tôi bị ốm nên không đến. / A: Giờ đỡ hơn chưa? / B: Đỡ nhiều rồi, cảm ơn.",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "B昨天为什么没来？",
+              "options": [
+                {
+                  "text": "因为他生病了"
+                },
+                {
+                  "text": "因为他很忙"
+                },
+                {
+                  "text": "因为天气不好"
+                },
+                {
+                  "text": "因为他不想来"
+                }
+              ],
+              "correctAnswer": {
+                "index": 0
+              },
+              "explanation": "B nói '因为我生病了，所以没来' — vì bị ốm nên không đến."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "B现在好多了。",
+              "correctAnswer": {
+                "value": true
+              },
+              "explanation": "B trả lời '好多了，谢谢' — giờ đã đỡ nhiều rồi, nên câu này đúng."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "bai": 19,
+      "clips": [
+        {
+          "dialogueIndex": 1,
+          "transcript": "A：这些菜个个都好吃。\nB：对，你多吃点儿。\nA：这个鱼也很新鲜。\nB：这儿的鱼条条都新鲜。",
+          "transcriptExplanation": "A: Mấy món này cái nào cũng ngon. / B: Đúng, bạn ăn nhiều chút. / A: Con cá này cũng rất tươi. / B: Cá ở đây con nào cũng tươi.",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "A觉得这些菜怎么样？",
+              "options": [
+                {
+                  "text": "个个都好吃"
+                },
+                {
+                  "text": "都太辣了"
+                },
+                {
+                  "text": "都不新鲜"
+                },
+                {
+                  "text": "都不好吃"
+                }
+              ],
+              "correctAnswer": {
+                "index": 0
+              },
+              "explanation": "A nói '这些菜个个都好吃' — món nào cũng ngon."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "这儿的鱼条条都新鲜。",
+              "correctAnswer": {
+                "value": true
+              },
+              "explanation": "B nói '这儿的鱼条条都新鲜' — cá ở đây con nào cũng tươi, nên câu này đúng."
+            }
+          ]
+        },
+        {
+          "dialogueIndex": 2,
+          "transcript": "A：这些衣服件件都很漂亮。\nB：对，你喜欢哪件？\nA：我都喜欢。\nB：那就都买吧。",
+          "transcriptExplanation": "A: Mấy cái áo này cái nào cũng đẹp. / B: Đúng, bạn thích cái nào? / A: Tôi đều thích. / B: Vậy mua hết đi.",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "A喜欢哪件衣服？",
+              "options": [
+                {
+                  "text": "只喜欢一件"
+                },
+                {
+                  "text": "都喜欢"
+                },
+                {
+                  "text": "都不喜欢"
+                },
+                {
+                  "text": "喜欢两件"
+                }
+              ],
+              "correctAnswer": {
+                "index": 1
+              },
+              "explanation": "A nói '我都喜欢' — A thích tất cả các cái áo."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "B说这些衣服件件都很漂亮。",
+              "correctAnswer": {
+                "value": false
+              },
+              "explanation": "Câu '这些衣服件件都很漂亮' là do A nói, không phải B; B chỉ đáp '对，你喜欢哪件？', nên câu này sai."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "bai": 20,
+      "clips": [
+        {
+          "dialogueIndex": 1,
+          "transcript": "A：你家离公司远吗？\nB：不太远，坐地铁二十分钟。\nA：很方便。\nB：对，很方便。",
+          "transcriptExplanation": "A: Nhà bạn cách công ty xa không? / B: Không xa lắm, đi tàu điện 20 phút. / A: Rất tiện. / B: Đúng, rất tiện.",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "他坐地铁去公司要多长时间？",
+              "options": [
+                {
+                  "text": "十分钟"
+                },
+                {
+                  "text": "二十分钟"
+                },
+                {
+                  "text": "三十分钟"
+                },
+                {
+                  "text": "五分钟"
+                }
+              ],
+              "correctAnswer": {
+                "index": 1
+              },
+              "explanation": "B nói \"不太远，坐地铁二十分钟\" - đi tàu điện 20 phút."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "他家离公司很方便。",
+              "correctAnswer": {
+                "value": true
+              },
+              "explanation": "A nói \"很方便\" và B đồng ý \"对，很方便\" - rất tiện."
+            }
+          ]
+        },
+        {
+          "dialogueIndex": 2,
+          "transcript": "A：地铁站离这儿近吗？\nB：很近，走五分钟就到。\nA：太好了。\nB：我们走着去吧。",
+          "transcriptExplanation": "A: Ga tàu điện cách đây gần không? / B: Rất gần, đi bộ 5 phút là tới. / A: Tốt quá. / B: Chúng ta đi bộ đi.",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "走到地铁站要几分钟？",
+              "options": [
+                {
+                  "text": "五分钟"
+                },
+                {
+                  "text": "十分钟"
+                },
+                {
+                  "text": "二十分钟"
+                },
+                {
+                  "text": "十五分钟"
+                }
+              ],
+              "correctAnswer": {
+                "index": 0
+              },
+              "explanation": "B nói \"很近，走五分钟就到\" - đi bộ 5 phút là tới."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "他们要坐地铁去。",
+              "correctAnswer": {
+                "value": false
+              },
+              "explanation": "B nói \"我们走着去吧\" - đi bộ đi, không phải đi tàu điện."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "bai": 21,
+      "clips": [
+        {
+          "dialogueIndex": 1,
+          "transcript": "A：你到了吗？\nB：还没有，我还在等车呢。\nA：车怎么还没来？\nB：路上堵车，可能要晚一点儿。",
+          "transcriptExplanation": "A: Bạn tới chưa? / B: Vẫn chưa, tôi vẫn đang đợi xe đây. / A: Sao xe vẫn chưa đến? / B: Trên đường tắc xe, có lẽ hơi muộn một chút.",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "车为什么还没来？",
+              "options": [
+                {
+                  "text": "路上堵车"
+                },
+                {
+                  "text": "下雨了"
+                },
+                {
+                  "text": "司机病了"
+                },
+                {
+                  "text": "车坏了"
+                }
+              ],
+              "correctAnswer": {
+                "index": 0
+              },
+              "explanation": "B nói \"路上堵车，可能要晚一点儿\" - trên đường tắc xe."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "B已经到了。",
+              "correctAnswer": {
+                "value": false
+              },
+              "explanation": "B nói \"还没有，我还在等车呢\" - vẫn chưa tới, đang đợi xe."
+            }
+          ]
+        },
+        {
+          "dialogueIndex": 2,
+          "transcript": "A：你在做什么呢？\nB：我在车站等你呢。\nA：我马上到。\nB：好，你慢点儿。",
+          "transcriptExplanation": "A: Bạn đang làm gì đấy? / B: Tôi đang đợi bạn ở bến xe đây. / A: Tôi tới ngay. / B: Được, bạn đi chậm thôi.",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "B现在在哪儿？",
+              "options": [
+                {
+                  "text": "在家"
+                },
+                {
+                  "text": "在车站"
+                },
+                {
+                  "text": "在公司"
+                },
+                {
+                  "text": "在学校"
+                }
+              ],
+              "correctAnswer": {
+                "index": 1
+              },
+              "explanation": "B nói \"我在车站等你呢\" - đang ở bến xe."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "A马上就到。",
+              "correctAnswer": {
+                "value": true
+              },
+              "explanation": "A nói \"我马上到\" - tôi tới ngay."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "bai": 22,
+      "clips": [
+        {
+          "dialogueIndex": 1,
+          "transcript": "A：从你家到公司怎么走？\nB：一直往前走，到红绿灯往左拐。\nA：远吗？\nB：不远，十分钟就到。",
+          "transcriptExplanation": "A: Từ nhà bạn đến công ty đi thế nào? / B: Cứ đi thẳng, đến đèn giao thông rẽ trái. / A: Xa không? / B: Không xa, 10 phút là tới.",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "到红绿灯以后要往哪边拐？",
+              "options": [
+                {
+                  "text": "往右拐"
+                },
+                {
+                  "text": "往左拐"
+                },
+                {
+                  "text": "一直走"
+                },
+                {
+                  "text": "往回走"
+                }
+              ],
+              "correctAnswer": {
+                "index": 1
+              },
+              "explanation": "B nói \"到红绿灯往左拐\" - rẽ trái ở đèn giao thông."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "从家到公司很远。",
+              "correctAnswer": {
+                "value": false
+              },
+              "explanation": "B nói \"不远，十分钟就到\" - không xa, 10 phút là tới."
+            }
+          ]
+        },
+        {
+          "dialogueIndex": 2,
+          "transcript": "A：请问，从这儿到火车站怎么走？\nB：往前走，过马路就到。\nA：谢谢你。\nB：不客气。",
+          "transcriptExplanation": "A: Xin hỏi, từ đây đến ga tàu đi thế nào? / B: Đi thẳng, băng qua đường là tới. / A: Cảm ơn bạn. / B: Không có gì.",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "A要去哪儿？",
+              "options": [
+                {
+                  "text": "火车站"
+                },
+                {
+                  "text": "公司"
+                },
+                {
+                  "text": "学校"
+                },
+                {
+                  "text": "医院"
+                }
+              ],
+              "correctAnswer": {
+                "index": 0
+              },
+              "explanation": "A hỏi \"从这儿到火车站怎么走\" - đi đến ga tàu."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "去火车站要过马路。",
+              "correctAnswer": {
+                "value": true
+              },
+              "explanation": "B nói \"往前走，过马路就到\" - băng qua đường là tới."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "bai": 23,
+      "clips": [
+        {
+          "dialogueIndex": 1,
+          "transcript": "A：这件事你决定了吗？\nB：让我想想再说。\nA：好，你慢慢想。\nB：我想好了告诉你。",
+          "transcriptExplanation": "A: Việc này bạn quyết định chưa? / B: Để tôi nghĩ rồi nói sau. / A: Được, bạn nghĩ từ từ. / B: Nghĩ kỹ rồi tôi nói cho bạn.",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "对于这件事，B现在怎么样？",
+              "options": [
+                {
+                  "text": "已经决定了"
+                },
+                {
+                  "text": "还想想再说"
+                },
+                {
+                  "text": "不想做了"
+                },
+                {
+                  "text": "让A决定"
+                }
+              ],
+              "correctAnswer": {
+                "index": 1
+              },
+              "explanation": "B nói \"让我想想再说\" (Để tôi nghĩ rồi nói sau), tức B chưa quyết định, còn phải suy nghĩ thêm."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "B已经决定好了这件事。",
+              "correctAnswer": {
+                "value": false
+              },
+              "explanation": "Sai. B nói \"让我想想再说\" và \"我想好了告诉你\", tức B chưa quyết định, sẽ nói sau khi nghĩ kỹ."
+            }
+          ]
+        },
+        {
+          "dialogueIndex": 2,
+          "transcript": "A：我们明天去还是后天去？\nB：让我看看再决定。\nA：好。\nB：我们商量一下吧。",
+          "transcriptExplanation": "A: Chúng ta đi ngày mai hay ngày kia? / B: Để tôi xem rồi quyết định. / A: Được. / B: Chúng ta bàn một chút đi.",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "A问的是什么？",
+              "options": [
+                {
+                  "text": "去哪儿"
+                },
+                {
+                  "text": "和谁去"
+                },
+                {
+                  "text": "什么时候去"
+                },
+                {
+                  "text": "怎么去"
+                }
+              ],
+              "correctAnswer": {
+                "index": 2
+              },
+              "explanation": "A hỏi \"我们明天去还是后天去？\" (Đi ngày mai hay ngày kia), tức hỏi về thời gian đi."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "B想和A商量一下。",
+              "correctAnswer": {
+                "value": true
+              },
+              "explanation": "Đúng. B nói \"我们商量一下吧\" (Chúng ta bàn một chút đi), tức B muốn cùng bàn bạc."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "bai": 24,
+      "clips": [
+        {
+          "dialogueIndex": 1,
+          "transcript": "A：你帮我一下，好吗？\nB：好，你要我做什么？\nA：帮我看看这个句子对不对。\nB：好，我看看。",
+          "transcriptExplanation": "A: Bạn giúp tôi một chút nhé? / B: Được, bạn muốn tôi làm gì? / A: Giúp tôi xem câu này đúng không. / B: Được, để tôi xem.",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "A要B帮他做什么？",
+              "options": [
+                {
+                  "text": "看句子对不对"
+                },
+                {
+                  "text": "写一个句子"
+                },
+                {
+                  "text": "买东西"
+                },
+                {
+                  "text": "找手机"
+                }
+              ],
+              "correctAnswer": {
+                "index": 0
+              },
+              "explanation": "A nói \"帮我看看这个句子对不对\" (Giúp tôi xem câu này đúng không), nên A nhờ B xem câu đúng hay sai."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "B不愿意帮A。",
+              "correctAnswer": {
+                "value": false
+              },
+              "explanation": "Sai. B trả lời \"好，你要我做什么？\" và \"好，我看看\", tức B đồng ý giúp A."
+            }
+          ]
+        },
+        {
+          "dialogueIndex": 2,
+          "transcript": "A：明天一起吃饭，好吗？\nB：好。\nA：你对辣的菜怎么样？\nB：我很喜欢吃辣。",
+          "transcriptExplanation": "A: Mai cùng ăn cơm nhé? / B: Được. / A: Bạn với món cay thì sao? / B: Tôi rất thích ăn cay.",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "B对辣的菜怎么样？",
+              "options": [
+                {
+                  "text": "很喜欢吃辣"
+                },
+                {
+                  "text": "不喜欢吃辣"
+                },
+                {
+                  "text": "不能吃辣"
+                },
+                {
+                  "text": "没吃过辣"
+                }
+              ],
+              "correctAnswer": {
+                "index": 0
+              },
+              "explanation": "B nói \"我很喜欢吃辣\" (Tôi rất thích ăn cay), nên B rất thích món cay."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "他们打算明天一起吃饭。",
+              "correctAnswer": {
+                "value": true
+              },
+              "explanation": "Đúng. A hỏi \"明天一起吃饭，好吗？\" và B trả lời \"好\", tức họ định mai cùng ăn cơm."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "bai": 25,
+      "clips": [
+        {
+          "dialogueIndex": 1,
+          "transcript": "A：我的手机不见了。\nB：别找了，在桌子上呢。\nA：真的，谢谢！\nB：你太着急了。",
+          "transcriptExplanation": "A: Điện thoại của tôi không thấy đâu. / B: Đừng tìm nữa, ở trên bàn đấy. / A: Thật đấy, cảm ơn! / B: Bạn sốt ruột quá.",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "A的手机在哪儿？",
+              "options": [
+                {
+                  "text": "在桌子上"
+                },
+                {
+                  "text": "在椅子上"
+                },
+                {
+                  "text": "在车站"
+                },
+                {
+                  "text": "在包里"
+                }
+              ],
+              "correctAnswer": {
+                "index": 0
+              },
+              "explanation": "B nói \"别找了，在桌子上呢\" (Đừng tìm nữa, ở trên bàn đấy), nên điện thoại ở trên bàn."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "A找不到自己的手机。",
+              "correctAnswer": {
+                "value": true
+              },
+              "explanation": "Đúng. A nói \"我的手机不见了\" (Điện thoại của tôi không thấy đâu), tức A không tìm thấy điện thoại."
+            }
+          ]
+        },
+        {
+          "dialogueIndex": 2,
+          "transcript": "A：别看手机了，我们走吧。\nB：好，等我一下。\nA：你对工作太认真了。\nB：是吗？",
+          "transcriptExplanation": "A: Đừng xem điện thoại nữa, chúng ta đi thôi. / B: Được, đợi tôi một chút. / A: Bạn quá nghiêm túc với công việc. / B: Vậy à?",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "A觉得B怎么样？",
+              "options": [
+                {
+                  "text": "对工作太认真"
+                },
+                {
+                  "text": "太着急了"
+                },
+                {
+                  "text": "不喜欢工作"
+                },
+                {
+                  "text": "很喜欢手机"
+                }
+              ],
+              "correctAnswer": {
+                "index": 0
+              },
+              "explanation": "A nói \"你对工作太认真了\" (Bạn quá nghiêm túc với công việc), nên A thấy B quá nghiêm túc với công việc."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "A要B继续看手机。",
+              "correctAnswer": {
+                "value": false
+              },
+              "explanation": "Sai. A nói \"别看手机了，我们走吧\" (Đừng xem điện thoại nữa, chúng ta đi thôi), tức A bảo B đừng xem nữa."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "bai": 26,
+      "clips": [
+        {
+          "dialogueIndex": 1,
+          "transcript": "A：明天就要考试了，你准备好了吗？\nB：我打算今天好好复习。\nA：这次考试难吗？\nB：可能有点儿难。",
+          "transcriptExplanation": "A: Mai sắp thi rồi, bạn chuẩn bị xong chưa? / B: Tôi định hôm nay ôn tập cho tốt. / A: Kỳ thi này khó không? / B: Có lẽ hơi khó.",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "B打算今天做什么？",
+              "options": [
+                {
+                  "text": "好好复习"
+                },
+                {
+                  "text": "去旅游"
+                },
+                {
+                  "text": "看电影"
+                },
+                {
+                  "text": "睡觉"
+                }
+              ],
+              "correctAnswer": {
+                "index": 0
+              },
+              "explanation": "B nói \"我打算今天好好复习\" (Tôi định hôm nay ôn tập cho tốt)."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "明天就要考试了。",
+              "correctAnswer": {
+                "value": true
+              },
+              "explanation": "Đúng. A nói \"明天就要考试了\" (Mai sắp thi rồi)."
+            }
+          ]
+        },
+        {
+          "dialogueIndex": 2,
+          "transcript": "A：你应该多看书。\nB：对，我准备复习两个小时。\nA：加油！\nB：谢谢，我一定努力。",
+          "transcriptExplanation": "A: Bạn nên đọc sách nhiều. / B: Đúng, tôi định ôn hai tiếng. / A: Cố lên! / B: Cảm ơn, tôi nhất định cố gắng.",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "B准备复习多长时间？",
+              "options": [
+                {
+                  "text": "一个小时"
+                },
+                {
+                  "text": "两个小时"
+                },
+                {
+                  "text": "三个小时"
+                },
+                {
+                  "text": "半个小时"
+                }
+              ],
+              "correctAnswer": {
+                "index": 1
+              },
+              "explanation": "B nói \"我准备复习两个小时\" (Tôi định ôn hai tiếng)."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "A让B多看书。",
+              "correctAnswer": {
+                "value": true
+              },
+              "explanation": "Đúng. A nói \"你应该多看书\" (Bạn nên đọc sách nhiều)."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "bai": 27,
+      "clips": [
+        {
+          "dialogueIndex": 1,
+          "transcript": "A：作业你做完了吗？\nB：题太多，我还没做完。\nA：你做了多少了？\nB：我从第一题做到第十题了。",
+          "transcriptExplanation": "A: Bài tập bạn làm xong chưa? / B: Đề nhiều quá, tôi vẫn chưa làm xong. / A: Bạn làm được bao nhiêu rồi? / B: Tôi làm từ câu một đến câu mười rồi.",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "B做到了第几题？",
+              "options": [
+                {
+                  "text": "第五题"
+                },
+                {
+                  "text": "第十题"
+                },
+                {
+                  "text": "第一题"
+                },
+                {
+                  "text": "第二十题"
+                }
+              ],
+              "correctAnswer": {
+                "index": 1
+              },
+              "explanation": "B nói \"我从第一题做到第十题了\" (Tôi làm từ câu một đến câu mười rồi)."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "B已经做完作业了。",
+              "correctAnswer": {
+                "value": false
+              },
+              "explanation": "Sai. B nói \"题太多，我还没做完\" (Đề nhiều quá, tôi vẫn chưa làm xong)."
+            }
+          ]
+        },
+        {
+          "dialogueIndex": 2,
+          "transcript": "A：这个句子你看懂了吗？\nB：我看懂了。\nA：这个题做对了吗？\nB：做错了，我再做一遍。",
+          "transcriptExplanation": "A: Câu này bạn đọc hiểu chưa? / B: Tôi đọc hiểu rồi. / A: Câu này làm đúng chưa? / B: Làm sai rồi, tôi làm lại một lần.",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "这个题B做得怎么样？",
+              "options": [
+                {
+                  "text": "做对了"
+                },
+                {
+                  "text": "做错了"
+                },
+                {
+                  "text": "没做"
+                },
+                {
+                  "text": "做完了"
+                }
+              ],
+              "correctAnswer": {
+                "index": 1
+              },
+              "explanation": "B nói \"做错了，我再做一遍\" (Làm sai rồi, tôi làm lại một lần)."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "B看懂了这个句子。",
+              "correctAnswer": {
+                "value": true
+              },
+              "explanation": "Đúng. B nói \"我看懂了\" (Tôi đọc hiểu rồi)."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "bai": 28,
+      "clips": [
+        {
+          "dialogueIndex": 1,
+          "transcript": "A：老师说的你听懂了吗？\nB：我听懂了，也看见老师写的字了。\nA：那个生词你会写了吗？\nB：我学会了。",
+          "transcriptExplanation": "A: Lời thầy nói bạn nghe hiểu chưa? / B: Tôi nghe hiểu rồi, cũng nhìn thấy chữ thầy viết. / A: Từ mới đó bạn viết được chưa? / B: Tôi học được rồi.",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "那个生词B怎么样了？",
+              "options": [
+                {
+                  "text": "学会了"
+                },
+                {
+                  "text": "忘了"
+                },
+                {
+                  "text": "没学"
+                },
+                {
+                  "text": "写错了"
+                }
+              ],
+              "correctAnswer": {
+                "index": 0
+              },
+              "explanation": "B trả lời \"我学会了\" (Tôi học được rồi) khi được hỏi về từ mới."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "B听懂了老师说的话。",
+              "correctAnswer": {
+                "value": true
+              },
+              "explanation": "Đúng. B nói \"我听懂了\" (Tôi nghe hiểu rồi)."
+            }
+          ]
+        },
+        {
+          "dialogueIndex": 2,
+          "transcript": "A：你找到那本书了吗？\nB：找到了。\nA：你听见我说的话了吗？\nB：听见了，我都明白了。",
+          "transcriptExplanation": "A: Bạn tìm thấy quyển sách đó chưa? / B: Tìm thấy rồi. / A: Bạn nghe thấy lời tôi nói chưa? / B: Nghe thấy rồi, tôi đều hiểu.",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "B找那本书的结果是什么？",
+              "options": [
+                {
+                  "text": "找到了"
+                },
+                {
+                  "text": "没找到"
+                },
+                {
+                  "text": "没找"
+                },
+                {
+                  "text": "借走了"
+                }
+              ],
+              "correctAnswer": {
+                "index": 0
+              },
+              "explanation": "B nói \"找到了\" (Tìm thấy rồi)."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "B没听见A说的话。",
+              "correctAnswer": {
+                "value": false
+              },
+              "explanation": "Sai. B nói \"听见了，我都明白了\" (Nghe thấy rồi, tôi đều hiểu)."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "bai": 29,
+      "clips": [
+        {
+          "dialogueIndex": 1,
+          "transcript": "A：今天我们学第几课？\nB：第五课。\nA：在第几页？\nB：在第二十页。",
+          "transcriptExplanation": "A: Hôm nay chúng ta học bài thứ mấy? / B: Bài thứ năm. / A: Ở trang thứ mấy? / B: Ở trang 20.",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "今天他们学第几课？",
+              "options": [
+                {
+                  "text": "第二课"
+                },
+                {
+                  "text": "第五课"
+                },
+                {
+                  "text": "第十课"
+                },
+                {
+                  "text": "第二十课"
+                }
+              ],
+              "correctAnswer": {
+                "index": 1
+              },
+              "explanation": "B nói \"第五课\" (Bài thứ năm)."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "这一课在第二十页。",
+              "correctAnswer": {
+                "value": true
+              },
+              "explanation": "Đúng. B nói \"在第二十页\" (Ở trang 20)."
+            }
+          ]
+        },
+        {
+          "dialogueIndex": 2,
+          "transcript": "A：你住几楼？\nB：我住第三层。\nA：这是你第一次来吗？\nB：不是，这是第二次。",
+          "transcriptExplanation": "A: Bạn ở tầng mấy? / B: Tôi ở tầng ba. / A: Đây là lần đầu bạn đến à? / B: Không, đây là lần thứ hai.",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "B住在第几层？",
+              "options": [
+                {
+                  "text": "第一层"
+                },
+                {
+                  "text": "第二层"
+                },
+                {
+                  "text": "第三层"
+                },
+                {
+                  "text": "第五层"
+                }
+              ],
+              "correctAnswer": {
+                "index": 2
+              },
+              "explanation": "B nói \"我住第三层\" (Tôi ở tầng ba)."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "这是B第一次来。",
+              "correctAnswer": {
+                "value": false
+              },
+              "explanation": "Sai. B nói \"不是，这是第二次\" (Không, đây là lần thứ hai)."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "bai": 30,
+      "clips": [
+        {
+          "dialogueIndex": 1,
+          "transcript": "A：你哥哥多大？\nB：他比我大三岁。\nA：他比你高吗？\nB：对，他比我高一点儿。",
+          "transcriptExplanation": "A: Anh trai bạn bao nhiêu tuổi? / B: Anh ấy hơn tôi ba tuổi. / A: Anh ấy cao hơn bạn không? / B: Đúng, anh ấy cao hơn tôi một chút.",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "哥哥比说话人大几岁？",
+              "options": [
+                {
+                  "text": "一岁"
+                },
+                {
+                  "text": "两岁"
+                },
+                {
+                  "text": "三岁"
+                },
+                {
+                  "text": "四岁"
+                }
+              ],
+              "correctAnswer": {
+                "index": 2
+              },
+              "explanation": "B nói \"他比我大三岁\" (Anh ấy hơn tôi ba tuổi), nên đáp án là ba tuổi."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "哥哥比说话人高。",
+              "correctAnswer": {
+                "value": true
+              },
+              "explanation": "B nói \"对，他比我高一点儿\" (Đúng, anh ấy cao hơn tôi một chút), nên câu này đúng."
+            }
+          ]
+        },
+        {
+          "dialogueIndex": 2,
+          "transcript": "A：你买的衣服真好看。\nB：谢谢，这是我昨天买的。\nA：比那件贵吗？\nB：这件比那件便宜。",
+          "transcriptExplanation": "A: Cái áo bạn mua thật đẹp. / B: Cảm ơn, đây là cái tôi mua hôm qua. / A: Đắt hơn cái kia không? / B: Cái này rẻ hơn cái kia.",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "B的衣服是什么时候买的？",
+              "options": [
+                {
+                  "text": "今天"
+                },
+                {
+                  "text": "昨天"
+                },
+                {
+                  "text": "明天"
+                },
+                {
+                  "text": "前天"
+                }
+              ],
+              "correctAnswer": {
+                "index": 1
+              },
+              "explanation": "B nói \"这是我昨天买的\" (đây là cái tôi mua hôm qua), nên đáp án là hôm qua."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "这件衣服比那件贵。",
+              "correctAnswer": {
+                "value": false
+              },
+              "explanation": "B nói \"这件比那件便宜\" (Cái này rẻ hơn cái kia), nên cái này không đắt hơn — câu này sai."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "bai": 31,
+      "clips": [
+        {
+          "dialogueIndex": 1,
+          "transcript": "A：今天很冷，你穿得太少了。\nB：对，我有点儿冷。\nA：你应该多穿点儿。\nB：对，明天我多穿。",
+          "transcriptExplanation": "A: Hôm nay rất lạnh, bạn mặc ít quá. / B: Đúng, tôi hơi lạnh. / A: Bạn nên mặc nhiều chút. / B: Đúng, mai tôi mặc nhiều.",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "今天天气怎么样？",
+              "options": [
+                {
+                  "text": "很热"
+                },
+                {
+                  "text": "很冷"
+                },
+                {
+                  "text": "下雨"
+                },
+                {
+                  "text": "很好"
+                }
+              ],
+              "correctAnswer": {
+                "index": 1
+              },
+              "explanation": "A nói \"今天很冷\" (Hôm nay rất lạnh), nên trời lạnh."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "B今天穿得太少了。",
+              "correctAnswer": {
+                "value": true
+              },
+              "explanation": "A nói \"你穿得太少了\" và B đáp \"我有点儿冷\" (tôi hơi lạnh), nên câu này đúng."
+            }
+          ]
+        },
+        {
+          "dialogueIndex": 2,
+          "transcript": "A：他跑得快吗？\nB：他跑得很快，比我还快。\nA：你汉语说得怎么样？\nB：我说得不太好。",
+          "transcriptExplanation": "A: Anh ấy chạy nhanh không? / B: Anh ấy chạy rất nhanh, còn nhanh hơn tôi. / A: Tiếng Trung bạn nói thế nào? / B: Tôi nói không tốt lắm.",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "他跑得怎么样？",
+              "options": [
+                {
+                  "text": "很慢"
+                },
+                {
+                  "text": "很快"
+                },
+                {
+                  "text": "不快"
+                },
+                {
+                  "text": "不太好"
+                }
+              ],
+              "correctAnswer": {
+                "index": 1
+              },
+              "explanation": "B nói \"他跑得很快，比我还快\" (Anh ấy chạy rất nhanh, còn nhanh hơn tôi), nên anh ấy chạy nhanh."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "B的汉语说得很好。",
+              "correctAnswer": {
+                "value": false
+              },
+              "explanation": "B nói \"我说得不太好\" (Tôi nói không tốt lắm), nên câu này sai."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "bai": 32,
+      "clips": [
+        {
+          "dialogueIndex": 1,
+          "transcript": "A：明天天气怎么样？\nB：明天可能会下雨。\nA：那我们还去吗？\nB：下雨我们就不去了。",
+          "transcriptExplanation": "A: Mai thời tiết thế nào? / B: Mai có thể sẽ mưa. / A: Vậy chúng ta vẫn đi chứ? / B: Mưa thì chúng ta không đi nữa.",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "明天可能会怎么样？",
+              "options": [
+                {
+                  "text": "会下雨"
+                },
+                {
+                  "text": "会很热"
+                },
+                {
+                  "text": "会很冷"
+                },
+                {
+                  "text": "天气很好"
+                }
+              ],
+              "correctAnswer": {
+                "index": 0
+              },
+              "explanation": "B nói \"明天可能会下雨\" (Mai có thể sẽ mưa), nên đáp án là sẽ mưa."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "如果下雨，他们就不去了。",
+              "correctAnswer": {
+                "value": true
+              },
+              "explanation": "B nói \"下雨我们就不去了\" (Mưa thì chúng ta không đi nữa), nên câu này đúng."
+            }
+          ]
+        },
+        {
+          "dialogueIndex": 2,
+          "transcript": "A：他今天会来吗？\nB：他应该会来。\nA：现在天阴了，可能要下雨。\nB：别忘了带雨伞。",
+          "transcriptExplanation": "A: Hôm nay anh ấy đến không? / B: Anh ấy chắc sẽ đến. / A: Giờ trời âm u rồi, có thể sắp mưa. / B: Đừng quên mang ô.",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "B让A别忘了带什么？",
+              "options": [
+                {
+                  "text": "书"
+                },
+                {
+                  "text": "雨伞"
+                },
+                {
+                  "text": "衣服"
+                },
+                {
+                  "text": "钱"
+                }
+              ],
+              "correctAnswer": {
+                "index": 1
+              },
+              "explanation": "B nói \"别忘了带雨伞\" (Đừng quên mang ô), nên đáp án là ô (雨伞)."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "现在天阴了，可能要下雨。",
+              "correctAnswer": {
+                "value": true
+              },
+              "explanation": "A nói \"现在天阴了，可能要下雨\" (Giờ trời âm u rồi, có thể sắp mưa), nên câu này đúng."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "bai": 33,
+      "clips": [
+        {
+          "dialogueIndex": 1,
+          "transcript": "A：门怎么开着呢？\nB：是我开的，里面有点儿热。\nA：可是今天下雨了。\nB：那我去关门。",
+          "transcriptExplanation": "A: Sao cửa lại mở thế? / B: Tôi mở đấy, bên trong hơi nóng. / A: Nhưng hôm nay mưa rồi. / B: Vậy tôi đi đóng cửa.",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "B为什么开门？",
+              "options": [
+                {
+                  "text": "里面有点儿热"
+                },
+                {
+                  "text": "外面很冷"
+                },
+                {
+                  "text": "今天下雨了"
+                },
+                {
+                  "text": "里面有人"
+                }
+              ],
+              "correctAnswer": {
+                "index": 0
+              },
+              "explanation": "B nói \"是我开的，里面有点儿热\" — mở cửa vì bên trong hơi nóng."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "今天下雨了。",
+              "correctAnswer": {
+                "value": true
+              },
+              "explanation": "A nói \"可是今天下雨了\" — hôm nay đã mưa rồi, nên câu đúng."
+            }
+          ]
+        },
+        {
+          "dialogueIndex": 2,
+          "transcript": "A：他在做什么呢？\nB：他坐着看书呢。\nA：他手里拿着什么？\nB：拿着一本书。",
+          "transcriptExplanation": "A: Anh ấy đang làm gì đấy? / B: Anh ấy đang ngồi đọc sách. / A: Trong tay anh ấy cầm gì? / B: Cầm một quyển sách.",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "他在做什么？",
+              "options": [
+                {
+                  "text": "坐着看书"
+                },
+                {
+                  "text": "站着说话"
+                },
+                {
+                  "text": "躺着睡觉"
+                },
+                {
+                  "text": "走着听音乐"
+                }
+              ],
+              "correctAnswer": {
+                "index": 0
+              },
+              "explanation": "B nói \"他坐着看书呢\" — anh ấy đang ngồi đọc sách."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "他手里拿着一本书。",
+              "correctAnswer": {
+                "value": true
+              },
+              "explanation": "B nói \"拿着一本书\" — trong tay cầm một quyển sách, nên câu đúng."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "bai": 34,
+      "clips": [
+        {
+          "dialogueIndex": 1,
+          "transcript": "A：你看过那个电影吗？\nB：看过，我看过两遍。\nA：好看吗？\nB：虽然有点儿长，但是很好看。",
+          "transcriptExplanation": "A: Bạn xem phim đó chưa? / B: Xem rồi, tôi xem hai lần. / A: Hay không? / B: Tuy hơi dài nhưng rất hay.",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "B看过那个电影几遍？",
+              "options": [
+                {
+                  "text": "一遍"
+                },
+                {
+                  "text": "两遍"
+                },
+                {
+                  "text": "三遍"
+                },
+                {
+                  "text": "没看过"
+                }
+              ],
+              "correctAnswer": {
+                "index": 1
+              },
+              "explanation": "B nói \"我看过两遍\" — đã xem hai lần."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "B觉得那个电影很好看。",
+              "correctAnswer": {
+                "value": true
+              },
+              "explanation": "B nói \"虽然有点儿长，但是很好看\" — tuy hơi dài nhưng rất hay, nên câu đúng."
+            }
+          ]
+        },
+        {
+          "dialogueIndex": 2,
+          "transcript": "A：你去过北京吗？\nB：去过一次。\nA：你吃过北京菜吗？\nB：吃过，虽然有点儿贵，但是很好吃。",
+          "transcriptExplanation": "A: Bạn từng đến Bắc Kinh chưa? / B: Từng đến một lần. / A: Bạn ăn món Bắc Kinh chưa? / B: Ăn rồi, tuy hơi đắt nhưng rất ngon.",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "B觉得北京菜怎么样？",
+              "options": [
+                {
+                  "text": "有点儿贵，但是很好吃"
+                },
+                {
+                  "text": "很便宜，也很好吃"
+                },
+                {
+                  "text": "很贵，不好吃"
+                },
+                {
+                  "text": "没吃过北京菜"
+                }
+              ],
+              "correctAnswer": {
+                "index": 0
+              },
+              "explanation": "B nói \"吃过，虽然有点儿贵，但是很好吃\" — hơi đắt nhưng rất ngon."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "B去过北京两次。",
+              "correctAnswer": {
+                "value": false
+              },
+              "explanation": "B nói \"去过一次\" — chỉ từng đến một lần, nên câu sai."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "bai": 35,
+      "clips": [
+        {
+          "dialogueIndex": 1,
+          "transcript": "A：新年就要到了，你打算做什么？\nB：我打算回家过年。\nA：你买好票了吗？\nB：已经买好了。",
+          "transcriptExplanation": "A: Năm mới sắp đến rồi, bạn định làm gì? / B: Tôi định về nhà đón Tết. / A: Bạn mua vé xong chưa? / B: Đã mua xong rồi.",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "新年的时候，B打算做什么？",
+              "options": [
+                {
+                  "text": "回家过年"
+                },
+                {
+                  "text": "去旅游"
+                },
+                {
+                  "text": "去工作"
+                },
+                {
+                  "text": "去看电影"
+                }
+              ],
+              "correctAnswer": {
+                "index": 0
+              },
+              "explanation": "B nói \"我打算回家过年\" (Tôi định về nhà đón Tết)."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "B还没买票。",
+              "correctAnswer": {
+                "value": false
+              },
+              "explanation": "Sai, vì B nói \"已经买好了\" (Đã mua vé xong rồi)."
+            }
+          ]
+        },
+        {
+          "dialogueIndex": 2,
+          "transcript": "A：快要放假了，你高兴吗？\nB：很高兴！\nA：放假你回家吗？\nB：对，新年一家人团圆，很热闹。",
+          "transcriptExplanation": "A: Sắp được nghỉ rồi, bạn vui không? / B: Rất vui! / A: Nghỉ lễ bạn về nhà không? / B: Đúng, năm mới cả nhà đoàn viên, rất nhộn nhịp.",
+          "questions": [
+            {
+              "type": "MCQ",
+              "prompt": "放假的时候，B要做什么？",
+              "options": [
+                {
+                  "text": "回家"
+                },
+                {
+                  "text": "工作"
+                },
+                {
+                  "text": "买票"
+                },
+                {
+                  "text": "看书"
+                }
+              ],
+              "correctAnswer": {
+                "index": 0
+              },
+              "explanation": "Khi A hỏi \"放假你回家吗？\", B trả lời \"对\" (Đúng, về nhà)."
+            },
+            {
+              "type": "TRUE_FALSE",
+              "prompt": "B快要放假了，他很高兴。",
+              "correctAnswer": {
+                "value": true
+              },
+              "explanation": "Đúng, vì B nói \"很高兴！\" khi A hỏi sắp được nghỉ có vui không."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

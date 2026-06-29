@@ -6,6 +6,7 @@
 // phụ thuộc zod, KHÔNG import @prisma/client (chỉ dùng type SkillKey).
 import { z } from "zod";
 import type { SkillKey } from "@/lib/roadmap";
+import type { VocabWordCard } from "@/types";
 
 // ───────────────────────── Shared ─────────────────────────
 
@@ -120,6 +121,26 @@ export const vocabContentSchema = z.object({
   words: z.array(vocabWordSchema).min(1, "Cần ít nhất 1 từ vựng"),
 });
 export type VocabSectionContent = z.infer<typeof vocabContentSchema>;
+
+/**
+ * Dựng danh sách thẻ từ vựng (VocabWordCard) từ content phần VOCAB của một bài lộ
+ * trình. Id tổng hợp `${sectionId}-w${i}` PHẢI khớp giữa trình chơi (RoadmapVocabPlayer)
+ * và trang server (để map đúng trạng thái SRS — `RoadmapWordReview` — theo từng từ).
+ * Dùng chung một nguồn ⇒ không lệch thứ tự/khoá.
+ */
+export function buildRoadmapVocabCards(sectionId: string, content: unknown): VocabWordCard[] {
+  const c = (content && typeof content === "object" ? content : {}) as Partial<VocabSectionContent>;
+  return (c.words ?? []).map((w, i) => ({
+    id: `${sectionId}-w${i}`,
+    lessonId: `roadmap:${sectionId}`,
+    order: i + 1,
+    hanzi: w.hanzi,
+    pinyin: w.pinyin,
+    meaning: w.meaning,
+    examples: w.examples ?? [],
+    audioUrl: w.audioUrl ?? null,
+  }));
+}
 
 // ───────────────────────── HANZI (汉字) ─────────────────────────
 
@@ -289,6 +310,34 @@ export const writingContentSchema = z.object({
 });
 export type WritingSectionContent = z.infer<typeof writingContentSchema>;
 
+// Dạng "连词成句" (sắp xếp từ thành câu) — chính là format thi VIẾT HSK2. Mỗi câu có
+// ngân hàng thẻ từ (words), câu đúng (answer, có dấu câu) và bản dịch tiếng Việt.
+// Chấm tự động (giống bài tập sentence_order của Ngữ pháp), KHÔNG dùng AI.
+const writingReorderSentenceSchema = z.object({
+  words: z.array(z.string().trim().min(1)).min(2, "Cần ít nhất 2 thẻ từ"),
+  answer: z.string().trim().min(1, "Thiếu câu đúng"),
+  translation: z.string().trim().default(""),
+  pinyin: z.string().trim().optional(),
+  explanation: z.string().trim().optional(),
+});
+export type WritingReorderSentence = z.infer<typeof writingReorderSentenceSchema>;
+
+export const writingReorderContentSchema = z.object({
+  mode: z.literal("reorder"),
+  title: z.string().trim().optional(),
+  sentences: z.array(writingReorderSentenceSchema).min(1, "Cần ít nhất 1 câu"),
+});
+export type WritingReorderSectionContent = z.infer<typeof writingReorderContentSchema>;
+
+/** Phần Viết kiểu "连词成句" (sắp xếp câu) thay vì viết luận chấm AI. */
+export function isReorderWriting(content: unknown): content is WritingReorderSectionContent {
+  return (
+    !!content &&
+    typeof content === "object" &&
+    (content as { mode?: unknown }).mode === "reorder"
+  );
+}
+
 // ───────────────────────── SPEAKING (口语 — HSKK) ─────────────────────────
 
 const sentenceSchema = z.object({
@@ -348,7 +397,8 @@ const SCHEMA_BY_SKILL: Record<SkillKey, z.ZodTypeAny> = {
   HANZI: hanziContentSchema,
   READING: readingContentSchema,
   LISTENING: listeningContentSchema,
-  WRITING: writingContentSchema,
+  // Viết: chấp nhận cả viết luận (AI) lẫn "连词成句" (sắp xếp câu, chấm tự động).
+  WRITING: z.union([writingReorderContentSchema, writingContentSchema]),
   SPEAKING: speakingContentSchema,
 };
 

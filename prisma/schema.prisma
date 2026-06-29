@@ -79,6 +79,7 @@ model User {
   sessions        Session[]
   vocabProgress   VocabProgress[]
   vocabReviews    VocabReview[]
+  roadmapWordReviews RoadmapWordReview[]
   grammarProgress GrammarProgress[]
   hanziProgress   HanziProgress[]
   pinyinProgress  PinyinProgress[]
@@ -219,6 +220,35 @@ model VocabReview {
   word VocabWord @relation(fields: [wordId], references: [id], onDelete: Cascade)
 
   @@unique([userId, wordId])
+  @@index([userId, dueAt])
+}
+
+/// Lặp lại ngắt quãng (SM-2) cho từ vựng phần LỘ TRÌNH. Khác VocabReview ở chỗ
+/// khoá theo `(userId, hanzi)` thay vì wordId — vì từ vựng lộ trình nằm trong
+/// RoadmapSection.content (JSON), KHÔNG có bản ghi VocabWord để tham chiếu khoá
+/// ngoại. Lưu kèm ảnh chụp (pinyin/nghĩa/ví dụ/audio) tại thời điểm ôn để màn
+/// "Ôn tập tổng hợp lộ trình" dựng được thẻ mà không phải quét lại mọi section.
+/// Thuật toán cập nhật dùng chung src/lib/srs.ts.
+model RoadmapWordReview {
+  id             String    @id @default(cuid())
+  userId         String
+  hanzi          String
+  pinyin         String    @default("")
+  meaning        String    @default("")
+  examples       Json      @default("[]")
+  audioUrl       String?
+  repetitions    Int       @default(0) // số lần trả lời đúng liên tiếp
+  intervalDays   Int       @default(0) // khoảng cách hiện tại (ngày)
+  ease           Float     @default(2.5) // hệ số dễ (easiness factor)
+  lapses         Int       @default(0) // số lần quên (trả lời sai)
+  dueAt          DateTime  @default(now())
+  lastReviewedAt DateTime?
+  createdAt      DateTime  @default(now())
+  updatedAt      DateTime  @default(now()) @updatedAt
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, hanzi])
   @@index([userId, dueAt])
 }
 

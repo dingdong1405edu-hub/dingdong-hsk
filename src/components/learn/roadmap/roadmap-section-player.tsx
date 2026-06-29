@@ -2,9 +2,10 @@
 import { useRouter } from "next/navigation";
 import type { HSKLevel, QuestionType, WritingTaskType } from "@prisma/client";
 import type { SkillKey } from "@/lib/roadmap";
-import { WordFlow } from "@/components/learn/vocab/word-flow";
 import { GrammarFlow } from "@/components/learn/grammar/grammar-flow";
 import { RoadmapHanziPlayer } from "./roadmap-hanzi-player";
+import { RoadmapVocabPlayer } from "./roadmap-vocab-player";
+import { RoadmapWritingPlayer } from "./roadmap-writing-player";
 import { ReadingTestClient } from "@/app/(learn)/reading/[testId]/reading-test-client";
 import { ListeningTestClient } from "@/app/(learn)/listening/[testId]/listening-test-client";
 import { WritingClient } from "@/app/(learn)/writing/[taskId]/writing-client";
@@ -14,9 +15,10 @@ import {
   roadmapQuestionId,
   normalizeReadingContent,
   normalizeListeningContent,
+  buildRoadmapVocabCards,
+  isReorderWriting,
 } from "@/lib/roadmap-content";
 import type {
-  VocabSectionContent,
   HanziSectionContent,
   WritingSectionContent,
   SpeakingSectionContent,
@@ -33,7 +35,7 @@ import {
 } from "@/server/actions/roadmap-play";
 import type { ReadingTestData, ReadingQuestion } from "@/components/learn/reading/types";
 import type { ListeningTestData, ListeningQuestion } from "@/components/learn/listening/types";
-import type { VocabWordCard } from "@/types";
+import type { WordReviewState } from "@/types";
 
 interface Props {
   skill: SkillKey;
@@ -43,32 +45,37 @@ interface Props {
   title: string;
   content: unknown;
   backHref: string;
+  /** Chỉ dùng cho VOCAB: lịch SRS đã lưu (RoadmapWordReview) cho các từ của phần. */
+  vocabReviews?: WordReviewState[];
+  /** Chỉ dùng cho VOCAB: phần Từ vựng đã hoàn thành → mở thẳng tab Ôn từ. */
+  vocabCompleted?: boolean;
 }
 
-export function RoadmapSectionPlayer({ skill, lessonId, sectionId, hskLevel, title, content, backHref }: Props) {
+export function RoadmapSectionPlayer({
+  skill,
+  lessonId,
+  sectionId,
+  hskLevel,
+  title,
+  content,
+  backHref,
+  vocabReviews = [],
+  vocabCompleted = false,
+}: Props) {
   const router = useRouter();
 
   switch (skill) {
     case "VOCAB": {
-      const c = content as VocabSectionContent;
-      const words: VocabWordCard[] = (c.words ?? []).map((w, i) => ({
-        id: `${sectionId}-w${i}`,
-        lessonId: `roadmap:${sectionId}`,
-        order: i + 1,
-        hanzi: w.hanzi,
-        pinyin: w.pinyin,
-        meaning: w.meaning,
-        examples: w.examples ?? [],
-        audioUrl: w.audioUrl ?? null,
-      }));
+      const words = buildRoadmapVocabCards(sectionId, content);
       return (
-        <WordFlow
-          lesson={{ id: `roadmap:${sectionId}`, title }}
+        <RoadmapVocabPlayer
+          sectionId={sectionId}
+          title={title}
           words={words}
-          unitId=""
-          disablePositionSave
+          reviews={vocabReviews}
+          completed={vocabCompleted}
           passThreshold={ROADMAP_PASS_THRESHOLD}
-          onExit={() => router.push(backHref)}
+          backHref={backHref}
           onComplete={async (s) => {
             const r = await completeRoadmapSectionAction({
               lessonId,
@@ -242,6 +249,27 @@ export function RoadmapSectionPlayer({ skill, lessonId, sectionId, hskLevel, tit
     }
 
     case "WRITING": {
+      // "连词成句" (sắp xếp câu — format thi viết HSK2): chấm tự động, không AI.
+      if (isReorderWriting(content)) {
+        return (
+          <RoadmapWritingPlayer
+            title={content.title || title}
+            sentences={content.sentences}
+            backHref={backHref}
+            passThreshold={ROADMAP_PASS_THRESHOLD}
+            onComplete={async (s) => {
+              const r = await completeRoadmapSectionAction({
+                lessonId,
+                skill: "WRITING",
+                correct: s.correct,
+                total: s.total,
+                durationSec: s.durationSec,
+              });
+              return { ok: r.ok };
+            }}
+          />
+        );
+      }
       const c = content as WritingSectionContent;
       const task = {
         id: sectionId,

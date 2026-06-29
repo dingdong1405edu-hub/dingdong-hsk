@@ -1,7 +1,8 @@
 import * as React from "react";
-import { PdfDocument, PdfSection, PdfNotice } from "@/components/learn/pdf/pdf-document";
+import { PdfDocument, PdfSection, PdfNotice, PdfCard, PdfNumChip, PdfAnswer, PdfAnswerLine } from "@/components/learn/pdf/pdf-document";
 import { PdfPassage, type PassageScope } from "@/components/learn/reading/reading-pdf";
 import { PdfQuestionList, type PdfQuestion } from "@/components/learn/pdf/pdf-question-list";
+import { PDF, PDF_FONT } from "@/lib/pdf/theme";
 import { roadmapQuestionId, type RoadmapQuestion } from "@/lib/roadmap-content";
 
 /** Chuyển câu hỏi lộ trình (Đọc/Nghe) → PdfQuestion cho bảng đáp án in. */
@@ -52,6 +53,69 @@ export function RoadmapReadingPdf({
           )}
         </PdfSection>
       ))}
+    </PdfDocument>
+  );
+}
+
+interface ReorderSentence {
+  words: string[];
+  answer: string;
+  translation?: string;
+}
+
+/** PDF luyện viết lộ trình kiểu "连词成句": mỗi câu có thẻ từ cho sẵn + câu đúng & bản dịch. */
+export function RoadmapWritingReorderPdf({
+  title,
+  titleZh,
+  hskLevel,
+  sentences,
+}: {
+  title: string;
+  titleZh?: string | null;
+  hskLevel: string;
+  sentences: ReorderSentence[];
+}) {
+  return (
+    <PdfDocument kicker="Viết · 连词成句" title={title || "Luyện viết"} titleZh={titleZh} subtitle="Sắp xếp từ thành câu" hskLevel={hskLevel}>
+      <PdfNotice>
+        ✍️ Sắp xếp các từ cho sẵn thành câu đúng (dạng đề <b>VIẾT HSK2</b>) — phần đáp án &amp; bản dịch ở ngay dưới mỗi câu.
+      </PdfNotice>
+      <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+        {sentences.map((s, i) => (
+          <PdfCard key={i}>
+            <div style={{ display: "flex", alignItems: "flex-start", gap: 9 }}>
+              <PdfNumChip n={i + 1} />
+              <div style={{ flex: 1, minWidth: 0 }}>
+                <div style={{ display: "flex", flexWrap: "wrap", gap: 6 }}>
+                  {s.words.map((w, j) => (
+                    <span
+                      key={j}
+                      style={{
+                        fontFamily: PDF_FONT.chinese,
+                        fontSize: 14,
+                        fontWeight: 600,
+                        color: PDF.ink,
+                        border: `1px solid ${PDF.line}`,
+                        background: "#fff",
+                        borderRadius: 7,
+                        padding: "3px 9px",
+                      }}
+                    >
+                      {w}
+                    </span>
+                  ))}
+                </div>
+                <PdfAnswer>
+                  <PdfAnswerLine>{s.answer}</PdfAnswerLine>
+                  {s.translation && (
+                    <div style={{ marginTop: 3, fontSize: 12.5, color: PDF.muted }}>{s.translation}</div>
+                  )}
+                </PdfAnswer>
+              </div>
+            </div>
+          </PdfCard>
+        ))}
+      </div>
     </PdfDocument>
   );
 }

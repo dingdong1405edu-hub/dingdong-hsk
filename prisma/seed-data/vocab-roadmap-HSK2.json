@@ -1,0 +1,4939 @@
+{
+  "lessons": [
+    {
+      "bai": 1,
+      "words": [
+        {
+          "stt": 1,
+          "hanzi": "旅游",
+          "pinyin": "lǚyóu",
+          "meaning": "du lịch",
+          "exampleHanzi": "我想去旅游。",
+          "exampleMeaning": "Tôi muốn đi du lịch."
+        },
+        {
+          "stt": 2,
+          "hanzi": "要",
+          "pinyin": "yào",
+          "meaning": "muốn, định, cần",
+          "exampleHanzi": "我要去北京。",
+          "exampleMeaning": "Tôi định đi Bắc Kinh."
+        },
+        {
+          "stt": 3,
+          "hanzi": "觉得",
+          "pinyin": "juéde",
+          "meaning": "cảm thấy, thấy",
+          "exampleHanzi": "我觉得很好。",
+          "exampleMeaning": "Tôi thấy rất tốt."
+        },
+        {
+          "stt": 4,
+          "hanzi": "有意思",
+          "pinyin": "yǒuyìsi",
+          "meaning": "thú vị, hay",
+          "exampleHanzi": "这儿很有意思。",
+          "exampleMeaning": "Ở đây rất thú vị."
+        },
+        {
+          "stt": 5,
+          "hanzi": "爱好",
+          "pinyin": "àihào",
+          "meaning": "sở thích",
+          "exampleHanzi": "旅游是我的爱好。",
+          "exampleMeaning": "Du lịch là sở thích của tôi."
+        },
+        {
+          "stt": 6,
+          "hanzi": "美",
+          "pinyin": "měi",
+          "meaning": "đẹp",
+          "exampleHanzi": "这儿的风景很美。",
+          "exampleMeaning": "Phong cảnh ở đây rất đẹp."
+        },
+        {
+          "stt": 7,
+          "hanzi": "风景",
+          "pinyin": "fēngjǐng",
+          "meaning": "phong cảnh",
+          "exampleHanzi": "那儿风景很好。",
+          "exampleMeaning": "Phong cảnh ở đó rất đẹp."
+        },
+        {
+          "stt": 8,
+          "hanzi": "照片",
+          "pinyin": "zhàopiàn",
+          "meaning": "ảnh",
+          "exampleHanzi": "我有很多照片。",
+          "exampleMeaning": "Tôi có nhiều ảnh."
+        },
+        {
+          "stt": 9,
+          "hanzi": "地方",
+          "pinyin": "dìfang",
+          "meaning": "nơi, chỗ",
+          "exampleHanzi": "这个地方很好。",
+          "exampleMeaning": "Nơi này rất đẹp."
+        },
+        {
+          "stt": 10,
+          "hanzi": "有名",
+          "pinyin": "yǒumíng",
+          "meaning": "nổi tiếng",
+          "exampleHanzi": "长城很有名。",
+          "exampleMeaning": "Trường Thành rất nổi tiếng."
+        },
+        {
+          "stt": 11,
+          "hanzi": "打算",
+          "pinyin": "dǎsuàn",
+          "meaning": "dự định, định",
+          "exampleHanzi": "我打算去玩。",
+          "exampleMeaning": "Tôi dự định đi chơi."
+        },
+        {
+          "stt": 12,
+          "hanzi": "玩",
+          "pinyin": "wán",
+          "meaning": "chơi",
+          "exampleHanzi": "我们去公园玩。",
+          "exampleMeaning": "Chúng ta đi công viên chơi."
+        },
+        {
+          "stt": 13,
+          "hanzi": "希望",
+          "pinyin": "xīwàng",
+          "meaning": "hi vọng, mong",
+          "exampleHanzi": "希望你来。",
+          "exampleMeaning": "Mong bạn đến."
+        },
+        {
+          "stt": 14,
+          "hanzi": "城市",
+          "pinyin": "chéngshì",
+          "meaning": "thành phố",
+          "exampleHanzi": "北京是大城市。",
+          "exampleMeaning": "Bắc Kinh là thành phố lớn."
+        },
+        {
+          "stt": 15,
+          "hanzi": "国家",
+          "pinyin": "guójiā",
+          "meaning": "quốc gia, nước",
+          "exampleHanzi": "你去过几个国家？",
+          "exampleMeaning": "Bạn đã đến mấy nước?"
+        },
+        {
+          "stt": 16,
+          "hanzi": "长城",
+          "pinyin": "Chángchéng",
+          "meaning": "Vạn Lý Trường Thành",
+          "exampleHanzi": "我想去长城。",
+          "exampleMeaning": "Tôi muốn đi Trường Thành."
+        },
+        {
+          "stt": 17,
+          "hanzi": "快乐",
+          "pinyin": "kuàilè",
+          "meaning": "vui vẻ",
+          "exampleHanzi": "祝你旅游快乐！",
+          "exampleMeaning": "Chúc bạn đi chơi vui vẻ!"
+        }
+      ]
+    },
+    {
+      "bai": 2,
+      "words": [
+        {
+          "stt": 18,
+          "hanzi": "最",
+          "pinyin": "zuì",
+          "meaning": "nhất",
+          "exampleHanzi": "这个最好。",
+          "exampleMeaning": "Cái này tốt nhất."
+        },
+        {
+          "stt": 19,
+          "hanzi": "最好",
+          "pinyin": "zuìhǎo",
+          "meaning": "tốt nhất là, nên",
+          "exampleHanzi": "你最好早点儿去。",
+          "exampleMeaning": "Bạn tốt nhất nên đi sớm."
+        },
+        {
+          "stt": 20,
+          "hanzi": "非常",
+          "pinyin": "fēicháng",
+          "meaning": "vô cùng, rất",
+          "exampleHanzi": "我非常喜欢。",
+          "exampleMeaning": "Tôi vô cùng thích."
+        },
+        {
+          "stt": 21,
+          "hanzi": "真",
+          "pinyin": "zhēn",
+          "meaning": "thật, thật là",
+          "exampleHanzi": "这儿真美。",
+          "exampleMeaning": "Ở đây thật đẹp."
+        },
+        {
+          "stt": 22,
+          "hanzi": "季节",
+          "pinyin": "jìjié",
+          "meaning": "mùa",
+          "exampleHanzi": "你喜欢什么季节？",
+          "exampleMeaning": "Bạn thích mùa nào?"
+        },
+        {
+          "stt": 23,
+          "hanzi": "春天",
+          "pinyin": "chūntiān",
+          "meaning": "mùa xuân",
+          "exampleHanzi": "春天很暖和。",
+          "exampleMeaning": "Mùa xuân ấm áp."
+        },
+        {
+          "stt": 24,
+          "hanzi": "秋天",
+          "pinyin": "qiūtiān",
+          "meaning": "mùa thu",
+          "exampleHanzi": "秋天去最好。",
+          "exampleMeaning": "Mùa thu đi là tốt nhất."
+        },
+        {
+          "stt": 25,
+          "hanzi": "暖和",
+          "pinyin": "nuǎnhuo",
+          "meaning": "ấm áp",
+          "exampleHanzi": "今天很暖和。",
+          "exampleMeaning": "Hôm nay ấm áp."
+        },
+        {
+          "stt": 26,
+          "hanzi": "凉快",
+          "pinyin": "liángkuai",
+          "meaning": "mát mẻ",
+          "exampleHanzi": "秋天很凉快。",
+          "exampleMeaning": "Mùa thu mát mẻ."
+        },
+        {
+          "stt": 27,
+          "hanzi": "舒服",
+          "pinyin": "shūfu",
+          "meaning": "dễ chịu, khỏe",
+          "exampleHanzi": "这儿很舒服。",
+          "exampleMeaning": "Ở đây dễ chịu."
+        },
+        {
+          "stt": 28,
+          "hanzi": "天气",
+          "pinyin": "tiānqì",
+          "meaning": "thời tiết",
+          "exampleHanzi": "今天天气好。",
+          "exampleMeaning": "Hôm nay thời tiết đẹp."
+        },
+        {
+          "stt": 29,
+          "hanzi": "应该",
+          "pinyin": "yīnggāi",
+          "meaning": "nên, phải",
+          "exampleHanzi": "你应该去。",
+          "exampleMeaning": "Bạn nên đi."
+        },
+        {
+          "stt": 30,
+          "hanzi": "比较",
+          "pinyin": "bǐjiào",
+          "meaning": "tương đối, khá",
+          "exampleHanzi": "这儿比较凉快。",
+          "exampleMeaning": "Ở đây tương đối mát."
+        },
+        {
+          "stt": 31,
+          "hanzi": "合适",
+          "pinyin": "héshì",
+          "meaning": "thích hợp, hợp",
+          "exampleHanzi": "这个时间很合适。",
+          "exampleMeaning": "Thời gian này rất hợp."
+        },
+        {
+          "stt": 32,
+          "hanzi": "选择",
+          "pinyin": "xuǎnzé",
+          "meaning": "lựa chọn",
+          "exampleHanzi": "这是好选择。",
+          "exampleMeaning": "Đây là lựa chọn tốt."
+        },
+        {
+          "stt": 33,
+          "hanzi": "热",
+          "pinyin": "rè",
+          "meaning": "nóng",
+          "exampleHanzi": "夏天很热。",
+          "exampleMeaning": "Mùa hè rất nóng."
+        },
+        {
+          "stt": 34,
+          "hanzi": "月",
+          "pinyin": "yuè",
+          "meaning": "tháng",
+          "exampleHanzi": "九月去北京最好。",
+          "exampleMeaning": "Tháng 9 đi Bắc Kinh là tốt nhất."
+        }
+      ]
+    },
+    {
+      "bai": 3,
+      "words": [
+        {
+          "stt": 35,
+          "hanzi": "几",
+          "pinyin": "jǐ",
+          "meaning": "mấy",
+          "exampleHanzi": "你要几个？",
+          "exampleMeaning": "Bạn muốn mấy cái?"
+        },
+        {
+          "stt": 36,
+          "hanzi": "多少",
+          "pinyin": "duōshao",
+          "meaning": "bao nhiêu",
+          "exampleHanzi": "这个多少钱？",
+          "exampleMeaning": "Cái này bao nhiêu tiền?"
+        },
+        {
+          "stt": 37,
+          "hanzi": "多",
+          "pinyin": "duō",
+          "meaning": "bao, nhiêu",
+          "exampleHanzi": "你多大？",
+          "exampleMeaning": "Bạn bao nhiêu tuổi?"
+        },
+        {
+          "stt": 38,
+          "hanzi": "多长时间",
+          "pinyin": "duōcháng shíjiān",
+          "meaning": "bao lâu",
+          "exampleHanzi": "你学多长时间了？",
+          "exampleMeaning": "Bạn học bao lâu rồi?"
+        },
+        {
+          "stt": 39,
+          "hanzi": "多远",
+          "pinyin": "duōyuǎn",
+          "meaning": "bao xa",
+          "exampleHanzi": "学校多远？",
+          "exampleMeaning": "Trường bao xa?"
+        },
+        {
+          "stt": 40,
+          "hanzi": "钱",
+          "pinyin": "qián",
+          "meaning": "tiền",
+          "exampleHanzi": "我没带钱。",
+          "exampleMeaning": "Tôi không mang tiền."
+        },
+        {
+          "stt": 41,
+          "hanzi": "块",
+          "pinyin": "kuài",
+          "meaning": "đồng (tệ)",
+          "exampleHanzi": "五块钱。",
+          "exampleMeaning": "Năm tệ."
+        },
+        {
+          "stt": 42,
+          "hanzi": "百",
+          "pinyin": "bǎi",
+          "meaning": "trăm",
+          "exampleHanzi": "一百块。",
+          "exampleMeaning": "Một trăm tệ."
+        },
+        {
+          "stt": 43,
+          "hanzi": "千",
+          "pinyin": "qiān",
+          "meaning": "nghìn",
+          "exampleHanzi": "两千块。",
+          "exampleMeaning": "Hai nghìn tệ."
+        },
+        {
+          "stt": 44,
+          "hanzi": "张",
+          "pinyin": "zhāng",
+          "meaning": "tờ, tấm (lượng từ)",
+          "exampleHanzi": "一张票。",
+          "exampleMeaning": "Một cái vé."
+        },
+        {
+          "stt": 45,
+          "hanzi": "半",
+          "pinyin": "bàn",
+          "meaning": "nửa, rưỡi",
+          "exampleHanzi": "一个半小时。",
+          "exampleMeaning": "Một tiếng rưỡi."
+        },
+        {
+          "stt": 46,
+          "hanzi": "左右",
+          "pinyin": "zuǒyòu",
+          "meaning": "khoảng, chừng",
+          "exampleHanzi": "十个左右。",
+          "exampleMeaning": "Khoảng mười cái."
+        },
+        {
+          "stt": 47,
+          "hanzi": "一共",
+          "pinyin": "yígòng",
+          "meaning": "tổng cộng",
+          "exampleHanzi": "一共多少钱？",
+          "exampleMeaning": "Tổng cộng bao nhiêu tiền?"
+        },
+        {
+          "stt": 48,
+          "hanzi": "斤",
+          "pinyin": "jīn",
+          "meaning": "cân (nửa ki-lô)",
+          "exampleHanzi": "一斤鱼。",
+          "exampleMeaning": "Một cân cá."
+        },
+        {
+          "stt": 49,
+          "hanzi": "够",
+          "pinyin": "gòu",
+          "meaning": "đủ",
+          "exampleHanzi": "钱够了。",
+          "exampleMeaning": "Tiền đủ rồi."
+        },
+        {
+          "stt": 50,
+          "hanzi": "点儿",
+          "pinyin": "diǎnr",
+          "meaning": "chút, ít",
+          "exampleHanzi": "多吃点儿。",
+          "exampleMeaning": "Ăn nhiều một chút."
+        },
+        {
+          "stt": 51,
+          "hanzi": "两",
+          "pinyin": "liǎng",
+          "meaning": "hai",
+          "exampleHanzi": "两个人。",
+          "exampleMeaning": "Hai người."
+        }
+      ]
+    },
+    {
+      "bai": 4,
+      "words": [
+        {
+          "stt": 52,
+          "hanzi": "每",
+          "pinyin": "měi",
+          "meaning": "mỗi",
+          "exampleHanzi": "我每天看书。",
+          "exampleMeaning": "Mỗi ngày tôi đọc sách."
+        },
+        {
+          "stt": 53,
+          "hanzi": "每天",
+          "pinyin": "měitiān",
+          "meaning": "mỗi ngày",
+          "exampleHanzi": "他每天跑步。",
+          "exampleMeaning": "Anh ấy chạy bộ mỗi ngày."
+        },
+        {
+          "stt": 54,
+          "hanzi": "起床",
+          "pinyin": "qǐchuáng",
+          "meaning": "thức dậy",
+          "exampleHanzi": "我六点起床。",
+          "exampleMeaning": "Tôi dậy lúc 6 giờ."
+        },
+        {
+          "stt": 55,
+          "hanzi": "习惯",
+          "pinyin": "xíguàn",
+          "meaning": "thói quen, quen",
+          "exampleHanzi": "这是我的习惯。",
+          "exampleMeaning": "Đây là thói quen của tôi."
+        },
+        {
+          "stt": 56,
+          "hanzi": "身体",
+          "pinyin": "shēntǐ",
+          "meaning": "cơ thể, sức khỏe",
+          "exampleHanzi": "他身体很好。",
+          "exampleMeaning": "Sức khỏe anh ấy tốt."
+        },
+        {
+          "stt": 57,
+          "hanzi": "运动",
+          "pinyin": "yùndòng",
+          "meaning": "vận động, thể thao",
+          "exampleHanzi": "我喜欢运动。",
+          "exampleMeaning": "Tôi thích vận động."
+        },
+        {
+          "stt": 58,
+          "hanzi": "跑步",
+          "pinyin": "pǎobù",
+          "meaning": "chạy bộ",
+          "exampleHanzi": "早上跑步很好。",
+          "exampleMeaning": "Sáng chạy bộ rất tốt."
+        },
+        {
+          "stt": 59,
+          "hanzi": "洗澡",
+          "pinyin": "xǐzǎo",
+          "meaning": "tắm",
+          "exampleHanzi": "我每天洗澡。",
+          "exampleMeaning": "Tôi tắm mỗi ngày."
+        },
+        {
+          "stt": 60,
+          "hanzi": "锻炼",
+          "pinyin": "duànliàn",
+          "meaning": "rèn luyện",
+          "exampleHanzi": "他常常锻炼。",
+          "exampleMeaning": "Anh ấy thường rèn luyện."
+        },
+        {
+          "stt": 61,
+          "hanzi": "早上",
+          "pinyin": "zǎoshang",
+          "meaning": "buổi sáng",
+          "exampleHanzi": "早上我喝牛奶。",
+          "exampleMeaning": "Sáng tôi uống sữa."
+        },
+        {
+          "stt": 62,
+          "hanzi": "晚上",
+          "pinyin": "wǎnshang",
+          "meaning": "buổi tối",
+          "exampleHanzi": "晚上我看电视。",
+          "exampleMeaning": "Tối tôi xem tivi."
+        },
+        {
+          "stt": 63,
+          "hanzi": "睡觉",
+          "pinyin": "shuìjiào",
+          "meaning": "đi ngủ",
+          "exampleHanzi": "我十点睡觉。",
+          "exampleMeaning": "Tôi ngủ lúc 10 giờ."
+        },
+        {
+          "stt": 64,
+          "hanzi": "健康",
+          "pinyin": "jiànkāng",
+          "meaning": "khỏe mạnh",
+          "exampleHanzi": "运动让人健康。",
+          "exampleMeaning": "Vận động khiến người ta khỏe."
+        },
+        {
+          "stt": 65,
+          "hanzi": "干净",
+          "pinyin": "gānjìng",
+          "meaning": "sạch sẽ",
+          "exampleHanzi": "房间很干净。",
+          "exampleMeaning": "Phòng rất sạch."
+        },
+        {
+          "stt": 66,
+          "hanzi": "洗",
+          "pinyin": "xǐ",
+          "meaning": "rửa, giặt",
+          "exampleHanzi": "我洗衣服。",
+          "exampleMeaning": "Tôi giặt quần áo."
+        },
+        {
+          "stt": 67,
+          "hanzi": "早饭",
+          "pinyin": "zǎofàn",
+          "meaning": "bữa sáng",
+          "exampleHanzi": "我吃早饭。",
+          "exampleMeaning": "Tôi ăn sáng."
+        },
+        {
+          "stt": 68,
+          "hanzi": "常常",
+          "pinyin": "chángcháng",
+          "meaning": "thường thường",
+          "exampleHanzi": "我常常运动。",
+          "exampleMeaning": "Tôi thường vận động."
+        }
+      ]
+    },
+    {
+      "bai": 5,
+      "words": [
+        {
+          "stt": 69,
+          "hanzi": "是不是",
+          "pinyin": "shìbushì",
+          "meaning": "có phải… không",
+          "exampleHanzi": "你是不是病了？",
+          "exampleMeaning": "Bạn có phải bị ốm không?"
+        },
+        {
+          "stt": 70,
+          "hanzi": "生病",
+          "pinyin": "shēngbìng",
+          "meaning": "bị bệnh, ốm",
+          "exampleHanzi": "他生病了。",
+          "exampleMeaning": "Anh ấy bị ốm rồi."
+        },
+        {
+          "stt": 71,
+          "hanzi": "病",
+          "pinyin": "bìng",
+          "meaning": "bệnh",
+          "exampleHanzi": "我有点儿病。",
+          "exampleMeaning": "Tôi hơi bị bệnh."
+        },
+        {
+          "stt": 72,
+          "hanzi": "感冒",
+          "pinyin": "gǎnmào",
+          "meaning": "cảm cúm",
+          "exampleHanzi": "我感冒了。",
+          "exampleMeaning": "Tôi bị cảm rồi."
+        },
+        {
+          "stt": 73,
+          "hanzi": "发烧",
+          "pinyin": "fāshāo",
+          "meaning": "sốt",
+          "exampleHanzi": "他发烧了。",
+          "exampleMeaning": "Anh ấy bị sốt rồi."
+        },
+        {
+          "stt": 74,
+          "hanzi": "药",
+          "pinyin": "yào",
+          "meaning": "thuốc",
+          "exampleHanzi": "你要吃药。",
+          "exampleMeaning": "Bạn phải uống thuốc."
+        },
+        {
+          "stt": 75,
+          "hanzi": "医院",
+          "pinyin": "yīyuàn",
+          "meaning": "bệnh viện",
+          "exampleHanzi": "他去医院了。",
+          "exampleMeaning": "Anh ấy đi bệnh viện rồi."
+        },
+        {
+          "stt": 76,
+          "hanzi": "医生",
+          "pinyin": "yīshēng",
+          "meaning": "bác sĩ",
+          "exampleHanzi": "医生让我休息。",
+          "exampleMeaning": "Bác sĩ bảo tôi nghỉ."
+        },
+        {
+          "stt": 77,
+          "hanzi": "休息",
+          "pinyin": "xiūxi",
+          "meaning": "nghỉ ngơi",
+          "exampleHanzi": "你应该休息。",
+          "exampleMeaning": "Bạn nên nghỉ ngơi."
+        },
+        {
+          "stt": 78,
+          "hanzi": "舒服",
+          "pinyin": "shūfu",
+          "meaning": "dễ chịu, khỏe",
+          "exampleHanzi": "我不舒服。",
+          "exampleMeaning": "Tôi không khỏe."
+        },
+        {
+          "stt": 79,
+          "hanzi": "疼",
+          "pinyin": "téng",
+          "meaning": "đau",
+          "exampleHanzi": "我头疼。",
+          "exampleMeaning": "Tôi đau đầu."
+        },
+        {
+          "stt": 80,
+          "hanzi": "累",
+          "pinyin": "lèi",
+          "meaning": "mệt",
+          "exampleHanzi": "我很累。",
+          "exampleMeaning": "Tôi rất mệt."
+        },
+        {
+          "stt": 81,
+          "hanzi": "脸色",
+          "pinyin": "liǎnsè",
+          "meaning": "sắc mặt",
+          "exampleHanzi": "你脸色不好。",
+          "exampleMeaning": "Sắc mặt bạn không tốt."
+        },
+        {
+          "stt": 82,
+          "hanzi": "注意",
+          "pinyin": "zhùyì",
+          "meaning": "chú ý, để ý",
+          "exampleHanzi": "注意身体。",
+          "exampleMeaning": "Chú ý sức khỏe nhé."
+        },
+        {
+          "stt": 83,
+          "hanzi": "担心",
+          "pinyin": "dānxīn",
+          "meaning": "lo lắng",
+          "exampleHanzi": "别担心。",
+          "exampleMeaning": "Đừng lo."
+        },
+        {
+          "stt": 84,
+          "hanzi": "好好",
+          "pinyin": "hǎohǎo",
+          "meaning": "cho tốt, kỹ",
+          "exampleHanzi": "你好好休息。",
+          "exampleMeaning": "Bạn nghỉ ngơi cho tốt."
+        },
+        {
+          "stt": 85,
+          "hanzi": "头",
+          "pinyin": "tóu",
+          "meaning": "đầu",
+          "exampleHanzi": "我头疼。",
+          "exampleMeaning": "Tôi đau đầu."
+        }
+      ]
+    },
+    {
+      "bai": 6,
+      "words": [
+        {
+          "stt": 86,
+          "hanzi": "有点儿",
+          "pinyin": "yǒudiǎnr",
+          "meaning": "hơi (sắc thái tiêu cực)",
+          "exampleHanzi": "我有点儿累。",
+          "exampleMeaning": "Tôi hơi mệt."
+        },
+        {
+          "stt": 87,
+          "hanzi": "心情",
+          "pinyin": "xīnqíng",
+          "meaning": "tâm trạng",
+          "exampleHanzi": "我今天心情好。",
+          "exampleMeaning": "Hôm nay tâm trạng tôi tốt."
+        },
+        {
+          "stt": 88,
+          "hanzi": "高兴",
+          "pinyin": "gāoxìng",
+          "meaning": "vui",
+          "exampleHanzi": "见到你很高兴。",
+          "exampleMeaning": "Gặp bạn rất vui."
+        },
+        {
+          "stt": 89,
+          "hanzi": "快乐",
+          "pinyin": "kuàilè",
+          "meaning": "vui vẻ",
+          "exampleHanzi": "祝你快乐！",
+          "exampleMeaning": "Chúc bạn vui vẻ!"
+        },
+        {
+          "stt": 90,
+          "hanzi": "难过",
+          "pinyin": "nánguò",
+          "meaning": "buồn",
+          "exampleHanzi": "他很难过。",
+          "exampleMeaning": "Anh ấy rất buồn."
+        },
+        {
+          "stt": 91,
+          "hanzi": "生气",
+          "pinyin": "shēngqì",
+          "meaning": "tức giận",
+          "exampleHanzi": "别生气。",
+          "exampleMeaning": "Đừng giận."
+        },
+        {
+          "stt": 92,
+          "hanzi": "着急",
+          "pinyin": "zháojí",
+          "meaning": "sốt ruột, vội",
+          "exampleHanzi": "别着急。",
+          "exampleMeaning": "Đừng sốt ruột."
+        },
+        {
+          "stt": 93,
+          "hanzi": "害怕",
+          "pinyin": "hàipà",
+          "meaning": "sợ",
+          "exampleHanzi": "我有点儿害怕。",
+          "exampleMeaning": "Tôi hơi sợ."
+        },
+        {
+          "stt": 94,
+          "hanzi": "笑",
+          "pinyin": "xiào",
+          "meaning": "cười",
+          "exampleHanzi": "她笑了。",
+          "exampleMeaning": "Cô ấy cười rồi."
+        },
+        {
+          "stt": 95,
+          "hanzi": "哭",
+          "pinyin": "kū",
+          "meaning": "khóc",
+          "exampleHanzi": "孩子哭了。",
+          "exampleMeaning": "Đứa trẻ khóc rồi."
+        },
+        {
+          "stt": 96,
+          "hanzi": "希望",
+          "pinyin": "xīwàng",
+          "meaning": "hi vọng",
+          "exampleHanzi": "我希望你高兴。",
+          "exampleMeaning": "Tôi mong bạn vui."
+        },
+        {
+          "stt": 97,
+          "hanzi": "觉得",
+          "pinyin": "juéde",
+          "meaning": "cảm thấy",
+          "exampleHanzi": "我觉得很累。",
+          "exampleMeaning": "Tôi thấy rất mệt."
+        },
+        {
+          "stt": 98,
+          "hanzi": "真",
+          "pinyin": "zhēn",
+          "meaning": "thật là",
+          "exampleHanzi": "今天真累。",
+          "exampleMeaning": "Hôm nay thật mệt."
+        },
+        {
+          "stt": 99,
+          "hanzi": "非常",
+          "pinyin": "fēicháng",
+          "meaning": "vô cùng",
+          "exampleHanzi": "我非常高兴。",
+          "exampleMeaning": "Tôi vô cùng vui."
+        },
+        {
+          "stt": 100,
+          "hanzi": "一点儿",
+          "pinyin": "yìdiǎnr",
+          "meaning": "một chút",
+          "exampleHanzi": "好一点儿了。",
+          "exampleMeaning": "Đỡ hơn một chút rồi."
+        },
+        {
+          "stt": 101,
+          "hanzi": "意思",
+          "pinyin": "yìsi",
+          "meaning": "ý, ý nghĩa",
+          "exampleHanzi": "这是什么意思？",
+          "exampleMeaning": "Cái này nghĩa là gì?"
+        },
+        {
+          "stt": 102,
+          "hanzi": "放心",
+          "pinyin": "fàngxīn",
+          "meaning": "yên tâm",
+          "exampleHanzi": "你放心吧。",
+          "exampleMeaning": "Bạn yên tâm nhé."
+        }
+      ]
+    },
+    {
+      "bai": 7,
+      "words": [
+        {
+          "stt": 103,
+          "hanzi": "左边",
+          "pinyin": "zuǒbian",
+          "meaning": "bên trái",
+          "exampleHanzi": "左边是我的。",
+          "exampleMeaning": "Bên trái là của tôi."
+        },
+        {
+          "stt": 104,
+          "hanzi": "右边",
+          "pinyin": "yòubian",
+          "meaning": "bên phải",
+          "exampleHanzi": "右边是你的。",
+          "exampleMeaning": "Bên phải là của bạn."
+        },
+        {
+          "stt": 105,
+          "hanzi": "旁边",
+          "pinyin": "pángbiān",
+          "meaning": "bên cạnh",
+          "exampleHanzi": "桌子旁边有椅子。",
+          "exampleMeaning": "Cạnh bàn có ghế."
+        },
+        {
+          "stt": 106,
+          "hanzi": "上边",
+          "pinyin": "shàngbian",
+          "meaning": "bên trên",
+          "exampleHanzi": "书在上边。",
+          "exampleMeaning": "Sách ở bên trên."
+        },
+        {
+          "stt": 107,
+          "hanzi": "下边",
+          "pinyin": "xiàbian",
+          "meaning": "bên dưới",
+          "exampleHanzi": "猫在下边。",
+          "exampleMeaning": "Mèo ở bên dưới."
+        },
+        {
+          "stt": 108,
+          "hanzi": "中间",
+          "pinyin": "zhōngjiān",
+          "meaning": "ở giữa",
+          "exampleHanzi": "他坐在中间。",
+          "exampleMeaning": "Anh ấy ngồi ở giữa."
+        },
+        {
+          "stt": 109,
+          "hanzi": "颜色",
+          "pinyin": "yánsè",
+          "meaning": "màu sắc",
+          "exampleHanzi": "你喜欢什么颜色？",
+          "exampleMeaning": "Bạn thích màu gì?"
+        },
+        {
+          "stt": 110,
+          "hanzi": "红色",
+          "pinyin": "hóngsè",
+          "meaning": "màu đỏ",
+          "exampleHanzi": "左边红色的是我的。",
+          "exampleMeaning": "Cái màu đỏ bên trái là của tôi."
+        },
+        {
+          "stt": 111,
+          "hanzi": "黑色",
+          "pinyin": "hēisè",
+          "meaning": "màu đen",
+          "exampleHanzi": "我喜欢黑色。",
+          "exampleMeaning": "Tôi thích màu đen."
+        },
+        {
+          "stt": 112,
+          "hanzi": "杯子",
+          "pinyin": "bēizi",
+          "meaning": "cái cốc",
+          "exampleHanzi": "红色的杯子是我的。",
+          "exampleMeaning": "Cái cốc đỏ là của tôi."
+        },
+        {
+          "stt": 113,
+          "hanzi": "手机",
+          "pinyin": "shǒujī",
+          "meaning": "điện thoại",
+          "exampleHanzi": "这个手机是新的。",
+          "exampleMeaning": "Điện thoại này là cái mới."
+        },
+        {
+          "stt": 114,
+          "hanzi": "手表",
+          "pinyin": "shǒubiǎo",
+          "meaning": "đồng hồ đeo tay",
+          "exampleHanzi": "这是我的手表。",
+          "exampleMeaning": "Đây là đồng hồ của tôi."
+        },
+        {
+          "stt": 115,
+          "hanzi": "新",
+          "pinyin": "xīn",
+          "meaning": "mới",
+          "exampleHanzi": "这是新的。",
+          "exampleMeaning": "Đây là cái mới."
+        },
+        {
+          "stt": 116,
+          "hanzi": "旧",
+          "pinyin": "jiù",
+          "meaning": "cũ",
+          "exampleHanzi": "那个是旧的。",
+          "exampleMeaning": "Cái kia là cái cũ."
+        },
+        {
+          "stt": 117,
+          "hanzi": "漂亮",
+          "pinyin": "piàoliang",
+          "meaning": "đẹp, xinh",
+          "exampleHanzi": "这个杯子很漂亮。",
+          "exampleMeaning": "Cái cốc này rất đẹp."
+        },
+        {
+          "stt": 118,
+          "hanzi": "东西",
+          "pinyin": "dōngxi",
+          "meaning": "đồ, đồ vật",
+          "exampleHanzi": "这是谁的东西？",
+          "exampleMeaning": "Đây là đồ của ai?"
+        },
+        {
+          "stt": 119,
+          "hanzi": "放",
+          "pinyin": "fàng",
+          "meaning": "đặt, để",
+          "exampleHanzi": "书放在桌子上。",
+          "exampleMeaning": "Sách để trên bàn."
+        }
+      ]
+    },
+    {
+      "bai": 8,
+      "words": [
+        {
+          "stt": 120,
+          "hanzi": "一下",
+          "pinyin": "yíxià",
+          "meaning": "một chút, một lát",
+          "exampleHanzi": "等我一下。",
+          "exampleMeaning": "Đợi tôi một lát."
+        },
+        {
+          "stt": 121,
+          "hanzi": "等",
+          "pinyin": "děng",
+          "meaning": "đợi",
+          "exampleHanzi": "请等一下。",
+          "exampleMeaning": "Xin đợi một lát."
+        },
+        {
+          "stt": 122,
+          "hanzi": "看看",
+          "pinyin": "kànkan",
+          "meaning": "xem (thử) một chút",
+          "exampleHanzi": "我看看。",
+          "exampleMeaning": "Để tôi xem một chút."
+        },
+        {
+          "stt": 123,
+          "hanzi": "试",
+          "pinyin": "shì",
+          "meaning": "thử",
+          "exampleHanzi": "我试试。",
+          "exampleMeaning": "Để tôi thử."
+        },
+        {
+          "stt": 124,
+          "hanzi": "用",
+          "pinyin": "yòng",
+          "meaning": "dùng",
+          "exampleHanzi": "我用一下。",
+          "exampleMeaning": "Tôi dùng một chút."
+        },
+        {
+          "stt": 125,
+          "hanzi": "帮",
+          "pinyin": "bāng",
+          "meaning": "giúp",
+          "exampleHanzi": "帮我一下。",
+          "exampleMeaning": "Giúp tôi một chút."
+        },
+        {
+          "stt": 126,
+          "hanzi": "帮助",
+          "pinyin": "bāngzhù",
+          "meaning": "giúp đỡ",
+          "exampleHanzi": "谢谢你的帮助。",
+          "exampleMeaning": "Cảm ơn sự giúp đỡ của bạn."
+        },
+        {
+          "stt": 127,
+          "hanzi": "准备",
+          "pinyin": "zhǔnbèi",
+          "meaning": "chuẩn bị",
+          "exampleHanzi": "我准备一下。",
+          "exampleMeaning": "Tôi chuẩn bị một chút."
+        },
+        {
+          "stt": 128,
+          "hanzi": "介绍",
+          "pinyin": "jièshào",
+          "meaning": "giới thiệu",
+          "exampleHanzi": "我介绍一下。",
+          "exampleMeaning": "Để tôi giới thiệu."
+        },
+        {
+          "stt": 129,
+          "hanzi": "休息",
+          "pinyin": "xiūxi",
+          "meaning": "nghỉ",
+          "exampleHanzi": "休息一下吧。",
+          "exampleMeaning": "Nghỉ một chút đi."
+        },
+        {
+          "stt": 130,
+          "hanzi": "看",
+          "pinyin": "kàn",
+          "meaning": "xem, nhìn",
+          "exampleHanzi": "你看一下。",
+          "exampleMeaning": "Bạn xem một chút."
+        },
+        {
+          "stt": 131,
+          "hanzi": "听",
+          "pinyin": "tīng",
+          "meaning": "nghe",
+          "exampleHanzi": "你听一下。",
+          "exampleMeaning": "Bạn nghe thử."
+        },
+        {
+          "stt": 132,
+          "hanzi": "找",
+          "pinyin": "zhǎo",
+          "meaning": "tìm",
+          "exampleHanzi": "我找一下。",
+          "exampleMeaning": "Để tôi tìm một chút."
+        },
+        {
+          "stt": 133,
+          "hanzi": "拿",
+          "pinyin": "ná",
+          "meaning": "cầm, lấy",
+          "exampleHanzi": "你拿一下。",
+          "exampleMeaning": "Bạn cầm hộ một chút."
+        },
+        {
+          "stt": 134,
+          "hanzi": "问",
+          "pinyin": "wèn",
+          "meaning": "hỏi",
+          "exampleHanzi": "我问一下。",
+          "exampleMeaning": "Để tôi hỏi một chút."
+        },
+        {
+          "stt": 135,
+          "hanzi": "再",
+          "pinyin": "zài",
+          "meaning": "lại, nữa",
+          "exampleHanzi": "我再看看。",
+          "exampleMeaning": "Tôi xem lại nữa."
+        },
+        {
+          "stt": 136,
+          "hanzi": "一会儿",
+          "pinyin": "yíhuìr",
+          "meaning": "một lát",
+          "exampleHanzi": "等一会儿。",
+          "exampleMeaning": "Đợi một lát."
+        }
+      ]
+    },
+    {
+      "bai": 9,
+      "words": [
+        {
+          "stt": 137,
+          "hanzi": "真",
+          "pinyin": "zhēn",
+          "meaning": "thật, thật là",
+          "exampleHanzi": "这个真漂亮！",
+          "exampleMeaning": "Cái này thật đẹp!"
+        },
+        {
+          "stt": 138,
+          "hanzi": "漂亮",
+          "pinyin": "piàoliang",
+          "meaning": "đẹp, xinh",
+          "exampleHanzi": "她真漂亮。",
+          "exampleMeaning": "Cô ấy thật xinh."
+        },
+        {
+          "stt": 139,
+          "hanzi": "极了",
+          "pinyin": "jíle",
+          "meaning": "…cực kỳ",
+          "exampleHanzi": "好极了！",
+          "exampleMeaning": "Tốt cực kỳ!"
+        },
+        {
+          "stt": 140,
+          "hanzi": "太",
+          "pinyin": "tài",
+          "meaning": "quá",
+          "exampleHanzi": "太好了！",
+          "exampleMeaning": "Tốt quá!"
+        },
+        {
+          "stt": 141,
+          "hanzi": "好看",
+          "pinyin": "hǎokàn",
+          "meaning": "đẹp (nhìn)",
+          "exampleHanzi": "这件衣服真好看。",
+          "exampleMeaning": "Cái áo này thật đẹp."
+        },
+        {
+          "stt": 142,
+          "hanzi": "可爱",
+          "pinyin": "kě'ài",
+          "meaning": "đáng yêu",
+          "exampleHanzi": "这个孩子真可爱。",
+          "exampleMeaning": "Đứa bé này thật đáng yêu."
+        },
+        {
+          "stt": 143,
+          "hanzi": "聪明",
+          "pinyin": "cōngming",
+          "meaning": "thông minh",
+          "exampleHanzi": "他很聪明。",
+          "exampleMeaning": "Anh ấy rất thông minh."
+        },
+        {
+          "stt": 144,
+          "hanzi": "奇怪",
+          "pinyin": "qíguài",
+          "meaning": "kỳ lạ",
+          "exampleHanzi": "真奇怪！",
+          "exampleMeaning": "Thật kỳ lạ!"
+        },
+        {
+          "stt": 145,
+          "hanzi": "有意思",
+          "pinyin": "yǒuyìsi",
+          "meaning": "thú vị",
+          "exampleHanzi": "这本书真有意思。",
+          "exampleMeaning": "Quyển sách này thật thú vị."
+        },
+        {
+          "stt": 146,
+          "hanzi": "不错",
+          "pinyin": "búcuò",
+          "meaning": "khá tốt, được đấy",
+          "exampleHanzi": "这个菜不错。",
+          "exampleMeaning": "Món này khá ngon."
+        },
+        {
+          "stt": 147,
+          "hanzi": "棒",
+          "pinyin": "bàng",
+          "meaning": "giỏi, cừ",
+          "exampleHanzi": "你真棒！",
+          "exampleMeaning": "Bạn thật giỏi!"
+        },
+        {
+          "stt": 148,
+          "hanzi": "高",
+          "pinyin": "gāo",
+          "meaning": "cao",
+          "exampleHanzi": "他个子真高。",
+          "exampleMeaning": "Anh ấy thật cao."
+        },
+        {
+          "stt": 149,
+          "hanzi": "胖",
+          "pinyin": "pàng",
+          "meaning": "mập, béo",
+          "exampleHanzi": "他有点儿胖。",
+          "exampleMeaning": "Anh ấy hơi béo."
+        },
+        {
+          "stt": 150,
+          "hanzi": "瘦",
+          "pinyin": "shòu",
+          "meaning": "gầy",
+          "exampleHanzi": "你太瘦了。",
+          "exampleMeaning": "Bạn gầy quá."
+        },
+        {
+          "stt": 151,
+          "hanzi": "干净",
+          "pinyin": "gānjìng",
+          "meaning": "sạch sẽ",
+          "exampleHanzi": "房间真干净。",
+          "exampleMeaning": "Phòng thật sạch."
+        },
+        {
+          "stt": 152,
+          "hanzi": "白",
+          "pinyin": "bái",
+          "meaning": "trắng",
+          "exampleHanzi": "她的脸真白。",
+          "exampleMeaning": "Da mặt cô ấy thật trắng."
+        },
+        {
+          "stt": 153,
+          "hanzi": "脸",
+          "pinyin": "liǎn",
+          "meaning": "mặt",
+          "exampleHanzi": "他洗脸了。",
+          "exampleMeaning": "Anh ấy rửa mặt rồi."
+        }
+      ]
+    },
+    {
+      "bai": 10,
+      "words": [
+        {
+          "stt": 154,
+          "hanzi": "介绍",
+          "pinyin": "jièshào",
+          "meaning": "giới thiệu",
+          "exampleHanzi": "我来介绍一下。",
+          "exampleMeaning": "Để tôi giới thiệu."
+        },
+        {
+          "stt": 155,
+          "hanzi": "它",
+          "pinyin": "tā",
+          "meaning": "nó (vật, con vật)",
+          "exampleHanzi": "这是我的猫，它很小。",
+          "exampleMeaning": "Đây là mèo của tôi, nó rất nhỏ."
+        },
+        {
+          "stt": 156,
+          "hanzi": "认识",
+          "pinyin": "rènshi",
+          "meaning": "quen biết",
+          "exampleHanzi": "认识你很高兴。",
+          "exampleMeaning": "Quen biết bạn rất vui."
+        },
+        {
+          "stt": 157,
+          "hanzi": "朋友",
+          "pinyin": "péngyou",
+          "meaning": "bạn",
+          "exampleHanzi": "他是我的朋友。",
+          "exampleMeaning": "Anh ấy là bạn tôi."
+        },
+        {
+          "stt": 158,
+          "hanzi": "同事",
+          "pinyin": "tóngshì",
+          "meaning": "đồng nghiệp",
+          "exampleHanzi": "这是我的同事。",
+          "exampleMeaning": "Đây là đồng nghiệp của tôi."
+        },
+        {
+          "stt": 159,
+          "hanzi": "同学",
+          "pinyin": "tóngxué",
+          "meaning": "bạn học",
+          "exampleHanzi": "他是我同学。",
+          "exampleMeaning": "Anh ấy là bạn học của tôi."
+        },
+        {
+          "stt": 160,
+          "hanzi": "大家",
+          "pinyin": "dàjiā",
+          "meaning": "mọi người",
+          "exampleHanzi": "我给大家介绍一下。",
+          "exampleMeaning": "Tôi giới thiệu cho mọi người."
+        },
+        {
+          "stt": 161,
+          "hanzi": "名字",
+          "pinyin": "míngzi",
+          "meaning": "tên",
+          "exampleHanzi": "你叫什么名字？",
+          "exampleMeaning": "Bạn tên gì?"
+        },
+        {
+          "stt": 162,
+          "hanzi": "姓",
+          "pinyin": "xìng",
+          "meaning": "họ",
+          "exampleHanzi": "我姓王。",
+          "exampleMeaning": "Tôi họ Vương."
+        },
+        {
+          "stt": 163,
+          "hanzi": "年轻",
+          "pinyin": "niánqīng",
+          "meaning": "trẻ",
+          "exampleHanzi": "他很年轻。",
+          "exampleMeaning": "Anh ấy rất trẻ."
+        },
+        {
+          "stt": 164,
+          "hanzi": "聊天",
+          "pinyin": "liáotiān",
+          "meaning": "trò chuyện",
+          "exampleHanzi": "我们聊天吧。",
+          "exampleMeaning": "Chúng ta trò chuyện đi."
+        },
+        {
+          "stt": 165,
+          "hanzi": "欢迎",
+          "pinyin": "huānyíng",
+          "meaning": "hoan nghênh, chào mừng",
+          "exampleHanzi": "欢迎你来。",
+          "exampleMeaning": "Chào mừng bạn đến."
+        },
+        {
+          "stt": 166,
+          "hanzi": "它们",
+          "pinyin": "tāmen",
+          "meaning": "chúng (vật)",
+          "exampleHanzi": "它们都很可爱。",
+          "exampleMeaning": "Chúng đều rất đáng yêu."
+        },
+        {
+          "stt": 167,
+          "hanzi": "男",
+          "pinyin": "nán",
+          "meaning": "nam",
+          "exampleHanzi": "他是男的。",
+          "exampleMeaning": "Anh ấy là nam."
+        },
+        {
+          "stt": 168,
+          "hanzi": "女",
+          "pinyin": "nǚ",
+          "meaning": "nữ",
+          "exampleHanzi": "她是女的。",
+          "exampleMeaning": "Cô ấy là nữ."
+        },
+        {
+          "stt": 169,
+          "hanzi": "一起",
+          "pinyin": "yìqǐ",
+          "meaning": "cùng nhau",
+          "exampleHanzi": "我们一起玩。",
+          "exampleMeaning": "Chúng ta cùng chơi."
+        },
+        {
+          "stt": 170,
+          "hanzi": "高兴",
+          "pinyin": "gāoxìng",
+          "meaning": "vui",
+          "exampleHanzi": "认识你我很高兴。",
+          "exampleMeaning": "Quen bạn tôi rất vui."
+        }
+      ]
+    },
+    {
+      "bai": 11,
+      "words": [
+        {
+          "stt": 171,
+          "hanzi": "帮",
+          "pinyin": "bāng",
+          "meaning": "giúp",
+          "exampleHanzi": "他帮我介绍工作。",
+          "exampleMeaning": "Anh ấy giúp tôi giới thiệu việc."
+        },
+        {
+          "stt": 172,
+          "hanzi": "让",
+          "pinyin": "ràng",
+          "meaning": "để, bảo, nhường",
+          "exampleHanzi": "老板让我休息。",
+          "exampleMeaning": "Sếp bảo tôi nghỉ."
+        },
+        {
+          "stt": 173,
+          "hanzi": "叫",
+          "pinyin": "jiào",
+          "meaning": "bảo, gọi",
+          "exampleHanzi": "他叫我来。",
+          "exampleMeaning": "Anh ấy bảo tôi đến."
+        },
+        {
+          "stt": 174,
+          "hanzi": "请",
+          "pinyin": "qǐng",
+          "meaning": "mời",
+          "exampleHanzi": "我请他帮忙。",
+          "exampleMeaning": "Tôi nhờ anh ấy giúp."
+        },
+        {
+          "stt": 175,
+          "hanzi": "工作",
+          "pinyin": "gōngzuò",
+          "meaning": "công việc, làm việc",
+          "exampleHanzi": "他帮我找工作。",
+          "exampleMeaning": "Anh ấy giúp tôi tìm việc."
+        },
+        {
+          "stt": 176,
+          "hanzi": "公司",
+          "pinyin": "gōngsī",
+          "meaning": "công ty",
+          "exampleHanzi": "我在大公司工作。",
+          "exampleMeaning": "Tôi làm ở công ty lớn."
+        },
+        {
+          "stt": 177,
+          "hanzi": "老板",
+          "pinyin": "lǎobǎn",
+          "meaning": "ông chủ, sếp",
+          "exampleHanzi": "我们老板很好。",
+          "exampleMeaning": "Sếp chúng tôi rất tốt."
+        },
+        {
+          "stt": 178,
+          "hanzi": "同事",
+          "pinyin": "tóngshì",
+          "meaning": "đồng nghiệp",
+          "exampleHanzi": "同事帮了我。",
+          "exampleMeaning": "Đồng nghiệp đã giúp tôi."
+        },
+        {
+          "stt": 179,
+          "hanzi": "忙",
+          "pinyin": "máng",
+          "meaning": "bận",
+          "exampleHanzi": "我今天很忙。",
+          "exampleMeaning": "Hôm nay tôi rất bận."
+        },
+        {
+          "stt": 180,
+          "hanzi": "帮忙",
+          "pinyin": "bāngmáng",
+          "meaning": "giúp đỡ",
+          "exampleHanzi": "谢谢你帮忙。",
+          "exampleMeaning": "Cảm ơn bạn đã giúp."
+        },
+        {
+          "stt": 181,
+          "hanzi": "告诉",
+          "pinyin": "gàosu",
+          "meaning": "nói cho biết",
+          "exampleHanzi": "他告诉我了。",
+          "exampleMeaning": "Anh ấy đã nói cho tôi."
+        },
+        {
+          "stt": 182,
+          "hanzi": "事情",
+          "pinyin": "shìqing",
+          "meaning": "việc, chuyện",
+          "exampleHanzi": "我有很多事情。",
+          "exampleMeaning": "Tôi có nhiều việc."
+        },
+        {
+          "stt": 183,
+          "hanzi": "经理",
+          "pinyin": "jīnglǐ",
+          "meaning": "giám đốc, quản lý",
+          "exampleHanzi": "他是经理。",
+          "exampleMeaning": "Anh ấy là quản lý."
+        },
+        {
+          "stt": 184,
+          "hanzi": "上班",
+          "pinyin": "shàngbān",
+          "meaning": "đi làm",
+          "exampleHanzi": "我每天上班。",
+          "exampleMeaning": "Mỗi ngày tôi đi làm."
+        },
+        {
+          "stt": 185,
+          "hanzi": "下班",
+          "pinyin": "xiàbān",
+          "meaning": "tan làm",
+          "exampleHanzi": "我六点下班。",
+          "exampleMeaning": "Tôi tan làm lúc 6 giờ."
+        },
+        {
+          "stt": 186,
+          "hanzi": "努力",
+          "pinyin": "nǔlì",
+          "meaning": "cố gắng, nỗ lực",
+          "exampleHanzi": "他工作很努力。",
+          "exampleMeaning": "Anh ấy làm việc rất chăm."
+        },
+        {
+          "stt": 187,
+          "hanzi": "机会",
+          "pinyin": "jīhuì",
+          "meaning": "cơ hội",
+          "exampleHanzi": "这是好机会。",
+          "exampleMeaning": "Đây là cơ hội tốt."
+        }
+      ]
+    },
+    {
+      "bai": 12,
+      "words": [
+        {
+          "stt": 188,
+          "hanzi": "是…的",
+          "pinyin": "shì…de",
+          "meaning": "chính là… đó (nhấn mạnh)",
+          "exampleHanzi": "我是去年来的。",
+          "exampleMeaning": "Tôi đến vào năm ngoái đấy."
+        },
+        {
+          "stt": 189,
+          "hanzi": "去年",
+          "pinyin": "qùnián",
+          "meaning": "năm ngoái",
+          "exampleHanzi": "我去年来的。",
+          "exampleMeaning": "Tôi đến năm ngoái."
+        },
+        {
+          "stt": 190,
+          "hanzi": "今年",
+          "pinyin": "jīnnián",
+          "meaning": "năm nay",
+          "exampleHanzi": "今年我很忙。",
+          "exampleMeaning": "Năm nay tôi rất bận."
+        },
+        {
+          "stt": 191,
+          "hanzi": "以前",
+          "pinyin": "yǐqián",
+          "meaning": "trước đây",
+          "exampleHanzi": "以前我不会说。",
+          "exampleMeaning": "Trước đây tôi không biết nói."
+        },
+        {
+          "stt": 192,
+          "hanzi": "时候",
+          "pinyin": "shíhou",
+          "meaning": "lúc, khi",
+          "exampleHanzi": "小时候我很瘦。",
+          "exampleMeaning": "Hồi nhỏ tôi rất gầy."
+        },
+        {
+          "stt": 193,
+          "hanzi": "刚",
+          "pinyin": "gāng",
+          "meaning": "vừa mới",
+          "exampleHanzi": "我刚来。",
+          "exampleMeaning": "Tôi vừa đến."
+        },
+        {
+          "stt": 194,
+          "hanzi": "已经",
+          "pinyin": "yǐjīng",
+          "meaning": "đã, đã rồi",
+          "exampleHanzi": "我已经来了。",
+          "exampleMeaning": "Tôi đã đến rồi."
+        },
+        {
+          "stt": 195,
+          "hanzi": "年",
+          "pinyin": "nián",
+          "meaning": "năm",
+          "exampleHanzi": "我学了两年。",
+          "exampleMeaning": "Tôi học được hai năm."
+        },
+        {
+          "stt": 196,
+          "hanzi": "第一次",
+          "pinyin": "dìyīcì",
+          "meaning": "lần đầu tiên",
+          "exampleHanzi": "这是我第一次来。",
+          "exampleMeaning": "Đây là lần đầu tôi đến."
+        },
+        {
+          "stt": 197,
+          "hanzi": "出生",
+          "pinyin": "chūshēng",
+          "meaning": "sinh ra",
+          "exampleHanzi": "我在北京出生。",
+          "exampleMeaning": "Tôi sinh ra ở Bắc Kinh."
+        },
+        {
+          "stt": 198,
+          "hanzi": "从",
+          "pinyin": "cóng",
+          "meaning": "từ",
+          "exampleHanzi": "我从中国来的。",
+          "exampleMeaning": "Tôi đến từ Trung Quốc."
+        },
+        {
+          "stt": 199,
+          "hanzi": "怎么",
+          "pinyin": "zěnme",
+          "meaning": "thế nào, làm sao",
+          "exampleHanzi": "你是怎么来的?",
+          "exampleMeaning": "Bạn đến bằng cách nào?"
+        },
+        {
+          "stt": 200,
+          "hanzi": "坐",
+          "pinyin": "zuò",
+          "meaning": "ngồi, đi (xe)",
+          "exampleHanzi": "我是坐飞机来的。",
+          "exampleMeaning": "Tôi đến bằng máy bay đấy."
+        },
+        {
+          "stt": 201,
+          "hanzi": "飞机",
+          "pinyin": "fēijī",
+          "meaning": "máy bay",
+          "exampleHanzi": "我坐飞机来。",
+          "exampleMeaning": "Tôi đến bằng máy bay."
+        },
+        {
+          "stt": 202,
+          "hanzi": "地铁",
+          "pinyin": "dìtiě",
+          "meaning": "tàu điện ngầm",
+          "exampleHanzi": "我坐地铁来的。",
+          "exampleMeaning": "Tôi đến bằng tàu điện ngầm."
+        },
+        {
+          "stt": 203,
+          "hanzi": "跟",
+          "pinyin": "gēn",
+          "meaning": "với, cùng",
+          "exampleHanzi": "我跟朋友一起来的。",
+          "exampleMeaning": "Tôi đến cùng bạn."
+        },
+        {
+          "stt": 204,
+          "hanzi": "一个人",
+          "pinyin": "yígerén",
+          "meaning": "một mình",
+          "exampleHanzi": "我是一个人来的。",
+          "exampleMeaning": "Tôi đến một mình."
+        }
+      ]
+    },
+    {
+      "bai": 13,
+      "words": [
+        {
+          "stt": 205,
+          "hanzi": "的时候",
+          "pinyin": "de shíhou",
+          "meaning": "khi, lúc",
+          "exampleHanzi": "下班的时候很累。",
+          "exampleMeaning": "Lúc tan làm rất mệt."
+        },
+        {
+          "stt": 206,
+          "hanzi": "下班",
+          "pinyin": "xiàbān",
+          "meaning": "tan làm",
+          "exampleHanzi": "下班以后我回家。",
+          "exampleMeaning": "Sau khi tan làm tôi về nhà."
+        },
+        {
+          "stt": 207,
+          "hanzi": "以后",
+          "pinyin": "yǐhòu",
+          "meaning": "sau này, sau khi",
+          "exampleHanzi": "以后再说。",
+          "exampleMeaning": "Để sau hãy nói."
+        },
+        {
+          "stt": 208,
+          "hanzi": "已经",
+          "pinyin": "yǐjīng",
+          "meaning": "đã, đã rồi",
+          "exampleHanzi": "我已经吃了。",
+          "exampleMeaning": "Tôi đã ăn rồi."
+        },
+        {
+          "stt": 209,
+          "hanzi": "时间",
+          "pinyin": "shíjiān",
+          "meaning": "thời gian",
+          "exampleHanzi": "我没有时间。",
+          "exampleMeaning": "Tôi không có thời gian."
+        },
+        {
+          "stt": 210,
+          "hanzi": "分钟",
+          "pinyin": "fēnzhōng",
+          "meaning": "phút",
+          "exampleHanzi": "等我五分钟。",
+          "exampleMeaning": "Đợi tôi năm phút."
+        },
+        {
+          "stt": 211,
+          "hanzi": "小时",
+          "pinyin": "xiǎoshí",
+          "meaning": "tiếng (đồng hồ)",
+          "exampleHanzi": "我工作八小时。",
+          "exampleMeaning": "Tôi làm tám tiếng."
+        },
+        {
+          "stt": 212,
+          "hanzi": "刚才",
+          "pinyin": "gāngcái",
+          "meaning": "vừa nãy",
+          "exampleHanzi": "他刚才来过。",
+          "exampleMeaning": "Vừa nãy anh ấy có đến."
+        },
+        {
+          "stt": 213,
+          "hanzi": "现在",
+          "pinyin": "xiànzài",
+          "meaning": "bây giờ",
+          "exampleHanzi": "现在几点?",
+          "exampleMeaning": "Bây giờ mấy giờ?"
+        },
+        {
+          "stt": 214,
+          "hanzi": "点",
+          "pinyin": "diǎn",
+          "meaning": "giờ",
+          "exampleHanzi": "现在三点。",
+          "exampleMeaning": "Bây giờ ba giờ."
+        },
+        {
+          "stt": 215,
+          "hanzi": "回家",
+          "pinyin": "huíjiā",
+          "meaning": "về nhà",
+          "exampleHanzi": "我下班回家。",
+          "exampleMeaning": "Tôi tan làm về nhà."
+        },
+        {
+          "stt": 216,
+          "hanzi": "路上",
+          "pinyin": "lùshang",
+          "meaning": "trên đường",
+          "exampleHanzi": "路上小心。",
+          "exampleMeaning": "Trên đường cẩn thận."
+        },
+        {
+          "stt": 217,
+          "hanzi": "一般",
+          "pinyin": "yìbān",
+          "meaning": "thường, bình thường",
+          "exampleHanzi": "我一般八点起床。",
+          "exampleMeaning": "Tôi thường dậy lúc 8 giờ."
+        },
+        {
+          "stt": 218,
+          "hanzi": "先",
+          "pinyin": "xiān",
+          "meaning": "trước",
+          "exampleHanzi": "我先回家。",
+          "exampleMeaning": "Tôi về nhà trước."
+        },
+        {
+          "stt": 219,
+          "hanzi": "然后",
+          "pinyin": "ránhòu",
+          "meaning": "sau đó",
+          "exampleHanzi": "然后吃饭。",
+          "exampleMeaning": "Sau đó ăn cơm."
+        },
+        {
+          "stt": 220,
+          "hanzi": "有时候",
+          "pinyin": "yǒushíhou",
+          "meaning": "có khi, đôi khi",
+          "exampleHanzi": "有时候我很忙。",
+          "exampleMeaning": "Đôi khi tôi rất bận."
+        },
+        {
+          "stt": 221,
+          "hanzi": "累",
+          "pinyin": "lèi",
+          "meaning": "mệt",
+          "exampleHanzi": "下班的时候很累。",
+          "exampleMeaning": "Lúc tan làm rất mệt."
+        }
+      ]
+    },
+    {
+      "bai": 14,
+      "words": [
+        {
+          "stt": 222,
+          "hanzi": "吧",
+          "pinyin": "ba",
+          "meaning": "đi, nhé (đề nghị)",
+          "exampleHanzi": "买这件衣服吧。",
+          "exampleMeaning": "Mua cái áo này đi."
+        },
+        {
+          "stt": 223,
+          "hanzi": "衣服",
+          "pinyin": "yīfu",
+          "meaning": "quần áo",
+          "exampleHanzi": "这件衣服很好看。",
+          "exampleMeaning": "Cái áo này rất đẹp."
+        },
+        {
+          "stt": 224,
+          "hanzi": "件",
+          "pinyin": "jiàn",
+          "meaning": "cái (lượng từ áo)",
+          "exampleHanzi": "一件衣服。",
+          "exampleMeaning": "Một cái áo."
+        },
+        {
+          "stt": 225,
+          "hanzi": "条",
+          "pinyin": "tiáo",
+          "meaning": "cái (lượng từ quần, váy)",
+          "exampleHanzi": "一条裤子。",
+          "exampleMeaning": "Một cái quần."
+        },
+        {
+          "stt": 226,
+          "hanzi": "裤子",
+          "pinyin": "kùzi",
+          "meaning": "quần",
+          "exampleHanzi": "这条裤子是新的。",
+          "exampleMeaning": "Cái quần này là mới."
+        },
+        {
+          "stt": 227,
+          "hanzi": "裙子",
+          "pinyin": "qúnzi",
+          "meaning": "váy",
+          "exampleHanzi": "这条裙子很漂亮。",
+          "exampleMeaning": "Cái váy này rất đẹp."
+        },
+        {
+          "stt": 228,
+          "hanzi": "鞋",
+          "pinyin": "xié",
+          "meaning": "giày",
+          "exampleHanzi": "这双鞋很贵。",
+          "exampleMeaning": "Đôi giày này rất đắt."
+        },
+        {
+          "stt": 229,
+          "hanzi": "双",
+          "pinyin": "shuāng",
+          "meaning": "đôi",
+          "exampleHanzi": "一双鞋。",
+          "exampleMeaning": "Một đôi giày."
+        },
+        {
+          "stt": 230,
+          "hanzi": "穿",
+          "pinyin": "chuān",
+          "meaning": "mặc, đi (giày)",
+          "exampleHanzi": "你穿这件吧。",
+          "exampleMeaning": "Bạn mặc cái này đi."
+        },
+        {
+          "stt": 231,
+          "hanzi": "试",
+          "pinyin": "shì",
+          "meaning": "thử",
+          "exampleHanzi": "你试试吧。",
+          "exampleMeaning": "Bạn thử xem."
+        },
+        {
+          "stt": 232,
+          "hanzi": "商店",
+          "pinyin": "shāngdiàn",
+          "meaning": "cửa hàng",
+          "exampleHanzi": "我去商店买衣服。",
+          "exampleMeaning": "Tôi đi cửa hàng mua quần áo."
+        },
+        {
+          "stt": 233,
+          "hanzi": "卖",
+          "pinyin": "mài",
+          "meaning": "bán",
+          "exampleHanzi": "这儿卖鞋。",
+          "exampleMeaning": "Ở đây bán giày."
+        },
+        {
+          "stt": 234,
+          "hanzi": "买",
+          "pinyin": "mǎi",
+          "meaning": "mua",
+          "exampleHanzi": "我买一件。",
+          "exampleMeaning": "Tôi mua một cái."
+        },
+        {
+          "stt": 235,
+          "hanzi": "大小",
+          "pinyin": "dàxiǎo",
+          "meaning": "cỡ, kích cỡ",
+          "exampleHanzi": "大小合适吗？",
+          "exampleMeaning": "Cỡ có vừa không?"
+        },
+        {
+          "stt": 236,
+          "hanzi": "合适",
+          "pinyin": "héshì",
+          "meaning": "vừa, hợp",
+          "exampleHanzi": "这件很合适。",
+          "exampleMeaning": "Cái này rất vừa."
+        },
+        {
+          "stt": 237,
+          "hanzi": "颜色",
+          "pinyin": "yánsè",
+          "meaning": "màu sắc",
+          "exampleHanzi": "这个颜色好看。",
+          "exampleMeaning": "Màu này đẹp."
+        },
+        {
+          "stt": 238,
+          "hanzi": "漂亮",
+          "pinyin": "piàoliang",
+          "meaning": "đẹp",
+          "exampleHanzi": "这件真漂亮。",
+          "exampleMeaning": "Cái này thật đẹp."
+        }
+      ]
+    },
+    {
+      "bai": 15,
+      "words": [
+        {
+          "stt": 239,
+          "hanzi": "就",
+          "pinyin": "jiù",
+          "meaning": "thì, liền, ngay",
+          "exampleHanzi": "太贵就别买。",
+          "exampleMeaning": "Đắt quá thì đừng mua."
+        },
+        {
+          "stt": 240,
+          "hanzi": "贵",
+          "pinyin": "guì",
+          "meaning": "đắt",
+          "exampleHanzi": "太贵了。",
+          "exampleMeaning": "Đắt quá."
+        },
+        {
+          "stt": 241,
+          "hanzi": "便宜",
+          "pinyin": "piányi",
+          "meaning": "rẻ",
+          "exampleHanzi": "便宜点儿吧。",
+          "exampleMeaning": "Rẻ một chút đi."
+        },
+        {
+          "stt": 242,
+          "hanzi": "有点儿",
+          "pinyin": "yǒudiǎnr",
+          "meaning": "hơi (tiêu cực)",
+          "exampleHanzi": "有点儿贵。",
+          "exampleMeaning": "Hơi đắt."
+        },
+        {
+          "stt": 243,
+          "hanzi": "一点儿",
+          "pinyin": "yìdiǎnr",
+          "meaning": "một chút",
+          "exampleHanzi": "便宜一点儿。",
+          "exampleMeaning": "Rẻ hơn một chút."
+        },
+        {
+          "stt": 244,
+          "hanzi": "钱",
+          "pinyin": "qián",
+          "meaning": "tiền",
+          "exampleHanzi": "多少钱？",
+          "exampleMeaning": "Bao nhiêu tiền?"
+        },
+        {
+          "stt": 245,
+          "hanzi": "块",
+          "pinyin": "kuài",
+          "meaning": "đồng (tệ)",
+          "exampleHanzi": "一百块。",
+          "exampleMeaning": "Một trăm tệ."
+        },
+        {
+          "stt": 246,
+          "hanzi": "打折",
+          "pinyin": "dǎzhé",
+          "meaning": "giảm giá",
+          "exampleHanzi": "这个打折吗？",
+          "exampleMeaning": "Cái này có giảm giá không?"
+        },
+        {
+          "stt": 247,
+          "hanzi": "便宜点儿",
+          "pinyin": "piányi diǎnr",
+          "meaning": "rẻ chút đi",
+          "exampleHanzi": "便宜点儿吧。",
+          "exampleMeaning": "Rẻ chút đi mà."
+        },
+        {
+          "stt": 248,
+          "hanzi": "行",
+          "pinyin": "xíng",
+          "meaning": "được",
+          "exampleHanzi": "行，便宜点儿。",
+          "exampleMeaning": "Được, rẻ chút đi."
+        },
+        {
+          "stt": 249,
+          "hanzi": "给",
+          "pinyin": "gěi",
+          "meaning": "đưa, cho",
+          "exampleHanzi": "我给你便宜点儿。",
+          "exampleMeaning": "Tôi để rẻ cho bạn."
+        },
+        {
+          "stt": 250,
+          "hanzi": "元",
+          "pinyin": "yuán",
+          "meaning": "đồng (tệ, văn viết)",
+          "exampleHanzi": "一百元。",
+          "exampleMeaning": "Một trăm tệ."
+        },
+        {
+          "stt": 251,
+          "hanzi": "再",
+          "pinyin": "zài",
+          "meaning": "thêm, nữa",
+          "exampleHanzi": "再便宜点儿。",
+          "exampleMeaning": "Rẻ thêm chút nữa."
+        },
+        {
+          "stt": 252,
+          "hanzi": "还",
+          "pinyin": "hái",
+          "meaning": "vẫn, còn",
+          "exampleHanzi": "还是太贵。",
+          "exampleMeaning": "Vẫn còn đắt."
+        },
+        {
+          "stt": 253,
+          "hanzi": "觉得",
+          "pinyin": "juéde",
+          "meaning": "cảm thấy",
+          "exampleHanzi": "我觉得太贵。",
+          "exampleMeaning": "Tôi thấy đắt quá."
+        },
+        {
+          "stt": 254,
+          "hanzi": "最",
+          "pinyin": "zuì",
+          "meaning": "nhất",
+          "exampleHanzi": "这个最便宜。",
+          "exampleMeaning": "Cái này rẻ nhất."
+        },
+        {
+          "stt": 255,
+          "hanzi": "便宜货",
+          "pinyin": "piányihuò",
+          "meaning": "hàng rẻ",
+          "exampleHanzi": "这是便宜货。",
+          "exampleMeaning": "Đây là hàng rẻ."
+        }
+      ]
+    },
+    {
+      "bai": 16,
+      "words": [
+        {
+          "stt": 256,
+          "hanzi": "还",
+          "pinyin": "hái",
+          "meaning": "vẫn, còn",
+          "exampleHanzi": "我还想再看看。",
+          "exampleMeaning": "Tôi vẫn muốn xem thêm."
+        },
+        {
+          "stt": 257,
+          "hanzi": "再",
+          "pinyin": "zài",
+          "meaning": "lại, rồi mới",
+          "exampleHanzi": "我再看看。",
+          "exampleMeaning": "Tôi xem lại đã."
+        },
+        {
+          "stt": 258,
+          "hanzi": "看看",
+          "pinyin": "kànkan",
+          "meaning": "xem thử",
+          "exampleHanzi": "我再看看。",
+          "exampleMeaning": "Tôi xem thử lại."
+        },
+        {
+          "stt": 259,
+          "hanzi": "别的",
+          "pinyin": "biéde",
+          "meaning": "cái khác",
+          "exampleHanzi": "有别的吗？",
+          "exampleMeaning": "Có cái khác không?"
+        },
+        {
+          "stt": 260,
+          "hanzi": "还是",
+          "pinyin": "háishi",
+          "meaning": "vẫn, hay là",
+          "exampleHanzi": "我还是不买了。",
+          "exampleMeaning": "Tôi vẫn không mua nữa."
+        },
+        {
+          "stt": 261,
+          "hanzi": "决定",
+          "pinyin": "juédìng",
+          "meaning": "quyết định",
+          "exampleHanzi": "我还没决定。",
+          "exampleMeaning": "Tôi vẫn chưa quyết định."
+        },
+        {
+          "stt": 262,
+          "hanzi": "觉得",
+          "pinyin": "juéde",
+          "meaning": "cảm thấy",
+          "exampleHanzi": "我觉得还行。",
+          "exampleMeaning": "Tôi thấy cũng được."
+        },
+        {
+          "stt": 263,
+          "hanzi": "可能",
+          "pinyin": "kěnéng",
+          "meaning": "có thể, có lẽ",
+          "exampleHanzi": "我可能不买。",
+          "exampleMeaning": "Tôi có lẽ không mua."
+        },
+        {
+          "stt": 264,
+          "hanzi": "一样",
+          "pinyin": "yíyàng",
+          "meaning": "giống nhau",
+          "exampleHanzi": "这两个一样。",
+          "exampleMeaning": "Hai cái này giống nhau."
+        },
+        {
+          "stt": 265,
+          "hanzi": "不一样",
+          "pinyin": "bùyíyàng",
+          "meaning": "không giống",
+          "exampleHanzi": "颜色不一样。",
+          "exampleMeaning": "Màu không giống nhau."
+        },
+        {
+          "stt": 266,
+          "hanzi": "种",
+          "pinyin": "zhǒng",
+          "meaning": "loại",
+          "exampleHanzi": "这种我喜欢。",
+          "exampleMeaning": "Loại này tôi thích."
+        },
+        {
+          "stt": 267,
+          "hanzi": "比较",
+          "pinyin": "bǐjiào",
+          "meaning": "tương đối, khá",
+          "exampleHanzi": "这个比较好。",
+          "exampleMeaning": "Cái này khá tốt."
+        },
+        {
+          "stt": 268,
+          "hanzi": "先",
+          "pinyin": "xiān",
+          "meaning": "trước",
+          "exampleHanzi": "我先看看。",
+          "exampleMeaning": "Tôi xem trước đã."
+        },
+        {
+          "stt": 269,
+          "hanzi": "以后",
+          "pinyin": "yǐhòu",
+          "meaning": "sau này",
+          "exampleHanzi": "以后再买。",
+          "exampleMeaning": "Để sau mua."
+        },
+        {
+          "stt": 270,
+          "hanzi": "考虑",
+          "pinyin": "kǎolǜ",
+          "meaning": "cân nhắc",
+          "exampleHanzi": "我考虑一下。",
+          "exampleMeaning": "Tôi cân nhắc một chút."
+        },
+        {
+          "stt": 271,
+          "hanzi": "喜欢",
+          "pinyin": "xǐhuan",
+          "meaning": "thích",
+          "exampleHanzi": "我很喜欢。",
+          "exampleMeaning": "Tôi rất thích."
+        },
+        {
+          "stt": 272,
+          "hanzi": "帮",
+          "pinyin": "bāng",
+          "meaning": "giúp",
+          "exampleHanzi": "你帮我看看。",
+          "exampleMeaning": "Bạn giúp tôi xem."
+        }
+      ]
+    },
+    {
+      "bai": 17,
+      "words": [
+        {
+          "stt": 273,
+          "hanzi": "怎么",
+          "pinyin": "zěnme",
+          "meaning": "sao, thế nào",
+          "exampleHanzi": "你怎么不吃了？",
+          "exampleMeaning": "Sao bạn không ăn nữa?"
+        },
+        {
+          "stt": 274,
+          "hanzi": "为什么",
+          "pinyin": "wèishénme",
+          "meaning": "tại sao",
+          "exampleHanzi": "你为什么不来？",
+          "exampleMeaning": "Tại sao bạn không đến?"
+        },
+        {
+          "stt": 275,
+          "hanzi": "饿",
+          "pinyin": "è",
+          "meaning": "đói",
+          "exampleHanzi": "我不饿。",
+          "exampleMeaning": "Tôi không đói."
+        },
+        {
+          "stt": 276,
+          "hanzi": "饱",
+          "pinyin": "bǎo",
+          "meaning": "no",
+          "exampleHanzi": "我吃饱了。",
+          "exampleMeaning": "Tôi ăn no rồi."
+        },
+        {
+          "stt": 277,
+          "hanzi": "好吃",
+          "pinyin": "hǎochī",
+          "meaning": "ngon",
+          "exampleHanzi": "这个菜好吃。",
+          "exampleMeaning": "Món này ngon."
+        },
+        {
+          "stt": 278,
+          "hanzi": "味道",
+          "pinyin": "wèidào",
+          "meaning": "mùi vị",
+          "exampleHanzi": "味道很好。",
+          "exampleMeaning": "Mùi vị rất ngon."
+        },
+        {
+          "stt": 279,
+          "hanzi": "辣",
+          "pinyin": "là",
+          "meaning": "cay",
+          "exampleHanzi": "这个菜很辣。",
+          "exampleMeaning": "Món này rất cay."
+        },
+        {
+          "stt": 280,
+          "hanzi": "甜",
+          "pinyin": "tián",
+          "meaning": "ngọt",
+          "exampleHanzi": "西瓜很甜。",
+          "exampleMeaning": "Dưa hấu rất ngọt."
+        },
+        {
+          "stt": 281,
+          "hanzi": "咸",
+          "pinyin": "xián",
+          "meaning": "mặn",
+          "exampleHanzi": "汤有点儿咸。",
+          "exampleMeaning": "Canh hơi mặn."
+        },
+        {
+          "stt": 282,
+          "hanzi": "酸",
+          "pinyin": "suān",
+          "meaning": "chua",
+          "exampleHanzi": "这个有点儿酸。",
+          "exampleMeaning": "Cái này hơi chua."
+        },
+        {
+          "stt": 283,
+          "hanzi": "羊肉",
+          "pinyin": "yángròu",
+          "meaning": "thịt dê",
+          "exampleHanzi": "我不吃羊肉。",
+          "exampleMeaning": "Tôi không ăn thịt dê."
+        },
+        {
+          "stt": 284,
+          "hanzi": "鸡蛋",
+          "pinyin": "jīdàn",
+          "meaning": "trứng gà",
+          "exampleHanzi": "我吃鸡蛋。",
+          "exampleMeaning": "Tôi ăn trứng."
+        },
+        {
+          "stt": 285,
+          "hanzi": "面条",
+          "pinyin": "miàntiáo",
+          "meaning": "mì",
+          "exampleHanzi": "我喜欢吃面条。",
+          "exampleMeaning": "Tôi thích ăn mì."
+        },
+        {
+          "stt": 286,
+          "hanzi": "西瓜",
+          "pinyin": "xīguā",
+          "meaning": "dưa hấu",
+          "exampleHanzi": "夏天吃西瓜。",
+          "exampleMeaning": "Mùa hè ăn dưa hấu."
+        },
+        {
+          "stt": 287,
+          "hanzi": "鱼",
+          "pinyin": "yú",
+          "meaning": "cá",
+          "exampleHanzi": "这个鱼很好吃。",
+          "exampleMeaning": "Con cá này rất ngon."
+        },
+        {
+          "stt": 288,
+          "hanzi": "菜",
+          "pinyin": "cài",
+          "meaning": "món ăn, rau",
+          "exampleHanzi": "这个菜真好吃。",
+          "exampleMeaning": "Món này thật ngon."
+        },
+        {
+          "stt": 289,
+          "hanzi": "汤",
+          "pinyin": "tāng",
+          "meaning": "canh",
+          "exampleHanzi": "我喝汤。",
+          "exampleMeaning": "Tôi uống canh."
+        }
+      ]
+    },
+    {
+      "bai": 18,
+      "words": [
+        {
+          "stt": 290,
+          "hanzi": "因为",
+          "pinyin": "yīnwèi",
+          "meaning": "vì, bởi vì",
+          "exampleHanzi": "因为太辣，我没吃。",
+          "exampleMeaning": "Vì cay quá nên tôi không ăn."
+        },
+        {
+          "stt": 291,
+          "hanzi": "所以",
+          "pinyin": "suǒyǐ",
+          "meaning": "cho nên",
+          "exampleHanzi": "太累，所以早睡了。",
+          "exampleMeaning": "Mệt quá nên đi ngủ sớm."
+        },
+        {
+          "stt": 292,
+          "hanzi": "辣",
+          "pinyin": "là",
+          "meaning": "cay",
+          "exampleHanzi": "因为太辣了。",
+          "exampleMeaning": "Vì cay quá."
+        },
+        {
+          "stt": 293,
+          "hanzi": "原因",
+          "pinyin": "yuányīn",
+          "meaning": "nguyên nhân",
+          "exampleHanzi": "这是原因。",
+          "exampleMeaning": "Đây là nguyên nhân."
+        },
+        {
+          "stt": 294,
+          "hanzi": "所以才",
+          "pinyin": "suǒyǐcái",
+          "meaning": "cho nên mới",
+          "exampleHanzi": "所以我才没来。",
+          "exampleMeaning": "Cho nên tôi mới không đến."
+        },
+        {
+          "stt": 295,
+          "hanzi": "可是",
+          "pinyin": "kěshì",
+          "meaning": "nhưng mà",
+          "exampleHanzi": "我想吃，可是太辣。",
+          "exampleMeaning": "Tôi muốn ăn nhưng cay quá."
+        },
+        {
+          "stt": 296,
+          "hanzi": "但是",
+          "pinyin": "dànshì",
+          "meaning": "nhưng",
+          "exampleHanzi": "好吃，但是太贵。",
+          "exampleMeaning": "Ngon nhưng đắt quá."
+        },
+        {
+          "stt": 297,
+          "hanzi": "觉得",
+          "pinyin": "juéde",
+          "meaning": "cảm thấy",
+          "exampleHanzi": "我觉得太咸。",
+          "exampleMeaning": "Tôi thấy mặn quá."
+        },
+        {
+          "stt": 298,
+          "hanzi": "其实",
+          "pinyin": "qíshí",
+          "meaning": "thật ra",
+          "exampleHanzi": "其实我不饿。",
+          "exampleMeaning": "Thật ra tôi không đói."
+        },
+        {
+          "stt": 299,
+          "hanzi": "当然",
+          "pinyin": "dāngrán",
+          "meaning": "đương nhiên",
+          "exampleHanzi": "当然可以。",
+          "exampleMeaning": "Đương nhiên là được."
+        },
+        {
+          "stt": 300,
+          "hanzi": "应该",
+          "pinyin": "yīnggāi",
+          "meaning": "nên, đáng lẽ",
+          "exampleHanzi": "你应该多吃。",
+          "exampleMeaning": "Bạn nên ăn nhiều."
+        },
+        {
+          "stt": 301,
+          "hanzi": "可能",
+          "pinyin": "kěnéng",
+          "meaning": "có thể",
+          "exampleHanzi": "可能太辣了。",
+          "exampleMeaning": "Có thể cay quá."
+        },
+        {
+          "stt": 302,
+          "hanzi": "如果",
+          "pinyin": "rúguǒ",
+          "meaning": "nếu",
+          "exampleHanzi": "如果不辣就好。",
+          "exampleMeaning": "Nếu không cay thì tốt."
+        },
+        {
+          "stt": 303,
+          "hanzi": "别",
+          "pinyin": "bié",
+          "meaning": "đừng",
+          "exampleHanzi": "别吃太辣的。",
+          "exampleMeaning": "Đừng ăn đồ quá cay."
+        },
+        {
+          "stt": 304,
+          "hanzi": "放",
+          "pinyin": "fàng",
+          "meaning": "cho, bỏ vào",
+          "exampleHanzi": "放点儿盐。",
+          "exampleMeaning": "Cho chút muối."
+        },
+        {
+          "stt": 305,
+          "hanzi": "盐",
+          "pinyin": "yán",
+          "meaning": "muối",
+          "exampleHanzi": "菜里放盐了。",
+          "exampleMeaning": "Trong món có muối rồi."
+        },
+        {
+          "stt": 306,
+          "hanzi": "健康",
+          "pinyin": "jiànkāng",
+          "meaning": "khỏe mạnh",
+          "exampleHanzi": "吃菜更健康。",
+          "exampleMeaning": "Ăn rau khỏe hơn."
+        }
+      ]
+    },
+    {
+      "bai": 19,
+      "words": [
+        {
+          "stt": 307,
+          "hanzi": "个个",
+          "pinyin": "gègè",
+          "meaning": "cái nào cũng",
+          "exampleHanzi": "这些菜个个都好吃。",
+          "exampleMeaning": "Mấy món này cái nào cũng ngon."
+        },
+        {
+          "stt": 308,
+          "hanzi": "天天",
+          "pinyin": "tiāntiān",
+          "meaning": "ngày nào cũng",
+          "exampleHanzi": "他天天运动。",
+          "exampleMeaning": "Anh ấy ngày nào cũng vận động."
+        },
+        {
+          "stt": 309,
+          "hanzi": "都",
+          "pinyin": "dōu",
+          "meaning": "đều",
+          "exampleHanzi": "大家都来了。",
+          "exampleMeaning": "Mọi người đều đến rồi."
+        },
+        {
+          "stt": 310,
+          "hanzi": "好吃",
+          "pinyin": "hǎochī",
+          "meaning": "ngon",
+          "exampleHanzi": "个个都好吃。",
+          "exampleMeaning": "Cái nào cũng ngon."
+        },
+        {
+          "stt": 311,
+          "hanzi": "一些",
+          "pinyin": "yìxiē",
+          "meaning": "một số, vài",
+          "exampleHanzi": "我买了一些菜。",
+          "exampleMeaning": "Tôi mua một ít rau."
+        },
+        {
+          "stt": 312,
+          "hanzi": "每个",
+          "pinyin": "měigè",
+          "meaning": "mỗi cái",
+          "exampleHanzi": "每个都不错。",
+          "exampleMeaning": "Mỗi cái đều ổn."
+        },
+        {
+          "stt": 313,
+          "hanzi": "所有",
+          "pinyin": "suǒyǒu",
+          "meaning": "tất cả",
+          "exampleHanzi": "所有的菜都好吃。",
+          "exampleMeaning": "Tất cả món đều ngon."
+        },
+        {
+          "stt": 314,
+          "hanzi": "水果",
+          "pinyin": "shuǐguǒ",
+          "meaning": "trái cây",
+          "exampleHanzi": "水果个个都甜。",
+          "exampleMeaning": "Trái cây quả nào cũng ngọt."
+        },
+        {
+          "stt": 315,
+          "hanzi": "苹果",
+          "pinyin": "píngguǒ",
+          "meaning": "táo",
+          "exampleHanzi": "苹果很甜。",
+          "exampleMeaning": "Táo rất ngọt."
+        },
+        {
+          "stt": 316,
+          "hanzi": "香蕉",
+          "pinyin": "xiāngjiāo",
+          "meaning": "chuối",
+          "exampleHanzi": "我喜欢香蕉。",
+          "exampleMeaning": "Tôi thích chuối."
+        },
+        {
+          "stt": 317,
+          "hanzi": "葡萄",
+          "pinyin": "pútáo",
+          "meaning": "nho",
+          "exampleHanzi": "葡萄很好吃。",
+          "exampleMeaning": "Nho rất ngon."
+        },
+        {
+          "stt": 318,
+          "hanzi": "特别",
+          "pinyin": "tèbié",
+          "meaning": "đặc biệt",
+          "exampleHanzi": "这个特别好吃。",
+          "exampleMeaning": "Cái này đặc biệt ngon."
+        },
+        {
+          "stt": 319,
+          "hanzi": "一样",
+          "pinyin": "yíyàng",
+          "meaning": "giống nhau",
+          "exampleHanzi": "个个都一样。",
+          "exampleMeaning": "Cái nào cũng giống nhau."
+        },
+        {
+          "stt": 320,
+          "hanzi": "各种",
+          "pinyin": "gèzhǒng",
+          "meaning": "đủ loại",
+          "exampleHanzi": "这儿有各种水果。",
+          "exampleMeaning": "Ở đây có đủ loại trái cây."
+        },
+        {
+          "stt": 321,
+          "hanzi": "新鲜",
+          "pinyin": "xīnxiān",
+          "meaning": "tươi",
+          "exampleHanzi": "水果很新鲜。",
+          "exampleMeaning": "Trái cây rất tươi."
+        },
+        {
+          "stt": 322,
+          "hanzi": "条条",
+          "pinyin": "tiáotiáo",
+          "meaning": "con/cái nào cũng",
+          "exampleHanzi": "这儿的鱼条条都新鲜。",
+          "exampleMeaning": "Cá ở đây con nào cũng tươi."
+        },
+        {
+          "stt": 323,
+          "hanzi": "件件",
+          "pinyin": "jiànjiàn",
+          "meaning": "cái nào cũng",
+          "exampleHanzi": "这些衣服件件都好看。",
+          "exampleMeaning": "Mấy cái áo này cái nào cũng đẹp."
+        }
+      ]
+    },
+    {
+      "bai": 20,
+      "words": [
+        {
+          "stt": 324,
+          "hanzi": "离",
+          "pinyin": "lí",
+          "meaning": "cách",
+          "exampleHanzi": "你家离公司远吗？",
+          "exampleMeaning": "Nhà bạn cách công ty xa không?"
+        },
+        {
+          "stt": 325,
+          "hanzi": "远",
+          "pinyin": "yuǎn",
+          "meaning": "xa",
+          "exampleHanzi": "学校很远。",
+          "exampleMeaning": "Trường rất xa."
+        },
+        {
+          "stt": 326,
+          "hanzi": "近",
+          "pinyin": "jìn",
+          "meaning": "gần",
+          "exampleHanzi": "公司离家很近。",
+          "exampleMeaning": "Công ty cách nhà rất gần."
+        },
+        {
+          "stt": 327,
+          "hanzi": "公司",
+          "pinyin": "gōngsī",
+          "meaning": "công ty",
+          "exampleHanzi": "我家离公司不远。",
+          "exampleMeaning": "Nhà tôi cách công ty không xa."
+        },
+        {
+          "stt": 328,
+          "hanzi": "地铁站",
+          "pinyin": "dìtiězhàn",
+          "meaning": "ga tàu điện ngầm",
+          "exampleHanzi": "地铁站离这儿很近。",
+          "exampleMeaning": "Ga tàu cách đây rất gần."
+        },
+        {
+          "stt": 329,
+          "hanzi": "公共汽车",
+          "pinyin": "gōnggòng qìchē",
+          "meaning": "xe buýt",
+          "exampleHanzi": "我坐公共汽车上班。",
+          "exampleMeaning": "Tôi đi xe buýt đi làm."
+        },
+        {
+          "stt": 330,
+          "hanzi": "骑",
+          "pinyin": "qí",
+          "meaning": "đi (xe đạp)",
+          "exampleHanzi": "我骑自行车去。",
+          "exampleMeaning": "Tôi đạp xe đi."
+        },
+        {
+          "stt": 331,
+          "hanzi": "自行车",
+          "pinyin": "zìxíngchē",
+          "meaning": "xe đạp",
+          "exampleHanzi": "我有一辆自行车。",
+          "exampleMeaning": "Tôi có một chiếc xe đạp."
+        },
+        {
+          "stt": 332,
+          "hanzi": "辆",
+          "pinyin": "liàng",
+          "meaning": "chiếc (lượng từ xe)",
+          "exampleHanzi": "一辆车。",
+          "exampleMeaning": "Một chiếc xe."
+        },
+        {
+          "stt": 333,
+          "hanzi": "公里",
+          "pinyin": "gōnglǐ",
+          "meaning": "ki-lô-mét",
+          "exampleHanzi": "离这儿三公里。",
+          "exampleMeaning": "Cách đây ba ki-lô-mét."
+        },
+        {
+          "stt": 334,
+          "hanzi": "分钟",
+          "pinyin": "fēnzhōng",
+          "meaning": "phút",
+          "exampleHanzi": "走十分钟。",
+          "exampleMeaning": "Đi bộ mười phút."
+        },
+        {
+          "stt": 335,
+          "hanzi": "方便",
+          "pinyin": "fāngbiàn",
+          "meaning": "tiện lợi",
+          "exampleHanzi": "坐地铁很方便。",
+          "exampleMeaning": "Đi tàu điện rất tiện."
+        },
+        {
+          "stt": 336,
+          "hanzi": "到",
+          "pinyin": "dào",
+          "meaning": "đến, tới",
+          "exampleHanzi": "到公司要半小时。",
+          "exampleMeaning": "Đến công ty mất nửa tiếng."
+        },
+        {
+          "stt": 337,
+          "hanzi": "路",
+          "pinyin": "lù",
+          "meaning": "đường",
+          "exampleHanzi": "这条路很远。",
+          "exampleMeaning": "Con đường này rất xa."
+        },
+        {
+          "stt": 338,
+          "hanzi": "出租车",
+          "pinyin": "chūzūchē",
+          "meaning": "taxi",
+          "exampleHanzi": "我坐出租车。",
+          "exampleMeaning": "Tôi đi taxi."
+        },
+        {
+          "stt": 339,
+          "hanzi": "开车",
+          "pinyin": "kāichē",
+          "meaning": "lái xe",
+          "exampleHanzi": "他开车上班。",
+          "exampleMeaning": "Anh ấy lái xe đi làm."
+        },
+        {
+          "stt": 340,
+          "hanzi": "走路",
+          "pinyin": "zǒulù",
+          "meaning": "đi bộ",
+          "exampleHanzi": "我走路去。",
+          "exampleMeaning": "Tôi đi bộ."
+        }
+      ]
+    },
+    {
+      "bai": 21,
+      "words": [
+        {
+          "stt": 341,
+          "hanzi": "呢",
+          "pinyin": "ne",
+          "meaning": "đấy, nhỉ (ngữ khí)",
+          "exampleHanzi": "我还在等车呢。",
+          "exampleMeaning": "Tôi vẫn đang đợi xe đấy."
+        },
+        {
+          "stt": 342,
+          "hanzi": "等",
+          "pinyin": "děng",
+          "meaning": "đợi",
+          "exampleHanzi": "我等车呢。",
+          "exampleMeaning": "Tôi đang đợi xe."
+        },
+        {
+          "stt": 343,
+          "hanzi": "还",
+          "pinyin": "hái",
+          "meaning": "vẫn, còn",
+          "exampleHanzi": "我还没到呢。",
+          "exampleMeaning": "Tôi vẫn chưa tới đâu."
+        },
+        {
+          "stt": 344,
+          "hanzi": "正在",
+          "pinyin": "zhèngzài",
+          "meaning": "đang",
+          "exampleHanzi": "我正在等车。",
+          "exampleMeaning": "Tôi đang đợi xe."
+        },
+        {
+          "stt": 345,
+          "hanzi": "车",
+          "pinyin": "chē",
+          "meaning": "xe",
+          "exampleHanzi": "车来了。",
+          "exampleMeaning": "Xe đến rồi."
+        },
+        {
+          "stt": 346,
+          "hanzi": "站",
+          "pinyin": "zhàn",
+          "meaning": "ga, bến, đứng",
+          "exampleHanzi": "我在车站等你。",
+          "exampleMeaning": "Tôi đợi bạn ở bến xe."
+        },
+        {
+          "stt": 347,
+          "hanzi": "上车",
+          "pinyin": "shàngchē",
+          "meaning": "lên xe",
+          "exampleHanzi": "快上车。",
+          "exampleMeaning": "Mau lên xe."
+        },
+        {
+          "stt": 348,
+          "hanzi": "下车",
+          "pinyin": "xiàchē",
+          "meaning": "xuống xe",
+          "exampleHanzi": "我在这儿下车。",
+          "exampleMeaning": "Tôi xuống xe ở đây."
+        },
+        {
+          "stt": 349,
+          "hanzi": "迟到",
+          "pinyin": "chídào",
+          "meaning": "đến muộn",
+          "exampleHanzi": "我快迟到了。",
+          "exampleMeaning": "Tôi sắp muộn rồi."
+        },
+        {
+          "stt": 350,
+          "hanzi": "堵车",
+          "pinyin": "dǔchē",
+          "meaning": "tắc đường",
+          "exampleHanzi": "路上堵车。",
+          "exampleMeaning": "Trên đường tắc xe."
+        },
+        {
+          "stt": 351,
+          "hanzi": "快",
+          "pinyin": "kuài",
+          "meaning": "nhanh, sắp",
+          "exampleHanzi": "车快来了。",
+          "exampleMeaning": "Xe sắp đến rồi."
+        },
+        {
+          "stt": 352,
+          "hanzi": "慢",
+          "pinyin": "màn",
+          "meaning": "chậm",
+          "exampleHanzi": "车开得很慢。",
+          "exampleMeaning": "Xe chạy rất chậm."
+        },
+        {
+          "stt": 353,
+          "hanzi": "着急",
+          "pinyin": "zháojí",
+          "meaning": "sốt ruột",
+          "exampleHanzi": "别着急。",
+          "exampleMeaning": "Đừng sốt ruột."
+        },
+        {
+          "stt": 354,
+          "hanzi": "马上",
+          "pinyin": "mǎshàng",
+          "meaning": "ngay lập tức",
+          "exampleHanzi": "我马上到。",
+          "exampleMeaning": "Tôi tới ngay."
+        },
+        {
+          "stt": 355,
+          "hanzi": "司机",
+          "pinyin": "sījī",
+          "meaning": "tài xế",
+          "exampleHanzi": "司机开得很快。",
+          "exampleMeaning": "Tài xế lái rất nhanh."
+        },
+        {
+          "stt": 356,
+          "hanzi": "票",
+          "pinyin": "piào",
+          "meaning": "vé",
+          "exampleHanzi": "我买票了。",
+          "exampleMeaning": "Tôi mua vé rồi."
+        },
+        {
+          "stt": 357,
+          "hanzi": "地铁",
+          "pinyin": "dìtiě",
+          "meaning": "tàu điện ngầm",
+          "exampleHanzi": "我等地铁呢。",
+          "exampleMeaning": "Tôi đang đợi tàu điện."
+        }
+      ]
+    },
+    {
+      "bai": 22,
+      "words": [
+        {
+          "stt": 358,
+          "hanzi": "从",
+          "pinyin": "cóng",
+          "meaning": "từ",
+          "exampleHanzi": "我从家到公司。",
+          "exampleMeaning": "Tôi từ nhà đến công ty."
+        },
+        {
+          "stt": 359,
+          "hanzi": "到",
+          "pinyin": "dào",
+          "meaning": "đến, tới",
+          "exampleHanzi": "从这儿到那儿。",
+          "exampleMeaning": "Từ đây đến đó."
+        },
+        {
+          "stt": 360,
+          "hanzi": "往",
+          "pinyin": "wǎng",
+          "meaning": "về phía, hướng",
+          "exampleHanzi": "往前走。",
+          "exampleMeaning": "Đi thẳng về phía trước."
+        },
+        {
+          "stt": 361,
+          "hanzi": "一直",
+          "pinyin": "yìzhí",
+          "meaning": "thẳng, luôn",
+          "exampleHanzi": "一直往前走。",
+          "exampleMeaning": "Cứ đi thẳng."
+        },
+        {
+          "stt": 362,
+          "hanzi": "前",
+          "pinyin": "qián",
+          "meaning": "trước, phía trước",
+          "exampleHanzi": "往前走。",
+          "exampleMeaning": "Đi về phía trước."
+        },
+        {
+          "stt": 363,
+          "hanzi": "左",
+          "pinyin": "zuǒ",
+          "meaning": "trái",
+          "exampleHanzi": "往左拐。",
+          "exampleMeaning": "Rẽ trái."
+        },
+        {
+          "stt": 364,
+          "hanzi": "右",
+          "pinyin": "yòu",
+          "meaning": "phải",
+          "exampleHanzi": "往右拐。",
+          "exampleMeaning": "Rẽ phải."
+        },
+        {
+          "stt": 365,
+          "hanzi": "拐",
+          "pinyin": "guǎi",
+          "meaning": "rẽ, quẹo",
+          "exampleHanzi": "到路口往左拐。",
+          "exampleMeaning": "Đến ngã tư rẽ trái."
+        },
+        {
+          "stt": 366,
+          "hanzi": "路口",
+          "pinyin": "lùkǒu",
+          "meaning": "ngã tư, đầu đường",
+          "exampleHanzi": "前面有路口。",
+          "exampleMeaning": "Phía trước có ngã tư."
+        },
+        {
+          "stt": 367,
+          "hanzi": "红绿灯",
+          "pinyin": "hónglǜdēng",
+          "meaning": "đèn giao thông",
+          "exampleHanzi": "红绿灯往右拐。",
+          "exampleMeaning": "Đến đèn giao thông rẽ phải."
+        },
+        {
+          "stt": 368,
+          "hanzi": "过",
+          "pinyin": "guò",
+          "meaning": "qua",
+          "exampleHanzi": "过马路。",
+          "exampleMeaning": "Băng qua đường."
+        },
+        {
+          "stt": 369,
+          "hanzi": "马路",
+          "pinyin": "mǎlù",
+          "meaning": "đường lớn",
+          "exampleHanzi": "小心过马路。",
+          "exampleMeaning": "Cẩn thận khi băng qua đường."
+        },
+        {
+          "stt": 370,
+          "hanzi": "地图",
+          "pinyin": "dìtú",
+          "meaning": "bản đồ",
+          "exampleHanzi": "我看地图。",
+          "exampleMeaning": "Tôi xem bản đồ."
+        },
+        {
+          "stt": 371,
+          "hanzi": "方向",
+          "pinyin": "fāngxiàng",
+          "meaning": "phương hướng",
+          "exampleHanzi": "你走错方向了。",
+          "exampleMeaning": "Bạn đi sai hướng rồi."
+        },
+        {
+          "stt": 372,
+          "hanzi": "远",
+          "pinyin": "yuǎn",
+          "meaning": "xa",
+          "exampleHanzi": "从家到公司很远。",
+          "exampleMeaning": "Từ nhà đến công ty rất xa."
+        },
+        {
+          "stt": 373,
+          "hanzi": "旁边",
+          "pinyin": "pángbiān",
+          "meaning": "bên cạnh",
+          "exampleHanzi": "银行在旁边。",
+          "exampleMeaning": "Ngân hàng ở bên cạnh."
+        },
+        {
+          "stt": 374,
+          "hanzi": "中间",
+          "pinyin": "zhōngjiān",
+          "meaning": "ở giữa",
+          "exampleHanzi": "在两个店中间。",
+          "exampleMeaning": "Ở giữa hai cửa hàng."
+        }
+      ]
+    },
+    {
+      "bai": 23,
+      "words": [
+        {
+          "stt": 375,
+          "hanzi": "想想",
+          "pinyin": "xiǎngxiang",
+          "meaning": "nghĩ một chút",
+          "exampleHanzi": "让我想想。",
+          "exampleMeaning": "Để tôi nghĩ một chút."
+        },
+        {
+          "stt": 376,
+          "hanzi": "再说",
+          "pinyin": "zàishuō",
+          "meaning": "tính sau, để sau nói",
+          "exampleHanzi": "让我想想再说。",
+          "exampleMeaning": "Để tôi nghĩ rồi nói sau."
+        },
+        {
+          "stt": 377,
+          "hanzi": "再",
+          "pinyin": "zài",
+          "meaning": "rồi, lại",
+          "exampleHanzi": "想好了再说。",
+          "exampleMeaning": "Nghĩ kỹ rồi hãy nói."
+        },
+        {
+          "stt": 378,
+          "hanzi": "决定",
+          "pinyin": "juédìng",
+          "meaning": "quyết định",
+          "exampleHanzi": "我还没决定。",
+          "exampleMeaning": "Tôi vẫn chưa quyết định."
+        },
+        {
+          "stt": 379,
+          "hanzi": "考虑",
+          "pinyin": "kǎolǜ",
+          "meaning": "cân nhắc",
+          "exampleHanzi": "我考虑一下。",
+          "exampleMeaning": "Tôi cân nhắc một chút."
+        },
+        {
+          "stt": 380,
+          "hanzi": "觉得",
+          "pinyin": "juéde",
+          "meaning": "cảm thấy",
+          "exampleHanzi": "我觉得可以。",
+          "exampleMeaning": "Tôi thấy được."
+        },
+        {
+          "stt": 381,
+          "hanzi": "意见",
+          "pinyin": "yìjiàn",
+          "meaning": "ý kiến",
+          "exampleHanzi": "你有什么意见？",
+          "exampleMeaning": "Bạn có ý kiến gì?"
+        },
+        {
+          "stt": 382,
+          "hanzi": "主意",
+          "pinyin": "zhǔyi",
+          "meaning": "sáng kiến, ý hay",
+          "exampleHanzi": "这是个好主意。",
+          "exampleMeaning": "Đây là ý hay."
+        },
+        {
+          "stt": 383,
+          "hanzi": "行",
+          "pinyin": "xíng",
+          "meaning": "được",
+          "exampleHanzi": "这样行吗？",
+          "exampleMeaning": "Như vậy được không?"
+        },
+        {
+          "stt": 384,
+          "hanzi": "可以",
+          "pinyin": "kěyǐ",
+          "meaning": "có thể, được",
+          "exampleHanzi": "可以，没问题。",
+          "exampleMeaning": "Được, không vấn đề gì."
+        },
+        {
+          "stt": 385,
+          "hanzi": "没问题",
+          "pinyin": "méiwèntí",
+          "meaning": "không vấn đề gì",
+          "exampleHanzi": "没问题。",
+          "exampleMeaning": "Không vấn đề gì."
+        },
+        {
+          "stt": 386,
+          "hanzi": "商量",
+          "pinyin": "shāngliang",
+          "meaning": "bàn bạc",
+          "exampleHanzi": "我们商量一下。",
+          "exampleMeaning": "Chúng ta bàn một chút."
+        },
+        {
+          "stt": 387,
+          "hanzi": "一定",
+          "pinyin": "yídìng",
+          "meaning": "nhất định",
+          "exampleHanzi": "我一定告诉你。",
+          "exampleMeaning": "Tôi nhất định nói cho bạn."
+        },
+        {
+          "stt": 388,
+          "hanzi": "以后",
+          "pinyin": "yǐhòu",
+          "meaning": "sau này",
+          "exampleHanzi": "以后再决定。",
+          "exampleMeaning": "Để sau quyết định."
+        },
+        {
+          "stt": 389,
+          "hanzi": "怎么样",
+          "pinyin": "zěnmeyàng",
+          "meaning": "thế nào",
+          "exampleHanzi": "你觉得怎么样？",
+          "exampleMeaning": "Bạn thấy thế nào?"
+        },
+        {
+          "stt": 390,
+          "hanzi": "同意",
+          "pinyin": "tóngyì",
+          "meaning": "đồng ý",
+          "exampleHanzi": "我同意。",
+          "exampleMeaning": "Tôi đồng ý."
+        },
+        {
+          "stt": 391,
+          "hanzi": "先",
+          "pinyin": "xiān",
+          "meaning": "trước",
+          "exampleHanzi": "我先想想。",
+          "exampleMeaning": "Tôi nghĩ trước đã."
+        }
+      ]
+    },
+    {
+      "bai": 24,
+      "words": [
+        {
+          "stt": 392,
+          "hanzi": "好吗",
+          "pinyin": "hǎoma",
+          "meaning": "được không, nhé",
+          "exampleHanzi": "你帮我一下，好吗？",
+          "exampleMeaning": "Bạn giúp tôi một chút nhé?"
+        },
+        {
+          "stt": 393,
+          "hanzi": "帮",
+          "pinyin": "bāng",
+          "meaning": "giúp",
+          "exampleHanzi": "你帮我一下。",
+          "exampleMeaning": "Bạn giúp tôi một chút."
+        },
+        {
+          "stt": 394,
+          "hanzi": "对",
+          "pinyin": "duì",
+          "meaning": "đối với, với",
+          "exampleHanzi": "他对我很好。",
+          "exampleMeaning": "Anh ấy rất tốt với tôi."
+        },
+        {
+          "stt": 395,
+          "hanzi": "请",
+          "pinyin": "qǐng",
+          "meaning": "mời, xin",
+          "exampleHanzi": "请帮我。",
+          "exampleMeaning": "Xin giúp tôi."
+        },
+        {
+          "stt": 396,
+          "hanzi": "麻烦",
+          "pinyin": "máfan",
+          "meaning": "làm phiền, phiền phức",
+          "exampleHanzi": "麻烦你了。",
+          "exampleMeaning": "Làm phiền bạn rồi."
+        },
+        {
+          "stt": 397,
+          "hanzi": "可以",
+          "pinyin": "kěyǐ",
+          "meaning": "được, có thể",
+          "exampleHanzi": "可以帮我吗？",
+          "exampleMeaning": "Có thể giúp tôi không?"
+        },
+        {
+          "stt": 398,
+          "hanzi": "没关系",
+          "pinyin": "méiguānxi",
+          "meaning": "không sao",
+          "exampleHanzi": "没关系。",
+          "exampleMeaning": "Không sao."
+        },
+        {
+          "stt": 399,
+          "hanzi": "当然",
+          "pinyin": "dāngrán",
+          "meaning": "đương nhiên",
+          "exampleHanzi": "当然可以。",
+          "exampleMeaning": "Đương nhiên là được."
+        },
+        {
+          "stt": 400,
+          "hanzi": "帮忙",
+          "pinyin": "bāngmáng",
+          "meaning": "giúp đỡ",
+          "exampleHanzi": "请帮个忙。",
+          "exampleMeaning": "Xin giúp một việc."
+        },
+        {
+          "stt": 401,
+          "hanzi": "谢谢",
+          "pinyin": "xièxie",
+          "meaning": "cảm ơn",
+          "exampleHanzi": "谢谢你的帮助。",
+          "exampleMeaning": "Cảm ơn sự giúp đỡ của bạn."
+        },
+        {
+          "stt": 402,
+          "hanzi": "客气",
+          "pinyin": "kèqi",
+          "meaning": "khách sáo",
+          "exampleHanzi": "别客气。",
+          "exampleMeaning": "Đừng khách sáo."
+        },
+        {
+          "stt": 403,
+          "hanzi": "一下",
+          "pinyin": "yíxià",
+          "meaning": "một chút",
+          "exampleHanzi": "帮我看一下。",
+          "exampleMeaning": "Giúp tôi xem một chút."
+        },
+        {
+          "stt": 404,
+          "hanzi": "行吗",
+          "pinyin": "xíngma",
+          "meaning": "được không",
+          "exampleHanzi": "这样行吗？",
+          "exampleMeaning": "Như vậy được không?"
+        },
+        {
+          "stt": 405,
+          "hanzi": "需要",
+          "pinyin": "xūyào",
+          "meaning": "cần",
+          "exampleHanzi": "你需要帮助吗？",
+          "exampleMeaning": "Bạn cần giúp không?"
+        },
+        {
+          "stt": 406,
+          "hanzi": "问题",
+          "pinyin": "wèntí",
+          "meaning": "vấn đề, câu hỏi",
+          "exampleHanzi": "没问题。",
+          "exampleMeaning": "Không vấn đề gì."
+        },
+        {
+          "stt": 407,
+          "hanzi": "告诉",
+          "pinyin": "gàosu",
+          "meaning": "nói cho",
+          "exampleHanzi": "请告诉我。",
+          "exampleMeaning": "Xin nói cho tôi."
+        },
+        {
+          "stt": 408,
+          "hanzi": "给",
+          "pinyin": "gěi",
+          "meaning": "cho, đưa",
+          "exampleHanzi": "请给我看看。",
+          "exampleMeaning": "Cho tôi xem với."
+        }
+      ]
+    },
+    {
+      "bai": 25,
+      "words": [
+        {
+          "stt": 409,
+          "hanzi": "别",
+          "pinyin": "bié",
+          "meaning": "đừng",
+          "exampleHanzi": "别找了。",
+          "exampleMeaning": "Đừng tìm nữa."
+        },
+        {
+          "stt": 410,
+          "hanzi": "不要",
+          "pinyin": "búyào",
+          "meaning": "đừng, không nên",
+          "exampleHanzi": "不要找了。",
+          "exampleMeaning": "Đừng tìm nữa."
+        },
+        {
+          "stt": 411,
+          "hanzi": "找",
+          "pinyin": "zhǎo",
+          "meaning": "tìm",
+          "exampleHanzi": "别找了，在这儿。",
+          "exampleMeaning": "Đừng tìm nữa, ở đây này."
+        },
+        {
+          "stt": 412,
+          "hanzi": "对",
+          "pinyin": "duì",
+          "meaning": "đối với, với",
+          "exampleHanzi": "他对工作很认真。",
+          "exampleMeaning": "Anh ấy rất nghiêm túc với công việc."
+        },
+        {
+          "stt": 413,
+          "hanzi": "手机",
+          "pinyin": "shǒujī",
+          "meaning": "điện thoại",
+          "exampleHanzi": "手机在桌子上呢。",
+          "exampleMeaning": "Điện thoại ở trên bàn đấy."
+        },
+        {
+          "stt": 414,
+          "hanzi": "桌子",
+          "pinyin": "zhuōzi",
+          "meaning": "cái bàn",
+          "exampleHanzi": "在桌子上。",
+          "exampleMeaning": "Ở trên bàn."
+        },
+        {
+          "stt": 415,
+          "hanzi": "放",
+          "pinyin": "fàng",
+          "meaning": "để, đặt",
+          "exampleHanzi": "我放在桌子上了。",
+          "exampleMeaning": "Tôi để trên bàn rồi."
+        },
+        {
+          "stt": 416,
+          "hanzi": "忘",
+          "pinyin": "wàng",
+          "meaning": "quên",
+          "exampleHanzi": "我忘了放哪儿了。",
+          "exampleMeaning": "Tôi quên để đâu rồi."
+        },
+        {
+          "stt": 417,
+          "hanzi": "记得",
+          "pinyin": "jìde",
+          "meaning": "nhớ",
+          "exampleHanzi": "你记得放哪儿了吗？",
+          "exampleMeaning": "Bạn nhớ để đâu không?"
+        },
+        {
+          "stt": 418,
+          "hanzi": "钥匙",
+          "pinyin": "yàoshi",
+          "meaning": "chìa khóa",
+          "exampleHanzi": "钥匙在哪儿？",
+          "exampleMeaning": "Chìa khóa ở đâu?"
+        },
+        {
+          "stt": 419,
+          "hanzi": "钱包",
+          "pinyin": "qiánbāo",
+          "meaning": "ví tiền",
+          "exampleHanzi": "我的钱包不见了。",
+          "exampleMeaning": "Ví tiền của tôi không thấy đâu."
+        },
+        {
+          "stt": 420,
+          "hanzi": "不见了",
+          "pinyin": "bújiànle",
+          "meaning": "biến mất, không thấy",
+          "exampleHanzi": "手机不见了。",
+          "exampleMeaning": "Điện thoại không thấy đâu."
+        },
+        {
+          "stt": 421,
+          "hanzi": "着急",
+          "pinyin": "zháojí",
+          "meaning": "sốt ruột",
+          "exampleHanzi": "别着急，慢慢找。",
+          "exampleMeaning": "Đừng sốt ruột, tìm từ từ."
+        },
+        {
+          "stt": 422,
+          "hanzi": "认真",
+          "pinyin": "rènzhēn",
+          "meaning": "nghiêm túc, chăm chú",
+          "exampleHanzi": "认真找一找。",
+          "exampleMeaning": "Tìm cho kỹ."
+        },
+        {
+          "stt": 423,
+          "hanzi": "帮",
+          "pinyin": "bāng",
+          "meaning": "giúp",
+          "exampleHanzi": "我帮你找。",
+          "exampleMeaning": "Tôi giúp bạn tìm."
+        },
+        {
+          "stt": 424,
+          "hanzi": "旁边",
+          "pinyin": "pángbiān",
+          "meaning": "bên cạnh",
+          "exampleHanzi": "在电脑旁边。",
+          "exampleMeaning": "Ở cạnh máy tính."
+        },
+        {
+          "stt": 425,
+          "hanzi": "书包",
+          "pinyin": "shūbāo",
+          "meaning": "cặp sách",
+          "exampleHanzi": "在书包里。",
+          "exampleMeaning": "Ở trong cặp."
+        }
+      ]
+    },
+    {
+      "bai": 26,
+      "words": [
+        {
+          "stt": 426,
+          "hanzi": "打算",
+          "pinyin": "dǎsuàn",
+          "meaning": "dự định",
+          "exampleHanzi": "我打算好好复习。",
+          "exampleMeaning": "Tôi định ôn tập cho tốt."
+        },
+        {
+          "stt": 427,
+          "hanzi": "准备",
+          "pinyin": "zhǔnbèi",
+          "meaning": "chuẩn bị",
+          "exampleHanzi": "我在准备考试。",
+          "exampleMeaning": "Tôi đang chuẩn bị thi."
+        },
+        {
+          "stt": 428,
+          "hanzi": "复习",
+          "pinyin": "fùxí",
+          "meaning": "ôn tập",
+          "exampleHanzi": "考试以前要复习。",
+          "exampleMeaning": "Trước khi thi phải ôn tập."
+        },
+        {
+          "stt": 429,
+          "hanzi": "考试",
+          "pinyin": "kǎoshì",
+          "meaning": "thi, kỳ thi",
+          "exampleHanzi": "明天有考试。",
+          "exampleMeaning": "Ngày mai có kỳ thi."
+        },
+        {
+          "stt": 430,
+          "hanzi": "可能",
+          "pinyin": "kěnéng",
+          "meaning": "có thể, có lẽ",
+          "exampleHanzi": "明天可能考试。",
+          "exampleMeaning": "Ngày mai có thể thi."
+        },
+        {
+          "stt": 431,
+          "hanzi": "应该",
+          "pinyin": "yīnggāi",
+          "meaning": "nên, phải",
+          "exampleHanzi": "你应该多看书。",
+          "exampleMeaning": "Bạn nên đọc sách nhiều."
+        },
+        {
+          "stt": 432,
+          "hanzi": "一定",
+          "pinyin": "yídìng",
+          "meaning": "nhất định",
+          "exampleHanzi": "我一定努力。",
+          "exampleMeaning": "Tôi nhất định cố gắng."
+        },
+        {
+          "stt": 433,
+          "hanzi": "努力",
+          "pinyin": "nǔlì",
+          "meaning": "cố gắng",
+          "exampleHanzi": "他学习很努力。",
+          "exampleMeaning": "Anh ấy học rất chăm."
+        },
+        {
+          "stt": 434,
+          "hanzi": "好好",
+          "pinyin": "hǎohǎo",
+          "meaning": "cho tốt, kỹ",
+          "exampleHanzi": "你好好复习。",
+          "exampleMeaning": "Bạn ôn tập cho tốt."
+        },
+        {
+          "stt": 435,
+          "hanzi": "成绩",
+          "pinyin": "chéngjì",
+          "meaning": "thành tích, điểm",
+          "exampleHanzi": "他成绩很好。",
+          "exampleMeaning": "Thành tích anh ấy rất tốt."
+        },
+        {
+          "stt": 436,
+          "hanzi": "分",
+          "pinyin": "fēn",
+          "meaning": "điểm",
+          "exampleHanzi": "我考了九十分。",
+          "exampleMeaning": "Tôi được 90 điểm."
+        },
+        {
+          "stt": 437,
+          "hanzi": "课",
+          "pinyin": "kè",
+          "meaning": "tiết, bài",
+          "exampleHanzi": "今天有汉语课。",
+          "exampleMeaning": "Hôm nay có tiết tiếng Trung."
+        },
+        {
+          "stt": 438,
+          "hanzi": "题",
+          "pinyin": "tí",
+          "meaning": "đề, câu hỏi",
+          "exampleHanzi": "这个题很难。",
+          "exampleMeaning": "Câu này rất khó."
+        },
+        {
+          "stt": 439,
+          "hanzi": "难",
+          "pinyin": "nán",
+          "meaning": "khó",
+          "exampleHanzi": "汉语不太难。",
+          "exampleMeaning": "Tiếng Trung không khó lắm."
+        },
+        {
+          "stt": 440,
+          "hanzi": "容易",
+          "pinyin": "róngyì",
+          "meaning": "dễ",
+          "exampleHanzi": "这个题很容易。",
+          "exampleMeaning": "Câu này rất dễ."
+        },
+        {
+          "stt": 441,
+          "hanzi": "通过",
+          "pinyin": "tōngguò",
+          "meaning": "đỗ, qua (kỳ thi)",
+          "exampleHanzi": "我通过考试了。",
+          "exampleMeaning": "Tôi đỗ kỳ thi rồi."
+        },
+        {
+          "stt": 442,
+          "hanzi": "加油",
+          "pinyin": "jiāyóu",
+          "meaning": "cố lên",
+          "exampleHanzi": "考试加油！",
+          "exampleMeaning": "Thi cố lên nhé!"
+        }
+      ]
+    },
+    {
+      "bai": 27,
+      "words": [
+        {
+          "stt": 443,
+          "hanzi": "完",
+          "pinyin": "wán",
+          "meaning": "xong, hết",
+          "exampleHanzi": "题太多，我没做完。",
+          "exampleMeaning": "Đề nhiều quá, tôi làm không xong."
+        },
+        {
+          "stt": 444,
+          "hanzi": "做完",
+          "pinyin": "zuòwán",
+          "meaning": "làm xong",
+          "exampleHanzi": "作业做完了。",
+          "exampleMeaning": "Bài tập làm xong rồi."
+        },
+        {
+          "stt": 445,
+          "hanzi": "看完",
+          "pinyin": "kànwán",
+          "meaning": "xem/đọc xong",
+          "exampleHanzi": "书看完了。",
+          "exampleMeaning": "Sách đọc xong rồi."
+        },
+        {
+          "stt": 446,
+          "hanzi": "懂",
+          "pinyin": "dǒng",
+          "meaning": "hiểu",
+          "exampleHanzi": "我听懂了。",
+          "exampleMeaning": "Tôi nghe hiểu rồi."
+        },
+        {
+          "stt": 447,
+          "hanzi": "对",
+          "pinyin": "duì",
+          "meaning": "đúng",
+          "exampleHanzi": "这个题做对了。",
+          "exampleMeaning": "Câu này làm đúng rồi."
+        },
+        {
+          "stt": 448,
+          "hanzi": "错",
+          "pinyin": "cuò",
+          "meaning": "sai",
+          "exampleHanzi": "我做错了。",
+          "exampleMeaning": "Tôi làm sai rồi."
+        },
+        {
+          "stt": 449,
+          "hanzi": "从",
+          "pinyin": "cóng",
+          "meaning": "từ",
+          "exampleHanzi": "我从第一题开始。",
+          "exampleMeaning": "Tôi bắt đầu từ câu một."
+        },
+        {
+          "stt": 450,
+          "hanzi": "开始",
+          "pinyin": "kāishǐ",
+          "meaning": "bắt đầu",
+          "exampleHanzi": "考试开始了。",
+          "exampleMeaning": "Kỳ thi bắt đầu rồi."
+        },
+        {
+          "stt": 451,
+          "hanzi": "作业",
+          "pinyin": "zuòyè",
+          "meaning": "bài tập",
+          "exampleHanzi": "我写作业。",
+          "exampleMeaning": "Tôi làm bài tập."
+        },
+        {
+          "stt": 452,
+          "hanzi": "交",
+          "pinyin": "jiāo",
+          "meaning": "nộp",
+          "exampleHanzi": "作业交了吗？",
+          "exampleMeaning": "Bài tập nộp chưa?"
+        },
+        {
+          "stt": 453,
+          "hanzi": "检查",
+          "pinyin": "jiǎnchá",
+          "meaning": "kiểm tra",
+          "exampleHanzi": "我检查一下。",
+          "exampleMeaning": "Tôi kiểm tra một chút."
+        },
+        {
+          "stt": 454,
+          "hanzi": "清楚",
+          "pinyin": "qīngchu",
+          "meaning": "rõ ràng",
+          "exampleHanzi": "我没看清楚。",
+          "exampleMeaning": "Tôi nhìn không rõ."
+        },
+        {
+          "stt": 455,
+          "hanzi": "结果",
+          "pinyin": "jiéguǒ",
+          "meaning": "kết quả",
+          "exampleHanzi": "考试结果出来了。",
+          "exampleMeaning": "Kết quả thi ra rồi."
+        },
+        {
+          "stt": 456,
+          "hanzi": "句子",
+          "pinyin": "jùzi",
+          "meaning": "câu",
+          "exampleHanzi": "这个句子很长。",
+          "exampleMeaning": "Câu này rất dài."
+        },
+        {
+          "stt": 457,
+          "hanzi": "生词",
+          "pinyin": "shēngcí",
+          "meaning": "từ mới",
+          "exampleHanzi": "今天有很多生词。",
+          "exampleMeaning": "Hôm nay có nhiều từ mới."
+        },
+        {
+          "stt": 458,
+          "hanzi": "记住",
+          "pinyin": "jìzhù",
+          "meaning": "nhớ được, ghi nhớ",
+          "exampleHanzi": "我记住了。",
+          "exampleMeaning": "Tôi nhớ rồi."
+        },
+        {
+          "stt": 459,
+          "hanzi": "遍",
+          "pinyin": "biàn",
+          "meaning": "lần, lượt",
+          "exampleHanzi": "我看了三遍。",
+          "exampleMeaning": "Tôi đọc ba lần."
+        }
+      ]
+    },
+    {
+      "bai": 28,
+      "words": [
+        {
+          "stt": 460,
+          "hanzi": "听懂",
+          "pinyin": "tīngdǒng",
+          "meaning": "nghe hiểu",
+          "exampleHanzi": "我听懂了。",
+          "exampleMeaning": "Tôi nghe hiểu rồi."
+        },
+        {
+          "stt": 461,
+          "hanzi": "看见",
+          "pinyin": "kànjiàn",
+          "meaning": "nhìn thấy",
+          "exampleHanzi": "我看见他了。",
+          "exampleMeaning": "Tôi nhìn thấy anh ấy rồi."
+        },
+        {
+          "stt": 462,
+          "hanzi": "听见",
+          "pinyin": "tīngjiàn",
+          "meaning": "nghe thấy",
+          "exampleHanzi": "我没听见。",
+          "exampleMeaning": "Tôi không nghe thấy."
+        },
+        {
+          "stt": 463,
+          "hanzi": "找到",
+          "pinyin": "zhǎodào",
+          "meaning": "tìm thấy",
+          "exampleHanzi": "我找到了。",
+          "exampleMeaning": "Tôi tìm thấy rồi."
+        },
+        {
+          "stt": 464,
+          "hanzi": "看到",
+          "pinyin": "kàndào",
+          "meaning": "nhìn thấy",
+          "exampleHanzi": "我看到照片了。",
+          "exampleMeaning": "Tôi nhìn thấy ảnh rồi."
+        },
+        {
+          "stt": 465,
+          "hanzi": "学会",
+          "pinyin": "xuéhuì",
+          "meaning": "học được, biết",
+          "exampleHanzi": "我学会了。",
+          "exampleMeaning": "Tôi học được rồi."
+        },
+        {
+          "stt": 466,
+          "hanzi": "会",
+          "pinyin": "huì",
+          "meaning": "biết (làm)",
+          "exampleHanzi": "我会说汉语了。",
+          "exampleMeaning": "Tôi biết nói tiếng Trung rồi."
+        },
+        {
+          "stt": 467,
+          "hanzi": "到",
+          "pinyin": "dào",
+          "meaning": "đến, được (kết quả)",
+          "exampleHanzi": "我买到票了。",
+          "exampleMeaning": "Tôi mua được vé rồi."
+        },
+        {
+          "stt": 468,
+          "hanzi": "懂",
+          "pinyin": "dǒng",
+          "meaning": "hiểu",
+          "exampleHanzi": "你懂了吗？",
+          "exampleMeaning": "Bạn hiểu chưa?"
+        },
+        {
+          "stt": 469,
+          "hanzi": "明白",
+          "pinyin": "míngbai",
+          "meaning": "hiểu, rõ",
+          "exampleHanzi": "我明白了。",
+          "exampleMeaning": "Tôi hiểu rồi."
+        },
+        {
+          "stt": 470,
+          "hanzi": "清楚",
+          "pinyin": "qīngchu",
+          "meaning": "rõ",
+          "exampleHanzi": "我听清楚了。",
+          "exampleMeaning": "Tôi nghe rõ rồi."
+        },
+        {
+          "stt": 471,
+          "hanzi": "声音",
+          "pinyin": "shēngyīn",
+          "meaning": "âm thanh, tiếng",
+          "exampleHanzi": "声音太小了。",
+          "exampleMeaning": "Âm thanh nhỏ quá."
+        },
+        {
+          "stt": 472,
+          "hanzi": "大声",
+          "pinyin": "dàshēng",
+          "meaning": "to tiếng",
+          "exampleHanzi": "请大声说。",
+          "exampleMeaning": "Xin nói to."
+        },
+        {
+          "stt": 473,
+          "hanzi": "再",
+          "pinyin": "zài",
+          "meaning": "lại, một lần nữa",
+          "exampleHanzi": "请再说一遍。",
+          "exampleMeaning": "Xin nói lại một lần."
+        },
+        {
+          "stt": 474,
+          "hanzi": "一遍",
+          "pinyin": "yíbiàn",
+          "meaning": "một lần, một lượt",
+          "exampleHanzi": "我听了一遍。",
+          "exampleMeaning": "Tôi nghe một lần."
+        },
+        {
+          "stt": 475,
+          "hanzi": "意思",
+          "pinyin": "yìsi",
+          "meaning": "ý nghĩa",
+          "exampleHanzi": "我懂这个意思。",
+          "exampleMeaning": "Tôi hiểu ý này."
+        },
+        {
+          "stt": 476,
+          "hanzi": "回答",
+          "pinyin": "huídá",
+          "meaning": "trả lời",
+          "exampleHanzi": "请回答问题。",
+          "exampleMeaning": "Xin trả lời câu hỏi."
+        }
+      ]
+    },
+    {
+      "bai": 29,
+      "words": [
+        {
+          "stt": 477,
+          "hanzi": "第",
+          "pinyin": "dì",
+          "meaning": "thứ (số thứ tự)",
+          "exampleHanzi": "这是第几课？",
+          "exampleMeaning": "Đây là bài thứ mấy?"
+        },
+        {
+          "stt": 478,
+          "hanzi": "第一",
+          "pinyin": "dìyī",
+          "meaning": "thứ nhất",
+          "exampleHanzi": "他是第一名。",
+          "exampleMeaning": "Anh ấy đứng thứ nhất."
+        },
+        {
+          "stt": 479,
+          "hanzi": "第二",
+          "pinyin": "dì'èr",
+          "meaning": "thứ hai",
+          "exampleHanzi": "这是第二次。",
+          "exampleMeaning": "Đây là lần thứ hai."
+        },
+        {
+          "stt": 480,
+          "hanzi": "课",
+          "pinyin": "kè",
+          "meaning": "bài, tiết",
+          "exampleHanzi": "这是第五课。",
+          "exampleMeaning": "Đây là bài thứ năm."
+        },
+        {
+          "stt": 481,
+          "hanzi": "次",
+          "pinyin": "cì",
+          "meaning": "lần",
+          "exampleHanzi": "这是第一次。",
+          "exampleMeaning": "Đây là lần đầu tiên."
+        },
+        {
+          "stt": 482,
+          "hanzi": "名",
+          "pinyin": "míng",
+          "meaning": "hạng, vị trí",
+          "exampleHanzi": "他考了第一名。",
+          "exampleMeaning": "Anh ấy thi đứng nhất."
+        },
+        {
+          "stt": 483,
+          "hanzi": "楼",
+          "pinyin": "lóu",
+          "meaning": "tầng, lầu",
+          "exampleHanzi": "我家在三楼。",
+          "exampleMeaning": "Nhà tôi ở tầng ba."
+        },
+        {
+          "stt": 484,
+          "hanzi": "层",
+          "pinyin": "céng",
+          "meaning": "tầng",
+          "exampleHanzi": "在第五层。",
+          "exampleMeaning": "Ở tầng năm."
+        },
+        {
+          "stt": 485,
+          "hanzi": "号",
+          "pinyin": "hào",
+          "meaning": "số",
+          "exampleHanzi": "我住八号。",
+          "exampleMeaning": "Tôi ở số tám."
+        },
+        {
+          "stt": 486,
+          "hanzi": "页",
+          "pinyin": "yè",
+          "meaning": "trang",
+          "exampleHanzi": "请看第十页。",
+          "exampleMeaning": "Xin xem trang mười."
+        },
+        {
+          "stt": 487,
+          "hanzi": "个",
+          "pinyin": "gè",
+          "meaning": "cái, thứ",
+          "exampleHanzi": "第一个是我的。",
+          "exampleMeaning": "Cái thứ nhất là của tôi."
+        },
+        {
+          "stt": 488,
+          "hanzi": "最后",
+          "pinyin": "zuìhòu",
+          "meaning": "cuối cùng",
+          "exampleHanzi": "他是最后一个。",
+          "exampleMeaning": "Anh ấy là người cuối cùng."
+        },
+        {
+          "stt": 489,
+          "hanzi": "先",
+          "pinyin": "xiān",
+          "meaning": "trước, đầu tiên",
+          "exampleHanzi": "你先来。",
+          "exampleMeaning": "Bạn đến trước."
+        },
+        {
+          "stt": 490,
+          "hanzi": "然后",
+          "pinyin": "ránhòu",
+          "meaning": "sau đó",
+          "exampleHanzi": "然后是第二个。",
+          "exampleMeaning": "Sau đó là cái thứ hai."
+        },
+        {
+          "stt": 491,
+          "hanzi": "顺序",
+          "pinyin": "shùnxù",
+          "meaning": "trình tự, thứ tự",
+          "exampleHanzi": "请注意顺序。",
+          "exampleMeaning": "Xin chú ý thứ tự."
+        },
+        {
+          "stt": 492,
+          "hanzi": "开始",
+          "pinyin": "kāishǐ",
+          "meaning": "bắt đầu",
+          "exampleHanzi": "从第一课开始。",
+          "exampleMeaning": "Bắt đầu từ bài một."
+        },
+        {
+          "stt": 493,
+          "hanzi": "一共",
+          "pinyin": "yígòng",
+          "meaning": "tổng cộng",
+          "exampleHanzi": "一共十课。",
+          "exampleMeaning": "Tổng cộng mười bài."
+        }
+      ]
+    },
+    {
+      "bai": 30,
+      "words": [
+        {
+          "stt": 494,
+          "hanzi": "比",
+          "pinyin": "bǐ",
+          "meaning": "so với, hơn",
+          "exampleHanzi": "他比我大三岁。",
+          "exampleMeaning": "Anh ấy hơn tôi ba tuổi."
+        },
+        {
+          "stt": 495,
+          "hanzi": "岁",
+          "pinyin": "suì",
+          "meaning": "tuổi",
+          "exampleHanzi": "他比我大两岁。",
+          "exampleMeaning": "Anh ấy hơn tôi hai tuổi."
+        },
+        {
+          "stt": 496,
+          "hanzi": "高",
+          "pinyin": "gāo",
+          "meaning": "cao",
+          "exampleHanzi": "他比我高。",
+          "exampleMeaning": "Anh ấy cao hơn tôi."
+        },
+        {
+          "stt": 497,
+          "hanzi": "矮",
+          "pinyin": "ǎi",
+          "meaning": "thấp",
+          "exampleHanzi": "我比他矮。",
+          "exampleMeaning": "Tôi thấp hơn anh ấy."
+        },
+        {
+          "stt": 498,
+          "hanzi": "大",
+          "pinyin": "dà",
+          "meaning": "lớn (tuổi)",
+          "exampleHanzi": "他比我大。",
+          "exampleMeaning": "Anh ấy lớn tuổi hơn tôi."
+        },
+        {
+          "stt": 499,
+          "hanzi": "小",
+          "pinyin": "xiǎo",
+          "meaning": "nhỏ (tuổi)",
+          "exampleHanzi": "妹妹比我小。",
+          "exampleMeaning": "Em gái nhỏ tuổi hơn tôi."
+        },
+        {
+          "stt": 500,
+          "hanzi": "长",
+          "pinyin": "cháng",
+          "meaning": "dài",
+          "exampleHanzi": "这条路比那条长。",
+          "exampleMeaning": "Con đường này dài hơn con kia."
+        },
+        {
+          "stt": 501,
+          "hanzi": "短",
+          "pinyin": "duǎn",
+          "meaning": "ngắn",
+          "exampleHanzi": "这件比那件短。",
+          "exampleMeaning": "Cái này ngắn hơn cái kia."
+        },
+        {
+          "stt": 502,
+          "hanzi": "重",
+          "pinyin": "zhòng",
+          "meaning": "nặng",
+          "exampleHanzi": "这个比那个重。",
+          "exampleMeaning": "Cái này nặng hơn cái kia."
+        },
+        {
+          "stt": 503,
+          "hanzi": "一样",
+          "pinyin": "yíyàng",
+          "meaning": "giống nhau",
+          "exampleHanzi": "我跟他一样高。",
+          "exampleMeaning": "Tôi cao bằng anh ấy."
+        },
+        {
+          "stt": 504,
+          "hanzi": "多",
+          "pinyin": "duō",
+          "meaning": "hơn (số lượng)",
+          "exampleHanzi": "他比我大三岁多。",
+          "exampleMeaning": "Anh ấy hơn tôi hơn ba tuổi."
+        },
+        {
+          "stt": 505,
+          "hanzi": "年轻",
+          "pinyin": "niánqīng",
+          "meaning": "trẻ",
+          "exampleHanzi": "他比我年轻。",
+          "exampleMeaning": "Anh ấy trẻ hơn tôi."
+        },
+        {
+          "stt": 506,
+          "hanzi": "买的",
+          "pinyin": "mǎide",
+          "meaning": "cái đã mua",
+          "exampleHanzi": "我买的衣服很贵。",
+          "exampleMeaning": "Cái áo tôi mua rất đắt."
+        },
+        {
+          "stt": 507,
+          "hanzi": "跟",
+          "pinyin": "gēn",
+          "meaning": "với, cùng",
+          "exampleHanzi": "我跟他一样大。",
+          "exampleMeaning": "Tôi bằng tuổi anh ấy."
+        },
+        {
+          "stt": 508,
+          "hanzi": "更",
+          "pinyin": "gèng",
+          "meaning": "càng, hơn nữa",
+          "exampleHanzi": "他比我更高。",
+          "exampleMeaning": "Anh ấy cao hơn tôi nữa."
+        },
+        {
+          "stt": 509,
+          "hanzi": "最",
+          "pinyin": "zuì",
+          "meaning": "nhất",
+          "exampleHanzi": "他是最高的。",
+          "exampleMeaning": "Anh ấy cao nhất."
+        },
+        {
+          "stt": 510,
+          "hanzi": "差不多",
+          "pinyin": "chàbuduō",
+          "meaning": "gần như, suýt soát",
+          "exampleHanzi": "我们差不多高。",
+          "exampleMeaning": "Chúng tôi cao suýt soát."
+        }
+      ]
+    },
+    {
+      "bai": 31,
+      "words": [
+        {
+          "stt": 511,
+          "hanzi": "得",
+          "pinyin": "de",
+          "meaning": "(bổ ngữ trình độ)",
+          "exampleHanzi": "你穿得太少了。",
+          "exampleMeaning": "Bạn mặc ít quá."
+        },
+        {
+          "stt": 512,
+          "hanzi": "穿",
+          "pinyin": "chuān",
+          "meaning": "mặc",
+          "exampleHanzi": "你穿得太少。",
+          "exampleMeaning": "Bạn mặc ít quá."
+        },
+        {
+          "stt": 513,
+          "hanzi": "少",
+          "pinyin": "shǎo",
+          "meaning": "ít",
+          "exampleHanzi": "衣服穿得太少。",
+          "exampleMeaning": "Quần áo mặc quá ít."
+        },
+        {
+          "stt": 514,
+          "hanzi": "多",
+          "pinyin": "duō",
+          "meaning": "nhiều",
+          "exampleHanzi": "他吃得很多。",
+          "exampleMeaning": "Anh ấy ăn rất nhiều."
+        },
+        {
+          "stt": 515,
+          "hanzi": "快",
+          "pinyin": "kuài",
+          "meaning": "nhanh",
+          "exampleHanzi": "他跑得很快。",
+          "exampleMeaning": "Anh ấy chạy rất nhanh."
+        },
+        {
+          "stt": 516,
+          "hanzi": "慢",
+          "pinyin": "màn",
+          "meaning": "chậm",
+          "exampleHanzi": "你说得太慢了。",
+          "exampleMeaning": "Bạn nói chậm quá."
+        },
+        {
+          "stt": 517,
+          "hanzi": "好",
+          "pinyin": "hǎo",
+          "meaning": "tốt, giỏi",
+          "exampleHanzi": "她唱得很好。",
+          "exampleMeaning": "Cô ấy hát rất hay."
+        },
+        {
+          "stt": 518,
+          "hanzi": "早",
+          "pinyin": "zǎo",
+          "meaning": "sớm",
+          "exampleHanzi": "你来得很早。",
+          "exampleMeaning": "Bạn đến rất sớm."
+        },
+        {
+          "stt": 519,
+          "hanzi": "晚",
+          "pinyin": "wǎn",
+          "meaning": "muộn",
+          "exampleHanzi": "我起得太晚了。",
+          "exampleMeaning": "Tôi dậy muộn quá."
+        },
+        {
+          "stt": 520,
+          "hanzi": "更",
+          "pinyin": "gèng",
+          "meaning": "càng, hơn",
+          "exampleHanzi": "今天比昨天更冷。",
+          "exampleMeaning": "Hôm nay càng lạnh hơn hôm qua."
+        },
+        {
+          "stt": 521,
+          "hanzi": "还",
+          "pinyin": "hái",
+          "meaning": "còn, vẫn",
+          "exampleHanzi": "他比我还高。",
+          "exampleMeaning": "Anh ấy còn cao hơn tôi."
+        },
+        {
+          "stt": 522,
+          "hanzi": "没有",
+          "pinyin": "méiyǒu",
+          "meaning": "không bằng",
+          "exampleHanzi": "我没有他高。",
+          "exampleMeaning": "Tôi không cao bằng anh ấy."
+        },
+        {
+          "stt": 523,
+          "hanzi": "清楚",
+          "pinyin": "qīngchu",
+          "meaning": "rõ ràng",
+          "exampleHanzi": "他说得很清楚。",
+          "exampleMeaning": "Anh ấy nói rất rõ."
+        },
+        {
+          "stt": 524,
+          "hanzi": "认真",
+          "pinyin": "rènzhēn",
+          "meaning": "nghiêm túc",
+          "exampleHanzi": "他学得很认真。",
+          "exampleMeaning": "Anh ấy học rất chăm chú."
+        },
+        {
+          "stt": 525,
+          "hanzi": "流利",
+          "pinyin": "liúlì",
+          "meaning": "trôi chảy",
+          "exampleHanzi": "他说得很流利。",
+          "exampleMeaning": "Anh ấy nói rất trôi chảy."
+        },
+        {
+          "stt": 526,
+          "hanzi": "水平",
+          "pinyin": "shuǐpíng",
+          "meaning": "trình độ",
+          "exampleHanzi": "他水平很高。",
+          "exampleMeaning": "Trình độ anh ấy rất cao."
+        },
+        {
+          "stt": 527,
+          "hanzi": "冷",
+          "pinyin": "lěng",
+          "meaning": "lạnh",
+          "exampleHanzi": "今天穿得太少会冷。",
+          "exampleMeaning": "Hôm nay mặc ít sẽ lạnh."
+        }
+      ]
+    },
+    {
+      "bai": 32,
+      "words": [
+        {
+          "stt": 528,
+          "hanzi": "可能",
+          "pinyin": "kěnéng",
+          "meaning": "có thể, có lẽ",
+          "exampleHanzi": "明天可能下雨。",
+          "exampleMeaning": "Ngày mai có thể trời mưa."
+        },
+        {
+          "stt": 529,
+          "hanzi": "会",
+          "pinyin": "huì",
+          "meaning": "sẽ",
+          "exampleHanzi": "明天会下雨。",
+          "exampleMeaning": "Ngày mai sẽ mưa."
+        },
+        {
+          "stt": 530,
+          "hanzi": "下雨",
+          "pinyin": "xiàyǔ",
+          "meaning": "mưa",
+          "exampleHanzi": "明天可能会下雨。",
+          "exampleMeaning": "Ngày mai có thể sẽ mưa."
+        },
+        {
+          "stt": 531,
+          "hanzi": "下雪",
+          "pinyin": "xiàxuě",
+          "meaning": "tuyết rơi",
+          "exampleHanzi": "冬天会下雪。",
+          "exampleMeaning": "Mùa đông sẽ có tuyết."
+        },
+        {
+          "stt": 532,
+          "hanzi": "雪",
+          "pinyin": "xuě",
+          "meaning": "tuyết",
+          "exampleHanzi": "今天下雪了。",
+          "exampleMeaning": "Hôm nay có tuyết rồi."
+        },
+        {
+          "stt": 533,
+          "hanzi": "晴",
+          "pinyin": "qíng",
+          "meaning": "nắng, quang",
+          "exampleHanzi": "明天是晴天。",
+          "exampleMeaning": "Ngày mai trời nắng."
+        },
+        {
+          "stt": 534,
+          "hanzi": "阴",
+          "pinyin": "yīn",
+          "meaning": "âm u",
+          "exampleHanzi": "今天天阴。",
+          "exampleMeaning": "Hôm nay trời âm u."
+        },
+        {
+          "stt": 535,
+          "hanzi": "刮风",
+          "pinyin": "guāfēng",
+          "meaning": "có gió, gió thổi",
+          "exampleHanzi": "今天刮风了。",
+          "exampleMeaning": "Hôm nay có gió rồi."
+        },
+        {
+          "stt": 536,
+          "hanzi": "天气预报",
+          "pinyin": "tiānqì yùbào",
+          "meaning": "dự báo thời tiết",
+          "exampleHanzi": "我看了天气预报。",
+          "exampleMeaning": "Tôi xem dự báo thời tiết rồi."
+        },
+        {
+          "stt": 537,
+          "hanzi": "可是",
+          "pinyin": "kěshì",
+          "meaning": "nhưng",
+          "exampleHanzi": "可能下雨，可是我还要去。",
+          "exampleMeaning": "Có thể mưa, nhưng tôi vẫn phải đi."
+        },
+        {
+          "stt": 538,
+          "hanzi": "应该",
+          "pinyin": "yīnggāi",
+          "meaning": "chắc, nên",
+          "exampleHanzi": "他应该会来。",
+          "exampleMeaning": "Anh ấy chắc sẽ đến."
+        },
+        {
+          "stt": 539,
+          "hanzi": "也许",
+          "pinyin": "yěxǔ",
+          "meaning": "có lẽ",
+          "exampleHanzi": "他也许不来。",
+          "exampleMeaning": "Anh ấy có lẽ không đến."
+        },
+        {
+          "stt": 540,
+          "hanzi": "一定",
+          "pinyin": "yídìng",
+          "meaning": "nhất định",
+          "exampleHanzi": "明天一定晴。",
+          "exampleMeaning": "Ngày mai nhất định nắng."
+        },
+        {
+          "stt": 541,
+          "hanzi": "带",
+          "pinyin": "dài",
+          "meaning": "mang theo",
+          "exampleHanzi": "带上雨伞吧。",
+          "exampleMeaning": "Mang theo ô đi."
+        },
+        {
+          "stt": 542,
+          "hanzi": "雨伞",
+          "pinyin": "yǔsǎn",
+          "meaning": "cái ô",
+          "exampleHanzi": "别忘了带雨伞。",
+          "exampleMeaning": "Đừng quên mang ô."
+        },
+        {
+          "stt": 543,
+          "hanzi": "冷",
+          "pinyin": "lěng",
+          "meaning": "lạnh",
+          "exampleHanzi": "明天会很冷。",
+          "exampleMeaning": "Ngày mai sẽ rất lạnh."
+        },
+        {
+          "stt": 544,
+          "hanzi": "度",
+          "pinyin": "dù",
+          "meaning": "độ",
+          "exampleHanzi": "今天二十度。",
+          "exampleMeaning": "Hôm nay 20 độ."
+        }
+      ]
+    },
+    {
+      "bai": 33,
+      "words": [
+        {
+          "stt": 545,
+          "hanzi": "着",
+          "pinyin": "zhe",
+          "meaning": "(đang, trạng thái)",
+          "exampleHanzi": "门开着呢。",
+          "exampleMeaning": "Cửa đang mở đấy."
+        },
+        {
+          "stt": 546,
+          "hanzi": "开着",
+          "pinyin": "kāizhe",
+          "meaning": "đang mở",
+          "exampleHanzi": "窗户开着。",
+          "exampleMeaning": "Cửa sổ đang mở."
+        },
+        {
+          "stt": 547,
+          "hanzi": "关",
+          "pinyin": "guān",
+          "meaning": "đóng, tắt",
+          "exampleHanzi": "门关着。",
+          "exampleMeaning": "Cửa đang đóng."
+        },
+        {
+          "stt": 548,
+          "hanzi": "拿着",
+          "pinyin": "názhe",
+          "meaning": "đang cầm",
+          "exampleHanzi": "他拿着书。",
+          "exampleMeaning": "Anh ấy đang cầm sách."
+        },
+        {
+          "stt": 549,
+          "hanzi": "穿着",
+          "pinyin": "chuānzhe",
+          "meaning": "đang mặc",
+          "exampleHanzi": "她穿着红裙子。",
+          "exampleMeaning": "Cô ấy mặc váy đỏ."
+        },
+        {
+          "stt": 550,
+          "hanzi": "戴",
+          "pinyin": "dài",
+          "meaning": "đeo, đội",
+          "exampleHanzi": "他戴着帽子。",
+          "exampleMeaning": "Anh ấy đội mũ."
+        },
+        {
+          "stt": 551,
+          "hanzi": "帽子",
+          "pinyin": "màozi",
+          "meaning": "cái mũ",
+          "exampleHanzi": "这个帽子很好看。",
+          "exampleMeaning": "Cái mũ này rất đẹp."
+        },
+        {
+          "stt": 552,
+          "hanzi": "坐着",
+          "pinyin": "zuòzhe",
+          "meaning": "đang ngồi",
+          "exampleHanzi": "他坐着看书。",
+          "exampleMeaning": "Anh ấy ngồi đọc sách."
+        },
+        {
+          "stt": 553,
+          "hanzi": "站",
+          "pinyin": "zhàn",
+          "meaning": "đứng",
+          "exampleHanzi": "他站着说话。",
+          "exampleMeaning": "Anh ấy đứng nói chuyện."
+        },
+        {
+          "stt": 554,
+          "hanzi": "躺",
+          "pinyin": "tǎng",
+          "meaning": "nằm",
+          "exampleHanzi": "他躺着休息。",
+          "exampleMeaning": "Anh ấy nằm nghỉ."
+        },
+        {
+          "stt": 555,
+          "hanzi": "不是…吗",
+          "pinyin": "búshì…ma",
+          "meaning": "không phải… sao",
+          "exampleHanzi": "门不是开着吗？",
+          "exampleMeaning": "Cửa chẳng phải đang mở sao?"
+        },
+        {
+          "stt": 556,
+          "hanzi": "窗户",
+          "pinyin": "chuānghu",
+          "meaning": "cửa sổ",
+          "exampleHanzi": "窗户开着呢。",
+          "exampleMeaning": "Cửa sổ đang mở đấy."
+        },
+        {
+          "stt": 557,
+          "hanzi": "灯",
+          "pinyin": "dēng",
+          "meaning": "đèn",
+          "exampleHanzi": "灯开着。",
+          "exampleMeaning": "Đèn đang bật."
+        },
+        {
+          "stt": 558,
+          "hanzi": "正在",
+          "pinyin": "zhèngzài",
+          "meaning": "đang",
+          "exampleHanzi": "他正在看电视。",
+          "exampleMeaning": "Anh ấy đang xem tivi."
+        },
+        {
+          "stt": 559,
+          "hanzi": "一边",
+          "pinyin": "yìbiān",
+          "meaning": "vừa (một bên)",
+          "exampleHanzi": "他一边走一边看。",
+          "exampleMeaning": "Anh ấy vừa đi vừa xem."
+        },
+        {
+          "stt": 560,
+          "hanzi": "眼睛",
+          "pinyin": "yǎnjing",
+          "meaning": "mắt",
+          "exampleHanzi": "她的眼睛很大。",
+          "exampleMeaning": "Mắt cô ấy rất to."
+        },
+        {
+          "stt": 561,
+          "hanzi": "手",
+          "pinyin": "shǒu",
+          "meaning": "tay",
+          "exampleHanzi": "他手里拿着书。",
+          "exampleMeaning": "Trong tay anh ấy cầm sách."
+        }
+      ]
+    },
+    {
+      "bai": 34,
+      "words": [
+        {
+          "stt": 562,
+          "hanzi": "过",
+          "pinyin": "guò",
+          "meaning": "(đã) từng",
+          "exampleHanzi": "你看过那个电影吗？",
+          "exampleMeaning": "Bạn đã xem phim đó chưa?"
+        },
+        {
+          "stt": 563,
+          "hanzi": "电影",
+          "pinyin": "diànyǐng",
+          "meaning": "phim",
+          "exampleHanzi": "我看过这个电影。",
+          "exampleMeaning": "Tôi đã xem phim này."
+        },
+        {
+          "stt": 564,
+          "hanzi": "虽然",
+          "pinyin": "suīrán",
+          "meaning": "tuy, mặc dù",
+          "exampleHanzi": "虽然累，但是高兴。",
+          "exampleMeaning": "Tuy mệt nhưng vui."
+        },
+        {
+          "stt": 565,
+          "hanzi": "但是",
+          "pinyin": "dànshì",
+          "meaning": "nhưng",
+          "exampleHanzi": "虽然贵，但是好。",
+          "exampleMeaning": "Tuy đắt nhưng tốt."
+        },
+        {
+          "stt": 566,
+          "hanzi": "一直",
+          "pinyin": "yìzhí",
+          "meaning": "luôn, thẳng",
+          "exampleHanzi": "我一直想看。",
+          "exampleMeaning": "Tôi vẫn luôn muốn xem."
+        },
+        {
+          "stt": 567,
+          "hanzi": "从来",
+          "pinyin": "cónglái",
+          "meaning": "xưa nay",
+          "exampleHanzi": "我从来没去过。",
+          "exampleMeaning": "Tôi xưa nay chưa từng đi."
+        },
+        {
+          "stt": 568,
+          "hanzi": "次",
+          "pinyin": "cì",
+          "meaning": "lần",
+          "exampleHanzi": "我看过两次。",
+          "exampleMeaning": "Tôi xem hai lần."
+        },
+        {
+          "stt": 569,
+          "hanzi": "遍",
+          "pinyin": "biàn",
+          "meaning": "lần (trọn vẹn)",
+          "exampleHanzi": "我看过三遍。",
+          "exampleMeaning": "Tôi xem ba lần."
+        },
+        {
+          "stt": 570,
+          "hanzi": "以前",
+          "pinyin": "yǐqián",
+          "meaning": "trước đây",
+          "exampleHanzi": "我以前看过。",
+          "exampleMeaning": "Trước đây tôi đã xem."
+        },
+        {
+          "stt": 571,
+          "hanzi": "有名",
+          "pinyin": "yǒumíng",
+          "meaning": "nổi tiếng",
+          "exampleHanzi": "这个电影很有名。",
+          "exampleMeaning": "Phim này rất nổi tiếng."
+        },
+        {
+          "stt": 572,
+          "hanzi": "故事",
+          "pinyin": "gùshi",
+          "meaning": "câu chuyện",
+          "exampleHanzi": "这个故事很好。",
+          "exampleMeaning": "Câu chuyện này rất hay."
+        },
+        {
+          "stt": 573,
+          "hanzi": "演员",
+          "pinyin": "yǎnyuán",
+          "meaning": "diễn viên",
+          "exampleHanzi": "这个演员很有名。",
+          "exampleMeaning": "Diễn viên này rất nổi tiếng."
+        },
+        {
+          "stt": 574,
+          "hanzi": "好看",
+          "pinyin": "hǎokàn",
+          "meaning": "hay (xem)",
+          "exampleHanzi": "这个电影很好看。",
+          "exampleMeaning": "Phim này rất hay."
+        },
+        {
+          "stt": 575,
+          "hanzi": "听说",
+          "pinyin": "tīngshuō",
+          "meaning": "nghe nói",
+          "exampleHanzi": "听说这个电影不错。",
+          "exampleMeaning": "Nghe nói phim này khá hay."
+        },
+        {
+          "stt": 576,
+          "hanzi": "感动",
+          "pinyin": "gǎndòng",
+          "meaning": "cảm động",
+          "exampleHanzi": "这个电影很感动。",
+          "exampleMeaning": "Phim này rất cảm động."
+        },
+        {
+          "stt": 577,
+          "hanzi": "觉得",
+          "pinyin": "juéde",
+          "meaning": "cảm thấy",
+          "exampleHanzi": "我觉得很好看。",
+          "exampleMeaning": "Tôi thấy rất hay."
+        },
+        {
+          "stt": 578,
+          "hanzi": "已经",
+          "pinyin": "yǐjīng",
+          "meaning": "đã rồi",
+          "exampleHanzi": "我已经看过了。",
+          "exampleMeaning": "Tôi đã xem rồi."
+        }
+      ]
+    },
+    {
+      "bai": 35,
+      "words": [
+        {
+          "stt": 579,
+          "hanzi": "就要…了",
+          "pinyin": "jiùyào…le",
+          "meaning": "sắp… rồi",
+          "exampleHanzi": "新年就要到了。",
+          "exampleMeaning": "Năm mới sắp đến rồi."
+        },
+        {
+          "stt": 580,
+          "hanzi": "快要…了",
+          "pinyin": "kuàiyào…le",
+          "meaning": "sắp… rồi",
+          "exampleHanzi": "火车快要开了。",
+          "exampleMeaning": "Tàu sắp chạy rồi."
+        },
+        {
+          "stt": 581,
+          "hanzi": "新年",
+          "pinyin": "xīnnián",
+          "meaning": "năm mới",
+          "exampleHanzi": "新年快乐！",
+          "exampleMeaning": "Chúc mừng năm mới!"
+        },
+        {
+          "stt": 582,
+          "hanzi": "到",
+          "pinyin": "dào",
+          "meaning": "đến",
+          "exampleHanzi": "新年到了。",
+          "exampleMeaning": "Năm mới đến rồi."
+        },
+        {
+          "stt": 583,
+          "hanzi": "已经",
+          "pinyin": "yǐjīng",
+          "meaning": "đã rồi",
+          "exampleHanzi": "已经十二点了。",
+          "exampleMeaning": "Đã 12 giờ rồi."
+        },
+        {
+          "stt": 584,
+          "hanzi": "节日",
+          "pinyin": "jiérì",
+          "meaning": "ngày lễ",
+          "exampleHanzi": "春节是大节日。",
+          "exampleMeaning": "Tết là ngày lễ lớn."
+        },
+        {
+          "stt": 585,
+          "hanzi": "春节",
+          "pinyin": "Chūnjié",
+          "meaning": "Tết (xuân tiết)",
+          "exampleHanzi": "春节就要到了。",
+          "exampleMeaning": "Tết sắp đến rồi."
+        },
+        {
+          "stt": 586,
+          "hanzi": "放假",
+          "pinyin": "fàngjià",
+          "meaning": "nghỉ lễ",
+          "exampleHanzi": "我们快放假了。",
+          "exampleMeaning": "Chúng tôi sắp được nghỉ."
+        },
+        {
+          "stt": 587,
+          "hanzi": "礼物",
+          "pinyin": "lǐwù",
+          "meaning": "quà",
+          "exampleHanzi": "我准备了礼物。",
+          "exampleMeaning": "Tôi chuẩn bị quà rồi."
+        },
+        {
+          "stt": 588,
+          "hanzi": "祝",
+          "pinyin": "zhù",
+          "meaning": "chúc",
+          "exampleHanzi": "祝你新年快乐！",
+          "exampleMeaning": "Chúc bạn năm mới vui vẻ!"
+        },
+        {
+          "stt": 589,
+          "hanzi": "准备",
+          "pinyin": "zhǔnbèi",
+          "meaning": "chuẩn bị",
+          "exampleHanzi": "我在准备过年。",
+          "exampleMeaning": "Tôi đang chuẩn bị đón Tết."
+        },
+        {
+          "stt": 590,
+          "hanzi": "回家",
+          "pinyin": "huíjiā",
+          "meaning": "về nhà",
+          "exampleHanzi": "过年我要回家。",
+          "exampleMeaning": "Tết tôi sẽ về nhà."
+        },
+        {
+          "stt": 591,
+          "hanzi": "团圆",
+          "pinyin": "tuányuán",
+          "meaning": "đoàn viên",
+          "exampleHanzi": "新年全家团圆。",
+          "exampleMeaning": "Năm mới cả nhà đoàn viên."
+        },
+        {
+          "stt": 592,
+          "hanzi": "热闹",
+          "pinyin": "rènao",
+          "meaning": "náo nhiệt, nhộn nhịp",
+          "exampleHanzi": "过年很热闹。",
+          "exampleMeaning": "Tết rất nhộn nhịp."
+        },
+        {
+          "stt": 593,
+          "hanzi": "快乐",
+          "pinyin": "kuàilè",
+          "meaning": "vui vẻ",
+          "exampleHanzi": "祝你快乐！",
+          "exampleMeaning": "Chúc bạn vui vẻ!"
+        },
+        {
+          "stt": 594,
+          "hanzi": "马上",
+          "pinyin": "mǎshàng",
+          "meaning": "ngay, sắp",
+          "exampleHanzi": "马上就要过年了。",
+          "exampleMeaning": "Sắp đến Tết rồi."
+        },
+        {
+          "stt": 595,
+          "hanzi": "希望",
+          "pinyin": "xīwàng",
+          "meaning": "hi vọng",
+          "exampleHanzi": "希望明年更好。",
+          "exampleMeaning": "Mong sang năm tốt hơn."
+        }
+      ]
+    }
+  ]
+}

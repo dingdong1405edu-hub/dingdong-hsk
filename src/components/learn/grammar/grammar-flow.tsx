@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { BaoBuddy } from "@/components/marketing/bao-buddy";
 import { completeLessonAction } from "@/server/actions/lesson";
+import { emitBao } from "@/lib/bao-bus";
 import { SectionTheory } from "./section-theory";
 import { FlashcardPhase, type FlashResult } from "./flashcard-phase";
 import { TheoryReviewDialog } from "./theory-review-dialog";
@@ -102,7 +103,9 @@ export function GrammarFlow({ lesson, content, unitId, onComplete, closeHref: cl
     const graded = flashRef.current.correct + flashRef.current.wrong;
     const total = Math.max(1, graded);
     // Chỉ có % "qua môn" khi thực sự có câu luyện tập (bài chỉ-lý-thuyết thì không chấm).
-    setResultPct(graded > 0 ? Math.round((correct / total) * 100) : null);
+    const pct = graded > 0 ? Math.round((correct / total) * 100) : null;
+    setResultPct(pct);
+    emitBao(pct != null && pct >= 80 ? "celebrate" : "complete");
     // Hoàn thành luyện tập → mở khoá bài kế; KHÔNG cộng XP (XP chỉ từ bài kiểm tra).
     const res = onComplete
       ? await onComplete({ correct, total, durationSec })

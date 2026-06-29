@@ -1,0 +1,356 @@
+{
+  "kind": "writing-roadmap",
+  "hskLevel": "HSK2",
+  "lessons": [
+    {
+      "bai": 1,
+      "topic": "Sở thích & du lịch",
+      "topicZh": "我想去旅游",
+      "sentences": [
+        { "words": ["北京", "我", "去", "要"], "answer": "我要去北京。", "translation": "Tôi định đi Bắc Kinh." },
+        { "words": ["北京", "美", "觉得", "我", "很"], "answer": "我觉得北京很美。", "translation": "Tôi thấy Bắc Kinh rất đẹp." },
+        { "words": ["爱好", "旅游", "我", "是", "的"], "answer": "旅游是我的爱好。", "translation": "Du lịch là sở thích của tôi." }
+      ]
+    },
+    {
+      "bai": 2,
+      "topic": "Lựa chọn tốt nhất",
+      "topicZh": "去北京旅游最好",
+      "sentences": [
+        { "words": ["最", "这个", "好"], "answer": "这个最好。", "translation": "Cái này tốt nhất." },
+        { "words": ["九月", "最", "去", "好"], "answer": "九月去最好。", "translation": "Tháng 9 đi là tốt nhất." },
+        { "words": ["舒服", "天气", "最", "这儿"], "answer": "这儿天气最舒服。", "translation": "Thời tiết ở đây dễ chịu nhất." }
+      ]
+    },
+    {
+      "bai": 3,
+      "topic": "Số lượng ước lượng",
+      "topicZh": "你要几个？多少钱？",
+      "sentences": [
+        { "words": ["几", "要", "你", "张", "票"], "answer": "你要几张票？", "translation": "Bạn muốn mấy vé?" },
+        { "words": ["钱", "这个", "多少"], "answer": "这个多少钱？", "translation": "Cái này bao nhiêu tiền?" },
+        { "words": ["斤", "我", "两", "西瓜", "要"], "answer": "我要两斤西瓜。", "translation": "Tôi muốn hai cân dưa hấu." }
+      ]
+    },
+    {
+      "bai": 4,
+      "topic": "Thói quen hằng ngày",
+      "topicZh": "我每天六点起床",
+      "sentences": [
+        { "words": ["起床", "六点", "我", "每天"], "answer": "我每天六点起床。", "translation": "Mỗi ngày tôi dậy lúc 6 giờ." },
+        { "words": ["锻炼", "每天", "他"], "answer": "他每天锻炼。", "translation": "Anh ấy rèn luyện mỗi ngày." },
+        { "words": ["健康", "让", "运动", "人"], "answer": "运动让人健康。", "translation": "Vận động khiến người ta khỏe." }
+      ]
+    },
+    {
+      "bai": 5,
+      "topic": "Hỏi thăm sức khỏe",
+      "topicZh": "你是不是病了？",
+      "sentences": [
+        { "words": ["病", "你", "了", "是不是"], "answer": "你是不是病了？", "translation": "Bạn có phải bị ốm không?" },
+        { "words": ["感冒", "我", "了"], "answer": "我感冒了。", "translation": "Tôi bị cảm rồi." },
+        { "words": ["去", "你", "医院", "应该"], "answer": "你应该去医院。", "translation": "Bạn nên đi bệnh viện." }
+      ]
+    },
+    {
+      "bai": 6,
+      "topic": "Tâm trạng & cảm giác",
+      "topicZh": "我有点儿累",
+      "sentences": [
+        { "words": ["累", "我", "有点儿"], "answer": "我有点儿累。", "translation": "Tôi hơi mệt." },
+        { "words": ["难过", "他", "有点儿"], "answer": "他有点儿难过。", "translation": "Anh ấy hơi buồn." },
+        { "words": ["心情", "怎么样", "你", "今天"], "answer": "你今天心情怎么样？", "translation": "Hôm nay tâm trạng bạn thế nào?" }
+      ]
+    },
+    {
+      "bai": 7,
+      "topic": "Mô tả & sở hữu",
+      "topicZh": "左边红色的是我的",
+      "sentences": [
+        { "words": ["红色", "的", "是", "我", "的"], "answer": "红色的是我的。", "translation": "Cái màu đỏ là của tôi." },
+        { "words": ["谁", "手机", "这个", "是", "的"], "answer": "这个手机是谁的？", "translation": "Điện thoại này của ai?" },
+        { "words": ["买", "新", "是", "的"], "answer": "是新买的。", "translation": "Là mới mua đấy." }
+      ]
+    },
+    {
+      "bai": 8,
+      "topic": "Hành động ngắn",
+      "topicZh": "等我一下",
+      "sentences": [
+        { "words": ["等", "一下", "我"], "answer": "等我一下。", "translation": "Đợi tôi một lát." },
+        { "words": ["试试", "我", "能", "吗"], "answer": "我能试试吗？", "translation": "Tôi thử được không?" },
+        { "words": ["看", "一下", "我", "你", "帮"], "answer": "你帮我看一下。", "translation": "Bạn giúp tôi xem một chút." }
+      ]
+    },
+    {
+      "bai": 9,
+      "topic": "Cảm thán",
+      "topicZh": "这个真漂亮！",
+      "sentences": [
+        { "words": ["漂亮", "这个", "真"], "answer": "这个真漂亮。", "translation": "Cái này thật đẹp." },
+        { "words": ["极了", "好看"], "answer": "好看极了。", "translation": "Đẹp cực kỳ." },
+        { "words": ["好", "今天", "真", "天气"], "answer": "今天天气真好。", "translation": "Hôm nay thời tiết thật đẹp." }
+      ]
+    },
+    {
+      "bai": 10,
+      "topic": "Giới thiệu & quen biết",
+      "topicZh": "我来介绍一下",
+      "sentences": [
+        { "words": ["介绍", "我", "一下", "来"], "answer": "我来介绍一下。", "translation": "Để tôi giới thiệu." },
+        { "words": ["它", "小白", "叫"], "answer": "它叫小白。", "translation": "Nó tên Tiểu Bạch." },
+        { "words": ["可爱", "它", "真"], "answer": "它真可爱。", "translation": "Nó thật đáng yêu." }
+      ]
+    },
+    {
+      "bai": 11,
+      "topic": "Công việc & giúp đỡ",
+      "topicZh": "他帮我介绍了工作",
+      "sentences": [
+        { "words": ["工作", "他", "介绍", "我", "帮", "了"], "answer": "他帮我介绍了工作。", "translation": "Anh ấy giúp tôi giới thiệu việc làm." },
+        { "words": ["上班", "老板", "我", "让"], "answer": "老板让我上班。", "translation": "Sếp bảo tôi đi làm." },
+        { "words": ["开会", "叫", "经理", "我们"], "answer": "经理叫我们开会。", "translation": "Quản lý bảo chúng tôi họp." }
+      ]
+    },
+    {
+      "bai": 12,
+      "topic": "Nhấn mạnh thông tin",
+      "topicZh": "我是去年来的",
+      "sentences": [
+        { "words": ["来", "去年", "我", "是", "的"], "answer": "我是去年来的。", "translation": "Tôi đến năm ngoái đấy." },
+        { "words": ["飞机", "坐", "我", "来", "是", "的"], "answer": "我是坐飞机来的。", "translation": "Tôi đến bằng máy bay đấy." },
+        { "words": ["越南", "我", "从", "来", "是", "的"], "answer": "我是从越南来的。", "translation": "Tôi đến từ Việt Nam đấy." }
+      ]
+    },
+    {
+      "bai": 13,
+      "topic": "Thời điểm & hoàn thành",
+      "topicZh": "下班的时候",
+      "sentences": [
+        { "words": ["累", "下班", "最", "的时候"], "answer": "下班的时候最累。", "translation": "Lúc tan làm mệt nhất." },
+        { "words": ["吃", "我", "已经", "了"], "answer": "我已经吃了。", "translation": "Tôi đã ăn rồi." },
+        { "words": ["回家", "我", "下班", "以后"], "answer": "下班以后我回家。", "translation": "Sau khi tan làm tôi về nhà." }
+      ]
+    },
+    {
+      "bai": 14,
+      "topic": "Mua sắm & đề nghị",
+      "topicZh": "买这件衣服吧",
+      "sentences": [
+        { "words": ["买", "这件", "衣服", "吧"], "answer": "买这件衣服吧。", "translation": "Mua cái áo này đi." },
+        { "words": ["试试", "你", "吧"], "answer": "你试试吧。", "translation": "Bạn thử đi." },
+        { "words": ["怎么样", "裙子", "这条"], "answer": "这条裙子怎么样？", "translation": "Cái váy này thế nào?" }
+      ]
+    },
+    {
+      "bai": 15,
+      "topic": "Giá cả & mặc cả",
+      "topicZh": "太贵了，便宜点儿吧",
+      "sentences": [
+        { "words": ["便宜", "点儿", "吧"], "answer": "便宜点儿吧。", "translation": "Rẻ chút đi." },
+        { "words": ["贵", "有点儿", "这个"], "answer": "这个有点儿贵。", "translation": "Cái này hơi đắt." },
+        { "words": ["买", "便宜", "就", "点儿"], "answer": "便宜点儿就买。", "translation": "Rẻ chút thì mua." }
+      ]
+    },
+    {
+      "bai": 16,
+      "topic": "Lưỡng lự",
+      "topicZh": "我还想再看看",
+      "sentences": [
+        { "words": ["看看", "想", "我", "再", "还"], "answer": "我还想再看看。", "translation": "Tôi vẫn muốn xem thêm." },
+        { "words": ["别的", "看看", "我", "想", "还"], "answer": "我还想看看别的。", "translation": "Tôi vẫn muốn xem cái khác." },
+        { "words": ["考虑", "我", "一下", "再"], "answer": "我再考虑一下。", "translation": "Tôi cân nhắc thêm chút." }
+      ]
+    },
+    {
+      "bai": 17,
+      "topic": "Ăn uống & hỏi lý do",
+      "topicZh": "你怎么不吃了？",
+      "sentences": [
+        { "words": ["吃", "你", "不", "怎么", "了"], "answer": "你怎么不吃了？", "translation": "Sao bạn không ăn nữa?" },
+        { "words": ["饱", "我", "了", "吃"], "answer": "我吃饱了。", "translation": "Tôi ăn no rồi." },
+        { "words": ["辣", "这么", "怎么", "这个", "菜"], "answer": "这个菜怎么这么辣？", "translation": "Món này sao cay thế?" }
+      ]
+    },
+    {
+      "bai": 18,
+      "topic": "Nhân quả",
+      "topicZh": "因为太辣，所以…",
+      "sentences": [
+        { "words": ["没", "因为", "辣", "太", "我", "所以", "吃"], "answer": "因为太辣，所以我没吃。", "translation": "Vì cay quá nên tôi không ăn." },
+        { "words": ["没来", "生病", "因为", "我", "所以", "了"], "answer": "因为我生病了，所以没来。", "translation": "Vì tôi bị ốm nên không đến." },
+        { "words": ["累", "因为", "我", "很", "所以", "早", "睡", "了"], "answer": "因为我很累，所以早睡了。", "translation": "Vì tôi mệt nên đi ngủ sớm." }
+      ]
+    },
+    {
+      "bai": 19,
+      "topic": "Nhấn mạnh toàn thể",
+      "topicZh": "个个都好吃",
+      "sentences": [
+        { "words": ["好吃", "都", "个个"], "answer": "个个都好吃。", "translation": "Cái nào cũng ngon." },
+        { "words": ["新鲜", "条条", "鱼", "都"], "answer": "鱼条条都新鲜。", "translation": "Cá con nào cũng tươi." },
+        { "words": ["漂亮", "件件", "都", "衣服"], "answer": "衣服件件都漂亮。", "translation": "Quần áo cái nào cũng đẹp." }
+      ]
+    },
+    {
+      "bai": 20,
+      "topic": "Khoảng cách",
+      "topicZh": "你家离公司远吗？",
+      "sentences": [
+        { "words": ["远", "公司", "你家", "吗", "离"], "answer": "你家离公司远吗？", "translation": "Nhà bạn cách công ty xa không?" },
+        { "words": ["近", "这儿", "地铁站", "离", "很"], "answer": "地铁站离这儿很近。", "translation": "Ga tàu cách đây rất gần." },
+        { "words": ["方便", "地铁", "坐", "很"], "answer": "坐地铁很方便。", "translation": "Đi tàu điện rất tiện." }
+      ]
+    },
+    {
+      "bai": 21,
+      "topic": "Đi lại & ngữ khí",
+      "topicZh": "我还在等车呢",
+      "sentences": [
+        { "words": ["等车", "还", "我", "在", "呢"], "answer": "我还在等车呢。", "translation": "Tôi vẫn đang đợi xe đây." },
+        { "words": ["做", "你", "什么", "呢", "在"], "answer": "你在做什么呢？", "translation": "Bạn đang làm gì đấy?" },
+        { "words": ["等", "我", "你", "车站", "在", "呢"], "answer": "我在车站等你呢。", "translation": "Tôi đang đợi bạn ở bến xe đây." }
+      ]
+    },
+    {
+      "bai": 22,
+      "topic": "Lộ trình & hướng",
+      "topicZh": "从家到公司",
+      "sentences": [
+        { "words": ["公司", "从", "家", "到"], "answer": "从家到公司。", "translation": "Từ nhà đến công ty." },
+        { "words": ["走", "往", "前", "一直"], "answer": "一直往前走。", "translation": "Cứ đi thẳng về phía trước." },
+        { "words": ["拐", "红绿灯", "往", "到", "左"], "answer": "到红绿灯往左拐。", "translation": "Đến đèn giao thông rẽ trái." }
+      ]
+    },
+    {
+      "bai": 23,
+      "topic": "Suy nghĩ & quyết định",
+      "topicZh": "让我想想再说",
+      "sentences": [
+        { "words": ["想想", "我", "让", "再说"], "answer": "让我想想再说。", "translation": "Để tôi nghĩ rồi nói sau." },
+        { "words": ["决定", "看看", "我", "再"], "answer": "我看看再决定。", "translation": "Tôi xem rồi quyết định." },
+        { "words": ["商量", "一下", "我们", "吧"], "answer": "我们商量一下吧。", "translation": "Chúng ta bàn một chút đi." }
+      ]
+    },
+    {
+      "bai": 24,
+      "topic": "Đề nghị lịch sự",
+      "topicZh": "你帮我一下，好吗？",
+      "sentences": [
+        { "words": ["一下", "帮", "我", "好吗", "你"], "answer": "你帮我一下，好吗？", "translation": "Bạn giúp tôi một chút nhé?" },
+        { "words": ["吃饭", "一起", "明天", "好吗"], "answer": "明天一起吃饭，好吗？", "translation": "Mai cùng ăn cơm nhé?" },
+        { "words": ["好", "他", "我", "对", "很"], "answer": "他对我很好。", "translation": "Anh ấy rất tốt với tôi." }
+      ]
+    },
+    {
+      "bai": 25,
+      "topic": "Nhắc nhở & tìm đồ",
+      "topicZh": "别找了，在桌子上呢",
+      "sentences": [
+        { "words": ["找", "别", "了"], "answer": "别找了。", "translation": "Đừng tìm nữa." },
+        { "words": ["桌子", "在", "上", "呢"], "answer": "在桌子上呢。", "translation": "Ở trên bàn đấy." },
+        { "words": ["认真", "对", "太", "你", "工作", "了"], "answer": "你对工作太认真了。", "translation": "Bạn quá nghiêm túc với công việc." }
+      ]
+    },
+    {
+      "bai": 26,
+      "topic": "Kế hoạch học tập",
+      "topicZh": "我打算好好复习",
+      "sentences": [
+        { "words": ["复习", "好好", "打算", "我"], "answer": "我打算好好复习。", "translation": "Tôi định ôn tập cho tốt." },
+        { "words": ["难", "考试", "有点儿", "可能"], "answer": "考试可能有点儿难。", "translation": "Kỳ thi có lẽ hơi khó." },
+        { "words": ["看书", "多", "你", "应该"], "answer": "你应该多看书。", "translation": "Bạn nên đọc sách nhiều." }
+      ]
+    },
+    {
+      "bai": 27,
+      "topic": "Kết quả công việc",
+      "topicZh": "题太多，我没做完",
+      "sentences": [
+        { "words": ["做完", "没", "题", "我", "太多"], "answer": "题太多，我没做完。", "translation": "Đề nhiều quá, tôi làm không xong." },
+        { "words": ["看懂", "我", "句子", "了", "这个"], "answer": "这个句子我看懂了。", "translation": "Câu này tôi đọc hiểu rồi." },
+        { "words": ["做错", "我", "了"], "answer": "我做错了。", "translation": "Tôi làm sai rồi." }
+      ]
+    },
+    {
+      "bai": 28,
+      "topic": "Tiếp nhận thông tin",
+      "topicZh": "我听懂了，也看见了",
+      "sentences": [
+        { "words": ["听懂", "我", "了"], "answer": "我听懂了。", "translation": "Tôi nghe hiểu rồi." },
+        { "words": ["看见", "我", "他", "了"], "answer": "我看见他了。", "translation": "Tôi nhìn thấy anh ấy rồi." },
+        { "words": ["找到", "书", "我", "那本", "了"], "answer": "我找到那本书了。", "translation": "Tôi tìm thấy quyển sách đó rồi." }
+      ]
+    },
+    {
+      "bai": 29,
+      "topic": "Thứ tự",
+      "topicZh": "这是第几课？",
+      "sentences": [
+        { "words": ["第", "课", "这", "几", "是"], "answer": "这是第几课？", "translation": "Đây là bài thứ mấy?" },
+        { "words": ["住", "第三层", "我"], "answer": "我住第三层。", "translation": "Tôi ở tầng ba." },
+        { "words": ["第一次", "这", "我", "来", "是"], "answer": "这是我第一次来。", "translation": "Đây là lần đầu tôi đến." }
+      ]
+    },
+    {
+      "bai": 30,
+      "topic": "So sánh",
+      "topicZh": "他比我大三岁",
+      "sentences": [
+        { "words": ["大", "他", "我", "三岁", "比"], "answer": "他比我大三岁。", "translation": "Anh ấy hơn tôi ba tuổi." },
+        { "words": ["高", "他", "我", "比", "一点儿"], "answer": "他比我高一点儿。", "translation": "Anh ấy cao hơn tôi một chút." },
+        { "words": ["买", "衣服", "好看", "的", "我", "真"], "answer": "我买的衣服真好看。", "translation": "Cái áo tôi mua thật đẹp." }
+      ]
+    },
+    {
+      "bai": 31,
+      "topic": "Đánh giá hành động",
+      "topicZh": "你穿得太少了",
+      "sentences": [
+        { "words": ["少", "穿", "你", "太", "了", "得"], "answer": "你穿得太少了。", "translation": "Bạn mặc ít quá." },
+        { "words": ["快", "跑", "他", "很", "得"], "answer": "他跑得很快。", "translation": "Anh ấy chạy rất nhanh." },
+        { "words": ["高", "他", "我", "还", "比"], "answer": "他比我还高。", "translation": "Anh ấy còn cao hơn tôi." }
+      ]
+    },
+    {
+      "bai": 32,
+      "topic": "Suy đoán",
+      "topicZh": "明天可能会下雨",
+      "sentences": [
+        { "words": ["下雨", "明天", "会", "可能"], "answer": "明天可能会下雨。", "translation": "Ngày mai có thể sẽ mưa." },
+        { "words": ["来", "他", "应该", "会"], "answer": "他应该会来。", "translation": "Anh ấy chắc sẽ đến." },
+        { "words": ["带", "雨伞", "别", "了", "忘"], "answer": "别忘了带雨伞。", "translation": "Đừng quên mang ô." }
+      ]
+    },
+    {
+      "bai": 33,
+      "topic": "Trạng thái tồn tại",
+      "topicZh": "门开着呢",
+      "sentences": [
+        { "words": ["开着", "门", "呢"], "answer": "门开着呢。", "translation": "Cửa đang mở đấy." },
+        { "words": ["看书", "坐着", "他"], "answer": "他坐着看书。", "translation": "Anh ấy ngồi đọc sách." },
+        { "words": ["拿着", "书", "他", "一本"], "answer": "他拿着一本书。", "translation": "Anh ấy cầm một quyển sách." }
+      ]
+    },
+    {
+      "bai": 34,
+      "topic": "Trải nghiệm quá khứ",
+      "topicZh": "你看过那个电影吗？",
+      "sentences": [
+        { "words": ["看", "那个", "你", "电影", "过", "吗"], "answer": "你看过那个电影吗？", "translation": "Bạn xem phim đó chưa?" },
+        { "words": ["看过", "我", "两遍"], "answer": "我看过两遍。", "translation": "Tôi xem hai lần." },
+        { "words": ["长", "但是", "虽然", "好看", "有点儿", "很"], "answer": "虽然有点儿长，但是很好看。", "translation": "Tuy hơi dài nhưng rất hay." }
+      ]
+    },
+    {
+      "bai": 35,
+      "topic": "Sự kiện sắp tới & ôn tập",
+      "topicZh": "新年就要到了",
+      "sentences": [
+        { "words": ["到", "新年", "了", "就要"], "answer": "新年就要到了。", "translation": "Năm mới sắp đến rồi." },
+        { "words": ["买好", "票", "已经", "了"], "answer": "票已经买好了。", "translation": "Vé đã mua xong rồi." },
+        { "words": ["放假", "了", "快要"], "answer": "快要放假了。", "translation": "Sắp được nghỉ rồi." }
+      ]
+    }
+  ]
+}

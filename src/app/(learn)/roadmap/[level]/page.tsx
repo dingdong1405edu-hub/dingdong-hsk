@@ -21,6 +21,11 @@ export default async function CourseMapPage({ params }: Props) {
 
   const ent = await getEntitlements(userId, (session.user as { role?: string }).role);
 
+  // Số từ vựng lộ trình đến hạn ôn (toàn bộ các cấp) → hiện banner "Ôn tập tổng hợp".
+  const reviewDueCount = await db.roadmapWordReview.count({
+    where: { userId, dueAt: { lte: new Date() } },
+  });
+
   const course = await db.course.findUnique({
     where: { hskLevel: level },
     include: {
@@ -73,6 +78,8 @@ export default async function CourseMapPage({ params }: Props) {
       hasFullAccess={ent.roadmapLevels.has(level) || ent.isAdmin}
       upgradePlanId={upgradePlanId}
       freePreviewCount={FREE_ROADMAP_LESSONS}
+      reviewDueCount={reviewDueCount}
+      freeNavigation={ent.isAdmin}
     />
   );
 }

@@ -10,6 +10,7 @@ import { StrokeOrderCanvas } from "@/components/hanzi/stroke-order-canvas";
 import { StrokeQuiz } from "@/components/learn/vocab/stroke-quiz";
 import { BaoBuddy } from "@/components/marketing/bao-buddy";
 import { playWord } from "@/lib/speech";
+import { emitBao } from "@/lib/bao-bus";
 import { toneColor, cn } from "@/lib/utils";
 
 interface HanziExample {
@@ -70,6 +71,7 @@ export function RoadmapHanziPlayer({ characters, onComplete, closeHref }: Props)
       return;
     }
     setDone(true);
+    emitBao("complete");
   }
 
   function next() {

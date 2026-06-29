@@ -231,6 +231,7 @@ export function SpeakingClient({
       await onFinish(overallScore);
       setFinalScore(overallScore);
       setFinished(true);
+      emitBao(overallScore >= (passThreshold ?? 80) ? "celebrate" : "complete");
       toast.success("Đã hoàn thành phần Nói!");
     } catch {
       toast.error("Không ghi nhận được, thử lại sau.");

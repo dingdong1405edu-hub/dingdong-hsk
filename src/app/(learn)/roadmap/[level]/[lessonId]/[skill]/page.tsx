@@ -6,7 +6,9 @@ import { ArrowLeft, FileDown } from "lucide-react";
 import { Skill } from "@prisma/client";
 import { slugToLevel, SKILL_META, type SkillKey } from "@/lib/roadmap";
 import { getEntitlements, isRoadmapLessonLocked } from "@/lib/entitlements";
+import { buildRoadmapVocabCards } from "@/lib/roadmap-content";
 import { RoadmapSectionPlayer } from "@/components/learn/roadmap/roadmap-section-player";
+import type { WordReviewState } from "@/types";
 
 interface Props {
   params: Promise<{ level: string; lessonId: string; skill: string }>;
@@ -45,6 +47,37 @@ export default async function RoadmapSectionPlayPage({ params }: Props) {
   // Vocab/Grammar/Hanzi/Reading/Listening đã có nút thoát riêng; Viết/Nói thì cần thanh quay lại.
   const showHeader = skillKey === "WRITING" || skillKey === "SPEAKING";
 
+  // Từ vựng: nạp lịch lặp lại ngắt quãng (RoadmapWordReview, khoá theo hanzi) cho
+  // các từ của phần + trạng thái đã-hoàn-thành để mở thẳng tab "Ôn từ".
+  let vocabReviews: WordReviewState[] = [];
+  let vocabCompleted = false;
+  if (skillKey === "VOCAB") {
+    const cards = buildRoadmapVocabCards(section.id, section.content);
+    const hanziList = cards.map((c) => c.hanzi);
+    const [rows, progress] = await Promise.all([
+      hanziList.length
+        ? db.roadmapWordReview.findMany({
+            where: { userId, hanzi: { in: hanziList } },
+            select: { hanzi: true, dueAt: true, repetitions: true },
+          })
+        : Promise.resolve([]),
+      db.roadmapProgress.findUnique({
+        where: { userId_lessonId: { userId, lessonId: lesson.id } },
+        select: { skillsDone: true },
+      }),
+    ]);
+    const byHanzi = new Map(rows.map((r) => [r.hanzi, r]));
+    vocabReviews = cards.flatMap((c) => {
+      const r = byHanzi.get(c.hanzi);
+      return r ? [{ wordId: c.id, dueAt: r.dueAt.toISOString(), repetitions: r.repetitions }] : [];
+    });
+    const rawSkillsDone = progress?.skillsDone;
+    const skillsDone = Array.isArray(rawSkillsDone)
+      ? rawSkillsDone.filter((x): x is string => typeof x === "string")
+      : [];
+    vocabCompleted = skillsDone.includes("VOCAB");
+  }
+
   return (
     <div className="space-y-4">
       {showHeader && (
@@ -74,6 +107,8 @@ export default async function RoadmapSectionPlayPage({ params }: Props) {
         title={lesson.topic}
         content={section.content}
         backHref={backHref}
+        vocabReviews={vocabReviews}
+        vocabCompleted={vocabCompleted}
       />
     </div>
   );

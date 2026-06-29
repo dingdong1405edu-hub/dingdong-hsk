@@ -6,7 +6,7 @@ import { SpeakingPdf } from "@/components/learn/speaking/speaking-pdf";
 import { VocabPdf } from "@/components/learn/vocab/vocab-pdf";
 import { HanziPdf } from "@/components/learn/hanzi/hanzi-pdf";
 import { LessonPdf, type GrammarPdfScope } from "@/components/learn/grammar/lesson-pdf";
-import { RoadmapReadingPdf, RoadmapListeningPdf } from "@/components/learn/roadmap/roadmap-pdf";
+import { RoadmapReadingPdf, RoadmapListeningPdf, RoadmapWritingReorderPdf } from "@/components/learn/roadmap/roadmap-pdf";
 
 /* Tải dữ liệu MỘT lần (src/server/pdf-payload.ts) → payload tuần tự hoá được, dùng
  * chung cho trang xem trước (client) và route /api/pdf/* (server PDF). `scope` được
@@ -21,7 +21,8 @@ export type PdfPayload =
   | { kind: "hanzi"; props: ComponentProps<typeof HanziPdf> }
   | { kind: "grammar"; props: Omit<ComponentProps<typeof LessonPdf>, "scope"> }
   | { kind: "roadmap-reading"; props: Omit<ComponentProps<typeof RoadmapReadingPdf>, "scope"> }
-  | { kind: "roadmap-listening"; props: Omit<ComponentProps<typeof RoadmapListeningPdf>, "scope"> };
+  | { kind: "roadmap-listening"; props: Omit<ComponentProps<typeof RoadmapListeningPdf>, "scope"> }
+  | { kind: "roadmap-writing-reorder"; props: ComponentProps<typeof RoadmapWritingReorderPdf> };
 
 export type PdfKind = PdfPayload["kind"];
 
@@ -68,6 +69,8 @@ export function payloadToElement(payload: PdfPayload, scope?: string | null): Re
       return createElement(RoadmapReadingPdf, { ...payload.props, scope: s as PassageScope });
     case "roadmap-listening":
       return createElement(RoadmapListeningPdf, { ...payload.props, scope: s as PassageScope });
+    case "roadmap-writing-reorder":
+      return createElement(RoadmapWritingReorderPdf, payload.props);
     case "grammar":
       return createElement(LessonPdf, { ...payload.props, scope: s as GrammarPdfScope });
     case "writing":

@@ -14,6 +14,8 @@ interface Props {
   word: VocabWordCard;
   /** Từ mới (chưa từng ôn) → đổi lời nhắc cho phù hợp. */
   isNew?: boolean;
+  /** Cho phép "Phản ánh từ này" — tắt ở lộ trình (từ là JSON, không có VocabWord). */
+  allowReport?: boolean;
   onRate: (rating: SrsRating) => void;
 }
 
@@ -29,7 +31,7 @@ const RATINGS: { rating: SrsRating; label: string; hint: string; cls: string }[]
  * câu ví dụ, rồi TỰ ĐÁNH GIÁ mức nhớ (Quên/Khó/Tốt/Dễ). Mức này quy đổi thành
  * điểm chất lượng để xếp lịch ôn (src/lib/srs.ts).
  */
-export function SrsFlashcard({ word, isNew, onRate }: Props) {
+export function SrsFlashcard({ word, isNew, allowReport = true, onRate }: Props) {
   const [revealed, setRevealed] = useState(false);
   const [rated, setRated] = useState(false);
 
@@ -133,7 +135,7 @@ export function SrsFlashcard({ word, isNew, onRate }: Props) {
               </button>
             ))}
           </div>
-          <WordReportButton wordId={word.id} hanzi={word.hanzi} />
+          {allowReport && <WordReportButton wordId={word.id} hanzi={word.hanzi} />}
         </>
       ) : (
         <Button variant="outline" onClick={reveal}>
