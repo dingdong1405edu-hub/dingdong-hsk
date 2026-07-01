@@ -407,36 +407,111 @@ const ROADMAP_COURSES: RoadmapCourse[] = [
     level: HSKLevel.HSK3,
     title: "Giao tiếp mở rộng",
     titleZh: "扩展交流",
-    description: "Diễn đạt mạch lạc hơn: mô tả con người, so sánh, kể chuyện quá khứ và đời sống hiện đại.",
+    description: "599 từ vựng HSK3 qua 43 bài: Bài 1–20 theo giáo trình, Bài 21–32 theo chủ đề, Bài 33–43 theo vần (HSK 3.0).",
+    // 10 chương × (2–6 bài) = 43 bài, khớp PDF "TỪ VỰNG HSK 3 — 43 BÀI".
+    // Nội dung Từ vựng nạp riêng qua prisma/load-roadmap-vocab-HSK3.ts (id bài: rl-hsk3-1..43).
     chapters: [
       {
-        title: "Quan hệ xã hội",
-        titleZh: "社会关系",
+        title: "Phần I · Giáo trình HSK 3 (Bài 1–5)",
+        titleZh: "",
         lessons: [
-          { topic: "Tính cách", topicZh: "性格", icon: "🎭" },
-          { topic: "Ngoại hình", topicZh: "外貌", icon: "🧑‍🦰" },
-          { topic: "Mối quan hệ", topicZh: "人际关系", icon: "👫" },
-          { topic: "Giúp đỡ & Lời khuyên", topicZh: "帮助与建议", icon: "💡" },
+          { topic: "Kế hoạch cuối tuần", topicZh: "周末你有什么打算？", icon: "🗓️" },
+          { topic: "Khi nào quay về?", topicZh: "他什么时候回来？", icon: "🔙" },
+          { topic: "Đồ vật trên bàn", topicZh: "桌子上放着很多饮料", icon: "🥤" },
+          { topic: "Tiếp khách niềm nở", topicZh: "她总是笑着跟客人说话", icon: "😊" },
+          { topic: "Càng ngày càng…", topicZh: "我最近越来越胖了", icon: "⚖️" },
         ],
       },
       {
-        title: "Học & Trải nghiệm",
-        titleZh: "学习与体验",
+        title: "Phần II · Giáo trình HSK 3 (Bài 6–10)",
+        titleZh: "",
         lessons: [
-          { topic: "Kế hoạch học tập", topicZh: "学习计划", icon: "📝" },
-          { topic: "Internet & Điện thoại", topicZh: "网络与手机", icon: "📱" },
-          { topic: "Sở thích nâng cao", topicZh: "兴趣爱好", icon: "🎨" },
-          { topic: "So sánh", topicZh: "比较", icon: "⚖️" },
+          { topic: "Bỗng dưng không thấy", topicZh: "怎么突然找不到了？", icon: "🔍" },
+          { topic: "Quen biết & quan hệ", topicZh: "我跟她都认识五年了", icon: "👫" },
+          { topic: "Đi đâu theo đó", topicZh: "你去哪儿我就去哪儿", icon: "🧭" },
+          { topic: "Giỏi như người bản xứ", topicZh: "她的汉语说得跟中国人一样好", icon: "🗣️" },
+          { topic: "So sánh môn học", topicZh: "数学比历史难多了", icon: "📐" },
         ],
       },
       {
-        title: "Cuộc sống hiện đại",
-        titleZh: "现代生活",
+        title: "Phần III · Giáo trình HSK 3 (Bài 11–15)",
+        titleZh: "",
         lessons: [
-          { topic: "Ngân hàng & Tiền bạc", topicZh: "银行与金钱", icon: "🏦" },
-          { topic: "Mua sắm nâng cao", topicZh: "购物进阶", icon: "🛍️" },
-          { topic: "Lễ hội", topicZh: "节日", icon: "🎉" },
-          { topic: "Kể chuyện quá khứ", topicZh: "谈论过去", icon: "📖" },
+          { topic: "Nhớ tắt điều hòa", topicZh: "别忘了把空调关了！", icon: "❄️" },
+          { topic: "Cất đồ quan trọng", topicZh: "把重要的东西放在我这儿吧", icon: "🎒" },
+          { topic: "Tôi đi bộ về", topicZh: "我是走回来的", icon: "🚶" },
+          { topic: "Mang trái cây qua đây", topicZh: "你把水果拿过来！", icon: "🍉" },
+          { topic: "Không có vấn đề gì", topicZh: "其他都没什么问题", icon: "✅" },
+        ],
+      },
+      {
+        title: "Phần IV · Giáo trình HSK 3 (Bài 16–20)",
+        titleZh: "",
+        lessons: [
+          { topic: "Mệt muốn ngủ ngay", topicZh: "我现在累得下了班就想睡觉", icon: "😴" },
+          { topic: "Ai cũng có cách", topicZh: "谁都有办法看好你的病", icon: "🩺" },
+          { topic: "Tôi tin họ sẽ đồng ý", topicZh: "我相信他们会同意的", icon: "🤝" },
+          { topic: "Bạn không nhận ra à?", topicZh: "你没看出来吗？", icon: "👀" },
+          { topic: "Bị ảnh hưởng", topicZh: "我被他影响了！", icon: "🔄" },
+        ],
+      },
+      {
+        title: "Phần V · Chủ đề: Đời sống & Thiên nhiên",
+        titleZh: "",
+        lessons: [
+          { topic: "Giao thông & phương tiện", topicZh: "交通与工具", icon: "🚗" },
+          { topic: "Thời tiết & bốn mùa", topicZh: "天气与四季", icon: "🌦️" },
+          { topic: "Trang phục & mua sắm", topicZh: "服装与购物", icon: "👗" },
+          { topic: "Nhà cửa & đồ dùng", topicZh: "家居与用品", icon: "🏠" },
+          { topic: "Động vật & thiên nhiên", topicZh: "动物与自然", icon: "🐼" },
+          { topic: "Cơ thể & sức khỏe", topicZh: "身体与健康", icon: "🦷" },
+        ],
+      },
+      {
+        title: "Phần VI · Chủ đề: Sinh hoạt & Xã hội",
+        titleZh: "",
+        lessons: [
+          { topic: "Ăn uống & thực phẩm", topicZh: "饮食与食物", icon: "🍰" },
+          { topic: "Giải trí & sở thích", topicZh: "娱乐与爱好", icon: "🎮" },
+          { topic: "Gia đình & quan hệ", topicZh: "家庭与关系", icon: "👨‍👩‍👧" },
+          { topic: "Công việc & văn phòng", topicZh: "工作与办公室", icon: "🏢" },
+          { topic: "Học tập & trường học", topicZh: "学习与学校", icon: "📚" },
+          { topic: "Cảm xúc & trạng thái", topicZh: "情绪与状态", icon: "😟" },
+        ],
+      },
+      {
+        title: "Phần VII · Từ vựng theo vần A–D",
+        titleZh: "",
+        lessons: [
+          { topic: "Theo vần: A–B", topicZh: "按拼音 A–B", icon: "🔤" },
+          { topic: "Theo vần: B–C", topicZh: "按拼音 B–C", icon: "🔤" },
+          { topic: "Theo vần: C–D", topicZh: "按拼音 C–D", icon: "🔤" },
+        ],
+      },
+      {
+        title: "Phần VIII · Từ vựng theo vần F–L",
+        titleZh: "",
+        lessons: [
+          { topic: "Theo vần: F–G", topicZh: "按拼音 F–G", icon: "🔤" },
+          { topic: "Theo vần: H–J", topicZh: "按拼音 H–J", icon: "🔤" },
+          { topic: "Theo vần: J–L", topicZh: "按拼音 J–L", icon: "🔤" },
+        ],
+      },
+      {
+        title: "Phần IX · Từ vựng theo vần M–W",
+        titleZh: "",
+        lessons: [
+          { topic: "Theo vần: M–P", topicZh: "按拼音 M–P", icon: "🔤" },
+          { topic: "Theo vần: Q–S", topicZh: "按拼音 Q–S", icon: "🔤" },
+          { topic: "Theo vần: S–W", topicZh: "按拼音 S–W", icon: "🔤" },
+        ],
+      },
+      {
+        title: "Phần X · Từ vựng theo vần X–Z",
+        titleZh: "",
+        lessons: [
+          { topic: "Theo vần: X–Z", topicZh: "按拼音 X–Z", icon: "🔤" },
+          { topic: "Theo vần: Z", topicZh: "按拼音 Z", icon: "🔤" },
         ],
       },
     ],
@@ -483,34 +558,21 @@ const ROADMAP_COURSES: RoadmapCourse[] = [
     level: HSKLevel.HSK5,
     title: "Ngôn ngữ học thuật",
     titleZh: "学术语言",
-    description: "Tiếp cận chủ đề học thuật, kinh tế, công nghệ và văn chương với từ vựng chuyên sâu.",
+    description: "Từ vựng HSK5 theo chủ đề đời sống, xã hội và các bài đọc chuyên sâu.",
+    // CHỈ khai báo Phần I (Bài 1–5) ở đây. Phần II (Câu chuyện & Bài đọc: Bài 6, 19–24…)
+    // do prisma/load-roadmap-vocab-HSK5.ts sở hữu vì seedRoadmap đánh id theo bộ đếm
+    // chạy nên KHÔNG tạo được id ngắt quãng (rl-hsk5-19). db:seed chỉ động Bài 1–5,
+    // không đụng Bài 6+. Toàn bộ nội dung Từ vựng nạp qua loader (id bài: rl-hsk5-<số chương>).
     chapters: [
       {
-        title: "Học thuật & Nghề nghiệp",
-        titleZh: "学术与职业",
+        title: "Phần I · Chủ đề đời sống & xã hội (Bài 1–5)",
+        titleZh: "",
         lessons: [
-          { topic: "Giáo dục đại học", topicZh: "高等教育", icon: "🎓" },
-          { topic: "Nghiên cứu khoa học", topicZh: "科研", icon: "🔬" },
-          { topic: "Kinh tế & Thị trường", topicZh: "经济与市场", icon: "📈" },
-          { topic: "Khởi nghiệp", topicZh: "创业", icon: "🚀" },
-        ],
-      },
-      {
-        title: "Xã hội đương đại",
-        titleZh: "当代社会",
-        lessons: [
-          { topic: "Công nghệ & AI", topicZh: "科技与人工智能", icon: "🤖" },
-          { topic: "Sức khỏe tâm lý", topicZh: "心理健康", icon: "🧠" },
-          { topic: "Toàn cầu hóa", topicZh: "全球化", icon: "🌐" },
-          { topic: "Truyền thống & Hiện đại", topicZh: "传统与现代", icon: "🏛️" },
-        ],
-      },
-      {
-        title: "Văn chương & Nghị luận",
-        titleZh: "文学与评论",
-        lessons: [
-          { topic: "Văn học", topicZh: "文学", icon: "✒️" },
-          { topic: "Nghị luận xã hội", topicZh: "社会评论", icon: "📰" },
+          { topic: "Tình yêu và Hôn nhân", topicZh: "爱情与婚姻", icon: "💑" },
+          { topic: "Tình bạn chân chính", topicZh: "真正的友谊", icon: "🤝" },
+          { topic: "Thái độ sống", topicZh: "人生态度", icon: "🌱" },
+          { topic: "Nghệ thuật và Văn hóa", topicZh: "艺术与文化", icon: "🎨" },
+          { topic: "Công việc và Sự nghiệp", topicZh: "工作与事业", icon: "💼" },
         ],
       },
     ],

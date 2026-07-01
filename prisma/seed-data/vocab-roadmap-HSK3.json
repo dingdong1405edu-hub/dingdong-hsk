@@ -1,0 +1,818 @@
+{
+  "lessons": [
+    {
+      "bai": 1,
+      "words": [
+        { "stt": 1, "hanzi": "周末", "pinyin": "zhōumò", "meaning": "cuối tuần", "exampleHanzi": "我们周末去爬山。", "exampleMeaning": "Cuối tuần chúng tôi đi leo núi." },
+        { "stt": 2, "hanzi": "打算", "pinyin": "dǎsuàn", "meaning": "dự định", "exampleHanzi": "我打算去旅行。", "exampleMeaning": "Tôi dự định đi du lịch." },
+        { "stt": 3, "hanzi": "安排", "pinyin": "ānpái", "meaning": "sắp xếp", "exampleHanzi": "他告诉我明天的活动安排。", "exampleMeaning": "Anh ấy nói cho tôi các hoạt động đã được sắp xếp trong ngày mai." },
+        { "stt": 4, "hanzi": "复习", "pinyin": "fùxí", "meaning": "ôn tập", "exampleHanzi": "我们要复习功课。", "exampleMeaning": "Chúng ta cần ôn tập bài vở." },
+        { "stt": 5, "hanzi": "准备", "pinyin": "zhǔnbèi", "meaning": "chuẩn bị", "exampleHanzi": "我准备好了。", "exampleMeaning": "Tôi chuẩn bị xong rồi." },
+        { "stt": 6, "hanzi": "搬", "pinyin": "bān", "meaning": "chuyển, dời", "exampleHanzi": "这个桌子我搬不动。", "exampleMeaning": "Tôi không di chuyển được cái bàn này." },
+        { "stt": 7, "hanzi": "搬家", "pinyin": "bānjiā", "meaning": "chuyển nhà", "exampleHanzi": "我搬家那天，有很多邻居来帮忙。", "exampleMeaning": "Vào ngày tôi chuyển nhà, có rất nhiều hàng xóm tới giúp đỡ." },
+        { "stt": 8, "hanzi": "帮忙", "pinyin": "bāngmáng", "meaning": "giúp đỡ", "exampleHanzi": "请帮个忙。", "exampleMeaning": "Xin hãy giúp một tay." },
+        { "stt": 9, "hanzi": "愿意", "pinyin": "yuànyì", "meaning": "bằng lòng", "exampleHanzi": "我愿意帮助你。", "exampleMeaning": "Tôi tình nguyện giúp đỡ bạn." },
+        { "stt": 10, "hanzi": "机会", "pinyin": "jīhuì", "meaning": "cơ hội", "exampleHanzi": "这是一个好机会。", "exampleMeaning": "Đây là một cơ hội tốt." },
+        { "stt": 11, "hanzi": "爬山", "pinyin": "páshān", "meaning": "leo núi", "exampleHanzi": "我们周末去爬山。", "exampleMeaning": "Cuối tuần chúng tôi đi leo núi." },
+        { "stt": 12, "hanzi": "游戏", "pinyin": "yóuxì", "meaning": "trò chơi", "exampleHanzi": "我们一起玩游戏。", "exampleMeaning": "Chúng ta cùng chơi trò chơi đi." },
+        { "stt": 13, "hanzi": "体育", "pinyin": "tǐyù", "meaning": "thể thao", "exampleHanzi": "我喜欢看体育比赛。", "exampleMeaning": "Tôi thích xem thi đấu thể thao." },
+        { "stt": 14, "hanzi": "爱好", "pinyin": "àihào", "meaning": "sở thích", "exampleHanzi": "我的爱好是阅读。", "exampleMeaning": "Sở thích của tôi là đọc sách." }
+      ]
+    },
+    {
+      "bai": 2,
+      "words": [
+        { "stt": 1, "hanzi": "回来", "pinyin": "huílái", "meaning": "quay về", "exampleHanzi": "我马上回来。", "exampleMeaning": "Tôi quay về ngay đây." },
+        { "stt": 2, "hanzi": "迟到", "pinyin": "chídào", "meaning": "đến muộn", "exampleHanzi": "我今天迟到了。", "exampleMeaning": "Hôm nay tôi đã đến muộn." },
+        { "stt": 3, "hanzi": "记得", "pinyin": "jìde", "meaning": "nhớ", "exampleHanzi": "请记得带书。", "exampleMeaning": "Hãy nhớ mang theo sách." },
+        { "stt": 4, "hanzi": "必须", "pinyin": "bìxū", "meaning": "phải", "exampleHanzi": "我必须去。", "exampleMeaning": "Tôi phải đi." },
+        { "stt": 5, "hanzi": "马上", "pinyin": "mǎshàng", "meaning": "ngay lập tức", "exampleHanzi": "飞机马上要起飞了。", "exampleMeaning": "Máy bay sắp cất cánh rồi." },
+        { "stt": 6, "hanzi": "离开", "pinyin": "líkāi", "meaning": "rời khỏi", "exampleHanzi": "我们马上离开。", "exampleMeaning": "Chúng ta rời khỏi đây ngay thôi." },
+        { "stt": 7, "hanzi": "拿", "pinyin": "ná", "meaning": "cầm, lấy", "exampleHanzi": "请拿好你的东西。", "exampleMeaning": "Hãy cầm chắc đồ đạc của bạn." },
+        { "stt": 8, "hanzi": "办理", "pinyin": "bànlǐ", "meaning": "xử lý", "exampleHanzi": "我的出国手续已经办理好了。", "exampleMeaning": "Thủ tục xuất ngoại của tôi đã được xử lý xong rồi." },
+        { "stt": 9, "hanzi": "护照", "pinyin": "hùzhào", "meaning": "hộ chiếu", "exampleHanzi": "我需要办护照。", "exampleMeaning": "Tôi cần làm hộ chiếu." },
+        { "stt": 10, "hanzi": "检查", "pinyin": "jiǎnchá", "meaning": "kiểm tra", "exampleHanzi": "请检查一下。", "exampleMeaning": "Xin hãy kiểm tra một chút." },
+        { "stt": 11, "hanzi": "发现", "pinyin": "fāxiàn", "meaning": "phát hiện", "exampleHanzi": "我发现了一个新问题。", "exampleMeaning": "Tôi phát hiện ra một vấn đề mới." },
+        { "stt": 12, "hanzi": "刚才", "pinyin": "gāngcái", "meaning": "vừa nãy", "exampleHanzi": "我刚才在看书。", "exampleMeaning": "Vừa nãy tôi đang đọc sách." },
+        { "stt": 13, "hanzi": "放心", "pinyin": "fàngxīn", "meaning": "yên tâm", "exampleHanzi": "请放心，我会做好的。", "exampleMeaning": "Xin hãy yên tâm, tôi sẽ làm tốt." },
+        { "stt": 14, "hanzi": "一定", "pinyin": "yídìng", "meaning": "nhất định", "exampleHanzi": "我一定会来的。", "exampleMeaning": "Tôi nhất định sẽ tới." }
+      ]
+    },
+    {
+      "bai": 3,
+      "words": [
+        { "stt": 1, "hanzi": "饮料", "pinyin": "yǐnliào", "meaning": "đồ uống", "exampleHanzi": "我喜欢喝饮料。", "exampleMeaning": "Tôi thích uống đồ uống." },
+        { "stt": 2, "hanzi": "瓶子", "pinyin": "píngzi", "meaning": "bình, chai", "exampleHanzi": "桌子上有一个瓶子。", "exampleMeaning": "Trên bàn có một cái bình." },
+        { "stt": 3, "hanzi": "冰箱", "pinyin": "bīngxiāng", "meaning": "tủ lạnh", "exampleHanzi": "冰箱里有牛奶。", "exampleMeaning": "Trong tủ lạnh có sữa." },
+        { "stt": 4, "hanzi": "放", "pinyin": "fàng", "meaning": "để, đặt", "exampleHanzi": "请把书放在桌子上。", "exampleMeaning": "Hãy để sách lên trên bàn." },
+        { "stt": 5, "hanzi": "水平", "pinyin": "shuǐpíng", "meaning": "trình độ", "exampleHanzi": "他的中文水平很高。", "exampleMeaning": "Trình độ tiếng Trung của anh ấy rất cao." },
+        { "stt": 6, "hanzi": "提高", "pinyin": "tígāo", "meaning": "nâng cao", "exampleHanzi": "我想提高我的汉语水平。", "exampleMeaning": "Tôi muốn nâng cao trình độ tiếng Trung." },
+        { "stt": 7, "hanzi": "碗", "pinyin": "wǎn", "meaning": "cái bát", "exampleHanzi": "这个碗很漂亮。", "exampleMeaning": "Cái bát này rất đẹp." },
+        { "stt": 8, "hanzi": "盘子", "pinyin": "pánzi", "meaning": "cái đĩa", "exampleHanzi": "请把盘子洗干净。", "exampleMeaning": "Hãy rửa sạch đĩa đi." },
+        { "stt": 9, "hanzi": "干净", "pinyin": "gānjìng", "meaning": "sạch sẽ", "exampleHanzi": "房间很干净。", "exampleMeaning": "Căn phòng rất sạch sẽ." },
+        { "stt": 10, "hanzi": "水果", "pinyin": "shuǐguǒ", "meaning": "hoa quả", "exampleHanzi": "这些水果很新鲜。", "exampleMeaning": "Những hoa quả này rất tươi." },
+        { "stt": 11, "hanzi": "新鲜", "pinyin": "xīnxiān", "meaning": "tươi mới", "exampleHanzi": "这些水果很新鲜。", "exampleMeaning": "Những hoa quả này rất tươi." },
+        { "stt": 12, "hanzi": "甜", "pinyin": "tián", "meaning": "ngọt", "exampleHanzi": "这个西瓜很甜。", "exampleMeaning": "Quả dưa hấu này rất ngọt." },
+        { "stt": 13, "hanzi": "只", "pinyin": "zhǐ", "meaning": "chỉ", "exampleHanzi": "我只吃了一点。", "exampleMeaning": "Tôi chỉ ăn một chút thôi." },
+        { "stt": 14, "hanzi": "饱", "pinyin": "bǎo", "meaning": "no", "exampleHanzi": "我吃饱了。", "exampleMeaning": "Tôi ăn no rồi." }
+      ]
+    },
+    {
+      "bai": 4,
+      "words": [
+        { "stt": 1, "hanzi": "总是", "pinyin": "zǒngshì", "meaning": "luôn luôn", "exampleHanzi": "放学后，他总是去图书馆看书。", "exampleMeaning": "Sau khi tan học cô ấy luôn luôn ra thư viện đọc sách." },
+        { "stt": 2, "hanzi": "客人", "pinyin": "kèrén", "meaning": "khách", "exampleHanzi": "我们有客人来了。", "exampleMeaning": "Chúng tôi có khách đến rồi." },
+        { "stt": 3, "hanzi": "热情", "pinyin": "rèqíng", "meaning": "nhiệt tình", "exampleHanzi": "他对人很热情。", "exampleMeaning": "Anh ấy đối xử với mọi người rất nhiệt tình." },
+        { "stt": 4, "hanzi": "笑", "pinyin": "xiào", "meaning": "cười", "exampleHanzi": "他高兴地笑了。", "exampleMeaning": "Anh ấy cười một cách vui vẻ." },
+        { "stt": 5, "hanzi": "说话", "pinyin": "shuōhuà", "meaning": "nói chuyện", "exampleHanzi": "请站起来说话。", "exampleMeaning": "Mời đứng dậy nói chuyện." },
+        { "stt": 6, "hanzi": "声音", "pinyin": "shēngyīn", "meaning": "âm thanh", "exampleHanzi": "他的声音很好听。", "exampleMeaning": "Giọng của anh ấy rất dễ nghe." },
+        { "stt": 7, "hanzi": "比较", "pinyin": "bǐjiào", "meaning": "khá là", "exampleHanzi": "这个比较好。", "exampleMeaning": "Cái này tốt hơn." },
+        { "stt": 8, "hanzi": "比赛", "pinyin": "bǐsài", "meaning": "cuộc thi", "exampleHanzi": "我参加了比赛。", "exampleMeaning": "Tôi đã tham gia cuộc thi." },
+        { "stt": 9, "hanzi": "级", "pinyin": "jí", "meaning": "cấp, bậc", "exampleHanzi": "我是三年级的学生。", "exampleMeaning": "Tôi là học sinh năm thứ ba." },
+        { "stt": 10, "hanzi": "注意", "pinyin": "zhùyì", "meaning": "chú ý", "exampleHanzi": "请注意安全。", "exampleMeaning": "Xin hãy chú ý an toàn." },
+        { "stt": 11, "hanzi": "刻", "pinyin": "kè", "meaning": "khắc (15 phút)", "exampleHanzi": "现在是三点一刻。", "exampleMeaning": "Bây giờ là 3 giờ 15 phút." },
+        { "stt": 12, "hanzi": "已经", "pinyin": "yǐjīng", "meaning": "đã", "exampleHanzi": "会议已经结束。", "exampleMeaning": "Hội nghị đã kết thúc." },
+        { "stt": 13, "hanzi": "结束", "pinyin": "jiéshù", "meaning": "kết thúc", "exampleHanzi": "会议已经结束。", "exampleMeaning": "Hội nghị đã kết thúc." },
+        { "stt": 14, "hanzi": "回答", "pinyin": "huídá", "meaning": "trả lời", "exampleHanzi": "请回答我的问题。", "exampleMeaning": "Xin hãy trả lời câu hỏi của tôi." }
+      ]
+    },
+    {
+      "bai": 5,
+      "words": [
+        { "stt": 1, "hanzi": "胖", "pinyin": "pàng", "meaning": "béo", "exampleHanzi": "他最近胖了很多。", "exampleMeaning": "Dạo này anh ấy béo lên rất nhiều." },
+        { "stt": 2, "hanzi": "最近", "pinyin": "zuìjìn", "meaning": "dạo này", "exampleHanzi": "我最近很忙。", "exampleMeaning": "Dạo này tôi rất bận." },
+        { "stt": 3, "hanzi": "越来越", "pinyin": "yuèláiyuè", "meaning": "càng ngày càng", "exampleHanzi": "中文越来越难。", "exampleMeaning": "Tiếng Trung càng ngày càng khó." },
+        { "stt": 4, "hanzi": "越", "pinyin": "yuè", "meaning": "càng", "exampleHanzi": "他越说越高兴。", "exampleMeaning": "Anh ấy càng nói càng vui." },
+        { "stt": 5, "hanzi": "锻炼", "pinyin": "duànliàn", "meaning": "luyện tập", "exampleHanzi": "我每天锻炼身体。", "exampleMeaning": "Tôi luyện tập thân thể mỗi ngày." },
+        { "stt": 6, "hanzi": "身体", "pinyin": "shēntǐ", "meaning": "thân thể", "exampleHanzi": "我每天锻炼身体。", "exampleMeaning": "Tôi luyện tập thân thể mỗi ngày." },
+        { "stt": 7, "hanzi": "瘦", "pinyin": "shòu", "meaning": "gầy", "exampleHanzi": "他最近瘦了很多。", "exampleMeaning": "Dạo này anh ấy gầy đi nhiều." },
+        { "stt": 8, "hanzi": "努力", "pinyin": "nǔlì", "meaning": "nỗ lực", "exampleHanzi": "他很努力学习。", "exampleMeaning": "Anh ấy rất nỗ lực học tập." },
+        { "stt": 9, "hanzi": "健康", "pinyin": "jiànkāng", "meaning": "khỏe mạnh", "exampleHanzi": "他很健康。", "exampleMeaning": "Anh ấy rất khỏe mạnh." },
+        { "stt": 10, "hanzi": "还是", "pinyin": "háishì", "meaning": "hay là / vẫn", "exampleHanzi": "他还是不明白。", "exampleMeaning": "Anh ấy vẫn không hiểu." },
+        { "stt": 11, "hanzi": "或者", "pinyin": "huòzhě", "meaning": "hoặc là", "exampleHanzi": "你可以打电话或者发邮件。", "exampleMeaning": "Bạn có thể gọi điện hoặc gửi email." },
+        { "stt": 12, "hanzi": "同意", "pinyin": "tóngyì", "meaning": "đồng ý", "exampleHanzi": "我同意你的看法。", "exampleMeaning": "Tôi đồng ý với quan điểm của bạn." },
+        { "stt": 13, "hanzi": "疼", "pinyin": "téng", "meaning": "đau", "exampleHanzi": "我的头很疼。", "exampleMeaning": "Đầu của tôi rất đau." },
+        { "stt": 14, "hanzi": "舒服", "pinyin": "shūfu", "meaning": "thoải mái", "exampleHanzi": "我感觉很舒服。", "exampleMeaning": "Tôi cảm thấy rất thoải mái." }
+      ]
+    },
+    {
+      "bai": 6,
+      "words": [
+        { "stt": 1, "hanzi": "突然", "pinyin": "tūrán", "meaning": "đột nhiên", "exampleHanzi": "天空突然下雨了。", "exampleMeaning": "Trời bỗng nhiên đổ mưa." },
+        { "stt": 2, "hanzi": "清楚", "pinyin": "qīngchu", "meaning": "rõ ràng", "exampleHanzi": "我听得很清楚。", "exampleMeaning": "Tôi nghe rất rõ ràng." },
+        { "stt": 3, "hanzi": "明白", "pinyin": "míngbai", "meaning": "hiểu", "exampleHanzi": "我明白你的意思。", "exampleMeaning": "Tôi hiểu ý của bạn." },
+        { "stt": 4, "hanzi": "找到", "pinyin": "zhǎodào", "meaning": "tìm thấy", "exampleHanzi": "我终于找到了。", "exampleMeaning": "Cuối cùng tôi cũng tìm thấy rồi." },
+        { "stt": 5, "hanzi": "找", "pinyin": "zhǎo", "meaning": "tìm", "exampleHanzi": "你在找什么？", "exampleMeaning": "Bạn đang tìm cái gì vậy?" },
+        { "stt": 6, "hanzi": "刚", "pinyin": "gāng", "meaning": "vừa mới", "exampleHanzi": "我刚到家。", "exampleMeaning": "Tôi vừa về đến nhà." },
+        { "stt": 7, "hanzi": "分", "pinyin": "fēn", "meaning": "phút", "exampleHanzi": "现在是三点十分。", "exampleMeaning": "Bây giờ là 3 giờ 10 phút." },
+        { "stt": 8, "hanzi": "刚才", "pinyin": "gāngcái", "meaning": "vừa nãy", "exampleHanzi": "我刚才在看书。", "exampleMeaning": "Vừa nãy tôi đang đọc sách." },
+        { "stt": 9, "hanzi": "发现", "pinyin": "fāxiàn", "meaning": "phát hiện", "exampleHanzi": "我发现了一个新问题。", "exampleMeaning": "Tôi phát hiện ra một vấn đề mới." },
+        { "stt": 10, "hanzi": "离开", "pinyin": "líkāi", "meaning": "rời khỏi", "exampleHanzi": "我们马上离开。", "exampleMeaning": "Chúng ta rời khỏi đây ngay thôi." },
+        { "stt": 11, "hanzi": "帮忙", "pinyin": "bāngmáng", "meaning": "giúp đỡ", "exampleHanzi": "请帮个忙。", "exampleMeaning": "Xin hãy giúp một tay." },
+        { "stt": 12, "hanzi": "变化", "pinyin": "biànhuà", "meaning": "thay đổi", "exampleHanzi": "城市变化很大。", "exampleMeaning": "Thành phố thay đổi rất nhiều." },
+        { "stt": 13, "hanzi": "其实", "pinyin": "qíshí", "meaning": "thực ra", "exampleHanzi": "他其实不喜欢喝酒。", "exampleMeaning": "Thực ra anh ấy không thích uống rượu." },
+        { "stt": 14, "hanzi": "特别", "pinyin": "tèbié", "meaning": "đặc biệt", "exampleHanzi": "这个菜特别好吃。", "exampleMeaning": "Món ăn này đặc biệt ngon." }
+      ]
+    },
+    {
+      "bai": 7,
+      "words": [
+        { "stt": 1, "hanzi": "认识", "pinyin": "rènshi", "meaning": "quen biết", "exampleHanzi": "我们认识很久了。", "exampleMeaning": "Chúng tôi quen nhau lâu rồi." },
+        { "stt": 2, "hanzi": "结婚", "pinyin": "jiéhūn", "meaning": "kết hôn", "exampleHanzi": "他们下个月结婚。", "exampleMeaning": "Tháng sau họ kết hôn." },
+        { "stt": 3, "hanzi": "以前", "pinyin": "yǐqián", "meaning": "trước đây", "exampleHanzi": "我以前住在这里。", "exampleMeaning": "Trước đây tôi sống ở đây." },
+        { "stt": 4, "hanzi": "邻居", "pinyin": "línjū", "meaning": "hàng xóm", "exampleHanzi": "我们的邻居很友好。", "exampleMeaning": "Hàng xóm của chúng tôi rất thân thiện." },
+        { "stt": 5, "hanzi": "环境", "pinyin": "huánjìng", "meaning": "môi trường", "exampleHanzi": "这里的环境很好。", "exampleMeaning": "Môi trường ở đây rất tốt." },
+        { "stt": 6, "hanzi": "关系", "pinyin": "guānxì", "meaning": "quan hệ", "exampleHanzi": "我们的关系很好。", "exampleMeaning": "Quan hệ của chúng tôi rất tốt." },
+        { "stt": 7, "hanzi": "照顾", "pinyin": "zhàogù", "meaning": "chăm sóc", "exampleHanzi": "我会照顾你。", "exampleMeaning": "Tôi sẽ chăm sóc bạn." },
+        { "stt": 8, "hanzi": "经常", "pinyin": "jīngcháng", "meaning": "thường xuyên", "exampleHanzi": "我经常锻炼。", "exampleMeaning": "Tôi thường xuyên tập thể dục." },
+        { "stt": 9, "hanzi": "久", "pinyin": "jiǔ", "meaning": "lâu", "exampleHanzi": "我等了很久。", "exampleMeaning": "Tôi đã đợi rất lâu." },
+        { "stt": 10, "hanzi": "了解", "pinyin": "liǎojiě", "meaning": "hiểu rõ", "exampleHanzi": "我了解你的意思。", "exampleMeaning": "Tôi hiểu ý của bạn." },
+        { "stt": 11, "hanzi": "万", "pinyin": "wàn", "meaning": "mười nghìn", "exampleHanzi": "这里有一万人。", "exampleMeaning": "Ở đây có mười nghìn người." },
+        { "stt": 12, "hanzi": "比较", "pinyin": "bǐjiào", "meaning": "tương đối", "exampleHanzi": "这个比较好。", "exampleMeaning": "Cái này tốt hơn." },
+        { "stt": 13, "hanzi": "几乎", "pinyin": "jīhū", "meaning": "hầu như", "exampleHanzi": "他几乎每天都来。", "exampleMeaning": "Anh ấy hầu như ngày nào cũng đến." }
+      ]
+    },
+    {
+      "bai": 8,
+      "words": [
+        { "stt": 1, "hanzi": "地方", "pinyin": "dìfāng", "meaning": "địa điểm", "exampleHanzi": "我喜欢这个地方。", "exampleMeaning": "Tôi thích địa điểm này." },
+        { "stt": 2, "hanzi": "地图", "pinyin": "dìtú", "meaning": "bản đồ", "exampleHanzi": "我需要一张地图。", "exampleMeaning": "Tôi cần một tấm bản đồ." },
+        { "stt": 3, "hanzi": "跟", "pinyin": "gēn", "meaning": "với", "exampleHanzi": "我跟他一起去。", "exampleMeaning": "Tôi đi cùng với anh ấy." },
+        { "stt": 4, "hanzi": "相同", "pinyin": "xiāngtóng", "meaning": "giống nhau", "exampleHanzi": "我们的看法相同。", "exampleMeaning": "Quan điểm của chúng tôi giống nhau." },
+        { "stt": 5, "hanzi": "一样", "pinyin": "yíyàng", "meaning": "giống nhau", "exampleHanzi": "我们穿一样的衣服。", "exampleMeaning": "Chúng ta mặc quần áo giống nhau." },
+        { "stt": 6, "hanzi": "如果", "pinyin": "rúguǒ", "meaning": "nếu như", "exampleHanzi": "如果你有时间我们一起去吧。", "exampleMeaning": "Nếu bạn có thời gian chúng ta cùng đi nhé." },
+        { "stt": 7, "hanzi": "选择", "pinyin": "xuǎnzé", "meaning": "lựa chọn", "exampleHanzi": "你可以选择任何一个。", "exampleMeaning": "Bạn có thể chọn bất kỳ cái nào." },
+        { "stt": 8, "hanzi": "决定", "pinyin": "juédìng", "meaning": "quyết định", "exampleHanzi": "我决定去旅游。", "exampleMeaning": "Tôi quyết định đi du lịch." },
+        { "stt": 9, "hanzi": "习惯", "pinyin": "xíguàn", "meaning": "thói quen", "exampleHanzi": "我习惯早起。", "exampleMeaning": "Tôi quen dậy sớm." },
+        { "stt": 10, "hanzi": "特别", "pinyin": "tèbié", "meaning": "đặc biệt", "exampleHanzi": "这个菜特别好吃。", "exampleMeaning": "Món ăn này đặc biệt ngon." },
+        { "stt": 11, "hanzi": "方便", "pinyin": "fāngbiàn", "meaning": "thuận tiện", "exampleHanzi": "这家店很方便。", "exampleMeaning": "Cửa hàng này rất thuận tiện." },
+        { "stt": 12, "hanzi": "容易", "pinyin": "róngyì", "meaning": "dễ dàng", "exampleHanzi": "这个问题很容易。", "exampleMeaning": "Vấn đề này rất dễ." },
+        { "stt": 13, "hanzi": "清楚", "pinyin": "qīngchu", "meaning": "rõ ràng", "exampleHanzi": "我听得很清楚。", "exampleMeaning": "Tôi nghe rất rõ ràng." },
+        { "stt": 14, "hanzi": "意思", "pinyin": "yìsi", "meaning": "ý nghĩa", "exampleHanzi": "我了解你的意思。", "exampleMeaning": "Tôi hiểu ý của bạn." }
+      ]
+    },
+    {
+      "bai": 9,
+      "words": [
+        { "stt": 1, "hanzi": "汉语", "pinyin": "Hànyǔ", "meaning": "tiếng Hán", "exampleHanzi": "他在学习汉语。", "exampleMeaning": "Anh ấy đang học tiếng Hán." },
+        { "stt": 2, "hanzi": "中文", "pinyin": "Zhōngwén", "meaning": "tiếng Trung", "exampleHanzi": "我在学习中文。", "exampleMeaning": "Tôi đang học tiếng Trung." },
+        { "stt": 3, "hanzi": "提高", "pinyin": "tígāo", "meaning": "nâng cao", "exampleHanzi": "我想提高我的汉语水平。", "exampleMeaning": "Tôi muốn nâng cao trình độ tiếng Trung." },
+        { "stt": 4, "hanzi": "水平", "pinyin": "shuǐpíng", "meaning": "trình độ", "exampleHanzi": "他的中文水平很高。", "exampleMeaning": "Trình độ tiếng Trung của anh ấy rất cao." },
+        { "stt": 5, "hanzi": "一样", "pinyin": "yíyàng", "meaning": "như nhau", "exampleHanzi": "我们穿一样的衣服。", "exampleMeaning": "Chúng ta mặc quần áo giống nhau." },
+        { "stt": 6, "hanzi": "认真", "pinyin": "rènzhēn", "meaning": "nghiêm túc", "exampleHanzi": "他学习很认真。", "exampleMeaning": "Anh ấy học tập rất nghiêm túc." },
+        { "stt": 7, "hanzi": "努力", "pinyin": "nǔlì", "meaning": "nỗ lực", "exampleHanzi": "他不但聪明而且很努力。", "exampleMeaning": "Anh ấy không những thông minh mà còn nỗ lực." },
+        { "stt": 8, "hanzi": "清楚", "pinyin": "qīngchu", "meaning": "rõ ràng", "exampleHanzi": "我听得很清楚。", "exampleMeaning": "Tôi nghe rất rõ ràng." },
+        { "stt": 9, "hanzi": "句子", "pinyin": "jùzi", "meaning": "câu", "exampleHanzi": "请造一个句子。", "exampleMeaning": "Hãy đặt một câu." },
+        { "stt": 10, "hanzi": "讲", "pinyin": "jiǎng", "meaning": "giảng, nói", "exampleHanzi": "他讲得很好。", "exampleMeaning": "Anh ấy nói rất hay." },
+        { "stt": 11, "hanzi": "意思", "pinyin": "yìsi", "meaning": "ý nghĩa", "exampleHanzi": "我了解你的意思。", "exampleMeaning": "Tôi hiểu ý của bạn." },
+        { "stt": 12, "hanzi": "容易", "pinyin": "róngyì", "meaning": "dễ dàng", "exampleHanzi": "这个题目很容易。", "exampleMeaning": "Đề bài này rất dễ." },
+        { "stt": 13, "hanzi": "完成", "pinyin": "wánchéng", "meaning": "hoàn thành", "exampleHanzi": "我完成了作业。", "exampleMeaning": "Tôi đã hoàn thành bài tập." },
+        { "stt": 14, "hanzi": "聪明", "pinyin": "cōngmíng", "meaning": "thông minh", "exampleHanzi": "他很聪明。", "exampleMeaning": "Anh ấy rất thông minh." }
+      ]
+    },
+    {
+      "bai": 10,
+      "words": [
+        { "stt": 1, "hanzi": "数学", "pinyin": "shùxué", "meaning": "toán học", "exampleHanzi": "我喜欢学习数学。", "exampleMeaning": "Tôi thích học toán." },
+        { "stt": 2, "hanzi": "历史", "pinyin": "lìshǐ", "meaning": "lịch sử", "exampleHanzi": "我喜欢学习历史。", "exampleMeaning": "Tôi thích học lịch sử." },
+        { "stt": 3, "hanzi": "难", "pinyin": "nán", "meaning": "khó", "exampleHanzi": "这个题很难。", "exampleMeaning": "Câu hỏi này rất khó." },
+        { "stt": 4, "hanzi": "容易", "pinyin": "róngyì", "meaning": "dễ", "exampleHanzi": "这个题目很容易。", "exampleMeaning": "Đề bài này rất dễ." },
+        { "stt": 5, "hanzi": "成绩", "pinyin": "chéngjì", "meaning": "thành tích", "exampleHanzi": "我的成绩很好。", "exampleMeaning": "Thành tích của tôi rất tốt." },
+        { "stt": 6, "hanzi": "比", "pinyin": "bǐ", "meaning": "so với", "exampleHanzi": "我比他高。", "exampleMeaning": "Tôi cao hơn anh ấy." },
+        { "stt": 7, "hanzi": "差", "pinyin": "chà", "meaning": "kém", "exampleHanzi": "他的成绩很差。", "exampleMeaning": "Thành tích của anh ấy rất kém." },
+        { "stt": 8, "hanzi": "清楚", "pinyin": "qīngchu", "meaning": "rõ ràng", "exampleHanzi": "我听得很清楚。", "exampleMeaning": "Tôi nghe rất rõ ràng." },
+        { "stt": 9, "hanzi": "明白", "pinyin": "míngbai", "meaning": "hiểu", "exampleHanzi": "你明白了吗？", "exampleMeaning": "Bạn hiểu chưa?" },
+        { "stt": 10, "hanzi": "相信", "pinyin": "xiāngxìn", "meaning": "tin tưởng", "exampleHanzi": "我相信你。", "exampleMeaning": "Tôi tin tưởng bạn." },
+        { "stt": 11, "hanzi": "完成", "pinyin": "wánchéng", "meaning": "hoàn thành", "exampleHanzi": "我完成了作业。", "exampleMeaning": "Tôi đã hoàn thành bài tập." },
+        { "stt": 12, "hanzi": "作业", "pinyin": "zuòyè", "meaning": "bài tập", "exampleHanzi": "我还没有做完作业。", "exampleMeaning": "Tôi vẫn chưa làm xong bài tập." },
+        { "stt": 13, "hanzi": "总结", "pinyin": "zǒngjié", "meaning": "tổng kết", "exampleHanzi": "我们要总结一下今年的成绩。", "exampleMeaning": "Chúng ta nên tổng kết lại thành tích của cả năm nay." },
+        { "stt": 14, "hanzi": "第一", "pinyin": "dìyī", "meaning": "thứ nhất", "exampleHanzi": "她总是把子女放在第一位。", "exampleMeaning": "Cô ấy luôn đặt con cái lên vị trí hàng đầu." }
+      ]
+    },
+    {
+      "bai": 11,
+      "words": [
+        { "stt": 1, "hanzi": "把", "pinyin": "bǎ", "meaning": "đặt, đem", "exampleHanzi": "我把书放桌子上了。", "exampleMeaning": "Tôi đặt sách ở trên bàn rồi." },
+        { "stt": 2, "hanzi": "忘了", "pinyin": "wàngle", "meaning": "quên", "exampleHanzi": "我忘了带钥匙。", "exampleMeaning": "Tôi quên mang chìa khóa rồi." },
+        { "stt": 3, "hanzi": "忘记", "pinyin": "wàngjì", "meaning": "quên", "exampleHanzi": "我忘记带钥匙了。", "exampleMeaning": "Tôi quên mang chìa khóa rồi." },
+        { "stt": 4, "hanzi": "空调", "pinyin": "kōngtiáo", "meaning": "điều hòa", "exampleHanzi": "请打开空调。", "exampleMeaning": "Hãy bật điều hòa lên." },
+        { "stt": 5, "hanzi": "关", "pinyin": "guān", "meaning": "đóng, tắt", "exampleHanzi": "请把门关上。", "exampleMeaning": "Hãy đóng cửa vào." },
+        { "stt": 6, "hanzi": "门", "pinyin": "mén", "meaning": "cửa", "exampleHanzi": "请把门关上。", "exampleMeaning": "Hãy đóng cửa vào." },
+        { "stt": 7, "hanzi": "灯", "pinyin": "dēng", "meaning": "đèn", "exampleHanzi": "请把灯打开。", "exampleMeaning": "Hãy bật đèn lên." },
+        { "stt": 8, "hanzi": "干净", "pinyin": "gānjìng", "meaning": "sạch sẽ", "exampleHanzi": "房间很干净。", "exampleMeaning": "Căn phòng rất sạch sẽ." },
+        { "stt": 9, "hanzi": "打扫", "pinyin": "dǎsǎo", "meaning": "dọn dẹp", "exampleHanzi": "我们打扫了房间。", "exampleMeaning": "Chúng tôi đã dọn dẹp phòng." },
+        { "stt": 10, "hanzi": "衬衫", "pinyin": "chènshān", "meaning": "áo sơ mi", "exampleHanzi": "我买了一件新衬衫。", "exampleMeaning": "Tôi đã mua một chiếc áo sơ mi mới." },
+        { "stt": 11, "hanzi": "皮鞋", "pinyin": "píxié", "meaning": "giày da", "exampleHanzi": "我穿了一双新皮鞋。", "exampleMeaning": "Tôi đi một đôi giày da mới." },
+        { "stt": 12, "hanzi": "筷子", "pinyin": "kuàizi", "meaning": "đũa", "exampleHanzi": "我会用筷子。", "exampleMeaning": "Tôi biết dùng đũa." },
+        { "stt": 13, "hanzi": "盘子", "pinyin": "pánzi", "meaning": "cái đĩa", "exampleHanzi": "请把盘子洗干净。", "exampleMeaning": "Hãy rửa sạch đĩa đi." },
+        { "stt": 14, "hanzi": "关上", "pinyin": "guānshàng", "meaning": "đóng lại", "exampleHanzi": "请把门关上。", "exampleMeaning": "Hãy đóng cửa vào." }
+      ]
+    },
+    {
+      "bai": 12,
+      "words": [
+        { "stt": 1, "hanzi": "重要", "pinyin": "zhòngyào", "meaning": "quan trọng", "exampleHanzi": "这是一个重要的问题。", "exampleMeaning": "Đây là một vấn đề quan trọng." },
+        { "stt": 2, "hanzi": "东西", "pinyin": "dōngxi", "meaning": "đồ đạc", "exampleHanzi": "请拿好你的东西。", "exampleMeaning": "Hãy cầm chắc đồ đạc của bạn." },
+        { "stt": 3, "hanzi": "拿", "pinyin": "ná", "meaning": "cầm, lấy", "exampleHanzi": "请拿好你的东西。", "exampleMeaning": "Hãy cầm chắc đồ đạc của bạn." },
+        { "stt": 4, "hanzi": "放", "pinyin": "fàng", "meaning": "để, đặt", "exampleHanzi": "请把书放在桌子上。", "exampleMeaning": "Hãy để sách lên trên bàn." },
+        { "stt": 5, "hanzi": "护照", "pinyin": "hùzhào", "meaning": "hộ chiếu", "exampleHanzi": "我需要办护照。", "exampleMeaning": "Tôi cần làm hộ chiếu." },
+        { "stt": 6, "hanzi": "信用卡", "pinyin": "xìnyòngkǎ", "meaning": "thẻ tín dụng", "exampleHanzi": "我用信用卡付钱。", "exampleMeaning": "Tôi dùng thẻ tín dụng để trả tiền." },
+        { "stt": 7, "hanzi": "必须", "pinyin": "bìxū", "meaning": "bắt buộc", "exampleHanzi": "我必须去。", "exampleMeaning": "Tôi phải đi." },
+        { "stt": 8, "hanzi": "办理", "pinyin": "bànlǐ", "meaning": "xử lý", "exampleHanzi": "我的出国手续已经办理好了。", "exampleMeaning": "Thủ tục xuất ngoại của tôi đã được xử lý xong rồi." },
+        { "stt": 9, "hanzi": "包", "pinyin": "bāo", "meaning": "túi xách", "exampleHanzi": "我买了一个新包。", "exampleMeaning": "Tôi đã mua một chiếc túi mới." },
+        { "stt": 10, "hanzi": "行李箱", "pinyin": "xínglǐxiāng", "meaning": "vali", "exampleHanzi": "我买了一个新行李箱。", "exampleMeaning": "Tôi đã mua một chiếc vali mới." },
+        { "stt": 11, "hanzi": "检查", "pinyin": "jiǎnchá", "meaning": "kiểm tra", "exampleHanzi": "请检查一下。", "exampleMeaning": "Xin hãy kiểm tra một chút." },
+        { "stt": 12, "hanzi": "准备", "pinyin": "zhǔnbèi", "meaning": "chuẩn bị", "exampleHanzi": "我准备好了。", "exampleMeaning": "Tôi chuẩn bị xong rồi." },
+        { "stt": 13, "hanzi": "发现", "pinyin": "fāxiàn", "meaning": "phát hiện", "exampleHanzi": "我发现了一个新问题。", "exampleMeaning": "Tôi phát hiện ra một vấn đề mới." },
+        { "stt": 14, "hanzi": "一定", "pinyin": "yídìng", "meaning": "nhất định", "exampleHanzi": "我一定会来的。", "exampleMeaning": "Tôi nhất định sẽ tới." }
+      ]
+    },
+    {
+      "bai": 13,
+      "words": [
+        { "stt": 1, "hanzi": "走路", "pinyin": "zǒulù", "meaning": "đi bộ", "exampleHanzi": "他走路去学校。", "exampleMeaning": "Anh ấy đi bộ đến trường." },
+        { "stt": 2, "hanzi": "走", "pinyin": "zǒu", "meaning": "đi", "exampleHanzi": "他向我走过来。", "exampleMeaning": "Anh ấy đi về phía tôi." },
+        { "stt": 3, "hanzi": "回来", "pinyin": "huílái", "meaning": "quay về", "exampleHanzi": "我马上回来。", "exampleMeaning": "Tôi quay về ngay đây." },
+        { "stt": 4, "hanzi": "坐", "pinyin": "zuò", "meaning": "ngồi, đi (xe)", "exampleHanzi": "我坐地铁去上班。", "exampleMeaning": "Tôi đi làm bằng tàu điện ngầm." },
+        { "stt": 5, "hanzi": "地铁", "pinyin": "dìtiě", "meaning": "tàu điện ngầm", "exampleHanzi": "我坐地铁去上班。", "exampleMeaning": "Tôi đi làm bằng tàu điện ngầm." },
+        { "stt": 6, "hanzi": "方便", "pinyin": "fāngbiàn", "meaning": "thuận tiện", "exampleHanzi": "这家店很方便。", "exampleMeaning": "Cửa hàng này rất thuận tiện." },
+        { "stt": 7, "hanzi": "经过", "pinyin": "jīngguò", "meaning": "đi qua", "exampleHanzi": "我经过了那家店。", "exampleMeaning": "Tôi đã đi qua cửa hàng đó." },
+        { "stt": 8, "hanzi": "公斤", "pinyin": "gōngjīn", "meaning": "cân, kg", "exampleHanzi": "这个西瓜有五公斤。", "exampleMeaning": "Quả dưa hấu này nặng 5 kg." },
+        { "stt": 9, "hanzi": "离开", "pinyin": "líkāi", "meaning": "rời khỏi", "exampleHanzi": "我们马上离开。", "exampleMeaning": "Chúng ta rời khỏi đây ngay thôi." },
+        { "stt": 10, "hanzi": "突然", "pinyin": "tūrán", "meaning": "đột nhiên", "exampleHanzi": "天空突然下雨了。", "exampleMeaning": "Trời bỗng nhiên đổ mưa." },
+        { "stt": 11, "hanzi": "发现", "pinyin": "fāxiàn", "meaning": "phát hiện", "exampleHanzi": "我发现了一个新问题。", "exampleMeaning": "Tôi phát hiện ra một vấn đề mới." },
+        { "stt": 12, "hanzi": "明白", "pinyin": "míngbai", "meaning": "hiểu", "exampleHanzi": "我明白你的意思。", "exampleMeaning": "Tôi hiểu ý của bạn." },
+        { "stt": 13, "hanzi": "清楚", "pinyin": "qīngchu", "meaning": "rõ ràng", "exampleHanzi": "我听得很清楚。", "exampleMeaning": "Tôi nghe rất rõ ràng." },
+        { "stt": 14, "hanzi": "刚才", "pinyin": "gāngcái", "meaning": "vừa nãy", "exampleHanzi": "我刚才在看书。", "exampleMeaning": "Vừa nãy tôi đang đọc sách." }
+      ]
+    },
+    {
+      "bai": 14,
+      "words": [
+        { "stt": 1, "hanzi": "水果", "pinyin": "shuǐguǒ", "meaning": "hoa quả", "exampleHanzi": "这些水果很新鲜。", "exampleMeaning": "Những hoa quả này rất tươi." },
+        { "stt": 2, "hanzi": "拿", "pinyin": "ná", "meaning": "cầm, lấy", "exampleHanzi": "请拿好你的东西。", "exampleMeaning": "Hãy cầm chắc đồ đạc của bạn." },
+        { "stt": 3, "hanzi": "过来", "pinyin": "guòlái", "meaning": "qua đây", "exampleHanzi": "他向我走过来。", "exampleMeaning": "Anh ấy đi về phía tôi." },
+        { "stt": 4, "hanzi": "像", "pinyin": "xiàng", "meaning": "giống như", "exampleHanzi": "你长得像你妈妈。", "exampleMeaning": "Bạn trông giống mẹ của bạn." },
+        { "stt": 5, "hanzi": "香蕉", "pinyin": "xiāngjiāo", "meaning": "quả chuối", "exampleHanzi": "我喜欢吃香蕉。", "exampleMeaning": "Tôi thích ăn chuối." },
+        { "stt": 6, "hanzi": "西瓜", "pinyin": "xīguā", "meaning": "dưa hấu", "exampleHanzi": "这个西瓜有五公斤。", "exampleMeaning": "Quả dưa hấu này nặng 5 kg." },
+        { "stt": 7, "hanzi": "甜", "pinyin": "tián", "meaning": "ngọt", "exampleHanzi": "这个西瓜很甜。", "exampleMeaning": "Quả dưa hấu này rất ngọt." },
+        { "stt": 8, "hanzi": "新鲜", "pinyin": "xīnxiān", "meaning": "tươi mới", "exampleHanzi": "这些水果很新鲜。", "exampleMeaning": "Những hoa quả này rất tươi." },
+        { "stt": 9, "hanzi": "礼物", "pinyin": "lǐwù", "meaning": "quà tặng", "exampleHanzi": "我送你一份礼物。", "exampleMeaning": "Tôi tặng bạn một món quà." },
+        { "stt": 10, "hanzi": "送", "pinyin": "sòng", "meaning": "tặng", "exampleHanzi": "我送你一份礼物。", "exampleMeaning": "Tôi tặng bạn một món quà." },
+        { "stt": 11, "hanzi": "欢迎", "pinyin": "huānyíng", "meaning": "chào mừng", "exampleHanzi": "欢迎你们来我家。", "exampleMeaning": "Chào mừng các bạn đến nhà tôi." },
+        { "stt": 12, "hanzi": "客人", "pinyin": "kèrén", "meaning": "khách", "exampleHanzi": "我们有客人来了。", "exampleMeaning": "Chúng tôi có khách đến rồi." },
+        { "stt": 13, "hanzi": "热情", "pinyin": "rèqíng", "meaning": "nhiệt tình", "exampleHanzi": "他对人很热情。", "exampleMeaning": "Anh ấy đối xử với mọi người rất nhiệt tình." },
+        { "stt": 14, "hanzi": "准备", "pinyin": "zhǔnbèi", "meaning": "chuẩn bị", "exampleHanzi": "我准备好了。", "exampleMeaning": "Tôi chuẩn bị xong rồi." }
+      ]
+    },
+    {
+      "bai": 15,
+      "words": [
+        { "stt": 1, "hanzi": "其他", "pinyin": "qítā", "meaning": "cái khác", "exampleHanzi": "除了他，其他人都来了。", "exampleMeaning": "Ngoài anh ấy ra, những người khác đều đã đến." },
+        { "stt": 2, "hanzi": "除了", "pinyin": "chúle", "meaning": "ngoài ra", "exampleHanzi": "除了他，其他人都来了。", "exampleMeaning": "Ngoài anh ấy ra, những người khác đều đã đến." },
+        { "stt": 3, "hanzi": "问题", "pinyin": "wèntí", "meaning": "vấn đề", "exampleHanzi": "请回答我的问题。", "exampleMeaning": "Xin hãy trả lời câu hỏi của tôi." },
+        { "stt": 4, "hanzi": "解决", "pinyin": "jiějué", "meaning": "giải quyết", "exampleHanzi": "我们需要解决这个问题。", "exampleMeaning": "Chúng ta cần giải quyết vấn đề này." },
+        { "stt": 5, "hanzi": "回答", "pinyin": "huídá", "meaning": "trả lời", "exampleHanzi": "请回答我的问题。", "exampleMeaning": "Xin hãy trả lời câu hỏi của tôi." },
+        { "stt": 6, "hanzi": "明白", "pinyin": "míngbai", "meaning": "hiểu", "exampleHanzi": "我明白你的意思。", "exampleMeaning": "Tôi hiểu ý của bạn." },
+        { "stt": 7, "hanzi": "清楚", "pinyin": "qīngchu", "meaning": "rõ ràng", "exampleHanzi": "我听得很清楚。", "exampleMeaning": "Tôi nghe rất rõ ràng." },
+        { "stt": 8, "hanzi": "相信", "pinyin": "xiāngxìn", "meaning": "tin tưởng", "exampleHanzi": "我相信你。", "exampleMeaning": "Tôi tin tưởng bạn." },
+        { "stt": 9, "hanzi": "发现", "pinyin": "fāxiàn", "meaning": "phát hiện", "exampleHanzi": "我发现了一个新问题。", "exampleMeaning": "Tôi phát hiện ra một vấn đề mới." },
+        { "stt": 10, "hanzi": "简单", "pinyin": "jiǎndān", "meaning": "đơn giản", "exampleHanzi": "这个题目很简单。", "exampleMeaning": "Đề bài này rất đơn giản." },
+        { "stt": 11, "hanzi": "容易", "pinyin": "róngyì", "meaning": "dễ dàng", "exampleHanzi": "这个问题很容易。", "exampleMeaning": "Vấn đề này rất dễ." },
+        { "stt": 12, "hanzi": "办法", "pinyin": "bànfǎ", "meaning": "cách thức", "exampleHanzi": "我有一个好办法。", "exampleMeaning": "Tôi có một cách hay." },
+        { "stt": 13, "hanzi": "重要", "pinyin": "zhòngyào", "meaning": "quan trọng", "exampleHanzi": "这是一个重要的问题。", "exampleMeaning": "Đây là một vấn đề quan trọng." },
+        { "stt": 14, "hanzi": "必须", "pinyin": "bìxū", "meaning": "bắt buộc", "exampleHanzi": "我必须去。", "exampleMeaning": "Tôi phải đi." }
+      ]
+    },
+    {
+      "bai": 16,
+      "words": [
+        { "stt": 1, "hanzi": "累", "pinyin": "lèi", "meaning": "mệt", "exampleHanzi": "我觉得有点儿累。", "exampleMeaning": "Tôi cảm thấy hơi mệt." },
+        { "stt": 2, "hanzi": "下班", "pinyin": "xiàbān", "meaning": "tan làm", "exampleHanzi": "下班以后，他总是去图书馆看书。", "exampleMeaning": "Sau khi tan làm anh ấy luôn ra thư viện đọc sách." },
+        { "stt": 3, "hanzi": "睡觉", "pinyin": "shuìjiào", "meaning": "đi ngủ", "exampleHanzi": "我想睡觉。", "exampleMeaning": "Tôi muốn đi ngủ." },
+        { "stt": 4, "hanzi": "现在", "pinyin": "xiànzài", "meaning": "bây giờ", "exampleHanzi": "现在是三点。", "exampleMeaning": "Bây giờ là 3 giờ." },
+        { "stt": 5, "hanzi": "想", "pinyin": "xiǎng", "meaning": "muốn", "exampleHanzi": "我想睡觉。", "exampleMeaning": "Tôi muốn đi ngủ." },
+        { "stt": 6, "hanzi": "渴", "pinyin": "kě", "meaning": "khát", "exampleHanzi": "我渴了，想喝水。", "exampleMeaning": "Tôi khát rồi, muốn uống nước." },
+        { "stt": 7, "hanzi": "舒服", "pinyin": "shūfu", "meaning": "thoải mái", "exampleHanzi": "我感觉很舒服。", "exampleMeaning": "Tôi cảm thấy rất thoải mái." },
+        { "stt": 8, "hanzi": "健康", "pinyin": "jiànkāng", "meaning": "khỏe mạnh", "exampleHanzi": "他很健康。", "exampleMeaning": "Anh ấy rất khỏe mạnh." },
+        { "stt": 9, "hanzi": "检查", "pinyin": "jiǎnchá", "meaning": "kiểm tra", "exampleHanzi": "请检查一下。", "exampleMeaning": "Xin hãy kiểm tra một chút." },
+        { "stt": 10, "hanzi": "锻炼", "pinyin": "duànliàn", "meaning": "luyện tập", "exampleHanzi": "我每天锻炼身体。", "exampleMeaning": "Tôi luyện tập thân thể mỗi ngày." },
+        { "stt": 11, "hanzi": "复习", "pinyin": "fùxí", "meaning": "ôn tập", "exampleHanzi": "我们要复习功课。", "exampleMeaning": "Chúng ta cần ôn tập bài vở." },
+        { "stt": 12, "hanzi": "作业", "pinyin": "zuòyè", "meaning": "bài tập", "exampleHanzi": "我还没有做完作业。", "exampleMeaning": "Tôi vẫn chưa làm xong bài tập." },
+        { "stt": 13, "hanzi": "努力", "pinyin": "nǔlì", "meaning": "nỗ lực", "exampleHanzi": "他不但聪明而且很努力。", "exampleMeaning": "Anh ấy không những thông minh mà còn nỗ lực." },
+        { "stt": 14, "hanzi": "马上", "pinyin": "mǎshàng", "meaning": "ngay lập tức", "exampleHanzi": "我马上回来。", "exampleMeaning": "Tôi quay về ngay đây." }
+      ]
+    },
+    {
+      "bai": 17,
+      "words": [
+        { "stt": 1, "hanzi": "办法", "pinyin": "bànfǎ", "meaning": "cách thức", "exampleHanzi": "我有一个好办法。", "exampleMeaning": "Tôi có một cách hay." },
+        { "stt": 2, "hanzi": "谁", "pinyin": "shéi", "meaning": "ai", "exampleHanzi": "谁都知道。", "exampleMeaning": "Ai cũng biết." },
+        { "stt": 3, "hanzi": "生病", "pinyin": "shēngbìng", "meaning": "bị ốm", "exampleHanzi": "他生病了，没来上课。", "exampleMeaning": "Anh ấy ốm rồi, không đi học." },
+        { "stt": 4, "hanzi": "病", "pinyin": "bìng", "meaning": "bệnh", "exampleHanzi": "他得了什么病？", "exampleMeaning": "Anh ấy mắc bệnh gì vậy?" },
+        { "stt": 5, "hanzi": "医生", "pinyin": "yīshēng", "meaning": "bác sĩ", "exampleHanzi": "他是一名医生。", "exampleMeaning": "Anh ấy là một bác sĩ." },
+        { "stt": 6, "hanzi": "检查", "pinyin": "jiǎnchá", "meaning": "kiểm tra", "exampleHanzi": "请检查一下。", "exampleMeaning": "Xin hãy kiểm tra một chút." },
+        { "stt": 7, "hanzi": "感冒", "pinyin": "gǎnmào", "meaning": "cảm mạo", "exampleHanzi": "我感冒了。", "exampleMeaning": "Tôi bị cảm rồi." },
+        { "stt": 8, "hanzi": "发烧", "pinyin": "fāshāo", "meaning": "phát sốt", "exampleHanzi": "他发烧了。", "exampleMeaning": "Anh ấy phát sốt rồi." },
+        { "stt": 9, "hanzi": "药", "pinyin": "yào", "meaning": "thuốc", "exampleHanzi": "你吃药了吗？", "exampleMeaning": "Bạn uống thuốc chưa?" },
+        { "stt": 10, "hanzi": "照顾", "pinyin": "zhàogù", "meaning": "chăm sóc", "exampleHanzi": "我会照顾你。", "exampleMeaning": "Tôi sẽ chăm sóc bạn." },
+        { "stt": 11, "hanzi": "担心", "pinyin": "dānxīn", "meaning": "lo lắng", "exampleHanzi": "请不要担心。", "exampleMeaning": "Xin đừng lo lắng." },
+        { "stt": 12, "hanzi": "放心", "pinyin": "fàngxīn", "meaning": "yên tâm", "exampleHanzi": "请放心，我会做好的。", "exampleMeaning": "Xin hãy yên tâm, tôi sẽ làm tốt." },
+        { "stt": 13, "hanzi": "身体", "pinyin": "shēntǐ", "meaning": "thân thể", "exampleHanzi": "我每天锻炼身体。", "exampleMeaning": "Tôi luyện tập thân thể mỗi ngày." },
+        { "stt": 14, "hanzi": "健康", "pinyin": "jiànkāng", "meaning": "khỏe mạnh", "exampleHanzi": "他很健康。", "exampleMeaning": "Anh ấy rất khỏe mạnh." }
+      ]
+    },
+    {
+      "bai": 18,
+      "words": [
+        { "stt": 1, "hanzi": "相信", "pinyin": "xiāngxìn", "meaning": "tin tưởng", "exampleHanzi": "我相信你。", "exampleMeaning": "Tôi tin tưởng bạn." },
+        { "stt": 2, "hanzi": "同意", "pinyin": "tóngyì", "meaning": "đồng ý", "exampleHanzi": "我同意你的看法。", "exampleMeaning": "Tôi đồng ý với quan điểm của bạn." },
+        { "stt": 3, "hanzi": "会", "pinyin": "huì", "meaning": "sẽ / biết", "exampleHanzi": "我一定会来的。", "exampleMeaning": "Tôi nhất định sẽ tới." },
+        { "stt": 4, "hanzi": "认为", "pinyin": "rènwéi", "meaning": "cho rằng", "exampleHanzi": "我认为这个计划很好。", "exampleMeaning": "Tôi cho rằng kế hoạch này rất tốt." },
+        { "stt": 5, "hanzi": "决定", "pinyin": "juédìng", "meaning": "quyết định", "exampleHanzi": "我决定去旅游。", "exampleMeaning": "Tôi quyết định đi du lịch." },
+        { "stt": 6, "hanzi": "选择", "pinyin": "xuǎnzé", "meaning": "lựa chọn", "exampleHanzi": "你可以选择任何一个。", "exampleMeaning": "Bạn có thể chọn bất kỳ cái nào." },
+        { "stt": 7, "hanzi": "愿意", "pinyin": "yuànyì", "meaning": "bằng lòng", "exampleHanzi": "我愿意帮助你。", "exampleMeaning": "Tôi tình nguyện giúp đỡ bạn." },
+        { "stt": 8, "hanzi": "要求", "pinyin": "yāoqiú", "meaning": "yêu cầu", "exampleHanzi": "老师要求我们完成作业。", "exampleMeaning": "Thầy giáo yêu cầu chúng tôi hoàn thành bài tập." },
+        { "stt": 9, "hanzi": "负责", "pinyin": "fùzé", "meaning": "phụ trách", "exampleHanzi": "他负责这个项目。", "exampleMeaning": "Anh ấy phụ trách dự án này." },
+        { "stt": 10, "hanzi": "保证", "pinyin": "bǎozhèng", "meaning": "bảo đảm", "exampleHanzi": "这件事我保证能做好。", "exampleMeaning": "Chuyện này tôi bảo đảm có thể làm được tốt." },
+        { "stt": 11, "hanzi": "明白", "pinyin": "míngbai", "meaning": "hiểu rõ", "exampleHanzi": "我明白你的意思。", "exampleMeaning": "Tôi hiểu ý của bạn." },
+        { "stt": 12, "hanzi": "解决", "pinyin": "jiějué", "meaning": "giải quyết", "exampleHanzi": "我们需要解决这个问题。", "exampleMeaning": "Chúng ta cần giải quyết vấn đề này." },
+        { "stt": 13, "hanzi": "清楚", "pinyin": "qīngchu", "meaning": "rõ ràng", "exampleHanzi": "我听得很清楚。", "exampleMeaning": "Tôi nghe rất rõ ràng." },
+        { "stt": 14, "hanzi": "计划", "pinyin": "jìhuà", "meaning": "kế hoạch", "exampleHanzi": "按学校的计划，明天期末考试。", "exampleMeaning": "Theo kế hoạch của nhà trường, ngày mai thi cuối kỳ." }
+      ]
+    },
+    {
+      "bai": 19,
+      "words": [
+        { "stt": 1, "hanzi": "出来", "pinyin": "chūlái", "meaning": "ra đây", "exampleHanzi": "他从里面出来了。", "exampleMeaning": "Anh ấy từ bên trong đi ra rồi." },
+        { "stt": 2, "hanzi": "发现", "pinyin": "fāxiàn", "meaning": "phát hiện", "exampleHanzi": "我发现了一个新问题。", "exampleMeaning": "Tôi phát hiện ra một vấn đề mới." },
+        { "stt": 3, "hanzi": "明白", "pinyin": "míngbai", "meaning": "hiểu", "exampleHanzi": "我明白你的意思。", "exampleMeaning": "Tôi hiểu ý của bạn." },
+        { "stt": 4, "hanzi": "清楚", "pinyin": "qīngchu", "meaning": "rõ ràng", "exampleHanzi": "我听得很清楚。", "exampleMeaning": "Tôi nghe rất rõ ràng." },
+        { "stt": 5, "hanzi": "变化", "pinyin": "biànhuà", "meaning": "thay đổi", "exampleHanzi": "城市变化很大。", "exampleMeaning": "Thành phố thay đổi rất nhiều." },
+        { "stt": 6, "hanzi": "特别", "pinyin": "tèbié", "meaning": "đặc biệt", "exampleHanzi": "这个菜特别好吃。", "exampleMeaning": "Món ăn này đặc biệt ngon." },
+        { "stt": 7, "hanzi": "突然", "pinyin": "tūrán", "meaning": "đột nhiên", "exampleHanzi": "天空突然下雨了。", "exampleMeaning": "Trời bỗng nhiên đổ mưa." },
+        { "stt": 8, "hanzi": "像", "pinyin": "xiàng", "meaning": "giống", "exampleHanzi": "你长得像你妈妈。", "exampleMeaning": "Bạn trông giống mẹ của bạn." },
+        { "stt": 9, "hanzi": "刚才", "pinyin": "gāngcái", "meaning": "vừa nãy", "exampleHanzi": "我刚才在看书。", "exampleMeaning": "Vừa nãy tôi đang đọc sách." },
+        { "stt": 10, "hanzi": "奇怪", "pinyin": "qíguài", "meaning": "kỳ quái", "exampleHanzi": "这个现象很奇怪。", "exampleMeaning": "Hiện tượng này rất kỳ lạ." },
+        { "stt": 11, "hanzi": "起来", "pinyin": "qǐlái", "meaning": "đứng dậy", "exampleHanzi": "他从椅子上站起来。", "exampleMeaning": "Anh ấy từ trên ghế đứng dậy." },
+        { "stt": 12, "hanzi": "站", "pinyin": "zhàn", "meaning": "đứng", "exampleHanzi": "请站起来说话。", "exampleMeaning": "Mời đứng dậy nói chuyện." },
+        { "stt": 13, "hanzi": "以前", "pinyin": "yǐqián", "meaning": "trước kia", "exampleHanzi": "我以前住在这里。", "exampleMeaning": "Trước đây tôi sống ở đây." },
+        { "stt": 14, "hanzi": "环境", "pinyin": "huánjìng", "meaning": "môi trường", "exampleHanzi": "这里的环境很好。", "exampleMeaning": "Môi trường ở đây rất tốt." }
+      ]
+    },
+    {
+      "bai": 20,
+      "words": [
+        { "stt": 1, "hanzi": "被", "pinyin": "bèi", "meaning": "bị", "exampleHanzi": "他被车撞了。", "exampleMeaning": "Anh ta bị xe đâm rồi." },
+        { "stt": 2, "hanzi": "影响", "pinyin": "yǐngxiǎng", "meaning": "ảnh hưởng", "exampleHanzi": "他的行为影响了大家。", "exampleMeaning": "Hành vi của anh ấy ảnh hưởng đến mọi người." },
+        { "stt": 3, "hanzi": "生气", "pinyin": "shēngqì", "meaning": "tức giận", "exampleHanzi": "他很容易生气。", "exampleMeaning": "Anh ấy rất dễ nổi giận." },
+        { "stt": 4, "hanzi": "别人", "pinyin": "biérén", "meaning": "người khác", "exampleHanzi": "别人都知道了。", "exampleMeaning": "Người khác đều biết cả rồi." },
+        { "stt": 5, "hanzi": "难过", "pinyin": "nánguò", "meaning": "buồn bã", "exampleHanzi": "他觉得很难过。", "exampleMeaning": "Anh ấy cảm thấy rất buồn." },
+        { "stt": 6, "hanzi": "害怕", "pinyin": "hàipà", "meaning": "sợ hãi", "exampleHanzi": "我害怕黑暗。", "exampleMeaning": "Tôi sợ bóng tối." },
+        { "stt": 7, "hanzi": "总是", "pinyin": "zǒngshì", "meaning": "luôn luôn", "exampleHanzi": "他总是迟到。", "exampleMeaning": "Anh ấy luôn luôn đến muộn." },
+        { "stt": 8, "hanzi": "特别", "pinyin": "tèbié", "meaning": "đặc biệt", "exampleHanzi": "这个菜特别好吃。", "exampleMeaning": "Món ăn này đặc biệt ngon." },
+        { "stt": 9, "hanzi": "其实", "pinyin": "qíshí", "meaning": "thực ra", "exampleHanzi": "他其实不喜欢喝酒。", "exampleMeaning": "Thực ra anh ấy không thích uống rượu." },
+        { "stt": 10, "hanzi": "发现", "pinyin": "fāxiàn", "meaning": "phát hiện", "exampleHanzi": "我发现了一个新问题。", "exampleMeaning": "Tôi phát hiện ra một vấn đề mới." },
+        { "stt": 11, "hanzi": "解决", "pinyin": "jiějué", "meaning": "giải quyết", "exampleHanzi": "我们需要解决这个问题。", "exampleMeaning": "Chúng ta cần giải quyết vấn đề này." },
+        { "stt": 12, "hanzi": "检查", "pinyin": "jiǎnchá", "meaning": "kiểm tra", "exampleHanzi": "请检查一下。", "exampleMeaning": "Xin hãy kiểm tra một chút." },
+        { "stt": 13, "hanzi": "办法", "pinyin": "bànfǎ", "meaning": "cách thức", "exampleHanzi": "我有一个好办法。", "exampleMeaning": "Tôi có một cách hay." },
+        { "stt": 14, "hanzi": "关系", "pinyin": "guānxì", "meaning": "quan hệ", "exampleHanzi": "我们的关系很好。", "exampleMeaning": "Quan hệ của chúng tôi rất tốt." }
+      ]
+    },
+    {
+      "bai": 21,
+      "words": [
+        { "stt": 1, "hanzi": "船", "pinyin": "chuán", "meaning": "thuyền", "exampleHanzi": "我坐船去。", "exampleMeaning": "Tôi đi bằng thuyền." },
+        { "stt": 2, "hanzi": "自行车", "pinyin": "zìxíngchē", "meaning": "xe đạp", "exampleHanzi": "我骑自行车去上班。", "exampleMeaning": "Tôi đi làm bằng xe đạp." },
+        { "stt": 3, "hanzi": "骑", "pinyin": "qí", "meaning": "cưỡi, đi (xe đạp/ngựa)", "exampleHanzi": "我喜欢骑自行车。", "exampleMeaning": "Tôi thích đi xe đạp." },
+        { "stt": 4, "hanzi": "司机", "pinyin": "sījī", "meaning": "tài xế", "exampleHanzi": "我的爸爸是司机。", "exampleMeaning": "Bố của tôi là tài xế." },
+        { "stt": 5, "hanzi": "经过", "pinyin": "jīngguò", "meaning": "đi qua", "exampleHanzi": "我们经过了那个地方。", "exampleMeaning": "Chúng tôi đã đi qua địa điểm đó." },
+        { "stt": 6, "hanzi": "地图", "pinyin": "dìtú", "meaning": "bản đồ", "exampleHanzi": "我需要一张地图。", "exampleMeaning": "Tôi cần một tấm bản đồ." },
+        { "stt": 7, "hanzi": "起飞", "pinyin": "qǐfēi", "meaning": "cất cánh", "exampleHanzi": "飞机马上要起飞了。", "exampleMeaning": "Máy bay sắp cất cánh rồi." },
+        { "stt": 8, "hanzi": "辆", "pinyin": "liàng", "meaning": "chiếc (xe)", "exampleHanzi": "我有一辆车。", "exampleMeaning": "Tôi có một chiếc xe." },
+        { "stt": 9, "hanzi": "慢", "pinyin": "màn", "meaning": "chậm", "exampleHanzi": "请骑慢一点。", "exampleMeaning": "Xin hãy đi chậm một chút." },
+        { "stt": 10, "hanzi": "小心", "pinyin": "xiǎoxīn", "meaning": "cẩn thận", "exampleHanzi": "过马路要小心。", "exampleMeaning": "Qua đường phải cẩn thận." },
+        { "stt": 11, "hanzi": "环境", "pinyin": "huánjìng", "meaning": "môi trường", "exampleHanzi": "这里的环境很好。", "exampleMeaning": "Môi trường ở đây rất tốt." },
+        { "stt": 12, "hanzi": "街道", "pinyin": "jiēdào", "meaning": "đường phố", "exampleHanzi": "街道很干净。", "exampleMeaning": "Đường phố rất sạch sẽ." },
+        { "stt": 13, "hanzi": "路", "pinyin": "lù", "meaning": "đường", "exampleHanzi": "这条路有100米长。", "exampleMeaning": "Con đường này dài 100 mét." },
+        { "stt": 14, "hanzi": "公里", "pinyin": "gōnglǐ", "meaning": "ki-lô-mét", "exampleHanzi": "这条路大约三公里。", "exampleMeaning": "Con đường này dài khoảng 3 km." }
+      ]
+    },
+    {
+      "bai": 22,
+      "words": [
+        { "stt": 1, "hanzi": "春", "pinyin": "chūn", "meaning": "mùa xuân", "exampleHanzi": "春天来了。", "exampleMeaning": "Mùa xuân đến rồi." },
+        { "stt": 2, "hanzi": "夏", "pinyin": "xià", "meaning": "mùa hè", "exampleHanzi": "夏天很热。", "exampleMeaning": "Mùa hè rất nóng." },
+        { "stt": 3, "hanzi": "秋", "pinyin": "qiū", "meaning": "mùa thu", "exampleHanzi": "秋天是收获的季节。", "exampleMeaning": "Mùa thu là mùa thu hoạch." },
+        { "stt": 4, "hanzi": "冬", "pinyin": "dōng", "meaning": "mùa đông", "exampleHanzi": "冬天很冷。", "exampleMeaning": "Mùa đông rất lạnh." },
+        { "stt": 5, "hanzi": "季节", "pinyin": "jìjié", "meaning": "mùa", "exampleHanzi": "春天是个美丽的季节。", "exampleMeaning": "Mùa xuân là một mùa đẹp đẽ." },
+        { "stt": 6, "hanzi": "刮风", "pinyin": "guāfēng", "meaning": "nổi gió", "exampleHanzi": "今天刮风了。", "exampleMeaning": "Hôm nay trời nổi gió rồi." },
+        { "stt": 7, "hanzi": "太阳", "pinyin": "tàiyáng", "meaning": "mặt trời", "exampleHanzi": "今天的太阳很大。", "exampleMeaning": "Hôm nay nắng to." },
+        { "stt": 8, "hanzi": "月亮", "pinyin": "yuèliàng", "meaning": "mặt trăng", "exampleHanzi": "今晚的月亮很美。", "exampleMeaning": "Trăng đêm nay rất đẹp." },
+        { "stt": 9, "hanzi": "阴", "pinyin": "yīn", "meaning": "âm (trời u ám)", "exampleHanzi": "今天是阴天。", "exampleMeaning": "Hôm nay trời u ám." },
+        { "stt": 10, "hanzi": "晴", "pinyin": "qíng", "meaning": "nắng", "exampleHanzi": "今天是晴天。", "exampleMeaning": "Hôm nay trời nắng." },
+        { "stt": 11, "hanzi": "下雨", "pinyin": "xiàyǔ", "meaning": "đổ mưa", "exampleHanzi": "下雨了请带伞。", "exampleMeaning": "Mưa rồi xin hãy mang ô." },
+        { "stt": 12, "hanzi": "伞", "pinyin": "sǎn", "meaning": "cái ô", "exampleHanzi": "下雨了请带伞。", "exampleMeaning": "Mưa rồi xin hãy mang ô." },
+        { "stt": 13, "hanzi": "云", "pinyin": "yún", "meaning": "mây", "exampleHanzi": "天上有很多云。", "exampleMeaning": "Trên trời có rất nhiều mây." },
+        { "stt": 14, "hanzi": "热", "pinyin": "rè", "meaning": "nóng", "exampleHanzi": "夏天很热。", "exampleMeaning": "Mùa hè rất nóng." }
+      ]
+    },
+    {
+      "bai": 23,
+      "words": [
+        { "stt": 1, "hanzi": "衬衫", "pinyin": "chènshān", "meaning": "áo sơ mi", "exampleHanzi": "我买了一件新衬衫。", "exampleMeaning": "Tôi đã mua một chiếc áo sơ mi mới." },
+        { "stt": 2, "hanzi": "裙子", "pinyin": "qúnzi", "meaning": "váy", "exampleHanzi": "她穿了一条红色的裙子。", "exampleMeaning": "Cô ấy mặc một chiếc váy màu đỏ." },
+        { "stt": 3, "hanzi": "裤子", "pinyin": "kùzi", "meaning": "quần", "exampleHanzi": "我买了一条新裤子。", "exampleMeaning": "Tôi đã mua một chiếc quần mới." },
+        { "stt": 4, "hanzi": "皮鞋", "pinyin": "píxié", "meaning": "giày da", "exampleHanzi": "我穿了一双新皮鞋。", "exampleMeaning": "Tôi đi một đôi giày da mới." },
+        { "stt": 5, "hanzi": "帽子", "pinyin": "màozi", "meaning": "mũ", "exampleHanzi": "我买了一个新帽子。", "exampleMeaning": "Tôi đã mua một cái mũ mới." },
+        { "stt": 6, "hanzi": "双", "pinyin": "shuāng", "meaning": "đôi", "exampleHanzi": "我买了一双鞋。", "exampleMeaning": "Tôi đã mua một đôi giày." },
+        { "stt": 7, "hanzi": "条", "pinyin": "tiáo", "meaning": "chiếc (lượng từ váy, quần)", "exampleHanzi": "这条裙子太短了。", "exampleMeaning": "Chiếc váy này ngắn quá rồi." },
+        { "stt": 8, "hanzi": "信用卡", "pinyin": "xìnyòngkǎ", "meaning": "thẻ tín dụng", "exampleHanzi": "我用信用卡付钱。", "exampleMeaning": "Tôi dùng thẻ tín dụng để trả tiền." },
+        { "stt": 9, "hanzi": "菜单", "pinyin": "càidān", "meaning": "thực đơn", "exampleHanzi": "请给我菜单。", "exampleMeaning": "Xin cho tôi thực đơn." },
+        { "stt": 10, "hanzi": "超市", "pinyin": "chāoshì", "meaning": "siêu thị", "exampleHanzi": "我去超市买东西。", "exampleMeaning": "Tôi đi siêu thị mua đồ." },
+        { "stt": 11, "hanzi": "银行", "pinyin": "yínháng", "meaning": "ngân hàng", "exampleHanzi": "我去银行取钱。", "exampleMeaning": "Tôi đi ngân hàng rút tiền." },
+        { "stt": 12, "hanzi": "元", "pinyin": "yuán", "meaning": "đồng (tiền)", "exampleHanzi": "这本书要50元。", "exampleMeaning": "Cuốn sách này giá 50 tệ." },
+        { "stt": 13, "hanzi": "便宜", "pinyin": "piányi", "meaning": "rẻ", "exampleHanzi": "这个比较便宜。", "exampleMeaning": "Cái này tương đối rẻ." },
+        { "stt": 14, "hanzi": "换", "pinyin": "huàn", "meaning": "đổi", "exampleHanzi": "我想换一件衣服。", "exampleMeaning": "Tôi muốn đổi một bộ quần áo." }
+      ]
+    },
+    {
+      "bai": 24,
+      "words": [
+        { "stt": 1, "hanzi": "厨房", "pinyin": "chúfáng", "meaning": "nhà bếp", "exampleHanzi": "厨房里很干净。", "exampleMeaning": "Trong bếp rất sạch sẽ." },
+        { "stt": 2, "hanzi": "洗手间", "pinyin": "xǐshǒujiān", "meaning": "nhà vệ sinh", "exampleHanzi": "请问洗手间在哪里？", "exampleMeaning": "Cho hỏi nhà vệ sinh ở đâu?" },
+        { "stt": 3, "hanzi": "楼", "pinyin": "lóu", "meaning": "tầng, tòa nhà", "exampleHanzi": "我住在五楼。", "exampleMeaning": "Tôi sống ở tầng 5." },
+        { "stt": 4, "hanzi": "层", "pinyin": "céng", "meaning": "tầng", "exampleHanzi": "我住在三层。", "exampleMeaning": "Tôi ở tầng 3." },
+        { "stt": 5, "hanzi": "电梯", "pinyin": "diàntī", "meaning": "thang máy", "exampleHanzi": "我们坐电梯上楼。", "exampleMeaning": "Chúng ta đi thang máy lên lầu." },
+        { "stt": 6, "hanzi": "灯", "pinyin": "dēng", "meaning": "đèn", "exampleHanzi": "请把灯打开。", "exampleMeaning": "Hãy bật đèn lên." },
+        { "stt": 7, "hanzi": "冰箱", "pinyin": "bīngxiāng", "meaning": "tủ lạnh", "exampleHanzi": "冰箱里有牛奶。", "exampleMeaning": "Trong tủ lạnh có sữa." },
+        { "stt": 8, "hanzi": "筷子", "pinyin": "kuàizi", "meaning": "đũa", "exampleHanzi": "我会用筷子。", "exampleMeaning": "Tôi biết dùng đũa." },
+        { "stt": 9, "hanzi": "盘子", "pinyin": "pánzi", "meaning": "cái đĩa", "exampleHanzi": "请把盘子洗干净。", "exampleMeaning": "Hãy rửa sạch đĩa đi." },
+        { "stt": 10, "hanzi": "瓶子", "pinyin": "píngzi", "meaning": "chai, lọ", "exampleHanzi": "桌子上有一个瓶子。", "exampleMeaning": "Trên bàn có một cái chai." },
+        { "stt": 11, "hanzi": "碗", "pinyin": "wǎn", "meaning": "cái bát", "exampleHanzi": "这个碗很漂亮。", "exampleMeaning": "Cái bát này rất đẹp." },
+        { "stt": 12, "hanzi": "刷子", "pinyin": "shuāzi", "meaning": "cái bàn chải", "exampleHanzi": "我用刷子洗鞋。", "exampleMeaning": "Tôi dùng bàn chải giặt giày." },
+        { "stt": 13, "hanzi": "干净", "pinyin": "gānjìng", "meaning": "sạch sẽ", "exampleHanzi": "房间很干净。", "exampleMeaning": "Căn phòng rất sạch sẽ." },
+        { "stt": 14, "hanzi": "打扫", "pinyin": "dǎsǎo", "meaning": "dọn dẹp", "exampleHanzi": "我们打扫了房间。", "exampleMeaning": "Chúng tôi đã dọn dẹp phòng." }
+      ]
+    },
+    {
+      "bai": 25,
+      "words": [
+        { "stt": 1, "hanzi": "熊猫", "pinyin": "xióngmāo", "meaning": "gấu trúc", "exampleHanzi": "熊猫是中国的国宝。", "exampleMeaning": "Gấu trúc là quốc bảo của Trung Quốc." },
+        { "stt": 2, "hanzi": "鸟", "pinyin": "niǎo", "meaning": "chim", "exampleHanzi": "树上有很多鸟。", "exampleMeaning": "Trên cây có rất nhiều chim." },
+        { "stt": 3, "hanzi": "动物", "pinyin": "dòngwù", "meaning": "động vật", "exampleHanzi": "我喜欢小动物。", "exampleMeaning": "Tôi thích động vật nhỏ." },
+        { "stt": 4, "hanzi": "草", "pinyin": "cǎo", "meaning": "cỏ", "exampleHanzi": "草地很绿。", "exampleMeaning": "Thảm cỏ rất xanh." },
+        { "stt": 5, "hanzi": "树", "pinyin": "shù", "meaning": "cây", "exampleHanzi": "树上有很多鸟。", "exampleMeaning": "Trên cây có rất nhiều chim." },
+        { "stt": 6, "hanzi": "花", "pinyin": "huā", "meaning": "hoa", "exampleHanzi": "花园里有很多花。", "exampleMeaning": "Trong vườn có rất nhiều hoa." },
+        { "stt": 7, "hanzi": "园", "pinyin": "yuán", "meaning": "vườn", "exampleHanzi": "花园里有很多花。", "exampleMeaning": "Trong vườn có rất nhiều hoa." },
+        { "stt": 8, "hanzi": "河", "pinyin": "hé", "meaning": "sông", "exampleHanzi": "黄河是中国的母亲河。", "exampleMeaning": "Hoàng Hà là con sông mẹ của Trung Quốc." },
+        { "stt": 9, "hanzi": "山", "pinyin": "shān", "meaning": "núi", "exampleHanzi": "我们周末去爬山。", "exampleMeaning": "Cuối tuần chúng tôi đi leo núi." },
+        { "stt": 10, "hanzi": "世界", "pinyin": "shìjiè", "meaning": "thế giới", "exampleHanzi": "我想环游世界。", "exampleMeaning": "Tôi muốn đi du lịch vòng quanh thế giới." },
+        { "stt": 11, "hanzi": "绿", "pinyin": "lǜ", "meaning": "xanh lá", "exampleHanzi": "草地很绿。", "exampleMeaning": "Thảm cỏ rất xanh." },
+        { "stt": 12, "hanzi": "黄", "pinyin": "huáng", "meaning": "vàng", "exampleHanzi": "黄河是中国的母亲河。", "exampleMeaning": "Hoàng Hà là con sông mẹ của Trung Quốc." },
+        { "stt": 13, "hanzi": "蓝", "pinyin": "lán", "meaning": "xanh da trời", "exampleHanzi": "天空很蓝。", "exampleMeaning": "Bầu trời rất xanh." },
+        { "stt": 14, "hanzi": "亮", "pinyin": "liàng", "meaning": "sáng", "exampleHanzi": "月亮很亮。", "exampleMeaning": "Trăng rất sáng." }
+      ]
+    },
+    {
+      "bai": 26,
+      "words": [
+        { "stt": 1, "hanzi": "鼻子", "pinyin": "bízi", "meaning": "mũi", "exampleHanzi": "我的鼻子很大。", "exampleMeaning": "Mũi của tôi rất to." },
+        { "stt": 2, "hanzi": "耳朵", "pinyin": "ěrduo", "meaning": "tai", "exampleHanzi": "他的耳朵很小。", "exampleMeaning": "Tai của anh ấy rất nhỏ." },
+        { "stt": 3, "hanzi": "头发", "pinyin": "tóufa", "meaning": "tóc", "exampleHanzi": "他的头发很长。", "exampleMeaning": "Tóc của anh ấy rất dài." },
+        { "stt": 4, "hanzi": "脚", "pinyin": "jiǎo", "meaning": "chân", "exampleHanzi": "我的脚很疼。", "exampleMeaning": "Chân của tôi rất đau." },
+        { "stt": 5, "hanzi": "脸", "pinyin": "liǎn", "meaning": "mặt", "exampleHanzi": "他的脸很漂亮。", "exampleMeaning": "Khuôn mặt anh ấy rất đẹp." },
+        { "stt": 6, "hanzi": "嘴", "pinyin": "zuǐ", "meaning": "miệng", "exampleHanzi": "他的嘴很大。", "exampleMeaning": "Miệng anh ấy rất to." },
+        { "stt": 7, "hanzi": "腿", "pinyin": "tuǐ", "meaning": "đùi / chân", "exampleHanzi": "我的腿很疼。", "exampleMeaning": "Chân của tôi rất đau." },
+        { "stt": 8, "hanzi": "牙", "pinyin": "yá", "meaning": "răng", "exampleHanzi": "每天早上我刷牙。", "exampleMeaning": "Mỗi sáng tôi đều đánh răng." },
+        { "stt": 9, "hanzi": "刷牙", "pinyin": "shuāyá", "meaning": "đánh răng", "exampleHanzi": "每天早上我刷牙。", "exampleMeaning": "Mỗi sáng tôi đều đánh răng." },
+        { "stt": 10, "hanzi": "疼", "pinyin": "téng", "meaning": "đau", "exampleHanzi": "我的头很疼。", "exampleMeaning": "Đầu của tôi rất đau." },
+        { "stt": 11, "hanzi": "检查", "pinyin": "jiǎnchá", "meaning": "kiểm tra", "exampleHanzi": "请检查一下。", "exampleMeaning": "Xin hãy kiểm tra một chút." },
+        { "stt": 12, "hanzi": "生病", "pinyin": "shēngbìng", "meaning": "bị ốm", "exampleHanzi": "他生病了。", "exampleMeaning": "Anh ấy bị ốm rồi." },
+        { "stt": 13, "hanzi": "药", "pinyin": "yào", "meaning": "thuốc", "exampleHanzi": "你吃药了吗？", "exampleMeaning": "Bạn uống thuốc chưa?" },
+        { "stt": 14, "hanzi": "健康", "pinyin": "jiànkāng", "meaning": "khỏe mạnh", "exampleHanzi": "他很健康。", "exampleMeaning": "Anh ấy rất khỏe mạnh." }
+      ]
+    },
+    {
+      "bai": 27,
+      "words": [
+        { "stt": 1, "hanzi": "蛋糕", "pinyin": "dàngāo", "meaning": "bánh gato", "exampleHanzi": "生日蛋糕很好吃。", "exampleMeaning": "Bánh sinh nhật rất ngon." },
+        { "stt": 2, "hanzi": "面包", "pinyin": "miànbāo", "meaning": "bánh mì", "exampleHanzi": "我喜欢吃面包。", "exampleMeaning": "Tôi thích ăn bánh mì." },
+        { "stt": 3, "hanzi": "啤酒", "pinyin": "píjiǔ", "meaning": "bia", "exampleHanzi": "我们一起喝啤酒。", "exampleMeaning": "Chúng ta cùng uống bia nhé." },
+        { "stt": 4, "hanzi": "水果", "pinyin": "shuǐguǒ", "meaning": "hoa quả", "exampleHanzi": "这些水果很新鲜。", "exampleMeaning": "Những hoa quả này rất tươi." },
+        { "stt": 5, "hanzi": "香蕉", "pinyin": "xiāngjiāo", "meaning": "quả chuối", "exampleHanzi": "我喜欢吃香蕉。", "exampleMeaning": "Tôi thích ăn chuối." },
+        { "stt": 6, "hanzi": "饮料", "pinyin": "yǐnliào", "meaning": "đồ uống", "exampleHanzi": "我喜欢喝饮料。", "exampleMeaning": "Tôi thích uống đồ uống." },
+        { "stt": 7, "hanzi": "牛奶", "pinyin": "niúnǎi", "meaning": "sữa", "exampleHanzi": "冰箱里有牛奶。", "exampleMeaning": "Trong tủ lạnh có sữa." },
+        { "stt": 8, "hanzi": "渴", "pinyin": "kě", "meaning": "khát", "exampleHanzi": "我渴了，想喝水。", "exampleMeaning": "Tôi khát rồi, muốn uống nước." },
+        { "stt": 9, "hanzi": "饱", "pinyin": "bǎo", "meaning": "no", "exampleHanzi": "我吃饱了。", "exampleMeaning": "Tôi ăn no rồi." },
+        { "stt": 10, "hanzi": "甜", "pinyin": "tián", "meaning": "ngọt", "exampleHanzi": "这个菜很甜。", "exampleMeaning": "Món ăn này rất ngọt." },
+        { "stt": 11, "hanzi": "新鲜", "pinyin": "xīnxiān", "meaning": "tươi", "exampleHanzi": "水果很新鲜。", "exampleMeaning": "Hoa quả rất tươi." },
+        { "stt": 12, "hanzi": "白菜", "pinyin": "báicài", "meaning": "cải thảo", "exampleHanzi": "种上一些白菜吧。", "exampleMeaning": "Trồng một ít cải thảo đi." },
+        { "stt": 13, "hanzi": "菜单", "pinyin": "càidān", "meaning": "thực đơn", "exampleHanzi": "请给我菜单。", "exampleMeaning": "Xin cho tôi thực đơn." }
+      ]
+    },
+    {
+      "bai": 28,
+      "words": [
+        { "stt": 1, "hanzi": "爱好", "pinyin": "àihào", "meaning": "sở thích", "exampleHanzi": "我的爱好是阅读。", "exampleMeaning": "Sở thích của tôi là đọc sách." },
+        { "stt": 2, "hanzi": "游戏", "pinyin": "yóuxì", "meaning": "trò chơi", "exampleHanzi": "我们一起玩游戏。", "exampleMeaning": "Chúng ta cùng chơi trò chơi đi." },
+        { "stt": 3, "hanzi": "聊天", "pinyin": "liáotiān", "meaning": "tán gẫu", "exampleHanzi": "我们喜欢聊天。", "exampleMeaning": "Chúng tôi thích tán gẫu." },
+        { "stt": 4, "hanzi": "体育", "pinyin": "tǐyù", "meaning": "thể thao", "exampleHanzi": "我喜欢看体育比赛。", "exampleMeaning": "Tôi thích xem thi đấu thể thao." },
+        { "stt": 5, "hanzi": "节目", "pinyin": "jiémù", "meaning": "chương trình", "exampleHanzi": "我喜欢这个节目。", "exampleMeaning": "Tôi thích chương trình này." },
+        { "stt": 6, "hanzi": "故事", "pinyin": "gùshi", "meaning": "câu chuyện", "exampleHanzi": "这个故事很有趣。", "exampleMeaning": "Câu chuyện này rất thú vị." },
+        { "stt": 7, "hanzi": "画", "pinyin": "huà", "meaning": "vẽ", "exampleHanzi": "他喜欢画画。", "exampleMeaning": "Anh ấy thích vẽ tranh." },
+        { "stt": 8, "hanzi": "音乐", "pinyin": "yīnyuè", "meaning": "âm nhạc", "exampleHanzi": "我喜欢听音乐。", "exampleMeaning": "Tôi thích nghe nhạc." },
+        { "stt": 9, "hanzi": "爬山", "pinyin": "páshān", "meaning": "leo núi", "exampleHanzi": "我们周末去爬山。", "exampleMeaning": "Cuối tuần chúng tôi đi leo núi." },
+        { "stt": 10, "hanzi": "锻炼", "pinyin": "duànliàn", "meaning": "luyện tập", "exampleHanzi": "我每天锻炼身体。", "exampleMeaning": "Tôi luyện tập thân thể mỗi ngày." },
+        { "stt": 11, "hanzi": "参加", "pinyin": "cānjiā", "meaning": "tham gia", "exampleHanzi": "我参加了比赛。", "exampleMeaning": "Tôi đã tham gia cuộc thi." },
+        { "stt": 12, "hanzi": "比赛", "pinyin": "bǐsài", "meaning": "cuộc thi", "exampleHanzi": "我参加了比赛。", "exampleMeaning": "Tôi đã tham gia cuộc thi." },
+        { "stt": 13, "hanzi": "感兴趣", "pinyin": "gǎnxìngqù", "meaning": "có hứng thú", "exampleHanzi": "我对这个很感兴趣。", "exampleMeaning": "Tôi rất hứng thú với cái này." },
+        { "stt": 14, "hanzi": "有名", "pinyin": "yǒumíng", "meaning": "nổi tiếng", "exampleHanzi": "这是一个有名的地方。", "exampleMeaning": "Đây là một địa điểm nổi tiếng." }
+      ]
+    },
+    {
+      "bai": 29,
+      "words": [
+        { "stt": 1, "hanzi": "奶奶", "pinyin": "nǎinai", "meaning": "bà nội", "exampleHanzi": "我爱我的奶奶。", "exampleMeaning": "Tôi yêu bà nội của tôi." },
+        { "stt": 2, "hanzi": "爷爷", "pinyin": "yéye", "meaning": "ông nội", "exampleHanzi": "我的爷爷很老了。", "exampleMeaning": "Ông nội của tôi đã rất già rồi." },
+        { "stt": 3, "hanzi": "叔叔", "pinyin": "shūshu", "meaning": "chú", "exampleHanzi": "我的叔叔很有趣。", "exampleMeaning": "Chú của tôi rất thú vị." },
+        { "stt": 4, "hanzi": "阿姨", "pinyin": "āyí", "meaning": "dì / cô", "exampleHanzi": "她是我的阿姨。", "exampleMeaning": "Cô ấy là dì của tôi." },
+        { "stt": 5, "hanzi": "邻居", "pinyin": "línjū", "meaning": "hàng xóm", "exampleHanzi": "我们的邻居很友好。", "exampleMeaning": "Hàng xóm của chúng tôi rất thân thiện." },
+        { "stt": 6, "hanzi": "同事", "pinyin": "tóngshì", "meaning": "đồng nghiệp", "exampleHanzi": "我和同事关系很好。", "exampleMeaning": "Tôi và đồng nghiệp quan hệ rất tốt." },
+        { "stt": 7, "hanzi": "别人", "pinyin": "biérén", "meaning": "người khác", "exampleHanzi": "别人都知道了。", "exampleMeaning": "Người khác đều biết cả rồi." },
+        { "stt": 8, "hanzi": "客人", "pinyin": "kèrén", "meaning": "khách", "exampleHanzi": "我们有客人来了。", "exampleMeaning": "Chúng tôi có khách đến rồi." },
+        { "stt": 9, "hanzi": "照顾", "pinyin": "zhàogù", "meaning": "chăm sóc", "exampleHanzi": "我会照顾你。", "exampleMeaning": "Tôi sẽ chăm sóc bạn." },
+        { "stt": 10, "hanzi": "关心", "pinyin": "guānxīn", "meaning": "quan tâm", "exampleHanzi": "他很关心我。", "exampleMeaning": "Anh ấy rất quan tâm tôi." },
+        { "stt": 11, "hanzi": "帮忙", "pinyin": "bāngmáng", "meaning": "giúp đỡ", "exampleHanzi": "请帮个忙。", "exampleMeaning": "Xin hãy giúp một tay." },
+        { "stt": 12, "hanzi": "相信", "pinyin": "xiāngxìn", "meaning": "tin tưởng", "exampleHanzi": "我相信你。", "exampleMeaning": "Tôi tin tưởng bạn." },
+        { "stt": 13, "hanzi": "关系", "pinyin": "guānxì", "meaning": "quan hệ", "exampleHanzi": "我们的关系很好。", "exampleMeaning": "Quan hệ của chúng tôi rất tốt." },
+        { "stt": 14, "hanzi": "友好", "pinyin": "yǒuhǎo", "meaning": "thân thiện", "exampleHanzi": "我们的邻居很友好。", "exampleMeaning": "Hàng xóm của chúng tôi rất thân thiện." }
+      ]
+    },
+    {
+      "bai": 30,
+      "words": [
+        { "stt": 1, "hanzi": "办公室", "pinyin": "bàngōngshì", "meaning": "văn phòng", "exampleHanzi": "他在办公室工作。", "exampleMeaning": "Anh ấy làm việc ở văn phòng." },
+        { "stt": 2, "hanzi": "经理", "pinyin": "jīnglǐ", "meaning": "giám đốc", "exampleHanzi": "他是公司的经理。", "exampleMeaning": "Anh ấy là giám đốc của công ty." },
+        { "stt": 3, "hanzi": "会议", "pinyin": "huìyì", "meaning": "hội nghị", "exampleHanzi": "今天有一个重要的会议。", "exampleMeaning": "Hôm nay có một cuộc họp quan trọng." },
+        { "stt": 4, "hanzi": "负责", "pinyin": "fùzé", "meaning": "phụ trách", "exampleHanzi": "他负责这个项目。", "exampleMeaning": "Anh ấy phụ trách dự án này." },
+        { "stt": 5, "hanzi": "同事", "pinyin": "tóngshì", "meaning": "đồng nghiệp", "exampleHanzi": "我和同事关系很好。", "exampleMeaning": "Tôi và đồng nghiệp quan hệ rất tốt." },
+        { "stt": 6, "hanzi": "办理", "pinyin": "bànlǐ", "meaning": "xử lý", "exampleHanzi": "我的出国手续已经办理好了。", "exampleMeaning": "Thủ tục xuất ngoại của tôi đã được xử lý xong rồi." },
+        { "stt": 7, "hanzi": "文件", "pinyin": "wénjiàn", "meaning": "tài liệu", "exampleHanzi": "请看这份文件。", "exampleMeaning": "Xin hãy xem tài liệu này." },
+        { "stt": 8, "hanzi": "要求", "pinyin": "yāoqiú", "meaning": "yêu cầu", "exampleHanzi": "老师要求我们完成作业。", "exampleMeaning": "Thầy giáo yêu cầu chúng tôi hoàn thành bài tập." },
+        { "stt": 9, "hanzi": "电子邮件", "pinyin": "diànzǐyóujiàn", "meaning": "email", "exampleHanzi": "请给我发电子邮件。", "exampleMeaning": "Xin hãy gửi email cho tôi." },
+        { "stt": 10, "hanzi": "笔记本", "pinyin": "bǐjìběn", "meaning": "vở / laptop", "exampleHanzi": "我有一个新笔记本。", "exampleMeaning": "Tôi có một cuốn vở/laptop mới." },
+        { "stt": 11, "hanzi": "信用卡", "pinyin": "xìnyòngkǎ", "meaning": "thẻ tín dụng", "exampleHanzi": "我用信用卡付钱。", "exampleMeaning": "Tôi dùng thẻ tín dụng để trả tiền." },
+        { "stt": 12, "hanzi": "安排", "pinyin": "ānpái", "meaning": "sắp xếp", "exampleHanzi": "他告诉我明天的活动安排。", "exampleMeaning": "Anh ấy nói cho tôi các hoạt động đã được sắp xếp trong ngày mai." },
+        { "stt": 13, "hanzi": "认真", "pinyin": "rènzhēn", "meaning": "nghiêm túc", "exampleHanzi": "他工作很认真。", "exampleMeaning": "Anh ấy làm việc rất nghiêm túc." },
+        { "stt": 14, "hanzi": "总结", "pinyin": "zǒngjié", "meaning": "tổng kết", "exampleHanzi": "我们要总结一下今年的成绩。", "exampleMeaning": "Chúng ta nên tổng kết lại thành tích của năm nay." }
+      ]
+    },
+    {
+      "bai": 31,
+      "words": [
+        { "stt": 1, "hanzi": "班级", "pinyin": "bānjí", "meaning": "lớp học", "exampleHanzi": "班级人数有些变动。", "exampleMeaning": "Sĩ số lớp có chút thay đổi." },
+        { "stt": 2, "hanzi": "练习", "pinyin": "liànxí", "meaning": "luyện tập", "exampleHanzi": "我每天练习汉字。", "exampleMeaning": "Mỗi ngày tôi đều luyện viết chữ Hán." },
+        { "stt": 3, "hanzi": "作业", "pinyin": "zuòyè", "meaning": "bài tập", "exampleHanzi": "我还没有做完作业。", "exampleMeaning": "Tôi vẫn chưa làm xong bài tập." },
+        { "stt": 4, "hanzi": "复习", "pinyin": "fùxí", "meaning": "ôn tập", "exampleHanzi": "我们要复习功课。", "exampleMeaning": "Chúng ta cần ôn tập bài vở." },
+        { "stt": 5, "hanzi": "提高", "pinyin": "tígāo", "meaning": "nâng cao", "exampleHanzi": "我想提高我的汉语水平。", "exampleMeaning": "Tôi muốn nâng cao trình độ tiếng Trung." },
+        { "stt": 6, "hanzi": "水平", "pinyin": "shuǐpíng", "meaning": "trình độ", "exampleHanzi": "他的中文水平很高。", "exampleMeaning": "Trình độ tiếng Trung của anh ấy rất cao." },
+        { "stt": 7, "hanzi": "成绩", "pinyin": "chéngjì", "meaning": "thành tích", "exampleHanzi": "我的成绩很好。", "exampleMeaning": "Thành tích của tôi rất tốt." },
+        { "stt": 8, "hanzi": "容易", "pinyin": "róngyì", "meaning": "dễ dàng", "exampleHanzi": "这个题目很容易。", "exampleMeaning": "Đề bài này rất dễ." },
+        { "stt": 9, "hanzi": "简单", "pinyin": "jiǎndān", "meaning": "đơn giản", "exampleHanzi": "这个题目很简单。", "exampleMeaning": "Đề bài này rất đơn giản." },
+        { "stt": 10, "hanzi": "努力", "pinyin": "nǔlì", "meaning": "nỗ lực", "exampleHanzi": "他学习很努力。", "exampleMeaning": "Anh ấy học tập rất nỗ lực." },
+        { "stt": 11, "hanzi": "懂", "pinyin": "dǒng", "meaning": "hiểu", "exampleHanzi": "你听懂了吗？", "exampleMeaning": "Bạn nghe hiểu chưa?" },
+        { "stt": 12, "hanzi": "讲", "pinyin": "jiǎng", "meaning": "giảng bài", "exampleHanzi": "老师讲得很清楚。", "exampleMeaning": "Thầy giáo giảng rất rõ ràng." },
+        { "stt": 13, "hanzi": "注意", "pinyin": "zhùyì", "meaning": "chú ý", "exampleHanzi": "请注意听讲。", "exampleMeaning": "Xin hãy chú ý nghe giảng." },
+        { "stt": 14, "hanzi": "文化", "pinyin": "wénhuà", "meaning": "văn hóa", "exampleHanzi": "我们要保护文化遗产。", "exampleMeaning": "Chúng ta phải bảo vệ di sản văn hóa." }
+      ]
+    },
+    {
+      "bai": 32,
+      "words": [
+        { "stt": 1, "hanzi": "生气", "pinyin": "shēngqì", "meaning": "tức giận", "exampleHanzi": "他很容易生气。", "exampleMeaning": "Anh ấy rất dễ nổi giận." },
+        { "stt": 2, "hanzi": "难过", "pinyin": "nánguò", "meaning": "buồn bã", "exampleHanzi": "他觉得很难过。", "exampleMeaning": "Anh ấy cảm thấy rất buồn." },
+        { "stt": 3, "hanzi": "害怕", "pinyin": "hàipà", "meaning": "sợ hãi", "exampleHanzi": "我害怕黑暗。", "exampleMeaning": "Tôi sợ bóng tối." },
+        { "stt": 4, "hanzi": "舒服", "pinyin": "shūfu", "meaning": "thoải mái", "exampleHanzi": "我感觉很舒服。", "exampleMeaning": "Tôi cảm thấy rất thoải mái." },
+        { "stt": 5, "hanzi": "放心", "pinyin": "fàngxīn", "meaning": "yên tâm", "exampleHanzi": "请放心，我会做好的。", "exampleMeaning": "Xin hãy yên tâm, tôi sẽ làm tốt." },
+        { "stt": 6, "hanzi": "满意", "pinyin": "mǎnyì", "meaning": "hài lòng", "exampleHanzi": "我对他很满意。", "exampleMeaning": "Tôi rất hài lòng về anh ấy." },
+        { "stt": 7, "hanzi": "奇怪", "pinyin": "qíguài", "meaning": "kỳ lạ", "exampleHanzi": "这个现象很奇怪。", "exampleMeaning": "Hiện tượng này rất kỳ lạ." },
+        { "stt": 8, "hanzi": "担心", "pinyin": "dānxīn", "meaning": "lo lắng", "exampleHanzi": "请不要担心。", "exampleMeaning": "Xin đừng lo lắng." },
+        { "stt": 9, "hanzi": "高兴", "pinyin": "gāoxìng", "meaning": "vui vẻ", "exampleHanzi": "他很高兴。", "exampleMeaning": "Anh ấy rất vui." },
+        { "stt": 10, "hanzi": "难看", "pinyin": "nánkàn", "meaning": "khó nhìn", "exampleHanzi": "这件衣服很难看。", "exampleMeaning": "Bộ quần áo này rất khó nhìn." },
+        { "stt": 11, "hanzi": "特别", "pinyin": "tèbié", "meaning": "đặc biệt", "exampleHanzi": "这个菜特别好吃。", "exampleMeaning": "Món ăn này đặc biệt ngon." },
+        { "stt": 12, "hanzi": "热情", "pinyin": "rèqíng", "meaning": "nhiệt tình", "exampleHanzi": "他对人很热情。", "exampleMeaning": "Anh ấy đối với người khác rất nhiệt tình." },
+        { "stt": 13, "hanzi": "认真", "pinyin": "rènzhēn", "meaning": "nghiêm túc", "exampleHanzi": "他工作很认真。", "exampleMeaning": "Anh ấy làm việc rất nghiêm túc." }
+      ]
+    },
+    {
+      "bai": 33,
+      "words": [
+        { "stt": 1, "hanzi": "爱心", "pinyin": "àixīn", "meaning": "tình yêu thương", "exampleHanzi": "这些孩子非常需要爱心和关心。", "exampleMeaning": "Những đứa trẻ này rất cần tình yêu thương và sự quan tâm." },
+        { "stt": 2, "hanzi": "安装", "pinyin": "ānzhuāng", "meaning": "lắp đặt", "exampleHanzi": "教室里又安装了几盏灯。", "exampleMeaning": "Trong phòng học lại được lắp mấy cái đèn." },
+        { "stt": 3, "hanzi": "按", "pinyin": "àn", "meaning": "theo", "exampleHanzi": "按学校的计划，明天期末考试。", "exampleMeaning": "Theo kế hoạch của nhà trường, ngày mai thi cuối kỳ." },
+        { "stt": 4, "hanzi": "按照", "pinyin": "ànzhào", "meaning": "dựa vào", "exampleHanzi": "我们要按照规定去做。", "exampleMeaning": "Chúng ta phải làm theo quy định." },
+        { "stt": 5, "hanzi": "把握", "pinyin": "bǎwò", "meaning": "nắm chắc", "exampleHanzi": "你要把握这个机会。", "exampleMeaning": "Bạn phải nắm chắc cơ hội này." },
+        { "stt": 6, "hanzi": "白", "pinyin": "bái", "meaning": "vô ích", "exampleHanzi": "我今天白来了。", "exampleMeaning": "Hôm nay tôi đến mất công vô ích." },
+        { "stt": 7, "hanzi": "板", "pinyin": "bǎn", "meaning": "tấm, phiến", "exampleHanzi": "哥哥用锯子把木板切割开了。", "exampleMeaning": "Anh trai dùng cái cưa để cắt miếng gỗ này." },
+        { "stt": 8, "hanzi": "保", "pinyin": "bǎo", "meaning": "bảo đảm", "exampleHanzi": "他们还修路以保交通。", "exampleMeaning": "Họ vẫn sửa đường để đảm bảo giao thông." },
+        { "stt": 9, "hanzi": "保安", "pinyin": "bǎo'ān", "meaning": "bảo vệ", "exampleHanzi": "他被保安赶走了。", "exampleMeaning": "Anh ta bị bảo vệ đuổi đi rồi." },
+        { "stt": 10, "hanzi": "保持", "pinyin": "bǎochí", "meaning": "duy trì", "exampleHanzi": "阅读室里大家应该保持安静。", "exampleMeaning": "Trong phòng đọc sách mọi người nên giữ trật tự." },
+        { "stt": 11, "hanzi": "保存", "pinyin": "bǎocún", "meaning": "bảo tồn", "exampleHanzi": "妈妈还保存着我小时候穿过的衣服。", "exampleMeaning": "Mẹ vẫn còn giữ lại quần áo hồi nhỏ của tôi." },
+        { "stt": 12, "hanzi": "保护", "pinyin": "bǎohù", "meaning": "bảo vệ", "exampleHanzi": "我们要保护好自己的眼睛。", "exampleMeaning": "Chúng ta phải bảo vệ mắt của mình." },
+        { "stt": 13, "hanzi": "保留", "pinyin": "bǎoliú", "meaning": "lưu giữ", "exampleHanzi": "我保留着她全部的信。", "exampleMeaning": "Tôi giữ lại tất cả những bức thư của cô ấy." },
+        { "stt": 14, "hanzi": "保险", "pinyin": "bǎoxiǎn", "meaning": "bảo hiểm", "exampleHanzi": "反正出了事可按保险索赔。", "exampleMeaning": "Dù sao thì có gặp chuyện cũng có bảo hiểm bồi thường." }
+      ]
+    },
+    {
+      "bai": 34,
+      "words": [
+        { "stt": 1, "hanzi": "保证", "pinyin": "bǎozhèng", "meaning": "bảo đảm", "exampleHanzi": "这件事我保证能做好。", "exampleMeaning": "Chuyện này tôi bảo đảm có thể làm được tốt." },
+        { "stt": 2, "hanzi": "报", "pinyin": "bào", "meaning": "báo", "exampleHanzi": "今天晚报有什么内容？", "exampleMeaning": "Nội dung của báo muộn hôm nay có gì?" },
+        { "stt": 3, "hanzi": "报到", "pinyin": "bàodào", "meaning": "báo danh", "exampleHanzi": "新学生今天开始报到。", "exampleMeaning": "Hôm nay học sinh mới đến báo danh." },
+        { "stt": 4, "hanzi": "报告", "pinyin": "bàogào", "meaning": "báo cáo", "exampleHanzi": "请准备一份报告。", "exampleMeaning": "Hãy chuẩn bị một bản báo cáo." },
+        { "stt": 5, "hanzi": "笔记本", "pinyin": "bǐjìběn", "meaning": "vở ghi chép", "exampleHanzi": "请记在笔记本上。", "exampleMeaning": "Hãy ghi vào trong vở." },
+        { "stt": 6, "hanzi": "变化", "pinyin": "biànhuà", "meaning": "thay đổi", "exampleHanzi": "这里的变化很大。", "exampleMeaning": "Thay đổi ở đây rất lớn." },
+        { "stt": 7, "hanzi": "表示", "pinyin": "biǎoshì", "meaning": "biểu thị", "exampleHanzi": "他向大家表示感谢。", "exampleMeaning": "Anh ấy bày tỏ lòng cảm ơn với mọi người." },
+        { "stt": 8, "hanzi": "别人", "pinyin": "biérén", "meaning": "người khác", "exampleHanzi": "别管别人。", "exampleMeaning": "Đừng quản người khác." },
+        { "stt": 9, "hanzi": "冰", "pinyin": "bīng", "meaning": "băng, đá", "exampleHanzi": "冰箱里有很多冰。", "exampleMeaning": "Trong tủ lạnh có rất nhiều đá." },
+        { "stt": 10, "hanzi": "比较", "pinyin": "bǐjiào", "meaning": "khá", "exampleHanzi": "这个比较好。", "exampleMeaning": "Cái này tốt hơn." },
+        { "stt": 11, "hanzi": "比赛", "pinyin": "bǐsài", "meaning": "cuộc thi", "exampleHanzi": "我参加了比赛。", "exampleMeaning": "Tôi đã tham gia cuộc thi." },
+        { "stt": 12, "hanzi": "必须", "pinyin": "bìxū", "meaning": "phải", "exampleHanzi": "你必须去。", "exampleMeaning": "Bạn phải đi." },
+        { "stt": 13, "hanzi": "笔记", "pinyin": "bǐjì", "meaning": "ghi chép", "exampleHanzi": "请认真做笔记。", "exampleMeaning": "Hãy nghiêm túc ghi chép." },
+        { "stt": 14, "hanzi": "补充", "pinyin": "bǔchōng", "meaning": "bổ sung", "exampleHanzi": "请补充一下。", "exampleMeaning": "Xin hãy bổ sung một chút." }
+      ]
+    },
+    {
+      "bai": 35,
+      "words": [
+        { "stt": 1, "hanzi": "差不多", "pinyin": "chàbuduō", "meaning": "xấp xỉ", "exampleHanzi": "差不多要迟到了。", "exampleMeaning": "Sắp sửa muộn rồi." },
+        { "stt": 2, "hanzi": "出现", "pinyin": "chūxiàn", "meaning": "xuất hiện", "exampleHanzi": "天上出现了一道彩虹。", "exampleMeaning": "Trên trời xuất hiện một cầu vồng." },
+        { "stt": 3, "hanzi": "衬衫", "pinyin": "chènshān", "meaning": "áo sơ mi", "exampleHanzi": "我买了一件衬衫。", "exampleMeaning": "Tôi mua một chiếc sơ mi." },
+        { "stt": 4, "hanzi": "超市", "pinyin": "chāoshì", "meaning": "siêu thị", "exampleHanzi": "我去超市买东西。", "exampleMeaning": "Tôi đi siêu thị mua đồ." },
+        { "stt": 5, "hanzi": "以前", "pinyin": "yǐqián", "meaning": "trước đây", "exampleHanzi": "我以前住在这里。", "exampleMeaning": "Tôi trước đây sống ở đây." },
+        { "stt": 6, "hanzi": "词语", "pinyin": "cíyǔ", "meaning": "từ ngữ", "exampleHanzi": "我学了很多新词语。", "exampleMeaning": "Tôi đã học rất nhiều từ ngữ mới." },
+        { "stt": 7, "hanzi": "聪明", "pinyin": "cōngmíng", "meaning": "thông minh", "exampleHanzi": "他很聪明。", "exampleMeaning": "Anh ấy rất thông minh." },
+        { "stt": 8, "hanzi": "打扫", "pinyin": "dǎsǎo", "meaning": "dọn dẹp", "exampleHanzi": "我们打扫了房间。", "exampleMeaning": "Chúng tôi đã dọn phòng." },
+        { "stt": 9, "hanzi": "蛋糕", "pinyin": "dàngāo", "meaning": "bánh ngọt", "exampleHanzi": "蛋糕很好吃。", "exampleMeaning": "Bánh rất ngon." },
+        { "stt": 10, "hanzi": "当然", "pinyin": "dāngrán", "meaning": "đương nhiên", "exampleHanzi": "你当然可以来。", "exampleMeaning": "Đương nhiên là bạn có thể tới." },
+        { "stt": 11, "hanzi": "担心", "pinyin": "dānxīn", "meaning": "lo lắng", "exampleHanzi": "请不要担心。", "exampleMeaning": "Xin đừng lo lắng." },
+        { "stt": 12, "hanzi": "地方", "pinyin": "dìfāng", "meaning": "địa điểm", "exampleHanzi": "我喜欢这个地方。", "exampleMeaning": "Tôi thích chỗ này." },
+        { "stt": 13, "hanzi": "电子邮件", "pinyin": "diànzǐyóujiàn", "meaning": "email", "exampleHanzi": "请给我发电子邮件。", "exampleMeaning": "Hãy gửi email cho tôi." },
+        { "stt": 14, "hanzi": "锻炼", "pinyin": "duànliàn", "meaning": "luyện tập", "exampleHanzi": "经常锻炼。", "exampleMeaning": "Thường xuyên luyện tập." }
+      ]
+    },
+    {
+      "bai": 36,
+      "words": [
+        { "stt": 1, "hanzi": "放心", "pinyin": "fàngxīn", "meaning": "yên tâm", "exampleHanzi": "请放心。", "exampleMeaning": "Xin hãy yên tâm." },
+        { "stt": 2, "hanzi": "方便", "pinyin": "fāngbiàn", "meaning": "thuận tiện", "exampleHanzi": "这里很方便。", "exampleMeaning": "Ở đây rất thuận tiện." },
+        { "stt": 3, "hanzi": "附近", "pinyin": "fùjìn", "meaning": "lân cận", "exampleHanzi": "我家附近有一个公园。", "exampleMeaning": "Gần nhà tôi có một công viên." },
+        { "stt": 4, "hanzi": "复习", "pinyin": "fùxí", "meaning": "ôn tập", "exampleHanzi": "复习功课。", "exampleMeaning": "Ôn tập bài vở." },
+        { "stt": 5, "hanzi": "干净", "pinyin": "gānjìng", "meaning": "sạch sẽ", "exampleHanzi": "房间很干净。", "exampleMeaning": "Căn phòng rất sạch sẽ." },
+        { "stt": 6, "hanzi": "刚才", "pinyin": "gāngcái", "meaning": "vừa nãy", "exampleHanzi": "我刚才在看书。", "exampleMeaning": "Tôi vừa nãy đang đọc sách." },
+        { "stt": 7, "hanzi": "根据", "pinyin": "gēnjù", "meaning": "căn cứ", "exampleHanzi": "根据规定，不能迟到。", "exampleMeaning": "Căn cứ quy định, không được đến muộn." },
+        { "stt": 8, "hanzi": "故事", "pinyin": "gùshi", "meaning": "câu chuyện", "exampleHanzi": "这个故事很有趣。", "exampleMeaning": "Câu chuyện này rất thú vị." },
+        { "stt": 9, "hanzi": "关系", "pinyin": "guānxì", "meaning": "quan hệ", "exampleHanzi": "关系很好。", "exampleMeaning": "Quan hệ rất tốt." },
+        { "stt": 10, "hanzi": "关心", "pinyin": "guānxīn", "meaning": "quan tâm", "exampleHanzi": "他很关心我。", "exampleMeaning": "Anh ấy rất quan tâm tôi." },
+        { "stt": 11, "hanzi": "关于", "pinyin": "guānyú", "meaning": "về (vấn đề)", "exampleHanzi": "关于这个问题。", "exampleMeaning": "Về vấn đề này." },
+        { "stt": 12, "hanzi": "过去", "pinyin": "guòqù", "meaning": "đã qua", "exampleHanzi": "过去的事情不要再提。", "exampleMeaning": "Chuyện đã qua đừng nhắc lại nữa." },
+        { "stt": 13, "hanzi": "刮风", "pinyin": "guāfēng", "meaning": "nổi gió", "exampleHanzi": "今天刮风了。", "exampleMeaning": "Hôm nay nổi gió rồi." },
+        { "stt": 14, "hanzi": "经过", "pinyin": "jīngguò", "meaning": "đi qua", "exampleHanzi": "经过了那家店。", "exampleMeaning": "Đi qua cửa hàng đó." }
+      ]
+    },
+    {
+      "bai": 37,
+      "words": [
+        { "stt": 1, "hanzi": "还是", "pinyin": "háishì", "meaning": "hay là", "exampleHanzi": "喝茶还是咖啡？", "exampleMeaning": "Uống trà hay cà phê?" },
+        { "stt": 2, "hanzi": "害怕", "pinyin": "hàipà", "meaning": "sợ", "exampleHanzi": "我害怕黑暗。", "exampleMeaning": "Tôi sợ bóng tối." },
+        { "stt": 3, "hanzi": "欢迎", "pinyin": "huānyíng", "meaning": "hoan nghênh", "exampleHanzi": "欢迎你们。", "exampleMeaning": "Hoan nghênh các bạn." },
+        { "stt": 4, "hanzi": "环境", "pinyin": "huánjìng", "meaning": "môi trường", "exampleHanzi": "环境很好。", "exampleMeaning": "Môi trường rất tốt." },
+        { "stt": 5, "hanzi": "回答", "pinyin": "huídá", "meaning": "trả lời", "exampleHanzi": "请回答。", "exampleMeaning": "Xin hãy trả lời." },
+        { "stt": 6, "hanzi": "记得", "pinyin": "jìde", "meaning": "nhớ", "exampleHanzi": "请记得带书。", "exampleMeaning": "Hãy nhớ mang theo sách." },
+        { "stt": 7, "hanzi": "季节", "pinyin": "jìjié", "meaning": "mùa", "exampleHanzi": "美丽的季节。", "exampleMeaning": "Mùa đẹp đẽ." },
+        { "stt": 8, "hanzi": "检查", "pinyin": "jiǎnchá", "meaning": "kiểm tra", "exampleHanzi": "请检查。", "exampleMeaning": "Xin hãy kiểm tra." },
+        { "stt": 9, "hanzi": "简单", "pinyin": "jiǎndān", "meaning": "đơn giản", "exampleHanzi": "题目很简单。", "exampleMeaning": "Đề bài rất đơn giản." },
+        { "stt": 10, "hanzi": "健康", "pinyin": "jiànkāng", "meaning": "khỏe mạnh", "exampleHanzi": "他很健康。", "exampleMeaning": "Anh ấy rất khỏe mạnh." },
+        { "stt": 11, "hanzi": "结婚", "pinyin": "jiéhūn", "meaning": "kết hôn", "exampleHanzi": "下个月结婚。", "exampleMeaning": "Tháng sau kết hôn." },
+        { "stt": 12, "hanzi": "节目", "pinyin": "jiémù", "meaning": "chương trình", "exampleHanzi": "喜欢的节目。", "exampleMeaning": "Chương trình yêu thích." },
+        { "stt": 13, "hanzi": "节日", "pinyin": "jiérì", "meaning": "ngày lễ", "exampleHanzi": "中秋节是重要的节日。", "exampleMeaning": "Tết Trung thu là ngày lễ quan trọng." },
+        { "stt": 14, "hanzi": "几乎", "pinyin": "jīhū", "meaning": "hầu như", "exampleHanzi": "几乎每天。", "exampleMeaning": "Hầu như mỗi ngày." }
+      ]
+    },
+    {
+      "bai": 38,
+      "words": [
+        { "stt": 1, "hanzi": "机会", "pinyin": "jīhuì", "meaning": "cơ hội", "exampleHanzi": "好的机会。", "exampleMeaning": "Cơ hội tốt." },
+        { "stt": 2, "hanzi": "解决", "pinyin": "jiějué", "meaning": "giải quyết", "exampleHanzi": "解决问题。", "exampleMeaning": "Giải quyết vấn đề." },
+        { "stt": 3, "hanzi": "经理", "pinyin": "jīnglǐ", "meaning": "giám đốc", "exampleHanzi": "公司的经理。", "exampleMeaning": "Giám đốc công ty." },
+        { "stt": 4, "hanzi": "句子", "pinyin": "jùzi", "meaning": "câu", "exampleHanzi": "造一个句子。", "exampleMeaning": "Đặt một câu." },
+        { "stt": 5, "hanzi": "决定", "pinyin": "juédìng", "meaning": "quyết định", "exampleHanzi": "我决定去旅游。", "exampleMeaning": "Tôi quyết định đi du lịch." },
+        { "stt": 6, "hanzi": "可爱", "pinyin": "kě'ài", "meaning": "đáng yêu", "exampleHanzi": "小猫很可爱。", "exampleMeaning": "Con mèo nhỏ rất đáng yêu." },
+        { "stt": 7, "hanzi": "客人", "pinyin": "kèrén", "meaning": "khách", "exampleHanzi": "我们有客人。", "exampleMeaning": "Chúng tôi có khách." },
+        { "stt": 8, "hanzi": "离", "pinyin": "lí", "meaning": "cách", "exampleHanzi": "离这儿很近。", "exampleMeaning": "Cách đây rất gần." },
+        { "stt": 9, "hanzi": "离开", "pinyin": "líkāi", "meaning": "rời khỏi", "exampleHanzi": "马上离开。", "exampleMeaning": "Rời đi ngay lập tức." },
+        { "stt": 10, "hanzi": "礼物", "pinyin": "lǐwù", "meaning": "quà tặng", "exampleHanzi": "送你一份礼物。", "exampleMeaning": "Tặng bạn một món quà." },
+        { "stt": 11, "hanzi": "历史", "pinyin": "lìshǐ", "meaning": "lịch sử", "exampleHanzi": "学习历史。", "exampleMeaning": "Học lịch sử." },
+        { "stt": 12, "hanzi": "练习", "pinyin": "liànxí", "meaning": "luyện tập", "exampleHanzi": "练习汉字。", "exampleMeaning": "Luyện tập chữ Hán." },
+        { "stt": 13, "hanzi": "了解", "pinyin": "liǎojiě", "meaning": "hiểu rõ", "exampleHanzi": "了解你的意思。", "exampleMeaning": "Hiểu rõ ý của bạn." },
+        { "stt": 14, "hanzi": "楼", "pinyin": "lóu", "meaning": "tầng", "exampleHanzi": "住在五楼。", "exampleMeaning": "Sống ở tầng 5." }
+      ]
+    },
+    {
+      "bai": 39,
+      "words": [
+        { "stt": 1, "hanzi": "满意", "pinyin": "mǎnyì", "meaning": "hài lòng", "exampleHanzi": "对你很满意。", "exampleMeaning": "Rất hài lòng về bạn." },
+        { "stt": 2, "hanzi": "马上", "pinyin": "mǎshàng", "meaning": "ngay lập tức", "exampleHanzi": "马上就来。", "exampleMeaning": "Đến ngay đây." },
+        { "stt": 3, "hanzi": "帽子", "pinyin": "màozi", "meaning": "mũ", "exampleHanzi": "买新帽子。", "exampleMeaning": "Mua mũ mới." },
+        { "stt": 4, "hanzi": "明白", "pinyin": "míngbai", "meaning": "hiểu", "exampleHanzi": "我明白了。", "exampleMeaning": "Tôi hiểu rồi." },
+        { "stt": 5, "hanzi": "难", "pinyin": "nán", "meaning": "khó", "exampleHanzi": "这个题很难。", "exampleMeaning": "Câu này rất khó." },
+        { "stt": 6, "hanzi": "难过", "pinyin": "nánguò", "meaning": "buồn", "exampleHanzi": "觉得很难过。", "exampleMeaning": "Cảm thấy rất buồn." },
+        { "stt": 7, "hanzi": "年级", "pinyin": "niánjí", "meaning": "năm học", "exampleHanzi": "三年级。", "exampleMeaning": "Năm thứ ba." },
+        { "stt": 8, "hanzi": "年轻", "pinyin": "niánqīng", "meaning": "trẻ trung", "exampleHanzi": "他很年轻。", "exampleMeaning": "Anh ấy rất trẻ." },
+        { "stt": 9, "hanzi": "努力", "pinyin": "nǔlì", "meaning": "nỗ lực", "exampleHanzi": "努力学习。", "exampleMeaning": "Nỗ lực học tập." },
+        { "stt": 10, "hanzi": "爬山", "pinyin": "páshān", "meaning": "leo núi", "exampleHanzi": "去爬山。", "exampleMeaning": "Đi leo núi." },
+        { "stt": 11, "hanzi": "胖", "pinyin": "pàng", "meaning": "béo", "exampleHanzi": "他胖了。", "exampleMeaning": "Anh ấy béo rồi." },
+        { "stt": 12, "hanzi": "啤酒", "pinyin": "píjiǔ", "meaning": "bia", "exampleHanzi": "喝啤酒。", "exampleMeaning": "Uống bia." },
+        { "stt": 13, "hanzi": "瓶子", "pinyin": "píngzi", "meaning": "chai lọ", "exampleHanzi": "一个瓶子。", "exampleMeaning": "Một cái chai." },
+        { "stt": 14, "hanzi": "盘子", "pinyin": "pánzi", "meaning": "cái đĩa", "exampleHanzi": "洗盘子。", "exampleMeaning": "Rửa đĩa." }
+      ]
+    },
+    {
+      "bai": 40,
+      "words": [
+        { "stt": 1, "hanzi": "其实", "pinyin": "qíshí", "meaning": "thực ra", "exampleHanzi": "其实我不忙。", "exampleMeaning": "Thực ra tôi không bận." },
+        { "stt": 2, "hanzi": "其他", "pinyin": "qítā", "meaning": "khác", "exampleHanzi": "其他人。", "exampleMeaning": "Những người khác." },
+        { "stt": 3, "hanzi": "奇怪", "pinyin": "qíguài", "meaning": "kỳ lạ", "exampleHanzi": "很奇怪。", "exampleMeaning": "Rất kỳ lạ." },
+        { "stt": 4, "hanzi": "骑", "pinyin": "qí", "meaning": "đi (xe)", "exampleHanzi": "骑自行车。", "exampleMeaning": "Đi xe đạp." },
+        { "stt": 5, "hanzi": "起飞", "pinyin": "qǐfēi", "meaning": "cất cánh", "exampleHanzi": "飞机起飞。", "exampleMeaning": "Máy bay cất cánh." },
+        { "stt": 6, "hanzi": "清楚", "pinyin": "qīngchu", "meaning": "rõ ràng", "exampleHanzi": "听清楚。", "exampleMeaning": "Nghe rõ ràng." },
+        { "stt": 7, "hanzi": "秋", "pinyin": "qiū", "meaning": "mùa thu", "exampleHanzi": "秋天来了。", "exampleMeaning": "Mùa thu đến rồi." },
+        { "stt": 8, "hanzi": "裙子", "pinyin": "qúnzi", "meaning": "váy", "exampleHanzi": "穿裙子。", "exampleMeaning": "Mặc váy." },
+        { "stt": 9, "hanzi": "然后", "pinyin": "ránhòu", "meaning": "sau đó", "exampleHanzi": "然后去吃饭。", "exampleMeaning": "Sau đó đi ăn cơm." },
+        { "stt": 10, "hanzi": "热情", "pinyin": "rèqíng", "meaning": "nhiệt tình", "exampleHanzi": "对人很热情。", "exampleMeaning": "Nhiệt tình với mọi người." },
+        { "stt": 11, "hanzi": "认为", "pinyin": "rènwéi", "meaning": "cho rằng", "exampleHanzi": "我认为很好。", "exampleMeaning": "Tôi cho rằng rất tốt." },
+        { "stt": 12, "hanzi": "认真", "pinyin": "rènzhēn", "meaning": "nghiêm túc", "exampleHanzi": "认真学习。", "exampleMeaning": "Học tập nghiêm túc." },
+        { "stt": 13, "hanzi": "容易", "pinyin": "róngyì", "meaning": "dễ", "exampleHanzi": "容易完成。", "exampleMeaning": "Dễ dàng hoàn thành." },
+        { "stt": 14, "hanzi": "如果", "pinyin": "rúguǒ", "meaning": "nếu như", "exampleHanzi": "如果可以。", "exampleMeaning": "Nếu như có thể." }
+      ]
+    },
+    {
+      "bai": 41,
+      "words": [
+        { "stt": 1, "hanzi": "声音", "pinyin": "shēngyīn", "meaning": "âm thanh", "exampleHanzi": "声音好听。", "exampleMeaning": "Âm thanh dễ nghe." },
+        { "stt": 2, "hanzi": "世界", "pinyin": "shìjiè", "meaning": "thế giới", "exampleHanzi": "环游世界。", "exampleMeaning": "Đi quanh thế giới." },
+        { "stt": 3, "hanzi": "舒服", "pinyin": "shūfu", "meaning": "thoải mái", "exampleHanzi": "感觉舒服。", "exampleMeaning": "Cảm thấy thoải mái." },
+        { "stt": 4, "hanzi": "水平", "pinyin": "shuǐpíng", "meaning": "trình độ", "exampleHanzi": "汉语水平。", "exampleMeaning": "Trình độ tiếng Hán." },
+        { "stt": 5, "hanzi": "司机", "pinyin": "sījī", "meaning": "tài xế", "exampleHanzi": "他是司机。", "exampleMeaning": "Anh ấy là tài xế." },
+        { "stt": 6, "hanzi": "太阳", "pinyin": "tàiyáng", "meaning": "mặt trời", "exampleHanzi": "太阳很大。", "exampleMeaning": "Nắng to." },
+        { "stt": 7, "hanzi": "特别", "pinyin": "tèbié", "meaning": "đặc biệt", "exampleHanzi": "特别好吃。", "exampleMeaning": "Đặc biệt ngon." },
+        { "stt": 8, "hanzi": "疼", "pinyin": "téng", "meaning": "đau", "exampleHanzi": "头很疼。", "exampleMeaning": "Đầu rất đau." },
+        { "stt": 9, "hanzi": "提高", "pinyin": "tígāo", "meaning": "nâng cao", "exampleHanzi": "提高水平。", "exampleMeaning": "Nâng cao trình độ." },
+        { "stt": 10, "hanzi": "体育", "pinyin": "tǐyù", "meaning": "thể thao", "exampleHanzi": "体育比赛。", "exampleMeaning": "Thi đấu thể thao." },
+        { "stt": 11, "hanzi": "同意", "pinyin": "tóngyì", "meaning": "đồng ý", "exampleHanzi": "我不同意。", "exampleMeaning": "Tôi không đồng ý." },
+        { "stt": 12, "hanzi": "突然", "pinyin": "tūrán", "meaning": "đột nhiên", "exampleHanzi": "突然下雨。", "exampleMeaning": "Đột nhiên mưa." },
+        { "stt": 13, "hanzi": "图书馆", "pinyin": "túshūguǎn", "meaning": "thư viện", "exampleHanzi": "去图书馆。", "exampleMeaning": "Đi thư viện." },
+        { "stt": 14, "hanzi": "完成", "pinyin": "wánchéng", "meaning": "hoàn thành", "exampleHanzi": "完成作业。", "exampleMeaning": "Hoàn thành bài tập." }
+      ]
+    },
+    {
+      "bai": 42,
+      "words": [
+        { "stt": 1, "hanzi": "相信", "pinyin": "xiāngxìn", "meaning": "tin tưởng", "exampleHanzi": "相信我。", "exampleMeaning": "Hãy tin tôi." },
+        { "stt": 2, "hanzi": "小心", "pinyin": "xiǎoxīn", "meaning": "cẩn thận", "exampleHanzi": "小心一点。", "exampleMeaning": "Cẩn thận một chút." },
+        { "stt": 3, "hanzi": "新鲜", "pinyin": "xīnxiān", "meaning": "tươi", "exampleHanzi": "水果新鲜。", "exampleMeaning": "Hoa quả tươi." },
+        { "stt": 4, "hanzi": "信用卡", "pinyin": "xìnyòngkǎ", "meaning": "thẻ tín dụng", "exampleHanzi": "刷信用卡。", "exampleMeaning": "Quẹt thẻ tín dụng." },
+        { "stt": 5, "hanzi": "行李箱", "pinyin": "xínglǐxiāng", "meaning": "vali", "exampleHanzi": "新行李箱。", "exampleMeaning": "Vali mới." },
+        { "stt": 6, "hanzi": "熊猫", "pinyin": "xióngmāo", "meaning": "gấu trúc", "exampleHanzi": "国宝熊猫。", "exampleMeaning": "Quốc bảo gấu trúc." },
+        { "stt": 7, "hanzi": "需要", "pinyin": "xūyào", "meaning": "cần", "exampleHanzi": "我需要帮助。", "exampleMeaning": "Tôi cần giúp đỡ." },
+        { "stt": 8, "hanzi": "选择", "pinyin": "xuǎnzé", "meaning": "lựa chọn", "exampleHanzi": "做出选择。", "exampleMeaning": "Đưa ra lựa chọn." },
+        { "stt": 9, "hanzi": "要求", "pinyin": "yāoqiú", "meaning": "yêu cầu", "exampleHanzi": "老师的要求。", "exampleMeaning": "Yêu cầu của thầy giáo." },
+        { "stt": 10, "hanzi": "一样", "pinyin": "yíyàng", "meaning": "giống nhau", "exampleHanzi": "不一样。", "exampleMeaning": "Không giống nhau." },
+        { "stt": 11, "hanzi": "一直", "pinyin": "yìzhí", "meaning": "luôn", "exampleHanzi": "一直学习。", "exampleMeaning": "Luôn luôn học tập." },
+        { "stt": 12, "hanzi": "影响", "pinyin": "yǐngxiǎng", "meaning": "ảnh hưởng", "exampleHanzi": "受到影响。", "exampleMeaning": "Chịu ảnh hưởng." },
+        { "stt": 13, "hanzi": "有名", "pinyin": "yǒumíng", "meaning": "nổi tiếng", "exampleHanzi": "非常有名。", "exampleMeaning": "Rất nổi tiếng." },
+        { "stt": 14, "hanzi": "终于", "pinyin": "zhōngyú", "meaning": "cuối cùng", "exampleHanzi": "终于到了。", "exampleMeaning": "Cuối cùng đã tới." }
+      ]
+    },
+    {
+      "bai": 43,
+      "words": [
+        { "stt": 1, "hanzi": "准", "pinyin": "zhǔn", "meaning": "chuẩn", "exampleHanzi": "这个词你发音不太准。", "exampleMeaning": "Bạn phát âm từ này chưa đúng lắm." },
+        { "stt": 2, "hanzi": "资格", "pinyin": "zīgé", "meaning": "tư cách", "exampleHanzi": "他们没有资格继续留在美国了。", "exampleMeaning": "Họ không còn tư cách tiếp tục ở lại Mỹ nữa." },
+        { "stt": 3, "hanzi": "资金", "pinyin": "zījīn", "meaning": "vốn", "exampleHanzi": "我们需要面对的是资金问题。", "exampleMeaning": "Vấn đề chúng ta phải đối mặt bây giờ là tiền vốn." },
+        { "stt": 4, "hanzi": "子女", "pinyin": "zǐnǚ", "meaning": "con cái", "exampleHanzi": "她总是把子女放在第一位。", "exampleMeaning": "Cô ấy luôn đặt con cái lên vị trí hàng đầu." },
+        { "stt": 5, "hanzi": "自从", "pinyin": "zìcóng", "meaning": "từ khi", "exampleHanzi": "自从来到中国以后，我每天都努力学习。", "exampleMeaning": "Từ khi đến Trung Quốc, mỗi ngày tôi đều nỗ lực học tập." },
+        { "stt": 6, "hanzi": "自动", "pinyin": "zìdòng", "meaning": "tự động", "exampleHanzi": "这些门都是自动开关的。", "exampleMeaning": "Mấy cánh cửa này đều có thể đóng mở tự động." },
+        { "stt": 7, "hanzi": "自觉", "pinyin": "zìjué", "meaning": "tự giác", "exampleHanzi": "我每天都自觉学习英语。", "exampleMeaning": "Mỗi ngày tôi đều tự giác học tiếng Anh." },
+        { "stt": 8, "hanzi": "自然", "pinyin": "zìrán", "meaning": "tự nhiên", "exampleHanzi": "他演得很自然。", "exampleMeaning": "Anh ấy diễn rất tự nhiên." },
+        { "stt": 9, "hanzi": "自身", "pinyin": "zìshēn", "meaning": "tự mình, bản thân", "exampleHanzi": "为了您自身的安全。", "exampleMeaning": "Vì sự an toàn của chính bản thân." },
+        { "stt": 10, "hanzi": "自主", "pinyin": "zìzhǔ", "meaning": "tự chủ", "exampleHanzi": "能够自主。", "exampleMeaning": "Đã có thể tự chủ." },
+        { "stt": 11, "hanzi": "足够", "pinyin": "zúgòu", "meaning": "đầy đủ", "exampleHanzi": "所有人都有足够的食物。", "exampleMeaning": "Tất cả mọi người đều có đầy đủ đồ ăn." },
+        { "stt": 12, "hanzi": "足球", "pinyin": "zúqiú", "meaning": "bóng đá", "exampleHanzi": "踢足球是我的喜好。", "exampleMeaning": "Đá bóng là sở thích của tôi." },
+        { "stt": 13, "hanzi": "组合", "pinyin": "zǔhé", "meaning": "tổ hợp", "exampleHanzi": "我们的组合最强。", "exampleMeaning": "Tổ hợp của chúng tôi rất mạnh." },
+        { "stt": 14, "hanzi": "作品", "pinyin": "zuòpǐn", "meaning": "tác phẩm", "exampleHanzi": "他的作品谁都知道。", "exampleMeaning": "Mọi người ai cũng biết đến tác phẩm của anh ấy." }
+      ]
+    }
+  ]
+}

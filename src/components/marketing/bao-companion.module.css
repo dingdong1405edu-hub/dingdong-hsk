@@ -1,6 +1,8 @@
-/* BaoCompanion — nút nổi (góc phải dưới) vừa là linh vật vừa là cửa mở chat Bao. */
+/* BaoCompanion — nút nổi nhỏ gọn (góc phải dưới) vừa là linh vật vừa là cửa mở chat Bao. */
 
 .btn {
+  --btn-size: 54px;
+  --bao-size: 40px;
   position: relative;
   display: block;
   padding: 0;
@@ -10,117 +12,101 @@
   -webkit-tap-highlight-color: transparent;
 }
 
-/* Bệ tròn mềm sau lưng Bao để trông như một nút bấm */
+/* Bệ tròn gọn, phẳng nhẹ — trông như một nút bấm sạch sẽ */
 .platform {
   position: relative;
   display: grid;
   place-items: end center;
-  width: calc(var(--bao-size, 66px) * 1.42);
-  height: calc(var(--bao-size, 66px) * 1.42);
+  width: var(--btn-size);
+  height: var(--btn-size);
   border-radius: 50%;
-  background: radial-gradient(circle at 50% 32%, #fff 0%, #fff3df 64%, #ffe6c2 100%);
-  box-shadow: 0 10px 24px rgba(180, 83, 9, 0.28), inset 0 0 0 2px rgba(255, 255, 255, 0.7);
-  transition: transform 0.18s ease, box-shadow 0.18s ease;
+  background: linear-gradient(160deg, #ffffff 0%, #fff5e6 100%);
+  box-shadow: 0 4px 14px rgba(180, 83, 9, 0.18), inset 0 0 0 1px rgba(180, 83, 9, 0.08);
+  transition: transform 0.16s ease, box-shadow 0.16s ease;
 }
-.btn:hover .platform { transform: translateY(-2px) scale(1.05); box-shadow: 0 14px 30px rgba(180, 83, 9, 0.34); }
-.btn:active .platform { transform: scale(0.96); }
+.btn:hover .platform { transform: translateY(-1px); box-shadow: 0 7px 18px rgba(180, 83, 9, 0.24); }
+.btn:active .platform { transform: scale(0.94); }
 
 :global(.dark) .platform {
-  background: radial-gradient(circle at 50% 32%, #3a3326 0%, #2b2519 70%, #221d12 100%);
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.5), inset 0 0 0 2px rgba(255, 255, 255, 0.08);
-}
-
-/* Vòng nhịp nhẹ thu hút sự chú ý (tắt khi reduce-motion) */
-.platform::before {
-  content: "";
-  position: absolute;
-  inset: -3px;
-  border-radius: 50%;
-  border: 2px solid rgba(245, 166, 35, 0.55);
-  opacity: 0;
-  animation: bcPulse 3.6s ease-out infinite;
-}
-
-@keyframes bcPulse {
-  0%   { opacity: 0.6; transform: scale(1); }
-  70%  { opacity: 0; transform: scale(1.28); }
-  100% { opacity: 0; transform: scale(1.28); }
+  background: linear-gradient(160deg, #33301f, #221d12);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.45), inset 0 0 0 1px rgba(255, 255, 255, 0.07);
 }
 
 /* Khung chứa BaoArt — remount mỗi reaction để hiệu ứng pop/shake chạy lại từ đầu */
 .holder {
-  width: var(--bao-size, 66px);
-  height: var(--bao-size, 66px);
-  margin-bottom: calc(var(--bao-size, 66px) * 0.06);
+  width: var(--bao-size);
+  height: var(--bao-size);
+  margin-bottom: calc(var(--bao-size) * 0.05);
 }
-.pop   { animation: bcPop 0.55s cubic-bezier(0.34, 1.56, 0.64, 1); }
-.shake { animation: bcShake 0.5s ease-in-out; }
+.pop   { animation: bcPop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1); }
+.shake { animation: bcShake 0.45s ease-in-out; }
 
 @keyframes bcPop {
   0%   { transform: scale(1); }
-  35%  { transform: scale(1.22) translateY(-8%); }
-  60%  { transform: scale(0.94); }
+  35%  { transform: scale(1.18) translateY(-8%); }
+  60%  { transform: scale(0.95); }
   100% { transform: scale(1); }
 }
 @keyframes bcShake {
   0%, 100% { transform: translateX(0) rotate(0); }
-  20% { transform: translateX(-10%) rotate(-5deg); }
-  40% { transform: translateX(9%) rotate(4deg); }
-  60% { transform: translateX(-7%) rotate(-3deg); }
-  80% { transform: translateX(5%) rotate(2deg); }
+  20% { transform: translateX(-9%) rotate(-4deg); }
+  40% { transform: translateX(8%) rotate(3deg); }
+  60% { transform: translateX(-6%) rotate(-2deg); }
+  80% { transform: translateX(4%) rotate(2deg); }
 }
 
-/* Chỉ báo "chat" nhỏ góc trên */
+/* Chỉ báo "chat" nhỏ góc dưới-phải để thấy rõ đây là nút trò chuyện */
 .badge {
   position: absolute;
-  top: calc(var(--bao-size, 66px) * 0.04);
-  right: calc(var(--bao-size, 66px) * 0.04);
-  width: calc(var(--bao-size, 66px) * 0.30);
-  height: calc(var(--bao-size, 66px) * 0.30);
+  bottom: -2px;
+  right: -2px;
+  width: 20px;
+  height: 20px;
   display: grid;
   place-items: center;
   border-radius: 50%;
-  background: #ef4444;
+  background: #dc2626;
   color: #fff;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25), 0 0 0 2px #fff;
 }
-.badge svg { width: 62%; height: 62%; }
+:global(.dark) .badge { box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4), 0 0 0 2px #1c1917; }
+.badge svg { width: 60%; height: 60%; }
 
-/* Bong bóng lời thoại */
+/* Bong bóng lời thoại (chỉ hiện khi có phản ứng) */
 .bubble {
   position: absolute;
   bottom: 100%;
-  right: calc(var(--bao-size, 66px) * 0.1);
-  margin-bottom: calc(var(--bao-size, 66px) * 0.12);
-  max-width: 14rem;
+  right: 4px;
+  margin-bottom: 8px;
+  max-width: 12rem;
   width: max-content;
-  padding: 0.4rem 0.7rem;
-  border-radius: 0.9rem;
+  padding: 0.35rem 0.6rem;
+  border-radius: 0.75rem;
   background: #fff;
   color: #2b3350;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   font-weight: 700;
   line-height: 1.25;
   text-align: center;
-  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.18);
-  animation: bcBubbleIn 0.26s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.16);
+  animation: bcBubbleIn 0.24s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 :global(.dark) .bubble { background: #2b2519; color: #ffe9c9; }
 .bubble::after {
   content: "";
   position: absolute;
   top: 100%;
-  right: calc(var(--bao-size, 66px) * 0.42);
-  border-left: 7px solid transparent;
-  border-right: 7px solid transparent;
-  border-top: 8px solid #fff;
+  right: 16px;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 7px solid #fff;
 }
 :global(.dark) .bubble::after { border-top-color: #2b2519; }
 @keyframes bcBubbleIn {
-  0%   { opacity: 0; transform: translateY(6px) scale(0.92); }
+  0%   { opacity: 0; transform: translateY(5px) scale(0.92); }
   100% { opacity: 1; transform: translateY(0) scale(1); }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .platform::before, .pop, .shake, .bubble { animation: none; }
+  .pop, .shake, .bubble { animation: none; }
 }

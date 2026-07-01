@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Users, FileDown } from "lucide-react";
-import { cn, coverChar, coverGradient, hskBadgeClass, hskLevelLabel } from "@/lib/utils";
+import { cn, coverGradient, hskBadgeClass, hskLevelLabel } from "@/lib/utils";
+import { BaoCover } from "@/components/learn/bao-cover";
 
 const TAG_DOTS = ["bg-emerald-500", "bg-amber-500", "bg-rose-500", "bg-sky-500", "bg-violet-500"];
 
@@ -22,7 +23,6 @@ interface TestCardProps {
 export function TestCard({ href, title, level, tags, attempts, score, meta, seed, imageUrl, pdfHref }: TestCardProps) {
   const s = seed ?? href;
   const grad = coverGradient(s);
-  const ch = coverChar(s);
 
   return (
     <div className="group relative block">
@@ -39,7 +39,7 @@ export function TestCard({ href, title, level, tags, attempts, score, meta, seed
       <Link href={href} className="block">
       <div className="h-full overflow-hidden rounded-2xl border border-border/60 bg-card shadow-soft transition-all duration-200 hover:-translate-y-1 hover:border-primary/30 hover:shadow-soft-lg">
         {/* Cover */}
-        <div className={cn("relative h-28 bg-gradient-to-br", grad)}>
+        <div className={cn("relative h-28 overflow-hidden", imageUrl && "bg-gradient-to-br", imageUrl && grad)}>
           {imageUrl ? (
             // Uploaded illustration. Plain <img> (not next/image) so any admin-entered
             // URL works without configuring remotePatterns.
@@ -51,9 +51,8 @@ export function TestCard({ href, title, level, tags, attempts, score, meta, seed
               className="absolute inset-0 h-full w-full object-cover transition-transform duration-200 group-hover:scale-105"
             />
           ) : (
-            <span className="pointer-events-none absolute inset-0 flex select-none items-center justify-center font-chinese text-7xl text-white/25">
-              {ch}
-            </span>
+            // Chưa có ảnh → hiện linh vật Bao cho đỡ trống (thay khung gradient + chữ).
+            <BaoCover className="absolute inset-0 transition-transform duration-200 group-hover:scale-105" />
           )}
           {typeof attempts === "number" && (
             <span className="absolute left-2 top-2 inline-flex items-center gap-1 rounded-full bg-black/40 px-2 py-0.5 text-[11px] font-medium text-white backdrop-blur">

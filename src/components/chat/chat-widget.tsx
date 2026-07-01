@@ -34,7 +34,7 @@ export function ChatWidget({ userName }: { userName?: string | null }) {
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0, opacity: 0 }}
             transition={{ type: "spring", stiffness: 400, damping: 25 }}
-            className="fixed bottom-5 right-5 z-40"
+            className="fixed bottom-4 right-4 z-30 sm:bottom-5 sm:right-5"
           >
             <BaoCompanion onOpen={() => setOpen(true)} />
           </motion.div>
@@ -51,7 +51,7 @@ export function ChatWidget({ userName }: { userName?: string | null }) {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 24, scale: 0.96 }}
             transition={{ type: "spring", stiffness: 360, damping: 30 }}
-            className="fixed inset-x-3 bottom-3 z-40 h-[72vh] max-h-[calc(100vh-1.5rem)] sm:inset-x-auto sm:bottom-5 sm:right-5 sm:h-[620px] sm:w-[384px]"
+            className="fixed inset-x-3 bottom-3 z-50 h-[70vh] max-h-[calc(100dvh-1.5rem)] sm:inset-x-auto sm:bottom-5 sm:right-5 sm:h-[600px] sm:w-[380px]"
           >
             <ChatPanel chat={chat} userName={userName} onClose={() => setOpen(false)} />
           </motion.div>

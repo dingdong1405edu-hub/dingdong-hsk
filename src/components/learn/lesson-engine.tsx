@@ -123,7 +123,7 @@ export function LessonEngine({
             initial={{ y: 100, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: 100, opacity: 0 }}
-            className={`fixed bottom-0 left-0 right-0 p-6 border-t ${
+            className={`fixed bottom-0 left-0 right-0 z-40 p-6 border-t ${
               feedback === "correct"
                 ? "bg-green-50 dark:bg-green-500/15 border-green-200 dark:border-green-500/25"
                 : "bg-red-50 dark:bg-red-500/15 border-red-200 dark:border-red-500/25"

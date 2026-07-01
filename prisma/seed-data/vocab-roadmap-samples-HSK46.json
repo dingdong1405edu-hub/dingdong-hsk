@@ -1,0 +1,1566 @@
+[
+  {
+    "level": "HSK1",
+    "order": 6,
+    "topic": "Thành viên gia đình",
+    "topicZh": "家人",
+    "words": [
+      {
+        "hanzi": "爸爸",
+        "meaning": "bố, ba",
+        "exampleHanzi": "我爸爸是老师。",
+        "exampleMeaning": "Bố tôi là giáo viên."
+      },
+      {
+        "hanzi": "妈妈",
+        "meaning": "mẹ, má",
+        "exampleHanzi": "我爱我的妈妈。",
+        "exampleMeaning": "Tôi yêu mẹ của tôi."
+      },
+      {
+        "hanzi": "儿子",
+        "meaning": "con trai",
+        "exampleHanzi": "他有一个儿子。",
+        "exampleMeaning": "Anh ấy có một người con trai."
+      },
+      {
+        "hanzi": "女儿",
+        "meaning": "con gái",
+        "exampleHanzi": "我女儿五岁了。",
+        "exampleMeaning": "Con gái tôi năm tuổi rồi."
+      },
+      {
+        "hanzi": "哥哥",
+        "meaning": "anh trai",
+        "exampleHanzi": "我哥哥很高。",
+        "exampleMeaning": "Anh trai tôi rất cao."
+      },
+      {
+        "hanzi": "姐姐",
+        "meaning": "chị gái",
+        "exampleHanzi": "我姐姐会做饭。",
+        "exampleMeaning": "Chị gái tôi biết nấu cơm."
+      },
+      {
+        "hanzi": "弟弟",
+        "meaning": "em trai",
+        "exampleHanzi": "我弟弟七岁。",
+        "exampleMeaning": "Em trai tôi bảy tuổi."
+      },
+      {
+        "hanzi": "妹妹",
+        "meaning": "em gái",
+        "exampleHanzi": "我有一个妹妹。",
+        "exampleMeaning": "Tôi có một em gái."
+      },
+      {
+        "hanzi": "家",
+        "meaning": "nhà, gia đình",
+        "exampleHanzi": "我的家很大。",
+        "exampleMeaning": "Nhà của tôi rất lớn."
+      },
+      {
+        "hanzi": "爱",
+        "meaning": "yêu, thương",
+        "exampleHanzi": "我爱我的家人。",
+        "exampleMeaning": "Tôi yêu người thân trong gia đình tôi."
+      }
+    ]
+  },
+  {
+    "level": "HSK4",
+    "order": 1,
+    "topic": "Phỏng vấn xin việc",
+    "topicZh": "求职面试",
+    "words": [
+      {
+        "hanzi": "应聘",
+        "meaning": "ứng tuyển, dự tuyển (vào vị trí)",
+        "exampleHanzi": "我打算下个月去那家公司应聘经理的职位。",
+        "exampleMeaning": "Tôi dự định tháng sau đến công ty đó ứng tuyển vị trí quản lý."
+      },
+      {
+        "hanzi": "面试",
+        "meaning": "phỏng vấn",
+        "exampleHanzi": "明天上午九点我要参加一个重要的面试。",
+        "exampleMeaning": "Chín giờ sáng mai tôi phải tham gia một buổi phỏng vấn quan trọng."
+      },
+      {
+        "hanzi": "简历",
+        "meaning": "sơ yếu lý lịch, CV",
+        "exampleHanzi": "投简历之前,你最好再仔细检查一遍。",
+        "exampleMeaning": "Trước khi nộp CV, tốt nhất bạn nên kiểm tra lại thật kỹ một lần nữa."
+      },
+      {
+        "hanzi": "招聘",
+        "meaning": "tuyển dụng, tuyển người",
+        "exampleHanzi": "这家公司正在招聘几名有经验的翻译。",
+        "exampleMeaning": "Công ty này đang tuyển dụng vài phiên dịch viên có kinh nghiệm."
+      },
+      {
+        "hanzi": "经验",
+        "meaning": "kinh nghiệm",
+        "exampleHanzi": "虽然我很年轻,但是我有三年的工作经验。",
+        "exampleMeaning": "Tuy tôi còn trẻ, nhưng tôi có ba năm kinh nghiệm làm việc."
+      },
+      {
+        "hanzi": "能力",
+        "meaning": "năng lực, khả năng",
+        "exampleHanzi": "这个岗位对语言表达能力的要求很高。",
+        "exampleMeaning": "Vị trí này yêu cầu rất cao về năng lực diễn đạt ngôn ngữ."
+      },
+      {
+        "hanzi": "专业",
+        "meaning": "chuyên ngành; chuyên nghiệp",
+        "exampleHanzi": "我大学学的专业跟这个工作正好合适。",
+        "exampleMeaning": "Chuyên ngành tôi học ở đại học vừa đúng phù hợp với công việc này."
+      },
+      {
+        "hanzi": "工资",
+        "meaning": "tiền lương",
+        "exampleHanzi": "面试的时候,他问我期望的工资是多少。",
+        "exampleMeaning": "Lúc phỏng vấn, ông ấy hỏi tôi mức lương mong muốn là bao nhiêu."
+      },
+      {
+        "hanzi": "优点",
+        "meaning": "ưu điểm, điểm mạnh",
+        "exampleHanzi": "请你简单介绍一下自己的优点和缺点。",
+        "exampleMeaning": "Xin bạn giới thiệu ngắn gọn về ưu điểm và khuyết điểm của bản thân."
+      },
+      {
+        "hanzi": "信心",
+        "meaning": "sự tự tin, niềm tin",
+        "exampleHanzi": "我对通过这次面试很有信心。",
+        "exampleMeaning": "Tôi rất tự tin vào việc vượt qua buổi phỏng vấn lần này."
+      }
+    ]
+  },
+  {
+    "level": "HSK4",
+    "order": 2,
+    "topic": "Môi trường công sở",
+    "topicZh": "职场",
+    "words": [
+      {
+        "hanzi": "招聘",
+        "meaning": "tuyển dụng",
+        "exampleHanzi": "这家公司正在招聘几名有经验的销售人员。",
+        "exampleMeaning": "Công ty này đang tuyển dụng vài nhân viên bán hàng có kinh nghiệm."
+      },
+      {
+        "hanzi": "应聘",
+        "meaning": "ứng tuyển, nộp đơn xin việc",
+        "exampleHanzi": "我打算应聘这个职位，希望能通过面试。",
+        "exampleMeaning": "Tôi định ứng tuyển vị trí này, hy vọng có thể vượt qua vòng phỏng vấn."
+      },
+      {
+        "hanzi": "面试",
+        "meaning": "phỏng vấn (xin việc)",
+        "exampleHanzi": "明天上午我要去参加一个重要的面试。",
+        "exampleMeaning": "Sáng mai tôi phải đi tham gia một buổi phỏng vấn quan trọng."
+      },
+      {
+        "hanzi": "简历",
+        "meaning": "sơ yếu lý lịch, CV",
+        "exampleHanzi": "请把你的简历发到我的邮箱里。",
+        "exampleMeaning": "Vui lòng gửi sơ yếu lý lịch của bạn vào email của tôi."
+      },
+      {
+        "hanzi": "加班",
+        "meaning": "tăng ca, làm thêm giờ",
+        "exampleHanzi": "为了完成这个项目，我们这周经常加班。",
+        "exampleMeaning": "Để hoàn thành dự án này, tuần này chúng tôi thường xuyên tăng ca."
+      },
+      {
+        "hanzi": "工资",
+        "meaning": "tiền lương",
+        "exampleHanzi": "这份工作的工资比我原来的高很多。",
+        "exampleMeaning": "Mức lương của công việc này cao hơn công việc cũ của tôi rất nhiều."
+      },
+      {
+        "hanzi": "同事",
+        "meaning": "đồng nghiệp",
+        "exampleHanzi": "我和同事们的关系一直都很好。",
+        "exampleMeaning": "Quan hệ giữa tôi và các đồng nghiệp luôn rất tốt."
+      },
+      {
+        "hanzi": "任务",
+        "meaning": "nhiệm vụ",
+        "exampleHanzi": "经理给我安排了一个很难完成的任务。",
+        "exampleMeaning": "Giám đốc đã giao cho tôi một nhiệm vụ rất khó hoàn thành."
+      },
+      {
+        "hanzi": "会议",
+        "meaning": "cuộc họp, hội nghị",
+        "exampleHanzi": "下午三点我们要开一个部门会议。",
+        "exampleMeaning": "Ba giờ chiều chúng tôi phải tổ chức một cuộc họp của phòng ban."
+      },
+      {
+        "hanzi": "负责",
+        "meaning": "phụ trách, chịu trách nhiệm",
+        "exampleHanzi": "这个部分由我来负责，你不用担心。",
+        "exampleMeaning": "Phần này do tôi phụ trách, bạn không cần lo lắng."
+      }
+    ]
+  },
+  {
+    "level": "HSK4",
+    "order": 3,
+    "topic": "Kỹ năng & Năng lực",
+    "topicZh": "技能",
+    "words": [
+      {
+        "hanzi": "能力",
+        "meaning": "năng lực, khả năng",
+        "exampleHanzi": "她的工作能力很强，大家都很信任她。",
+        "exampleMeaning": "Năng lực làm việc của cô ấy rất mạnh, mọi người đều rất tin tưởng cô ấy."
+      },
+      {
+        "hanzi": "技术",
+        "meaning": "kỹ thuật, công nghệ",
+        "exampleHanzi": "这位师傅的修车技术非常好。",
+        "exampleMeaning": "Kỹ thuật sửa xe của người thợ này rất giỏi."
+      },
+      {
+        "hanzi": "经验",
+        "meaning": "kinh nghiệm",
+        "exampleHanzi": "做这个工作需要一些经验。",
+        "exampleMeaning": "Làm công việc này cần một chút kinh nghiệm."
+      },
+      {
+        "hanzi": "专业",
+        "meaning": "chuyên ngành; chuyên nghiệp",
+        "exampleHanzi": "他在这个专业领域很有研究。",
+        "exampleMeaning": "Anh ấy rất có nghiên cứu về lĩnh vực chuyên ngành này."
+      },
+      {
+        "hanzi": "熟悉",
+        "meaning": "quen thuộc, thông thạo",
+        "exampleHanzi": "我对这里的环境很熟悉。",
+        "exampleMeaning": "Tôi rất quen thuộc với môi trường ở đây."
+      },
+      {
+        "hanzi": "掌握",
+        "meaning": "nắm vững, làm chủ",
+        "exampleHanzi": "经过努力，他终于掌握了这门技术。",
+        "exampleMeaning": "Sau khi nỗ lực, cuối cùng anh ấy đã nắm vững kỹ thuật này."
+      },
+      {
+        "hanzi": "提高",
+        "meaning": "nâng cao, cải thiện",
+        "exampleHanzi": "多练习可以提高你的口语水平。",
+        "exampleMeaning": "Luyện tập nhiều có thể nâng cao trình độ khẩu ngữ của bạn."
+      },
+      {
+        "hanzi": "锻炼",
+        "meaning": "rèn luyện, tập luyện",
+        "exampleHanzi": "参加社会活动能锻炼一个人的能力。",
+        "exampleMeaning": "Tham gia các hoạt động xã hội có thể rèn luyện năng lực của một người."
+      },
+      {
+        "hanzi": "熟练",
+        "meaning": "thành thạo, thuần thục",
+        "exampleHanzi": "她能熟练地使用这个软件。",
+        "exampleMeaning": "Cô ấy có thể sử dụng phần mềm này một cách thành thạo."
+      },
+      {
+        "hanzi": "表演",
+        "meaning": "biểu diễn, trình diễn",
+        "exampleHanzi": "他的钢琴表演赢得了大家的掌声。",
+        "exampleMeaning": "Màn biểu diễn piano của anh ấy đã giành được tràng vỗ tay của mọi người."
+      }
+    ]
+  },
+  {
+    "level": "HSK4",
+    "order": 4,
+    "topic": "Quản lý thời gian",
+    "topicZh": "时间管理",
+    "words": [
+      {
+        "hanzi": "安排",
+        "meaning": "sắp xếp, bố trí",
+        "exampleHanzi": "我每天早上都会安排好当天的工作。",
+        "exampleMeaning": "Mỗi buổi sáng tôi đều sắp xếp tốt công việc của ngày hôm đó."
+      },
+      {
+        "hanzi": "计划",
+        "meaning": "kế hoạch; lên kế hoạch",
+        "exampleHanzi": "按照计划完成任务能让你更有效率。",
+        "exampleMeaning": "Hoàn thành nhiệm vụ theo kế hoạch sẽ giúp bạn hiệu quả hơn."
+      },
+      {
+        "hanzi": "效率",
+        "meaning": "hiệu suất, hiệu quả",
+        "exampleHanzi": "合理利用时间可以大大提高工作效率。",
+        "exampleMeaning": "Sử dụng thời gian hợp lý có thể nâng cao đáng kể hiệu suất làm việc."
+      },
+      {
+        "hanzi": "任务",
+        "meaning": "nhiệm vụ",
+        "exampleHanzi": "今天的任务比较多，我得抓紧时间完成。",
+        "exampleMeaning": "Nhiệm vụ hôm nay khá nhiều, tôi phải tranh thủ thời gian hoàn thành."
+      },
+      {
+        "hanzi": "及时",
+        "meaning": "kịp thời, đúng lúc",
+        "exampleHanzi": "遇到问题要及时解决，不要拖到最后。",
+        "exampleMeaning": "Gặp vấn đề phải giải quyết kịp thời, đừng kéo dài đến phút chót."
+      },
+      {
+        "hanzi": "推迟",
+        "meaning": "trì hoãn, hoãn lại",
+        "exampleHanzi": "因为下雨，会议只好推迟到明天下午。",
+        "exampleMeaning": "Vì trời mưa nên cuộc họp đành phải hoãn lại đến chiều mai."
+      },
+      {
+        "hanzi": "来得及",
+        "meaning": "còn kịp",
+        "exampleHanzi": "现在出发还来得及赶上八点的火车。",
+        "exampleMeaning": "Bây giờ xuất phát vẫn còn kịp bắt chuyến tàu lúc tám giờ."
+      },
+      {
+        "hanzi": "节约",
+        "meaning": "tiết kiệm",
+        "exampleHanzi": "提前做好准备可以节约很多时间。",
+        "exampleMeaning": "Chuẩn bị sẵn từ trước có thể tiết kiệm được rất nhiều thời gian."
+      },
+      {
+        "hanzi": "按时",
+        "meaning": "đúng giờ, đúng hạn",
+        "exampleHanzi": "他每天都能按时完成老师布置的作业。",
+        "exampleMeaning": "Cậu ấy ngày nào cũng hoàn thành đúng hạn bài tập thầy giao."
+      },
+      {
+        "hanzi": "重点",
+        "meaning": "trọng điểm, điểm quan trọng",
+        "exampleHanzi": "管理时间时，我们应该先把重点的事情做完。",
+        "exampleMeaning": "Khi quản lý thời gian, chúng ta nên làm xong những việc quan trọng trước."
+      }
+    ]
+  },
+  {
+    "level": "HSK4",
+    "order": 5,
+    "topic": "Truyền thông",
+    "topicZh": "媒体",
+    "words": [
+      {
+        "hanzi": "媒体",
+        "meaning": "truyền thông, phương tiện truyền thông",
+        "exampleHanzi": "现在很多年轻人喜欢通过社交媒体了解新闻。",
+        "exampleMeaning": "Hiện nay nhiều người trẻ thích tìm hiểu tin tức qua mạng xã hội (truyền thông xã hội)."
+      },
+      {
+        "hanzi": "新闻",
+        "meaning": "tin tức, thời sự",
+        "exampleHanzi": "他每天晚上都会看新闻，了解国家发生的大事。",
+        "exampleMeaning": "Mỗi tối anh ấy đều xem tin tức để nắm được những sự kiện lớn của đất nước."
+      },
+      {
+        "hanzi": "广告",
+        "meaning": "quảng cáo",
+        "exampleHanzi": "这个广告拍得很有意思，让人一下子就记住了这个牌子。",
+        "exampleMeaning": "Quảng cáo này được quay rất thú vị, khiến người ta nhớ ngay đến thương hiệu."
+      },
+      {
+        "hanzi": "记者",
+        "meaning": "phóng viên, nhà báo",
+        "exampleHanzi": "那位记者专门去现场采访了这次比赛的冠军。",
+        "exampleMeaning": "Vị phóng viên đó đã đến tận hiện trường phỏng vấn nhà vô địch của cuộc thi lần này."
+      },
+      {
+        "hanzi": "杂志",
+        "meaning": "tạp chí",
+        "exampleHanzi": "她在飞机上买了一本时尚杂志，一路上看得很开心。",
+        "exampleMeaning": "Cô ấy mua một cuốn tạp chí thời trang trên máy bay và đọc rất vui trong suốt chuyến đi."
+      },
+      {
+        "hanzi": "报道",
+        "meaning": "đưa tin, bài tường thuật",
+        "exampleHanzi": "各大电视台都对这件事进行了详细的报道。",
+        "exampleMeaning": "Các đài truyền hình lớn đều đưa tin chi tiết về sự việc này."
+      },
+      {
+        "hanzi": "网站",
+        "meaning": "trang web",
+        "exampleHanzi": "我常常上这个网站查最新的电影信息。",
+        "exampleMeaning": "Tôi thường vào trang web này để tra thông tin phim mới nhất."
+      },
+      {
+        "hanzi": "节目",
+        "meaning": "chương trình (truyền hình, phát thanh)",
+        "exampleHanzi": "这个电视节目很受欢迎，每周都有很多人观看。",
+        "exampleMeaning": "Chương trình truyền hình này rất được yêu thích, mỗi tuần đều có rất nhiều người xem."
+      },
+      {
+        "hanzi": "信息",
+        "meaning": "thông tin",
+        "exampleHanzi": "在网上看到的信息不一定都是真的，我们要学会判断。",
+        "exampleMeaning": "Thông tin thấy được trên mạng không nhất định đều đúng, chúng ta phải học cách phán đoán."
+      },
+      {
+        "hanzi": "观众",
+        "meaning": "khán giả",
+        "exampleHanzi": "这场演出吸引了成千上万的观众来到现场。",
+        "exampleMeaning": "Buổi biểu diễn này đã thu hút hàng vạn khán giả đến hiện trường."
+      }
+    ]
+  },
+  {
+    "level": "HSK4",
+    "order": 6,
+    "topic": "Văn hóa Trung Hoa",
+    "topicZh": "中国文化",
+    "words": [
+      {
+        "hanzi": "传统",
+        "meaning": "truyền thống",
+        "exampleHanzi": "春节是中国最重要的传统节日。",
+        "exampleMeaning": "Tết Nguyên đán là ngày lễ truyền thống quan trọng nhất của Trung Quốc."
+      },
+      {
+        "hanzi": "文化",
+        "meaning": "văn hóa",
+        "exampleHanzi": "我对中国的历史和文化很感兴趣。",
+        "exampleMeaning": "Tôi rất hứng thú với lịch sử và văn hóa của Trung Quốc."
+      },
+      {
+        "hanzi": "京剧",
+        "meaning": "kinh kịch (tuồng Bắc Kinh)",
+        "exampleHanzi": "很多外国人觉得京剧的音乐很特别。",
+        "exampleMeaning": "Nhiều người nước ngoài cảm thấy âm nhạc của kinh kịch rất đặc biệt."
+      },
+      {
+        "hanzi": "艺术",
+        "meaning": "nghệ thuật",
+        "exampleHanzi": "书法是一门很有名的中国艺术。",
+        "exampleMeaning": "Thư pháp là một môn nghệ thuật Trung Quốc rất nổi tiếng."
+      },
+      {
+        "hanzi": "历史",
+        "meaning": "lịch sử",
+        "exampleHanzi": "这座城市有很长的历史。",
+        "exampleMeaning": "Thành phố này có lịch sử rất lâu đời."
+      },
+      {
+        "hanzi": "民族",
+        "meaning": "dân tộc",
+        "exampleHanzi": "中国是一个有很多民族的国家。",
+        "exampleMeaning": "Trung Quốc là một quốc gia có rất nhiều dân tộc."
+      },
+      {
+        "hanzi": "京",
+        "meaning": "kinh đô, thủ đô",
+        "exampleHanzi": "北京的京字有首都的意思。",
+        "exampleMeaning": "Chữ 'kinh' trong Bắc Kinh có nghĩa là thủ đô."
+      },
+      {
+        "hanzi": "戏",
+        "meaning": "tuồng, kịch (hí kịch)",
+        "exampleHanzi": "爷爷最喜欢看中国的地方戏。",
+        "exampleMeaning": "Ông nội thích nhất là xem các loại tuồng địa phương của Trung Quốc."
+      },
+      {
+        "hanzi": "节",
+        "meaning": "ngày lễ, tết",
+        "exampleHanzi": "中秋节的时候，全家人一起吃月饼。",
+        "exampleMeaning": "Vào dịp Tết Trung thu, cả nhà cùng nhau ăn bánh trung thu."
+      },
+      {
+        "hanzi": "发展",
+        "meaning": "phát triển",
+        "exampleHanzi": "中国文化在几千年里不断地发展。",
+        "exampleMeaning": "Văn hóa Trung Quốc không ngừng phát triển trong suốt mấy nghìn năm."
+      }
+    ]
+  },
+  {
+    "level": "HSK4",
+    "order": 7,
+    "topic": "Phong tục",
+    "topicZh": "风俗",
+    "words": [
+      {
+        "hanzi": "风俗",
+        "meaning": "phong tục, tập quán",
+        "exampleHanzi": "每个国家都有自己的传统风俗。",
+        "exampleMeaning": "Mỗi quốc gia đều có phong tục truyền thống của riêng mình."
+      },
+      {
+        "hanzi": "传统",
+        "meaning": "truyền thống",
+        "exampleHanzi": "春节是中国最重要的传统节日。",
+        "exampleMeaning": "Tết Nguyên Đán là ngày lễ truyền thống quan trọng nhất của Trung Quốc."
+      },
+      {
+        "hanzi": "习惯",
+        "meaning": "thói quen, tập quán",
+        "exampleHanzi": "很多地方都有过年放鞭炮的习惯。",
+        "exampleMeaning": "Nhiều nơi đều có thói quen đốt pháo vào dịp năm mới."
+      },
+      {
+        "hanzi": "庆祝",
+        "meaning": "chúc mừng, ăn mừng",
+        "exampleHanzi": "人们用各种方式庆祝这个节日。",
+        "exampleMeaning": "Mọi người ăn mừng ngày lễ này bằng nhiều cách khác nhau."
+      },
+      {
+        "hanzi": "民族",
+        "meaning": "dân tộc",
+        "exampleHanzi": "中国有五十六个民族，每个民族的风俗都不一样。",
+        "exampleMeaning": "Trung Quốc có năm mươi sáu dân tộc, phong tục của mỗi dân tộc đều khác nhau."
+      },
+      {
+        "hanzi": "文化",
+        "meaning": "văn hóa",
+        "exampleHanzi": "了解一个国家的风俗能帮助我们理解它的文化。",
+        "exampleMeaning": "Hiểu phong tục của một quốc gia có thể giúp chúng ta hiểu văn hóa của nó."
+      },
+      {
+        "hanzi": "举行",
+        "meaning": "tổ chức, cử hành",
+        "exampleHanzi": "每年春节，这个村子都会举行热闹的活动。",
+        "exampleMeaning": "Mỗi năm vào dịp Tết, ngôi làng này đều tổ chức các hoạt động náo nhiệt."
+      },
+      {
+        "hanzi": "礼物",
+        "meaning": "quà tặng",
+        "exampleHanzi": "按照风俗，过年时长辈会给孩子送礼物。",
+        "exampleMeaning": "Theo phong tục, vào dịp năm mới người lớn sẽ tặng quà cho trẻ em."
+      },
+      {
+        "hanzi": "祝福",
+        "meaning": "chúc phúc, lời chúc",
+        "exampleHanzi": "春节的时候，大家互相说祝福的话。",
+        "exampleMeaning": "Vào dịp Tết, mọi người nói những lời chúc phúc với nhau."
+      },
+      {
+        "hanzi": "重视",
+        "meaning": "coi trọng, xem trọng",
+        "exampleHanzi": "中国人非常重视春节这样的传统节日。",
+        "exampleMeaning": "Người Trung Quốc rất coi trọng những ngày lễ truyền thống như Tết Nguyên Đán."
+      }
+    ]
+  },
+  {
+    "level": "HSK4",
+    "order": 8,
+    "topic": "Môi trường",
+    "topicZh": "环境",
+    "words": [
+      {
+        "hanzi": "污染",
+        "meaning": "ô nhiễm",
+        "exampleHanzi": "这条河的水污染得很严重，鱼都快没有了。",
+        "exampleMeaning": "Nước con sông này bị ô nhiễm rất nghiêm trọng, cá gần như không còn nữa."
+      },
+      {
+        "hanzi": "保护",
+        "meaning": "bảo vệ",
+        "exampleHanzi": "我们每个人都应该保护自然环境。",
+        "exampleMeaning": "Mỗi người chúng ta đều nên bảo vệ môi trường tự nhiên."
+      },
+      {
+        "hanzi": "环境",
+        "meaning": "môi trường",
+        "exampleHanzi": "这个城市的环境比以前干净多了。",
+        "exampleMeaning": "Môi trường của thành phố này sạch sẽ hơn trước rất nhiều."
+      },
+      {
+        "hanzi": "垃圾",
+        "meaning": "rác",
+        "exampleHanzi": "请把垃圾扔进旁边的垃圾桶里。",
+        "exampleMeaning": "Xin hãy vứt rác vào thùng rác bên cạnh."
+      },
+      {
+        "hanzi": "节约",
+        "meaning": "tiết kiệm",
+        "exampleHanzi": "为了保护环境，我们要节约用水和用电。",
+        "exampleMeaning": "Để bảo vệ môi trường, chúng ta cần tiết kiệm nước và điện."
+      },
+      {
+        "hanzi": "空气",
+        "meaning": "không khí",
+        "exampleHanzi": "山上的空气又新鲜又干净。",
+        "exampleMeaning": "Không khí trên núi vừa trong lành vừa sạch sẽ."
+      },
+      {
+        "hanzi": "森林",
+        "meaning": "rừng",
+        "exampleHanzi": "保护森林对地球的环境非常重要。",
+        "exampleMeaning": "Bảo vệ rừng rất quan trọng đối với môi trường của Trái Đất."
+      },
+      {
+        "hanzi": "自然",
+        "meaning": "tự nhiên; thiên nhiên",
+        "exampleHanzi": "周末我喜欢去郊外欣赏美丽的自然风景。",
+        "exampleMeaning": "Cuối tuần tôi thích đi ngoại ô ngắm cảnh thiên nhiên tươi đẹp."
+      },
+      {
+        "hanzi": "温度",
+        "meaning": "nhiệt độ",
+        "exampleHanzi": "最近全球的温度一年比一年高。",
+        "exampleMeaning": "Gần đây nhiệt độ toàn cầu năm này cao hơn năm kia."
+      },
+      {
+        "hanzi": "塑料袋",
+        "meaning": "túi ni lông",
+        "exampleHanzi": "买东西时最好别用塑料袋，这样能减少污染。",
+        "exampleMeaning": "Khi mua đồ tốt nhất đừng dùng túi ni lông, như vậy có thể giảm ô nhiễm."
+      }
+    ]
+  },
+  {
+    "level": "HSK4",
+    "order": 9,
+    "topic": "Bày tỏ quan điểm",
+    "topicZh": "表达观点",
+    "words": [
+      {
+        "hanzi": "观点",
+        "meaning": "quan điểm, cách nhìn",
+        "exampleHanzi": "关于这个问题，我们的观点不太一样。",
+        "exampleMeaning": "Về vấn đề này, quan điểm của chúng ta không giống nhau lắm."
+      },
+      {
+        "hanzi": "认为",
+        "meaning": "cho rằng, nhận định",
+        "exampleHanzi": "我认为这个办法比较适合我们。",
+        "exampleMeaning": "Tôi cho rằng cách này khá phù hợp với chúng ta."
+      },
+      {
+        "hanzi": "表示",
+        "meaning": "bày tỏ, thể hiện",
+        "exampleHanzi": "他表示同意大家的看法。",
+        "exampleMeaning": "Anh ấy bày tỏ đồng ý với ý kiến của mọi người."
+      },
+      {
+        "hanzi": "意见",
+        "meaning": "ý kiến",
+        "exampleHanzi": "如果你有别的意见，可以现在提出来。",
+        "exampleMeaning": "Nếu bạn có ý kiến khác, có thể nêu ra ngay bây giờ."
+      },
+      {
+        "hanzi": "看法",
+        "meaning": "cách nhìn nhận, quan điểm",
+        "exampleHanzi": "我想听听你对这件事的看法。",
+        "exampleMeaning": "Tôi muốn nghe cách nhìn của bạn về việc này."
+      },
+      {
+        "hanzi": "同意",
+        "meaning": "đồng ý",
+        "exampleHanzi": "大部分人都同意这个计划。",
+        "exampleMeaning": "Phần lớn mọi người đều đồng ý với kế hoạch này."
+      },
+      {
+        "hanzi": "反对",
+        "meaning": "phản đối",
+        "exampleHanzi": "没有人反对经理提出的新规定。",
+        "exampleMeaning": "Không có ai phản đối quy định mới mà giám đốc đưa ra."
+      },
+      {
+        "hanzi": "支持",
+        "meaning": "ủng hộ",
+        "exampleHanzi": "谢谢你一直支持我的决定。",
+        "exampleMeaning": "Cảm ơn bạn luôn ủng hộ quyết định của tôi."
+      },
+      {
+        "hanzi": "讨论",
+        "meaning": "thảo luận, bàn bạc",
+        "exampleHanzi": "我们开会讨论了这个方案好几个小时。",
+        "exampleMeaning": "Chúng tôi đã họp thảo luận về phương án này mấy tiếng đồng hồ."
+      },
+      {
+        "hanzi": "怀疑",
+        "meaning": "nghi ngờ, hoài nghi",
+        "exampleHanzi": "对于他说的话，我有点怀疑。",
+        "exampleMeaning": "Đối với những lời anh ấy nói, tôi có chút nghi ngờ."
+      }
+    ]
+  },
+  {
+    "level": "HSK4",
+    "order": 10,
+    "topic": "Đồng ý & Phản đối",
+    "topicZh": "赞成与反对",
+    "words": [
+      {
+        "hanzi": "同意",
+        "meaning": "đồng ý, tán thành",
+        "exampleHanzi": "大家都同意这个计划,所以我们可以开始了。",
+        "exampleMeaning": "Mọi người đều đồng ý với kế hoạch này, nên chúng ta có thể bắt đầu rồi."
+      },
+      {
+        "hanzi": "反对",
+        "meaning": "phản đối",
+        "exampleHanzi": "很多人反对这个决定,认为它不太公平。",
+        "exampleMeaning": "Rất nhiều người phản đối quyết định này, cho rằng nó không công bằng lắm."
+      },
+      {
+        "hanzi": "支持",
+        "meaning": "ủng hộ",
+        "exampleHanzi": "无论你做什么决定,我都会支持你。",
+        "exampleMeaning": "Bất kể bạn đưa ra quyết định gì, tôi đều sẽ ủng hộ bạn."
+      },
+      {
+        "hanzi": "意见",
+        "meaning": "ý kiến",
+        "exampleHanzi": "关于这个问题,你有什么不同的意见吗?",
+        "exampleMeaning": "Về vấn đề này, bạn có ý kiến nào khác không?"
+      },
+      {
+        "hanzi": "观点",
+        "meaning": "quan điểm",
+        "exampleHanzi": "我不太赞成他的观点,但我尊重他的想法。",
+        "exampleMeaning": "Tôi không tán thành lắm quan điểm của anh ấy, nhưng tôi tôn trọng suy nghĩ của anh ấy."
+      },
+      {
+        "hanzi": "赞成",
+        "meaning": "tán thành, ủng hộ",
+        "exampleHanzi": "对于老师的建议,大部分同学都表示赞成。",
+        "exampleMeaning": "Đối với đề nghị của thầy giáo, phần lớn học sinh đều bày tỏ sự tán thành."
+      },
+      {
+        "hanzi": "讨论",
+        "meaning": "thảo luận, bàn bạc",
+        "exampleHanzi": "我们讨论了很久,最后才作出这个决定。",
+        "exampleMeaning": "Chúng tôi đã thảo luận rất lâu, cuối cùng mới đưa ra quyết định này."
+      },
+      {
+        "hanzi": "接受",
+        "meaning": "chấp nhận, tiếp thu",
+        "exampleHanzi": "他很难接受别人对他的批评。",
+        "exampleMeaning": "Anh ấy rất khó chấp nhận sự phê bình của người khác đối với mình."
+      },
+      {
+        "hanzi": "拒绝",
+        "meaning": "từ chối",
+        "exampleHanzi": "我拒绝了他的请求,因为这样做不合适。",
+        "exampleMeaning": "Tôi đã từ chối yêu cầu của anh ấy, vì làm như vậy không thích hợp."
+      },
+      {
+        "hanzi": "怀疑",
+        "meaning": "nghi ngờ, hoài nghi",
+        "exampleHanzi": "我怀疑这个方法是不是真的有效。",
+        "exampleMeaning": "Tôi nghi ngờ liệu phương pháp này có thực sự hiệu quả hay không."
+      }
+    ]
+  },
+  {
+    "level": "HSK4",
+    "order": 11,
+    "topic": "Giải quyết vấn đề",
+    "topicZh": "解决问题",
+    "words": [
+      {
+        "hanzi": "解决",
+        "meaning": "giải quyết",
+        "exampleHanzi": "这个问题很难，我们一起想办法解决吧。",
+        "exampleMeaning": "Vấn đề này rất khó, chúng ta cùng nghĩ cách giải quyết nhé."
+      },
+      {
+        "hanzi": "问题",
+        "meaning": "vấn đề, câu hỏi",
+        "exampleHanzi": "如果你有什么问题，可以随时来问我。",
+        "exampleMeaning": "Nếu bạn có vấn đề gì, có thể đến hỏi tôi bất cứ lúc nào."
+      },
+      {
+        "hanzi": "办法",
+        "meaning": "cách, biện pháp",
+        "exampleHanzi": "遇到困难的时候，我们应该积极找办法。",
+        "exampleMeaning": "Khi gặp khó khăn, chúng ta nên tích cực tìm cách."
+      },
+      {
+        "hanzi": "困难",
+        "meaning": "khó khăn",
+        "exampleHanzi": "虽然工作有很多困难，但是他从来不放弃。",
+        "exampleMeaning": "Tuy công việc có nhiều khó khăn, nhưng anh ấy chưa bao giờ từ bỏ."
+      },
+      {
+        "hanzi": "商量",
+        "meaning": "bàn bạc, thương lượng",
+        "exampleHanzi": "这件事我们最好先商量一下再做决定。",
+        "exampleMeaning": "Việc này tốt nhất chúng ta nên bàn bạc rồi hãy quyết định."
+      },
+      {
+        "hanzi": "考虑",
+        "meaning": "cân nhắc, suy nghĩ",
+        "exampleHanzi": "在做决定之前，你要认真考虑各种情况。",
+        "exampleMeaning": "Trước khi đưa ra quyết định, bạn phải cân nhắc kỹ các tình huống."
+      },
+      {
+        "hanzi": "决定",
+        "meaning": "quyết định",
+        "exampleHanzi": "经理最后做出了一个非常正确的决定。",
+        "exampleMeaning": "Giám đốc cuối cùng đã đưa ra một quyết định rất đúng đắn."
+      },
+      {
+        "hanzi": "建议",
+        "meaning": "kiến nghị, đề nghị",
+        "exampleHanzi": "谢谢你的建议，这对我们解决问题很有帮助。",
+        "exampleMeaning": "Cảm ơn đề nghị của bạn, điều đó rất giúp ích cho việc giải quyết vấn đề của chúng ta."
+      },
+      {
+        "hanzi": "原因",
+        "meaning": "nguyên nhân",
+        "exampleHanzi": "我们必须先找到问题的原因，才能解决它。",
+        "exampleMeaning": "Chúng ta phải tìm ra nguyên nhân của vấn đề trước thì mới giải quyết được nó."
+      },
+      {
+        "hanzi": "重要",
+        "meaning": "quan trọng",
+        "exampleHanzi": "解决这个问题对整个公司来说非常重要。",
+        "exampleMeaning": "Việc giải quyết vấn đề này rất quan trọng đối với cả công ty."
+      }
+    ]
+  },
+  {
+    "level": "HSK4",
+    "order": 12,
+    "topic": "Tranh luận",
+    "topicZh": "辩论",
+    "words": [
+      {
+        "hanzi": "观点",
+        "meaning": "quan điểm, ý kiến",
+        "exampleHanzi": "在辩论中，每个人都应该清楚地表达自己的观点。",
+        "exampleMeaning": "Trong cuộc tranh luận, mỗi người đều nên trình bày rõ ràng quan điểm của mình."
+      },
+      {
+        "hanzi": "反对",
+        "meaning": "phản đối",
+        "exampleHanzi": "我反对他刚才提出的这个看法。",
+        "exampleMeaning": "Tôi phản đối cách nhìn mà anh ấy vừa nêu ra."
+      },
+      {
+        "hanzi": "支持",
+        "meaning": "ủng hộ",
+        "exampleHanzi": "大部分同学都支持我们这一方的意见。",
+        "exampleMeaning": "Phần lớn các bạn học đều ủng hộ ý kiến của bên chúng tôi."
+      },
+      {
+        "hanzi": "证明",
+        "meaning": "chứng minh",
+        "exampleHanzi": "他用很多例子来证明自己的观点是正确的。",
+        "exampleMeaning": "Anh ấy dùng nhiều ví dụ để chứng minh quan điểm của mình là đúng."
+      },
+      {
+        "hanzi": "怀疑",
+        "meaning": "nghi ngờ",
+        "exampleHanzi": "我怀疑这个数据是不是真的。",
+        "exampleMeaning": "Tôi nghi ngờ liệu số liệu này có thật hay không."
+      },
+      {
+        "hanzi": "说服",
+        "meaning": "thuyết phục",
+        "exampleHanzi": "他的理由很充分，成功地说服了对方。",
+        "exampleMeaning": "Lý lẽ của anh ấy rất đầy đủ, đã thuyết phục thành công đối phương."
+      },
+      {
+        "hanzi": "态度",
+        "meaning": "thái độ",
+        "exampleHanzi": "辩论的时候，我们应该保持冷静的态度。",
+        "exampleMeaning": "Khi tranh luận, chúng ta nên giữ thái độ bình tĩnh."
+      },
+      {
+        "hanzi": "理由",
+        "meaning": "lý do, lý lẽ",
+        "exampleHanzi": "请你说出反对这个计划的理由。",
+        "exampleMeaning": "Xin bạn nói ra lý do phản đối kế hoạch này."
+      },
+      {
+        "hanzi": "讨论",
+        "meaning": "thảo luận",
+        "exampleHanzi": "关于这个问题，我们讨论了整整一个小时。",
+        "exampleMeaning": "Về vấn đề này, chúng tôi đã thảo luận suốt cả một tiếng đồng hồ."
+      },
+      {
+        "hanzi": "结论",
+        "meaning": "kết luận",
+        "exampleHanzi": "经过激烈的辩论，大家终于得出了一个结论。",
+        "exampleMeaning": "Sau cuộc tranh luận gay gắt, mọi người cuối cùng đã đưa ra được một kết luận."
+      }
+    ]
+  },
+  {
+    "level": "HSK6",
+    "order": 1,
+    "topic": "Thành ngữ & Tục ngữ",
+    "topicZh": "成语与谚语",
+    "words": [
+      {
+        "hanzi": "根深蒂固",
+        "meaning": "ăn sâu bén rễ, khó lay chuyển (thành ngữ)",
+        "exampleHanzi": "这种重男轻女的观念在一些地区依然根深蒂固,很难在短期内改变。",
+        "exampleMeaning": "Quan niệm trọng nam khinh nữ này ở một số khu vực vẫn ăn sâu bén rễ, rất khó thay đổi trong thời gian ngắn."
+      },
+      {
+        "hanzi": "半途而废",
+        "meaning": "bỏ dở giữa chừng, làm việc không đến nơi đến chốn (thành ngữ)",
+        "exampleHanzi": "做任何事情都要有始有终,如果半途而废,前面的努力就白费了。",
+        "exampleMeaning": "Làm bất cứ việc gì cũng phải có đầu có cuối, nếu bỏ dở giữa chừng thì mọi nỗ lực trước đó đều uổng phí."
+      },
+      {
+        "hanzi": "锦上添花",
+        "meaning": "trên gấm thêm hoa, tốt lại càng thêm tốt (thành ngữ)",
+        "exampleHanzi": "他本来的方案就很出色,你提的这个建议更是锦上添花。",
+        "exampleMeaning": "Phương án ban đầu của anh ấy vốn đã rất xuất sắc, đề xuất của bạn lại càng như trên gấm thêm hoa."
+      },
+      {
+        "hanzi": "入乡随俗",
+        "meaning": "nhập gia tùy tục (thành ngữ/tục ngữ)",
+        "exampleHanzi": "到了一个陌生的国家,我们应该入乡随俗,尊重当地的风俗习惯。",
+        "exampleMeaning": "Đến một đất nước xa lạ, chúng ta nên nhập gia tùy tục, tôn trọng phong tục tập quán địa phương."
+      },
+      {
+        "hanzi": "画蛇添足",
+        "meaning": "vẽ rắn thêm chân, làm việc thừa thãi hỏng việc (thành ngữ)",
+        "exampleHanzi": "这篇文章的结尾已经很完整了,再加上那段话反而画蛇添足。",
+        "exampleMeaning": "Phần kết của bài viết này vốn đã rất trọn vẹn, thêm đoạn đó vào ngược lại thành vẽ rắn thêm chân."
+      },
+      {
+        "hanzi": "熟能生巧",
+        "meaning": "quen tay hay việc, luyện nhiều thành thạo (tục ngữ)",
+        "exampleHanzi": "刚开始学书法时我写得很难看,但熟能生巧,现在已经进步了不少。",
+        "exampleMeaning": "Lúc mới học thư pháp tôi viết rất xấu, nhưng quen tay hay việc, giờ đã tiến bộ hơn nhiều."
+      },
+      {
+        "hanzi": "守株待兔",
+        "meaning": "ôm cây đợi thỏ, ôm mộng hão huyền không chịu nỗ lực (thành ngữ)",
+        "exampleHanzi": "成功要靠自己去争取,像他那样守株待兔是不可能有收获的。",
+        "exampleMeaning": "Thành công phải tự mình giành lấy, ôm cây đợi thỏ như anh ta thì không thể có kết quả gì."
+      },
+      {
+        "hanzi": "雪中送炭",
+        "meaning": "giúp đỡ đúng lúc khó khăn (thành ngữ)",
+        "exampleHanzi": "在我最困难的时候,是他借钱给我,真是雪中送炭。",
+        "exampleMeaning": "Vào lúc tôi khó khăn nhất, chính anh ấy đã cho tôi vay tiền, đúng là giúp đỡ đúng lúc như than sưởi giữa trời tuyết."
+      },
+      {
+        "hanzi": "因小失大",
+        "meaning": "tham bát bỏ mâm, vì lợi nhỏ mà mất lợi lớn (thành ngữ)",
+        "exampleHanzi": "为了省这点小钱而放弃这么好的机会,实在是因小失大。",
+        "exampleMeaning": "Vì tiết kiệm chút tiền nhỏ này mà từ bỏ cơ hội tốt như vậy, thật đúng là tham bát bỏ mâm."
+      },
+      {
+        "hanzi": "一举两得",
+        "meaning": "một công đôi việc, một mũi tên trúng hai đích (thành ngữ)",
+        "exampleHanzi": "每天骑自行车上班,既能锻炼身体又能省钱,真是一举两得。",
+        "exampleMeaning": "Mỗi ngày đạp xe đi làm, vừa rèn luyện sức khỏe vừa tiết kiệm tiền, đúng là một công đôi việc."
+      }
+    ]
+  },
+  {
+    "level": "HSK6",
+    "order": 2,
+    "topic": "Ẩn dụ & Tu từ",
+    "topicZh": "修辞",
+    "words": [
+      {
+        "hanzi": "比喻",
+        "meaning": "ẩn dụ, so sánh ví von",
+        "exampleHanzi": "作者运用生动的比喻，把抽象的道理讲得通俗易懂。",
+        "exampleMeaning": "Tác giả vận dụng phép ẩn dụ sinh động, khiến đạo lý trừu tượng trở nên dễ hiểu."
+      },
+      {
+        "hanzi": "夸张",
+        "meaning": "phóng đại, cường điệu",
+        "exampleHanzi": "诗人用夸张的手法来强调他对故乡的思念之情。",
+        "exampleMeaning": "Nhà thơ dùng thủ pháp phóng đại để nhấn mạnh nỗi nhớ quê hương của mình."
+      },
+      {
+        "hanzi": "象征",
+        "meaning": "tượng trưng, biểu tượng",
+        "exampleHanzi": "在这篇文章里，梅花象征着坚韧不拔的精神。",
+        "exampleMeaning": "Trong bài viết này, hoa mai tượng trưng cho tinh thần kiên cường bất khuất."
+      },
+      {
+        "hanzi": "隐喻",
+        "meaning": "ẩn dụ (ngầm)",
+        "exampleHanzi": "这句诗表面写景，实际上是一种隐喻，暗指人生的无常。",
+        "exampleMeaning": "Câu thơ này bề ngoài tả cảnh, thực ra là một phép ẩn dụ ngầm chỉ sự vô thường của đời người."
+      },
+      {
+        "hanzi": "拟人",
+        "meaning": "nhân hóa",
+        "exampleHanzi": "作家常用拟人的修辞，让自然界的万物都仿佛有了情感。",
+        "exampleMeaning": "Nhà văn thường dùng phép nhân hóa, khiến vạn vật trong tự nhiên như đều có cảm xúc."
+      },
+      {
+        "hanzi": "排比",
+        "meaning": "phép điệp cấu trúc song song",
+        "exampleHanzi": "演讲者连用三个排比句，使整段话显得气势磅礴。",
+        "exampleMeaning": "Diễn giả dùng liên tiếp ba câu song song, khiến cả đoạn nói trở nên hùng hồn khí thế."
+      },
+      {
+        "hanzi": "讽刺",
+        "meaning": "châm biếm, mỉa mai",
+        "exampleHanzi": "这部小说以辛辣的讽刺揭露了当时社会的种种弊端。",
+        "exampleMeaning": "Cuốn tiểu thuyết này dùng sự châm biếm sâu cay để phơi bày mọi tệ nạn của xã hội thời đó."
+      },
+      {
+        "hanzi": "渲染",
+        "meaning": "tô đậm, khắc họa (không khí, cảm xúc)",
+        "exampleHanzi": "作者通过细节描写，极力渲染出一种紧张压抑的氛围。",
+        "exampleMeaning": "Tác giả thông qua miêu tả chi tiết, ra sức tô đậm một bầu không khí căng thẳng ngột ngạt."
+      },
+      {
+        "hanzi": "含蓄",
+        "meaning": "hàm súc, ý tại ngôn ngoại",
+        "exampleHanzi": "中国古典诗词往往表达得十分含蓄，需要读者细细品味。",
+        "exampleMeaning": "Thơ ca cổ điển Trung Quốc thường diễn đạt rất hàm súc, cần độc giả từ từ thưởng thức."
+      },
+      {
+        "hanzi": "意境",
+        "meaning": "ý cảnh, cảnh giới nghệ thuật",
+        "exampleHanzi": "这首诗营造出一种空灵而深远的意境，令人回味无穷。",
+        "exampleMeaning": "Bài thơ này tạo nên một ý cảnh trong trẻo mà sâu xa, khiến người ta ngẫm mãi không thôi."
+      }
+    ]
+  },
+  {
+    "level": "HSK6",
+    "order": 3,
+    "topic": "Triết học",
+    "topicZh": "哲学",
+    "words": [
+      {
+        "hanzi": "辩证",
+        "meaning": "biện chứng",
+        "exampleHanzi": "他习惯用辩证的眼光去分析社会上错综复杂的各种现象。",
+        "exampleMeaning": "Anh ấy quen dùng con mắt biện chứng để phân tích mọi hiện tượng phức tạp rối rắm trong xã hội."
+      },
+      {
+        "hanzi": "本质",
+        "meaning": "bản chất",
+        "exampleHanzi": "哲学的任务在于透过表面的现象去揭示事物的本质。",
+        "exampleMeaning": "Nhiệm vụ của triết học nằm ở việc xuyên qua hiện tượng bề mặt để vạch ra bản chất của sự vật."
+      },
+      {
+        "hanzi": "意识",
+        "meaning": "ý thức",
+        "exampleHanzi": "唯物主义者认为,是物质决定意识,而不是意识决定物质。",
+        "exampleMeaning": "Người theo chủ nghĩa duy vật cho rằng vật chất quyết định ý thức, chứ không phải ý thức quyết định vật chất."
+      },
+      {
+        "hanzi": "客观",
+        "meaning": "khách quan",
+        "exampleHanzi": "我们分析问题时,必须尊重客观事实,不能凭主观愿望下结论。",
+        "exampleMeaning": "Khi phân tích vấn đề, chúng ta phải tôn trọng sự thật khách quan, không thể dựa vào mong muốn chủ quan mà kết luận."
+      },
+      {
+        "hanzi": "范畴",
+        "meaning": "phạm trù",
+        "exampleHanzi": "因果关系是哲学中一个十分重要的基本范畴。",
+        "exampleMeaning": "Quan hệ nhân quả là một phạm trù cơ bản vô cùng quan trọng trong triết học."
+      },
+      {
+        "hanzi": "命题",
+        "meaning": "mệnh đề, luận đề",
+        "exampleHanzi": "这位学者花了整整一生去论证那个抽象的哲学命题。",
+        "exampleMeaning": "Vị học giả này đã dành trọn cả cuộc đời để luận chứng cho mệnh đề triết học trừu tượng ấy."
+      },
+      {
+        "hanzi": "矛盾",
+        "meaning": "mâu thuẫn",
+        "exampleHanzi": "任何事物内部都存在着推动其发展的矛盾。",
+        "exampleMeaning": "Bên trong bất kỳ sự vật nào cũng tồn tại mâu thuẫn thúc đẩy nó phát triển."
+      },
+      {
+        "hanzi": "抽象",
+        "meaning": "trừu tượng",
+        "exampleHanzi": "哲学概念往往过于抽象,初学者一时难以真正理解。",
+        "exampleMeaning": "Các khái niệm triết học thường quá trừu tượng, người mới học nhất thời khó lòng hiểu thấu."
+      },
+      {
+        "hanzi": "信仰",
+        "meaning": "tín ngưỡng, niềm tin",
+        "exampleHanzi": "哲学思考往往能帮助一个人建立起坚定的人生信仰。",
+        "exampleMeaning": "Tư duy triết học thường có thể giúp một người xây dựng nên niềm tin vững chắc vào cuộc đời."
+      },
+      {
+        "hanzi": "世界观",
+        "meaning": "thế giới quan",
+        "exampleHanzi": "哲学从根本上塑造着一个人看待世界的世界观。",
+        "exampleMeaning": "Triết học từ căn bản định hình nên thế giới quan mà một người dùng để nhìn nhận thế giới."
+      }
+    ]
+  },
+  {
+    "level": "HSK6",
+    "order": 4,
+    "topic": "Lịch sử Trung Hoa",
+    "topicZh": "中国历史",
+    "words": [
+      {
+        "hanzi": "朝代",
+        "meaning": "triều đại",
+        "exampleHanzi": "中国历史上出现过许多朝代，每一个朝代都有其独特的文化与制度。",
+        "exampleMeaning": "Trong lịch sử Trung Quốc đã xuất hiện nhiều triều đại, mỗi triều đại đều có nền văn hóa và chế độ riêng biệt."
+      },
+      {
+        "hanzi": "统一",
+        "meaning": "thống nhất",
+        "exampleHanzi": "秦始皇统一了六国，结束了长期分裂的局面。",
+        "exampleMeaning": "Tần Thủy Hoàng đã thống nhất sáu nước, chấm dứt cục diện chia cắt kéo dài."
+      },
+      {
+        "hanzi": "皇帝",
+        "meaning": "hoàng đế",
+        "exampleHanzi": "在古代中国，皇帝拥有至高无上的权力，掌控着整个国家的命运。",
+        "exampleMeaning": "Ở Trung Quốc cổ đại, hoàng đế nắm giữ quyền lực tối cao, chi phối vận mệnh của cả đất nước."
+      },
+      {
+        "hanzi": "文物",
+        "meaning": "văn vật, hiện vật văn hóa",
+        "exampleHanzi": "这批出土的文物为研究当时的社会生活提供了极其珍贵的资料。",
+        "exampleMeaning": "Lô văn vật được khai quật này đã cung cấp tư liệu vô cùng quý giá cho việc nghiên cứu đời sống xã hội thời bấy giờ."
+      },
+      {
+        "hanzi": "变迁",
+        "meaning": "biến thiên, thay đổi",
+        "exampleHanzi": "通过研究历史的变迁，我们能够更深刻地理解一个民族的兴衰。",
+        "exampleMeaning": "Thông qua nghiên cứu sự biến thiên của lịch sử, chúng ta có thể hiểu sâu sắc hơn về sự hưng thịnh và suy vong của một dân tộc."
+      },
+      {
+        "hanzi": "废墟",
+        "meaning": "phế tích, tàn tích",
+        "exampleHanzi": "考古学家在这片古城的废墟中发现了大量珍贵的历史遗迹。",
+        "exampleMeaning": "Các nhà khảo cổ đã phát hiện ra rất nhiều di tích lịch sử quý giá trong đống phế tích của tòa thành cổ này."
+      },
+      {
+        "hanzi": "起义",
+        "meaning": "khởi nghĩa",
+        "exampleHanzi": "沉重的赋税迫使农民纷纷发动起义，最终动摇了王朝的统治。",
+        "exampleMeaning": "Sưu thuế nặng nề đã buộc nông dân đồng loạt phát động khởi nghĩa, cuối cùng làm lung lay sự thống trị của vương triều."
+      },
+      {
+        "hanzi": "典籍",
+        "meaning": "điển tịch, sách kinh điển cổ",
+        "exampleHanzi": "这些流传千年的典籍记载了古人丰富的思想与智慧。",
+        "exampleMeaning": "Những điển tịch lưu truyền hàng nghìn năm này đã ghi chép lại tư tưởng và trí tuệ phong phú của người xưa."
+      },
+      {
+        "hanzi": "疆域",
+        "meaning": "cương vực, lãnh thổ",
+        "exampleHanzi": "汉朝时期，中国的疆域得到了空前的扩展。",
+        "exampleMeaning": "Vào thời nhà Hán, cương vực của Trung Quốc đã được mở rộng chưa từng có."
+      },
+      {
+        "hanzi": "兴衰",
+        "meaning": "hưng suy, thịnh suy",
+        "exampleHanzi": "一个王朝的兴衰往往与统治者的贤明与否密切相关。",
+        "exampleMeaning": "Sự hưng suy của một vương triều thường liên quan mật thiết đến việc người thống trị có sáng suốt hay không."
+      }
+    ]
+  },
+  {
+    "level": "HSK6",
+    "order": 5,
+    "topic": "Chính trị & Pháp luật",
+    "topicZh": "政治与法律",
+    "words": [
+      {
+        "hanzi": "宪法",
+        "meaning": "hiến pháp",
+        "exampleHanzi": "宪法是国家的根本大法，任何法律都不得与之相抵触。",
+        "exampleMeaning": "Hiến pháp là đạo luật cơ bản của quốc gia, bất kỳ luật nào cũng không được trái với nó."
+      },
+      {
+        "hanzi": "立法",
+        "meaning": "lập pháp; làm luật",
+        "exampleHanzi": "随着社会的发展，立法机关正在加快完善相关法律法规。",
+        "exampleMeaning": "Cùng với sự phát triển của xã hội, cơ quan lập pháp đang đẩy nhanh việc hoàn thiện các quy định pháp luật liên quan."
+      },
+      {
+        "hanzi": "司法",
+        "meaning": "tư pháp",
+        "exampleHanzi": "维护司法公正是保障社会稳定的重要基础。",
+        "exampleMeaning": "Bảo vệ sự công bằng của tư pháp là nền tảng quan trọng để đảm bảo ổn định xã hội."
+      },
+      {
+        "hanzi": "公民",
+        "meaning": "công dân",
+        "exampleHanzi": "每一位公民都应当依法履行自己的义务并享有相应的权利。",
+        "exampleMeaning": "Mỗi công dân đều phải thực hiện nghĩa vụ của mình theo pháp luật và được hưởng các quyền lợi tương ứng."
+      },
+      {
+        "hanzi": "主权",
+        "meaning": "chủ quyền",
+        "exampleHanzi": "任何国家都不得以任何借口侵犯他国的领土和主权。",
+        "exampleMeaning": "Không quốc gia nào được lấy bất kỳ lý do gì để xâm phạm lãnh thổ và chủ quyền của nước khác."
+      },
+      {
+        "hanzi": "选举",
+        "meaning": "bầu cử; tuyển cử",
+        "exampleHanzi": "这次选举采取无记名投票的方式，以确保结果公平公正。",
+        "exampleMeaning": "Cuộc bầu cử lần này áp dụng hình thức bỏ phiếu kín để đảm bảo kết quả công bằng, công chính."
+      },
+      {
+        "hanzi": "执政",
+        "meaning": "cầm quyền; nắm quyền",
+        "exampleHanzi": "一个政党能否长期执政，取决于它是否真正代表人民的利益。",
+        "exampleMeaning": "Một chính đảng có thể cầm quyền lâu dài hay không phụ thuộc vào việc nó có thực sự đại diện cho lợi ích của nhân dân hay không."
+      },
+      {
+        "hanzi": "制裁",
+        "meaning": "chế tài; trừng phạt",
+        "exampleHanzi": "对于严重违反国际法的行为，国际社会有权采取制裁措施。",
+        "exampleMeaning": "Đối với các hành vi vi phạm nghiêm trọng luật pháp quốc tế, cộng đồng quốc tế có quyền áp dụng biện pháp chế tài."
+      },
+      {
+        "hanzi": "舆论",
+        "meaning": "dư luận (xã hội)",
+        "exampleHanzi": "政府在制定政策时，往往会充分考虑社会舆论的反应。",
+        "exampleMeaning": "Khi hoạch định chính sách, chính phủ thường cân nhắc kỹ lưỡng phản ứng của dư luận xã hội."
+      },
+      {
+        "hanzi": "审判",
+        "meaning": "xét xử",
+        "exampleHanzi": "法院将依据事实和法律对这起案件进行公开审判。",
+        "exampleMeaning": "Tòa án sẽ căn cứ vào sự thật và pháp luật để tiến hành xét xử công khai vụ án này."
+      }
+    ]
+  },
+  {
+    "level": "HSK6",
+    "order": 6,
+    "topic": "Khoa học & Vũ trụ",
+    "topicZh": "科学与宇宙",
+    "words": [
+      {
+        "hanzi": "宇宙",
+        "meaning": "vũ trụ",
+        "exampleHanzi": "随着科学技术的飞速发展，人类对宇宙的探索已经进入了一个全新的阶段。",
+        "exampleMeaning": "Cùng với sự phát triển nhanh chóng của khoa học kỹ thuật, sự khám phá vũ trụ của loài người đã bước vào một giai đoạn hoàn toàn mới."
+      },
+      {
+        "hanzi": "探索",
+        "meaning": "thăm dò, khám phá",
+        "exampleHanzi": "无数科学家毕生致力于探索自然界中那些尚未被揭开的奥秘。",
+        "exampleMeaning": "Vô số nhà khoa học đã cống hiến cả đời để khám phá những bí ẩn chưa được hé lộ trong thế giới tự nhiên."
+      },
+      {
+        "hanzi": "引力",
+        "meaning": "lực hấp dẫn",
+        "exampleHanzi": "正是由于地球的引力，物体才不会漂浮到空中去。",
+        "exampleMeaning": "Chính nhờ có lực hấp dẫn của Trái Đất, các vật thể mới không trôi nổi lên không trung."
+      },
+      {
+        "hanzi": "轨道",
+        "meaning": "quỹ đạo",
+        "exampleHanzi": "这颗人造卫星将沿着预定的轨道围绕地球持续运行数年之久。",
+        "exampleMeaning": "Vệ tinh nhân tạo này sẽ vận hành liên tục quanh Trái Đất theo quỹ đạo định sẵn trong nhiều năm."
+      },
+      {
+        "hanzi": "假设",
+        "meaning": "giả thuyết, giả định",
+        "exampleHanzi": "任何一个科学假设都必须经过反复的实验验证才能被广泛接受。",
+        "exampleMeaning": "Bất kỳ giả thuyết khoa học nào cũng phải trải qua thực nghiệm kiểm chứng nhiều lần mới được chấp nhận rộng rãi."
+      },
+      {
+        "hanzi": "演化",
+        "meaning": "tiến hóa, diễn biến",
+        "exampleHanzi": "通过观测遥远的星系，天文学家试图还原宇宙演化的漫长历程。",
+        "exampleMeaning": "Thông qua việc quan sát các thiên hà xa xôi, các nhà thiên văn cố gắng tái hiện quá trình tiến hóa lâu dài của vũ trụ."
+      },
+      {
+        "hanzi": "辐射",
+        "meaning": "bức xạ",
+        "exampleHanzi": "宇航员在太空中长期工作时，必须防范强烈的宇宙辐射对身体的伤害。",
+        "exampleMeaning": "Khi làm việc lâu dài trong không gian, các phi hành gia phải đề phòng tác hại của bức xạ vũ trụ mạnh đối với cơ thể."
+      },
+      {
+        "hanzi": "膨胀",
+        "meaning": "giãn nở, phình to",
+        "exampleHanzi": "大量证据表明，我们所处的宇宙至今仍在不断地向外膨胀。",
+        "exampleMeaning": "Nhiều bằng chứng cho thấy vũ trụ mà chúng ta đang sống cho đến nay vẫn không ngừng giãn nở ra bên ngoài."
+      },
+      {
+        "hanzi": "论证",
+        "meaning": "luận chứng, chứng minh bằng lập luận",
+        "exampleHanzi": "这篇论文以严密的逻辑论证了黑洞存在的理论依据。",
+        "exampleMeaning": "Bài luận văn này đã luận chứng cơ sở lý thuyết về sự tồn tại của hố đen bằng logic chặt chẽ."
+      },
+      {
+        "hanzi": "尖端",
+        "meaning": "đỉnh cao, tiên tiến nhất",
+        "exampleHanzi": "载人航天工程凝聚了当今世界最尖端的科学技术成果。",
+        "exampleMeaning": "Công trình hàng không vũ trụ có người lái kết tinh những thành quả khoa học kỹ thuật tiên tiến nhất của thế giới hiện nay."
+      }
+    ]
+  },
+  {
+    "level": "HSK6",
+    "order": 7,
+    "topic": "Nghệ thuật",
+    "topicZh": "艺术",
+    "words": [
+      {
+        "hanzi": "雕塑",
+        "meaning": "điêu khắc, tác phẩm điêu khắc",
+        "exampleHanzi": "这座广场上的雕塑充分体现了艺术家独特的审美观念。",
+        "exampleMeaning": "Tác phẩm điêu khắc trên quảng trường này thể hiện đầy đủ quan niệm thẩm mỹ độc đáo của nghệ sĩ."
+      },
+      {
+        "hanzi": "意境",
+        "meaning": "ý cảnh, tầng nghĩa nghệ thuật (trong thơ, tranh)",
+        "exampleHanzi": "这幅山水画意境深远，令人回味无穷。",
+        "exampleMeaning": "Bức tranh sơn thủy này có ý cảnh sâu xa, khiến người ta ngẫm mãi không thôi."
+      },
+      {
+        "hanzi": "渲染",
+        "meaning": "tô đậm, khắc họa, tô vẽ (không khí, màu sắc)",
+        "exampleHanzi": "作者巧妙地渲染出一种悲凉的气氛，增强了作品的感染力。",
+        "exampleMeaning": "Tác giả đã khéo léo tô đậm một bầu không khí bi thương, làm tăng sức lay động của tác phẩm."
+      },
+      {
+        "hanzi": "陶醉",
+        "meaning": "say mê, đắm chìm (trong cái đẹp, âm nhạc)",
+        "exampleHanzi": "听着这优美的旋律，观众们完全陶醉在音乐的海洋里。",
+        "exampleMeaning": "Nghe giai điệu du dương này, khán giả hoàn toàn đắm chìm trong biển âm nhạc."
+      },
+      {
+        "hanzi": "造型",
+        "meaning": "tạo hình, kiểu dáng",
+        "exampleHanzi": "这件工艺品造型别致，融合了传统与现代的艺术风格。",
+        "exampleMeaning": "Món đồ thủ công mỹ nghệ này có tạo hình độc đáo, kết hợp phong cách nghệ thuật truyền thống và hiện đại."
+      },
+      {
+        "hanzi": "细腻",
+        "meaning": "tinh tế, tỉ mỉ (nét vẽ, cảm xúc)",
+        "exampleHanzi": "画家用细腻的笔触描绘出人物内心的复杂情感。",
+        "exampleMeaning": "Họa sĩ dùng nét vẽ tinh tế để khắc họa những cảm xúc phức tạp trong nội tâm nhân vật."
+      },
+      {
+        "hanzi": "灵感",
+        "meaning": "linh cảm, cảm hứng sáng tạo",
+        "exampleHanzi": "许多杰出的艺术作品都源于生活中偶然迸发的灵感。",
+        "exampleMeaning": "Nhiều tác phẩm nghệ thuật kiệt xuất đều bắt nguồn từ cảm hứng chợt bùng lên trong cuộc sống."
+      },
+      {
+        "hanzi": "临摹",
+        "meaning": "mô phỏng, chép lại (tranh, chữ để luyện)",
+        "exampleHanzi": "初学书法时，反复临摹名家作品是提高技艺的有效途径。",
+        "exampleMeaning": "Khi mới học thư pháp, việc chép lại nhiều lần tác phẩm của các danh gia là con đường hiệu quả để nâng cao kỹ nghệ."
+      },
+      {
+        "hanzi": "典雅",
+        "meaning": "trang nhã, thanh lịch (cổ điển)",
+        "exampleHanzi": "这座建筑风格典雅，堪称东方古典艺术的典范。",
+        "exampleMeaning": "Công trình kiến trúc này phong cách trang nhã, xứng đáng là điển hình của nghệ thuật cổ điển phương Đông."
+      },
+      {
+        "hanzi": "鉴赏",
+        "meaning": "thẩm định, thưởng thức (nghệ thuật)",
+        "exampleHanzi": "提高艺术鉴赏能力需要长期的积累和熏陶。",
+        "exampleMeaning": "Nâng cao năng lực thẩm định nghệ thuật cần sự tích lũy và hun đúc lâu dài."
+      }
+    ]
+  },
+  {
+    "level": "HSK6",
+    "order": 8,
+    "topic": "Kinh tế vĩ mô",
+    "topicZh": "宏观经济",
+    "words": [
+      {
+        "hanzi": "通货膨胀",
+        "meaning": "lạm phát (tiền tệ)",
+        "exampleHanzi": "政府采取紧缩政策，就是为了抑制日益严重的通货膨胀。",
+        "exampleMeaning": "Chính phủ áp dụng chính sách thắt chặt chính là để kìm hãm tình trạng lạm phát ngày càng nghiêm trọng."
+      },
+      {
+        "hanzi": "宏观调控",
+        "meaning": "điều tiết vĩ mô",
+        "exampleHanzi": "面对经济过热的局面，国家不得不加强宏观调控。",
+        "exampleMeaning": "Đối mặt với cục diện kinh tế quá nóng, nhà nước buộc phải tăng cường điều tiết vĩ mô."
+      },
+      {
+        "hanzi": "国内生产总值",
+        "meaning": "tổng sản phẩm quốc nội (GDP)",
+        "exampleHanzi": "去年这个国家的国内生产总值增长了百分之六。",
+        "exampleMeaning": "Tổng sản phẩm quốc nội của quốc gia này năm ngoái đã tăng trưởng sáu phần trăm."
+      },
+      {
+        "hanzi": "财政赤字",
+        "meaning": "thâm hụt ngân sách (tài chính)",
+        "exampleHanzi": "过度举债导致财政赤字连年扩大，令人担忧。",
+        "exampleMeaning": "Việc vay nợ quá mức khiến thâm hụt ngân sách liên tục mở rộng qua các năm, thật đáng lo ngại."
+      },
+      {
+        "hanzi": "货币政策",
+        "meaning": "chính sách tiền tệ",
+        "exampleHanzi": "央行通过调整利率来实施稳健的货币政策。",
+        "exampleMeaning": "Ngân hàng trung ương thực thi chính sách tiền tệ ổn định thông qua việc điều chỉnh lãi suất."
+      },
+      {
+        "hanzi": "供求关系",
+        "meaning": "quan hệ cung cầu",
+        "exampleHanzi": "市场价格的波动归根结底取决于供求关系。",
+        "exampleMeaning": "Sự biến động của giá cả thị trường suy cho cùng phụ thuộc vào quan hệ cung cầu."
+      },
+      {
+        "hanzi": "失业率",
+        "meaning": "tỷ lệ thất nghiệp",
+        "exampleHanzi": "经济衰退时期，失业率往往会显著上升。",
+        "exampleMeaning": "Trong thời kỳ suy thoái kinh tế, tỷ lệ thất nghiệp thường tăng lên rõ rệt."
+      },
+      {
+        "hanzi": "产业结构",
+        "meaning": "cơ cấu ngành (cơ cấu công nghiệp)",
+        "exampleHanzi": "只有优化产业结构，经济才能实现可持续发展。",
+        "exampleMeaning": "Chỉ có tối ưu hóa cơ cấu ngành thì nền kinh tế mới có thể đạt được sự phát triển bền vững."
+      },
+      {
+        "hanzi": "汇率",
+        "meaning": "tỷ giá hối đoái",
+        "exampleHanzi": "人民币汇率的剧烈波动对进出口企业影响巨大。",
+        "exampleMeaning": "Sự biến động dữ dội của tỷ giá đồng nhân dân tệ có ảnh hưởng to lớn đến các doanh nghiệp xuất nhập khẩu."
+      },
+      {
+        "hanzi": "经济衰退",
+        "meaning": "suy thoái kinh tế",
+        "exampleHanzi": "为了摆脱经济衰退，各国纷纷出台了刺激消费的措施。",
+        "exampleMeaning": "Để thoát khỏi suy thoái kinh tế, các nước lần lượt ban hành những biện pháp kích thích tiêu dùng."
+      }
+    ]
+  },
+  {
+    "level": "HSK6",
+    "order": 9,
+    "topic": "Hùng biện",
+    "topicZh": "演讲",
+    "words": [
+      {
+        "hanzi": "演讲",
+        "meaning": "diễn thuyết, hùng biện",
+        "exampleHanzi": "他在毕业典礼上发表了一场感人至深的演讲。",
+        "exampleMeaning": "Anh ấy đã có một bài diễn thuyết vô cùng cảm động tại lễ tốt nghiệp."
+      },
+      {
+        "hanzi": "口才",
+        "meaning": "tài ăn nói, tài hùng biện",
+        "exampleHanzi": "要想成为一名出色的辩手，光有口才是远远不够的。",
+        "exampleMeaning": "Muốn trở thành một người tranh biện xuất sắc, chỉ có tài ăn nói thôi là còn lâu mới đủ."
+      },
+      {
+        "hanzi": "雄辩",
+        "meaning": "hùng biện, lý lẽ đanh thép",
+        "exampleHanzi": "他以雄辩的言辞征服了在场的每一位听众。",
+        "exampleMeaning": "Anh ấy đã chinh phục từng khán giả có mặt bằng những lời lẽ hùng biện."
+      },
+      {
+        "hanzi": "感染力",
+        "meaning": "sức lay động, sức lôi cuốn",
+        "exampleHanzi": "她的演讲富有感染力，让全场观众深受鼓舞。",
+        "exampleMeaning": "Bài diễn thuyết của cô ấy đầy sức lay động, khiến toàn thể khán giả vô cùng phấn chấn."
+      },
+      {
+        "hanzi": "措辞",
+        "meaning": "cách dùng từ, lời lẽ",
+        "exampleHanzi": "在正式的公开演讲中，措辞必须严谨而得体。",
+        "exampleMeaning": "Trong một bài diễn thuyết công khai trang trọng, cách dùng từ phải chặt chẽ và đúng mực."
+      },
+      {
+        "hanzi": "阐述",
+        "meaning": "trình bày, luận giải",
+        "exampleHanzi": "演讲者条理清晰地阐述了自己的核心观点。",
+        "exampleMeaning": "Diễn giả đã trình bày quan điểm cốt lõi của mình một cách mạch lạc."
+      },
+      {
+        "hanzi": "抑扬顿挫",
+        "meaning": "trầm bổng nhịp nhàng (giọng nói)",
+        "exampleHanzi": "他讲话时抑扬顿挫，牢牢抓住了听众的注意力。",
+        "exampleMeaning": "Khi nói, giọng anh ấy trầm bổng nhịp nhàng, thu hút chặt chẽ sự chú ý của khán giả."
+      },
+      {
+        "hanzi": "即兴",
+        "meaning": "ứng khẩu, tùy hứng (không chuẩn bị)",
+        "exampleHanzi": "面对突如其来的提问，他即兴发表了一段精彩的讲话。",
+        "exampleMeaning": "Trước câu hỏi bất ngờ, anh ấy đã ứng khẩu phát biểu một đoạn đầy ấn tượng."
+      },
+      {
+        "hanzi": "说服",
+        "meaning": "thuyết phục",
+        "exampleHanzi": "一篇有力的演讲往往能说服听众改变原有的立场。",
+        "exampleMeaning": "Một bài diễn thuyết mạnh mẽ thường có thể thuyết phục khán giả thay đổi lập trường vốn có."
+      },
+      {
+        "hanzi": "慷慨激昂",
+        "meaning": "hùng hồn khẳng khái, đầy khí thế",
+        "exampleHanzi": "他慷慨激昂的演说点燃了在场所有人的热情。",
+        "exampleMeaning": "Bài diễn thuyết hùng hồn khẳng khái của anh ấy đã thắp lên nhiệt huyết của tất cả mọi người có mặt."
+      }
+    ]
+  },
+  {
+    "level": "HSK6",
+    "order": 10,
+    "topic": "Sáng tác",
+    "topicZh": "写作创作",
+    "words": [
+      {
+        "hanzi": "构思",
+        "meaning": "cấu tứ, hình thành ý tưởng (khi sáng tác)",
+        "exampleHanzi": "他花了整整一年时间构思这部长篇小说的情节。",
+        "exampleMeaning": "Anh ấy đã dành trọn một năm để cấu tứ cốt truyện cho cuốn tiểu thuyết dài này."
+      },
+      {
+        "hanzi": "题材",
+        "meaning": "đề tài (của tác phẩm)",
+        "exampleHanzi": "这位作家擅长以农村生活为题材进行创作。",
+        "exampleMeaning": "Nhà văn này giỏi lấy cuộc sống nông thôn làm đề tài để sáng tác."
+      },
+      {
+        "hanzi": "灵感",
+        "meaning": "cảm hứng, linh cảm",
+        "exampleHanzi": "这首诗的灵感来源于他童年的一段真实经历。",
+        "exampleMeaning": "Cảm hứng của bài thơ này bắt nguồn từ một trải nghiệm có thật thời thơ ấu của ông."
+      },
+      {
+        "hanzi": "虚构",
+        "meaning": "hư cấu",
+        "exampleHanzi": "小说里的人物都是虚构的，请不要对号入座。",
+        "exampleMeaning": "Các nhân vật trong tiểu thuyết đều là hư cấu, xin đừng tự nhận vào mình."
+      },
+      {
+        "hanzi": "描绘",
+        "meaning": "miêu tả, khắc họa",
+        "exampleHanzi": "作者用细腻的笔触描绘出江南水乡的美景。",
+        "exampleMeaning": "Tác giả dùng ngòi bút tinh tế để khắc họa cảnh đẹp vùng sông nước Giang Nam."
+      },
+      {
+        "hanzi": "润色",
+        "meaning": "trau chuốt, gọt giũa (câu chữ)",
+        "exampleHanzi": "初稿完成后，他又反复润色了几遍语言。",
+        "exampleMeaning": "Sau khi hoàn thành bản thảo, anh ấy lại trau chuốt ngôn từ nhiều lần."
+      },
+      {
+        "hanzi": "情节",
+        "meaning": "tình tiết, diễn biến (câu chuyện)",
+        "exampleHanzi": "这部电影的情节曲折离奇，扣人心弦。",
+        "exampleMeaning": "Tình tiết của bộ phim này quanh co ly kỳ, hấp dẫn lòng người."
+      },
+      {
+        "hanzi": "抒情",
+        "meaning": "trữ tình, bộc lộ cảm xúc",
+        "exampleHanzi": "这篇散文借景抒情，表达了作者对故乡的思念。",
+        "exampleMeaning": "Bài tản văn này mượn cảnh để trữ tình, bày tỏ nỗi nhớ quê hương của tác giả."
+      },
+      {
+        "hanzi": "笔调",
+        "meaning": "văn phong, giọng văn",
+        "exampleHanzi": "他以幽默的笔调讲述了自己坎坷的人生。",
+        "exampleMeaning": "Ông kể lại cuộc đời gập ghềnh của mình bằng giọng văn hài hước."
+      },
+      {
+        "hanzi": "刻画",
+        "meaning": "khắc họa (nhân vật, hình tượng)",
+        "exampleHanzi": "作者细致地刻画了主人公复杂的内心世界。",
+        "exampleMeaning": "Tác giả đã khắc họa tỉ mỉ thế giới nội tâm phức tạp của nhân vật chính."
+      }
+    ]
+  }
+]

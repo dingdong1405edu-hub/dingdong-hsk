@@ -133,7 +133,7 @@ export function PinyinFlow({ lesson }: { lesson: PinyinLesson }) {
       </div>
 
       {/* Footer: tiếp tục / phản hồi */}
-      <div className="sticky bottom-0 -mx-4 border-t bg-background/95 px-4 py-3 backdrop-blur sm:mx-0 sm:rounded-t-2xl sm:px-6">
+      <div className="sticky bottom-0 z-40 -mx-4 border-t bg-background/95 px-4 py-3 backdrop-blur sm:mx-0 sm:rounded-t-2xl sm:px-6">
         {card.kind === "teach" ? (
           <Button onClick={advance} className="h-12 w-full gap-2 rounded-xl bg-amber-500 text-base hover:bg-amber-600">
             Tiếp tục <ArrowRight className="h-4 w-4" />

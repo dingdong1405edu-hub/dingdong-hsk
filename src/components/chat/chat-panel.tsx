@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
-import { Send, X, Trash2, Sparkles } from "lucide-react";
+import { Send, X, Trash2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { ChatMessage, BaoAvatar } from "./chat-message";
@@ -49,14 +49,17 @@ export function ChatPanel({
   return (
     <div className="flex h-full flex-col overflow-hidden rounded-2xl border bg-card shadow-2xl">
       {/* Header */}
-      <div className="flex items-center gap-3 border-b bg-gradient-to-r from-primary/10 to-amber-100/50 dark:to-amber-500/10 px-4 py-3">
+      <div className="flex items-center gap-3 border-b bg-card px-4 py-3">
         <BaoAvatar className="h-9 w-9" />
         <div className="min-w-0 flex-1 leading-tight">
           <div className="flex items-center gap-1.5 text-sm font-bold text-foreground">
-            Bao <Sparkles className="h-3.5 w-3.5 text-amber-500" />
+            Bao
+            <span className="inline-flex items-center gap-1 rounded-full bg-emerald-500/10 px-1.5 py-0.5 text-[10px] font-semibold text-emerald-600 dark:text-emerald-400">
+              <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" /> Online
+            </span>
           </div>
           <div className="truncate text-[11px] text-muted-foreground">
-            Trợ lý học tiếng Trung · luôn sẵn sàng
+            Trợ lý học tiếng Trung
           </div>
         </div>
         {messages.length > 0 && (

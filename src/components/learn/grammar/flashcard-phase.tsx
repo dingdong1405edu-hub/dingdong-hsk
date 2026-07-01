@@ -139,7 +139,7 @@ export function FlashcardPhase({ flashcards, closeHref, label, onReviewTheory, o
             initial={{ y: 100, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: 100, opacity: 0 }}
-            className={`fixed bottom-0 left-0 right-0 max-h-[55dvh] overflow-y-auto border-t p-6 ${
+            className={`fixed bottom-0 left-0 right-0 z-40 max-h-[55dvh] overflow-y-auto border-t p-6 ${
               feedback === "correct"
                 ? "border-green-200 bg-green-50 dark:border-green-500/25 dark:bg-green-500/15"
                 : "border-red-200 bg-red-50 dark:border-red-500/25 dark:bg-red-500/15"

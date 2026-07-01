@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Library, Clock, ArrowRight } from "lucide-react";
 import { cn, hskLevelLabel, hskBadgeClass } from "@/lib/utils";
 import { MATERIAL_CATEGORIES, categoryMeta } from "@/lib/materials";
+import { BaoCover } from "@/components/learn/bao-cover";
 import { HSKLevel, MaterialCategory, Prisma } from "@prisma/client";
 
 const LEVELS = ["HSK1", "HSK2", "HSK3", "HSK4", "HSK5", "HSK6"];
@@ -101,11 +102,14 @@ export default async function MaterialsPage({
             return (
               <Link key={m.id} href={`/materials/${m.id}`} className="group">
                 <article className="flex h-full flex-col rounded-2xl border border-border/60 bg-card shadow-soft transition-all hover:-translate-y-1 hover:border-primary/30 hover:shadow-soft-lg">
-                  {m.imageUrl && (
+                  {m.imageUrl ? (
                     <>
                       {/* eslint-disable-next-line @next/next/no-img-element */}
                       <img src={m.imageUrl} alt={m.title} loading="lazy" className="mb-3 h-32 w-full rounded-xl object-cover" />
                     </>
+                  ) : (
+                    // Chưa có ảnh minh hoạ → hiện linh vật Bao cho thẻ đỡ trống.
+                    <BaoCover className="mb-3 h-32 w-full rounded-xl" />
                   )}
                   <div className="flex items-center justify-between">
                     <div className={cn("flex h-10 w-10 items-center justify-center rounded-xl", meta.color)}>
