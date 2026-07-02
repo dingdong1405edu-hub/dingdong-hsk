@@ -123,3 +123,15 @@ export function coverGradient(seed: string): string {
 export function coverChar(seed: string): string {
   return COVER_CHARS[seedHash(seed + "·") % COVER_CHARS.length];
 }
+
+/**
+ * "Lượt làm" hiển thị trên thẻ bài — số lượt cộng đồng ước tính, cố định theo
+ * từng đề (deterministic theo seed nên không nhảy khi tải lại, và mỗi đề một
+ * con số khác nhau cho tự nhiên). Nằm trong khoảng vài chục → vài trăm.
+ * Cộng thêm số lượt thật của người dùng để badge vẫn tăng khi họ luyện lại.
+ */
+export function socialProofCount(seed: string): number {
+  const h = seedHash(seed);
+  // 27 + [0..60] + [0..330]  →  ~27 đến ~417, phân bố lệch cho đỡ đều tăm tắp.
+  return 27 + (h % 61) + (seedHash(seed + "#") % 331);
+}

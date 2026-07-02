@@ -1,9 +1,17 @@
 import { auth } from "@/lib/auth";
 import { db } from "@/lib/db";
 import { redirect } from "next/navigation";
-import { Users2, Trophy, MessageCircle } from "lucide-react";
+import { Users2, Trophy, Sparkles } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { BaoBuddy } from "@/components/marketing/bao-buddy";
+import { ForumFeed } from "@/components/learn/community/forum-feed";
+import {
+  FORUM_THREADS,
+  FORUM_CATEGORIES,
+  FORUM_STATS,
+  topContributors,
+  avatarColor,
+  avatarInitial,
+} from "@/lib/community-forum";
 import { hskLevelLabel, cn } from "@/lib/utils";
 
 const MEDAL = ["bg-amber-400 text-amber-950", "bg-zinc-300 text-zinc-800 dark:bg-zinc-400/30 dark:text-zinc-100", "bg-orange-300 text-orange-900"];
@@ -15,9 +23,12 @@ export default async function CommunityPage() {
   const top = await db.user.findMany({
     where: { banned: false },
     orderBy: [{ xp: "desc" }],
-    take: 20,
+    take: 12,
     select: { id: true, name: true, email: true, xp: true, streakDays: true, hskLevel: true },
   });
+
+  const me = session.user.name?.trim() || session.user.email?.split("@")[0] || "Bạn";
+  const contributors = topContributors(6);
 
   return (
     <div className="space-y-6">
@@ -30,7 +41,7 @@ export default async function CommunityPage() {
           <div>
             <h1 className="text-xl font-extrabold sm:text-2xl">Cộng đồng DingDong</h1>
             <p className="mt-0.5 text-sm text-muted-foreground">
-              Học cùng nhau vui hơn — thi đua bảng xếp hạng và sớm có diễn đàn trao đổi.
+              Học cùng nhau vui hơn — hỏi đáp, chia sẻ mẹo học và thi đua bảng xếp hạng.
             </p>
           </div>
         </div>
@@ -40,71 +51,79 @@ export default async function CommunityPage() {
       </div>
 
       <div className="grid gap-6 lg:grid-cols-3">
-        {/* Leaderboard */}
-        <Card className="lg:col-span-2">
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2 text-base">
-              <Trophy className="h-5 w-5 text-amber-500" /> Bảng xếp hạng XP
-            </CardTitle>
-          </CardHeader>
-          <CardContent className="p-0">
-            <div className="divide-y">
-              {top.map((u, i) => {
-                const isMe = u.id === session.user!.id;
-                const display = u.name ?? u.email.split("@")[0];
-                return (
-                  <div
-                    key={u.id}
-                    className={cn("flex items-center gap-3 px-4 py-3", isMe && "bg-primary/5")}
-                  >
-                    <div
-                      className={cn(
-                        "flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-sm font-bold",
-                        i < 3 ? MEDAL[i] : "bg-muted text-muted-foreground"
-                      )}
-                    >
-                      {i + 1}
-                    </div>
-                    <div className="flex h-9 w-9 items-center justify-center rounded-full bg-primary/10 text-sm font-semibold text-primary">
-                      {display.charAt(0).toUpperCase()}
-                    </div>
-                    <div className="min-w-0 flex-1">
-                      <div className="truncate text-sm font-semibold">
-                        {display} {isMe && <span className="text-xs font-normal text-primary">(Bạn)</span>}
-                      </div>
-                      <div className="text-xs text-muted-foreground">
-                        {hskLevelLabel(u.hskLevel)} · 🔥 {u.streakDays} ngày
-                      </div>
-                    </div>
-                    <div className="shrink-0 text-sm font-bold text-amber-600">{u.xp} XP</div>
-                  </div>
-                );
-              })}
-              {top.length === 0 && (
-                <p className="px-4 py-8 text-center text-sm text-muted-foreground">Chưa có dữ liệu xếp hạng.</p>
-              )}
-            </div>
-          </CardContent>
-        </Card>
+        {/* Forum */}
+        <div className="lg:col-span-2">
+          <ForumFeed threads={FORUM_THREADS} categories={FORUM_CATEGORIES} stats={FORUM_STATS} me={me} />
+        </div>
 
-        {/* Coming soon */}
-        <div className="space-y-4">
+        {/* Sidebar */}
+        <div className="space-y-4 lg:sticky lg:top-4 lg:self-start">
+          {/* Leaderboard (dữ liệu thật) */}
           <Card>
-            <CardHeader>
+            <CardHeader className="pb-3">
               <CardTitle className="flex items-center gap-2 text-base">
-                <MessageCircle className="h-5 w-5 text-sky-500" /> Diễn đàn
+                <Trophy className="h-5 w-5 text-amber-500" /> Bảng xếp hạng XP
               </CardTitle>
             </CardHeader>
-            <CardContent>
-              <div className="rounded-xl border border-dashed bg-muted/30 p-5 text-center">
-                <BaoBuddy size={64} pose="idle" className="mx-auto mb-2" />
-                <p className="text-sm font-medium">Sắp ra mắt</p>
-                <p className="mt-1 text-xs text-muted-foreground">
-                  Đặt câu hỏi, chia sẻ mẹo học và kết bạn cùng tiến.
-                </p>
+            <CardContent className="p-0">
+              <div className="divide-y">
+                {top.map((u, i) => {
+                  const isMe = u.id === session.user!.id;
+                  const display = u.name ?? u.email.split("@")[0];
+                  return (
+                    <div key={u.id} className={cn("flex items-center gap-3 px-4 py-2.5", isMe && "bg-primary/5")}>
+                      <div
+                        className={cn(
+                          "flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-xs font-bold",
+                          i < 3 ? MEDAL[i] : "bg-muted text-muted-foreground",
+                        )}
+                      >
+                        {i + 1}
+                      </div>
+                      <div className="flex h-8 w-8 items-center justify-center rounded-full bg-primary/10 text-xs font-semibold text-primary">
+                        {display.charAt(0).toUpperCase()}
+                      </div>
+                      <div className="min-w-0 flex-1">
+                        <div className="truncate text-sm font-semibold">
+                          {display} {isMe && <span className="text-xs font-normal text-primary">(Bạn)</span>}
+                        </div>
+                        <div className="text-[11px] text-muted-foreground">
+                          {hskLevelLabel(u.hskLevel)} · 🔥 {u.streakDays} ngày
+                        </div>
+                      </div>
+                      <div className="shrink-0 text-sm font-bold text-amber-600">{u.xp} XP</div>
+                    </div>
+                  );
+                })}
+                {top.length === 0 && (
+                  <p className="px-4 py-8 text-center text-sm text-muted-foreground">Chưa có dữ liệu xếp hạng.</p>
+                )}
               </div>
             </CardContent>
           </Card>
+
+          {/* Thành viên tích cực (từ diễn đàn) */}
+          <Card>
+            <CardHeader className="pb-3">
+              <CardTitle className="flex items-center gap-2 text-base">
+                <Sparkles className="h-5 w-5 text-primary" /> Thành viên tích cực
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-2 pt-0">
+              {contributors.map((c) => (
+                <div key={c.name} className="flex items-center gap-2.5">
+                  <div
+                    className={cn("flex h-8 w-8 items-center justify-center rounded-full text-xs font-bold", avatarColor(c.name))}
+                  >
+                    {avatarInitial(c.name)}
+                  </div>
+                  <span className="min-w-0 flex-1 truncate text-sm font-medium">{c.name}</span>
+                  <span className="shrink-0 text-xs text-muted-foreground">{c.posts} bài</span>
+                </div>
+              ))}
+            </CardContent>
+          </Card>
+
           <Card>
             <CardContent className="p-5 text-center">
               <div className="font-chinese text-3xl text-primary">加油</div>

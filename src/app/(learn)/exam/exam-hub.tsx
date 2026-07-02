@@ -79,6 +79,7 @@ export function ExamHub({
               level={e.hskLevel}
               meta={e.meta}
               score={e.bestScore}
+              attempts={0}
               tags={[e.composition, ...(e.isDraft ? ["• Bản nháp (chỉ admin thấy)"] : [])]}
               seed={e.id}
             />

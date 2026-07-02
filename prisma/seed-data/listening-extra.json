@@ -1,0 +1,3635 @@
+{
+  "kind": "listening",
+  "tests": [
+    {
+      "id": "ls-HSK1-x1",
+      "title": "Chào hỏi và làm quen",
+      "hskLevel": "HSK1",
+      "audioUrl": "",
+      "transcript": "A：你好！\nB：你好！你叫什么名字？\nA：我叫王明。你呢？\nB：我叫李红。认识你很高兴。\nA：认识你我也很高兴。",
+      "transcriptExplanation": "A: Xin chào!\nB: Xin chào! Bạn tên là gì?\nA: Mình tên là Vương Minh. Còn bạn thì sao?\nB: Mình tên là Lý Hồng. Rất vui được làm quen với bạn.\nA: Mình cũng rất vui được làm quen với bạn.\n\nĐây là một đoạn hội thoại chào hỏi và làm quen cơ bản: hai người chào nhau, hỏi tên nhau và bày tỏ niềm vui khi được quen biết. Các cụm từ trọng tâm HSK1: 你好 (xin chào), 你叫什么名字 (bạn tên gì), 我叫… (mình tên là…), 认识你很高兴 (rất vui được quen bạn).",
+      "timeLimit": 300,
+      "order": 51,
+      "published": true,
+      "questions": [
+        {
+          "id": "ls-HSK1-x1-q1",
+          "type": "MCQ",
+          "prompt": "男的（A）叫什么名字？",
+          "promptPinyin": "nán de （ A ） jiào shén me míng zì ？",
+          "explanation": "Trong lời thoại A nói \"我叫王明\" (Mình tên là Vương Minh), nên tên của A là 王明. Chỉ có 1 đáp án đúng, các phương án còn lại đều là tên ghép sai.",
+          "order": 1,
+          "options": [
+            {
+              "text": "李红",
+              "pinyin": "lǐ hóng"
+            },
+            {
+              "text": "王明",
+              "pinyin": "wáng míng"
+            },
+            {
+              "text": "李明",
+              "pinyin": "lǐ míng"
+            },
+            {
+              "text": "王红",
+              "pinyin": "wáng hóng"
+            }
+          ],
+          "correctAnswer": {
+            "index": 1,
+            "text": "王明"
+          }
+        },
+        {
+          "id": "ls-HSK1-x1-q2",
+          "type": "TRUE_FALSE",
+          "prompt": "女的（B）叫李红。",
+          "promptPinyin": "nǚ de （ B ） jiào lǐ hóng 。",
+          "explanation": "B tự giới thiệu \"我叫李红\" (Mình tên là Lý Hồng), nên câu này đúng.",
+          "order": 2,
+          "options": null,
+          "correctAnswer": {
+            "value": true
+          }
+        },
+        {
+          "id": "ls-HSK1-x1-q3",
+          "type": "FILL_BLANK",
+          "prompt": "李红说：认识你很______。",
+          "promptPinyin": "lǐ hóng shuō ： rèn shi nǐ hěn _ _ _ _ _ _ 。",
+          "explanation": "Lý Hồng nói \"认识你很高兴\" (Rất vui được làm quen với bạn), nên từ cần điền là 高兴 (vui). Nguyên văn 高兴 có trong lời thoại.",
+          "order": 3,
+          "options": null,
+          "correctAnswer": {
+            "text": "高兴",
+            "accepted": [
+              "高兴"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "ls-HSK1-x2",
+      "title": "Hỏi tên và quốc tịch (问名字和国籍)",
+      "hskLevel": "HSK1",
+      "audioUrl": "",
+      "transcript": "A：你好！你叫什么名字？\nB：你好！我叫王明。你呢？\nA：我叫李红。你是哪国人？\nB：我是中国人。你也是中国人吗？\nA：不是，我是美国人。\nB：认识你很高兴！",
+      "transcriptExplanation": "A: Xin chào! Bạn tên là gì?\nB: Xin chào! Mình tên là Vương Minh. Còn bạn thì sao?\nA: Mình tên là Lý Hồng. Bạn là người nước nào?\nB: Mình là người Trung Quốc. Bạn cũng là người Trung Quốc à?\nA: Không phải, mình là người Mỹ.\nB: Rất vui được làm quen với bạn!",
+      "timeLimit": 300,
+      "order": 52,
+      "published": true,
+      "questions": [
+        {
+          "id": "ls-HSK1-x2-q1",
+          "type": "MCQ",
+          "prompt": "男的（B）叫什么名字？（Người B tên là gì?）",
+          "promptPinyin": "nán de （ B ） jiào shén me míng zì ？ （ N g ư ờ i   B   t ê n   l à   g ì ? ）",
+          "explanation": "Trong lời thoại B nói \"我叫王明\" (Mình tên là Vương Minh), nên B tên là 王明.",
+          "order": 1,
+          "options": [
+            {
+              "text": "李红",
+              "pinyin": "lǐ hóng"
+            },
+            {
+              "text": "王明",
+              "pinyin": "wáng míng"
+            },
+            {
+              "text": "中国",
+              "pinyin": "zhōng guó"
+            },
+            {
+              "text": "美国",
+              "pinyin": "měi guó"
+            }
+          ],
+          "correctAnswer": {
+            "index": 1,
+            "text": "王明"
+          }
+        },
+        {
+          "id": "ls-HSK1-x2-q2",
+          "type": "MCQ",
+          "prompt": "李红是哪国人？（Lý Hồng là người nước nào?）",
+          "promptPinyin": "lǐ hóng shì nǎ guó rén ？ （ L ý   H ồ n g   l à   n g ư ờ i   n ư ớ c   n à o ? ）",
+          "explanation": "Lý Hồng (A) nói \"不是，我是美国人\" (Không phải, mình là người Mỹ), nên cô ấy là người Mỹ (美国人).",
+          "order": 2,
+          "options": [
+            {
+              "text": "中国人",
+              "pinyin": "zhōng guó rén"
+            },
+            {
+              "text": "日本人",
+              "pinyin": "rì běn rén"
+            },
+            {
+              "text": "美国人",
+              "pinyin": "měi guó rén"
+            },
+            {
+              "text": "韩国人",
+              "pinyin": "hán guó rén"
+            }
+          ],
+          "correctAnswer": {
+            "index": 2,
+            "text": "美国人"
+          }
+        },
+        {
+          "id": "ls-HSK1-x2-q3",
+          "type": "TRUE_FALSE",
+          "prompt": "王明是中国人。（Vương Minh là người Trung Quốc.）",
+          "promptPinyin": "wáng míng shì zhōng guó rén 。 （ V ư ơ n g   M i n h   l à   n g ư ờ i   T r u n g   Q u ố c . ）",
+          "explanation": "B (Vương Minh) nói \"我是中国人\" (Mình là người Trung Quốc), nên câu này đúng.",
+          "order": 3,
+          "options": null,
+          "correctAnswer": {
+            "value": true
+          }
+        },
+        {
+          "id": "ls-HSK1-x2-q4",
+          "type": "FILL_BLANK",
+          "prompt": "女的说：我叫______。（Người nữ nói: Mình tên là ______.）",
+          "promptPinyin": "nǚ de shuō ： wǒ jiào _ _ _ _ _ _ 。 （ N g ư ờ i   n ữ   n ó i :   M ì n h   t ê n   l à   _ _ _ _ _ _ . ）",
+          "explanation": "Người nữ (A) tự giới thiệu \"我叫李红\" (Mình tên là Lý Hồng), nên đáp án là 李红.",
+          "order": 4,
+          "options": null,
+          "correctAnswer": {
+            "text": "李红",
+            "accepted": [
+              "李红"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "ls-HSK1-x3",
+      "title": "Bây giờ là mấy giờ? (问现在几点)",
+      "hskLevel": "HSK1",
+      "audioUrl": "",
+      "transcript": "A：现在几点了？\nB：现在八点。\nA：我们几点去学校？\nB：八点半去。\nA：好，我们快走吧。\nB：好的，走吧。",
+      "transcriptExplanation": "A: Bây giờ là mấy giờ rồi?\nB: Bây giờ là 8 giờ.\nA: Mấy giờ chúng ta đi đến trường?\nB: 8 giờ rưỡi đi.\nA: Được, chúng ta đi nhanh thôi.\nB: Được rồi, đi thôi.\n\nGiải thích: Đây là hội thoại ngắn cấp HSK1 về chủ đề hỏi giờ. \"几点\" nghĩa là \"mấy giờ\". \"八点\" = 8 giờ. \"八点半\" = 8 giờ rưỡi (半 = rưỡi/nửa). \"去学校\" = đi đến trường. \"快走吧\" = đi nhanh thôi. Các mẫu câu và từ vựng đều nằm trong phạm vi HSK1.",
+      "timeLimit": 300,
+      "order": 53,
+      "published": true,
+      "questions": [
+        {
+          "id": "ls-HSK1-x3-q1",
+          "type": "MCQ",
+          "prompt": "现在几点？(Bây giờ là mấy giờ?)",
+          "promptPinyin": "xiàn zài jǐ diǎn ？ ( B â y   g i ờ   l à   m ấ y   g i ờ ? )",
+          "explanation": "Trong lời thoại B trả lời «现在八点» (Bây giờ là 8 giờ), nên đáp án đúng là «八点» (8 giờ). Chỉ có một đáp án đúng.",
+          "order": 1,
+          "options": [
+            {
+              "text": "七点",
+              "pinyin": "qī diǎn"
+            },
+            {
+              "text": "八点",
+              "pinyin": "bā diǎn"
+            },
+            {
+              "text": "八点半",
+              "pinyin": "bā diǎn bàn"
+            },
+            {
+              "text": "九点",
+              "pinyin": "jiǔ diǎn"
+            }
+          ],
+          "correctAnswer": {
+            "index": 1,
+            "text": "八点"
+          }
+        },
+        {
+          "id": "ls-HSK1-x3-q2",
+          "type": "MCQ",
+          "prompt": "他们几点去学校？(Mấy giờ họ đi đến trường?)",
+          "promptPinyin": "tā men jǐ diǎn qù xué xiào ？ ( M ấ y   g i ờ   h ọ   đ i   đ ế n   t r ư ờ n g ? )",
+          "explanation": "B nói «八点半去» (8 giờ rưỡi đi), nghĩa là họ đi đến trường lúc 8 giờ rưỡi, nên chọn «八点半». Đáp án «八点» là giờ hiện tại nên không đúng.",
+          "order": 2,
+          "options": [
+            {
+              "text": "八点",
+              "pinyin": "bā diǎn"
+            },
+            {
+              "text": "八点半",
+              "pinyin": "bā diǎn bàn"
+            },
+            {
+              "text": "九点",
+              "pinyin": "jiǔ diǎn"
+            },
+            {
+              "text": "九点半",
+              "pinyin": "jiǔ diǎn bàn"
+            }
+          ],
+          "correctAnswer": {
+            "index": 1,
+            "text": "八点半"
+          }
+        },
+        {
+          "id": "ls-HSK1-x3-q3",
+          "type": "TRUE_FALSE",
+          "prompt": "他们要去学校。(Họ sẽ đi đến trường.)",
+          "promptPinyin": "tā men yào qù xué xiào 。 ( H ọ   s ẽ   đ i   đ ế n   t r ư ờ n g . )",
+          "explanation": "A hỏi «我们几点去学校？» (Mấy giờ chúng ta đi đến trường?) và cả hai bàn về giờ đi, cuối cùng «走吧» (đi thôi), nên khẳng định họ sẽ đi đến trường là ĐÚNG.",
+          "order": 3,
+          "options": null,
+          "correctAnswer": {
+            "value": true
+          }
+        },
+        {
+          "id": "ls-HSK1-x3-q4",
+          "type": "FILL_BLANK",
+          "prompt": "他们______去学校。(Họ đi đến trường lúc ______.) — điền thời gian trong lời thoại",
+          "promptPinyin": "tā men _ _ _ _ _ _ qù xué xiào 。 ( H ọ   đ i   đ ế n   t r ư ờ n g   l ú c   _ _ _ _ _ _ . )   —   đ i ề n   t h ờ i   g i a n   t r o n g   l ờ i   t h o ạ i",
+          "explanation": "B nói «八点半去», nên chỗ trống điền «八点半» (8 giờ rưỡi) — đây là cụm từ xuất hiện nguyên văn trong lời thoại.",
+          "order": 4,
+          "options": null,
+          "correctAnswer": {
+            "text": "八点半",
+            "accepted": [
+              "八点半"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "ls-HSK1-x4",
+      "title": "Nghe hiểu HSK1: Mua hoa quả ở cửa hàng",
+      "hskLevel": "HSK1",
+      "audioUrl": "",
+      "transcript": "A：你好，你要买什么？\nB：我要买苹果。苹果多少钱？\nA：一斤五块钱。\nB：我要三斤。\nA：好的，一共十五块。\nB：谢谢！",
+      "transcriptExplanation": "A: Xin chào, anh/chị muốn mua gì?\nB: Tôi muốn mua táo. Táo bao nhiêu tiền vậy?\nA: Một cân năm đồng (5 tệ).\nB: Tôi muốn (mua) ba cân.\nA: Được rồi, tổng cộng mười lăm đồng (15 tệ).\nB: Cảm ơn!\n\nGiải thích thêm:\n- 苹果 (píngguǒ): quả táo\n- 多少钱 (duōshao qián): bao nhiêu tiền\n- 一斤 (yì jīn): một cân (đơn vị đo ~500g ở Trung Quốc)\n- 块 (kuài): đồng (đơn vị tiền, khẩu ngữ của 元)\n- 三斤 (sān jīn): ba cân\n- 一共 (yígòng): tổng cộng\n- 十五块 = 3 cân × 5 đồng = 15 đồng.",
+      "timeLimit": 300,
+      "order": 54,
+      "published": true,
+      "questions": [
+        {
+          "id": "ls-HSK1-x4-q1",
+          "type": "MCQ",
+          "prompt": "B muốn mua loại hoa quả nào? (顾客要买什么水果？)",
+          "promptPinyin": "B   m u ố n   m u a   l o ạ i   h o a   q u ả   n à o ?   ( gù kè yào mǎi shén me shuǐ guǒ ？ )",
+          "explanation": "Trong lời thoại B nói: 我要买苹果 (Tôi muốn mua táo). Vì vậy đáp án là 苹果 (táo).",
+          "order": 1,
+          "options": [
+            {
+              "text": "苹果 (táo)",
+              "pinyin": "píng guǒ   ( t á o )"
+            },
+            {
+              "text": "香蕉 (chuối)",
+              "pinyin": "xiāng jiāo   ( c h u ố i )"
+            },
+            {
+              "text": "西瓜 (dưa hấu)",
+              "pinyin": "xī guā   ( d ư a   h ấ u )"
+            },
+            {
+              "text": "葡萄 (nho)",
+              "pinyin": "pú táo   ( n h o )"
+            }
+          ],
+          "correctAnswer": {
+            "index": 0,
+            "text": "苹果 (táo)"
+          }
+        },
+        {
+          "id": "ls-HSK1-x4-q2",
+          "type": "MCQ",
+          "prompt": "Táo giá bao nhiêu tiền một cân? (苹果一斤多少钱？)",
+          "promptPinyin": "T á o   g i á   b a o   n h i ê u   t i ề n   m ộ t   c â n ?   ( píng guǒ yì jīn duō shǎo qián ？ )",
+          "explanation": "A nói: 一斤五块钱 (Một cân năm đồng). Vậy giá một cân là 五块钱 (5 đồng). 15 đồng là tổng tiền cho 3 cân nên không phải đáp án.",
+          "order": 2,
+          "options": [
+            {
+              "text": "三块钱 (3 đồng)",
+              "pinyin": "sān kuài qián   ( 3   đ ồ n g )"
+            },
+            {
+              "text": "五块钱 (5 đồng)",
+              "pinyin": "wǔ kuài qián   ( 5   đ ồ n g )"
+            },
+            {
+              "text": "十块钱 (10 đồng)",
+              "pinyin": "shí kuài qián   ( 1 0   đ ồ n g )"
+            },
+            {
+              "text": "十五块钱 (15 đồng)",
+              "pinyin": "shí wǔ kuài qián   ( 1 5   đ ồ n g )"
+            }
+          ],
+          "correctAnswer": {
+            "index": 1,
+            "text": "五块钱 (5 đồng)"
+          }
+        },
+        {
+          "id": "ls-HSK1-x4-q3",
+          "type": "TRUE_FALSE",
+          "prompt": "B mua tất cả ba cân táo. (顾客一共买了三斤苹果。) — Đúng hay Sai?",
+          "promptPinyin": "B   m u a   t ấ t   c ả   b a   c â n   t á o .   ( gù kè yí gòng mǎi le sān jīn píng guǒ 。 )   —   Đ ú n g   h a y   S a i ?",
+          "explanation": "B nói: 我要三斤 (Tôi muốn ba cân). Vậy B mua ba cân táo, câu này ĐÚNG.",
+          "order": 3,
+          "options": null,
+          "correctAnswer": {
+            "value": true
+          }
+        },
+        {
+          "id": "ls-HSK1-x4-q4",
+          "type": "FILL_BLANK",
+          "prompt": "Điền số tiền còn thiếu: 一共______块。(Tổng cộng ____ đồng.)",
+          "promptPinyin": "Đ i ề n   s ố   t i ề n   c ò n   t h i ế u :   yí gòng _ _ _ _ _ _ kuài 。 ( T ổ n g   c ộ n g   _ _ _ _   đ ồ n g . )",
+          "explanation": "A nói: 一共十五块 (Tổng cộng mười lăm đồng). Vì 3 cân × 5 đồng = 15 đồng, nên chỗ trống điền 十五 (mười lăm).",
+          "order": 4,
+          "options": null,
+          "correctAnswer": {
+            "text": "十五",
+            "accepted": [
+              "十五"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "ls-HSK1-x5",
+      "title": "Nghe hiểu HSK1: Hỏi đường",
+      "hskLevel": "HSK1",
+      "audioUrl": "",
+      "transcript": "A：请问，医院在哪儿？\nB：医院在前面。\nA：远不远？\nB：不远，很近。\nA：谢谢你。\nB：不客气。",
+      "transcriptExplanation": "A: Xin hỏi, bệnh viện ở đâu ạ?\nB: Bệnh viện ở phía trước.\nA: Có xa không?\nB: Không xa, rất gần.\nA: Cảm ơn bạn.\nB: Không có gì.\n\nĐây là hội thoại hỏi đường đơn giản: người A hỏi đường đến bệnh viện, người B chỉ rằng bệnh viện ở phía trước và rất gần. Cuối cùng A cảm ơn và B đáp lễ.",
+      "timeLimit": 300,
+      "order": 55,
+      "published": true,
+      "questions": [
+        {
+          "id": "ls-HSK1-x5-q1",
+          "type": "MCQ",
+          "prompt": "A muốn tìm nơi nào?",
+          "promptPinyin": "A   m u ố n   t ì m   n ơ i   n à o ?",
+          "explanation": "A hỏi «医院在哪儿？» (Bệnh viện ở đâu?), nên nơi A muốn tìm là bệnh viện.",
+          "order": 1,
+          "options": [
+            {
+              "text": "Bệnh viện (医院)",
+              "pinyin": "B ệ n h   v i ệ n   ( yī yuàn )"
+            },
+            {
+              "text": "Nhà ga (火车站)",
+              "pinyin": "N h à   g a   ( huǒ chē zhàn )"
+            },
+            {
+              "text": "Trường học (学校)",
+              "pinyin": "T r ư ờ n g   h ọ c   ( xué xiào )"
+            },
+            {
+              "text": "Cửa hàng (商店)",
+              "pinyin": "C ử a   h à n g   ( shāng diàn )"
+            }
+          ],
+          "correctAnswer": {
+            "index": 0,
+            "text": "Bệnh viện (医院)"
+          }
+        },
+        {
+          "id": "ls-HSK1-x5-q2",
+          "type": "MCQ",
+          "prompt": "Bệnh viện ở đâu?",
+          "promptPinyin": "B ệ n h   v i ệ n   ở   đ â u ?",
+          "explanation": "B trả lời «医院在前面» (Bệnh viện ở phía trước), nên đáp án là phía trước.",
+          "order": 2,
+          "options": [
+            {
+              "text": "Phía sau (后面)",
+              "pinyin": "P h í a   s a u   ( hòu miàn )"
+            },
+            {
+              "text": "Phía trước (前面)",
+              "pinyin": "P h í a   t r ư ớ c   ( qián miàn )"
+            },
+            {
+              "text": "Bên trái (左边)",
+              "pinyin": "B ê n   t r á i   ( zuǒ biān )"
+            },
+            {
+              "text": "Bên phải (右边)",
+              "pinyin": "B ê n   p h ả i   ( yòu biān )"
+            }
+          ],
+          "correctAnswer": {
+            "index": 1,
+            "text": "Phía trước (前面)"
+          }
+        },
+        {
+          "id": "ls-HSK1-x5-q3",
+          "type": "TRUE_FALSE",
+          "prompt": "Bệnh viện ở rất xa.",
+          "promptPinyin": "B ệ n h   v i ệ n   ở   r ấ t   x a .",
+          "explanation": "B nói «不远，很近» (Không xa, rất gần), nên câu «Bệnh viện ở rất xa» là SAI.",
+          "order": 3,
+          "options": null,
+          "correctAnswer": {
+            "value": false
+          }
+        },
+        {
+          "id": "ls-HSK1-x5-q4",
+          "type": "FILL_BLANK",
+          "prompt": "Điền từ còn thiếu: B nói bệnh viện «不远，很____» (không xa, rất gần).",
+          "promptPinyin": "Đ i ề n   t ừ   c ò n   t h i ế u :   B   n ó i   b ệ n h   v i ệ n   « bù yuǎn ， hěn _ _ _ _ »   ( k h ô n g   x a ,   r ấ t   g ầ n ) .",
+          "explanation": "Trong lời thoại B nói «不远，很近», từ cần điền là «近» (gần).",
+          "order": 4,
+          "options": null,
+          "correctAnswer": {
+            "text": "近",
+            "accepted": [
+              "近"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "ls-HSK1-x6",
+      "title": "Nghe hiểu HSK1: Gọi điện tìm người (打电话找人)",
+      "hskLevel": "HSK1",
+      "audioUrl": "",
+      "transcript": "A：喂，你好。\nB：你好，请问李老师在吗？\nA：他不在。\nB：他去哪儿了？\nA：他去学校了。\nB：好，谢谢你。",
+      "transcriptExplanation": "A: Alô, xin chào.\nB: Xin chào, cho hỏi thầy Lý có ở đó không ạ?\nA: Thầy ấy không có ở đây.\nB: Thầy ấy đi đâu rồi ạ?\nA: Thầy ấy đi đến trường rồi.\nB: Vâng, cảm ơn anh/chị.\n\nGiải thích: Đây là một cuộc gọi điện thoại tìm người. Người B gọi đến để tìm \"thầy Lý\" (李老师), nhưng thầy không có ở đó (他不在). Khi B hỏi thầy đi đâu (他去哪儿了？), A trả lời thầy đã đi đến trường (他去学校了). Cuối cùng B cảm ơn (谢谢你).",
+      "timeLimit": 300,
+      "order": 56,
+      "published": true,
+      "questions": [
+        {
+          "id": "ls-HSK1-x6-q1",
+          "type": "MCQ",
+          "prompt": "B想找谁？(B muốn tìm ai?)",
+          "promptPinyin": "B xiǎng zhǎo shuí ？ ( B   m u ố n   t ì m   a i ? )",
+          "explanation": "Trong lời thoại B hỏi «请问李老师在吗？» (Cho hỏi thầy Lý có ở đó không?), nên người B muốn tìm thầy Lý. Chỉ có một đáp án đúng là 李老师.",
+          "order": 1,
+          "options": [
+            {
+              "text": "李老师 (thầy Lý)",
+              "pinyin": "lǐ lǎo shī   ( t h ầ y   L ý )"
+            },
+            {
+              "text": "王老师 (thầy Vương)",
+              "pinyin": "wáng lǎo shī   ( t h ầ y   V ư ơ n g )"
+            },
+            {
+              "text": "妈妈 (mẹ)",
+              "pinyin": "mā ma   ( m ẹ )"
+            },
+            {
+              "text": "医生 (bác sĩ)",
+              "pinyin": "yī shēng   ( b á c   s ĩ )"
+            }
+          ],
+          "correctAnswer": {
+            "index": 0,
+            "text": "李老师 (thầy Lý)"
+          }
+        },
+        {
+          "id": "ls-HSK1-x6-q2",
+          "type": "MCQ",
+          "prompt": "李老师去哪儿了？(Thầy Lý đã đi đâu?)",
+          "promptPinyin": "lǐ lǎo shī qù nǎ ér le ？ ( T h ầ y   L ý   đ ã   đ i   đ â u ? )",
+          "explanation": "A trả lời «他去学校了» (Thầy ấy đi đến trường rồi). Vậy thầy Lý đã đi đến trường học (学校). Chỉ có một đáp án đúng.",
+          "order": 2,
+          "options": [
+            {
+              "text": "商店 (cửa hàng)",
+              "pinyin": "shāng diàn   ( c ử a   h à n g )"
+            },
+            {
+              "text": "学校 (trường học)",
+              "pinyin": "xué xiào   ( t r ư ờ n g   h ọ c )"
+            },
+            {
+              "text": "医院 (bệnh viện)",
+              "pinyin": "yī yuàn   ( b ệ n h   v i ệ n )"
+            },
+            {
+              "text": "饭店 (nhà hàng)",
+              "pinyin": "fàn diàn   ( n h à   h à n g )"
+            }
+          ],
+          "correctAnswer": {
+            "index": 1,
+            "text": "学校 (trường học)"
+          }
+        },
+        {
+          "id": "ls-HSK1-x6-q3",
+          "type": "TRUE_FALSE",
+          "prompt": "李老师现在在。(Thầy Lý bây giờ đang có ở đó.)",
+          "promptPinyin": "lǐ lǎo shī xiàn zài zài 。 ( T h ầ y   L ý   b â y   g i ờ   đ a n g   c ó   ở   đ ó . )",
+          "explanation": "A nói rõ «他不在» (Thầy ấy không có ở đây), nên câu «thầy Lý bây giờ đang có ở đó» là SAI (false).",
+          "order": 3,
+          "options": null,
+          "correctAnswer": {
+            "value": false
+          }
+        },
+        {
+          "id": "ls-HSK1-x6-q4",
+          "type": "FILL_BLANK",
+          "prompt": "他去______了。(Thầy ấy đã đi đến ______ rồi.)",
+          "promptPinyin": "tā qù _ _ _ _ _ _ liǎo 。 ( T h ầ y   ấ y   đ ã   đ i   đ ế n   _ _ _ _ _ _   r ồ i . )",
+          "explanation": "Trong lời thoại A nói nguyên văn «他去学校了», nên chỗ trống điền «学校» (trường học). Từ này xuất hiện đúng nguyên văn trong lời thoại.",
+          "order": 4,
+          "options": null,
+          "correctAnswer": {
+            "text": "学校",
+            "accepted": [
+              "学校"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "ls-HSK2-x1",
+      "title": "约朋友见面 — Hẹn gặp bạn (Nghe hiểu HSK2)",
+      "hskLevel": "HSK2",
+      "audioUrl": "",
+      "transcript": "A：喂，小明，你明天有时间吗？\nB：有啊，明天是星期六，我没有课。怎么了？\nA：我们一起去看电影，好不好？\nB：好的！我们几点见面？\nA：下午两点，在电影院门口，可以吗？\nB：两点有点儿早，我们三点见面吧。\nA：好，那三点。你坐公共汽车来吗？\nB：不，我坐地铁去，又快又方便。",
+      "transcriptExplanation": "A: Alô, Tiểu Minh, ngày mai cậu có thời gian không?\nB: Có chứ, ngày mai là thứ Bảy, tớ không có tiết học. Có chuyện gì thế?\nA: Chúng ta cùng đi xem phim nhé, được không?\nB: Được! Chúng ta mấy giờ gặp nhau?\nA: Hai giờ chiều, ở trước cửa rạp chiếu phim, được không?\nB: Hai giờ hơi sớm, chúng ta gặp nhau lúc ba giờ đi.\nA: Được, vậy thì ba giờ. Cậu đi xe buýt đến à?\nB: Không, tớ đi tàu điện ngầm, vừa nhanh vừa tiện.",
+      "timeLimit": 300,
+      "order": 51,
+      "published": true,
+      "questions": [
+        {
+          "id": "ls-HSK2-x1-q1",
+          "type": "MCQ",
+          "prompt": "他们打算一起做什么？(Họ định cùng nhau làm gì?)",
+          "promptPinyin": "tā men dǎ suàn yì qǐ zuò shén me ？ ( H ọ   đ ị n h   c ù n g   n h a u   l à m   g ì ? )",
+          "explanation": "A nói \"我们一起去看电影，好不好？\" (Chúng ta cùng đi xem phim nhé), nên đáp án là đi xem phim.",
+          "order": 1,
+          "options": [
+            {
+              "text": "去看电影 (Đi xem phim)",
+              "pinyin": "qù kàn diàn yǐng   ( Đ i   x e m   p h i m )"
+            },
+            {
+              "text": "去买东西 (Đi mua đồ)",
+              "pinyin": "qù mǎi dōng xī   ( Đ i   m u a   đ ồ )"
+            },
+            {
+              "text": "去吃饭 (Đi ăn cơm)",
+              "pinyin": "qù chī fàn   ( Đ i   ă n   c ơ m )"
+            },
+            {
+              "text": "去上课 (Đi học)",
+              "pinyin": "qù shàng kè   ( Đ i   h ọ c )"
+            }
+          ],
+          "correctAnswer": {
+            "index": 0,
+            "text": "去看电影 (Đi xem phim)"
+          }
+        },
+        {
+          "id": "ls-HSK2-x1-q2",
+          "type": "MCQ",
+          "prompt": "他们最后决定几点见面？(Cuối cùng họ quyết định gặp nhau lúc mấy giờ?)",
+          "promptPinyin": "tā men zuì hòu jué dìng jǐ diǎn jiàn miàn ？ ( C u ố i   c ù n g   h ọ   q u y ế t   đ ị n h   g ặ p   n h a u   l ú c   m ấ y   g i ờ ? )",
+          "explanation": "A đề nghị 2 giờ nhưng B nói hơi sớm và đề xuất \"我们三点见面吧\" (gặp nhau lúc 3 giờ), A đồng ý \"好，那三点\", nên giờ hẹn cuối cùng là 3 giờ.",
+          "order": 2,
+          "options": [
+            {
+              "text": "两点 (2 giờ)",
+              "pinyin": "liǎng diǎn   ( 2   g i ờ )"
+            },
+            {
+              "text": "三点 (3 giờ)",
+              "pinyin": "sān diǎn   ( 3   g i ờ )"
+            },
+            {
+              "text": "四点 (4 giờ)",
+              "pinyin": "sì diǎn   ( 4   g i ờ )"
+            },
+            {
+              "text": "五点 (5 giờ)",
+              "pinyin": "wǔ diǎn   ( 5   g i ờ )"
+            }
+          ],
+          "correctAnswer": {
+            "index": 1,
+            "text": "三点 (3 giờ)"
+          }
+        },
+        {
+          "id": "ls-HSK2-x1-q3",
+          "type": "TRUE_FALSE",
+          "prompt": "小明明天要上课。(Ngày mai Tiểu Minh phải đi học.)",
+          "promptPinyin": "xiǎo míng míng tiān yào shàng kè 。 ( N g à y   m a i   T i ể u   M i n h   p h ả i   đ i   h ọ c . )",
+          "explanation": "Sai. B (Tiểu Minh) nói \"明天是星期六，我没有课\" (ngày mai là thứ Bảy, tớ không có tiết học), nên câu này sai.",
+          "order": 3,
+          "options": null,
+          "correctAnswer": {
+            "value": false
+          }
+        },
+        {
+          "id": "ls-HSK2-x1-q4",
+          "type": "FILL_BLANK",
+          "prompt": "他们约在电影院______见面。(Họ hẹn gặp ở ______ rạp chiếu phim.)",
+          "promptPinyin": "tā men yuē zài diàn yǐng yuàn _ _ _ _ _ _ jiàn miàn 。 ( H ọ   h ẹ n   g ặ p   ở   _ _ _ _ _ _   r ạ p   c h i ế u   p h i m . )",
+          "explanation": "A nói \"在电影院门口\" (ở trước cửa/cổng rạp chiếu phim), nên chỗ trống điền \"门口\" (trước cửa/cổng).",
+          "order": 4,
+          "options": null,
+          "correctAnswer": {
+            "text": "门口",
+            "accepted": [
+              "门口"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "ls-HSK2-x2",
+      "title": "在饭馆点菜 (Gọi món ở nhà hàng)",
+      "hskLevel": "HSK2",
+      "audioUrl": "",
+      "transcript": "A：你好，请问你们几个人？\nB：两个人。这个桌子可以吗？\nA：可以。这是菜单，你们想吃什么？\nB：我们想吃鱼，还有一个鸡蛋汤。\nA：好的。你们要喝点儿什么？喝茶还是喝水？\nB：一杯茶，一杯水，谢谢。\nA：好，请等一下，菜马上就来。\nB：好的，谢谢你。",
+      "transcriptExplanation": "A: Xin chào, cho hỏi các bạn mấy người ạ?\nB: Hai người. Bàn này được không ạ?\nA: Được ạ. Đây là thực đơn, các bạn muốn ăn gì?\nB: Chúng tôi muốn ăn cá, và một canh trứng gà.\nA: Vâng. Các bạn muốn uống gì ạ? Uống trà hay uống nước?\nB: Một cốc trà, một cốc nước, cảm ơn.\nA: Vâng, xin đợi một chút, món ăn sẽ mang ra ngay.\nB: Vâng, cảm ơn anh/chị.\n\nĐây là hội thoại giữa nhân viên phục vụ (A) và khách (B) ở nhà hàng. Khách có hai người, họ gọi món cá và canh trứng gà, uống một cốc trà và một cốc nước.",
+      "timeLimit": 300,
+      "order": 52,
+      "published": true,
+      "questions": [
+        {
+          "id": "ls-HSK2-x2-q1",
+          "type": "MCQ",
+          "prompt": "他们一共几个人？",
+          "promptPinyin": "tā men yí gòng jǐ gè rén ？",
+          "explanation": "Khách nói \"两个人\" (hai người) khi trả lời câu hỏi của nhân viên phục vụ về số lượng người. Chỉ có một đáp án đúng.",
+          "order": 1,
+          "options": [
+            {
+              "text": "一个人",
+              "pinyin": "yí gè rén"
+            },
+            {
+              "text": "两个人",
+              "pinyin": "liǎng gè rén"
+            },
+            {
+              "text": "三个人",
+              "pinyin": "sān gè rén"
+            },
+            {
+              "text": "四个人",
+              "pinyin": "sì gè rén"
+            }
+          ],
+          "correctAnswer": {
+            "index": 1,
+            "text": "两个人"
+          }
+        },
+        {
+          "id": "ls-HSK2-x2-q2",
+          "type": "MCQ",
+          "prompt": "他们想吃什么？",
+          "promptPinyin": "tā men xiǎng chī shén me ？",
+          "explanation": "Khách nói \"我们想吃鱼，还有一个鸡蛋汤\" (muốn ăn cá và một canh trứng gà), nên đáp án là cá và canh trứng gà. Các phương án khác không được nhắc trong lời thoại.",
+          "order": 2,
+          "options": [
+            {
+              "text": "鱼和鸡蛋汤",
+              "pinyin": "yú hé jī dàn tāng"
+            },
+            {
+              "text": "米饭和鱼",
+              "pinyin": "mǐ fàn hé yú"
+            },
+            {
+              "text": "面条和汤",
+              "pinyin": "miàn tiáo hé tāng"
+            },
+            {
+              "text": "鸡肉和汤",
+              "pinyin": "jī ròu hé tāng"
+            }
+          ],
+          "correctAnswer": {
+            "index": 0,
+            "text": "鱼和鸡蛋汤"
+          }
+        },
+        {
+          "id": "ls-HSK2-x2-q3",
+          "type": "TRUE_FALSE",
+          "prompt": "他们要了两杯茶。",
+          "promptPinyin": "tā men yào le liǎng bēi chá 。",
+          "explanation": "Sai. Khách gọi \"一杯茶，一杯水\" (một cốc trà và một cốc nước), chứ không phải hai cốc trà.",
+          "order": 3,
+          "options": null,
+          "correctAnswer": {
+            "value": false
+          }
+        },
+        {
+          "id": "ls-HSK2-x2-q4",
+          "type": "FILL_BLANK",
+          "prompt": "服务员说：请等一下，菜______就来。",
+          "promptPinyin": "fú wù yuán shuō ： qǐng děng yí xià ， cài _ _ _ _ _ _ jiù lái 。",
+          "explanation": "Trong lời thoại, nhân viên phục vụ nói \"菜马上就来\" (món ăn sẽ mang ra ngay), nên từ cần điền là \"马上\". Từ này xuất hiện nguyên văn trong lời thoại.",
+          "order": 4,
+          "options": null,
+          "correctAnswer": {
+            "text": "马上",
+            "accepted": [
+              "马上"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "ls-HSK2-x3",
+      "title": "Nghe hiểu HSK2: Nói về thời tiết hôm nay (谈今天的天气)",
+      "hskLevel": "HSK2",
+      "audioUrl": "",
+      "transcript": "A：今天天气怎么样？我还没出门。\nB：今天很冷，早上下雪了。\nA：真的吗？那我要多穿点儿衣服。\nB：对，你最好带上帽子和手套。\nA：好的。下午还下雪吗？\nB：下午不下雪了，但是有风，还是很冷。\nA：那我们明天再去公园吧，明天天气会好一点儿。\nB：好，明天见！",
+      "transcriptExplanation": "A: Thời tiết hôm nay thế nào? Mình vẫn chưa ra khỏi nhà.\nB: Hôm nay lạnh lắm, buổi sáng có tuyết rơi đấy.\nA: Thật à? Vậy mình phải mặc thêm nhiều quần áo mới được.\nB: Đúng vậy, cậu tốt nhất nên đội mũ và mang găng tay.\nA: Được. Buổi chiều còn có tuyết không?\nB: Buổi chiều không có tuyết nữa, nhưng có gió, vẫn rất lạnh.\nA: Vậy ngày mai chúng ta đi công viên nhé, ngày mai thời tiết sẽ đẹp hơn một chút.\nB: Được, hẹn mai gặp!",
+      "timeLimit": 300,
+      "order": 53,
+      "published": true,
+      "questions": [
+        {
+          "id": "ls-HSK2-x3-q1",
+          "type": "MCQ",
+          "prompt": "今天早上天气怎么样？(Thời tiết sáng nay thế nào?)",
+          "promptPinyin": "jīn tiān zǎo shàng tiān qì zěn me yàng ？ ( T h ờ i   t i ế t   s á n g   n a y   t h ế   n à o ? )",
+          "explanation": "B nói \"今天很冷，早上下雪了\" (Hôm nay rất lạnh, buổi sáng có tuyết rơi), nên đáp án đúng là 'Có tuyết rơi'. Chỉ có 1 đáp án đúng, các lựa chọn khác không được nhắc tới trong lời thoại.",
+          "order": 1,
+          "options": [
+            {
+              "text": "下雪了 (Có tuyết rơi)",
+              "pinyin": "xià xuě le   ( C ó   t u y ế t   r ơ i )"
+            },
+            {
+              "text": "下雨了 (Có mưa)",
+              "pinyin": "xià yǔ le   ( C ó   m ư a )"
+            },
+            {
+              "text": "很热 (Rất nóng)",
+              "pinyin": "hěn rè   ( R ấ t   n ó n g )"
+            },
+            {
+              "text": "有太阳 (Có nắng)",
+              "pinyin": "yǒu tài yáng   ( C ó   n ắ n g )"
+            }
+          ],
+          "correctAnswer": {
+            "index": 0,
+            "text": "下雪了 (Có tuyết rơi)"
+          }
+        },
+        {
+          "id": "ls-HSK2-x3-q2",
+          "type": "MCQ",
+          "prompt": "B 建议 A 带上什么？(B khuyên A mang theo gì?)",
+          "promptPinyin": "B   jiàn yì   A   dài shàng shén me ？ ( B   k h u y ê n   A   m a n g   t h e o   g ì ? )",
+          "explanation": "B nói \"你最好带上帽子和手套\" (Cậu tốt nhất nên đội mũ và mang găng tay), nên đáp án đúng là 'Mũ và găng tay'. Chỉ có 1 đáp án đúng.",
+          "order": 2,
+          "options": [
+            {
+              "text": "雨伞 (Ô)",
+              "pinyin": "yǔ sǎn   ( Ô )"
+            },
+            {
+              "text": "帽子和手套 (Mũ và găng tay)",
+              "pinyin": "mào zi hé shǒu tào   ( M ũ   v à   g ă n g   t a y )"
+            },
+            {
+              "text": "水 (Nước)",
+              "pinyin": "shuǐ   ( N ư ớ c )"
+            },
+            {
+              "text": "书 (Sách)",
+              "pinyin": "shū   ( S á c h )"
+            }
+          ],
+          "correctAnswer": {
+            "index": 1,
+            "text": "帽子和手套 (Mũ và găng tay)"
+          }
+        },
+        {
+          "id": "ls-HSK2-x3-q3",
+          "type": "TRUE_FALSE",
+          "prompt": "下午还会下雪。(Buổi chiều vẫn sẽ có tuyết.)",
+          "promptPinyin": "xià wǔ hái huì xià xuě 。 ( B u ổ i   c h i ề u   v ẫ n   s ẽ   c ó   t u y ế t . )",
+          "explanation": "B nói \"下午不下雪了，但是有风\" (Buổi chiều không có tuyết nữa, nhưng có gió), nghĩa là chiều không còn tuyết. Vì vậy câu này SAI (đáp án: false).",
+          "order": 3,
+          "options": null,
+          "correctAnswer": {
+            "value": false
+          }
+        },
+        {
+          "id": "ls-HSK2-x3-q4",
+          "type": "FILL_BLANK",
+          "prompt": "他们打算明天一起去______。(Họ định ngày mai cùng nhau đi ______.)",
+          "promptPinyin": "tā men dǎ suàn míng tiān yì qǐ qù _ _ _ _ _ _ 。 ( H ọ   đ ị n h   n g à y   m a i   c ù n g   n h a u   đ i   _ _ _ _ _ _ . )",
+          "explanation": "A nói \"那我们明天再去公园吧\" (Vậy ngày mai chúng ta đi công viên nhé), nên chỗ trống điền '公园' (công viên). Từ '公园' xuất hiện nguyên văn trong lời thoại.",
+          "order": 4,
+          "options": null,
+          "correctAnswer": {
+            "text": "公园",
+            "accepted": [
+              "公园"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "ls-HSK2-x4",
+      "title": "Nghe hiểu HSK2: Đi taxi (坐出租车)",
+      "hskLevel": "HSK2",
+      "audioUrl": "",
+      "transcript": "A：师傅，您好！我要去火车站，请问多长时间能到？\nB：现在不堵车，大概二十分钟就到了。\nA：太好了，我三点的火车，现在两点，来得及吗？\nB：来得及，您别着急。请问您坐前面还是后面？\nA：我坐后面吧。师傅，能开快一点儿吗？\nB：好的，不过前面有很多车，我们慢慢开，很快就到了。\nA：好，谢谢您。到了火车站一共多少钱？\nB：三十五块。您到了给我就行。",
+      "transcriptExplanation": "A：Bác tài, chào bác! Tôi muốn đến ga tàu, xin hỏi mất bao lâu thì đến ạ?\nB：Bây giờ không tắc đường, khoảng hai mươi phút là đến thôi.\nA：Tuyệt quá, tôi có chuyến tàu lúc 3 giờ, bây giờ là 2 giờ, có kịp không ạ?\nB：Kịp mà, anh/chị đừng vội. Xin hỏi anh/chị ngồi phía trước hay phía sau?\nA：Tôi ngồi phía sau vậy. Bác tài ơi, có thể chạy nhanh một chút được không ạ?\nB：Được, nhưng phía trước có rất nhiều xe, chúng ta chạy từ từ, một lát là đến ngay thôi.\nA：Vâng, cảm ơn bác. Đến ga tàu tổng cộng hết bao nhiêu tiền ạ?\nB：Ba mươi lăm tệ. Anh/chị đến nơi đưa tôi là được.",
+      "timeLimit": 300,
+      "order": 54,
+      "published": true,
+      "questions": [
+        {
+          "id": "ls-HSK2-x4-q1",
+          "type": "MCQ",
+          "prompt": "说话人要去哪儿？",
+          "promptPinyin": "shuō huà rén yào qù nǎ ér ？",
+          "explanation": "Ngay đầu hội thoại, A nói \"我要去火车站\" (Tôi muốn đến ga tàu), nên đáp án là ga tàu.",
+          "order": 1,
+          "options": [
+            {
+              "text": "机场",
+              "pinyin": "jī chǎng"
+            },
+            {
+              "text": "火车站",
+              "pinyin": "huǒ chē zhàn"
+            },
+            {
+              "text": "学校",
+              "pinyin": "xué xiào"
+            },
+            {
+              "text": "医院",
+              "pinyin": "yī yuàn"
+            }
+          ],
+          "correctAnswer": {
+            "index": 1,
+            "text": "火车站"
+          }
+        },
+        {
+          "id": "ls-HSK2-x4-q2",
+          "type": "MCQ",
+          "prompt": "现在几点？",
+          "promptPinyin": "xiàn zài jǐ diǎn ？",
+          "explanation": "A nói \"我三点的火车，现在两点\" (Tôi có chuyến tàu lúc 3 giờ, bây giờ là 2 giờ), nên hiện tại là 2 giờ.",
+          "order": 2,
+          "options": [
+            {
+              "text": "两点",
+              "pinyin": "liǎng diǎn"
+            },
+            {
+              "text": "三点",
+              "pinyin": "sān diǎn"
+            },
+            {
+              "text": "两点二十",
+              "pinyin": "liǎng diǎn èr shí"
+            },
+            {
+              "text": "三点二十",
+              "pinyin": "sān diǎn èr shí"
+            }
+          ],
+          "correctAnswer": {
+            "index": 0,
+            "text": "两点"
+          }
+        },
+        {
+          "id": "ls-HSK2-x4-q3",
+          "type": "TRUE_FALSE",
+          "prompt": "现在路上堵车。",
+          "promptPinyin": "xiàn zài lù shang dǔ chē 。",
+          "explanation": "Bác tài nói \"现在不堵车\" (Bây giờ không tắc đường), nên câu \"đường đang tắc\" là SAI.",
+          "order": 3,
+          "options": null,
+          "correctAnswer": {
+            "value": false
+          }
+        },
+        {
+          "id": "ls-HSK2-x4-q4",
+          "type": "FILL_BLANK",
+          "prompt": "到了火车站一共______块。",
+          "promptPinyin": "dào le huǒ chē zhàn yí gòng _ _ _ _ _ _ kuài 。",
+          "explanation": "Bác tài trả lời tiền xe là \"三十五块\" (35 tệ), nên chỗ trống điền \"三十五\".",
+          "order": 4,
+          "options": null,
+          "correctAnswer": {
+            "text": "三十五",
+            "accepted": [
+              "三十五"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "ls-HSK2-x5",
+      "title": "Nghe hiểu HSK2 — Mua quần áo (买衣服)",
+      "hskLevel": "HSK2",
+      "audioUrl": "",
+      "transcript": "A：欢迎光临，您想买什么？\nB：我想给我妈妈买一件衣服。\nA：您看这件红色的怎么样？很漂亮。\nB：颜色很好看，多少钱？\nA：三百块钱。\nB：太贵了，能便宜一点儿吗？\nA：好，卖您两百五十块。\nB：好的，我要这件，谢谢。",
+      "transcriptExplanation": "A: Hoan nghênh quý khách, anh/chị muốn mua gì ạ?\nB: Tôi muốn mua một chiếc áo cho mẹ tôi.\nA: Anh/chị xem chiếc màu đỏ này thế nào? Rất đẹp ạ.\nB: Màu rất đẹp, bao nhiêu tiền vậy?\nA: Ba trăm tệ ạ.\nB: Đắt quá, có thể rẻ hơn một chút được không?\nA: Được, bán cho anh/chị hai trăm năm mươi tệ.\nB: Được rồi, tôi lấy chiếc này, cảm ơn.\n\nGhi chú: Đây là hội thoại mua sắm điển hình cấp HSK2 giữa nhân viên bán hàng (A) và khách hàng (B). Khách mua áo tặng mẹ, hỏi giá, mặc cả và cuối cùng mua với giá 250 tệ.",
+      "timeLimit": 300,
+      "order": 55,
+      "published": true,
+      "questions": [
+        {
+          "id": "ls-HSK2-x5-q1",
+          "type": "MCQ",
+          "prompt": "B 想给谁买衣服？(B muốn mua áo cho ai?)",
+          "promptPinyin": "B   xiǎng gěi shuí mǎi yī fú ？ ( B   m u ố n   m u a   á o   c h o   a i ? )",
+          "explanation": "B nói \"我想给我妈妈买一件衣服\" (Tôi muốn mua một chiếc áo cho mẹ tôi), nên đáp án là mua cho mẹ (给妈妈).",
+          "order": 1,
+          "options": [
+            {
+              "text": "给妈妈",
+              "pinyin": "gěi mā ma"
+            },
+            {
+              "text": "给爸爸",
+              "pinyin": "gěi bà ba"
+            },
+            {
+              "text": "给妹妹",
+              "pinyin": "gěi mèi mei"
+            },
+            {
+              "text": "给自己",
+              "pinyin": "gěi zì jǐ"
+            }
+          ],
+          "correctAnswer": {
+            "index": 0,
+            "text": "给妈妈"
+          }
+        },
+        {
+          "id": "ls-HSK2-x5-q2",
+          "type": "MCQ",
+          "prompt": "这件衣服是什么颜色的？(Chiếc áo này màu gì?)",
+          "promptPinyin": "zhè jiàn yī fu shì shén me yán sè de ？ ( C h i ế c   á o   n à y   m à u   g ì ? )",
+          "explanation": "A giới thiệu \"您看这件红色的怎么样\" (Anh/chị xem chiếc màu đỏ này thế nào), nên áo màu đỏ (红色).",
+          "order": 2,
+          "options": [
+            {
+              "text": "白色",
+              "pinyin": "bái sè"
+            },
+            {
+              "text": "红色",
+              "pinyin": "hóng sè"
+            },
+            {
+              "text": "黑色",
+              "pinyin": "hēi sè"
+            },
+            {
+              "text": "蓝色",
+              "pinyin": "lán sè"
+            }
+          ],
+          "correctAnswer": {
+            "index": 1,
+            "text": "红色"
+          }
+        },
+        {
+          "id": "ls-HSK2-x5-q3",
+          "type": "TRUE_FALSE",
+          "prompt": "B 觉得这件衣服太贵了。(B cảm thấy chiếc áo này quá đắt.)",
+          "promptPinyin": "B   jué de zhè jiàn yī fu tài guì le 。 ( B   c ả m   t h ấ y   c h i ế c   á o   n à y   q u á   đ ắ t . )",
+          "explanation": "B nói \"太贵了，能便宜一点儿吗\" (Đắt quá, có thể rẻ hơn một chút được không), chứng tỏ B cho rằng áo quá đắt. Vậy câu này ĐÚNG.",
+          "order": 3,
+          "options": null,
+          "correctAnswer": {
+            "value": true
+          }
+        },
+        {
+          "id": "ls-HSK2-x5-q4",
+          "type": "FILL_BLANK",
+          "prompt": "最后 A 卖给 B 的价格是 ____ 块钱。(Cuối cùng A bán cho B với giá ____ tệ.)",
+          "promptPinyin": "zuì hòu   A   mài gěi   B   de jià gé shì   _ _ _ _   kuài qián 。 ( C u ố i   c ù n g   A   b á n   c h o   B   v ớ i   g i á   _ _ _ _   t ệ . )",
+          "explanation": "A nói \"好，卖您两百五十块\" (Được, bán cho anh/chị hai trăm năm mươi tệ), sau đó B đồng ý mua. Vậy giá cuối cùng là 两百五十 (250) tệ.",
+          "order": 4,
+          "options": null,
+          "correctAnswer": {
+            "text": "两百五十",
+            "accepted": [
+              "两百五十"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "ls-HSK2-x6",
+      "title": "Xin phép nghỉ học với giáo viên (跟老师请假)",
+      "hskLevel": "HSK2",
+      "audioUrl": "",
+      "transcript": "A：老师，明天我想请一天假，可以吗？\nB：怎么了？你生病了吗？\nA：是的，我感冒了，头很疼，医生让我在家休息。\nB：好的。那你去过医院了吗？\nA：去过了，医生给我开了药。\nB：好，你在家好好休息。明天的作业别忘了做。\nA：谢谢老师，我知道了。后天我一定来上课。\nB：不用谢，早点儿好起来。",
+      "transcriptExplanation": "A: Thưa cô, ngày mai em muốn xin nghỉ một ngày, có được không ạ?\nB: Sao vậy? Em bị ốm à?\nA: Vâng ạ, em bị cảm rồi, đầu rất đau, bác sĩ bảo em ở nhà nghỉ ngơi.\nB: Được. Vậy em đã đi bệnh viện chưa?\nA: Đi rồi ạ, bác sĩ đã kê thuốc cho em.\nB: Tốt, em ở nhà nghỉ ngơi cho khỏe. Bài tập ngày mai đừng quên làm nhé.\nA: Cảm ơn cô ạ, em biết rồi. Ngày kia em nhất định sẽ đến lớp.\nB: Không có gì, mau khỏe lại nhé.\n\nGiải thích: Đây là cuộc hội thoại giữa học sinh (A) và giáo viên (B). Học sinh xin nghỉ một ngày vì bị cảm, đau đầu, đã đi bệnh viện và được bác sĩ kê thuốc. Giáo viên nhắc làm bài tập và chúc mau khỏe.",
+      "timeLimit": 300,
+      "order": 56,
+      "published": true,
+      "questions": [
+        {
+          "id": "ls-HSK2-x6-q1",
+          "type": "MCQ",
+          "prompt": "学生为什么要请假？（Vì sao học sinh xin nghỉ?）",
+          "promptPinyin": "xué shēng wèi shén me yào qǐng jià ？ （ V ì   s a o   h ọ c   s i n h   x i n   n g h ỉ ? ）",
+          "explanation": "Trong lời thoại, học sinh nói \"我感冒了，头很疼\" (em bị cảm rồi, đầu rất đau), nên đáp án đúng là bị cảm và đau đầu. Chỉ có một phương án đúng.",
+          "order": 1,
+          "options": [
+            {
+              "text": "他要去旅游",
+              "pinyin": "tā yào qù lǚ yóu"
+            },
+            {
+              "text": "他感冒了，头很疼",
+              "pinyin": "tā gǎn mào le ， tóu hěn téng"
+            },
+            {
+              "text": "他要去看朋友",
+              "pinyin": "tā yào qù kàn péng yǒu"
+            },
+            {
+              "text": "他家里有事",
+              "pinyin": "tā jiā lǐ yǒu shì"
+            }
+          ],
+          "correctAnswer": {
+            "index": 1,
+            "text": "他感冒了，头很疼"
+          }
+        },
+        {
+          "id": "ls-HSK2-x6-q2",
+          "type": "MCQ",
+          "prompt": "学生想请几天假？（Học sinh muốn xin nghỉ mấy ngày?）",
+          "promptPinyin": "xué shēng xiǎng qǐng jǐ tiān jiǎ ？ （ H ọ c   s i n h   m u ố n   x i n   n g h ỉ   m ấ y   n g à y ? ）",
+          "explanation": "Học sinh nói \"明天我想请一天假\" (ngày mai em muốn xin nghỉ một ngày), vậy nên đáp án là một ngày (一天). Chỉ có một phương án đúng.",
+          "order": 2,
+          "options": [
+            {
+              "text": "一天",
+              "pinyin": "yì tiān"
+            },
+            {
+              "text": "两天",
+              "pinyin": "liǎng tiān"
+            },
+            {
+              "text": "三天",
+              "pinyin": "sān tiān"
+            },
+            {
+              "text": "一个星期",
+              "pinyin": "yí gè xīng qī"
+            }
+          ],
+          "correctAnswer": {
+            "index": 0,
+            "text": "一天"
+          }
+        },
+        {
+          "id": "ls-HSK2-x6-q3",
+          "type": "TRUE_FALSE",
+          "prompt": "学生已经去过医院了。（Học sinh đã đi bệnh viện rồi.）",
+          "promptPinyin": "xué shēng yǐ jīng qù guò yī yuàn le 。 （ H ọ c   s i n h   đ ã   đ i   b ệ n h   v i ệ n   r ồ i . ）",
+          "explanation": "Khi cô hỏi \"你去过医院了吗？\", học sinh trả lời \"去过了，医生给我开了药\" (đi rồi, bác sĩ đã kê thuốc). Vậy khẳng định này ĐÚNG.",
+          "order": 3,
+          "options": null,
+          "correctAnswer": {
+            "value": true
+          }
+        },
+        {
+          "id": "ls-HSK2-x6-q4",
+          "type": "FILL_BLANK",
+          "prompt": "医生让学生在家______。（Bác sĩ bảo học sinh ở nhà ______.）",
+          "promptPinyin": "yī shēng ràng xué shēng zài jiā _ _ _ _ _ _ 。 （ B á c   s ĩ   b ả o   h ọ c   s i n h   ở   n h à   _ _ _ _ _ _ . ）",
+          "explanation": "Học sinh nói \"医生让我在家休息\" (bác sĩ bảo em ở nhà nghỉ ngơi), nên chỗ trống điền \"休息\" (nghỉ ngơi), từ này xuất hiện nguyên văn trong lời thoại.",
+          "order": 4,
+          "options": null,
+          "correctAnswer": {
+            "text": "休息",
+            "accepted": [
+              "休息"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "ls-HSK3-x1",
+      "title": "Bài nghe HSK3: Bàn nhau cuối tuần đi đâu",
+      "hskLevel": "HSK3",
+      "audioUrl": "",
+      "transcript": "A：这个周末你有什么打算吗？我们一起出去玩儿吧。\nB：好啊！可是天气预报说星期六会下雨，我们星期天出去，好不好？\nA：可以。那我们去哪儿呢？去公园还是去看电影？\nB：公园我们上个月刚去过。这次去看电影怎么样？听说有一部新电影很有意思。\nA：好主意！那我们几点见面？\nB：电影是下午三点开始的，我们两点半在电影院门口见，行吗？\nA：行。看完电影我们还可以一起去吃饭，我知道附近有一家餐厅的饺子特别好吃。\nB：太好了！我最喜欢吃饺子了。那就这么说定了，星期天见！",
+      "transcriptExplanation": "A: Cuối tuần này cậu có dự định gì không? Chúng ta cùng ra ngoài chơi đi.\nB: Được đấy! Nhưng dự báo thời tiết nói thứ Bảy sẽ mưa, chúng ta đi vào Chủ nhật được không?\nA: Được. Vậy chúng ta đi đâu đây? Đi công viên hay đi xem phim?\nB: Công viên tháng trước chúng ta vừa mới đi rồi. Lần này đi xem phim thế nào? Nghe nói có một bộ phim mới rất thú vị.\nA: Ý hay đấy! Vậy chúng ta mấy giờ gặp nhau?\nB: Phim bắt đầu lúc ba giờ chiều, chúng ta gặp nhau ở cửa rạp chiếu phim lúc hai giờ rưỡi, được không?\nA: Được. Xem phim xong chúng ta còn có thể cùng đi ăn cơm nữa, tớ biết gần đây có một nhà hàng bán sủi cảo đặc biệt ngon.\nB: Tuyệt quá! Tớ thích ăn sủi cảo nhất. Vậy quyết định thế nhé, Chủ nhật gặp!",
+      "timeLimit": 300,
+      "order": 51,
+      "published": true,
+      "questions": [
+        {
+          "id": "ls-HSK3-x1-q1",
+          "type": "MCQ",
+          "prompt": "他们最后决定星期天去做什么？",
+          "promptPinyin": "tā men zuì hòu jué dìng xīng qī tiān qù zuò shén me ？",
+          "explanation": "B nói công viên tháng trước vừa đi rồi và đề nghị 'lần này đi xem phim thế nào?', A đồng ý 'ý hay đấy'. Vì vậy họ quyết định đi xem phim. Ba phương án còn lại (công viên/leo núi/bơi) đều không được chọn, chỉ có một đáp án đúng.",
+          "order": 1,
+          "options": [
+            {
+              "text": "去公园",
+              "pinyin": "qù gōng yuán"
+            },
+            {
+              "text": "去看电影",
+              "pinyin": "qù kàn diàn yǐng"
+            },
+            {
+              "text": "去爬山",
+              "pinyin": "qù pá shān"
+            },
+            {
+              "text": "去游泳",
+              "pinyin": "qù yóu yǒng"
+            }
+          ],
+          "correctAnswer": {
+            "index": 1,
+            "text": "去看电影"
+          }
+        },
+        {
+          "id": "ls-HSK3-x1-q2",
+          "type": "MCQ",
+          "prompt": "他们为什么不星期六出去？",
+          "promptPinyin": "tā men wèi shén me bù xīng qī liù chū qù ？",
+          "explanation": "B nói rõ 'dự báo thời tiết nói thứ Bảy sẽ mưa' (星期六会下雨), nên họ chọn đi vào Chủ nhật thay vì thứ Bảy. Chỉ có một đáp án đúng, suy trực tiếp từ lời thoại.",
+          "order": 2,
+          "options": [
+            {
+              "text": "星期六要上班",
+              "pinyin": "xīng qī liù yào shàng bān"
+            },
+            {
+              "text": "星期六会下雨",
+              "pinyin": "xīng qī liù huì xià yǔ"
+            },
+            {
+              "text": "星期六电影院关门",
+              "pinyin": "xīng qī liù diàn yǐng yuàn guān mén"
+            },
+            {
+              "text": "星期六餐厅休息",
+              "pinyin": "xīng qī liù cān tīng xiū xi"
+            }
+          ],
+          "correctAnswer": {
+            "index": 1,
+            "text": "星期六会下雨"
+          }
+        },
+        {
+          "id": "ls-HSK3-x1-q3",
+          "type": "TRUE_FALSE",
+          "prompt": "他们打算两点半在电影院门口见面。",
+          "promptPinyin": "tā men dǎ suàn liǎng diǎn bàn zài diàn yǐng yuàn mén kǒu jiàn miàn 。",
+          "explanation": "B nói rõ 'chúng ta gặp nhau ở cửa rạp chiếu phim lúc hai giờ rưỡi' (两点半在电影院门口见), và A trả lời '行' (được). Vì vậy câu này đúng.",
+          "order": 3,
+          "options": null,
+          "correctAnswer": {
+            "value": true
+          }
+        },
+        {
+          "id": "ls-HSK3-x1-q4",
+          "type": "FILL_BLANK",
+          "prompt": "看完电影，他们还想一起去吃______。",
+          "promptPinyin": "kàn wán diàn yǐng ， tā men hái xiǎng yì qǐ qù chī _ _ _ _ _ _ 。",
+          "explanation": "A nói gần đây có nhà hàng bán sủi cảo (饺子) rất ngon, và B nói 'thích ăn sủi cảo nhất' (最喜欢吃饺子). Đáp án '饺子' xuất hiện nguyên văn trong lời thoại.",
+          "order": 4,
+          "options": null,
+          "correctAnswer": {
+            "text": "饺子",
+            "accepted": [
+              "饺子"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "ls-HSK3-x2",
+      "title": "Đi bệnh viện khám bệnh",
+      "hskLevel": "HSK3",
+      "audioUrl": "",
+      "transcript": "A：你怎么了？脸色看起来不太好。\nB：我从昨天晚上就开始头疼，还有点儿发烧。\nA：那你得去医院看看。别忘了带上身份证。\nB：我知道，可是我不认识去医院的路。\nA：没关系，医院离这儿不远，坐公共汽车三站就到了。\nB：好的，那我现在就去。医生几点上班？\nA：早上八点开始。现在才七点半，你可以先吃点儿东西。\nB：我不想吃，头太疼了。你能陪我一起去吗？\nA：当然可以。我们一起走吧，路上小心点儿。\nB：谢谢你，你真是我的好朋友。",
+      "transcriptExplanation": "A: Cậu bị sao thế? Sắc mặt trông không được tốt lắm.\nB: Từ tối hôm qua tớ đã bắt đầu đau đầu, còn hơi sốt nữa.\nA: Vậy cậu phải đến bệnh viện xem sao đi. Đừng quên mang theo chứng minh thư nhé.\nB: Tớ biết mà, nhưng tớ không biết đường đến bệnh viện.\nA: Không sao đâu, bệnh viện cách đây không xa, đi xe buýt ba trạm là tới rồi.\nB: Được, vậy tớ đi bây giờ luôn. Mấy giờ bác sĩ đi làm vậy?\nA: Bắt đầu từ tám giờ sáng. Bây giờ mới bảy giờ rưỡi, cậu có thể ăn chút gì đó trước đã.\nB: Tớ không muốn ăn, đầu đau quá. Cậu có thể đi cùng tớ được không?\nA: Tất nhiên là được rồi. Chúng ta cùng đi thôi, trên đường cẩn thận một chút nhé.\nB: Cảm ơn cậu, cậu đúng là người bạn tốt của tớ.",
+      "timeLimit": 300,
+      "order": 52,
+      "published": true,
+      "questions": [
+        {
+          "id": "ls-HSK3-x2-q1",
+          "type": "MCQ",
+          "prompt": "B（说话人B）怎么了？",
+          "promptPinyin": "B （ shuō huà rén B ） zěn me le ？",
+          "explanation": "B nói: 'Từ tối hôm qua tớ đã bắt đầu đau đầu, còn hơi sốt nữa' (我从昨天晚上就开始头疼，还有点儿发烧). Vì vậy đáp án đúng là đau đầu và sốt. Các phương án còn lại (đau bụng, đau răng, mắt khó chịu) đều không được nhắc đến.",
+          "order": 1,
+          "options": [
+            {
+              "text": "头疼、发烧",
+              "pinyin": "tóu téng 、 fā shāo"
+            },
+            {
+              "text": "肚子疼",
+              "pinyin": "dù zǐ téng"
+            },
+            {
+              "text": "牙疼",
+              "pinyin": "yá téng"
+            },
+            {
+              "text": "眼睛不舒服",
+              "pinyin": "yǎn jīng bù shū fú"
+            }
+          ],
+          "correctAnswer": {
+            "index": 0,
+            "text": "头疼、发烧"
+          }
+        },
+        {
+          "id": "ls-HSK3-x2-q2",
+          "type": "MCQ",
+          "prompt": "他们打算怎么去医院？",
+          "promptPinyin": "tā men dǎ suàn zěn me qù yī yuàn ？",
+          "explanation": "A nói bệnh viện cách đây không xa, 'đi xe buýt ba trạm là tới rồi' (坐公共汽车三站就到了). Vì vậy họ đi bằng xe buýt (公共汽车). Đi bộ, taxi, xe đạp đều không được nhắc đến.",
+          "order": 2,
+          "options": [
+            {
+              "text": "走路去",
+              "pinyin": "zǒu lù qù"
+            },
+            {
+              "text": "坐公共汽车去",
+              "pinyin": "zuò gōng gòng qì chē qù"
+            },
+            {
+              "text": "坐出租车去",
+              "pinyin": "zuò chū zū chē qù"
+            },
+            {
+              "text": "骑自行车去",
+              "pinyin": "qí zì xíng chē qù"
+            }
+          ],
+          "correctAnswer": {
+            "index": 1,
+            "text": "坐公共汽车去"
+          }
+        },
+        {
+          "id": "ls-HSK3-x2-q3",
+          "type": "TRUE_FALSE",
+          "prompt": "医生早上八点开始上班。",
+          "promptPinyin": "yī shēng zǎo shàng bā diǎn kāi shǐ shàng bān 。",
+          "explanation": "A nói rõ: 'Bắt đầu từ tám giờ sáng' (早上八点开始). Vì vậy nhận định bác sĩ bắt đầu làm việc lúc tám giờ sáng là ĐÚNG.",
+          "order": 3,
+          "options": null,
+          "correctAnswer": {
+            "value": true
+          }
+        },
+        {
+          "id": "ls-HSK3-x2-q4",
+          "type": "FILL_BLANK",
+          "prompt": "A提醒B去医院别忘了带上______。",
+          "promptPinyin": "A tí xǐng B qù yī yuàn bié wàng le dài shàng _ _ _ _ _ _ 。",
+          "explanation": "A dặn: 'Đừng quên mang theo chứng minh thư nhé' (别忘了带上身份证). Từ cần điền xuất hiện nguyên văn trong lời thoại là 身份证 (chứng minh thư).",
+          "order": 4,
+          "options": null,
+          "correctAnswer": {
+            "text": "身份证",
+            "accepted": [
+              "身份证"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "ls-HSK3-x3",
+      "title": "Gọi điện hỏi thuê nhà",
+      "hskLevel": "HSK3",
+      "audioUrl": "",
+      "transcript": "A：喂，您好，我看到网上的租房信息，想问一下那个房子还能租吗？\nB：您好，还能租。是一室一厅的，在地铁站附近，走路只要五分钟。\nA：太好了。请问一个月的房租是多少钱？\nB：一个月两千八百块，不包括水电费。\nA：可以养宠物吗？我家里有一只小猫。\nB：可以的，不过您要多交五百块的押金。\nA：好的。房子里有空调和洗衣机吗？\nB：有空调、洗衣机，还有一个大冰箱，家具都是新的。\nA：那我今天下午能去看看房子吗？\nB：当然可以，您三点以后来吧，我在小区门口等您。\nA：好，谢谢您，我三点半到。",
+      "transcriptExplanation": "A: Alô, xin chào, tôi thấy thông tin cho thuê nhà trên mạng, muốn hỏi một chút căn nhà đó còn cho thuê không ạ?\nB: Xin chào, vẫn còn cho thuê. Là căn một phòng ngủ một phòng khách, ở gần ga tàu điện ngầm, đi bộ chỉ mất năm phút.\nA: Tuyệt quá. Cho hỏi tiền thuê một tháng là bao nhiêu ạ?\nB: Một tháng hai nghìn tám trăm tệ, chưa bao gồm tiền điện nước.\nA: Có thể nuôi thú cưng không ạ? Nhà tôi có một con mèo con.\nB: Được ạ, nhưng anh/chị phải đóng thêm năm trăm tệ tiền đặt cọc.\nA: Được. Trong nhà có điều hòa và máy giặt không ạ?\nB: Có điều hòa, máy giặt, còn có một cái tủ lạnh lớn, đồ nội thất đều là đồ mới.\nA: Vậy chiều nay tôi có thể đến xem nhà được không ạ?\nB: Đương nhiên được rồi, anh/chị đến sau ba giờ nhé, tôi đợi anh/chị ở cổng khu chung cư.\nA: Được, cảm ơn anh/chị, ba giờ rưỡi tôi sẽ đến.",
+      "timeLimit": 300,
+      "order": 53,
+      "published": true,
+      "questions": [
+        {
+          "id": "ls-HSK3-x3-q1",
+          "type": "MCQ",
+          "prompt": "这个房子一个月的房租是多少钱？",
+          "promptPinyin": "zhè ge fáng zi yí gè yuè de fáng zū shì duō shǎo qián ？",
+          "explanation": "B nói rõ \"一个月两千八百块\" (một tháng hai nghìn tám trăm tệ), chưa bao gồm tiền điện nước, nên đáp án đúng là 2800 tệ. Các phương án còn lại đều không xuất hiện đúng trong lời thoại.",
+          "order": 1,
+          "options": [
+            {
+              "text": "两千五百块",
+              "pinyin": "liǎng qiān wǔ bǎi kuài"
+            },
+            {
+              "text": "两千八百块",
+              "pinyin": "liǎng qiān bā bǎi kuài"
+            },
+            {
+              "text": "三千块",
+              "pinyin": "sān qiān kuài"
+            },
+            {
+              "text": "五百块",
+              "pinyin": "wǔ bǎi kuài"
+            }
+          ],
+          "correctAnswer": {
+            "index": 1,
+            "text": "两千八百块"
+          }
+        },
+        {
+          "id": "ls-HSK3-x3-q2",
+          "type": "MCQ",
+          "prompt": "关于这个房子，下面哪个是对的？",
+          "promptPinyin": "guān yú zhè ge fáng zi ， xià miàn nǎ gè shì duì de ？",
+          "explanation": "B nói \"家具都是新的\" (đồ nội thất đều là đồ mới), nên đáp án đúng. Các lựa chọn khác đều sai: nhà gần ga tàu (đi bộ 5 phút), được nuôi thú cưng, và có máy giặt.",
+          "order": 2,
+          "options": [
+            {
+              "text": "离地铁站很远",
+              "pinyin": "lí dì tiě zhàn hěn yuǎn"
+            },
+            {
+              "text": "不可以养宠物",
+              "pinyin": "bù kě yǐ yǎng chǒng wù"
+            },
+            {
+              "text": "家具都是新的",
+              "pinyin": "jiā jù dōu shì xīn de"
+            },
+            {
+              "text": "没有洗衣机",
+              "pinyin": "méi yǒu xǐ yī jī"
+            }
+          ],
+          "correctAnswer": {
+            "index": 2,
+            "text": "家具都是新的"
+          }
+        },
+        {
+          "id": "ls-HSK3-x3-q3",
+          "type": "TRUE_FALSE",
+          "prompt": "如果养宠物，需要多交五百块的押金。",
+          "promptPinyin": "rú guǒ yǎng chǒng wù ， xū yào duō jiāo wǔ bǎi kuài de yā jīn 。",
+          "explanation": "Khi A hỏi có được nuôi mèo không, B trả lời được nhưng \"您要多交五百块的押金\" (phải đóng thêm 500 tệ tiền đặt cọc), nên câu này Đúng.",
+          "order": 3,
+          "options": null,
+          "correctAnswer": {
+            "value": true
+          }
+        },
+        {
+          "id": "ls-HSK3-x3-q4",
+          "type": "FILL_BLANK",
+          "prompt": "B说三点以后来，他在小区________等A。",
+          "promptPinyin": "B shuō sān diǎn yǐ hòu lái ， tā zài xiǎo qū _ _ _ _ _ _ _ _ děng A 。",
+          "explanation": "B nói \"我在小区门口等您\" (tôi đợi anh/chị ở cổng khu chung cư), nên chỗ trống điền \"门口\" (cổng). Cụm này có nguyên văn trong lời thoại.",
+          "order": 4,
+          "options": null,
+          "correctAnswer": {
+            "text": "门口",
+            "accepted": [
+              "门口"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "ls-HSK3-x4",
+      "title": "Chọn quà sinh nhật cho bạn",
+      "hskLevel": "HSK3",
+      "audioUrl": "",
+      "transcript": "A：这个周末是小丽的生日，我想给她买个礼物，你能帮我一起挑吗？\nB：当然可以。你打算买什么？小丽平时喜欢什么？\nA：她很喜欢看书，特别是历史方面的书。\nB：那送一本书怎么样？又便宜又有意义。\nA：可是我上个月已经送过她一本书了，这次想换别的。\nB：那你看这个红色的包，颜色很漂亮，小丽应该会喜欢。\nA：包有点儿贵，而且我不太清楚她喜欢什么样的。\nB：你说得对。要不我们送她一条围巾吧，现在天气越来越冷了，围巾很实用。\nA：这个主意不错！围巾又暖和又好看，价格也不太贵。\nB：那我们下午就去商店看看，早点儿挑好，别到生日那天才准备。",
+      "transcriptExplanation": "A: Cuối tuần này là sinh nhật của Tiểu Lệ, mình muốn mua cho cậu ấy một món quà, cậu có thể giúp mình chọn cùng không?\nB: Tất nhiên là được. Cậu định mua gì? Tiểu Lệ bình thường thích cái gì?\nA: Cậu ấy rất thích đọc sách, đặc biệt là sách về lịch sử.\nB: Vậy tặng một quyển sách thì sao? Vừa rẻ vừa có ý nghĩa.\nA: Nhưng tháng trước mình đã tặng cậu ấy một quyển sách rồi, lần này muốn đổi thứ khác.\nB: Vậy cậu xem cái túi màu đỏ này đi, màu rất đẹp, Tiểu Lệ chắc sẽ thích.\nA: Túi hơi đắt, với lại mình không rõ lắm cậu ấy thích kiểu nào.\nB: Cậu nói đúng. Hay là mình tặng cậu ấy một chiếc khăn quàng cổ đi, bây giờ thời tiết ngày càng lạnh, khăn quàng rất thiết thực.\nA: Ý này hay đấy! Khăn quàng vừa ấm vừa đẹp, giá cũng không đắt lắm.\nB: Vậy chiều nay chúng ta đi cửa hàng xem thử, chọn sớm một chút, đừng đến ngày sinh nhật mới chuẩn bị.",
+      "timeLimit": 300,
+      "order": 54,
+      "published": true,
+      "questions": [
+        {
+          "id": "ls-HSK3-x4-q1",
+          "type": "MCQ",
+          "prompt": "他们要给谁买生日礼物？",
+          "promptPinyin": "tā men yào gěi shuí mǎi shēng rì lǐ wù ？",
+          "explanation": "Ngay đầu hội thoại A nói cuối tuần này là sinh nhật của Tiểu Lệ (小丽) và muốn mua quà cho cô ấy, nên món quà là dành cho Tiểu Lệ. Chỉ có một đáp án đúng.",
+          "order": 1,
+          "options": [
+            {
+              "text": "小丽",
+              "pinyin": "xiǎo lì"
+            },
+            {
+              "text": "小李",
+              "pinyin": "xiǎo lǐ"
+            },
+            {
+              "text": "A的妈妈",
+              "pinyin": "A de mā ma"
+            },
+            {
+              "text": "B的姐姐",
+              "pinyin": "B de jiě jie"
+            }
+          ],
+          "correctAnswer": {
+            "index": 0,
+            "text": "小丽"
+          }
+        },
+        {
+          "id": "ls-HSK3-x4-q2",
+          "type": "MCQ",
+          "prompt": "他们最后决定送什么礼物？",
+          "promptPinyin": "tā men zuì hòu jué dìng sòng shén me lǐ wù ？",
+          "explanation": "Sách đã tặng tháng trước nên loại, túi thì đắt và không rõ sở thích, cuối cùng B đề nghị tặng khăn quàng cổ (围巾) và A đồng ý là ý hay, nên họ quyết định tặng khăn quàng.",
+          "order": 2,
+          "options": [
+            {
+              "text": "一本书",
+              "pinyin": "yì běn shū"
+            },
+            {
+              "text": "一个红色的包",
+              "pinyin": "yí gè hóng sè de bāo"
+            },
+            {
+              "text": "一条围巾",
+              "pinyin": "yì tiáo wéi jīn"
+            },
+            {
+              "text": "一双鞋",
+              "pinyin": "yì shuāng xié"
+            }
+          ],
+          "correctAnswer": {
+            "index": 2,
+            "text": "一条围巾"
+          }
+        },
+        {
+          "id": "ls-HSK3-x4-q3",
+          "type": "TRUE_FALSE",
+          "prompt": "小丽喜欢看历史方面的书。",
+          "promptPinyin": "xiǎo lì xǐ huan kàn lì shǐ fāng miàn de shū 。",
+          "explanation": "A nói rõ Tiểu Lệ rất thích đọc sách, đặc biệt là sách về lịch sử (特别是历史方面的书), nên câu này đúng.",
+          "order": 3,
+          "options": null,
+          "correctAnswer": {
+            "value": true
+          }
+        },
+        {
+          "id": "ls-HSK3-x4-q4",
+          "type": "FILL_BLANK",
+          "prompt": "B 觉得现在天气越来越____，所以围巾很实用。",
+          "promptPinyin": "B   jué de xiàn zài tiān qì yuè lái yuè _ _ _ _ ， suǒ yǐ wéi jīn hěn shí yòng 。",
+          "explanation": "B nói 现在天气越来越冷了 (thời tiết ngày càng lạnh) nên cho rằng khăn quàng rất thiết thực; từ cần điền xuất hiện nguyên văn là 冷 (lạnh).",
+          "order": 4,
+          "options": null,
+          "correctAnswer": {
+            "text": "冷",
+            "accepted": [
+              "冷"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "ls-HSK3-x5",
+      "title": "Bài nghe HSK3: Nói về sở thích của mỗi người (谈各自的爱好)",
+      "hskLevel": "HSK3",
+      "audioUrl": "",
+      "transcript": "A：小明，周末你一般喜欢做什么？\nB：我周末最喜欢打篮球，几乎每个星期六都去。你呢？\nA：我不太喜欢运动，我的爱好是看电影，特别是中国电影。\nB：真的吗？看电影也很好，还能帮你学习汉语。\nA：对，我一边看一边学习新词语。除了看电影，我还喜欢画画儿。\nB：你会画画儿？太厉害了！我一点儿也不会。\nA：其实我画得不好，只是觉得画画儿的时候很快乐。\nB：这个周末我们一起去看电影，怎么样？看完你教我画画儿。\nA：好啊！那你也带我去打一次篮球吧。\nB：没问题！这样我们都能试试对方的爱好了。",
+      "transcriptExplanation": "A: Tiểu Minh, cuối tuần cậu thường thích làm gì?\nB: Cuối tuần tớ thích nhất là chơi bóng rổ, gần như thứ Bảy nào cũng đi. Còn cậu thì sao?\nA: Tớ không thích vận động lắm, sở thích của tớ là xem phim, đặc biệt là phim Trung Quốc.\nB: Thật à? Xem phim cũng hay đấy, còn giúp cậu học tiếng Hán nữa.\nA: Đúng vậy, tớ vừa xem vừa học từ mới. Ngoài xem phim ra, tớ còn thích vẽ tranh.\nB: Cậu biết vẽ tranh á? Giỏi quá! Tớ thì một chút cũng không biết.\nA: Thật ra tớ vẽ không đẹp, chỉ là cảm thấy lúc vẽ tranh rất vui thôi.\nB: Cuối tuần này chúng ta cùng đi xem phim nhé, thế nào? Xem xong cậu dạy tớ vẽ tranh.\nA: Được đấy! Vậy cậu cũng dẫn tớ đi chơi bóng rổ một lần nhé.\nB: Không thành vấn đề! Như vậy cả hai chúng ta đều có thể thử sở thích của nhau rồi.",
+      "timeLimit": 300,
+      "order": 55,
+      "published": true,
+      "questions": [
+        {
+          "id": "ls-HSK3-x5-q1",
+          "type": "MCQ",
+          "prompt": "小明（B）周末最喜欢做什么？",
+          "promptPinyin": "xiǎo míng （ B ） zhōu mò zuì xǐ huan zuò shén me ？",
+          "explanation": "B (Tiểu Minh) nói: «我周末最喜欢打篮球» (Cuối tuần tớ thích nhất là chơi bóng rổ), nên đáp án là chơi bóng rổ. Ba phương án còn lại là sở thích của A hoặc không đúng, chỉ có 1 đáp án đúng.",
+          "order": 1,
+          "options": [
+            {
+              "text": "看电影",
+              "pinyin": "kàn diàn yǐng"
+            },
+            {
+              "text": "打篮球",
+              "pinyin": "dǎ lán qiú"
+            },
+            {
+              "text": "画画儿",
+              "pinyin": "huà huà ér"
+            },
+            {
+              "text": "学习汉语",
+              "pinyin": "xué xí hàn yǔ"
+            }
+          ],
+          "correctAnswer": {
+            "index": 1,
+            "text": "打篮球"
+          }
+        },
+        {
+          "id": "ls-HSK3-x5-q2",
+          "type": "MCQ",
+          "prompt": "A 除了看电影，还喜欢什么？",
+          "promptPinyin": "A   chú le kàn diàn yǐng ， hái xǐ huan shén me ？",
+          "explanation": "A nói: «除了看电影，我还喜欢画画儿» (Ngoài xem phim ra, tớ còn thích vẽ tranh), nên đáp án là vẽ tranh. Các phương án khác không được nhắc đến là sở thích của A.",
+          "order": 2,
+          "options": [
+            {
+              "text": "打篮球",
+              "pinyin": "dǎ lán qiú"
+            },
+            {
+              "text": "唱歌",
+              "pinyin": "chàng gē"
+            },
+            {
+              "text": "画画儿",
+              "pinyin": "huà huà ér"
+            },
+            {
+              "text": "跑步",
+              "pinyin": "pǎo bù"
+            }
+          ],
+          "correctAnswer": {
+            "index": 2,
+            "text": "画画儿"
+          }
+        },
+        {
+          "id": "ls-HSK3-x5-q3",
+          "type": "TRUE_FALSE",
+          "prompt": "A 很喜欢运动。",
+          "promptPinyin": "A   hěn xǐ huan yùn dòng 。",
+          "explanation": "A nói rõ: «我不太喜欢运动» (Tớ không thích vận động lắm), trái với nội dung câu hỏi, nên câu này SAI.",
+          "order": 3,
+          "options": null,
+          "correctAnswer": {
+            "value": false
+          }
+        },
+        {
+          "id": "ls-HSK3-x5-q4",
+          "type": "FILL_BLANK",
+          "prompt": "A 说他一边看电影一边学习新______。",
+          "promptPinyin": "A   shuō tā yì biān kàn diàn yǐng yì biān xué xí xīn _ _ _ _ _ _ 。",
+          "explanation": "A nói: «我一边看一边学习新词语» (Tớ vừa xem vừa học từ mới), từ cần điền là «词语» (từ ngữ) — xuất hiện nguyên văn trong lời thoại.",
+          "order": 4,
+          "options": null,
+          "correctAnswer": {
+            "text": "词语",
+            "accepted": [
+              "词语"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "ls-HSK3-x6",
+      "title": "Hỏi đường đến bến xe (问去车站的路线)",
+      "hskLevel": "HSK3",
+      "audioUrl": "",
+      "transcript": "A：您好，请问去火车站怎么走？\nB：火车站啊，不太远，你可以坐公共汽车，也可以走路去。\nA：走路要多长时间？我不太清楚路。\nB：走路大概二十分钟。你先一直往前走，到红绿灯的地方往右拐。\nA：往右拐以后呢？\nB：往右拐以后，你会看到一家银行，火车站就在银行的对面。\nA：如果坐公共汽车，坐几路车？\nB：坐三路车，坐两站就到了，车站离这儿很近，就在前面。\nA：太谢谢您了！我今天下午三点的火车，现在两点，时间应该够。\nB：不客气，时间还早，别着急，慢慢走。",
+      "transcriptExplanation": "A: Xin chào, cho hỏi đi đến ga tàu hỏa đi thế nào ạ?\nB: Ga tàu hỏa à, không xa lắm, anh có thể đi xe buýt, cũng có thể đi bộ đến.\nA: Đi bộ mất bao lâu ạ? Tôi không rành đường lắm.\nB: Đi bộ khoảng hai mươi phút. Anh cứ đi thẳng về phía trước, đến chỗ đèn giao thông thì rẽ phải.\nA: Sau khi rẽ phải thì sao ạ?\nB: Sau khi rẽ phải, anh sẽ thấy một ngân hàng, ga tàu hỏa ở ngay đối diện ngân hàng.\nA: Nếu đi xe buýt thì đi xe số mấy ạ?\nB: Đi xe số 3, đi hai trạm là tới, bến xe cách đây rất gần, ngay phía trước thôi.\nA: Cảm ơn anh nhiều lắm! Chiều nay tôi có chuyến tàu lúc ba giờ, bây giờ là hai giờ, thời gian chắc là đủ.\nB: Không có gì, còn sớm mà, đừng vội, cứ đi từ từ.",
+      "timeLimit": 300,
+      "order": 56,
+      "published": true,
+      "questions": [
+        {
+          "id": "ls-HSK3-x6-q1",
+          "type": "MCQ",
+          "prompt": "说话人A想去哪儿？",
+          "promptPinyin": "shuō huà rén A xiǎng qù nǎ ér ？",
+          "explanation": "Ngay câu đầu A hỏi «请问去火车站怎么走?» (đi đến ga tàu hỏa đi thế nào), nên A muốn đến ga tàu hỏa. Chỉ có một đáp án đúng.",
+          "order": 1,
+          "options": [
+            {
+              "text": "火车站",
+              "pinyin": "huǒ chē zhàn"
+            },
+            {
+              "text": "银行",
+              "pinyin": "yín háng"
+            },
+            {
+              "text": "飞机场",
+              "pinyin": "fēi jī chǎng"
+            },
+            {
+              "text": "医院",
+              "pinyin": "yī yuàn"
+            }
+          ],
+          "correctAnswer": {
+            "index": 0,
+            "text": "火车站"
+          }
+        },
+        {
+          "id": "ls-HSK3-x6-q2",
+          "type": "MCQ",
+          "prompt": "如果坐公共汽车，应该坐几路车？",
+          "promptPinyin": "rú guǒ zuò gōng gòng qì chē ， yīng gāi zuò jǐ lù chē ？",
+          "explanation": "B nói «坐三路车，坐两站就到了» (đi xe số 3, đi hai trạm là tới). «两站» là số trạm chứ không phải số xe, nên đáp án đúng là xe số 3.",
+          "order": 2,
+          "options": [
+            {
+              "text": "两路车",
+              "pinyin": "liǎng lù chē"
+            },
+            {
+              "text": "三路车",
+              "pinyin": "sān lù chē"
+            },
+            {
+              "text": "五路车",
+              "pinyin": "wǔ lù chē"
+            },
+            {
+              "text": "二十路车",
+              "pinyin": "èr shí lù chē"
+            }
+          ],
+          "correctAnswer": {
+            "index": 1,
+            "text": "三路车"
+          }
+        },
+        {
+          "id": "ls-HSK3-x6-q3",
+          "type": "TRUE_FALSE",
+          "prompt": "走路去火车站大概需要二十分钟。",
+          "promptPinyin": "zǒu lù qù huǒ chē zhàn dà gài xū yào èr shí fēn zhōng 。",
+          "explanation": "B nói rõ «走路大概二十分钟» (đi bộ khoảng hai mươi phút), nên nhận định này đúng.",
+          "order": 3,
+          "options": null,
+          "correctAnswer": {
+            "value": true
+          }
+        },
+        {
+          "id": "ls-HSK3-x6-q4",
+          "type": "FILL_BLANK",
+          "prompt": "往右拐以后能看到一家银行，火车站就在银行的______。",
+          "promptPinyin": "wǎng yòu guǎi yǐ hòu néng kàn dào yì jiā yín háng ， huǒ chē zhàn jiù zài yín háng de _ _ _ _ _ _ 。",
+          "explanation": "B nói «火车站就在银行的对面» (ga tàu hỏa ở ngay đối diện ngân hàng), nên chỗ trống điền «对面». Từ này có nguyên văn trong lời thoại.",
+          "order": 4,
+          "options": null,
+          "correctAnswer": {
+            "text": "对面",
+            "accepted": [
+              "对面"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "ls-HSK4-x1",
+      "title": "Bài nghe HSK4: Đối thoại phỏng vấn xin việc (工作面试对话)",
+      "hskLevel": "HSK4",
+      "audioUrl": "",
+      "transcript": "A：您好，请坐。您是来应聘市场部经理这个职位的吧？\nB：您好，是的。谢谢您给我这次面试的机会。\nA：不客气。我看了您的简历，您在广告公司工作了五年，为什么想换工作呢？\nB：我在原来的公司学到了很多东西，但是我希望能有更大的发展空间，也想接受新的挑战。\nA：明白了。那您觉得自己最大的优点是什么？\nB：我觉得我最大的优点是有责任心，而且很擅长跟别人合作。\nA：我们这个职位有时候需要加班，甚至周末也要工作，您能接受吗？\nB：没问题，为了完成任务，偶尔加班我完全可以接受。\nA：很好。您对工资有什么要求吗？\nB：我希望月薪能有一万元左右，当然，具体的还可以再商量。\nA：好的。今天的面试就到这里，一个星期以内我们会给您打电话通知结果。\nB：非常感谢！那我等您的消息。",
+      "transcriptExplanation": "A: Xin chào, mời ngồi. Anh/chị đến ứng tuyển vị trí trưởng phòng marketing phải không?\nB: Xin chào, vâng ạ. Cảm ơn anh/chị đã cho tôi cơ hội phỏng vấn lần này.\nA: Không có gì. Tôi đã xem hồ sơ của anh/chị, anh/chị đã làm việc ở công ty quảng cáo được năm năm, vì sao lại muốn đổi việc?\nB: Tôi đã học được rất nhiều điều ở công ty cũ, nhưng tôi hy vọng có được không gian phát triển lớn hơn, và cũng muốn đón nhận những thử thách mới.\nA: Tôi hiểu rồi. Vậy anh/chị thấy ưu điểm lớn nhất của mình là gì?\nB: Tôi thấy ưu điểm lớn nhất của mình là có tinh thần trách nhiệm, và rất giỏi hợp tác với người khác.\nA: Vị trí này của chúng tôi đôi khi cần tăng ca, thậm chí cuối tuần cũng phải làm việc, anh/chị có chấp nhận được không?\nB: Không vấn đề gì, để hoàn thành nhiệm vụ, thỉnh thoảng tăng ca tôi hoàn toàn có thể chấp nhận.\nA: Rất tốt. Anh/chị có yêu cầu gì về lương không?\nB: Tôi hy vọng lương tháng có thể khoảng mười nghìn tệ, tất nhiên, cụ thể thì vẫn có thể thương lượng thêm.\nA: Được. Buổi phỏng vấn hôm nay đến đây thôi, trong vòng một tuần chúng tôi sẽ gọi điện thông báo kết quả cho anh/chị.\nB: Vô cùng cảm ơn! Vậy tôi chờ tin của anh/chị.",
+      "timeLimit": 300,
+      "order": 51,
+      "published": true,
+      "questions": [
+        {
+          "id": "ls-HSK4-x1-q1",
+          "type": "MCQ",
+          "prompt": "男的（B）来应聘的是什么职位？",
+          "promptPinyin": "nán de （ B ） lái yìng pìn de shì shén me zhí wèi ？",
+          "explanation": "Ngay đầu hội thoại, người phỏng vấn (A) xác nhận: '您是来应聘市场部经理这个职位的吧？' và B trả lời '是的'. Vì vậy vị trí ứng tuyển là trưởng phòng marketing (市场部经理). Các phương án khác đều không phải vị trí ứng tuyển: 广告公司 chỉ là công ty cũ B từng làm.",
+          "order": 1,
+          "options": [
+            {
+              "text": "市场部经理",
+              "pinyin": "shì chǎng bù jīng lǐ"
+            },
+            {
+              "text": "广告公司职员",
+              "pinyin": "guǎng gào gōng sī zhí yuán"
+            },
+            {
+              "text": "公司老板",
+              "pinyin": "gōng sī lǎo bǎn"
+            },
+            {
+              "text": "人事部经理",
+              "pinyin": "rén shì bù jīng lǐ"
+            }
+          ],
+          "correctAnswer": {
+            "index": 0,
+            "text": "市场部经理"
+          }
+        },
+        {
+          "id": "ls-HSK4-x1-q2",
+          "type": "MCQ",
+          "prompt": "B 认为自己最大的优点是什么？",
+          "promptPinyin": "B   rèn wéi zì jǐ zuì dà de yōu diǎn shì shén me ？",
+          "explanation": "Khi được hỏi về ưu điểm lớn nhất, B nói: '我最大的优点是有责任心，而且很擅长跟别人合作'. Đáp án đúng là có tinh thần trách nhiệm và giỏi hợp tác. Các phương án còn lại không được nhắc đến trong lời thoại.",
+          "order": 2,
+          "options": [
+            {
+              "text": "工作经验丰富",
+              "pinyin": "gōng zuò jīng yàn fēng fù"
+            },
+            {
+              "text": "有责任心、擅长合作",
+              "pinyin": "yǒu zé rèn xīn 、 shàn cháng hé zuò"
+            },
+            {
+              "text": "会说很多种语言",
+              "pinyin": "huì shuō hěn duō zhǒng yǔ yán"
+            },
+            {
+              "text": "能力比别人强",
+              "pinyin": "néng lì bǐ bié rén qiáng"
+            }
+          ],
+          "correctAnswer": {
+            "index": 1,
+            "text": "有责任心、擅长合作"
+          }
+        },
+        {
+          "id": "ls-HSK4-x1-q3",
+          "type": "TRUE_FALSE",
+          "prompt": "B 不能接受加班。",
+          "promptPinyin": "B   bù néng jiē shòu jiā bān 。",
+          "explanation": "Câu này SAI. Khi A hỏi về việc tăng ca, B trả lời '没问题……偶尔加班我完全可以接受', nghĩa là B hoàn toàn chấp nhận việc thỉnh thoảng tăng ca. Do đó khẳng định 'không thể chấp nhận tăng ca' là sai.",
+          "order": 3,
+          "options": null,
+          "correctAnswer": {
+            "value": false
+          }
+        },
+        {
+          "id": "ls-HSK4-x1-q4",
+          "type": "FILL_BLANK",
+          "prompt": "面试结束时，A 说一个星期以内会给 B 打电话通知______。",
+          "promptPinyin": "miàn shì jié shù shí ， A   shuō yí gè xīng qī yǐ nèi huì gěi   B   dǎ diàn huà tōng zhī _ _ _ _ _ _ 。",
+          "explanation": "Cuối hội thoại, A nói: '一个星期以内我们会给您打电话通知结果'. Từ cần điền là '结果' (kết quả), xuất hiện nguyên văn trong lời thoại.",
+          "order": 4,
+          "options": null,
+          "correctAnswer": {
+            "text": "结果",
+            "accepted": [
+              "结果"
+            ]
+          }
+        },
+        {
+          "id": "ls-HSK4-x1-q5",
+          "type": "MCQ",
+          "prompt": "关于工资，B 是怎么说的？",
+          "promptPinyin": "guān yú gōng zī ， B   shì zěn me shuō de ？",
+          "explanation": "Khi A hỏi về yêu cầu lương, B nói: '我希望月薪能有一万元左右，当然，具体的还可以再商量'. Đáp án đúng là mong muốn lương tháng khoảng 1 vạn tệ và có thể thương lượng thêm. Lưu ý B nói '月薪' (lương tháng) chứ không phải '年薪' (lương năm).",
+          "order": 5,
+          "options": [
+            {
+              "text": "希望月薪一万元左右，可以再商量",
+              "pinyin": "xī wàng yuè xīn yí wàn yuán zuǒ yòu ， kě yǐ zài shāng liáng"
+            },
+            {
+              "text": "工资多少都无所谓",
+              "pinyin": "gōng zī duō shǎo dōu wú suǒ wèi"
+            },
+            {
+              "text": "希望年薪一万元",
+              "pinyin": "xī wàng nián xīn yí wàn yuán"
+            },
+            {
+              "text": "要求越高越好",
+              "pinyin": "yāo qiú yuè gāo yuè hǎo"
+            }
+          ],
+          "correctAnswer": {
+            "index": 0,
+            "text": "希望月薪一万元左右，可以再商量"
+          }
+        }
+      ]
+    },
+    {
+      "id": "ls-HSK4-x2",
+      "title": "Đồng nghiệp thảo luận kế hoạch công việc",
+      "hskLevel": "HSK4",
+      "audioUrl": "",
+      "transcript": "A：小李，下周我们要向客户介绍新产品，你觉得计划准备得怎么样了？\nB：报告我已经写完了，不过我担心时间不够，客户只给我们半个小时。\nA：半个小时确实有点紧张。我建议我们把重点放在产品的价格和质量上，别的内容简单说就行。\nB：你说得对。那开会前我们最好再练习一遍，这样正式介绍的时候会更顺利。\nA：好主意。对了，会议室你订了吗？\nB：还没有，我打算今天下午去订三楼那间大会议室。\nA：三楼那间可能人太多了，声音会有影响。要不订二楼的小会议室吧，安静一些。\nB：也行，那我一会儿就去改。另外，客户说他们经理下周三才有空，所以会议改到周三上午九点。\nA：周三上午九点？没问题，我把时间记在日历上。希望这次能让客户满意。\nB：一定会的。只要我们准备得充分，我相信没什么问题。",
+      "transcriptExplanation": "A: Tiểu Lý, tuần sau chúng ta phải giới thiệu sản phẩm mới cho khách hàng, cậu thấy kế hoạch chuẩn bị thế nào rồi?\nB: Báo cáo mình viết xong rồi, nhưng mình lo là không đủ thời gian, khách hàng chỉ cho chúng ta nửa tiếng thôi.\nA: Nửa tiếng đúng là hơi gấp thật. Mình đề nghị chúng ta tập trung vào giá cả và chất lượng của sản phẩm, những nội dung khác nói đơn giản là được.\nB: Cậu nói đúng. Vậy trước cuộc họp chúng ta nên luyện tập thêm một lần, như vậy lúc giới thiệu chính thức sẽ suôn sẻ hơn.\nA: Ý hay đấy. À đúng rồi, cậu đặt phòng họp chưa?\nB: Chưa, mình định chiều nay đi đặt phòng họp lớn ở tầng ba.\nA: Phòng ở tầng ba có thể đông người quá, âm thanh sẽ bị ảnh hưởng. Hay là đặt phòng họp nhỏ ở tầng hai đi, yên tĩnh hơn.\nB: Cũng được, vậy lát nữa mình sẽ đi đổi. Ngoài ra, khách hàng nói giám đốc của họ tuần sau thứ Tư mới rảnh, nên cuộc họp đổi sang chín giờ sáng thứ Tư.\nA: Chín giờ sáng thứ Tư à? Không vấn đề gì, mình ghi thời gian vào lịch. Hy vọng lần này có thể làm khách hàng hài lòng.\nB: Chắc chắn sẽ được. Chỉ cần chúng ta chuẩn bị đầy đủ, mình tin là không có vấn đề gì.",
+      "timeLimit": 300,
+      "order": 52,
+      "published": true,
+      "questions": [
+        {
+          "id": "ls-HSK4-x2-q1",
+          "type": "MCQ",
+          "prompt": "他们下周要为客户做什么？",
+          "promptPinyin": "tā men xià zhōu yào wèi kè hù zuò shén me ？",
+          "explanation": "Ở đầu hội thoại A nói tuần sau phải giới thiệu sản phẩm mới cho khách hàng (向客户介绍新产品), nên đáp án đúng là giới thiệu sản phẩm mới. Các lựa chọn khác (ký hợp đồng, tham quan nhà máy, đào tạo nhân viên) đều không được nhắc đến.",
+          "order": 1,
+          "options": [
+            {
+              "text": "介绍新产品",
+              "pinyin": "jiè shào xīn chǎn pǐn"
+            },
+            {
+              "text": "签订合同",
+              "pinyin": "qiān dìng hé tong"
+            },
+            {
+              "text": "参观工厂",
+              "pinyin": "cān guān gōng chǎng"
+            },
+            {
+              "text": "培训员工",
+              "pinyin": "péi xùn yuán gōng"
+            }
+          ],
+          "correctAnswer": {
+            "index": 0,
+            "text": "介绍新产品"
+          }
+        },
+        {
+          "id": "ls-HSK4-x2-q2",
+          "type": "MCQ",
+          "prompt": "A建议介绍时把重点放在哪方面？",
+          "promptPinyin": "A jiàn yì jiè shào shí bǎ zhòng diǎn fàng zài nǎ fāng miàn ？",
+          "explanation": "A đề nghị tập trung vào giá cả và chất lượng của sản phẩm (把重点放在产品的价格和质量上), các nội dung khác nói đơn giản, nên đáp án đúng là giá cả và chất lượng.",
+          "order": 2,
+          "options": [
+            {
+              "text": "产品的外观和颜色",
+              "pinyin": "chǎn pǐn de wài guān hé yán sè"
+            },
+            {
+              "text": "产品的价格和质量",
+              "pinyin": "chǎn pǐn de jià gé hé zhì liàng"
+            },
+            {
+              "text": "公司的历史和规模",
+              "pinyin": "gōng sī de lì shǐ hé guī mó"
+            },
+            {
+              "text": "员工的经验和能力",
+              "pinyin": "yuán gōng de jīng yàn hé néng lì"
+            }
+          ],
+          "correctAnswer": {
+            "index": 1,
+            "text": "产品的价格和质量"
+          }
+        },
+        {
+          "id": "ls-HSK4-x2-q3",
+          "type": "TRUE_FALSE",
+          "prompt": "会议最后被改到了周三上午九点。",
+          "promptPinyin": "huì yì zuì hòu bèi gǎi dào le zhōu sān shàng wǔ jiǔ diǎn 。",
+          "explanation": "B nói giám đốc khách hàng thứ Tư mới rảnh nên cuộc họp đổi sang chín giờ sáng thứ Tư (会议改到周三上午九点), A cũng đồng ý ghi vào lịch. Vì vậy câu này ĐÚNG.",
+          "order": 3,
+          "options": null,
+          "correctAnswer": {
+            "value": true
+          }
+        },
+        {
+          "id": "ls-HSK4-x2-q4",
+          "type": "FILL_BLANK",
+          "prompt": "A建议改订____楼的小会议室，因为那里安静一些。",
+          "promptPinyin": "A jiàn yì gǎi dìng _ _ _ _ lóu de xiǎo huì yì shì ， yīn wèi nà lǐ ān jìng yì xiē 。",
+          "explanation": "A cho rằng phòng tầng ba đông người, âm thanh bị ảnh hưởng, nên đề nghị đặt phòng họp nhỏ ở tầng hai (订二楼的小会议室) vì yên tĩnh hơn. Đáp án điền vào là 二 (tầng hai), có nguyên văn trong lời thoại.",
+          "order": 4,
+          "options": null,
+          "correctAnswer": {
+            "text": "二",
+            "accepted": [
+              "二"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "ls-HSK4-x3",
+      "title": "Gọi điện tổng đài chăm sóc khách hàng",
+      "hskLevel": "HSK4",
+      "audioUrl": "",
+      "transcript": "A：您好，这里是环球网络客服中心，请问有什么可以帮您？\nB：你好，我家的网络从昨天晚上开始就一直连不上，我已经重启过好几次了，还是不行。\nA：非常抱歉给您带来不便。请问您能告诉我您的宽带账号或者手机号码吗？\nB：我的手机号是 138 开头的，尾号是 6754。\nA：好的，我帮您查一下……先生，您那个地区昨天晚上确实出现了线路故障，我们的师傅正在维修。\nB：那大概什么时候能修好呢？我在家办公，没有网络实在太麻烦了。\nA：预计今天下午五点之前就能恢复，修好以后您重新连接一下就可以了。\nB：这么久啊？那我这几个小时怎么办？\nA：您可以先用手机上的流量应急，或者去附近的咖啡馆。给您造成的不便，我们会在这个月的费用里给您减免三天。\nB：好吧，那就这样。麻烦你们尽快修好。\nA：一定的。修好之后我们会发短信通知您，请您注意查收。还有别的问题吗？\nB：没有了，谢谢。\nA：不客气，祝您生活愉快，再见。",
+      "transcriptExplanation": "A: Xin chào, đây là trung tâm chăm sóc khách hàng của mạng Hoàn Cầu, xin hỏi tôi có thể giúp gì cho anh?\nB: Chào chị, mạng nhà tôi từ tối hôm qua cứ không kết nối được, tôi đã khởi động lại mấy lần rồi mà vẫn không được.\nA: Vô cùng xin lỗi đã gây bất tiện cho anh. Xin hỏi anh có thể cho tôi biết số tài khoản mạng băng thông rộng hoặc số điện thoại của anh không?\nB: Số điện thoại của tôi bắt đầu bằng 138, bốn số cuối là 6754.\nA: Được rồi, tôi tra giúp anh một chút... Thưa anh, khu vực của anh tối hôm qua đúng là có xảy ra sự cố đường dây, thợ của chúng tôi đang sửa chữa.\nB: Vậy khoảng khi nào thì sửa xong? Tôi làm việc ở nhà, không có mạng thật sự quá phiền phức.\nA: Dự kiến trước 5 giờ chiều nay là có thể khôi phục, sau khi sửa xong anh chỉ cần kết nối lại là được.\nB: Lâu vậy sao? Vậy mấy tiếng đồng hồ này tôi phải làm sao?\nA: Anh có thể tạm dùng dữ liệu di động (4G) trên điện thoại, hoặc ra quán cà phê gần đó. Vì sự bất tiện đã gây ra, chúng tôi sẽ giảm trừ ba ngày trong hóa đơn tháng này của anh.\nB: Thôi được, vậy thì cứ như thế. Làm phiền các bạn sửa xong sớm giúp.\nA: Nhất định rồi. Sau khi sửa xong chúng tôi sẽ gửi tin nhắn thông báo cho anh, xin anh chú ý kiểm tra. Anh còn vấn đề gì khác không?\nB: Không còn nữa, cảm ơn.\nA: Không có gì, chúc anh một cuộc sống vui vẻ, tạm biệt.",
+      "timeLimit": 300,
+      "order": 53,
+      "published": true,
+      "questions": [
+        {
+          "id": "ls-HSK4-x3-q1",
+          "type": "MCQ",
+          "prompt": "男的为什么打客服电话？",
+          "promptPinyin": "nán de wèi shén me dǎ kè fú diàn huà ？",
+          "explanation": "Người đàn ông nói \"我家的网络从昨天晚上开始就一直连不上\" (mạng nhà tôi từ tối qua cứ không kết nối được), nên anh ta gọi vì mạng bị hỏng. Ba phương án còn lại không được đề cập trong lời thoại nên chỉ có một đáp án đúng.",
+          "order": 1,
+          "options": [
+            {
+              "text": "他要办理新的宽带",
+              "pinyin": "tā yào bàn lǐ xīn de kuān dài"
+            },
+            {
+              "text": "他家的网络连不上",
+              "pinyin": "tā jiā de wǎng luò lián bú shàng"
+            },
+            {
+              "text": "他想换手机号码",
+              "pinyin": "tā xiǎng huàn shǒu jī hào mǎ"
+            },
+            {
+              "text": "他要投诉客服态度",
+              "pinyin": "tā yào tóu sù kè fú tài dù"
+            }
+          ],
+          "correctAnswer": {
+            "index": 1,
+            "text": "他家的网络连不上"
+          }
+        },
+        {
+          "id": "ls-HSK4-x3-q2",
+          "type": "MCQ",
+          "prompt": "网络大概什么时候能恢复？",
+          "promptPinyin": "wǎng luò dà gài shén me shí hòu néng huī fù ？",
+          "explanation": "Nhân viên nói \"预计今天下午五点之前就能恢复\" (dự kiến trước 5 giờ chiều nay có thể khôi phục). Các mốc thời gian khác không xuất hiện trong lời thoại.",
+          "order": 2,
+          "options": [
+            {
+              "text": "今天上午",
+              "pinyin": "jīn tiān shàng wǔ"
+            },
+            {
+              "text": "今天下午五点之前",
+              "pinyin": "jīn tiān xià wǔ wǔ diǎn zhī qián"
+            },
+            {
+              "text": "明天早上",
+              "pinyin": "míng tiān zǎo shàng"
+            },
+            {
+              "text": "一个星期后",
+              "pinyin": "yí gè xīng qī hòu"
+            }
+          ],
+          "correctAnswer": {
+            "index": 1,
+            "text": "今天下午五点之前"
+          }
+        },
+        {
+          "id": "ls-HSK4-x3-q3",
+          "type": "TRUE_FALSE",
+          "prompt": "客服说这个月会给男的减免三天的费用。",
+          "promptPinyin": "kè fú shuō zhè ge yuè huì gěi nán de jiǎn miǎn sān tiān de fèi yòng 。",
+          "explanation": "Nhân viên nói \"我们会在这个月的费用里给您减免三天\" (sẽ giảm trừ ba ngày trong hóa đơn tháng này), nên câu này ĐÚNG.",
+          "order": 3,
+          "options": null,
+          "correctAnswer": {
+            "value": true
+          }
+        },
+        {
+          "id": "ls-HSK4-x3-q4",
+          "type": "FILL_BLANK",
+          "prompt": "客服说，网络出问题是因为那个地区昨天晚上出现了线路______。",
+          "promptPinyin": "kè fú shuō ， wǎng luò chū wèn tí shì yīn wèi nà ge dì qū zuó tiān wǎn shàng chū xiàn le xiàn lù _ _ _ _ _ _ 。",
+          "explanation": "Trong lời thoại nhân viên nói \"确实出现了线路故障\" (đúng là có xảy ra sự cố đường dây), nên chỗ trống điền \"故障\". Từ này xuất hiện nguyên văn trong lời thoại.",
+          "order": 4,
+          "options": null,
+          "correctAnswer": {
+            "text": "故障",
+            "accepted": [
+              "故障"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "ls-HSK4-x4",
+      "title": "Nghe hiểu HSK4: Bàn về sức khỏe và vận động",
+      "hskLevel": "HSK4",
+      "audioUrl": "",
+      "transcript": "A：小李，你最近怎么每天早上都去公园跑步？以前你可不喜欢运动。\nB：是啊，上个月我去医院做了检查，医生说我太胖了，还提醒我要注意身体健康。\nA：所以你就开始锻炼了？\nB：对，医生建议我每天至少运动三十分钟。跑步不用花钱，也很方便，所以我就选择了跑步。\nA：这个习惯真不错。那你现在感觉怎么样？\nB：刚开始的时候特别累，跑几分钟就受不了。不过坚持了三个星期以后，我发现自己的身体越来越好，晚上睡觉也睡得比以前香多了。\nA：那你的体重有变化吗？\nB：当然有，我已经瘦了四公斤。而且我发现，运动完以后心情也变得特别愉快。\nA：听起来运动真的很重要。看来我也应该跟你一起去跑步了。\nB：欢迎啊！不过我要提醒你，运动之前一定要先做准备活动，要不然很容易受伤。\nA：好的，谢谢你的建议。那我们明天早上六点半在公园门口见，怎么样？\nB：没问题，明天见！",
+      "transcriptExplanation": "A: Tiểu Lý, dạo này sao sáng nào cậu cũng ra công viên chạy bộ vậy? Trước đây cậu đâu có thích vận động.\nB: Ừ, tháng trước tớ đi bệnh viện khám, bác sĩ nói tớ béo quá, còn nhắc tớ phải chú ý sức khỏe.\nA: Nên cậu bắt đầu tập luyện à?\nB: Đúng vậy, bác sĩ khuyên tớ mỗi ngày vận động ít nhất ba mươi phút. Chạy bộ vừa không tốn tiền, lại tiện, nên tớ chọn chạy bộ.\nA: Thói quen này hay thật đấy. Vậy giờ cậu thấy thế nào?\nB: Lúc mới bắt đầu thì mệt lắm, chạy mấy phút là chịu không nổi. Nhưng kiên trì được ba tuần thì tớ thấy cơ thể mình ngày càng khỏe hơn, buổi tối ngủ cũng ngon hơn trước nhiều.\nA: Vậy cân nặng của cậu có thay đổi không?\nB: Tất nhiên là có, tớ đã giảm được bốn cân rồi. Với lại tớ nhận ra sau khi vận động xong tâm trạng cũng trở nên vui vẻ hẳn.\nA: Nghe có vẻ vận động thật sự rất quan trọng. Xem ra tớ cũng nên đi chạy cùng cậu rồi.\nB: Hoan nghênh nhé! Nhưng tớ phải nhắc cậu, trước khi vận động nhất định phải khởi động trước, không thì rất dễ bị thương.\nA: Được, cảm ơn lời khuyên của cậu. Vậy sáng mai sáu giờ rưỡi mình gặp nhau ở cổng công viên nhé?\nB: Không vấn đề gì, mai gặp!",
+      "timeLimit": 300,
+      "order": 54,
+      "published": true,
+      "questions": [
+        {
+          "id": "ls-HSK4-x4-q1",
+          "type": "MCQ",
+          "prompt": "小李为什么开始跑步？",
+          "promptPinyin": "xiǎo lǐ wèi shén me kāi shǐ pǎo bù ？",
+          "explanation": "Tiểu Lý nói tháng trước đi khám, bác sĩ bảo cậu béo quá và nhắc chú ý sức khỏe, nên cậu bắt đầu tập thể dục/chạy bộ (医生说我太胖了). Các phương án khác đều sai: trước đây cậu không thích vận động, chạy bộ không tốn tiền chứ không kiếm tiền, và là cậu tự chọn chạy bộ chứ không phải bạn rủ. Vậy đáp án đúng là 'bác sĩ nói cậu quá béo'.",
+          "order": 1,
+          "options": [
+            {
+              "text": "因为他一直喜欢运动",
+              "pinyin": "yīn wèi tā yì zhí xǐ huan yùn dòng"
+            },
+            {
+              "text": "因为医生说他太胖了",
+              "pinyin": "yīn wèi yī shēng shuō tā tài pàng le"
+            },
+            {
+              "text": "因为跑步能赚钱",
+              "pinyin": "yīn wèi pǎo bù néng zhuàn qián"
+            },
+            {
+              "text": "因为朋友请他一起跑",
+              "pinyin": "yīn wèi péng yǒu qǐng tā yì qǐ pǎo"
+            }
+          ],
+          "correctAnswer": {
+            "index": 1,
+            "text": "因为医生说他太胖了"
+          }
+        },
+        {
+          "id": "ls-HSK4-x4-q2",
+          "type": "MCQ",
+          "prompt": "关于小李坚持跑步后的变化，下面哪个是对的？",
+          "promptPinyin": "guān yú xiǎo lǐ jiān chí pǎo bù hòu de biàn huà ， xià miàn nǎ gè shì duì de ？",
+          "explanation": "Sau khi kiên trì chạy bộ, Tiểu Lý nói cơ thể ngày càng khỏe, ngủ ngon hơn (睡得香), đã giảm bốn cân (瘦了四公斤) và tâm trạng vui vẻ hơn. Do đó chỉ có phương án 'cân nặng giảm đi' là đúng, ba phương án còn lại đều trái với lời thoại.",
+          "order": 2,
+          "options": [
+            {
+              "text": "身体变差了",
+              "pinyin": "shēn tǐ biàn chà le"
+            },
+            {
+              "text": "晚上睡不着觉",
+              "pinyin": "wǎn shàng shuì bù zhe jué"
+            },
+            {
+              "text": "体重减轻了",
+              "pinyin": "tǐ zhòng jiǎn qīng le"
+            },
+            {
+              "text": "心情越来越差",
+              "pinyin": "xīn qíng yuè lái yuè chà"
+            }
+          ],
+          "correctAnswer": {
+            "index": 2,
+            "text": "体重减轻了"
+          }
+        },
+        {
+          "id": "ls-HSK4-x4-q3",
+          "type": "TRUE_FALSE",
+          "prompt": "小李提醒朋友，运动之前应该先做准备活动。",
+          "promptPinyin": "xiǎo lǐ tí xǐng péng yǒu ， yùn dòng zhī qián yīng gāi xiān zuò zhǔn bèi huó dòng 。",
+          "explanation": "Tiểu Lý (B) nhắc bạn rằng trước khi vận động nhất định phải khởi động (运动之前一定要先做准备活动), nếu không rất dễ bị thương. Vì vậy câu này ĐÚNG.",
+          "order": 3,
+          "options": null,
+          "correctAnswer": {
+            "value": true
+          }
+        },
+        {
+          "id": "ls-HSK4-x4-q4",
+          "type": "FILL_BLANK",
+          "prompt": "医生建议小李每天至少运动______分钟。",
+          "promptPinyin": "yī shēng jiàn yì xiǎo lǐ měi tiān zhì shǎo yùn dòng _ _ _ _ _ _ fēn zhōng 。",
+          "explanation": "Trong lời thoại, Tiểu Lý nói bác sĩ khuyên cậu mỗi ngày vận động ít nhất ba mươi phút (每天至少运动三十分钟). Vậy chỗ trống điền nguyên văn '三十'.",
+          "order": 4,
+          "options": null,
+          "correctAnswer": {
+            "text": "三十",
+            "accepted": [
+              "三十"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "ls-HSK4-x5",
+      "title": "Thương lượng kế hoạch du lịch (商量旅行安排)",
+      "hskLevel": "HSK4",
+      "audioUrl": "",
+      "transcript": "A：小李，下个月的假期你有什么打算吗？我想跟你商量一下我们的旅行安排。\nB：我正想跟你说这件事呢。我觉得这次咱们去云南怎么样？听说那边的风景特别美。\nA：云南我一直都想去，不过坐飞机去有点贵。要不我们坐火车吧？\nB：坐火车太慢了，得花二十多个小时。我查过了，如果提前一个月订机票，其实比火车贵不了多少。\nA：那好吧，那就订机票。我们打算在那儿玩几天？\nB：我请了五天假，加上周末，一共有一个星期的时间。\nA：一个星期够了。那住的地方呢？你订好宾馆了吗？\nB：还没订。我打算住在市中心，这样去哪儿都方便，就是价格可能高一点。\nA：没关系，方便最重要。对了，云南七月份会下雨吗？\nB：我看了天气预报，那几天大部分是晴天，只有一天可能有小雨，记得带把伞就行。\nA：太好了。那今天晚上我就把机票订了，宾馆你来负责，怎么样？\nB：没问题，就这么定了！",
+      "transcriptExplanation": "A: Tiểu Lý, kỳ nghỉ tháng sau cậu có dự định gì không? Tớ muốn bàn với cậu một chút về kế hoạch đi du lịch của chúng ta.\nB: Tớ cũng đang định nói với cậu chuyện này đây. Tớ thấy lần này chúng ta đi Vân Nam thì thế nào? Nghe nói phong cảnh ở đó đẹp lắm.\nA: Vân Nam thì tớ luôn muốn đi, nhưng đi máy bay hơi đắt. Hay là chúng ta đi tàu hỏa nhé?\nB: Đi tàu hỏa chậm lắm, phải mất hơn hai mươi tiếng. Tớ tra rồi, nếu đặt vé máy bay trước một tháng thì thật ra cũng không đắt hơn tàu hỏa bao nhiêu.\nA: Vậy thì được, đặt vé máy bay đi. Chúng ta định chơi ở đó mấy ngày?\nB: Tớ xin nghỉ năm ngày, cộng thêm cuối tuần, tổng cộng có một tuần.\nA: Một tuần là đủ rồi. Vậy còn chỗ ở thì sao? Cậu đặt khách sạn xong chưa?\nB: Vẫn chưa đặt. Tớ định ở trung tâm thành phố, như vậy đi đâu cũng tiện, chỉ là giá có thể hơi cao một chút.\nA: Không sao, tiện lợi là quan trọng nhất. À đúng rồi, Vân Nam tháng bảy có mưa không?\nB: Tớ xem dự báo thời tiết rồi, mấy hôm đó phần lớn là trời nắng, chỉ có một ngày có thể mưa nhỏ, nhớ mang theo cái ô là được.\nA: Tuyệt quá. Vậy tối nay tớ sẽ đặt vé máy bay luôn, khách sạn cậu phụ trách nhé, thế nào?\nB: Không vấn đề gì, cứ quyết định thế nhé!",
+      "timeLimit": 300,
+      "order": 55,
+      "published": true,
+      "questions": [
+        {
+          "id": "ls-HSK4-x5-q1",
+          "type": "MCQ",
+          "prompt": "他们最后决定怎么去云南？",
+          "promptPinyin": "tā men zuì hòu jué dìng zěn me qù yún nán ？",
+          "explanation": "Ban đầu A đề nghị đi tàu hỏa vì máy bay đắt, nhưng B nói đặt vé máy bay trước một tháng thì không đắt hơn tàu bao nhiêu (比火车贵不了多少). Cuối cùng A nói '那就订机票' (vậy thì đặt vé máy bay) và tối nay sẽ đặt vé máy bay, nên họ chọn đi máy bay.",
+          "order": 1,
+          "options": [
+            {
+              "text": "坐火车",
+              "pinyin": "zuò huǒ chē"
+            },
+            {
+              "text": "坐飞机",
+              "pinyin": "zuò fēi jī"
+            },
+            {
+              "text": "坐汽车",
+              "pinyin": "zuò qì chē"
+            },
+            {
+              "text": "还没决定",
+              "pinyin": "hái méi jué dìng"
+            }
+          ],
+          "correctAnswer": {
+            "index": 1,
+            "text": "坐飞机"
+          }
+        },
+        {
+          "id": "ls-HSK4-x5-q2",
+          "type": "MCQ",
+          "prompt": "关于住的地方，下面哪个说法是对的？",
+          "promptPinyin": "guān yú zhù de dì fāng ， xià miàn nǎ gè shuō fǎ shì duì de ？",
+          "explanation": "B nói vẫn chưa đặt khách sạn (还没订) và dự định ở trung tâm thành phố (打算住在市中心) vì đi đâu cũng tiện, tuy giá có thể hơi cao. Vì vậy đáp án đúng là 'dự định ở trung tâm thành phố'. Các phương án khác (郊区, 朋友家) không được nhắc tới.",
+          "order": 2,
+          "options": [
+            {
+              "text": "已经订好了宾馆",
+              "pinyin": "yǐ jīng dìng hǎo le bīn guǎn"
+            },
+            {
+              "text": "打算住在市中心",
+              "pinyin": "dǎ suàn zhù zài shì zhōng xīn"
+            },
+            {
+              "text": "住在郊区更便宜",
+              "pinyin": "zhù zài jiāo qū gèng pián yi"
+            },
+            {
+              "text": "住在朋友家里",
+              "pinyin": "zhù zài péng yǒu jiā lǐ"
+            }
+          ],
+          "correctAnswer": {
+            "index": 1,
+            "text": "打算住在市中心"
+          }
+        },
+        {
+          "id": "ls-HSK4-x5-q3",
+          "type": "TRUE_FALSE",
+          "prompt": "他们这次旅行一共有一个星期的时间。",
+          "promptPinyin": "tā men zhè cì lǚ xíng yí gòng yǒu yí gè xīng qī de shí jiān 。",
+          "explanation": "B nói xin nghỉ năm ngày, cộng thêm cuối tuần, tổng cộng có một tuần (一共有一个星期的时间). Vậy nhận định này ĐÚNG.",
+          "order": 3,
+          "options": null,
+          "correctAnswer": {
+            "value": true
+          }
+        },
+        {
+          "id": "ls-HSK4-x5-q4",
+          "type": "FILL_BLANK",
+          "prompt": "根据天气预报，那几天大部分是______，只有一天可能有小雨。",
+          "promptPinyin": "gēn jù tiān qì yù bào ， nà jǐ tiān dà bù fen shì _ _ _ _ _ _ ， zhǐ yǒu yì tiān kě néng yǒu xiǎo yǔ 。",
+          "explanation": "B nói xem dự báo thời tiết, mấy hôm đó phần lớn là trời nắng (晴天), chỉ có một ngày có thể mưa nhỏ. Đáp án điền vào chỗ trống là '晴天', xuất hiện nguyên văn trong lời thoại.",
+          "order": 4,
+          "options": null,
+          "correctAnswer": {
+            "text": "晴天",
+            "accepted": [
+              "晴天"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "ls-HSK4-x6",
+      "title": "Bài nghe HSK4: Thảo luận về một tin tức",
+      "hskLevel": "HSK4",
+      "audioUrl": "",
+      "transcript": "A：你看今天的新闻了吗？我们市要建一条新的地铁线了。\nB：真的吗？我一直觉得这里的交通太麻烦了，每天上班都要堵车。\nA：是啊，新闻上说这条地铁线一共有十八个站，从东边一直到西边。\nB：太好了！那我以后去公司就方便多了。你知道什么时候能建好吗？\nA：新闻里说计划三年后开始运行。\nB：三年有点长，不过为了以后能坐地铁，我觉得等一等也值得。\nA：而且听说票价不贵，比坐出租车便宜得多。\nB：那更好了。以后我就不用自己开车了，又省钱又不用担心停车的问题。\nA：对，坐地铁还能保护环境，减少空气污染。\nB：你说得对。我打算把这个好消息告诉我爸妈，他们肯定也很高兴。",
+      "transcriptExplanation": "A: Cậu đã xem tin tức hôm nay chưa? Thành phố chúng ta sắp xây một tuyến tàu điện ngầm mới đấy.\nB: Thật à? Tớ luôn cảm thấy giao thông ở đây quá phiền phức, ngày nào đi làm cũng bị kẹt xe.\nA: Đúng vậy, tin tức nói tuyến tàu điện ngầm này tổng cộng có mười tám ga, chạy từ phía đông đến tận phía tây.\nB: Tuyệt quá! Vậy sau này tớ đi công ty sẽ tiện lợi hơn nhiều. Cậu có biết khi nào xây xong không?\nA: Trong tin nói dự kiến ba năm sau sẽ bắt đầu vận hành.\nB: Ba năm hơi lâu, nhưng để sau này được đi tàu điện ngầm, tớ thấy chờ một chút cũng đáng.\nA: Hơn nữa nghe nói giá vé không đắt, rẻ hơn nhiều so với đi taxi.\nB: Vậy thì càng tốt. Sau này tớ khỏi phải tự lái xe nữa, vừa tiết kiệm tiền lại không phải lo chuyện đỗ xe.\nA: Đúng, đi tàu điện ngầm còn có thể bảo vệ môi trường, giảm ô nhiễm không khí.\nB: Cậu nói đúng đấy. Tớ định đem tin vui này nói cho bố mẹ tớ nghe, chắc chắn họ cũng rất vui.",
+      "timeLimit": 300,
+      "order": 56,
+      "published": true,
+      "questions": [
+        {
+          "id": "ls-HSK4-x6-q1",
+          "type": "MCQ",
+          "prompt": "他们在讨论什么新闻？",
+          "promptPinyin": "tā men zài tǎo lùn shén me xīn wén ？",
+          "explanation": "A mở đầu nói thành phố sắp xây một tuyến tàu điện ngầm mới (我们市要建一条新的地铁线), đây chính là tin tức mà hai người đang thảo luận. Các đáp án khác không được nhắc đến hoặc bị hiểu sai.",
+          "order": 1,
+          "options": [
+            {
+              "text": "城市要建一条新的地铁线",
+              "pinyin": "chéng shì yào jiàn yì tiáo xīn de dì tiě xiàn"
+            },
+            {
+              "text": "出租车要涨价了",
+              "pinyin": "chū zū chē yào zhǎng jià le"
+            },
+            {
+              "text": "公司要搬到东边",
+              "pinyin": "gōng sī yào bān dào dōng biān"
+            },
+            {
+              "text": "空气污染越来越严重",
+              "pinyin": "kōng qì wū rǎn yuè lái yuè yán zhòng"
+            }
+          ],
+          "correctAnswer": {
+            "index": 0,
+            "text": "城市要建一条新的地铁线"
+          }
+        },
+        {
+          "id": "ls-HSK4-x6-q2",
+          "type": "MCQ",
+          "prompt": "关于这条地铁线，下面哪个是对的？",
+          "promptPinyin": "guān yú zhè tiáo dì tiě xiàn ， xià miàn nǎ gè shì duì de ？",
+          "explanation": "A nói rõ 'tin tức nói dự kiến ba năm sau sẽ bắt đầu vận hành' (新闻里说计划三年后开始运行). Tuyến có 18 ga (không phải 8), chưa vận hành, và giá vé rẻ hơn taxi nên ba đáp án còn lại đều sai.",
+          "order": 2,
+          "options": [
+            {
+              "text": "一共有八个站",
+              "pinyin": "yí gòng yǒu bā gè zhàn"
+            },
+            {
+              "text": "已经开始运行了",
+              "pinyin": "yǐ jīng kāi shǐ yùn xíng le"
+            },
+            {
+              "text": "计划三年后开始运行",
+              "pinyin": "jì huà sān nián hòu kāi shǐ yùn xíng"
+            },
+            {
+              "text": "票价比出租车贵",
+              "pinyin": "piào jià bǐ chū zū chē guì"
+            }
+          ],
+          "correctAnswer": {
+            "index": 2,
+            "text": "计划三年后开始运行"
+          }
+        },
+        {
+          "id": "ls-HSK4-x6-q3",
+          "type": "TRUE_FALSE",
+          "prompt": "这条地铁线的票价比坐出租车贵。",
+          "promptPinyin": "zhè tiáo dì tiě xiàn de piào jià bǐ zuò chū zū chē guì 。",
+          "explanation": "A nói 'giá vé không đắt, rẻ hơn nhiều so với đi taxi' (票价不贵，比坐出租车便宜得多), tức là RẺ hơn taxi chứ không phải đắt hơn, nên nhận định này SAI.",
+          "order": 3,
+          "options": null,
+          "correctAnswer": {
+            "value": false
+          }
+        },
+        {
+          "id": "ls-HSK4-x6-q4",
+          "type": "FILL_BLANK",
+          "prompt": "新闻上说这条地铁线一共有______个站。",
+          "promptPinyin": "xīn wén shàng shuō zhè tiáo dì tiě xiàn yí gòng yǒu _ _ _ _ _ _ gè zhàn 。",
+          "explanation": "A nói 'tin tức nói tuyến tàu điện ngầm này tổng cộng có mười tám ga' (一共有十八个站), nên chỗ trống điền '十八'. Đây là nguyên văn trong lời thoại.",
+          "order": 4,
+          "options": null,
+          "correctAnswer": {
+            "text": "十八",
+            "accepted": [
+              "十八"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "ls-HSK5-x1",
+      "title": "Bài nghe HSK5: Thảo luận về lựa chọn nghề nghiệp",
+      "hskLevel": "HSK5",
+      "audioUrl": "",
+      "transcript": "A：小林，听说你下个月就要毕业了，工作找得怎么样了？我记得你之前一直在两个方向之间犹豫。\nB：是啊，李老师。我现在确实很纠结。一家是大型国有企业，待遇稳定，福利也好；另一家是刚成立不久的互联网创业公司，薪水高一些，但风险也大。\nA：这确实是很多毕业生都会遇到的难题。你有没有想过，除了收入和稳定性，还有哪些因素值得考虑？\nB：我父母倾向于让我进国企，他们觉得铁饭碗最重要。可我自己更看重个人的成长空间和发展前景。\nA：你的想法我很理解。其实，在做职业选择的时候，我一直建议学生优先考虑三点：第一是这份工作能不能发挥你的专业特长；第二是它是否符合你长远的人生规划；第三才是薪资待遇。\nB：那按您这么说，稳定反而不是最关键的？\nA：也不能这么绝对。稳定对某些人来说非常重要，但对你这样年轻、又愿意接受挑战的人来说，创业公司也许能让你在短时间内学到更多东西，积累更丰富的经验。\nB：可是万一那家创业公司倒闭了呢？我担心会浪费几年的时间。\nA：换个角度想，即使公司经营失败，你在那里获得的能力和人脉也不会消失，这些都会成为你今后的宝贵财富。真正被浪费的时间，是那些让你停止成长的时间。\nB：您这句话让我豁然开朗。看来我不该只盯着眼前的稳定，而应该多考虑自己五年、十年后想成为什么样的人。\nA：没错。职业选择没有标准答案，关键是要清楚自己真正想要什么，并且愿意为之承担相应的责任。\nB：谢谢您，李老师。我打算这个周末再和父母好好沟通一次，把我的想法和长远规划都告诉他们。",
+      "transcriptExplanation": "A: Tiểu Lâm, nghe nói tháng sau em sắp tốt nghiệp rồi, việc tìm việc làm thế nào rồi? Thầy nhớ trước đây em cứ do dự mãi giữa hai hướng đi.\nB: Vâng ạ, thầy Lý. Bây giờ em thật sự rất phân vân. Một bên là doanh nghiệp nhà nước quy mô lớn, đãi ngộ ổn định, phúc lợi cũng tốt; bên kia là một công ty khởi nghiệp về internet mới thành lập chưa lâu, lương cao hơn một chút, nhưng rủi ro cũng lớn.\nA: Đây đúng là bài toán khó mà rất nhiều sinh viên tốt nghiệp đều gặp phải. Em đã nghĩ đến chưa, ngoài thu nhập và tính ổn định ra, còn những yếu tố nào đáng để cân nhắc?\nB: Bố mẹ em nghiêng về việc muốn em vào doanh nghiệp nhà nước, họ cho rằng \"bát cơm sắt\" (công việc ổn định suốt đời) là quan trọng nhất. Nhưng bản thân em thì coi trọng hơn không gian phát triển cá nhân và triển vọng phát triển.\nA: Thầy rất hiểu suy nghĩ của em. Thật ra, khi lựa chọn nghề nghiệp, thầy luôn khuyên sinh viên ưu tiên cân nhắc ba điểm: thứ nhất là công việc này có phát huy được sở trường chuyên môn của em hay không; thứ hai là nó có phù hợp với kế hoạch cuộc đời lâu dài của em không; thứ ba mới là mức lương đãi ngộ.\nB: Vậy theo thầy nói thế thì sự ổn định ngược lại không phải là điều then chốt nhất sao?\nA: Cũng không thể tuyệt đối như vậy. Sự ổn định đối với một số người là rất quan trọng, nhưng với người trẻ và lại sẵn lòng đón nhận thử thách như em, công ty khởi nghiệp có lẽ sẽ giúp em học được nhiều thứ hơn trong thời gian ngắn, tích lũy kinh nghiệm phong phú hơn.\nB: Nhưng lỡ như công ty khởi nghiệp đó phá sản thì sao ạ? Em lo rằng sẽ lãng phí mất mấy năm.\nA: Thử nghĩ theo góc độ khác xem, cho dù công ty kinh doanh thất bại, thì năng lực và mối quan hệ mà em có được ở đó cũng sẽ không biến mất, những thứ đó đều sẽ trở thành tài sản quý báu cho em sau này. Thời gian thật sự bị lãng phí, là những khoảng thời gian khiến em ngừng trưởng thành.\nB: Câu nói này của thầy khiến em bừng tỉnh (vỡ lẽ). Xem ra em không nên chỉ chăm chăm nhìn vào sự ổn định trước mắt, mà nên nghĩ nhiều hơn về việc năm năm, mười năm sau mình muốn trở thành người như thế nào.\nA: Chính xác. Lựa chọn nghề nghiệp không có đáp án chuẩn, mấu chốt là phải hiểu rõ bản thân thật sự muốn gì, và sẵn lòng gánh vác trách nhiệm tương ứng vì điều đó.\nB: Cảm ơn thầy, thầy Lý. Em định cuối tuần này sẽ trò chuyện kỹ với bố mẹ một lần nữa, kể cho họ nghe suy nghĩ và kế hoạch lâu dài của em.",
+      "timeLimit": 300,
+      "order": 51,
+      "published": true,
+      "questions": [
+        {
+          "id": "ls-HSK5-x1-q1",
+          "type": "MCQ",
+          "prompt": "小林现在面临的职业选择是什么？",
+          "promptPinyin": "xiǎo lín xiàn zài miàn lín de zhí yè xuǎn zé shì shén me ？",
+          "explanation": "Trong lời thoại, Tiểu Lâm nói mình đang phân vân giữa một doanh nghiệp nhà nước quy mô lớn (đãi ngộ ổn định) và một công ty khởi nghiệp về internet mới thành lập (lương cao nhưng rủi ro lớn). Vì vậy đáp án đúng là lựa chọn giữa doanh nghiệp nhà nước và công ty khởi nghiệp internet.",
+          "order": 1,
+          "options": [
+            {
+              "text": "进入大型国有企业还是互联网创业公司",
+              "pinyin": "jìn rù dà xíng guó yǒu qǐ yè hái shì hù lián wǎng chuàng yè gōng sī"
+            },
+            {
+              "text": "出国留学还是留在国内工作",
+              "pinyin": "chū guó liú xué hái shì liú zài guó nèi gōng zuò"
+            },
+            {
+              "text": "读研究生还是直接就业",
+              "pinyin": "dú yán jiū shēng huán shì zhí jiē jiù yè"
+            },
+            {
+              "text": "做全职工作还是自己创业",
+              "pinyin": "zuò quán zhí gōng zuò hái shì zì jǐ chuàng yè"
+            }
+          ],
+          "correctAnswer": {
+            "index": 0,
+            "text": "进入大型国有企业还是互联网创业公司"
+          }
+        },
+        {
+          "id": "ls-HSK5-x1-q2",
+          "type": "MCQ",
+          "prompt": "李老师认为在做职业选择时应该优先考虑什么？",
+          "promptPinyin": "lǐ lǎo shī rèn wéi zài zuò zhí yè xuǎn zé shí yīng gāi yōu xiān kǎo lǜ shén me ？",
+          "explanation": "Thầy Lý nói ông luôn khuyên sinh viên ưu tiên ba điểm: (1) công việc có phát huy được sở trường chuyên môn không, (2) có phù hợp với kế hoạch cuộc đời lâu dài không, (3) mới là mức lương. Do đó đáp án đúng là phát huy sở trường chuyên môn và phù hợp với kế hoạch lâu dài; mức lương chỉ xếp cuối.",
+          "order": 2,
+          "options": [
+            {
+              "text": "家人的意见和期望",
+              "pinyin": "jiā rén de yì jiàn hé qī wàng"
+            },
+            {
+              "text": "工作地点离家的远近",
+              "pinyin": "gōng zuò dì diǎn lí jiā de yuǎn jìn"
+            },
+            {
+              "text": "能否发挥专业特长、是否符合长远规划",
+              "pinyin": "néng fǒu fā huī zhuān yè tè cháng 、 shì fǒu fú hé cháng yuǎn guī huà"
+            },
+            {
+              "text": "公司的规模和知名度",
+              "pinyin": "gōng sī de guī mó hé zhī míng dù"
+            }
+          ],
+          "correctAnswer": {
+            "index": 2,
+            "text": "能否发挥专业特长、是否符合长远规划"
+          }
+        },
+        {
+          "id": "ls-HSK5-x1-q3",
+          "type": "TRUE_FALSE",
+          "prompt": "李老师认为薪资待遇是选择职业时最重要的因素。",
+          "promptPinyin": "lǐ lǎo shī rèn wéi xīn zī dài yù shì xuǎn zé zhí yè shí zuì zhòng yào de yīn sù 。",
+          "explanation": "Sai. Thầy Lý xếp mức lương đãi ngộ ở vị trí thứ ba (第三才是薪资待遇), sau việc phát huy sở trường chuyên môn và phù hợp với kế hoạch lâu dài. Vì vậy ông không coi lương là yếu tố quan trọng nhất, mệnh đề này là sai.",
+          "order": 3,
+          "options": null,
+          "correctAnswer": {
+            "value": false
+          }
+        },
+        {
+          "id": "ls-HSK5-x1-q4",
+          "type": "FILL_BLANK",
+          "prompt": "小林的父母认为最重要的是所谓的\"______\"，也就是稳定的工作。",
+          "promptPinyin": "xiǎo lín de fù mǔ rèn wéi zuì zhòng yào de shì suǒ wèi de \" _ _ _ _ _ _ \" ， yě jiù shì wěn dìng de gōng zuò 。",
+          "explanation": "Trong lời thoại, Tiểu Lâm nói bố mẹ nghiêng về việc muốn em vào doanh nghiệp nhà nước, họ cho rằng \"铁饭碗\" (bát cơm sắt, tức công việc ổn định suốt đời) là quan trọng nhất. Đáp án xuất hiện nguyên văn trong lời thoại: 他们觉得铁饭碗最重要。",
+          "order": 4,
+          "options": null,
+          "correctAnswer": {
+            "text": "铁饭碗",
+            "accepted": [
+              "铁饭碗"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "ls-HSK5-x2",
+      "title": "Trò chuyện về Tết truyền thống Trung Quốc (HSK5)",
+      "hskLevel": "HSK5",
+      "audioUrl": "",
+      "transcript": "A：小林，你研究民俗文化好几年了，我一直很好奇，为什么中国的传统节日大多和农历有关，而不是我们平时用的公历呢？\nB：这个问题问得很好。其实这跟古代农业社会的生活方式分不开。农历是根据月亮的圆缺和太阳的位置一起制定的，能准确反映季节的变化，方便农民安排播种和收获。所以像春节、端午、中秋这些节日，本来都带着浓厚的农业色彩。\nA：原来节日的背后还藏着这么实用的道理。那在你看来，这些传统节日除了热闹，还有什么更深的意义？\nB：我觉得最重要的意义在于把家人重新聚到一起。就拿春节来说吧，无论平时离家多远，人们都会想方设法赶回去，跟父母、亲戚吃一顿团圆饭。这种情感上的联系，是任何礼物都替代不了的。\nA：确实如此。不过我发现，现在不少年轻人对传统节日越来越不重视了，有的甚至更喜欢过外国的节日，你怎么看这个现象？\nB：这种现象值得我们思考。我认为，问题不在于节日本身，而在于我们有没有把节日背后的文化讲清楚。如果年轻人只知道吃月饼、放假，却不了解其中的历史和故事，那节日自然就失去了吸引力。\nA：那你有什么具体的建议吗？\nB：我建议学校和媒体多下点功夫，用年轻人喜欢的方式去介绍节日文化，比如短视频、动画、互动游戏等等。让大家在参与的过程中，慢慢体会到传统的魅力，而不是被动地接受说教。\nA：说得太对了。看来保护传统节日，光靠放假是不够的，关键还是要让文化真正走进人们的心里。\nB：没错，这正是我这些年一直努力的方向。",
+      "transcriptExplanation": "A: Tiểu Lâm này, cậu nghiên cứu văn hóa dân gian đã mấy năm rồi, tớ luôn tò mò, vì sao các ngày lễ truyền thống của Trung Quốc phần lớn đều liên quan đến âm lịch, mà không phải dương lịch mà chúng ta dùng hằng ngày?\nB: Câu hỏi này hỏi rất hay. Thật ra điều này không tách rời khỏi lối sống của xã hội nông nghiệp thời cổ đại. Âm lịch được lập ra dựa trên sự tròn khuyết của mặt trăng kết hợp với vị trí của mặt trời, có thể phản ánh chính xác sự thay đổi của các mùa, thuận tiện cho nông dân sắp xếp việc gieo trồng và thu hoạch. Vì vậy những ngày lễ như Tết Nguyên đán, Tết Đoan Ngọ, Tết Trung Thu vốn đều mang đậm màu sắc nông nghiệp.\nA: Thì ra đằng sau các ngày lễ còn ẩn chứa đạo lý thiết thực như vậy. Vậy theo cậu, những ngày lễ truyền thống này ngoài sự náo nhiệt ra, còn có ý nghĩa nào sâu sắc hơn không?\nB: Tớ cho rằng ý nghĩa quan trọng nhất nằm ở việc đưa các thành viên trong gia đình sum họp trở lại với nhau. Cứ lấy Tết Nguyên đán làm ví dụ đi, dù ngày thường có xa nhà đến mấy, người ta cũng sẽ tìm mọi cách trở về, cùng cha mẹ, họ hàng ăn một bữa cơm đoàn viên. Sự gắn kết về mặt tình cảm này là thứ mà bất kỳ món quà nào cũng không thể thay thế được.\nA: Đúng là như vậy. Nhưng tớ phát hiện, hiện nay không ít người trẻ ngày càng xem nhẹ các ngày lễ truyền thống, có người thậm chí còn thích đón các ngày lễ nước ngoài hơn, cậu nhìn nhận hiện tượng này thế nào?\nB: Hiện tượng này đáng để chúng ta suy nghĩ. Tớ cho rằng, vấn đề không nằm ở bản thân ngày lễ, mà nằm ở chỗ chúng ta có nói rõ được văn hóa đằng sau ngày lễ hay không. Nếu người trẻ chỉ biết ăn bánh trung thu, được nghỉ, mà không hiểu lịch sử và câu chuyện bên trong đó, thì ngày lễ tự nhiên sẽ mất đi sức hút.\nA: Vậy cậu có kiến nghị cụ thể nào không?\nB: Tớ kiến nghị nhà trường và truyền thông nên bỏ thêm công sức, dùng những cách mà người trẻ yêu thích để giới thiệu văn hóa ngày lễ, chẳng hạn như video ngắn, phim hoạt hình, trò chơi tương tác, v.v. Để mọi người trong quá trình tham gia dần dần cảm nhận được sức hấp dẫn của truyền thống, chứ không phải tiếp nhận sự thuyết giáo một cách bị động.\nA: Cậu nói quá đúng. Xem ra để bảo vệ các ngày lễ truyền thống, chỉ dựa vào việc nghỉ lễ là chưa đủ, mấu chốt vẫn là phải để văn hóa thật sự đi vào lòng người.\nB: Đúng vậy, đây chính là hướng mà tớ luôn nỗ lực trong những năm qua.",
+      "timeLimit": 300,
+      "order": 52,
+      "published": true,
+      "questions": [
+        {
+          "id": "ls-HSK5-x2-q1",
+          "type": "MCQ",
+          "prompt": "根据对话，中国传统节日大多和农历有关，主要原因是什么？",
+          "promptPinyin": "gēn jù duì huà ， zhōng guó chuán tǒng jié rì dà duō hé nóng lì yǒu guān ， zhǔ yào yuán yīn shì shén me ？",
+          "explanation": "B giải thích âm lịch dựa trên sự tròn khuyết của mặt trăng và vị trí mặt trời, phản ánh chính xác sự thay đổi mùa, thuận tiện cho nông dân sắp xếp việc gieo trồng và thu hoạch ('方便农民安排播种和收获'). Đây gắn liền với xã hội nông nghiệp cổ đại. Các đáp án A, C, D đều không được nhắc tới. Vì vậy đáp án đúng là B.",
+          "order": 1,
+          "options": [
+            {
+              "text": "农历比公历更容易计算",
+              "pinyin": "nóng lì bǐ gōng lì gèng róng yì jì suàn"
+            },
+            {
+              "text": "农历适合古代农业社会安排播种和收获",
+              "pinyin": "nóng lì shì hé gǔ dài nóng yè shè huì ān pái bō zhǒng hé shōu huò"
+            },
+            {
+              "text": "古人不知道公历的存在",
+              "pinyin": "gǔ rén bù zhī dào gōng lì de cún zài"
+            },
+            {
+              "text": "农历是政府强制规定使用的",
+              "pinyin": "nóng lì shì zhèng fǔ qiáng zhì guī dìng shǐ yòng de"
+            }
+          ],
+          "correctAnswer": {
+            "index": 1,
+            "text": "农历适合古代农业社会安排播种和收获"
+          }
+        },
+        {
+          "id": "ls-HSK5-x2-q2",
+          "type": "MCQ",
+          "prompt": "男的认为传统节日最重要的意义是什么？",
+          "promptPinyin": "nán de rèn wéi chuán tǒng jié rì zuì zhòng yào de yì yì shì shén me ？",
+          "explanation": "B nói rõ 'ý nghĩa quan trọng nhất nằm ở việc đưa các thành viên gia đình sum họp trở lại' (最重要的意义在于把家人重新聚到一起) và 'sự gắn kết tình cảm này không món quà nào thay thế được'. Vì vậy đáp án đúng là C.",
+          "order": 2,
+          "options": [
+            {
+              "text": "让人们有机会放假休息",
+              "pinyin": "ràng rén men yǒu jī huì fàng jià xiū xi"
+            },
+            {
+              "text": "促进商品和礼物的销售",
+              "pinyin": "cù jìn shāng pǐn hé lǐ wù de xiāo shòu"
+            },
+            {
+              "text": "把家人重新聚到一起，增进情感联系",
+              "pinyin": "bǎ jiā rén chóng xīn jù dào yì qǐ ， zēng jìn qíng gǎn lián xì"
+            },
+            {
+              "text": "展示各地不同的饮食文化",
+              "pinyin": "zhǎn shì gè dì bù tóng de yǐn shí wén huà"
+            }
+          ],
+          "correctAnswer": {
+            "index": 2,
+            "text": "把家人重新聚到一起，增进情感联系"
+          }
+        },
+        {
+          "id": "ls-HSK5-x2-q3",
+          "type": "TRUE_FALSE",
+          "prompt": "男的认为，年轻人不重视传统节日，问题出在节日本身。",
+          "promptPinyin": "nán de rèn wéi ， nián qīng rén bú zhòng shì chuán tǒng jié rì ， wèn tí chū zài jié rì běn shēn 。",
+          "explanation": "Sai. B nói rõ 'vấn đề không nằm ở bản thân ngày lễ, mà nằm ở chỗ chúng ta có nói rõ được văn hóa đằng sau ngày lễ hay không' (问题不在于节日本身，而在于我们有没有把节日背后的文化讲清楚). Vậy nhận định này là SAI.",
+          "order": 3,
+          "options": null,
+          "correctAnswer": {
+            "value": false
+          }
+        },
+        {
+          "id": "ls-HSK5-x2-q4",
+          "type": "FILL_BLANK",
+          "prompt": "男的建议学校和媒体用短视频、动画、互动游戏等年轻人喜欢的方式去介绍节日______。",
+          "promptPinyin": "nán de jiàn yì xué xiào hé méi tǐ yòng duǎn shì pín 、 dòng huà 、 hù dòng yóu xì děng nián qīng rén xǐ huan de fāng shì qù jiè shào jié rì _ _ _ _ _ _ 。",
+          "explanation": "B nói 'dùng những cách mà người trẻ yêu thích để giới thiệu văn hóa ngày lễ' (用年轻人喜欢的方式去介绍节日文化). Từ điền vào chỗ trống là '文化' (văn hóa), xuất hiện nguyên văn trong lời thoại.",
+          "order": 4,
+          "options": null,
+          "correctAnswer": {
+            "text": "文化",
+            "accepted": [
+              "文化"
+            ]
+          }
+        },
+        {
+          "id": "ls-HSK5-x2-q5",
+          "type": "MCQ",
+          "prompt": "关于说话人B（小林），下列哪一项是正确的？",
+          "promptPinyin": "guān yú shuō huà rén B （ xiǎo lín ） ， xià liè nǎ yí xiàng shì zhèng què de ？",
+          "explanation": "Ngay đầu đoạn hội thoại A nói '小林，你研究民俗文化好几年了' (Tiểu Lâm, cậu nghiên cứu văn hóa dân tục đã mấy năm rồi), và cuối bài B xác nhận 'đây chính là hướng mình luôn nỗ lực suốt những năm qua'. Vì vậy đáp án đúng là B. Đáp án D sai vì A (không phải B) mới nói 'chỉ dựa vào nghỉ lễ là không đủ'.",
+          "order": 5,
+          "options": [
+            {
+              "text": "他刚开始接触民俗文化",
+              "pinyin": "tā gāng kāi shǐ jiē chù mín sú wén huà"
+            },
+            {
+              "text": "他研究民俗文化已经好几年了",
+              "pinyin": "tā yán jiū mín sú wén huà yǐ jīng hǎo jǐ nián le"
+            },
+            {
+              "text": "他更喜欢过外国的节日",
+              "pinyin": "tā gèng xǐ huan guò wài guó de jié rì"
+            },
+            {
+              "text": "他认为放假就足以保护传统节日",
+              "pinyin": "tā rèn wéi fàng jià jiù zú yǐ bǎo hù chuán tǒng jié rì"
+            }
+          ],
+          "correctAnswer": {
+            "index": 1,
+            "text": "他研究民俗文化已经好几年了"
+          }
+        }
+      ]
+    },
+    {
+      "id": "ls-HSK5-x3",
+      "title": "Thương lượng hợp tác dự án (商量项目合作)",
+      "hskLevel": "HSK5",
+      "audioUrl": "",
+      "transcript": "A：李经理，非常感谢您今天抽空来我们公司谈这个合作项目。关于新能源汽车充电站的建设，我们双方前期已经交换过不少意见了。\nB：是啊，王总。说实话，你们公司在软件平台方面的技术实力，一直是我们非常看重的。我们负责硬件设备的生产和安装，如果能跟你们联手，市场前景确实很广阔。\nA：我也是这么认为的。不过在正式签合同之前，有几个关键问题我想再和您确认一下。首先是资金投入的比例，您那边是怎么考虑的？\nB：我们内部讨论过，初期总投资大概需要三千万，我方希望承担百分之六十，你们承担百分之四十。毕竟硬件的成本更高，风险也相对集中在设备这一块。\nA：这个比例基本上可以接受。但我有一个建议，利润分配是不是也应该跟投资比例保持一致？否则对我们来说不太公平。\nB：您说得有道理。这样吧，利润我们也按六比四来分。另外，运营维护的责任，我提议由你们公司主导，因为这更依赖于软件系统的稳定。\nA：没问题，运营这一块我们有经验。那关于项目的时间安排呢？我们希望能在明年三月之前完成第一批充电站的试运行。\nB：三月可能有点紧张。设备从生产到运输至少要两个月，再加上安装调试，我建议把试运行的时间推迟到五月，这样质量更有保证。\nA：好，那我们就把试运行定在五月。等我回去和团队再核对一下细节，下周三之前给您一份正式的合作方案，您看怎么样？\nB：太好了。我期待我们这次合作能够顺利，实现双赢。",
+      "transcriptExplanation": "A: Giám đốc Lý, rất cảm ơn ông hôm nay đã dành thời gian đến công ty chúng tôi bàn về dự án hợp tác này. Về việc xây dựng trạm sạc cho xe năng lượng mới, hai bên chúng ta ở giai đoạn đầu đã trao đổi khá nhiều ý kiến rồi.\nB: Đúng vậy, Tổng giám đốc Vương. Nói thật, thực lực kỹ thuật về nền tảng phần mềm của công ty các anh luôn là điều chúng tôi rất coi trọng. Chúng tôi phụ trách sản xuất và lắp đặt thiết bị phần cứng, nếu có thể bắt tay với các anh thì triển vọng thị trường quả thực rất rộng lớn.\nA: Tôi cũng nghĩ như vậy. Nhưng trước khi chính thức ký hợp đồng, có mấy vấn đề then chốt tôi muốn xác nhận lại với ông. Trước hết là tỷ lệ đầu tư vốn, bên ông cân nhắc thế nào?\nB: Chúng tôi đã thảo luận nội bộ, tổng đầu tư giai đoạn đầu khoảng ba mươi triệu (tệ), bên tôi mong muốn gánh 60%, các anh gánh 40%. Dù sao chi phí phần cứng cao hơn, rủi ro cũng tương đối tập trung ở mảng thiết bị.\nA: Tỷ lệ này về cơ bản có thể chấp nhận. Nhưng tôi có một đề xuất, việc phân chia lợi nhuận có nên giữ nhất quán với tỷ lệ đầu tư không? Nếu không thì với chúng tôi cũng không công bằng lắm.\nB: Ông nói có lý. Vậy thế này, lợi nhuận chúng ta cũng chia theo tỷ lệ sáu bốn. Ngoài ra, về trách nhiệm vận hành bảo trì, tôi đề nghị do công ty các anh chủ trì, vì việc này phụ thuộc nhiều vào sự ổn định của hệ thống phần mềm.\nA: Không vấn đề gì, mảng vận hành chúng tôi có kinh nghiệm. Vậy còn về lịch trình thời gian của dự án thì sao? Chúng tôi mong có thể hoàn thành chạy thử đợt trạm sạc đầu tiên trước tháng Ba năm sau.\nB: Tháng Ba có thể hơi gấp. Thiết bị từ sản xuất đến vận chuyển ít nhất cần hai tháng, thêm vào đó là lắp đặt và hiệu chỉnh, tôi đề nghị dời thời gian chạy thử sang tháng Năm, như vậy chất lượng sẽ được đảm bảo hơn.\nA: Được, vậy chúng ta ấn định chạy thử vào tháng Năm. Đợi tôi về đối chiếu lại chi tiết với nhóm, trước thứ Tư tuần sau sẽ đưa ông một bản phương án hợp tác chính thức, ông thấy thế nào?\nB: Tuyệt vời quá. Tôi mong đợi lần hợp tác này của chúng ta được thuận lợi, đạt được thắng lợi cho cả đôi bên (win-win).",
+      "timeLimit": 300,
+      "order": 53,
+      "published": true,
+      "questions": [
+        {
+          "id": "ls-HSK5-x3-q1",
+          "type": "MCQ",
+          "prompt": "这个合作项目主要是关于什么的？",
+          "promptPinyin": "zhè ge hé zuò xiàng mù zhǔ yào shi guān yú shén me de ？",
+          "explanation": "Ngay đầu hội thoại A nói rõ '关于新能源汽车充电站的建设' (về việc xây dựng trạm sạc cho xe năng lượng mới), nên dự án hợp tác là về xây dựng trạm sạc. Các phương án khác không được nhắc tới.",
+          "order": 1,
+          "options": [
+            {
+              "text": "新能源汽车充电站的建设",
+              "pinyin": "xīn néng yuán qì chē chōng diàn zhàn de jiàn shè"
+            },
+            {
+              "text": "手机软件平台的开发",
+              "pinyin": "shǒu jī ruǎn jiàn píng tái de kāi fā"
+            },
+            {
+              "text": "汽车零件的进出口贸易",
+              "pinyin": "qì chē líng jiàn de jìn chū kǒu mào yì"
+            },
+            {
+              "text": "太阳能发电站的运营",
+              "pinyin": "tài yáng néng fā diàn zhàn de yùn yíng"
+            }
+          ],
+          "correctAnswer": {
+            "index": 0,
+            "text": "新能源汽车充电站的建设"
+          }
+        },
+        {
+          "id": "ls-HSK5-x3-q2",
+          "type": "MCQ",
+          "prompt": "关于双方的分工，下面哪一项是正确的？",
+          "promptPinyin": "guān yú shuāng fāng de fēn gōng ， xià miàn nǎ yí xiàng shì zhèng què de ？",
+          "explanation": "B nói công ty mình '负责硬件设备的生产和安装' (phụ trách sản xuất và lắp đặt phần cứng), còn đề nghị mảng vận hành bảo trì '由你们公司主导' (do công ty A chủ trì) vì phụ thuộc vào phần mềm; A đồng ý. Vậy A chủ trì vận hành, B lo phần cứng.",
+          "order": 2,
+          "options": [
+            {
+              "text": "B方负责软件平台，A方负责硬件设备",
+              "pinyin": "B fāng fù zé ruǎn jiàn píng tái ， A fāng fù zé yìng jiàn shè bèi"
+            },
+            {
+              "text": "A方主导运营维护，B方负责硬件生产和安装",
+              "pinyin": "A fāng zhǔ dǎo yùn yíng wéi hù ， B fāng fù zé yìng jiàn shēng chǎn hé ān zhuāng"
+            },
+            {
+              "text": "两家公司都只负责硬件安装",
+              "pinyin": "liǎng jiā gōng sī dōu zhī fù zé yìng jiàn ān zhuāng"
+            },
+            {
+              "text": "运营维护由B方公司主导",
+              "pinyin": "yùn yíng wéi hù yóu B fāng gōng sī zhǔ dǎo"
+            }
+          ],
+          "correctAnswer": {
+            "index": 1,
+            "text": "A方主导运营维护，B方负责硬件生产和安装"
+          }
+        },
+        {
+          "id": "ls-HSK5-x3-q3",
+          "type": "TRUE_FALSE",
+          "prompt": "双方最终决定把第一批充电站的试运行时间定在明年三月。",
+          "promptPinyin": "shuāng fāng zuì zhōng jué dìng bǎ dì yī pī chōng diàn zhàn de shì yùn xíng shí jiān dìng zài míng nián sān yuè 。",
+          "explanation": "Sai. A ban đầu muốn hoàn thành chạy thử trước tháng Ba, nhưng B cho rằng tháng Ba hơi gấp và đề nghị dời sang tháng Năm; cuối cùng A đồng ý '那我们就把试运行定在五月' (ấn định chạy thử vào tháng Năm), chứ không phải tháng Ba.",
+          "order": 3,
+          "options": null,
+          "correctAnswer": {
+            "value": false
+          }
+        },
+        {
+          "id": "ls-HSK5-x3-q4",
+          "type": "FILL_BLANK",
+          "prompt": "双方商定利润按照______的比例进行分配。",
+          "promptPinyin": "shuāng fāng shāng dìng lì rùn àn zhào _ _ _ _ _ _ de bǐ lì jìn xíng fēn pèi 。",
+          "explanation": "A đề xuất lợi nhuận nên nhất quán với tỷ lệ đầu tư, B đáp '利润我们也按六比四来分' (lợi nhuận cũng chia theo tỷ lệ sáu bốn). Đáp án '六比四' xuất hiện nguyên văn trong lời thoại.",
+          "order": 4,
+          "options": null,
+          "correctAnswer": {
+            "text": "六比四",
+            "accepted": [
+              "六比四"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "ls-HSK5-x4",
+      "title": "Bàn về giáo dục con cái (谈子女教育)",
+      "hskLevel": "HSK5",
+      "audioUrl": "",
+      "transcript": "A：最近我特别头疼，儿子上初中以后成绩下降得厉害，我给他报了三个补习班，可他好像越来越不喜欢学习了。\nB：报补习班未必是好办法。孩子的时间被安排得满满的，一点儿自由都没有，压力太大反而会产生逆反心理。\nA：那你说该怎么办呢？现在竞争这么激烈，别的家长都在给孩子加码，我要是不管，将来他考不上好高中怎么办？\nB：我倒觉得，与其一味地逼他学习，不如先了解他真正的兴趣在哪里。教育不只是分数，更重要的是培养孩子独立思考和解决问题的能力。\nA：道理我都懂，可是一看到别人家的孩子那么优秀，我就忍不住着急。\nB：这就是很多家长的通病——总喜欢拿自己的孩子和别人比较。其实每个孩子的成长节奏都不一样，盲目比较只会打击他的自信心。\nA：你说得也有道理。那你觉得，家长在教育中最应该扮演什么角色呢？\nB：我认为，家长应该是引导者，而不是控制者。我们的任务是陪伴孩子，帮他建立正确的价值观，而不是替他决定一切。适当地放手，让他学会为自己的选择负责，这才是真正的爱。\nA：听你这么一说，我觉得我以前的方式可能真的有问题。看来，我得先改变自己的观念，多和孩子沟通，而不是一味地施加压力。\nB：对，教育是一个长期的过程，急不来。给孩子一些空间和信任，你会发现他其实比你想象的更懂事。",
+      "transcriptExplanation": "A: Gần đây tôi đau đầu lắm, con trai tôi sau khi lên cấp hai thành tích tụt dốc nghiêm trọng. Tôi đã đăng ký cho nó ba lớp học thêm, nhưng dường như nó càng ngày càng không thích học.\nB: Đăng ký lớp học thêm chưa chắc đã là cách hay. Thời gian của bọn trẻ bị sắp xếp kín mít, không có chút tự do nào, áp lực quá lớn ngược lại sẽ sinh ra tâm lý chống đối.\nA: Vậy theo anh nên làm thế nào? Bây giờ cạnh tranh gay gắt như vậy, các phụ huynh khác đều đang tăng cường (gây áp lực) cho con, nếu tôi không quản, sau này nó thi không đỗ trường cấp ba tốt thì sao?\nB: Tôi lại thấy rằng, thay vì cứ một mực ép nó học, chi bằng trước tiên hãy tìm hiểu hứng thú thực sự của nó nằm ở đâu. Giáo dục không chỉ là điểm số, quan trọng hơn là bồi dưỡng cho con năng lực tư duy độc lập và giải quyết vấn đề.\nA: Đạo lý thì tôi hiểu cả, nhưng cứ nhìn thấy con nhà người ta xuất sắc như vậy, tôi lại không kìm được sốt ruột.\nB: Đây chính là căn bệnh chung của nhiều phụ huynh — luôn thích đem con mình so sánh với người khác. Thật ra nhịp độ trưởng thành của mỗi đứa trẻ đều khác nhau, so sánh một cách mù quáng chỉ khiến sự tự tin của nó bị tổn thương thôi.\nA: Anh nói cũng có lý. Vậy anh thấy trong giáo dục, phụ huynh nên đóng vai trò gì nhất?\nB: Tôi cho rằng, phụ huynh nên là người dẫn dắt, chứ không phải người kiểm soát. Nhiệm vụ của chúng ta là đồng hành cùng con, giúp con xây dựng giá trị quan đúng đắn, chứ không phải quyết định thay con mọi thứ. Buông tay một cách thích hợp, để con học cách chịu trách nhiệm cho lựa chọn của mình, đây mới là tình yêu thương thực sự.\nA: Nghe anh nói vậy, tôi thấy cách làm trước đây của mình có lẽ đúng là có vấn đề. Xem ra tôi phải thay đổi quan niệm của bản thân trước, giao tiếp nhiều hơn với con, chứ không phải một mực gây áp lực.\nB: Đúng vậy, giáo dục là một quá trình lâu dài, không thể vội được. Cho con một chút không gian và sự tin tưởng, anh sẽ phát hiện thực ra nó hiểu chuyện hơn anh tưởng nhiều.",
+      "timeLimit": 300,
+      "order": 54,
+      "published": true,
+      "questions": [
+        {
+          "id": "ls-HSK5-x4-q1",
+          "type": "MCQ",
+          "prompt": "根据对话，男的（A）现在遇到了什么问题？",
+          "promptPinyin": "gēn jù duì huà ， nán de （ A ） xiàn zài yù dào le shén me wèn tí ？",
+          "explanation": "A nói ở đầu đối thoại: con trai sau khi lên cấp hai thành tích tụt dốc nghiêm trọng (成绩下降得厉害), nên đáp án đúng là lựa chọn thứ nhất. Các lựa chọn khác: con không chịu đi học, áp lực công việc, không tìm được lớp học thêm — đều không được nhắc tới trong lời thoại.",
+          "order": 1,
+          "options": [
+            {
+              "text": "儿子上初中后成绩明显下降",
+              "pinyin": "ér zi shàng chū zhōng hòu chéng jì míng xiǎn xià jiàng"
+            },
+            {
+              "text": "儿子不愿意去上学",
+              "pinyin": "ér zi bú yuàn yì qù shàng xué"
+            },
+            {
+              "text": "自己工作压力太大",
+              "pinyin": "zì jǐ gōng zuò yā lì tài dà"
+            },
+            {
+              "text": "找不到合适的补习班",
+              "pinyin": "zhǎo bú dào hé shì de bǔ xí bān"
+            }
+          ],
+          "correctAnswer": {
+            "index": 0,
+            "text": "儿子上初中后成绩明显下降"
+          }
+        },
+        {
+          "id": "ls-HSK5-x4-q2",
+          "type": "MCQ",
+          "prompt": "B认为家长在子女教育中应该扮演什么角色？",
+          "promptPinyin": "B rèn wéi jiā zhǎng zài zǐ nǚ jiào yù zhōng yīng gāi bàn yǎn shén me jué sè ？",
+          "explanation": "B nói rõ: phụ huynh nên là người dẫn dắt (引导者) chứ không phải người kiểm soát (控制者), nhiệm vụ là đồng hành (陪伴) cùng con. Vì vậy đáp án đúng là 'người dẫn dắt đồng hành cùng con'. Các lựa chọn A, B, D đều bị B phản đối.",
+          "order": 2,
+          "options": [
+            {
+              "text": "严格的控制者",
+              "pinyin": "yán gé de kòng zhì zhě"
+            },
+            {
+              "text": "成绩的监督者",
+              "pinyin": "chéng jì de jiān dū zhě"
+            },
+            {
+              "text": "陪伴孩子的引导者",
+              "pinyin": "péi bàn hái zi de yǐn dǎo zhě"
+            },
+            {
+              "text": "替孩子做决定的人",
+              "pinyin": "tì hái zi zuò jué dìng de rén"
+            }
+          ],
+          "correctAnswer": {
+            "index": 2,
+            "text": "陪伴孩子的引导者"
+          }
+        },
+        {
+          "id": "ls-HSK5-x4-q3",
+          "type": "TRUE_FALSE",
+          "prompt": "B认为把自己的孩子和别人家的孩子比较是一种好的教育方法。",
+          "promptPinyin": "B rèn wèi bǎ zì jǐ de hái zi hé bié rén jiā de hái zi bǐ jiào shì yì zhǒng hǎo de jiào yù fāng fǎ 。",
+          "explanation": "Sai. B nói việc thích đem con mình so sánh với người khác là 'căn bệnh chung' (通病) của phụ huynh, và so sánh mù quáng (盲目比较) chỉ làm tổn thương sự tự tin của trẻ. Vì vậy B KHÔNG cho đó là phương pháp tốt.",
+          "order": 3,
+          "options": null,
+          "correctAnswer": {
+            "value": false
+          }
+        },
+        {
+          "id": "ls-HSK5-x4-q4",
+          "type": "FILL_BLANK",
+          "prompt": "B认为，教育不只是分数，更重要的是培养孩子独立思考和________的能力。",
+          "promptPinyin": "B rèn wéi ， jiào yù bù zhǐ shì fēn shù ， gèng zhòng yào de shì péi yǎng hái zi dú lì sī kǎo hé _ _ _ _ _ _ _ _ de néng lì 。",
+          "explanation": "B nói nguyên văn: quan trọng hơn là bồi dưỡng cho con năng lực tư duy độc lập và giải quyết vấn đề (独立思考和解决问题的能力). Đáp án cần điền là '解决问题', xuất hiện nguyên văn trong lời thoại.",
+          "order": 4,
+          "options": null,
+          "correctAnswer": {
+            "text": "解决问题",
+            "accepted": [
+              "解决问题"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "ls-HSK5-x5",
+      "title": "Thảo luận về sản phẩm công nghệ (讨论科技产品) - HSK5",
+      "hskLevel": "HSK5",
+      "audioUrl": "",
+      "transcript": "A：最近我在考虑换一部手机，可市场上产品太多了，各种品牌、各种型号，看得我眼花缭乱，实在不知道该怎么选。\nB：我理解你的感受。其实选手机不能只看广告宣传，关键要根据自己的实际需求来判断。你平时用手机主要做什么？\nA：我主要用来拍照、看视频，偶尔也打打游戏。对了，电池续航一定要好，我最讨厌一天充两三次电。\nB：那我建议你重点关注摄像头的性能和电池容量。现在很多厂商拼命宣传处理器多么先进，其实对普通用户来说，够用就行，没必要一味追求最高配置。\nA：你说得有道理。不过我看新出的那款折叠屏手机挺酷的，屏幕能折起来，携带方便，你觉得值得买吗？\nB：折叠屏确实是近几年的技术热点，外观很吸引人。但坦白说，它的价格偏高，而且屏幕折叠的地方比较脆弱，用久了可能会出现问题。如果你不是特别追求新潮，我个人觉得没必要花那么多钱去当\"小白鼠\"。\nA：原来如此。那从性价比的角度看，你更推荐哪种？\nB：我觉得你可以选一款去年的旗舰机型。这类手机降价之后，性价比反而更高，性能也完全能满足日常使用。新技术刚上市时往往不够成熟，价格又贵，等它稳定一两年再买，是更明智的选择。\nA：谢谢你的分析，我心里有底了。看来买科技产品不能盲目跟风，还是得理性消费啊。",
+      "transcriptExplanation": "A: Gần đây tôi đang tính đổi một chiếc điện thoại mới, nhưng sản phẩm trên thị trường nhiều quá, đủ loại thương hiệu, đủ loại model, nhìn hoa cả mắt, thật sự không biết nên chọn thế nào.\nB: Tôi hiểu cảm giác của cậu. Thật ra chọn điện thoại không thể chỉ nhìn vào quảng cáo, điều quan trọng là phải phán đoán dựa trên nhu cầu thực tế của bản thân. Bình thường cậu dùng điện thoại chủ yếu để làm gì?\nA: Tôi chủ yếu dùng để chụp ảnh, xem video, thỉnh thoảng cũng chơi game một chút. À đúng rồi, thời lượng pin nhất định phải tốt, tôi ghét nhất là một ngày phải sạc hai ba lần.\nB: Vậy tôi khuyên cậu nên tập trung vào hiệu năng camera và dung lượng pin. Bây giờ nhiều nhà sản xuất ra sức quảng cáo bộ vi xử lý tiên tiến thế nào, thật ra với người dùng phổ thông thì đủ dùng là được, không cần thiết cứ một mực theo đuổi cấu hình cao nhất.\nA: Cậu nói có lý. Nhưng tôi thấy chiếc điện thoại màn hình gập mới ra khá ngầu, màn hình có thể gập lại, mang theo tiện lợi, cậu thấy có đáng mua không?\nB: Màn hình gập đúng là điểm nóng công nghệ mấy năm gần đây, ngoại hình rất thu hút. Nhưng nói thẳng, giá của nó hơi cao, hơn nữa chỗ gập của màn hình khá mong manh, dùng lâu có thể xuất hiện vấn đề. Nếu cậu không quá theo đuổi cái mới, cá nhân tôi thấy không cần thiết phải bỏ nhiều tiền như vậy để làm \"chuột bạch\".\nA: Thì ra là vậy. Vậy xét từ góc độ hiệu quả trên giá thành (tính đáng đồng tiền), cậu khuyên nên chọn loại nào hơn?\nB: Tôi nghĩ cậu có thể chọn một chiếc điện thoại flagship (đầu bảng) của năm ngoái. Loại điện thoại này sau khi giảm giá thì tính đáng đồng tiền ngược lại còn cao hơn, hiệu năng cũng hoàn toàn đáp ứng được sử dụng hằng ngày. Công nghệ mới khi vừa ra mắt thường chưa đủ hoàn thiện, giá lại đắt, đợi nó ổn định một hai năm rồi mua là lựa chọn khôn ngoan hơn.\nA: Cảm ơn phân tích của cậu, tôi đã có định hướng trong lòng rồi. Xem ra mua sản phẩm công nghệ không thể chạy theo trào lưu một cách mù quáng, vẫn phải tiêu dùng một cách lý trí thôi.",
+      "timeLimit": 300,
+      "order": 55,
+      "published": true,
+      "questions": [
+        {
+          "id": "ls-HSK5-x5-q1",
+          "type": "MCQ",
+          "prompt": "根据对话，男的（A）平时用手机主要做什么？",
+          "promptPinyin": "gēn jù duì huà ， nán de （ A ） píng shí yòng shǒu jī zhǔ yào zuò shén me ？",
+          "explanation": "A nói rõ: '我主要用来拍照、看视频，偶尔也打打游戏' (Tôi chủ yếu dùng để chụp ảnh, xem video, thỉnh thoảng cũng chơi game). Nên đáp án là chụp ảnh, xem video và chơi game. Ba lựa chọn còn lại không được nhắc đến.",
+          "order": 1,
+          "options": [
+            {
+              "text": "拍照、看视频和玩游戏",
+              "pinyin": "pāi zhào 、 kàn shì pín hé wán yóu xì"
+            },
+            {
+              "text": "炒股和办公",
+              "pinyin": "chǎo gǔ hé bàn gōng"
+            },
+            {
+              "text": "学习外语",
+              "pinyin": "xué xí wài yǔ"
+            },
+            {
+              "text": "看书和写文章",
+              "pinyin": "kàn shū hé xiě wén zhāng"
+            }
+          ],
+          "correctAnswer": {
+            "index": 0,
+            "text": "拍照、看视频和玩游戏"
+          }
+        },
+        {
+          "id": "ls-HSK5-x5-q2",
+          "type": "MCQ",
+          "prompt": "关于折叠屏手机，女的（B）的看法是什么？",
+          "promptPinyin": "guān yú zhé dié píng shǒu jī ， nǚ de （ B ） de kàn fǎ shì shén me ？",
+          "explanation": "B nhận xét màn hình gập '外观很吸引人' (ngoại hình rất thu hút) nhưng '价格偏高，而且屏幕折叠的地方比较脆弱，用久了可能会出现问题' (giá hơi cao, chỗ gập khá mong manh, dùng lâu có thể xuất hiện vấn đề). Vì vậy đáp án đúng là B: hấp dẫn về ngoại hình nhưng giá cao và chỗ gập dễ hỏng.",
+          "order": 2,
+          "options": [
+            {
+              "text": "技术已经很成熟，强烈推荐购买",
+              "pinyin": "jì shù yǐ jīng hěn chéng shú ， qiáng liè tuī jiàn gòu mǎi"
+            },
+            {
+              "text": "外观吸引人，但价格高且折叠处较脆弱",
+              "pinyin": "wài guān xī yǐn rén ， dàn jià gé gāo qiě zhé dié chù jiào cuì ruò"
+            },
+            {
+              "text": "质量最好，最值得投资",
+              "pinyin": "zhì liàng zuì hǎo ， zuì zhí dé tóu zī"
+            },
+            {
+              "text": "比旗舰机型更省钱",
+              "pinyin": "bǐ qí jiàn jī xíng gèng shěng qián"
+            }
+          ],
+          "correctAnswer": {
+            "index": 1,
+            "text": "外观吸引人，但价格高且折叠处较脆弱"
+          }
+        },
+        {
+          "id": "ls-HSK5-x5-q3",
+          "type": "TRUE_FALSE",
+          "prompt": "女的（B）建议男的一味追求处理器等最高配置。",
+          "promptPinyin": "nǚ de （ B ） jiàn yì nán de yí wèi zhuī qiú chǔ lǐ qì děng zuì gāo pèi zhì 。",
+          "explanation": "Sai. B nói ngược lại: với người dùng phổ thông thì '够用就行，没必要一味追求最高配置' (đủ dùng là được, không cần một mực theo đuổi cấu hình cao nhất), và khuyên tập trung vào camera cùng dung lượng pin.",
+          "order": 3,
+          "options": null,
+          "correctAnswer": {
+            "value": false
+          }
+        },
+        {
+          "id": "ls-HSK5-x5-q4",
+          "type": "FILL_BLANK",
+          "prompt": "女的认为，从性价比角度看，可以选一款去年的______机型，降价后反而更划算。",
+          "promptPinyin": "nǚ de rèn wéi ， cóng xìng jià bǐ jiǎo dù kàn ， kě yǐ xuǎn yì kuǎn qù nián de _ _ _ _ _ _ jī xíng ， jiàng jià hòu fǎn ér gèng huá suàn 。",
+          "explanation": "B khuyên: '你可以选一款去年的旗舰机型。这类手机降价之后，性价比反而更高' (cậu có thể chọn một chiếc điện thoại đầu bảng/flagship của năm ngoái, sau khi giảm giá thì tính đáng đồng tiền còn cao hơn). Từ cần điền là '旗舰', xuất hiện nguyên văn trong lời thoại.",
+          "order": 4,
+          "options": null,
+          "correctAnswer": {
+            "text": "旗舰",
+            "accepted": [
+              "旗舰"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "ls-HSK5-x6",
+      "title": "谈中外文化差异 (Bàn về sự khác biệt văn hóa Trung - ngoại)",
+      "hskLevel": "HSK5",
+      "audioUrl": "",
+      "transcript": "A：李教授，您研究跨文化交流已经很多年了，能不能谈谈您眼中最典型的中外文化差异？\nB：好的。其实差异有很多方面，但我觉得最根本的一点，是集体主义和个人主义的区别。中国传统文化更强调集体，个人往往要服从家庭和社会的整体利益；而很多西方国家更看重个人的独立和自我实现。\nA：这种差异在日常生活中会有什么具体表现呢？\nB：举个例子吧。在西方，孩子成年以后一般会尽早独立，搬出去自己住，父母也不会过多干涉他们的选择。但在中国，父母对子女的关心往往会持续一辈子，甚至会替他们操心工作和婚姻。\nA：确实如此。那在沟通方式上呢？我听说也有很大不同。\nB：没错。西方人的表达通常比较直接，同意就是同意，反对就是反对。而中国人说话往往比较含蓄，为了照顾对方的面子，有时候会用委婉的方式表达不同意见。这就是为什么很多外国人刚来中国时，常常听不懂话里的言外之意。\nA：那么，面对这些差异，我们应该抱着什么样的态度呢？\nB：我认为最重要的是尊重和理解。文化没有绝对的好坏对错之分，只是各有特点。我们既不能盲目地崇拜外国文化，也不应该固执地排斥它。真正成熟的态度，是在保持自己文化根基的同时，学会欣赏和包容其他文化。\nA：您说得太好了。所以说，了解文化差异，最终是为了更好地互相沟通。\nB：正是这样。差异并不可怕，可怕的是不愿意去了解对方。只要我们愿意站在对方的角度思考，很多误会都是可以化解的。",
+      "transcriptExplanation": "A: Giáo sư Lý, ông đã nghiên cứu giao tiếp liên văn hóa nhiều năm rồi, ông có thể nói về sự khác biệt văn hóa Trung - ngoại điển hình nhất trong mắt ông không?\nB: Được. Thực ra sự khác biệt có rất nhiều phương diện, nhưng tôi cho rằng điểm căn bản nhất là sự khác nhau giữa chủ nghĩa tập thể và chủ nghĩa cá nhân. Văn hóa truyền thống Trung Quốc chú trọng tập thể hơn, cá nhân thường phải phục tùng lợi ích tổng thể của gia đình và xã hội; còn nhiều nước phương Tây coi trọng sự độc lập và tự thực hiện bản thân của cá nhân hơn.\nA: Sự khác biệt này biểu hiện cụ thể như thế nào trong đời sống hàng ngày?\nB: Lấy một ví dụ nhé. Ở phương Tây, con cái sau khi trưởng thành thường sẽ độc lập càng sớm càng tốt, dọn ra ngoài tự sống, cha mẹ cũng không can thiệp quá nhiều vào lựa chọn của họ. Nhưng ở Trung Quốc, sự quan tâm của cha mẹ đối với con cái thường kéo dài cả đời, thậm chí còn lo lắng thay cho chúng cả về công việc lẫn hôn nhân.\nA: Đúng là như vậy. Vậy về phương thức giao tiếp thì sao? Tôi nghe nói cũng có sự khác biệt rất lớn.\nB: Đúng vậy. Cách diễn đạt của người phương Tây thường khá trực tiếp, đồng ý là đồng ý, phản đối là phản đối. Còn người Trung Quốc nói chuyện thường khá kín đáo, để giữ thể diện cho đối phương, đôi khi sẽ dùng cách nói uyển chuyển để bày tỏ ý kiến bất đồng. Đó chính là lý do vì sao nhiều người nước ngoài khi mới đến Trung Quốc thường không hiểu được ẩn ý trong lời nói.\nA: Vậy thì, đối mặt với những khác biệt này, chúng ta nên có thái độ như thế nào?\nB: Tôi cho rằng quan trọng nhất là tôn trọng và thấu hiểu. Văn hóa không có sự phân biệt tốt xấu đúng sai tuyệt đối, chỉ là mỗi bên có đặc điểm riêng. Chúng ta vừa không thể mù quáng sùng bái văn hóa nước ngoài, cũng không nên cố chấp bài xích nó. Thái độ thực sự trưởng thành là vừa giữ gìn gốc rễ văn hóa của mình, vừa học cách thưởng thức và bao dung các nền văn hóa khác.\nA: Ông nói hay quá. Vậy nên có thể nói, việc tìm hiểu sự khác biệt văn hóa rốt cuộc là để giao tiếp với nhau tốt hơn.\nB: Đúng là như vậy. Sự khác biệt không đáng sợ, đáng sợ là không muốn tìm hiểu đối phương. Chỉ cần chúng ta sẵn lòng suy nghĩ từ góc độ của đối phương, rất nhiều hiểu lầm đều có thể hóa giải được.",
+      "timeLimit": 300,
+      "order": 56,
+      "published": true,
+      "questions": [
+        {
+          "id": "ls-HSK5-x6-q1",
+          "type": "MCQ",
+          "prompt": "根据李教授的观点，中外文化最根本的差异是什么？",
+          "promptPinyin": "gēn jù lǐ jiào shòu de guān diǎn ， zhōng wài wén huà zuì gēn běn de chā yì shì shén me ？",
+          "explanation": "Giáo sư Lý nói rõ điểm căn bản nhất là 'sự khác nhau giữa chủ nghĩa tập thể và chủ nghĩa cá nhân' (集体主义和个人主义的区别). Ba phương án còn lại (thói quen ăn uống, tín ngưỡng tôn giáo, ngôn ngữ chữ viết) đều không được nhắc đến trong lời thoại, nên chỉ có một đáp án đúng.",
+          "order": 1,
+          "options": [
+            {
+              "text": "饮食习惯的不同",
+              "pinyin": "yǐn shí xí guàn de bù tóng"
+            },
+            {
+              "text": "集体主义和个人主义的区别",
+              "pinyin": "jí tǐ zhǔ yì hé gè rén zhǔ yì de qū bié"
+            },
+            {
+              "text": "宗教信仰的差异",
+              "pinyin": "zōng jiào xìn yǎng de chā yì"
+            },
+            {
+              "text": "语言文字的差异",
+              "pinyin": "yǔ yán wén zì de chā yì"
+            }
+          ],
+          "correctAnswer": {
+            "index": 1,
+            "text": "集体主义和个人主义的区别"
+          }
+        },
+        {
+          "id": "ls-HSK5-x6-q2",
+          "type": "MCQ",
+          "prompt": "为什么很多外国人刚来中国时常常听不懂话里的意思？",
+          "promptPinyin": "wèi shén me hěn duō wài guó rén gāng lái zhōng guó shí cháng cháng tīng bù dǒng huà lǐ de yì sī ？",
+          "explanation": "Giáo sư giải thích người Trung Quốc nói chuyện khá kín đáo, uyển chuyển (含蓄、委婉) để giữ thể diện đối phương, nên người nước ngoài mới đến không hiểu được ẩn ý (言外之意). Vì vậy nguyên nhân là do cách diễn đạt kín đáo, uyển chuyển; các phương án còn lại không được đề cập.",
+          "order": 2,
+          "options": [
+            {
+              "text": "因为中国人说话声音太小",
+              "pinyin": "yīn wèi zhōng guó rén shuō huà shēng yīn tài xiǎo"
+            },
+            {
+              "text": "因为中国人说话速度太快",
+              "pinyin": "yīn wèi zhōng guó rén shuō huà sù dù tài kuài"
+            },
+            {
+              "text": "因为中国人表达比较含蓄委婉",
+              "pinyin": "yīn wèi zhōng guó rén biǎo dá bǐ jiào hán xù wěi wǎn"
+            },
+            {
+              "text": "因为中国人不愿意和外国人说话",
+              "pinyin": "yīn wèi zhōng guó rén bú yuàn yì hé wài guó rén shuō huà"
+            }
+          ],
+          "correctAnswer": {
+            "index": 2,
+            "text": "因为中国人表达比较含蓄委婉"
+          }
+        },
+        {
+          "id": "ls-HSK5-x6-q3",
+          "type": "TRUE_FALSE",
+          "prompt": "李教授认为外国文化比中国文化更好，我们应该盲目崇拜。",
+          "promptPinyin": "lǐ jiào shòu rèn wéi wài guó wén huà bǐ zhōng guó wén huà gèng hǎo ， wǒ men yīng gāi máng mù chóng bài 。",
+          "explanation": "Sai. Giáo sư nói văn hóa không có tốt xấu đúng sai tuyệt đối (没有绝对的好坏对错之分), và chúng ta 'không thể mù quáng sùng bái văn hóa nước ngoài' (不能盲目地崇拜外国文化). Do đó nhận định này trái ngược với lời của giáo sư nên là Sai.",
+          "order": 3,
+          "options": null,
+          "correctAnswer": {
+            "value": false
+          }
+        },
+        {
+          "id": "ls-HSK5-x6-q4",
+          "type": "FILL_BLANK",
+          "prompt": "李教授认为，面对文化差异，最重要的是________和理解。",
+          "promptPinyin": "lǐ jiào shòu rèn wèi ， miàn duì wén huà chā yì ， zuì zhòng yào de shì _ _ _ _ _ _ _ _ hé lǐ jiě 。",
+          "explanation": "Trong lời thoại, giáo sư nói 'quan trọng nhất là tôn trọng và thấu hiểu' (最重要的是尊重和理解). Từ cần điền vào chỗ trống là 尊重 (tôn trọng), xuất hiện nguyên văn trong bài.",
+          "order": 4,
+          "options": null,
+          "correctAnswer": {
+            "text": "尊重",
+            "accepted": [
+              "尊重"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "ls-HSK6-x1",
+      "title": "Thảo luận quan điểm học thuật: Trí tuệ nhân tạo và tương lai của nghiên cứu khoa học",
+      "hskLevel": "HSK6",
+      "audioUrl": "",
+      "transcript": "A：李教授，最近学术界对人工智能是否会取代传统科研工作展开了激烈的讨论。作为长期从事科研方法论研究的学者，您怎么看待这个问题？\n\nB：这是一个值得深入探讨的话题。我个人认为，人工智能在科研领域的作用被夸大了，但同时也被低估了。这话听起来矛盾，其实不然。所谓被夸大，是指有些人以为人工智能能够独立提出真正有价值的科学问题；所谓被低估，是说它在数据处理和文献梳理方面的效率，远远超出了大多数人的想象。\n\nA：您能具体说说为什么人工智能难以独立提出科学问题吗？\n\nB：科学问题的提出，往往源于研究者对现有理论矛盾的敏锐察觉，以及对未知领域的好奇心。这种察觉建立在深厚的学科积累和直觉判断之上，而目前的人工智能本质上是基于已有数据进行模式识别，它缺乏那种从无到有的原创性洞察。换句话说，它擅长回答问题，却不擅长发现值得回答的问题。\n\nA：有学者反驳说，随着技术的发展，人工智能迟早会具备这种能力。您同意这种观点吗？\n\nB：我持谨慎态度。技术进步的速度确实惊人，但我们不能把线性的技术演进简单地推演成质变。更重要的是，即便有一天机器能够模拟出类似的洞察力，科研的核心价值——也就是人类对世界的理解与解释——依然不可替代。我常常提醒我的学生，工具永远只是工具，真正的学术贡献在于思想，而非计算。\n\nA：那么在您看来，年轻研究者应该如何面对这场技术变革呢？\n\nB：与其担忧被取代，不如主动拥抱变化。我建议年轻人把人工智能当作一位不知疲倦的助手，用它来处理那些重复性、机械性的工作，从而把宝贵的时间和精力投入到真正需要创造力的环节。归根结底，能否在人工智能时代脱颖而出，取决于一个研究者是否具备不可被算法替代的批判性思维和独立判断能力。",
+      "transcriptExplanation": "A: Giáo sư Lý, gần đây giới học thuật đã nổ ra cuộc thảo luận sôi nổi về việc liệu trí tuệ nhân tạo có thay thế công việc nghiên cứu khoa học truyền thống hay không. Là một học giả nghiên cứu lâu năm về phương pháp luận nghiên cứu khoa học, giáo sư nhìn nhận vấn đề này thế nào?\n\nB: Đây là một chủ đề đáng đi sâu tìm hiểu. Cá nhân tôi cho rằng vai trò của trí tuệ nhân tạo trong lĩnh vực nghiên cứu khoa học vừa bị thổi phồng, nhưng đồng thời cũng bị đánh giá thấp. Câu này nghe có vẻ mâu thuẫn, nhưng thực ra không phải vậy. Cái gọi là bị thổi phồng, là chỉ việc một số người tưởng rằng trí tuệ nhân tạo có thể độc lập đặt ra những vấn đề khoa học thực sự có giá trị; còn cái gọi là bị đánh giá thấp, là nói hiệu suất của nó trong xử lý dữ liệu và tổng hợp tài liệu vượt xa sức tưởng tượng của đa số mọi người.\n\nA: Giáo sư có thể nói cụ thể vì sao trí tuệ nhân tạo khó độc lập đặt ra các vấn đề khoa học không?\n\nB: Việc đặt ra vấn đề khoa học thường bắt nguồn từ sự nhạy bén của nhà nghiên cứu trong việc phát hiện mâu thuẫn của các lý thuyết hiện có, cũng như sự tò mò đối với những lĩnh vực chưa biết. Sự nhạy bén này được xây dựng trên nền tảng tích lũy chuyên môn sâu dày và phán đoán trực giác, trong khi trí tuệ nhân tạo hiện nay về bản chất là nhận diện mẫu hình dựa trên dữ liệu đã có, nó thiếu đi loại tuệ giác nguyên bản đi từ không đến có. Nói cách khác, nó giỏi trả lời câu hỏi, nhưng lại không giỏi phát hiện những câu hỏi đáng được trả lời.\n\nA: Có học giả phản bác rằng cùng với sự phát triển của công nghệ, trí tuệ nhân tạo sớm muộn cũng sẽ có được năng lực này. Giáo sư có đồng ý với quan điểm đó không?\n\nB: Tôi giữ thái độ thận trọng. Tốc độ tiến bộ của công nghệ quả thực đáng kinh ngạc, nhưng chúng ta không thể đơn giản suy diễn sự tiến hóa công nghệ tuyến tính thành sự thay đổi về chất. Quan trọng hơn, ngay cả khi một ngày nào đó máy móc có thể mô phỏng được loại tuệ giác tương tự, thì giá trị cốt lõi của nghiên cứu khoa học - tức là sự thấu hiểu và diễn giải thế giới của con người - vẫn không thể thay thế được. Tôi thường nhắc nhở học trò của mình rằng công cụ mãi mãi chỉ là công cụ, cống hiến học thuật thực sự nằm ở tư tưởng, chứ không phải ở tính toán.\n\nA: Vậy theo giáo sư, các nhà nghiên cứu trẻ nên đối mặt với cuộc biến đổi công nghệ này như thế nào?\n\nB: Thay vì lo lắng bị thay thế, chi bằng chủ động đón nhận sự thay đổi. Tôi khuyên người trẻ hãy xem trí tuệ nhân tạo như một trợ lý không biết mệt mỏi, dùng nó để xử lý những công việc mang tính lặp lại, máy móc, từ đó dồn thời gian và tâm sức quý báu vào những khâu thực sự cần đến sức sáng tạo. Suy cho cùng, có thể nổi bật trong thời đại trí tuệ nhân tạo hay không phụ thuộc vào việc nhà nghiên cứu đó có sở hữu tư duy phản biện và năng lực phán đoán độc lập không thể bị thuật toán thay thế hay không.",
+      "timeLimit": 300,
+      "order": 51,
+      "published": true,
+      "questions": [
+        {
+          "id": "ls-HSK6-x1-q1",
+          "type": "MCQ",
+          "prompt": "李教授认为人工智能在科研领域被「低估」主要体现在哪个方面？",
+          "promptPinyin": "lǐ jiào shòu rèn wèi rén gōng zhì néng zài kē yán lǐng yù bèi 「 dī gū 」 zhǔ yào tǐ xiàn zài nǎ gè fāng miàn ？",
+          "explanation": "Giáo sư nói AI bị đánh giá thấp ở chỗ hiệu suất trong xử lý dữ liệu và tổng hợp tài liệu vượt xa sức tưởng tượng của đa số (所谓被低估，是说它在数据处理和文献梳理方面的效率，远远超出了大多数人的想象). Các phương án còn lại đều là những điều AI KHÓ làm được (bị thổi phồng), nên đáp án đúng là B.",
+          "order": 1,
+          "options": [
+            {
+              "text": "独立提出科学问题的能力",
+              "pinyin": "dú lì tí chū kē xué wèn tí de néng lì"
+            },
+            {
+              "text": "数据处理和文献梳理的效率",
+              "pinyin": "shù jù chǔ lǐ hé wén xiàn shū lǐ de xiào lǜ"
+            },
+            {
+              "text": "对现有理论矛盾的察觉",
+              "pinyin": "duì xiàn yǒu lǐ lùn máo dùn de chá jué"
+            },
+            {
+              "text": "从无到有的原创性洞察",
+              "pinyin": "cóng wú dào yǒu de yuán chuàng xìng dòng chá"
+            }
+          ],
+          "correctAnswer": {
+            "index": 1,
+            "text": "数据处理和文献梳理的效率"
+          }
+        },
+        {
+          "id": "ls-HSK6-x1-q2",
+          "type": "MCQ",
+          "prompt": "关于年轻研究者应如何应对技术变革，李教授的建议是什么？",
+          "promptPinyin": "guān yú nián qīng yán jiū zhě yìng rú hé yìng duì jì shù biàn gé ， lǐ jiào shòu de jiàn yì shì shén me ？",
+          "explanation": "Giáo sư khuyên người trẻ chủ động đón nhận thay đổi, xem AI như một trợ lý không biết mệt mỏi để xử lý công việc lặp lại, máy móc, từ đó dồn sức vào khâu cần sáng tạo (把人工智能当作一位不知疲倦的助手，用它来处理那些重复性、机械性的工作). Vậy đáp án đúng là B.",
+          "order": 2,
+          "options": [
+            {
+              "text": "坚决抵制人工智能以保护传统科研",
+              "pinyin": "jiān jué dǐ zhì rén gōng zhì néng yǐ bǎo hù chuán tǒng kē yán"
+            },
+            {
+              "text": "把人工智能当作助手处理重复性工作",
+              "pinyin": "bǎ rén gōng zhì néng dàng zuò zhù shǒu chǔ lǐ chóng fù xìng gōng zuò"
+            },
+            {
+              "text": "完全依赖人工智能提出科学问题",
+              "pinyin": "wán quán yī lài rén gōng zhì néng tí chū kē xué wèn tí"
+            },
+            {
+              "text": "停止学习计算相关的技能",
+              "pinyin": "tíng zhǐ xué xí jì suàn xiāng guān de jì néng"
+            }
+          ],
+          "correctAnswer": {
+            "index": 1,
+            "text": "把人工智能当作助手处理重复性工作"
+          }
+        },
+        {
+          "id": "ls-HSK6-x1-q3",
+          "type": "TRUE_FALSE",
+          "prompt": "李教授完全同意「随着技术发展，人工智能迟早会具备独立提出科学问题的能力」这一观点。",
+          "promptPinyin": "lǐ jiào shòu wán quán tóng yì 「 suí zhe jì shù fā zhǎn ， rén gōng zhì néng chí zǎo huì jù bèi dú lì tí chū kē xué wèn tí de néng lì 」 zhè yì guān diǎn 。",
+          "explanation": "Sai. Khi được hỏi có đồng ý với quan điểm đó không, giáo sư nói rõ mình giữ thái độ thận trọng (我持谨慎态度), cho rằng không thể suy diễn tiến hóa công nghệ tuyến tính thành thay đổi về chất. Do đó nhận định này sai.",
+          "order": 3,
+          "options": null,
+          "correctAnswer": {
+            "value": false
+          }
+        },
+        {
+          "id": "ls-HSK6-x1-q4",
+          "type": "FILL_BLANK",
+          "prompt": "李教授提醒学生：工具永远只是工具，真正的学术贡献在于思想，而非______。",
+          "promptPinyin": "lǐ jiào shòu tí xǐng xué shēng ： gōng jù yǒng yuǎn zhī shì gōng jù ， zhēn zhèng de xué shù gòng xiàn zài yú sī xiǎng ， ér fēi _ _ _ _ _ _ 。",
+          "explanation": "Trong lời thoại, giáo sư nói: \"真正的学术贡献在于思想，而非计算\" (cống hiến học thuật thực sự nằm ở tư tưởng, chứ không phải ở tính toán). Vậy chỗ trống điền \"计算\".",
+          "order": 4,
+          "options": null,
+          "correctAnswer": {
+            "text": "计算",
+            "accepted": [
+              "计算"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "ls-HSK6-x2",
+      "title": "Bài nghe HSK6: Nghệ thuật đàm phán thương mại",
+      "hskLevel": "HSK6",
+      "audioUrl": "",
+      "transcript": "A：李经理，很高兴今天能坐下来跟贵公司深入探讨这次合作的具体细节。在正式进入价格谈判之前，我想先强调一点：我们双方追求的不应该是一方压倒另一方的\"零和博弈\"，而是能够实现长期共赢的战略伙伴关系。\n\nB：王总说得很对。坦白讲，我们内部对这次合作也抱有很高的期待。不过，恕我直言，贵方上周提交的报价单，单价比我们的心理预期高出了将近百分之十五，这个幅度让我们的采购部门很难向董事会交代。\n\nA：我理解您的顾虑。但请您也考虑到，我们这批产品采用的是最新一代的环保材料，生产成本本身就比同行高出不少。而且我们承诺提供长达三年的质保和免费的技术升级服务，这些附加价值是很多竞争对手无法比拟的。\n\nB：附加价值我们确实认可。这样吧，我们不妨换一个思路：如果贵方能在单价上做出适当让步，我们可以考虑把首批订单的数量从原定的一万件提高到一万五千件，用规模来摊薄贵方的成本压力，您看这个方案是否可行？\n\nA：这是一个很有建设性的提议。以量换价，确实是打破僵局的好办法。如果订单量能达到一万五千件，我方可以把单价下调百分之八，同时保证交货周期不超过四十五天。不过，付款方式上，我们希望能维持\"预付百分之三十、发货前付清余款\"的条款。\n\nB：单价下调百分之八，我们基本可以接受。但在付款条件上，我方还是希望能争取到更灵活的空间，比如把尾款的支付时间延后到验收合格之后。毕竟，这关系到我们的现金流管理。既然双方在大方向上已经达成一致，我建议我们把这些细节写进备忘录，下周由法务团队起草正式合同，您觉得如何？\n\nA：完全同意。我一直相信，一次成功的谈判，衡量标准不是谁在桌上占了上风，而是双方走出会议室时，脸上是不是都带着笑容。期待我们接下来的深度合作。",
+      "transcriptExplanation": "A: Giám đốc Lý, tôi rất vui hôm nay chúng ta có thể ngồi lại để cùng thảo luận sâu về các chi tiết cụ thể của lần hợp tác này với quý công ty. Trước khi chính thức bước vào đàm phán giá cả, tôi muốn nhấn mạnh một điểm: điều mà hai bên chúng ta theo đuổi không nên là \"trò chơi có tổng bằng không\" kiểu bên này áp đảo bên kia, mà là quan hệ đối tác chiến lược đôi bên cùng có lợi lâu dài.\n\nB: Tổng giám đốc Vương nói rất đúng. Nói thật, nội bộ chúng tôi cũng đặt kỳ vọng rất cao vào lần hợp tác này. Tuy nhiên, xin phép nói thẳng, bảng báo giá mà quý vị nộp tuần trước có đơn giá cao hơn kỳ vọng của chúng tôi gần 15%, mức chênh lệch này khiến bộ phận thu mua của chúng tôi rất khó ăn nói với hội đồng quản trị.\n\nA: Tôi hiểu lo ngại của ông. Nhưng xin ông cũng xét đến việc lô sản phẩm này của chúng tôi sử dụng vật liệu thân thiện môi trường thế hệ mới nhất, bản thân chi phí sản xuất đã cao hơn so với đồng nghiệp trong ngành khá nhiều. Hơn nữa chúng tôi cam kết cung cấp bảo hành dài tới ba năm cùng dịch vụ nâng cấp kỹ thuật miễn phí, những giá trị gia tăng này là điều mà nhiều đối thủ cạnh tranh không thể sánh được.\n\nB: Về giá trị gia tăng thì chúng tôi thực sự công nhận. Vậy thế này, chúng ta thử đổi một hướng suy nghĩ: nếu quý vị có thể nhượng bộ thích đáng về đơn giá, chúng tôi có thể cân nhắc nâng số lượng đơn hàng đợt đầu từ mười nghìn chiếc ban đầu lên mười lăm nghìn chiếc, dùng quy mô để san sẻ áp lực chi phí cho quý vị, ông thấy phương án này có khả thi không?\n\nA: Đây là một đề xuất rất mang tính xây dựng. Lấy lượng đổi giá quả thực là cách hay để phá vỡ thế bế tắc. Nếu số lượng đơn hàng đạt mười lăm nghìn chiếc, phía chúng tôi có thể hạ đơn giá xuống 8%, đồng thời đảm bảo chu kỳ giao hàng không quá bốn mươi lăm ngày. Tuy nhiên về phương thức thanh toán, chúng tôi mong muốn duy trì điều khoản \"trả trước 30%, thanh toán hết phần còn lại trước khi giao hàng\".\n\nB: Hạ đơn giá 8% thì chúng tôi cơ bản có thể chấp nhận. Nhưng về điều kiện thanh toán, phía chúng tôi vẫn mong muốn giành được không gian linh hoạt hơn, chẳng hạn dời thời gian thanh toán khoản cuối lại đến sau khi nghiệm thu đạt yêu cầu. Dù sao đây cũng liên quan đến việc quản lý dòng tiền của chúng tôi. Đã vậy, khi hai bên đã thống nhất về định hướng lớn, tôi đề nghị chúng ta viết những chi tiết này vào biên bản ghi nhớ, tuần sau để nhóm pháp chế soạn thảo hợp đồng chính thức, ông thấy sao?\n\nA: Hoàn toàn đồng ý. Tôi luôn tin rằng, tiêu chuẩn đánh giá một cuộc đàm phán thành công không phải là ai chiếm ưu thế trên bàn đàm phán, mà là khi hai bên bước ra khỏi phòng họp, trên mặt có mang theo nụ cười hay không. Mong chờ sự hợp tác sâu sắc tiếp theo của chúng ta.",
+      "timeLimit": 300,
+      "order": 52,
+      "published": true,
+      "questions": [
+        {
+          "id": "ls-HSK6-x2-q1",
+          "type": "MCQ",
+          "prompt": "关于王总最初提出的谈判理念，下列哪一项最符合他的观点？",
+          "promptPinyin": "guān yú wáng zǒng zuì chū tí chū de tán pàn lǐ niàn ， xià liè nǎ yí xiàng zuì fú hé tā de guān diǎn ？",
+          "explanation": "Ngay đầu hội thoại, A (Tổng giám đốc Vương) nhấn mạnh không nên theo đuổi \"trò chơi có tổng bằng không\" (零和博弈) kiểu một bên áp đảo bên kia, mà là quan hệ đối tác chiến lược đôi bên cùng có lợi lâu dài (长期共赢的战略伙伴关系). Vì vậy đáp án A đúng; các phương án còn lại trái ngược hoặc không được nêu.",
+          "order": 1,
+          "options": [
+            {
+              "text": "双方应追求长期共赢的战略伙伴关系",
+              "pinyin": "shuāng fāng yìng zhuī qiú cháng qī gòng yíng de zhàn lüè huǒ bàn guān xì"
+            },
+            {
+              "text": "一方必须在价格上完全压倒对方",
+              "pinyin": "yì fāng bì xū zài jià gé shàng wán quán yā dǎo duì fāng"
+            },
+            {
+              "text": "谈判的核心是尽快签订合同",
+              "pinyin": "tán pàn de hé xīn shì jǐn kuài qiān dìng hé tong"
+            },
+            {
+              "text": "应优先考虑采购部门的短期利益",
+              "pinyin": "yìng yōu xiān kǎo lǜ cǎi gòu bù mén de duǎn qī lì yì"
+            }
+          ],
+          "correctAnswer": {
+            "index": 0,
+            "text": "双方应追求长期共赢的战略伙伴关系"
+          }
+        },
+        {
+          "id": "ls-HSK6-x2-q2",
+          "type": "MCQ",
+          "prompt": "李经理提出把订单数量从一万件提高到一万五千件，其主要目的是什么？",
+          "promptPinyin": "lǐ jīng lǐ tí chū bǎ dìng dān shù liàng cóng yí wàn jiàn tí gāo dào yí wàn wǔ qiān jiàn ， qí zhǔ yào mù dì shì shén me ？",
+          "explanation": "B (Giám đốc Lý) nói rõ nếu A nhượng bộ về đơn giá thì phía B sẽ nâng đơn hàng từ 10.000 lên 15.000 chiếc, \"用规模来摊薄贵方的成本压力\" (dùng quy mô để san sẻ áp lực chi phí của bên A) nhằm đổi lấy việc giảm đơn giá. Do đó đáp án B đúng.",
+          "order": 2,
+          "options": [
+            {
+              "text": "为了尽快消化自己的库存",
+              "pinyin": "wèi le jǐn kuài xiāo huà zì jǐ de kù cún"
+            },
+            {
+              "text": "以规模摊薄对方的成本压力，换取单价让步",
+              "pinyin": "yǐ guī mó tān báo duì fāng de chéng běn yā lì ， huàn qǔ dān jià ràng bù"
+            },
+            {
+              "text": "为了满足董事会的硬性要求",
+              "pinyin": "wèi le mǎn zú dǒng shì huì de yìng xìng yāo qiú"
+            },
+            {
+              "text": "为了延长产品的质保期限",
+              "pinyin": "wèi le yán cháng chǎn pǐn de zhì bǎo qī xiàn"
+            }
+          ],
+          "correctAnswer": {
+            "index": 1,
+            "text": "以规模摊薄对方的成本压力，换取单价让步"
+          }
+        },
+        {
+          "id": "ls-HSK6-x2-q3",
+          "type": "TRUE_FALSE",
+          "prompt": "双方在付款方式（尾款支付时间）的问题上，一开始就完全没有分歧。",
+          "promptPinyin": "shuāng fāng zài fù kuǎn fāng shì （ wěi kuǎn zhī fù shí jiān ） de wèn tí shàng ， yì kāi shǐ jiù wán quán méi yǒu fēn qí 。",
+          "explanation": "Sai. A muốn giữ điều khoản \"预付百分之三十、发货前付清余款\" (trả trước 30%, thanh toán hết phần còn lại trước khi giao hàng), trong khi B mong dời khoản cuối (尾款) lại đến sau khi nghiệm thu đạt yêu cầu (验收合格之后) vì liên quan đến quản lý dòng tiền. Rõ ràng hai bên có bất đồng về thời điểm thanh toán khoản cuối, nên khẳng định là sai.",
+          "order": 3,
+          "options": null,
+          "correctAnswer": {
+            "value": false
+          }
+        },
+        {
+          "id": "ls-HSK6-x2-q4",
+          "type": "FILL_BLANK",
+          "prompt": "如果订单量达到一万五千件，李经理承诺把单价下调百分之______。",
+          "promptPinyin": "rú guǒ dìng dān liáng dá dào yí wàn wǔ qiān jiàn ， lǐ jīng lǐ chéng nuò bǎ dān jià xià tiáo bǎi fēn zhī _ _ _ _ _ _ 。",
+          "explanation": "Trong lời thoại, A nói nếu đơn hàng đạt 15.000 chiếc thì \"可以把单价下调百分之八\" (có thể hạ đơn giá xuống 8%). Đáp án điền vào chỗ trống là 八 (tám), xuất hiện nguyên văn trong lời thoại.",
+          "order": 4,
+          "options": null,
+          "correctAnswer": {
+            "text": "八",
+            "accepted": [
+              "八"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "ls-HSK6-x3",
+      "title": "Bình luận thời sự: Trí tuệ nhân tạo và tương lai của thị trường lao động",
+      "hskLevel": "HSK6",
+      "audioUrl": "",
+      "transcript": "主持人：各位观众晚上好，欢迎收看本期《时事焦点》。近来，人工智能技术的突飞猛进引发了社会各界的广泛关注和激烈讨论。今天我们请到了两位嘉宾，一位是经济学教授张明远先生，另一位是科技评论员李晓丹女士。张教授，您怎么看待人工智能对就业市场带来的冲击？\n\n张明远：谢谢主持人。坦率地说，这个问题不能一概而论。历史上每一次重大的技术革命，无论是蒸汽机还是互联网，都曾引起人们对失业的恐慌。但从长远来看，新技术在淘汰某些岗位的同时，也创造了大量前所未有的新职业。我认为，人工智能带来的更多是一种结构性的调整，而非单纯的岗位消失。关键在于劳动力能否及时适应这种转变。\n\n主持人：李女士，您似乎有不同的看法？\n\n李晓丹：确实如此。我并不否认张教授所说的历史规律，但这一次的情况有其特殊性。以往的技术主要替代的是重复性的体力劳动，而如今的人工智能开始涉足需要判断力和创造力的脑力工作，比如法律咨询、医疗诊断，甚至文学创作。更令人担忧的是，这种替代的速度远远超过了人才培养和转型的速度。换句话说，社会来不及做好准备。\n\n张明远：李女士的担忧不无道理，但我想强调的是，技术本身是中性的，关键在于我们如何应对。政府和企业应当加大对职业培训和终身教育的投入，帮助劳动者掌握与机器协作的能力。与其抗拒变革，不如主动拥抱它。\n\n主持人：那么，普通民众在这场变革中应该怎么办呢？\n\n李晓丹：我认为，最重要的是培养那些机器难以取代的能力，比如同理心、批判性思维和跨领域整合的能力。教育体系也必须相应改革，不能再一味强调死记硬背的知识灌输。\n\n主持人：感谢两位嘉宾深入浅出的分析。看来，面对人工智能的浪潮，我们既不必过分恐慌，也不能掉以轻心。如何在机遇与挑战之间找到平衡，是摆在全社会面前的一道重要课题。今天的节目就到这里，我们下期再见。",
+      "transcriptExplanation": "Người dẫn chương trình: Chào quý khán giả buổi tối. Chào mừng đến với số phát sóng «Tiêu điểm thời sự» kỳ này. Gần đây, sự tiến bộ vượt bậc của công nghệ trí tuệ nhân tạo đã thu hút sự quan tâm rộng rãi và những cuộc thảo luận sôi nổi từ mọi tầng lớp xã hội. Hôm nay chúng tôi mời đến hai vị khách mời: một vị là giáo sư kinh tế học, ông Trương Minh Viễn, và một vị là nhà bình luận công nghệ, bà Lý Hiểu Đan. Thưa giáo sư Trương, ông nhìn nhận thế nào về những tác động mà trí tuệ nhân tạo mang lại cho thị trường việc làm?\n\nTrương Minh Viễn: Cảm ơn người dẫn chương trình. Nói thẳng ra, vấn đề này không thể vơ đũa cả nắm. Trong lịch sử, mỗi cuộc cách mạng công nghệ trọng đại, dù là máy hơi nước hay internet, đều từng gây ra nỗi hoảng sợ thất nghiệp cho con người. Nhưng xét về lâu dài, công nghệ mới trong khi đào thải một số vị trí công việc, đồng thời cũng tạo ra rất nhiều ngành nghề mới chưa từng có. Tôi cho rằng, điều mà trí tuệ nhân tạo mang lại nhiều hơn là một sự điều chỉnh mang tính cấu trúc, chứ không phải đơn thuần là sự biến mất của các vị trí việc làm. Điểm mấu chốt nằm ở chỗ lực lượng lao động có thể kịp thời thích ứng với sự chuyển đổi này hay không.\n\nNgười dẫn chương trình: Thưa bà Lý, dường như bà có quan điểm khác?\n\nLý Hiểu Đan: Đúng là như vậy. Tôi không phủ nhận quy luật lịch sử mà giáo sư Trương nói, nhưng lần này tình hình có tính đặc thù riêng. Trước đây công nghệ chủ yếu thay thế lao động chân tay mang tính lặp đi lặp lại, còn trí tuệ nhân tạo ngày nay đã bắt đầu lấn sân vào những công việc trí óc đòi hỏi khả năng phán đoán và sáng tạo, chẳng hạn như tư vấn pháp luật, chẩn đoán y tế, thậm chí là sáng tác văn học. Điều đáng lo ngại hơn là tốc độ thay thế này vượt xa tốc độ đào tạo và chuyển đổi nhân lực. Nói cách khác, xã hội không kịp chuẩn bị.\n\nTrương Minh Viễn: Nỗi lo của bà Lý không phải không có lý, nhưng điều tôi muốn nhấn mạnh là bản thân công nghệ mang tính trung lập, điểm mấu chốt nằm ở chỗ chúng ta ứng phó ra sao. Chính phủ và doanh nghiệp nên tăng cường đầu tư vào đào tạo nghề và giáo dục suốt đời, giúp người lao động nắm vững năng lực hợp tác với máy móc. Thay vì kháng cự sự thay đổi, chi bằng chủ động đón nhận nó.\n\nNgười dẫn chương trình: Vậy thì, người dân bình thường nên làm gì trong cuộc biến đổi này?\n\nLý Hiểu Đan: Tôi cho rằng điều quan trọng nhất là bồi dưỡng những năng lực mà máy móc khó thay thế, chẳng hạn như sự đồng cảm, tư duy phản biện và khả năng tích hợp liên ngành. Hệ thống giáo dục cũng phải cải cách tương ứng, không thể cứ một mực nhấn mạnh việc nhồi nhét kiến thức học thuộc lòng nữa.\n\nNgười dẫn chương trình: Cảm ơn hai vị khách mời với những phân tích sâu sắc mà dễ hiểu. Xem ra, đối mặt với làn sóng trí tuệ nhân tạo, chúng ta vừa không cần quá hoảng sợ, nhưng cũng không thể lơ là. Làm thế nào để tìm được sự cân bằng giữa cơ hội và thách thức, là một đề tài quan trọng đặt ra trước toàn xã hội. Chương trình hôm nay xin dừng tại đây, hẹn gặp lại quý vị ở kỳ sau.",
+      "timeLimit": 300,
+      "order": 53,
+      "published": true,
+      "questions": [
+        {
+          "id": "ls-HSK6-x3-q1",
+          "type": "MCQ",
+          "prompt": "根据张明远教授的观点，人工智能对就业市场的影响主要是什么？",
+          "promptPinyin": "gēn jù zhāng míng yuǎn jiào shòu de guān diǎn ， rén gōng zhì néng duì jiù yè shì chǎng de yǐng xiǎng zhǔ yào shi shén me ？",
+          "explanation": "Giáo sư Trương Minh Viễn nói rõ: điều trí tuệ nhân tạo mang lại nhiều hơn là 'một sự điều chỉnh mang tính cấu trúc, chứ không phải đơn thuần là sự biến mất của các vị trí việc làm' (更多是一种结构性的调整，而非单纯的岗位消失). Do đó đáp án B đúng. Các đáp án khác trái với quan điểm lạc quan có điều kiện của ông.",
+          "order": 1,
+          "options": [
+            {
+              "text": "会导致大规模的永久性失业",
+              "pinyin": "huì dǎo zhì dà guī mó de yǒng jiǔ xìng shī yè"
+            },
+            {
+              "text": "是一种结构性的调整，而非单纯的岗位消失",
+              "pinyin": "shì yì zhǒng jié gòu xìng de tiáo zhěng ， ér fēi dān chún de gǎng wèi xiāo shī"
+            },
+            {
+              "text": "对就业市场几乎没有任何影响",
+              "pinyin": "duì jiù yè shì chǎng jī hū méi yǒu rèn hé yǐng xiǎng"
+            },
+            {
+              "text": "只会淘汰岗位而不会创造新职业",
+              "pinyin": "zhī huì táo tài gǎng wèi ér bú huì chuàng zào xīn zhí yè"
+            }
+          ],
+          "correctAnswer": {
+            "index": 1,
+            "text": "是一种结构性的调整，而非单纯的岗位消失"
+          }
+        },
+        {
+          "id": "ls-HSK6-x3-q2",
+          "type": "MCQ",
+          "prompt": "李晓丹认为这一次技术变革的特殊性在于哪里？",
+          "promptPinyin": "lǐ xiǎo dān rèn wéi zhè yí cì jì shù biàn gé de tè shū xìng zài yú nǎ lǐ ？",
+          "explanation": "Bà Lý Hiểu Đan chỉ ra tính đặc thù lần này: trí tuệ nhân tạo bắt đầu 'lấn sân vào những công việc trí óc đòi hỏi khả năng phán đoán và sáng tạo' (法律咨询、医疗诊断、文学创作), và tốc độ thay thế 'vượt xa tốc độ đào tạo và chuyển đổi nhân lực' (远远超过了人才培养和转型的速度). Vì vậy đáp án C đúng; A và D trái với lời thoại, B ngược nghĩa.",
+          "order": 2,
+          "options": [
+            {
+              "text": "它只替代重复性的体力劳动",
+              "pinyin": "tā zhī tì dài chóng fù xìng de tǐ lì láo dòng"
+            },
+            {
+              "text": "它的替代速度慢于人才培养的速度",
+              "pinyin": "tā de tì dài sù dù màn yú rén cái péi yǎng de sù dù"
+            },
+            {
+              "text": "它开始涉足需要判断力和创造力的脑力工作，且速度超过人才转型",
+              "pinyin": "tā kāi shǐ shè zú xū yào pàn duàn lì hé chuàng zào lì de nǎo lì gōng zuò ， qiě sù dù chāo guò rén cái zhuǎn xíng"
+            },
+            {
+              "text": "它完全无法涉及法律和医疗领域",
+              "pinyin": "tā wán quán wú fǎ shè jí fǎ lǜ hé yī liáo lǐng yù"
+            }
+          ],
+          "correctAnswer": {
+            "index": 2,
+            "text": "它开始涉足需要判断力和创造力的脑力工作，且速度超过人才转型"
+          }
+        },
+        {
+          "id": "ls-HSK6-x3-q3",
+          "type": "TRUE_FALSE",
+          "prompt": "张明远认为，面对技术变革，人们应当抗拒它而不是主动拥抱它。",
+          "promptPinyin": "zhāng míng yuǎn rèn wèi ， miàn duì jì shù biàn gé ， rén men yīng dāng kàng jù tā ér bú shì zhǔ dòng yōng bào tā 。",
+          "explanation": "Sai. Giáo sư Trương nói ngược lại: 'Thay vì kháng cự sự thay đổi, chi bằng chủ động đón nhận nó' (与其抗拒变革，不如主动拥抱它). Ông chủ trương chủ động đón nhận chứ không kháng cự, nên nhận định này sai.",
+          "order": 3,
+          "options": null,
+          "correctAnswer": {
+            "value": false
+          }
+        },
+        {
+          "id": "ls-HSK6-x3-q4",
+          "type": "FILL_BLANK",
+          "prompt": "李晓丹认为，普通民众最重要的是培养那些机器难以取代的能力，比如同理心、________和跨领域整合的能力。",
+          "promptPinyin": "lǐ xiǎo dān rèn wéi ， pǔ tōng mín zhòng zuì zhòng yào de shì péi yǎng nà xiē jī qì nán yǐ qǔ dài de néng lì ， bǐ rú tóng lǐ xīn 、 _ _ _ _ _ _ _ _ hé kuà lǐng yù zhěng hé de néng lì 。",
+          "explanation": "Trong lời thoại, bà Lý Hiểu Đan nói cần bồi dưỡng những năng lực máy móc khó thay thế: 'sự đồng cảm (同理心), tư duy phản biện (批判性思维) và khả năng tích hợp liên ngành (跨领域整合的能力)'. Chỗ trống điền chính xác cụm từ xuất hiện nguyên văn là '批判性思维'.",
+          "order": 4,
+          "options": null,
+          "correctAnswer": {
+            "text": "批判性思维",
+            "accepted": [
+              "批判性思维"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "ls-HSK6-x4",
+      "title": "Thảo luận về hiện tượng xã hội: \"Sự cô đơn của người trẻ thành thị\"",
+      "hskLevel": "HSK6",
+      "audioUrl": "",
+      "transcript": "主持人：各位听众朋友大家好，欢迎收听本期的《社会观察》节目。近年来，\"空巢青年\"这个词频繁出现在各类媒体报道中，引发了广泛的社会讨论。今天我们请到了社会学专家王教授，一起来探讨这一现象。王教授，您好。\n王教授：主持人好，各位听众好。\n主持人：王教授，能不能先请您给我们解释一下，究竟什么是\"空巢青年\"？\n王教授：好的。所谓\"空巢青年\"，通常是指那些年龄在二十岁到三十岁之间、远离家乡、独自在大城市打拼、单身且独居的年轻人。这个概念其实是从\"空巢老人\"演变而来的。值得注意的是，据不完全统计，目前我国的\"空巢青年\"数量已经超过了七千万，而且这个数字还在持续上升。\n主持人：数量确实相当惊人。那么在您看来，是什么原因导致了这一群体的迅速壮大呢？\n王教授：我认为主要有三方面的原因。第一是经济因素。一线城市虽然生活成本高昂，但也意味着更多的工作机会和更高的收入，因此吸引了大量外地青年前来发展。第二是观念的转变。与父辈相比，如今的年轻人更加追求个人的独立和自由，不愿意过早地被婚姻和家庭所束缚。第三则是社会流动性的增强，交通和通讯的便利使得年轻人可以更轻易地离开家乡。\n主持人：那这种独居的生活方式，会给年轻人带来哪些影响呢？我想应该不全是负面的吧？\n王教授：您说得对，我们不能一概而论。从积极的一面来看，独居确实能锻炼年轻人的独立生活能力和自我管理能力，也给了他们更多探索自我、追求梦想的空间。但从消极的一面来说，长期的独居和缺乏面对面的情感交流，容易使人产生孤独感和焦虑情绪，甚至可能引发抑郁等心理问题。\n主持人：确实是一把双刃剑。那么面对这样一个庞大的群体，社会和个人分别应该如何应对呢？\n王教授：这需要多方共同努力。就个人而言，我建议年轻人不要把自己完全封闭起来，应该主动走出去，积极参加各种社交活动，培养兴趣爱好，建立起属于自己的支持网络。而从社会层面来看，无论是政府还是企业，都应当给予这个群体更多的关注和支持，比如提供更完善的公共服务、更合理的住房政策，以及更丰富的社区文化活动。只有这样，才能真正帮助他们更好地融入城市生活。\n主持人：非常感谢王教授今天为我们带来的精彩分析。看来\"空巢青年\"现象背后，折射出的是整个社会转型期的深刻变化。这也提醒我们，在关注经济发展的同时，更不能忽视年轻人的精神需求和心理健康。好，今天的节目就到这里，我们下期再见。",
+      "transcriptExplanation": "Người dẫn chương trình: Chào các bạn thính giả, chào mừng các bạn đến với chương trình «Quan sát xã hội» kỳ này. Những năm gần đây, cụm từ \"thanh niên tổ trống\" (không th80 xуất hiện thường xuyên trên các phương tiện truyền thông, gây ra cuộc thảo luận rộng rãi trong xã hội. Hôm nay chúng tôi mời đến chuyên gia xã hội học, Giáo sư Vương, cùng nhau bàn luận về hiện tượng này. Giáo sư Vương, chào ông.\nGiáo sư Vương: Chào người dẫn chương trình, chào các bạn thính giả.\nNgười dẫn chương trình: Giáo sư Vương, trước tiên ông có thể giải thích cho chúng tôi biết rốt cuộc \"thanh niên tổ trống\" là gì không?\nGiáo sư Vương: Vâng. Cái gọi là \"thanh niên tổ trống\" thường chỉ những người trẻ tuổi từ 20 đến 30, xa quê hương, một mình lập nghiệp ở thành phố lớn, độc thân và sống một mình. Khái niệm này thực ra bắt nguồn từ \"người già tổ trống\" mà ra. Điều đáng chú ý là, theo thống kê chưa đầy đủ, hiện nay số lượng \"thanh niên tổ trống\" ở nước ta đã vượt quá 70 triệu người, và con số này vẫn đang tiếp tục tăng lên.\nNgười dẫn chương trình: Con số quả thực đáng kinh ngạc. Vậy theo ông, nguyên nhân nào dẫn đến sự lớn mạnh nhanh chóng của nhóm người này?\nGiáo sư Vương: Tôi cho rằng chủ yếu có ba nguyên nhân. Thứ nhất là yếu tố kinh tế. Các thành phố hạng nhất tuy chi phí sinh hoạt đắt đỏ, nhưng cũng đồng nghĩa với nhiều cơ hội việc làm hơn và thu nhập cao hơn, do đó thu hút một lượng lớn thanh niên ngoại tỉnh đến phát triển. Thứ hai là sự thay đổi về quan niệm. So với thế hệ cha ông, thanh niên ngày nay càng theo đuổi sự độc lập và tự do cá nhân, không muốn bị ràng buộc bởi hôn nhân và gia đình quá sớm. Thứ ba là sự gia tăng tính lưu động của xã hội, sự thuận tiện của giao thông và thông tin liên lạc khiến thanh niên có thể dễ dàng rời xa quê hương hơn.\nNgười dẫn chương trình: Vậy lối sống sống một mình này sẽ mang lại những ảnh hưởng gì cho thanh niên? Tôi nghĩ chắc không phải hoàn toàn là tiêu cực chứ?\nGiáo sư Vương: Ông nói đúng, chúng ta không thể vơ đũa cả nắm. Nhìn từ mặt tích cực, sống một mình quả thực có thể rèn luyện năng lực sống tự lập và khả năng tự quản lý của thanh niên, cũng cho họ nhiều không gian hơn để khám phá bản thân, theo đuổi ước mơ. Nhưng nhìn từ mặt tiêu cực, việc sống một mình lâu dài và thiếu giao lưu tình cảm mặt đối mặt dễ khiến con người nảy sinh cảm giác cô đơn và tâm trạng lo âu, thậm chí có thể dẫn đến các vấn đề tâm lý như trầm cảm.\nNgười dẫn chương trình: Quả thực là con dao hai lưỡi. Vậy đối mặt với một nhóm người đông đảo như vậy, xã hội và cá nhân nên ứng phó ra sao?\nGiáo sư Vương: Điều này cần sự nỗ lực chung của nhiều bên. Về phía cá nhân, tôi khuyên các bạn trẻ đừng hoàn toàn tự khép mình lại, mà nên chủ động bước ra ngoài, tích cực tham gia các hoạt động xã giao, bồi dưỡng sở thích, xây dựng mạng lưới hỗ trợ của riêng mình. Còn về phía xã hội, dù là chính phủ hay doanh nghiệp, đều nên dành cho nhóm người này nhiều sự quan tâm và hỗ trợ hơn, chẳng hạn như cung cấp dịch vụ công hoàn thiện hơn, chính sách nhà ở hợp lý hơn, cũng như các hoạt động văn hóa cộng đồng phong phú hơn. Chỉ có như vậy mới có thể thực sự giúp họ hòa nhập tốt hơn vào cuộc sống đô thị.\nNgười dẫn chương trình: Vô cùng cảm ơn Giáo sư Vương hôm nay đã mang đến cho chúng ta những phân tích sâu sắc. Xem ra đằng sau hiện tượng \"thanh niên tổ trống\" phản ánh sự thay đổi sâu sắc của cả thời kỳ chuyển đổi xã hội. Điều này cũng nhắc nhở chúng ta, trong khi quan tâm đến phát triển kinh tế, càng không được xem nhẹ nhu cầu tinh thần và sức khỏe tâm lý của giới trẻ. Vâng, chương trình hôm nay đến đây là kết thúc, hẹn gặp lại các bạn kỳ sau.",
+      "timeLimit": 300,
+      "order": 54,
+      "published": true,
+      "questions": [
+        {
+          "id": "ls-HSK6-x4-q1",
+          "type": "MCQ",
+          "prompt": "根据王教授的介绍，下列哪一项不属于\"空巢青年\"的典型特征？",
+          "promptPinyin": "gēn jù wáng jiào shòu de jiè shào ， xià liè nǎ yí xiàng bù shǔ yú \" kōng cháo qīng nián \" de diǎn xíng tè zhēng ？",
+          "explanation": "Giáo sư Vương định nghĩa 'thanh niên tổ trống' là người 20-30 tuổi, một mình lập nghiệp ở thành phố lớn, độc thân và sống một mình. 'Đã lập gia đình yên bề' (已经成家立业) trái ngược với đặc điểm 'độc thân và sống một mình', nên đây không phải đặc trưng của nhóm này. Ba lựa chọn còn lại đều được nêu nguyên văn trong lời thoại.",
+          "order": 1,
+          "options": [
+            {
+              "text": "年龄在二十岁到三十岁之间",
+              "pinyin": "nián líng zài èr shí suì dào sān shí suì zhī jiān"
+            },
+            {
+              "text": "独自在大城市打拼",
+              "pinyin": "dú zì zài dài chéng shì dǎ pīn"
+            },
+            {
+              "text": "已经成家立业",
+              "pinyin": "yǐ jīng chéng jiā lì yè"
+            },
+            {
+              "text": "单身且独居",
+              "pinyin": "dān shēn qiě dú jū"
+            }
+          ],
+          "correctAnswer": {
+            "index": 2,
+            "text": "已经成家立业"
+          }
+        },
+        {
+          "id": "ls-HSK6-x4-q2",
+          "type": "MCQ",
+          "prompt": "王教授认为导致\"空巢青年\"群体迅速壮大的原因不包括下列哪一项？",
+          "promptPinyin": "wáng jiào shòu rèn wéi dǎo zhì \" kōng cháo qīng nián \" qún tǐ xùn sù zhuàng dà de yuán yīn bù bāo kuò xià liè nǎ yí xiàng ？",
+          "explanation": "Giáo sư Vương nêu ba nguyên nhân: yếu tố kinh tế (thành phố hạng nhất có nhiều cơ hội việc làm hơn), sự thay đổi quan niệm (giới trẻ theo đuổi độc lập, tự do), và tính lưu động xã hội tăng (giao thông, thông tin liên lạc thuận tiện). 'Cha mẹ phản đối mạnh mẽ việc con ở lại quê' hoàn toàn không được đề cập, nên là đáp án đúng cho câu hỏi 'không bao gồm'.",
+          "order": 2,
+          "options": [
+            {
+              "text": "一线城市有更多工作机会",
+              "pinyin": "yí xiàn chéng shì yǒu gèng duō gōng zuò jī huì"
+            },
+            {
+              "text": "年轻人追求个人独立和自由",
+              "pinyin": "nián qīng rén zhuī qiú gè rén dú lì hé zì yóu"
+            },
+            {
+              "text": "交通和通讯越来越便利",
+              "pinyin": "jiāo tōng hé tōng xùn yuè lái yuè biàn lì"
+            },
+            {
+              "text": "父母强烈反对子女留在家乡",
+              "pinyin": "fù mǔ qiáng liè fǎn duì zi nǚ liú zài jiā xiāng"
+            }
+          ],
+          "correctAnswer": {
+            "index": 3,
+            "text": "父母强烈反对子女留在家乡"
+          }
+        },
+        {
+          "id": "ls-HSK6-x4-q3",
+          "type": "TRUE_FALSE",
+          "prompt": "王教授认为独居生活对年轻人只有负面影响，没有任何好处。",
+          "promptPinyin": "wáng jiào shòu rèn wéi dú jū shēng huó duì nián qīng rén zhǐ yǒu fù miàn yǐng xiǎng ， méi yǒu rèn hé hǎo chù 。",
+          "explanation": "Sai. Giáo sư Vương nói rõ 'không thể vơ đũa cả nắm' (不能一概而论) và chỉ ra mặt tích cực: sống một mình rèn luyện năng lực sống tự lập, khả năng tự quản lý, cho không gian khám phá bản thân và theo đuổi ước mơ. Ông gọi hiện tượng này là 'con dao hai lưỡi' (双刃剑), nên khẳng định 'chỉ có ảnh hưởng tiêu cực' là sai.",
+          "order": 3,
+          "options": null,
+          "correctAnswer": {
+            "value": false
+          }
+        },
+        {
+          "id": "ls-HSK6-x4-q4",
+          "type": "FILL_BLANK",
+          "prompt": "王教授指出，据不完全统计，目前我国\"空巢青年\"的数量已经超过了________。",
+          "promptPinyin": "wáng jiào shòu zhǐ chū ， jù bù wán quán tǒng jì ， mù qián wǒ guó \" kōng cháo qīng nián \" de shù liàng yǐ jīng chāo guò le _ _ _ _ _ _ _ _ 。",
+          "explanation": "Trong lời thoại, Giáo sư Vương nói: 'theo thống kê chưa đầy đủ, hiện nay số lượng thanh niên tổ trống ở nước ta đã vượt quá 七千万 (70 triệu), và con số này vẫn đang tiếp tục tăng.' Đáp án '七千万' xuất hiện nguyên văn trong lời thoại.",
+          "order": 4,
+          "options": null,
+          "correctAnswer": {
+            "text": "七千万",
+            "accepted": [
+              "七千万"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "ls-HSK6-x5",
+      "title": "Thảo luận về các biện pháp bảo vệ môi trường (HSK6)",
+      "hskLevel": "HSK6",
+      "audioUrl": "",
+      "transcript": "主持人：各位听众朋友，欢迎收听本期的环保论坛。今天我们请到了环境政策研究所的林教授，来跟大家探讨一下城市环保措施的话题。林教授，您好。\n\n林教授：主持人好，各位听众好。很高兴有机会跟大家交流。\n\n主持人：近年来，各大城市纷纷推出了各种环保政策，有人认为这些措施雷声大、雨点小，流于形式。您怎么看这个问题？\n\n林教授：这个批评并非毫无道理。坦率地说，部分城市在制定政策时确实缺乏长远的规划，往往是为了应付上级检查而临时出台一些措施，缺乏持续性和可操作性。不过，我们也不能一概而论。以垃圾分类为例，起初推行时阻力重重，很多居民嫌麻烦，参与度很低。但经过几年的宣传引导和制度完善，如今在不少城市已经初见成效，居民的环保意识也随之提高。\n\n主持人：说到垃圾分类，有些人质疑：即便居民认真分类了，后端的处理能否跟得上？会不会最终还是混在一起处理？\n\n林教授：您提的这一点正是问题的关键所在。环保是一个系统工程，前端分类、中端运输、后端处理，任何一个环节脱节，整个链条就会失效。如果居民辛辛苦苦分好类，运输时却一股脑儿倒进同一辆车，那不仅打击了大家的积极性，也让前期的努力付诸东流。因此，配套设施的建设必须与政策同步推进，而不能顾此失彼。\n\n主持人：那么在您看来，一项成功的环保措施，最不可或缺的要素是什么？\n\n林教授：我个人认为，公众的参与是重中之重。政府的引导固然重要，但归根结底，环保靠的是每一个人的自觉。再完善的制度，如果得不到公众的配合，也只是一纸空文。因此，如何激发公众的内在动力，比单纯的行政命令更为关键。这也是为什么我一直强调，环保教育要从娃娃抓起，让绿色理念深入人心。\n\n主持人：非常感谢林教授的精彩分析。相信通过大家的共同努力，我们的城市一定会变得更加宜居、更加美好。",
+      "transcriptExplanation": "Người dẫn chương trình: Chào các bạn thính giả, chào mừng đến với Diễn đàn Môi trường số này. Hôm nay chúng tôi mời được Giáo sư Lâm từ Viện Nghiên cứu Chính sách Môi trường đến bàn luận với mọi người về chủ đề các biện pháp bảo vệ môi trường đô thị. Giáo sư Lâm, xin chào ông.\n\nGiáo sư Lâm: Chào người dẫn chương trình, chào các bạn thính giả. Tôi rất vui khi có cơ hội trao đổi với mọi người.\n\nNgười dẫn chương trình: Những năm gần đây, các thành phố lớn liên tục đưa ra nhiều chính sách bảo vệ môi trường, có người cho rằng những biện pháp này \"sấm to mưa nhỏ\", chỉ mang tính hình thức. Ông nhìn nhận vấn đề này thế nào?\n\nGiáo sư Lâm: Lời phê bình này không phải là hoàn toàn vô lý. Nói thẳng ra, một số thành phố khi xây dựng chính sách quả thực thiếu quy hoạch dài hạn, thường là để đối phó với đợt kiểm tra của cấp trên mà tạm thời đưa ra một vài biện pháp, thiếu tính bền vững và tính khả thi. Tuy nhiên, chúng ta cũng không thể vơ đũa cả nắm. Lấy việc phân loại rác làm ví dụ, ban đầu khi triển khai gặp rất nhiều trở ngại, nhiều cư dân ngại phiền, mức độ tham gia rất thấp. Nhưng sau vài năm tuyên truyền hướng dẫn và hoàn thiện chế độ, ngày nay ở không ít thành phố đã bước đầu đạt được kết quả, ý thức bảo vệ môi trường của cư dân cũng theo đó mà được nâng cao.\n\nNgười dẫn chương trình: Nói đến phân loại rác, có người nghi ngờ rằng: dù cư dân đã phân loại nghiêm túc, thì khâu xử lý phía sau có theo kịp không? Liệu cuối cùng có bị trộn lẫn lại để xử lý hay không?\n\nGiáo sư Lâm: Điểm ông nêu ra chính là mấu chốt của vấn đề. Bảo vệ môi trường là một công trình mang tính hệ thống, phân loại đầu nguồn, vận chuyển ở khâu giữa, xử lý ở khâu cuối, bất kỳ khâu nào bị đứt gãy thì cả chuỗi sẽ mất hiệu lực. Nếu cư dân vất vả phân loại xong, nhưng khi vận chuyển lại đổ tất cả vào cùng một chiếc xe, thì điều đó không chỉ làm nhụt đi tính tích cực của mọi người, mà còn khiến những nỗ lực ban đầu đổ sông đổ bể. Do đó, việc xây dựng cơ sở hạ tầng đồng bộ phải được thúc đẩy song song với chính sách, chứ không thể được cái này mất cái kia.\n\nNgười dẫn chương trình: Vậy theo ông, một biện pháp bảo vệ môi trường thành công, yếu tố không thể thiếu nhất là gì?\n\nGiáo sư Lâm: Cá nhân tôi cho rằng, sự tham gia của công chúng là điều quan trọng nhất trong những điều quan trọng. Sự dẫn dắt của chính phủ cố nhiên là quan trọng, nhưng suy cho cùng, bảo vệ môi trường dựa vào sự tự giác của mỗi con người. Chế độ dù hoàn thiện đến đâu, nếu không nhận được sự phối hợp của công chúng, thì cũng chỉ là tờ giấy suông. Vì vậy, làm thế nào để khơi dậy động lực nội tại của công chúng còn quan trọng hơn cả mệnh lệnh hành chính đơn thuần. Đây cũng là lý do vì sao tôi luôn nhấn mạnh rằng giáo dục bảo vệ môi trường phải bắt đầu từ trẻ nhỏ, để lý niệm xanh đi sâu vào lòng người.\n\nNgười dẫn chương trình: Vô cùng cảm ơn phần phân tích tuyệt vời của Giáo sư Lâm. Tin rằng thông qua nỗ lực chung của mọi người, thành phố của chúng ta nhất định sẽ trở nên đáng sống hơn, tốt đẹp hơn.",
+      "timeLimit": 300,
+      "order": 55,
+      "published": true,
+      "questions": [
+        {
+          "id": "ls-HSK6-x5-q1",
+          "type": "MCQ",
+          "prompt": "关于部分城市的环保政策，林教授承认存在什么问题？",
+          "promptPinyin": "guān yú bù fen chéng shì de huán bǎo zhèng cè ， lín jiào shòu chéng rèn cún zài shén me wèn tí ？",
+          "explanation": "Giáo sư Lâm nói thẳng rằng một số thành phố thường là để đối phó với đợt kiểm tra của cấp trên mà tạm thời đưa ra biện pháp, thiếu tính bền vững và tính khả thi ('为了应付上级检查而临时出台一些措施，缺乏持续性和可操作性'). Vì vậy đáp án đúng là lựa chọn thứ hai. Các phương án khác không được nhắc đến trong lời thoại.",
+          "order": 1,
+          "options": [
+            {
+              "text": "投入的资金过于庞大",
+              "pinyin": "tóu rù de zī jīn guò yú páng dà"
+            },
+            {
+              "text": "为应付检查而临时出台，缺乏持续性",
+              "pinyin": "wèi yìng fù jiǎn chá ér lín shí chū tái ， quē fá chí xù xìng"
+            },
+            {
+              "text": "过分依赖国外的先进技术",
+              "pinyin": "guò fèn yī lài guó wài de xiān jìn jì shù"
+            },
+            {
+              "text": "宣传力度太大引起居民反感",
+              "pinyin": "xuān chuán lì dù tài dà yǐn qǐ jū mín fǎn gǎn"
+            }
+          ],
+          "correctAnswer": {
+            "index": 1,
+            "text": "为应付检查而临时出台，缺乏持续性"
+          }
+        },
+        {
+          "id": "ls-HSK6-x5-q2",
+          "type": "MCQ",
+          "prompt": "林教授认为一项成功的环保措施最不可或缺的要素是什么？",
+          "promptPinyin": "lín jiào shòu rèn wéi yí xiàng chéng gōng de huán bǎo cuò shī zuì bù kě huò quē de yào sù shì shén me ？",
+          "explanation": "Giáo sư Lâm khẳng định 'công chúng tham gia là điều quan trọng nhất' (公众的参与是重中之重), bảo vệ môi trường suy cho cùng dựa vào sự tự giác của mỗi người, và điều đó còn quan trọng hơn cả mệnh lệnh hành chính đơn thuần. Do đó đáp án là lựa chọn thứ ba.",
+          "order": 2,
+          "options": [
+            {
+              "text": "充足的政府财政拨款",
+              "pinyin": "chōng zú de zhèng fǔ cái zhèng bō kuǎn"
+            },
+            {
+              "text": "严格的行政命令",
+              "pinyin": "yán gé de xíng zhèng mìng lìng"
+            },
+            {
+              "text": "公众的参与和自觉",
+              "pinyin": "gōng zhòng de cān yù hé zì jué"
+            },
+            {
+              "text": "先进的处理设备",
+              "pinyin": "xiān jìn de chǔ lǐ shè bèi"
+            }
+          ],
+          "correctAnswer": {
+            "index": 2,
+            "text": "公众的参与和自觉"
+          }
+        },
+        {
+          "id": "ls-HSK6-x5-q3",
+          "type": "TRUE_FALSE",
+          "prompt": "林教授认为垃圾分类政策从推行之初就受到居民的热烈欢迎，参与度一直很高。",
+          "promptPinyin": "lín jiào shòu rèn wéi lā jī fēn lèi zhèng cè cóng tuī xíng zhī chū jiù shòu dào jū mín de rè liè huān yíng ， cān yù dù yì zhí hěn gāo 。",
+          "explanation": "Sai. Giáo sư Lâm nói ban đầu khi triển khai gặp rất nhiều trở ngại ('起初推行时阻力重重'), nhiều cư dân ngại phiền, mức độ tham gia rất thấp; chỉ sau vài năm tuyên truyền và hoàn thiện chế độ mới bước đầu có kết quả. Vì vậy nhận định này trái với lời thoại nên là SAI.",
+          "order": 3,
+          "options": null,
+          "correctAnswer": {
+            "value": false
+          }
+        },
+        {
+          "id": "ls-HSK6-x5-q4",
+          "type": "FILL_BLANK",
+          "prompt": "林教授强调，环保是一个系统工程，前端分类、中端运输、后端处理，任何一个环节脱节，整个______就会失效。",
+          "promptPinyin": "lín jiào shòu qiáng diào ， huán bǎo shì yí gè xì tǒng gōng chéng ， qián duān fēn lèi 、 zhōng duān yùn shū 、 hòu duān chù lǐ ， rèn hé yí gè huán jié tuō jié ， zhěng gè _ _ _ _ _ _ jiù huì shī xiào 。",
+          "explanation": "Trong lời thoại Giáo sư Lâm nói: bất kỳ khâu nào bị đứt gãy thì cả '链条' (chuỗi) sẽ mất hiệu lực ('任何一个环节脱节，整个链条就会失效'). Từ cần điền xuất hiện nguyên văn trong lời thoại là '链条'.",
+          "order": 4,
+          "options": null,
+          "correctAnswer": {
+            "text": "链条",
+            "accepted": [
+              "链条"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "ls-HSK6-x6",
+      "title": "Một cuộc phỏng vấn văn hóa (一次文化访谈)",
+      "hskLevel": "HSK6",
+      "audioUrl": "",
+      "transcript": "主持人：各位听众朋友，大家好，欢迎收听本期的《文化对话》节目。今天我们非常荣幸地邀请到了著名的民俗学家、非物质文化遗产保护专家陈教授。陈教授，欢迎您。\n陈教授：主持人好，各位听众好，很高兴有这个机会跟大家交流。\n主持人：陈教授，您从事非物质文化遗产研究已经三十多年了。我想很多年轻听众其实并不太清楚\"非物质文化遗产\"到底指的是什么，能不能请您先给我们做一个通俗的解释？\n陈教授：好的。简单来说，非物质文化遗产指的是那些不能用具体的物品来承载，而是依靠人来世代传承的文化形式。比如传统的手工技艺、民间戏曲、口头文学、节庆习俗等等。它最大的特点就是\"活态传承\"——它是活在人身上的，一旦掌握这门技艺的人不在了，又没有人接班，这项遗产可能就永远消失了。\n主持人：您刚才提到\"传承人\"，这让我想到一个很现实的问题。据我了解，现在很多传统技艺的传承人年龄都偏大，年轻人又不太愿意学，这是不是保护工作面临的最大困难？\n陈教授：您说到点子上了。这确实是我们目前最头疼的问题。我在调研中发现，许多国家级的传承人已经七八十岁了，而愿意静下心来跟他们学徒的年轻人越来越少。原因其实很复杂，一方面是这些技艺学起来周期长、见效慢，短时间内很难养活自己；另一方面，社会对这些职业的认可度也不够高，家长往往不希望孩子去从事这样的行业。\n主持人：那面对这种\"后继无人\"的局面，我们有没有什么有效的应对办法呢？\n陈教授：办法当然是有的，而且这些年也取得了不小的进展。我个人认为，最关键的一点，是要让传统文化真正融入现代人的日常生活，而不是把它锁在博物馆里、供在展柜里。举个例子，有些地方把传统的刺绣、剪纸跟现代的服装设计、文创产品结合起来，既保留了老手艺，又创造了新的市场价值，年轻人一看有前途，自然就愿意学了。此外，我们还应该充分利用新媒体，让更多人通过短视频、直播了解这些技艺的魅力。\n主持人：这个思路非常有启发。也就是说，保护不等于把它原封不动地封存起来，而是要让它在使用中获得新的生命力。\n陈教授：完全正确。我一直强调一个观点：最好的保护就是让它\"活下去\"，而让它活下去的唯一途径，就是让它对当代人有用、有意义。\n主持人：非常感谢陈教授今天带来的精彩分享。由于时间关系，我们的节目就到这里，也希望听众朋友们能够多多关注身边的传统文化。谢谢大家，我们下期再见。",
+      "transcriptExplanation": "Người dẫn chương trình: Chào các bạn thính giả, chào mọi người, hoan nghênh các bạn theo dõi chương trình «Đối thoại Văn hóa» kỳ này. Hôm nay chúng tôi rất vinh dự được mời đến vị chuyên gia nổi tiếng — nhà dân tục học, chuyên gia bảo vệ di sản văn hóa phi vật thể, Giáo sư Trần. Giáo sư Trần, xin chào ông.\nGiáo sư Trần: Chào người dẫn chương trình, chào các bạn thính giả, tôi rất vui khi có cơ hội trao đổi cùng mọi người.\nNgười dẫn: Giáo sư Trần, ông đã làm công tác nghiên cứu di sản văn hóa phi vật thể hơn ba mươi năm rồi. Tôi nghĩ nhiều thính giả trẻ thực ra chưa hiểu rõ \"di sản văn hóa phi vật thể\" rốt cuộc là chỉ điều gì, ông có thể giải thích một cách bình dân cho chúng tôi trước được không?\nGiáo sư Trần: Được. Nói đơn giản, di sản văn hóa phi vật thể là chỉ những hình thức văn hóa không thể dùng vật phẩm cụ thể để lưu giữ, mà dựa vào con người truyền lại qua các thế hệ. Ví dụ như kỹ nghệ thủ công truyền thống, hí khúc dân gian, văn học truyền miệng, phong tục lễ tết, v.v. Đặc điểm lớn nhất của nó chính là \"truyền thừa dạng sống\" — nó sống trên chính con người, một khi người nắm giữ kỹ nghệ này không còn nữa, lại không có ai kế tục, thì di sản này có thể vĩnh viễn biến mất.\nNgười dẫn: Ông vừa nhắc đến \"người truyền thừa\", điều đó khiến tôi nghĩ đến một vấn đề rất thực tế. Theo tôi được biết, hiện nay tuổi của nhiều người truyền thừa kỹ nghệ truyền thống đều khá cao, người trẻ lại không mấy muốn học, đây có phải là khó khăn lớn nhất mà công tác bảo vệ đang đối mặt không?\nGiáo sư Trần: Ông nói trúng điểm rồi. Đây quả thực là vấn đề đau đầu nhất của chúng tôi hiện nay. Trong quá trình khảo sát, tôi phát hiện nhiều người truyền thừa cấp quốc gia đã bảy tám mươi tuổi, mà những người trẻ chịu tĩnh tâm học nghề với họ thì ngày càng ít. Nguyên nhân thực ra rất phức tạp: một mặt, những kỹ nghệ này học lâu, hiệu quả chậm, trong thời gian ngắn rất khó nuôi sống bản thân; mặt khác, mức độ công nhận của xã hội đối với những nghề này cũng chưa cao, phụ huynh thường không muốn con cái đi làm những ngành như vậy.\nNgười dẫn: Vậy trước cục diện \"không người kế tục\" này, chúng ta có biện pháp ứng phó hiệu quả nào không?\nGiáo sư Trần: Biện pháp thì đương nhiên là có, và những năm qua cũng đã đạt được không ít tiến bộ. Cá nhân tôi cho rằng, điểm mấu chốt nhất là phải làm cho văn hóa truyền thống thực sự hòa nhập vào đời sống thường ngày của người hiện đại, chứ không phải khóa nó trong bảo tàng, đặt trong tủ trưng bày. Lấy ví dụ, có những nơi đã kết hợp thêu, cắt giấy truyền thống với thiết kế trang phục hiện đại, sản phẩm văn hóa sáng tạo, vừa giữ được nghề cũ, vừa tạo ra giá trị thị trường mới; người trẻ thấy có tương lai thì tự nhiên sẽ muốn học. Ngoài ra, chúng ta còn nên tận dụng đầy đủ truyền thông mới, để nhiều người hơn hiểu được sức hấp dẫn của những kỹ nghệ này qua video ngắn, phát trực tiếp.\nNgười dẫn: Hướng tư duy này rất gợi mở. Cũng tức là, bảo vệ không đồng nghĩa với việc niêm phong nó nguyên trạng, mà là phải để nó có được sức sống mới trong quá trình sử dụng.\nGiáo sư Trần: Hoàn toàn chính xác. Tôi luôn nhấn mạnh một quan điểm: cách bảo vệ tốt nhất chính là để nó \"sống tiếp\", mà con đường duy nhất để nó sống tiếp chính là làm cho nó hữu ích, có ý nghĩa đối với người đương đại.\nNgười dẫn: Rất cảm ơn những chia sẻ tuyệt vời của Giáo sư Trần hôm nay. Do thời gian có hạn, chương trình của chúng ta xin dừng tại đây, cũng hy vọng các bạn thính giả có thể quan tâm nhiều hơn đến văn hóa truyền thống quanh mình. Cảm ơn mọi người, hẹn gặp lại kỳ sau.",
+      "timeLimit": 300,
+      "order": 56,
+      "published": true,
+      "questions": [
+        {
+          "id": "ls-HSK6-x6-q1",
+          "type": "MCQ",
+          "prompt": "根据陈教授的解释，非物质文化遗产最大的特点是什么？",
+          "promptPinyin": "gēn jù chén jiào shòu de jiě shì ， fēi wù zhì wén huà yí chǎn zuì dà de tè diǎn shì shén me ？",
+          "explanation": "Giáo sư Trần nói đặc điểm lớn nhất của di sản văn hóa phi vật thể là 'truyền thừa dạng sống' (活态传承) — nó sống trên chính con người, dựa vào con người truyền lại qua các thế hệ, chứ không dùng vật phẩm cụ thể để lưu giữ. Vì vậy đáp án đúng là 'dựa vào con người để truyền thừa dạng sống'.",
+          "order": 1,
+          "options": [
+            {
+              "text": "能用具体物品长久保存",
+              "pinyin": "néng yòng jù tǐ wù pǐn cháng jiǔ bǎo cún"
+            },
+            {
+              "text": "依靠人来活态传承",
+              "pinyin": "yī kào rén lái huó tài chuán chéng"
+            },
+            {
+              "text": "只存在于博物馆里",
+              "pinyin": "zhī cún zài yú bó wù guǎn lǐ"
+            },
+            {
+              "text": "由政府统一管理",
+              "pinyin": "yóu zhèng fǔ tǒng yī guǎn lǐ"
+            }
+          ],
+          "correctAnswer": {
+            "index": 1,
+            "text": "依靠人来活态传承"
+          }
+        },
+        {
+          "id": "ls-HSK6-x6-q2",
+          "type": "MCQ",
+          "prompt": "陈教授认为年轻人不愿意学传统技艺的原因包括哪些？",
+          "promptPinyin": "chén jiào shòu rèn wéi nián qīng rén bú yuàn yì xué chuán tǒng jì yì de yuán yīn bāo kuò nǎ xiē ？",
+          "explanation": "Giáo sư Trần nêu hai nguyên nhân: một mặt kỹ nghệ học lâu, hiệu quả chậm (周期长、见效慢), thời gian ngắn khó nuôi sống bản thân; mặt khác mức độ công nhận của xã hội đối với những nghề này chưa cao, phụ huynh không muốn con làm. Do đó đáp án đúng là B.",
+          "order": 2,
+          "options": [
+            {
+              "text": "技艺太简单，没有挑战性",
+              "pinyin": "jì yì tài jiǎn dān ， méi yǒu tiǎo zhàn xìng"
+            },
+            {
+              "text": "学习周期长、短期难养活自己，且社会认可度不高",
+              "pinyin": "xué xí zhōu qī cháng 、 duǎn qī nán yǎng huó zì jǐ ， qiě shè huì rèn kě dù bù gāo"
+            },
+            {
+              "text": "国家完全不提供任何支持",
+              "pinyin": "guó jiā wán quán bù tí gōng rèn hé zhī chí"
+            },
+            {
+              "text": "传承人不愿意收徒弟",
+              "pinyin": "chuán chéng rén bú yuàn yì shōu tú dì"
+            }
+          ],
+          "correctAnswer": {
+            "index": 1,
+            "text": "学习周期长、短期难养活自己，且社会认可度不高"
+          }
+        },
+        {
+          "id": "ls-HSK6-x6-q3",
+          "type": "TRUE_FALSE",
+          "prompt": "陈教授主张把传统文化原封不动地封存在博物馆里进行保护。",
+          "promptPinyin": "chén jiào shòu zhǔ zhāng bǎ chuán tǒng wén huà yuán fēng bú dòng dì fēng cún zài bó wù guǎn lǐ jìn xíng bǎo hù 。",
+          "explanation": "Sai. Giáo sư Trần cho rằng KHÔNG nên khóa văn hóa truyền thống trong bảo tàng, đặt trong tủ trưng bày (不是把它锁在博物馆里、供在展柜里); ông chủ trương để nó hòa nhập vào đời sống hiện đại, 'sống tiếp' và có ích cho người đương đại. Người dẫn cũng tổng kết 'bảo vệ không đồng nghĩa với niêm phong nguyên trạng'. Vì vậy nhận định này là sai.",
+          "order": 3,
+          "options": null,
+          "correctAnswer": {
+            "value": false
+          }
+        },
+        {
+          "id": "ls-HSK6-x6-q4",
+          "type": "FILL_BLANK",
+          "prompt": "陈教授认为，最好的保护就是让传统文化“______”，让它对当代人有用、有意义。",
+          "promptPinyin": "chén jiào shòu rèn wéi ， zuì hǎo de bǎo hù jiù shì ràng chuán tǒng wén huà “ _ _ _ _ _ _ ” ， ràng tā duì dāng dài rén yǒu yòng 、 yǒu yì yì 。",
+          "explanation": "Trong lời thoại, Giáo sư Trần nhấn mạnh: 'cách bảo vệ tốt nhất chính là để nó 活下去 (sống tiếp)', và con đường duy nhất để nó sống tiếp là làm cho nó hữu ích, có ý nghĩa với người đương đại. Đáp án xuất hiện nguyên văn trong lời thoại là '活下去'.",
+          "order": 4,
+          "options": null,
+          "correctAnswer": {
+            "text": "活下去",
+            "accepted": [
+              "活下去"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

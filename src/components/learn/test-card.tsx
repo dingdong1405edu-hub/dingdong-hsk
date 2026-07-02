@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Users, FileDown } from "lucide-react";
-import { cn, coverGradient, hskBadgeClass, hskLevelLabel } from "@/lib/utils";
+import { cn, coverGradient, hskBadgeClass, hskLevelLabel, socialProofCount } from "@/lib/utils";
 import { BaoCover } from "@/components/learn/bao-cover";
 
 const TAG_DOTS = ["bg-emerald-500", "bg-amber-500", "bg-rose-500", "bg-sky-500", "bg-violet-500"];
@@ -56,7 +56,7 @@ export function TestCard({ href, title, level, tags, attempts, score, meta, seed
           )}
           {typeof attempts === "number" && (
             <span className="absolute left-2 top-2 inline-flex items-center gap-1 rounded-full bg-black/40 px-2 py-0.5 text-[11px] font-medium text-white backdrop-blur">
-              <Users className="h-3 w-3" /> {attempts} lượt làm
+              <Users className="h-3 w-3" /> {(attempts + socialProofCount(s)).toLocaleString("vi-VN")} lượt làm
             </span>
           )}
           {level && (

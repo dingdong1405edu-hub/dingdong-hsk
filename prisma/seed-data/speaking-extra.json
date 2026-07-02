@@ -1,0 +1,1175 @@
+{
+  "kind": "speaking",
+  "sets": [
+    {
+      "id": "sp-HSK1-x1",
+      "title": "Đề thi Nói HSKK Sơ cấp - Chủ đề: Tự giới thiệu (自我介绍)",
+      "hskLevel": "HSK1",
+      "order": 51,
+      "published": true,
+      "part1Sentences": [
+        {
+          "text": "我叫王明。",
+          "pinyin": "wǒ jiào wáng míng 。"
+        },
+        {
+          "text": "我今年二十岁。",
+          "pinyin": "wǒ jīn nián èr shí suì 。"
+        },
+        {
+          "text": "我是中国人。",
+          "pinyin": "wǒ shì zhōng guó rén 。"
+        }
+      ],
+      "part2Passage": {
+        "text": "大家好！我叫李红，今年二十二岁。我是学生，我在北京上学。我喜欢看书，也喜欢喝茶。我有一个哥哥和一个妹妹。认识你们，我很高兴。",
+        "pinyin": "dà jiā hǎo ！ wǒ jiào lǐ hóng ， jīn nián èr shí èr suì 。 wǒ shì xué shēng ， wǒ zài běi jīng shàng xué 。 wǒ xǐ huān kàn shū ， yě xǐ huan hē chá 。 wǒ yǒu yí gè gē ge hé yí gè mèi mei 。 rèn shi nǐ men ， wǒ hěn gāo xìng 。"
+      },
+      "part3Questions": [
+        {
+          "question": "你叫什么名字？",
+          "pinyin": "nǐ jiào shén me míng zì ？"
+        },
+        {
+          "question": "你今年多大？",
+          "pinyin": "nǐ jīn nián duō dà ？"
+        },
+        {
+          "question": "你是哪国人？",
+          "pinyin": "nǐ shì nǎ guó rén ？"
+        }
+      ]
+    },
+    {
+      "id": "sp-HSK1-x2",
+      "title": "Đề thi Nói HSKK sơ cấp - Chủ đề: Gia đình của tôi",
+      "hskLevel": "HSK1",
+      "order": 52,
+      "published": true,
+      "part1Sentences": [
+        {
+          "text": "我家有四口人。",
+          "pinyin": "wǒ jiā yǒu sì kǒu rén 。"
+        },
+        {
+          "text": "我爸爸是老师。",
+          "pinyin": "wǒ bà ba shì lǎo shī 。"
+        },
+        {
+          "text": "我很爱我的家人。",
+          "pinyin": "wǒ hěn ài wǒ de jiā rén 。"
+        }
+      ],
+      "part2Passage": {
+        "text": "我家有四口人，爸爸、妈妈、哥哥和我。我爸爸今年四十五岁，他是老师。我妈妈也是老师，她很漂亮。我哥哥是学生，他喜欢看书。我爱我的家。",
+        "pinyin": "wǒ jiā yǒu sì kǒu rén ， bà bà 、 mā ma 、 gē ge hé wǒ 。 wǒ bà ba jīn nián sì shí wǔ suì ， tā shì lǎo shī 。 wǒ mā ma yě shì lǎo shī ， tā hěn piào liang 。 wǒ gē ge shì xué shēng ， tā xǐ huan kàn shū 。 wǒ ài wǒ de jiā 。"
+      },
+      "part3Questions": [
+        {
+          "question": "你家有几口人？",
+          "pinyin": "nǐ jiā yǒu jǐ kǒu rén ？"
+        },
+        {
+          "question": "你爸爸做什么工作？",
+          "pinyin": "nǐ bà ba zuò shén me gōng zuò ？"
+        },
+        {
+          "question": "你妈妈今年多大？",
+          "pinyin": "nǐ mā ma jīn nián duō dà ？"
+        }
+      ]
+    },
+    {
+      "id": "sp-HSK1-x3",
+      "title": "Đề thi Nói HSKK Sơ cấp (HSK1) - Chủ đề: Một ngày của tôi",
+      "hskLevel": "HSK1",
+      "order": 53,
+      "published": true,
+      "part1Sentences": [
+        {
+          "text": "我每天早上七点起床。",
+          "pinyin": "wǒ měi tiān zǎo shàng qī diǎn qǐ chuáng 。"
+        },
+        {
+          "text": "我中午在学校吃饭。",
+          "pinyin": "wǒ zhōng wǔ zài xué xiào chī fàn 。"
+        },
+        {
+          "text": "我晚上喜欢看书。",
+          "pinyin": "wǒ wǎn shàng xǐ huan kàn shū 。"
+        }
+      ],
+      "part2Passage": {
+        "text": "我每天早上六点半起床。我先喝水，然后吃早饭。八点我去学校学习汉语。中午我和朋友一起吃饭，我们很高兴。下午我回家做作业。晚上我看电视，十点睡觉。这就是我的一天。",
+        "pinyin": "wǒ měi tiān zǎo shàng liù diǎn bàn qǐ chuáng 。 wǒ xiān hē shuǐ ， rán hòu chī zǎo fàn 。 bā diǎn wǒ qù xué xiào xué xí hàn yǔ 。 zhōng wǔ wǒ hé péng yǒu yì qǐ chī fàn ， wǒ men hěn gāo xìng 。 xià wǔ wǒ huí jiā zuò zuò yè 。 wǎn shàng wǒ kàn diàn shì ， shí diǎn shuì jiào 。 zhè jiù shì wǒ de yì tiān 。"
+      },
+      "part3Questions": [
+        {
+          "question": "你每天几点起床？",
+          "pinyin": "nǐ měi tiān jǐ diǎn qǐ chuáng ？"
+        },
+        {
+          "question": "你中午吃什么？",
+          "pinyin": "nǐ zhōng wǔ chī shén me ？"
+        },
+        {
+          "question": "你晚上做什么？",
+          "pinyin": "nǐ wǎn shàng zuò shén me ？"
+        }
+      ]
+    },
+    {
+      "id": "sp-HSK1-x4",
+      "title": "Đề thi Nói HSKK cấp 1 - Món ăn tôi thích",
+      "hskLevel": "HSK1",
+      "order": 54,
+      "published": true,
+      "part1Sentences": [
+        {
+          "text": "我喜欢吃米饭。",
+          "pinyin": "wǒ xǐ huan chī mǐ fàn 。"
+        },
+        {
+          "text": "这个苹果很好吃。",
+          "pinyin": "zhè ge píng guǒ hěn hǎo chī 。"
+        },
+        {
+          "text": "妈妈会做中国菜。",
+          "pinyin": "mā ma huì zuò zhōng guó cài 。"
+        }
+      ],
+      "part2Passage": {
+        "text": "我很喜欢吃水果。我每天都吃苹果，也喜欢吃米饭和鸡蛋。妈妈做的菜很好吃，我们一家人一起吃饭，我很高兴。",
+        "pinyin": "wǒ hěn xǐ huan chī shuǐ guǒ 。 wǒ měi tiān dōu chī píng guǒ ， yě xǐ huan chī mǐ fàn hé jī dàn 。 mā ma zuò de cài hěn hǎo chī ， wǒ men yì jiā rén yì qǐ chī fàn ， wǒ hěn gāo xìng 。"
+      },
+      "part3Questions": [
+        {
+          "question": "你喜欢吃什么？",
+          "pinyin": "nǐ xǐ huan chī shén me ？"
+        },
+        {
+          "question": "你今天早上吃了什么？",
+          "pinyin": "nǐ jīn tiān zǎo shàng chī le shén me ？"
+        },
+        {
+          "question": "谁会做菜？",
+          "pinyin": "shuí huì zuò cài ？"
+        }
+      ]
+    },
+    {
+      "id": "sp-HSK1-x5",
+      "title": "Đề thi Nói HSKK cấp HSK1 — Chủ đề «Sở thích của tôi»",
+      "hskLevel": "HSK1",
+      "order": 55,
+      "published": true,
+      "part1Sentences": [
+        {
+          "text": "我喜欢看书。",
+          "pinyin": "wǒ xǐ huan kàn shū 。"
+        },
+        {
+          "text": "我爱听音乐。",
+          "pinyin": "wǒ ài tīng yīn yuè 。"
+        },
+        {
+          "text": "他喜欢打球。",
+          "pinyin": "tā xǐ huan dǎ qiú 。"
+        }
+      ],
+      "part2Passage": {
+        "text": "我叫小明。我有很多爱好。我喜欢看书，也喜欢听音乐。星期天，我和朋友一起打球。我很高兴。",
+        "pinyin": "wǒ jiào xiǎo míng 。 wǒ yǒu hěn duō ài hào 。 wǒ xǐ huān kàn shū ， yě xǐ huan tīng yīn yuè 。 xīng qī tiān ， wǒ hé péng yǒu yì qǐ dǎ qiú 。 wǒ hěn gāo xìng 。"
+      },
+      "part3Questions": [
+        {
+          "question": "你喜欢做什么？",
+          "pinyin": "nǐ xǐ huan zuò shén me ？"
+        },
+        {
+          "question": "你喜欢听音乐吗？",
+          "pinyin": "nǐ xǐ huan tīng yīn yuè ma ？"
+        },
+        {
+          "question": "你星期天做什么？",
+          "pinyin": "nǐ xīng qī tiān zuò shén me ？"
+        }
+      ]
+    },
+    {
+      "id": "sp-HSK2-x1",
+      "title": "Bộ đề nói HSKK cấp HSK2 - Chủ đề «Một chuyến du lịch»",
+      "hskLevel": "HSK2",
+      "order": 51,
+      "published": true,
+      "part1Sentences": [
+        {
+          "text": "上个星期我去北京旅行了。",
+          "pinyin": "shàng gè xīng qī wǒ qù běi jīng lǚ xíng le 。"
+        },
+        {
+          "text": "我坐飞机去，很快就到了。",
+          "pinyin": "wǒ zuò fēi jī qù ， hěn kuài jiù dào le 。"
+        },
+        {
+          "text": "那里的天气很好，我玩得很高兴。",
+          "pinyin": "nà lǐ de tiān qì hěn hǎo ， wǒ wán dé hěn gāo xìng 。"
+        }
+      ],
+      "part2Passage": {
+        "text": "今年夏天，我和家人一起去了上海旅行。我们早上坐火车出发，中午就到了。上海是一个很大、很漂亮的城市，有很多高楼和好吃的东西。我们在那里住了三天，去了很多地方，也拍了很多照片。这次旅行让我很快乐，我希望明年还能再去一次。",
+        "pinyin": "jīn nián xià tiān ， wǒ hé jiā rén yì qǐ qù le shàng hǎi lǚ xíng 。 wǒ men zǎo shàng zuò huǒ chē chū fā ， zhōng wǔ jiù dào le 。 shàng hǎi shì yí gè hěn dà 、 hěn piào liang de chéng shì ， yǒu hěn duō gāo lóu hé hǎo chī de dōng xī 。 wǒ men zài nà lǐ zhù le sān tiān ， qù le hěn duō dì fāng ， yě pāi le hěn duō zhào piàn 。 zhè cì lǚ xíng ràng wǒ hěn kuài lè ， wǒ xī wàng míng nián hái néng zài qù yí cì 。"
+      },
+      "part3Questions": [
+        {
+          "question": "你喜欢去哪儿旅行？为什么？",
+          "pinyin": "nǐ xǐ huan qù nǎ ér lǚ xíng ？ wèi shén me ？"
+        },
+        {
+          "question": "你旅行的时候，喜欢坐什么去？",
+          "pinyin": "nǐ lǚ xíng de shí hòu ， xǐ huan zuò shén me qù ？"
+        },
+        {
+          "question": "请说一说你最近一次旅行。",
+          "pinyin": "qǐng shuō yi shuō nǐ zuì jìn yí cì lǚ xíng 。"
+        }
+      ]
+    },
+    {
+      "id": "sp-HSK2-x2",
+      "title": "Đề thi Nói HSKK cấp HSK2 — Chủ đề «Công việc hoặc học tập của tôi»",
+      "hskLevel": "HSK2",
+      "order": 52,
+      "published": true,
+      "part1Sentences": [
+        {
+          "text": "我每天早上八点上班。",
+          "pinyin": "wǒ měi tiān zǎo shàng bā diǎn shàng bān 。"
+        },
+        {
+          "text": "我的工作很忙，可是我很喜欢。",
+          "pinyin": "wǒ de gōng zuò hěn máng ， kě shì wǒ hěn xǐ huan 。"
+        },
+        {
+          "text": "下课以后，我常常去图书馆学习。",
+          "pinyin": "xià kè yǐ hòu ， wǒ cháng cháng qù tú shū guǎn xué xí 。"
+        }
+      ],
+      "part2Passage": {
+        "text": "我是一名学生，现在在大学学习汉语。每天我都有很多课，早上九点开始上课，下午三点下课。我觉得学习汉语很有意思，但是也有一点儿难。老师上课的时候，我认真听，回家以后也常常复习。我喜欢和同学一起说汉语，因为这样进步很快。我希望以后能找到一个好工作。",
+        "pinyin": "wǒ shì yì míng xué shēng ， xiàn zài zài dà xué xué xí hàn yǔ 。 měi tiān wǒ dōu yǒu hěn duō kè ， zǎo shàng jiǔ diǎn kāi shǐ shàng kè ， xià wǔ sān diǎn xià kè 。 wǒ jué de xué xí hàn yǔ hěn yǒu yì sī ， dàn shì yě yǒu yì diǎn ér nán 。 lǎo shī shàng kè de shí hòu ， wǒ rèn zhēn tīng ， huí jiā yǐ hòu yě cháng cháng fù xí 。 wǒ xǐ huan hé tóng xué yì qǐ shuō hàn yǔ ， yīn wèi zhè yàng jìn bù hěn kuài 。 wǒ xī wàng yǐ hòu néng zhǎo dào yí gè hǎo gōng zuò 。"
+      },
+      "part3Questions": [
+        {
+          "question": "你现在在工作还是在学习？",
+          "pinyin": "nǐ xiàn zài zài gōng zuò hái shì zài xué xí ？"
+        },
+        {
+          "question": "你觉得你的工作或者学习怎么样？",
+          "pinyin": "nǐ jué de nǐ de gōng zuò huò zhě xué xí zěn me yàng ？"
+        },
+        {
+          "question": "你每天几点开始工作或者上课？",
+          "pinyin": "nǐ měi tiān jǐ diǎn kāi shǐ gōng zuò huò zhě shàng kè ？"
+        }
+      ]
+    },
+    {
+      "id": "sp-HSK2-x3",
+      "title": "Đề thi Nói HSKK Cấp 2 — Chủ đề «Cuối tuần của tôi»",
+      "hskLevel": "HSK2",
+      "order": 53,
+      "published": true,
+      "part1Sentences": [
+        {
+          "text": "周末我常常去公园。",
+          "pinyin": "zhōu mò wǒ cháng cháng qù gōng yuán 。"
+        },
+        {
+          "text": "我喜欢在家看电视。",
+          "pinyin": "wǒ xǐ huan zài jiā kàn diàn shì 。"
+        },
+        {
+          "text": "星期天我和朋友一起吃饭。",
+          "pinyin": "xīng qī tiān wǒ hé péng yǒu yì qǐ chī fàn 。"
+        }
+      ],
+      "part2Passage": {
+        "text": "我很喜欢周末。星期六早上我睡觉睡得很晚，起床以后就去买东西。中午我在家做饭，下午常常和朋友一起打球或者看电影。星期天我喜欢在家休息，有时候看书，有时候听音乐。晚上我给爸爸妈妈打电话。周末过得很快，我觉得很快乐。",
+        "pinyin": "wǒ hěn xǐ huān zhōu mò 。 xīng qī liù zǎo shàng wǒ shuì jiào shuì dé hěn wǎn ， qǐ chuáng yǐ hòu jiù qù mǎi dōng xī 。 zhōng wǔ wǒ zài jiā zuò fàn ， xià wǔ cháng cháng hé péng yǒu yì qǐ dǎ qiú huò zhě kàn diàn yǐng 。 xīng qī tiān wǒ xǐ huan zài jiā xiū xi ， yǒu shí hòu kàn shū ， yǒu shí hòu tīng yīn lè 。 wǎn shàng wǒ gěi bà ba mā ma dǎ diàn huà 。 zhōu mò guò dé hěn kuài ， wǒ jué de hěn kuài lè 。"
+      },
+      "part3Questions": [
+        {
+          "question": "你周末喜欢做什么？",
+          "pinyin": "nǐ zhōu mò xǐ huan zuò shén me ？"
+        },
+        {
+          "question": "你常常和谁一起过周末？",
+          "pinyin": "nǐ cháng cháng hé shuí yì qǐ guò zhōu mò ？"
+        },
+        {
+          "question": "这个星期天你想去哪儿？为什么？",
+          "pinyin": "zhè ge xīng qī tiān nǐ xiǎng qù nǎ ér ？ wèi shén me ？"
+        }
+      ]
+    },
+    {
+      "id": "sp-HSK2-x4",
+      "title": "Đề thi Nói HSKK cấp 2 – Chủ đề «Người bạn thân nhất của tôi»",
+      "hskLevel": "HSK2",
+      "order": 54,
+      "published": true,
+      "part1Sentences": [
+        {
+          "text": "我最好的朋友叫小明。",
+          "pinyin": "wǒ zuì hǎo de péng yǒu jiào xiǎo míng 。"
+        },
+        {
+          "text": "我们是同班同学，坐在一起。",
+          "pinyin": "wǒ men shì tóng bān tóng xué ， zuò zài yì qǐ 。"
+        },
+        {
+          "text": "他喜欢打篮球，也喜欢看书。",
+          "pinyin": "tā xǐ huan dǎ lán qiú ， yě xǐ huan kàn shū 。"
+        }
+      ],
+      "part2Passage": {
+        "text": "我最好的朋友叫小红。她是一个漂亮又聪明的女孩子。我们认识三年了，每天一起上学、一起回家。她学习很好，常常帮助我。周末的时候，我们喜欢去公园玩儿，也喜欢一起吃饭、说话。有小红这样的朋友，我觉得很快乐。",
+        "pinyin": "wǒ zuì hǎo de péng yǒu jiào xiǎo hóng 。 tā shì yí gè piào liang yòu cōng ming de nǚ hái zi 。 wǒ men rèn shi sān nián le ， měi tiān yì qǐ shàng xué 、 yì qǐ huí jiā 。 tā xué xí hěn hǎo ， cháng cháng bāng zhù wǒ 。 zhōu mò de shí hòu ， wǒ men xǐ huan qù gōng yuán wán ér ， yě xǐ huān yì qǐ chī fàn 、 shuō huà 。 yǒu xiǎo hóng zhè yàng de péng yǒu ， wǒ jué de hěn kuài lè 。"
+      },
+      "part3Questions": [
+        {
+          "question": "你最好的朋友叫什么名字？",
+          "pinyin": "nǐ zuì hǎo de péng yǒu jiào shén me míng zì ？"
+        },
+        {
+          "question": "你们常常一起做什么？",
+          "pinyin": "nǐ men cháng cháng yì qǐ zuò shén me ？"
+        },
+        {
+          "question": "你为什么喜欢你的朋友？",
+          "pinyin": "nǐ wèi shén me xǐ huan nǐ de péng yǒu ？"
+        }
+      ]
+    },
+    {
+      "id": "sp-HSK2-x5",
+      "title": "Đề thi Nói HSKK Cấp 2 — Chủ đề «Nơi tôi ở»",
+      "hskLevel": "HSK2",
+      "order": 55,
+      "published": true,
+      "part1Sentences": [
+        {
+          "text": "我住的地方很安静。",
+          "pinyin": "wǒ zhù de dì fāng hěn ān jìng 。"
+        },
+        {
+          "text": "我家离学校不太远。",
+          "pinyin": "wǒ jiā lí xué xiào bú tài yuǎn 。"
+        },
+        {
+          "text": "房子后面有一个小公园。",
+          "pinyin": "fáng zi hòu miàn yǒu yí gè xiǎo gōng yuán 。"
+        }
+      ],
+      "part2Passage": {
+        "text": "我住在一个不大的房子里。房子里有两个房间，一个是我的，一个是弟弟的。我的房间不大，但是很干净。窗户外面能看到很多树。早上我喜欢在这里看书、听音乐。我很喜欢我住的地方。",
+        "pinyin": "wǒ zhù zài yí gè bú dà de fáng zi lǐ 。 fáng zi lǐ yǒu liǎng gè fáng jiān ， yí gè shì wǒ de ， yí gè shì dì dì de 。 wǒ de fáng jiān bú dà ， dàn shì hěn gān jìng 。 chuāng hù wài miàn néng kàn dào hěn duō shù 。 zǎo shàng wǒ xǐ huan zài zhè lǐ kàn shū 、 tīng yīn yuè 。 wǒ hěn xǐ huan wǒ zhù de dì fāng 。"
+      },
+      "part3Questions": [
+        {
+          "question": "你住的地方在哪儿？",
+          "pinyin": "nǐ zhù de dì fāng zài nǎ ér ？"
+        },
+        {
+          "question": "你家附近有什么？",
+          "pinyin": "nǐ jiā fù jìn yǒu shén me ？"
+        },
+        {
+          "question": "你喜欢你住的地方吗？为什么？",
+          "pinyin": "nǐ xǐ huan nǐ zhù de dì fāng ma ？ wèi shén me ？"
+        }
+      ]
+    },
+    {
+      "id": "sp-HSK3-x1",
+      "title": "Trải nghiệm khó quên",
+      "hskLevel": "HSK3",
+      "order": 51,
+      "published": true,
+      "part1Sentences": [
+        {
+          "text": "去年夏天我第一次坐飞机去北京。",
+          "pinyin": "qù nián xià tiān wǒ dì yī cì zuò fēi jī qù běi jīng 。"
+        },
+        {
+          "text": "那次旅行让我认识了很多新朋友。",
+          "pinyin": "nà cì lǚ xíng ràng wǒ rèn shi le hěn duō xīn péng yǒu 。"
+        },
+        {
+          "text": "虽然过去了很久，但我一直记得那件事。",
+          "pinyin": "suī rán guò qù le hěn jiǔ ， dàn wǒ yì zhí jì de nà jiàn shì 。"
+        }
+      ],
+      "part2Passage": {
+        "text": "每个人都有一些难忘的经历。我记得上大学的时候，有一年冬天下了很大的雪。我和同学们一起在外面玩雪、拍照片，还打了雪仗。虽然天气很冷，但是大家都非常开心。到了晚上，我们一起吃了热热的火锅，聊了很多有意思的事情。那天的快乐我到现在还记得很清楚。我觉得，这样美好的经历会一直留在我的心里。",
+        "pinyin": "měi gè rén dōu yǒu yì xiē nán wàng de jīng lì 。 wǒ jì de shàng dà xué de shí hòu ， yǒu yì nián dōng tiān xià le hěn dà de xuě 。 wǒ hé tóng xué men yì qǐ zài wài miàn wán xuě 、 pāi zhào piàn ， hái dǎ le xuě zhàng 。 suī rán tiān qì hěn lěng ， dàn shì dà jiā dōu fēi cháng kāi xīn 。 dào le wǎn shàng ， wǒ men yì qǐ chī le rè rè de huǒ guō ， liáo le hěn duō yǒu yì sī de shì qíng 。 nà tiān de kuài lè wǒ dào xiàn zài hái jì dé hěn qīng chǔ 。 wǒ jué de ， zhè yàng měi hǎo de jīng lì huì yì zhí liú zài wǒ de xīn lǐ 。"
+      },
+      "part3Questions": [
+        {
+          "question": "请说一说你最难忘的一次经历是什么？",
+          "pinyin": "qǐng shuō yi shuō nǐ zuì nán wàng de yí cì jīng lì shì shén me ？"
+        },
+        {
+          "question": "那次经历为什么让你难忘？",
+          "pinyin": "nà cì jīng lì wèi shén me ràng nǐ nán wàng ？"
+        },
+        {
+          "question": "这样的经历给你带来了什么影响？",
+          "pinyin": "zhè yàng de jīng lì gěi nǐ dài lái le shén me yǐng xiǎng ？"
+        }
+      ]
+    },
+    {
+      "id": "sp-HSK3-x2",
+      "title": "Đề thi Nói HSKK Sơ cấp - Chủ đề «Kế hoạch của tôi»",
+      "hskLevel": "HSK3",
+      "order": 52,
+      "published": true,
+      "part1Sentences": [
+        {
+          "text": "我打算这个周末去图书馆看书。",
+          "pinyin": "wǒ dǎ suàn zhè ge zhōu mò qù tú shū guǎn kàn shū 。"
+        },
+        {
+          "text": "明年我想学开车，这样上班就方便了。",
+          "pinyin": "míng nián wǒ xiǎng xué kāi chē ， zhè yàng shàng bān jiù fāng biàn le 。"
+        },
+        {
+          "text": "如果有时间，我希望和家人一起去旅游。",
+          "pinyin": "rú guǒ yǒu shí jiān ， wǒ xī wàng hé jiā rén yì qǐ qù lǚ yóu 。"
+        }
+      ],
+      "part2Passage": {
+        "text": "每个人都有自己的计划。我的计划是好好学习汉语。我打算每天早上读半个小时中文，晚上听一些中文歌。除了学习以外，我还想多运动，所以我准备下个月开始跑步。我觉得有计划的生活更有意思，也让我觉得每一天都过得很充实。",
+        "pinyin": "měi gè rén dōu yǒu zì jǐ de jì huà 。 wǒ de jì huà shì hǎo hào xué xí hàn yǔ 。 wǒ dǎ suàn měi tiān zǎo shàng dú bàn gè xiǎo shí zhōng wén ， wǎn shàng tīng yì xiē zhōng wén gē 。 chú le xué xí yǐ wài ， wǒ hái xiǎng duō yùn dòng ， suǒ yǐ wǒ zhǔn bèi xià gè yuè kāi shǐ pǎo bù 。 wǒ jué de yǒu jì huà de shēng huó gèng yǒu yì sī ， yě ràng wǒ jué de měi yì tiān dōu guò dé hěn chōng shí 。"
+      },
+      "part3Questions": [
+        {
+          "question": "你今年最重要的计划是什么？为什么？",
+          "pinyin": "nǐ jīn nián zuì zhòng yào de jì huà shì shén me ？ wèi shén me ？"
+        },
+        {
+          "question": "你打算怎么提高自己的汉语水平？",
+          "pinyin": "nǐ dǎ suàn zěn me tí gāo zì jǐ de hàn yǔ shuǐ píng ？"
+        },
+        {
+          "question": "假期的时候，你一般会做什么计划？",
+          "pinyin": "jià qī de shí hòu ， nǐ yì bān huì zuò shén me jì huà ？"
+        }
+      ]
+    },
+    {
+      "id": "sp-HSK3-x3",
+      "title": "Đề thi Nói HSKK Cấp 3 — Chủ đề: Sức khỏe và vận động (健康和运动)",
+      "hskLevel": "HSK3",
+      "order": 53,
+      "published": true,
+      "part1Sentences": [
+        {
+          "text": "为了身体健康，我每天都坚持锻炼。",
+          "pinyin": "wèi le shēn tǐ jiàn kāng ， wǒ měi tiān dōu jiān chí duàn liàn 。"
+        },
+        {
+          "text": "医生说，多运动、少熬夜对身体很有好处。",
+          "pinyin": "yī shēng shuō ， duō yùn dòng 、 shǎo áo yè duì shēn tǐ hěn yǒu hǎo chù 。"
+        },
+        {
+          "text": "上周我感冒了，所以这几天没去打篮球。",
+          "pinyin": "shàng zhōu wǒ gǎn mào le ， suǒ yǐ zhè jǐ tiān méi qù dǎ lán qiú 。"
+        }
+      ],
+      "part2Passage": {
+        "text": "健康是最重要的事情。我以前工作很忙，常常坐着不动，身体越来越差。后来我开始每天早上跑步，晚上还跟朋友一起去打球。运动了半年以后，我发现自己不但变瘦了，而且精神也好多了，晚上睡得特别香。现在我觉得，只要坚持锻炼，注意休息，每个人都能有一个健康的身体。",
+        "pinyin": "jiàn kāng shì zuì zhòng yào de shì qíng 。 wǒ yǐ qián gōng zuò hěn máng ， cháng cháng zuò zhe bú dòng ， shēn tǐ yuè lái yuè chà 。 hòu lái wǒ kāi shǐ měi tiān zǎo shàng pǎo bù ， wǎn shàng hái gēn péng yǒu yì qǐ qù dǎ qiú 。 yùn dòng le bàn nián yǐ hòu ， wǒ fā xiàn zì jǐ bú dàn biàn shòu le ， ér qiě jīng shén yě hǎo duō le ， wǎn shàng shuì dé tè bié xiāng 。 xiàn zài wǒ jué de ， zhī yào jiān chí duàn liàn ， zhù yì xiū xi ， měi gè rén dōu néng yǒu yí gè jiàn kāng de shēn tǐ 。"
+      },
+      "part3Questions": [
+        {
+          "question": "你平时喜欢做什么运动？为什么？",
+          "pinyin": "nǐ píng shí xǐ huan zuò shén me yùn dòng ？ wèi shén me ？"
+        },
+        {
+          "question": "你觉得应该怎么做才能让身体更健康？",
+          "pinyin": "nǐ jué de yīng gāi zěn me zuò cái néng ràng shēn tǐ gèng jiàn kāng ？"
+        },
+        {
+          "question": "你一个星期锻炼几次？一般在什么时候？",
+          "pinyin": "nǐ yí gè xīng qī duàn liàn jǐ cì ？ yì bān zài shén me shí hòu ？"
+        }
+      ]
+    },
+    {
+      "id": "sp-HSK3-x4",
+      "title": "Một bộ phim hoặc quyển sách",
+      "hskLevel": "HSK3",
+      "order": 54,
+      "published": true,
+      "part1Sentences": [
+        {
+          "text": "我昨天看了一部很有意思的电影。",
+          "pinyin": "wǒ zuó tiān kàn le yí bù hěn yǒu yì sī de diàn yǐng 。"
+        },
+        {
+          "text": "这本书讲的是一个家庭的故事。",
+          "pinyin": "zhè běn shū jiǎng de shì yí gè jiā tíng de gù shì 。"
+        },
+        {
+          "text": "我觉得这部电影的音乐特别好听。",
+          "pinyin": "wǒ jué de zhè bù diàn yǐng de yīn yuè tè bié hǎo tīng 。"
+        }
+      ],
+      "part2Passage": {
+        "text": "我最喜欢的一本书是《西游记》。这本书很有名，很多人都读过。故事里有四个人一起去很远的地方，一路上遇到了不少困难，但是他们没有放弃，最后成功了。我第一次读这本书是在小学的时候，现在还是很喜欢。我觉得这本书告诉我们，遇到问题的时候要努力，不要害怕。如果你也喜欢有意思的故事，我建议你读一读这本书。",
+        "pinyin": "wǒ zuì xǐ huān de yì běn shū shì 《 xī yóu jì 》 。 zhè běn shū hěn yǒu míng ， hěn duō rén dōu dú guò 。 gù shì lǐ yǒu sì gè rén yì qǐ qù hěn yuǎn de dì fāng ， yí lù shang yù dào le bù shǎo kùn nán ， dàn shì tā men méi yǒu fàng qì ， zuì hòu chéng gōng le 。 wǒ dì yí cì dú zhè běn shū shì zài xiǎo xué de shí hòu ， xiàn zài hái shì hěn xǐ huan 。 wǒ jué dé zhè běn shū gào sù wǒ men ， yù dào wèn tí de shí hòu yào nǔ lì ， bú yào hài pà 。 rú guǒ nǐ yě xǐ huan yǒu yì sī de gù shì ， wǒ jiàn yì nǐ dú yi dú zhè běn shū 。"
+      },
+      "part3Questions": [
+        {
+          "question": "你最喜欢的一部电影或者一本书是什么？为什么？",
+          "pinyin": "nǐ zuì xǐ huan de yí bù diàn yǐng huò zhě yì běn shū shì shén me ？ wèi shén me ？"
+        },
+        {
+          "question": "你平时喜欢在什么时候看电影或者看书？",
+          "pinyin": "nǐ píng shí xǐ huan zài shén me shí hòu kàn diàn yǐng huò zhě kàn shū ？"
+        },
+        {
+          "question": "你觉得看电影和看书，哪个更有意思？请说说你的想法。",
+          "pinyin": "nǐ jué de kàn diàn yǐng hé kàn shū ， nǎ gè gèng yǒu yì sī ？ qǐng shuō shuō nǐ de xiǎng fǎ 。"
+        }
+      ]
+    },
+    {
+      "id": "sp-HSK3-x5",
+      "title": "Đề thi Nói HSKK cấp 3 — Chủ đề «Học tiếng Trung»",
+      "hskLevel": "HSK3",
+      "order": 55,
+      "published": true,
+      "part1Sentences": [
+        {
+          "text": "我学习中文已经两年了，越来越有兴趣。",
+          "pinyin": "wǒ xué xí zhōng wén yǐ jīng liǎng nián le ， yuè lái yuè yǒu xìng qù 。"
+        },
+        {
+          "text": "为了提高口语水平，我每天都跟中国朋友聊天。",
+          "pinyin": "wèi le tí gāo kǒu yǔ shuǐ píng ， wǒ měi tiān dōu gēn zhōng guó péng yǒu liáo tiān 。"
+        },
+        {
+          "text": "虽然汉字很难写，但是我觉得非常有意思。",
+          "pinyin": "suī rán hàn zì hěn nán xiě ， dàn shì wǒ jué de fēi cháng yǒu yì sī 。"
+        }
+      ],
+      "part2Passage": {
+        "text": "我从小就对中国文化很感兴趣，所以上大学以后开始学习中文。刚开始的时候，我觉得声调特别难，常常说错。后来老师告诉我，学好中文最重要的是多听、多说、多练习。于是我每天早上听中文广播，晚上看中国电视剧。慢慢地，我的听力和口语都比以前好多了。现在我不但能看懂简单的文章，还能跟中国人聊天。我希望将来能去中国留学，进一步了解那里的生活和文化。",
+        "pinyin": "wǒ cóng xiǎo jiù duì zhōng guó wén huà hěn gǎn xìng qù ， suǒ yǐ shàng dà xué yǐ hòu kāi shǐ xué xí zhōng wén 。 gāng kāi shǐ de shí hòu ， wǒ jué de shēng diào tè bié nán ， cháng cháng shuō cuò 。 hòu lái lǎo shī gào sù wǒ ， xué hǎo zhōng wén zuì zhòng yào de shì duō tīng 、 duō shuō 、 duō liàn xí 。 yú shì wǒ měi tiān zǎo shàng tīng zhōng wén guǎng bō ， wǎn shàng kàn zhòng guó diàn shì jù 。 màn màn dì ， wǒ de tīng lì hé kǒu yǔ dōu bǐ yǐ qián hǎo duō le 。 xiàn zài wǒ bú dàn néng kàn dǒng jiǎn dān de wén zhāng ， hái néng gēn zhōng guó rén liáo tiān 。 wǒ xī wàng jiāng lái néng qù zhōng guó liú xué ， jìn yí bù liǎo jiě nà lǐ de shēng huó hé wén huà 。"
+      },
+      "part3Questions": [
+        {
+          "question": "你为什么想学习中文？请简单说一说。",
+          "pinyin": "nǐ wèi shén me xiǎng xué xí zhōng wén ？ qǐng jiǎn dān shuō yi shuō 。"
+        },
+        {
+          "question": "你觉得学习中文的时候，什么最难？你是怎么解决的？",
+          "pinyin": "nǐ jué de xué xí zhōng wén de shí hòu ， shén me zuì nán ？ nǐ shì zěn me jiě jué de ？"
+        },
+        {
+          "question": "你以后打算怎么继续提高自己的中文水平？",
+          "pinyin": "nǐ yǐ hòu dǎ suàn zěn me jì xù tí gāo zì jǐ de zhōng wén shuǐ píng ？"
+        }
+      ]
+    },
+    {
+      "id": "sp-HSK4-x1",
+      "title": "Đề thi Nói HSKK cấp 4 — Chủ đề «Kế hoạch nghề nghiệp» (职业规划)",
+      "hskLevel": "HSK4",
+      "order": 51,
+      "published": true,
+      "part1Sentences": [
+        {
+          "text": "很多年轻人在选择职业的时候会考虑自己的兴趣。",
+          "pinyin": "hěn duō nián qīng rén zài xuǎn zé zhí yè de shí hòu huì kǎo lǜ zì jǐ de xìng qù 。"
+        },
+        {
+          "text": "如果没有明确的目标，将来可能会走不少弯路。",
+          "pinyin": "rú guǒ méi yǒu míng què de mù biāo ， jiāng lái kě néng huì zǒu bù shǎo wān lù 。"
+        },
+        {
+          "text": "他决定先积累经验，然后再考虑创业的事情。",
+          "pinyin": "tā jué dìng xiān jī lěi jīng yàn ， rán hòu zài kǎo lǜ chuàng yè de shì qíng 。"
+        }
+      ],
+      "part2Passage": {
+        "text": "每个人都应该认真地规划自己的职业。上大学的时候，我们不但要努力学习专业知识，还要多参加社会实践，了解自己适合做什么样的工作。有的人喜欢稳定的生活，愿意在一个单位工作很多年；有的人则希望不断挑战自己，尝试不同的机会。其实，无论选择哪条路，最重要的是清楚自己的目标，并且愿意为它付出努力。只有这样，我们才能在将来的工作中找到属于自己的位置。",
+        "pinyin": "měi gè rén dōu yīng gāi rèn zhēn dì guī huà zì jǐ de zhí yè 。 shàng dà xué de shí hòu ， wǒ men bú dàn yào nǔ lì xué xí zhuān yè zhī shi ， hái yào duō cān jiā shè huì shí jiàn ， liǎo jiě zì jǐ shì hé zuò shén me yàng de gōng zuò 。 yǒu de rén xǐ huan wěn dìng de shēng huó ， yuàn yì zài yí gè dān wèi gōng zuò hěn duō nián ； yǒu de rén zé xī wàng bú duàn tiǎo zhàn zì jǐ ， cháng shì bù tóng de jī huì 。 qí shí ， wú lùn xuǎn zé nǎ tiáo lù ， zuì zhòng yào de shì qīng chǔ zì jǐ de mù biāo ， bìng qiě yuàn yì wèi tā fù chū nǔ lì 。 zhī yǒu zhè yàng ， wǒ men cái néng zài jiāng lái de gōng zuò zhōng zhǎo dào shǔ yú zì jǐ de wèi zhì 。"
+      },
+      "part3Questions": [
+        {
+          "question": "你将来想从事什么样的工作？为什么？",
+          "pinyin": "nǐ jiāng lái xiǎng cóng shì shén me yàng de gōng zuò ？ wèi shén me ？"
+        },
+        {
+          "question": "你觉得选择职业的时候，兴趣和收入哪个更重要？",
+          "pinyin": "nǐ jué de xuǎn zé zhí yè de shí hòu ， xìng qù hé shōu rù nǎ gè gèng zhòng yào ？"
+        },
+        {
+          "question": "为了实现自己的职业目标，你打算做哪些准备？",
+          "pinyin": "wèi le shí xiàn zì jǐ de zhí yè mù biāo ， nǐ dǎ suàn zuò nǎ xiē zhǔn bèi ？"
+        }
+      ]
+    },
+    {
+      "id": "sp-HSK4-x2",
+      "title": "Ảnh hưởng của mạng internet đến cuộc sống",
+      "hskLevel": "HSK4",
+      "order": 52,
+      "published": true,
+      "part1Sentences": [
+        {
+          "text": "现在越来越多的人习惯在网上购物。",
+          "pinyin": "xiàn zài yuè lái yuè duō de rén xí guàn zài wǎng shàng gòu wù 。"
+        },
+        {
+          "text": "网络让我们的生活变得更加方便了。",
+          "pinyin": "wǎng luò ràng wǒ men de shēng huó biàn de gèng jiā fāng biàn le 。"
+        },
+        {
+          "text": "有些人花太多时间上网，影响了学习和工作。",
+          "pinyin": "yǒu xiē rén huā tài duō shí jiān shàng wǎng ， yǐng xiǎng le xué xí hé gōng zuò 。"
+        }
+      ],
+      "part2Passage": {
+        "text": "随着网络的普及，我们的生活发生了很大的变化。以前我们买东西要去商店，现在只要打开手机就能买到需要的东西。人们还可以通过网络学习知识、看新闻、跟朋友聊天。不过，网络也有不好的地方。有的人整天上网，很少和家人交流，身体也变得越来越差。所以，我们应该合理地使用网络，让它给我们的生活带来更多的方便和快乐。",
+        "pinyin": "suí zhe wǎng luò de pǔ jí ， wǒ men de shēng huó fā shēng le hěn dà de biàn huà 。 yǐ qián wǒ men mǎi dōng xī yào qù shāng diàn ， xiàn zài zhǐ yào dǎ kāi shǒu jī jiù néng mǎi dào xū yào de dōng xī 。 rén men hái kě yǐ tōng guò wǎng luò xué xí zhī shi 、 kàn xīn wén 、 gēn péng yǒu liáo tiān 。 bú guò ， wǎng luò yě yǒu bù hǎo de dì fāng 。 yǒu de rén zhěng tiān shàng wǎng ， hěn shǎo hé jiā rén jiāo liú ， shēn tǐ yě biàn de yuè lái yuè chà 。 suǒ yǐ ， wǒ men yīng gāi hé lǐ dì shǐ yòng wǎng luò ， ràng tā gěi wǒ men de shēng huó dài lái gèng duō de fāng biàn hé kuài lè 。"
+      },
+      "part3Questions": [
+        {
+          "question": "网络给你的生活带来了哪些方便？请举例说一说。",
+          "pinyin": "wǎng luò gěi nǐ de shēng huó dài lái le nǎ xiē fāng biàn ？ qǐng jǔ lì shuō yi shuō 。"
+        },
+        {
+          "question": "你觉得年轻人上网时间太长会有什么问题？",
+          "pinyin": "nǐ jué de nián qīng rén shàng wǎng shí jiān tài cháng huì yǒu shén me wèn tí ？"
+        },
+        {
+          "question": "在网上购物和去商店购物，你更喜欢哪一种？为什么？",
+          "pinyin": "zài wǎng shàng gòu wù hé qù shāng diàn gòu wù ， nǐ gèng xǐ huan nǎ yì zhǒng ？ wèi shén me ？"
+        }
+      ]
+    },
+    {
+      "id": "sp-HSK4-x3",
+      "title": "Đề thi Nói HSKK cấp 4: Một chuyến du lịch khó quên",
+      "hskLevel": "HSK4",
+      "order": 53,
+      "published": true,
+      "part1Sentences": [
+        {
+          "text": "去年暑假，我和家人一起去云南旅行了。",
+          "pinyin": "qù nián shǔ jià ， wǒ hé jiā rén yì qǐ qù yún nán lǚ xíng le 。"
+        },
+        {
+          "text": "那里的风景非常美丽，让我难以忘记。",
+          "pinyin": "nà lǐ de fēng jǐng fēi cháng měi lì ， ràng wǒ nán yǐ wàng jì 。"
+        },
+        {
+          "text": "旅行不仅能放松心情，还能增长见识。",
+          "pinyin": "lǚ xíng bù jǐn néng fàng sōng xīn qíng ， hái néng zēng zhǎng jiàn shi 。"
+        }
+      ],
+      "part2Passage": {
+        "text": "去年夏天，我和几个好朋友一起去桂林旅游，那是一次让我难忘的经历。桂林的山又高又绿，江水清澈得像一面镜子。我们坐船游览漓江，一边欣赏两岸的风景，一边聊天，感觉特别轻松。晚上，我们在小镇上散步，品尝当地的特色小吃，还认识了几位热情的当地人。虽然那次旅行只有五天，但是它给我留下了美好的回忆。我觉得，旅行不但能让我们看到不同的风景，还能让我们学会用新的眼光看待生活。",
+        "pinyin": "qù nián xià tiān ， wǒ hé jǐ gè hǎo péng yǒu yì qǐ qù guì lín lǚ yóu ， nà shì yí cì ràng wǒ nán wàng de jīng lì 。 guì lín de shān yòu gāo yòu lǜ ， jiāng shuǐ qīng chè dé xiàng yí miàn jìng zi 。 wǒ men zuò chuán yóu lǎn lí jiāng ， yì biān xīn shǎng liǎng àn de fēng jǐng ， yì biān liáo tiān ， gǎn jué tè bié qīng sōng 。 wǎn shàng ， wǒ men zài xiǎo zhèn shàng sàn bù ， pǐn cháng dāng dì de tè sè xiǎo chī ， hái rèn shí le jǐ wèi rè qíng de dāng dì rén 。 suī rán nà cì lǚ xíng zhǐ yǒu wǔ tiān ， dàn shì tā gěi wǒ liú xià le měi hǎo de huí yì 。 wǒ jué de ， lǚ xíng bú dàn néng ràng wǒ men kàn dào bù tóng de fēng jǐng ， hái néng ràng wǒ men xué huì yòng xīn de yǎn guāng kàn dài shēng huó 。"
+      },
+      "part3Questions": [
+        {
+          "question": "请说一说你最难忘的一次旅行，你去了哪里？",
+          "pinyin": "qǐng shuō yi shuō nǐ zuì nán wàng de yí cì lǚ xíng ， nǐ qù le nǎ lǐ ？"
+        },
+        {
+          "question": "在那次旅行中，让你印象最深的是什么？为什么？",
+          "pinyin": "zài nà cì lǚ xíng zhōng ， ràng nǐ yìn xiàng zuì shēn de shì shén me ？ wèi shén me ？"
+        },
+        {
+          "question": "你觉得旅行对一个人有哪些好处？",
+          "pinyin": "nǐ jué de lǚ xíng duì yí gè rén yǒu nǎ xiē hǎo chù ？"
+        }
+      ]
+    },
+    {
+      "id": "sp-HSK4-x4",
+      "title": "Đề thi Nói HSKK cấp 4 — Chủ đề: Cuộc sống lý tưởng (理想的生活)",
+      "hskLevel": "HSK4",
+      "order": 54,
+      "published": true,
+      "part1Sentences": [
+        {
+          "text": "每个人心里都有自己理想的生活。",
+          "pinyin": "měi gè rén xīn lǐ dōu yǒu zì jǐ lǐ xiǎng de shēng huó 。"
+        },
+        {
+          "text": "我希望将来能在一座安静的城市工作和生活。",
+          "pinyin": "wǒ xī wàng jiāng lái néng zài yí zuò ān jìng de chéng shì gōng zuò hé shēng huó 。"
+        },
+        {
+          "text": "只要努力，普通的日子也可以过得很幸福。",
+          "pinyin": "zhǐ yào nǔ lì ， pǔ tōng de rì zi yě kě yǐ guò dé hěn xìng fú 。"
+        }
+      ],
+      "part2Passage": {
+        "text": "对我来说，理想的生活并不需要很多钱，也不一定要住在大城市。我更希望每天能做自己喜欢的事情，有时间陪伴家人和朋友。工作虽然重要，但健康和快乐更重要。周末的时候，我喜欢去公园散步，或者在家看书、听音乐。我觉得，只要心里觉得满足，简单的生活也能让人感到幸福。这就是我一直向往的理想生活。",
+        "pinyin": "duì wǒ lái shuō ， lǐ xiǎng de shēng huó bìng bù xū yào hěn duō qián ， yě bù yí dìng yào zhù zài dài chéng shì 。 wǒ gèng xī wàng měi tiān néng zuò zì jǐ xǐ huān de shì qíng ， yǒu shí jiān péi bàn jiā rén hé péng yǒu 。 gōng zuò suī rán zhòng yào ， dàn jiàn kāng hé kuài lè gèng zhòng yào 。 zhōu mò de shí hòu ， wǒ xǐ huan qù gōng yuán sàn bù ， huò zhě zài jiā kàn shū 、 tīng yīn yuè 。 wǒ jué de ， zhǐ yào xīn lǐ jué de mǎn zú ， jiǎn dān de shēng huó yě néng ràng rén gǎn dào xìng fú 。 zhè jiù shì wǒ yì zhí xiàng wǎng de lǐ xiǎng shēng huó 。"
+      },
+      "part3Questions": [
+        {
+          "question": "你觉得什么样的生活才算是理想的生活？为什么？",
+          "pinyin": "nǐ jué de shén me yàng de shēng huó cái suàn shì lǐ xiǎng de shēng huó ？ wèi shén me ？"
+        },
+        {
+          "question": "为了实现你理想的生活，你打算做哪些努力？",
+          "pinyin": "wèi le shí xiàn nǐ lǐ xiǎng de shēng huó ， nǐ dǎ suàn zuò nǎ xiē nǔ lì ？"
+        },
+        {
+          "question": "在理想的生活中，工作和休息哪个对你更重要？请说说你的看法。",
+          "pinyin": "zài lǐ xiǎng de shēng huó zhōng ， gōng zuò hé xiū xi nǎ gè duì nǐ gèng zhòng yào ？ qǐng shuō shuō nǐ de kàn fǎ 。"
+        }
+      ]
+    },
+    {
+      "id": "sp-HSK4-x5",
+      "title": "Đề thi Nói HSKK cấp HSK4 - Chủ đề: Tầm quan trọng của giáo dục",
+      "hskLevel": "HSK4",
+      "order": 55,
+      "published": true,
+      "part1Sentences": [
+        {
+          "text": "教育对一个人的成长非常重要。",
+          "pinyin": "jiào yù duì yí gè rén de chéng zhǎng fēi cháng zhòng yào 。"
+        },
+        {
+          "text": "父母应该从小培养孩子的学习习惯。",
+          "pinyin": "fù mǔ yīng gāi cóng xiǎo péi yǎng hái zi de xué xí xí guàn 。"
+        },
+        {
+          "text": "只有不断学习，我们才能适应社会的变化。",
+          "pinyin": "zhǐ yǒu bú duàn xué xí ， wǒ men cái néng shì yìng shè huì de biàn huà 。"
+        }
+      ],
+      "part2Passage": {
+        "text": "教育在我们的生活中起着非常重要的作用。通过学习，我们不仅能够获得知识，还能提高解决问题的能力。一个受过良好教育的人，往往更容易找到理想的工作，也更懂得如何与别人相处。除了学校教育以外，家庭教育同样不能忽视。父母是孩子的第一位老师，他们的言行会直接影响孩子的性格和价值观。因此，无论是社会、学校还是家庭，都应该重视教育，为下一代创造更好的学习环境。",
+        "pinyin": "jiào yù zài wǒ men de shēng huó zhōng qǐ zhe fēi cháng zhòng yào de zuò yòng 。 tōng guò xué xí ， wǒ men bù jǐn néng gòu huò dé zhī shi ， hái néng tí gāo jiě jué wèn tí de néng lì 。 yí gè shòu guò liáng hǎo jiào yù de rén ， wǎng wǎng gèng róng yì zhǎo dào lǐ xiǎng de gōng zuò ， yě gèng dǒng de rú hé yǔ bié rén xiāng chǔ 。 chú le xué xiào jiào yù yǐ wài ， jiā tíng jiào yù tóng yàng bù néng hū shì 。 fù mǔ shì hái zi de dì yī wèi lǎo shī ， tā men de yán háng huì zhí jiē yǐng xiǎng hái zi de xìng gé hé jià zhí guān 。 yīn cǐ ， wú lùn shì shè huì 、 xué xiào hái shì jiā tíng ， dōu yīng gāi zhòng shì jiào yù ， wèi xià yí dài chuàng zào gèng hǎo de xué xí huán jìng 。"
+      },
+      "part3Questions": [
+        {
+          "question": "你觉得学校教育和家庭教育哪个更重要？为什么？",
+          "pinyin": "nǐ jué de xué xiào jiào yù hé jiā tíng jiào yù nǎ gè gèng zhòng yào ？ wèi shén me ？"
+        },
+        {
+          "question": "在你看来，一个好老师应该具备哪些条件？",
+          "pinyin": "zài nǐ kàn lái ， yí gè hǎo lǎo shī yīng gāi jù bèi nǎ xiē tiáo jiàn ？"
+        },
+        {
+          "question": "请谈谈教育对你的生活或未来有什么影响。",
+          "pinyin": "qǐng tán tán jiào yù duì nǐ de shēng huó huò wèi lái yǒu shén me yǐng xiǎng 。"
+        }
+      ]
+    },
+    {
+      "id": "sp-HSK5-x1",
+      "title": "Đề thi Nói HSKK cấp 5 — Chủ đề «Văn hóa truyền thống»",
+      "hskLevel": "HSK5",
+      "order": 51,
+      "published": true,
+      "part1Sentences": [
+        {
+          "text": "中国的传统节日大多和农历有着密切的关系。",
+          "pinyin": "zhōng guó de chuán tǒng jié rì dà duō hé nóng lì yǒu zhe mì qiè de guān xì 。"
+        },
+        {
+          "text": "书法不仅是一种艺术，更体现了古人的智慧与修养。",
+          "pinyin": "shū fǎ bù jǐn shì yì zhǒng yì shù ， gèng tǐ xiàn le gǔ rén de zhì huì yǔ xiū yǎng 。"
+        },
+        {
+          "text": "随着时代的发展，越来越多的年轻人开始重视保护传统文化。",
+          "pinyin": "suí zhe shí dài de fā zhǎn ， yuè lái yuè duō de nián qīng rén kāi shǐ zhòng shì bǎo hù chuán tǒng wén huà 。"
+        }
+      ],
+      "part2Passage": {
+        "text": "传统文化是一个民族在漫长历史中积累下来的宝贵财富，它包括语言文字、风俗习惯、艺术形式和思想观念等多个方面。中国拥有五千年的悠久历史，无论是春节的团圆、端午的赛龙舟，还是京剧、剪纸和茶艺，都凝聚着祖先的智慧和情感。然而，在现代社会，快节奏的生活方式使一些传统正在慢慢消失。因此，我们既要学习先进的科学技术，也不能忘记自己的文化根源。只有把传统与创新结合起来，才能让古老的文化在新时代重新焕发出生命力。",
+        "pinyin": "chuán tǒng wén huà shì yí gè mín zú zài màn cháng lì shǐ zhōng jī lěi xià lái de bǎo guì cái fù ， tā bāo kuò yǔ yán wén zì 、 fēng sú xí guàn 、 yì shù xíng shì hé sī xiǎng guān niàn děng duō gè fāng miàn 。 zhōng guó yōng yǒu wǔ qiān nián de yōu jiǔ lì shǐ ， wú lùn shì chūn jié de tuán yuán 、 duān wǔ de sài lóng zhōu ， hái shì jīng jù 、 jiǎn zhǐ hé chá yì ， dōu níng jù zhe zǔ xiān de zhì huì hé qíng gǎn 。 rán ér ， zài xiàn dài shè huì ， kuài jié zòu de shēng huó fāng shì shǐ yì xiē chuán tǒng zhèng zài màn màn xiāo shī 。 yīn cǐ ， wǒ men jì yào xué xí xiān jìn de kē xué jì shù ， yě bù néng wàng jì zì jǐ de wén huà gēn yuán 。 zhǐ yǒu bǎ chuán tǒng yǔ chuàng xīn jié hé qǐ lái ， cái néng ràng gǔ lǎo de wén huà zài xīn shí dài chóng xīn huàn fā chū shēng mìng lì 。"
+      },
+      "part3Questions": [
+        {
+          "question": "在你的国家，有哪些重要的传统节日？请简单介绍一下。",
+          "pinyin": "zài nǐ de guó jiā ， yǒu nǎ xiē zhòng yào de chuán tǒng jié rì ？ qǐng jiǎn dān jiè shào yí xià 。"
+        },
+        {
+          "question": "你认为年轻人应该怎样保护和传承传统文化？",
+          "pinyin": "nǐ rèn wéi nián qīng rén yīng gāi zěn yàng bǎo hù hé chuán chéng chuán tǒng wén huà ？"
+        },
+        {
+          "question": "有人说传统文化已经过时了，你同意这种看法吗？为什么？",
+          "pinyin": "yǒu rén shuō chuán tǒng wén huà yǐ jīng guò shí le ， nǐ tóng yì zhè zhǒng kàn fǎ ma ？ wèi shén me ？"
+        }
+      ]
+    },
+    {
+      "id": "sp-HSK5-x2",
+      "title": "Đề thi Nói HSKK cấp 5 — Chủ đề: Công nghệ và cuộc sống",
+      "hskLevel": "HSK5",
+      "order": 52,
+      "published": true,
+      "part1Sentences": [
+        {
+          "text": "随着科技的飞速发展，智能手机已经成为我们生活中不可缺少的一部分。",
+          "pinyin": "suí zhe kē jì de fēi sù fā zhǎn ， zhì néng shǒu jī yǐ jīng chéng wéi wǒ men shēng huó zhōng bù kě quē shǎo de yí bù fen 。"
+        },
+        {
+          "text": "网上购物虽然给我们带来了很多方便，但也让人容易冲动消费。",
+          "pinyin": "wǎng shàng gòu wù suī rán gěi wǒ men dài lái le hěn duō fāng biàn ， dàn yě ràng rén róng yì chōng dòng xiāo fèi 。"
+        },
+        {
+          "text": "人工智能正在改变着我们的工作方式和生活习惯。",
+          "pinyin": "rén gōng zhì néng zhèng zài gǎi biàn zhe wǒ men de gōng zuò fāng shì hé shēng huó xí guàn 。"
+        }
+      ],
+      "part2Passage": {
+        "text": "科技的进步深刻地改变了我们的日常生活。过去，人们联系亲友需要写信，往往要等好几天才能收到回复；而现在，只要动动手指，就能在几秒钟内和世界各地的人视频通话。购物、点餐、打车、看病挂号，几乎所有的事情都可以在手机上完成，既省时又省力。然而，科技在带来便利的同时，也产生了一些问题。有些人过度依赖手机，减少了与家人面对面的交流；还有些人因为长时间盯着屏幕，视力和睡眠都受到了影响。因此，我们应该学会合理地使用科技，让它真正为我们的生活服务，而不是被它所控制。",
+        "pinyin": "kē jì de jìn bù shēn kè dì gǎi biàn le wǒ men de rì cháng shēng huó 。 guò qù ， rén men lián xì qīn yǒu xū yào xiě xìn ， wǎng wǎng yào děng hǎo jǐ tiān cái néng shōu dào huí fù ； ér xiàn zài ， zhǐ yào dòng dòng shǒu zhǐ ， jiù néng zài jǐ miǎo zhōng nèi hé shì jiè gè dì de rén shì pín tōng huà 。 gòu wù 、 diǎn cān 、 dǎ chē 、 kàn bìng guà hào ， jī hū suǒ yǒu de shì qíng dōu kě yǐ zài shǒu jī shàng wán chéng ， jì shěng shí yòu shěng lì 。 rán ér ， kē jì zài dài lái biàn lì de tóng shí ， yě chǎn shēng le yì xiē wèn tí 。 yǒu xiē rén guò dù yī lài shǒu jī ， jiǎn shǎo le yǔ jiā rén miàn duì miàn de jiāo liú ； hái yǒu xiē rén yīn wèi cháng shí jiān dīng zhe píng mù ， shì lì hé shuì mián dōu shòu dào le yǐng xiǎng 。 yīn cǐ ， wǒ men yīng gāi xué huì hé lǐ dì shǐ yòng kē jì ， ràng tā zhēn zhèng wèi wǒ men de shēng huó fú wù ， ér bú shì bèi tā suǒ kòng zhì 。"
+      },
+      "part3Questions": [
+        {
+          "question": "在日常生活中，你最常使用哪些科技产品？它们给你带来了什么帮助？",
+          "pinyin": "zài rì cháng shēng huó zhōng ， nǐ zuì cháng shǐ yòng nǎ xiē kē jì chǎn pǐn ？ tā men gěi nǐ dài lái le shén me bāng zhù ？"
+        },
+        {
+          "question": "有人认为科技让人与人之间的关系变得越来越冷漠，你同意这种看法吗？为什么？",
+          "pinyin": "yǒu rén rèn wéi kē jì ràng rén yǔ rén zhī jiān de guān xì biàn de yuè lái yuè lěng mò ， nǐ tóng yì zhè zhǒng kàn fǎ ma ？ wèi shén me ？"
+        },
+        {
+          "question": "你认为未来的科技会怎样改变我们的生活？请谈谈你的想法。",
+          "pinyin": "nǐ rèn wèi wèi lái de kē jì huì zěn yàng gǎi biàn wǒ men de shēng huó ？ qǐng tán tán nǐ de xiǎng fǎ 。"
+        }
+      ]
+    },
+    {
+      "id": "sp-HSK5-x3",
+      "title": "Đề thi Nói HSKK cấp 5 — Chủ đề «Bảo vệ môi trường»",
+      "hskLevel": "HSK5",
+      "order": 53,
+      "published": true,
+      "part1Sentences": [
+        {
+          "text": "随着经济的快速发展，环境污染问题变得越来越严重。",
+          "pinyin": "suí zhe jīng jì de kuài sù fā zhǎn ， huán jìng wū rǎn wèn tí biàn de yuè lái yuè yán zhòng 。"
+        },
+        {
+          "text": "保护环境不仅是政府的责任，也是每个公民应尽的义务。",
+          "pinyin": "bǎo hù huán jìng bù jǐn shì zhèng fǔ de zé rèn ， yě shì měi gè gōng mín yìng jìn de yì wù 。"
+        },
+        {
+          "text": "如果我们从现在开始节约资源，未来的地球一定会更加美好。",
+          "pinyin": "rú guǒ wǒ men cóng xiàn zài kāi shǐ jié yuē zī yuán ， wèi lái de dì qiú yí dìng huì gèng jiā měi hǎo 。"
+        }
+      ],
+      "part2Passage": {
+        "text": "近年来，全球气候变化引起了人们的广泛关注。工厂排放的废气、随意丢弃的垃圾以及过度使用的塑料制品，都给我们的生活环境带来了巨大的压力。其实，保护环境并不需要做多么伟大的事情，只要我们从身边的小事做起，比如少开车、多走路、节约水电、垃圾分类回收，就能为地球减轻负担。让我们共同努力，把保护环境变成一种生活习惯，为子孙后代留下一个更加清洁、美丽的家园。",
+        "pinyin": "jìn nián lái ， quán qiú qì hòu biàn huà yǐn qǐ le rén men de guǎng fàn guān zhù 。 gōng chǎng pái fàng de fèi qì 、 suí yì diū qì de lā jī yǐ jí guò dù shǐ yòng de sù liào zhì pǐn ， dōu gěi wǒ men de shēng huó huán jìng dài lái le jù dà de yā lì 。 qí shí ， bǎo hù huán jìng bìng bù xū yào zuò duō me wěi dà de shì qíng ， zhǐ yào wǒ men cóng shēn biān de xiǎo shì zuò qǐ ， bǐ rú shǎo kāi chē 、 duō zǒu lù 、 jié yuē shuǐ diàn 、 lā jī fēn lèi huí shōu ， jiù néng wèi dì qiú jiǎn qīng fù dān 。 ràng wǒ men gòng tóng nǔ lì ， bǎ bǎo hù huán jìng biàn chéng yì zhǒng shēng huó xí guàn ， wèi zǐ sūn hòu dài liú xià yí gè gèng jiā qīng jié 、 měi lì de jiā yuán 。"
+      },
+      "part3Questions": [
+        {
+          "question": "在日常生活中，你通常会做哪些事情来保护环境？请举例说明。",
+          "pinyin": "zài rì cháng shēng huó zhōng ， nǐ tōng cháng huì zuò nǎ xiē shì qíng lái bǎo hù huán jìng ？ qǐng jǔ lì shuō míng 。"
+        },
+        {
+          "question": "你认为造成环境污染最主要的原因是什么？我们应该如何解决？",
+          "pinyin": "nǐ rèn wèi zào chéng huán jìng wū rǎn zuì zhǔ yào de yuán yīn shì shén me ？ wǒ men yīng gāi rú hé jiě jué ？"
+        },
+        {
+          "question": "有人说保护环境是政府的事，跟个人关系不大。你同意这种看法吗？为什么？",
+          "pinyin": "yǒu rén shuō bǎo hù huán jìng shì zhèng fǔ de shì ， gēn gè rén guān xì bú dà 。 nǐ tóng yì zhè zhǒng kàn fǎ ma ？ wèi shén me ？"
+        }
+      ]
+    },
+    {
+      "id": "sp-HSK5-x4",
+      "title": "Bộ đề nói HSKK cấp 5: Ý nghĩa của thành công",
+      "hskLevel": "HSK5",
+      "order": 54,
+      "published": true,
+      "part1Sentences": [
+        {
+          "text": "很多人认为，成功就是拥有财富和地位。",
+          "pinyin": "hěn duō rén rèn wéi ， chéng gōng jiù shì yōng yǒu cái fù hé dì wèi 。"
+        },
+        {
+          "text": "其实，真正的成功在于不断超越自己。",
+          "pinyin": "qí shí ， zhēn zhèng de chéng gōng zài yú bú duàn chāo yuè zì jǐ 。"
+        },
+        {
+          "text": "无论遇到多大的困难，我们都不应该轻易放弃。",
+          "pinyin": "wú lùn yù dào duō dà de kùn nán ， wǒ men dōu bú yīng gāi qīng yì fàng qì 。"
+        }
+      ],
+      "part2Passage": {
+        "text": "每个人对成功的理解都不一样。有些人把赚很多钱、当上领导看作成功的标志；而另一些人则认为，能够做自己喜欢的事情，过得健康快乐，就是最大的成功。其实，成功没有统一的标准。它更像是一个不断努力、不断成长的过程。在追求目标的路上，我们也许会遇到失败和挫折，但正是这些经历让我们变得更加坚强和成熟。因此，与其羡慕别人的成就，不如踏踏实实地走好自己的每一步。",
+        "pinyin": "měi gè rén duì chéng gōng de lǐ jiě dōu bù yí yàng 。 yǒu xiē rén bǎ zhuàn hěn duō qián 、 dāng shàng lǐng dǎo kàn zuò chéng gōng de biāo zhì ； ér lìng yì xiē rén zé rèn wéi ， néng gòu zuò zì jǐ xǐ huan de shì qíng ， guò dé jiàn kāng kuài lè ， jiù shì zuì dà de chéng gōng 。 qí shí ， chéng gōng méi yǒu tǒng yī de biāo zhǔn 。 tā gèng xiàng shì yí gè bú duàn nǔ lì 、 bú duàn chéng zhǎng de guò chéng 。 zài zhuī qiú mù biāo dì lù shang ， wǒ men yě xǔ huì yù dào shī bài hé cuò zhé ， dàn zhèng shì zhè xiē jīng lì ràng wǒ men biàn de gèng jiā jiān qiáng hé chéng shú 。 yīn cǐ ， yǔ qí xiàn mù bié rén de chéng jiù ， bù rú tā tā shi shí dì zǒu hǎo zì jǐ de měi yí bù 。"
+      },
+      "part3Questions": [
+        {
+          "question": "在你看来，衡量一个人是否成功的标准是什么？",
+          "pinyin": "zài nǐ kàn lái ， héng liáng yí gè rén shì fǒu chéng gōng de biāo zhǔn shì shén me ？"
+        },
+        {
+          "question": "你认为失败对一个人的成长有什么意义？请举例说明。",
+          "pinyin": "nǐ rèn wéi shī bài duì yí gè rén de chéng zhǎng yǒu shén me yì yì ？ qǐng jǔ lì shuō míng 。"
+        },
+        {
+          "question": "为了实现自己的理想，你觉得最重要的是什么？",
+          "pinyin": "wèi le shí xiàn zì jǐ de lǐ xiǎng ， nǐ jué de zuì zhòng yào de shì shén me ？"
+        }
+      ]
+    },
+    {
+      "id": "sp-HSK5-x5",
+      "title": "Đề thi Nói HSKK cấp 5 — Chủ đề: Thành thị và nông thôn",
+      "hskLevel": "HSK5",
+      "order": 55,
+      "published": true,
+      "part1Sentences": [
+        {
+          "text": "随着城市化的不断发展，越来越多的年轻人选择离开农村到大城市工作。",
+          "pinyin": "suí zhe chéng shì huà de bú duàn fā zhǎn ， yuè lái yuè duō de nián qīng rén xuǎn zé lí kāi nóng cūn dào dài chéng shì gōng zuò 。"
+        },
+        {
+          "text": "虽然城市生活方便快捷，但是空气污染和交通拥堵也让人感到烦恼。",
+          "pinyin": "suī rán chéng shì shēng huó fāng biàn kuài jié ， dàn shì kōng qì wū rǎn hé jiāo tōng yōng dǔ yě ràng rén gǎn dào fán nǎo 。"
+        },
+        {
+          "text": "近年来，不少人开始向往乡村那种安静又贴近自然的生活方式。",
+          "pinyin": "jìn nián lái ， bù shǎo rén kāi shǐ xiàng wǎng xiāng cūn nà zhǒng ān jìng yòu tiē jìn zì rán de shēng huó fāng shì 。"
+        }
+      ],
+      "part2Passage": {
+        "text": "如今，城市和乡村的差距正在慢慢缩小。过去，人们普遍认为大城市意味着更多的工作机会、更好的教育和医疗条件，因此纷纷涌入城市。然而，随着城市人口越来越密集，房价上涨、生活压力增大等问题也逐渐显现出来。与此同时，许多乡村地区借助现代化的交通和网络，发展起了旅游、农业加工等特色产业，生活水平明显提高。越来越多的人意识到，无论是繁华的都市还是宁静的乡村，都有各自的魅力和价值。也许，真正理想的生活，是在两者之间找到属于自己的平衡。",
+        "pinyin": "rú jīn ， chéng shì hé xiāng cūn de chā jù zhèng zài màn màn suō xiǎo 。 guò qù ， rén men pǔ biàn rèn wéi dài chéng shì yì wèi zhe gèng duō de gōng zuò jī huì 、 gèng hǎo de jiào yù hé yī liáo tiáo jiàn ， yīn cǐ fēn fēn yǒng rù chéng shì 。 rán ér ， suí zhe chéng shì rén kǒu yuè lái yuè mì jí ， fáng jià shàng zhǎng 、 shēng huó yā lì zēng dà děng wèn tí yě zhú jiàn xiǎn xiàn chū lái 。 yǔ cǐ tóng shí ， xǔ duō xiāng cūn dì qū jiè zhù xiàn dài huà de jiāo tōng hé wǎng luò ， fā zhǎn qǐ le lǚ yóu 、 nóng yè jiā gōng děng tè sè chǎn yè ， shēng huó shuǐ píng míng xiǎn tí gāo 。 yuè lái yuè duō de rén yì shí dào ， wú lùn shì fán huá de dōu shì hái shì níng jìng de xiāng cūn ， dōu yǒu gè zì de mèi lì hé jià zhí 。 yě xǔ ， zhēn zhèng lǐ xiǎng de shēng huó ， shì zài liǎng zhě zhī jiān zhǎo dào shǔ yú zì jǐ de píng héng 。"
+      },
+      "part3Questions": [
+        {
+          "question": "你更喜欢住在城市还是乡村？请说说你的理由。",
+          "pinyin": "nǐ gèng xǐ huan zhù zài chéng shì hái shì xiāng cūn ？ qǐng shuō shuō nǐ de lǐ yóu 。"
+        },
+        {
+          "question": "你认为城市生活给人们带来了哪些好处和问题？",
+          "pinyin": "nǐ rèn wéi chéng shì shēng huó gěi rén men dài lái le nǎ xiē hǎo chù hé wèn tí ？"
+        },
+        {
+          "question": "为了让乡村变得更有吸引力，你觉得可以做些什么？",
+          "pinyin": "wèi le ràng xiāng cūn biàn de gèng yǒu xī yǐn lì ， nǐ jué de kě yǐ zuò xiē shén me ？"
+        }
+      ]
+    },
+    {
+      "id": "sp-HSK6-x1",
+      "title": "Lợi ích và bất lợi của toàn cầu hóa",
+      "hskLevel": "HSK6",
+      "order": 51,
+      "published": true,
+      "part1Sentences": [
+        {
+          "text": "全球化在促进经济增长的同时，也加剧了各国之间的贫富差距。",
+          "pinyin": "quán qiú huà zài cù jìn jīng jì zēng zhǎng de tóng shí ， yě jiā jù le gè guó zhī jiān de pín fù chā jù 。"
+        },
+        {
+          "text": "跨国企业的迅速扩张，既带来了先进技术，也冲击了本土的传统产业。",
+          "pinyin": "kuà guó qǐ yè de xùn sù kuò zhāng ， jì dài lái le xiān jìn jì shù ， yě chōng jī le běn tǔ de chuán tǒng chǎn yè 。"
+        },
+        {
+          "text": "面对文化多元化的浪潮，我们既要保持开放包容，又要坚守自身的文化认同。",
+          "pinyin": "miàn duì wén huà duō yuán huà de làng cháo ， wǒ men jì yào bǎo chí kāi fàng bāo róng ， yòu yào jiān shǒu zì shēn de wén huà rèn tóng 。"
+        }
+      ],
+      "part2Passage": {
+        "text": "全球化是当今世界不可逆转的发展趋势。一方面，它打破了国与国之间的壁垒，加速了商品、资本、技术和人才的自由流动，使各国得以充分发挥自身优势，实现互利共赢。另一方面，全球化也带来了不容忽视的负面影响：发展中国家往往在国际分工中处于劣势，环境污染和资源过度开发的问题日益突出，某些弱势文化甚至面临被同化的危机。因此，如何在享受全球化红利的同时，妥善应对其带来的挑战，已成为各国政府和全人类共同思考的重要课题。",
+        "pinyin": "quán qiú huà shì dāng jīn shì jiè bù kě nì zhuǎn de fā zhǎn qū shì 。 yì fāng miàn ， tā dǎ pò le guó yǔ guó zhī jiān de bì lěi ， jiā sù le shāng pǐn 、 zī běn 、 jì shù hé rén cái de zì yóu liú dòng ， shǐ gè guó dé yǐ chōng fèn fā huī zì shēn yōu shì ， shí xiàn hù lì gòng yíng 。 lìng yì fāng miàn ， quán qiú huà yě dài lái le bù róng hū shì de fù miàn yǐng xiǎng ： fā zhǎn zhōng guó jiā wǎng wǎng zài guó jì fēn gōng zhōng chǔ yú liè shì ， huán jìng wū rǎn hé zī yuán guò dù kāi fā de wèn tí rì yì tū chū ， mǒu xiē ruò shì wén huà shèn zhì miàn lín bèi tóng huà de wēi jī 。 yīn cǐ ， rú hé zài xiǎng shòu quán qiú huà hóng lì de tóng shí ， tuǒ shàn yìng duì qí dài lái de tiǎo zhàn ， yǐ chéng wéi gè guó zhèng fǔ hé quán rén lèi gòng tóng sī kǎo de zhòng yào kè tí 。"
+      },
+      "part3Questions": [
+        {
+          "question": "你认为全球化给你所在的国家带来的好处多还是坏处多？请说明理由。",
+          "pinyin": "nǐ rèn wéi quán qiú huà gěi nǐ suǒ zài de guó jiā dài lái de hǎo chù duō hái shì huài chù duō ？ qǐng shuō míng lǐ yóu 。"
+        },
+        {
+          "question": "在全球化的背景下，你觉得一个国家应该如何保护和传承本民族的传统文化？",
+          "pinyin": "zài quán qiú huà de bèi jǐng xià ， nǐ jué de yí gè guó jiā yīng gāi rú hé bǎo hù hé chuán chéng běn mín zú de chuán tǒng wén huà ？"
+        },
+        {
+          "question": "有人说全球化会让富国越富、穷国越穷，你同意这种观点吗？为什么？",
+          "pinyin": "yǒu rén shuō quán qiú huà huì ràng fù guó yuè fù 、 qióng guó yuè qióng ， nǐ tóng yì zhè zhǒng guān diǎn ma ？ wèi shén me ？"
+        }
+      ]
+    },
+    {
+      "id": "sp-HSK6-x2",
+      "title": "Đề thi Nói HSKK Cao cấp (HSK6) — Chủ đề «Ảnh hưởng của trí tuệ nhân tạo»",
+      "hskLevel": "HSK6",
+      "order": 52,
+      "published": true,
+      "part1Sentences": [
+        {
+          "text": "随着人工智能技术的迅猛发展，它已经渗透到我们生活的方方面面。",
+          "pinyin": "suí zhe rén gōng zhì néng jì shù de xùn měng fā zhǎn ， tā yǐ jīng shèn tòu dào wǒ men shēng huó de fāng fāng miàn miàn 。"
+        },
+        {
+          "text": "尽管人工智能提高了工作效率，但也引发了人们对失业问题的广泛担忧。",
+          "pinyin": "jǐn guǎn rén gōng zhì néng tí gāo le gōng zuò xiào lǜ ， dàn yě yǐn fā le rén men duì shī yè wèn tí de guǎng fàn dān yōu 。"
+        },
+        {
+          "text": "如何在享受科技便利的同时妥善应对其带来的伦理挑战，值得我们深思。",
+          "pinyin": "rú hé zài xiǎng shòu kē jì biàn lì de tóng shí tuǒ shàn yìng duì qí dài lái de lún lǐ tiǎo zhàn ， zhí dé wǒ men shēn sī 。"
+        }
+      ],
+      "part2Passage": {
+        "text": "人工智能正在深刻地改变着人类社会。在医疗领域，它能够辅助医生进行诊断，大幅提升了效率与准确率；在交通领域，自动驾驶技术有望缓解拥堵、减少事故。然而，任何事物都有两面性。人工智能在创造巨大价值的同时，也可能导致部分岗位被取代，加剧社会的不平等；此外，个人隐私的保护、数据的滥用以及算法的偏见等问题，同样不容忽视。因此，我们既要以开放的心态拥抱这一技术革命，充分发挥其积极作用，又要建立健全相应的法律法规与伦理规范，趋利避害，让人工智能真正造福全人类。",
+        "pinyin": "rén gōng zhì néng zhèng zài shēn kè dì gǎi biàn zhe rén lèi shè huì 。 zài yī liáo lǐng yù ， tā néng gòu fǔ zhù yī shēng jìn xíng zhěn duàn ， dà fú tí shēng le xiào lǜ yǔ zhǔn què lǜ ； zài jiāo tōng lǐng yù ， zì dòng jià shǐ jì shù yǒu wàng huǎn jiě yōng dǔ 、 jiǎn shǎo shì gù 。 rán ér ， rèn hé shì wù dōu yǒu liǎng miàn xìng 。 rén gōng zhì néng zài chuàng zào jù dà jià zhí de tóng shí ， yě kě néng dǎo zhì bù fen gǎng wèi bèi qǔ dài ， jiā jù shè huì de bù píng děng ； cǐ wài ， gè rén yǐn sī de bǎo hù 、 shù jù de làn yòng yǐ jí suàn fǎ de piān jiàn děng wèn tí ， tóng yàng bù róng hū shì 。 yīn cǐ ， wǒ men jì yào yǐ kāi fàng de xīn tài yōng bào zhè yí jì shù gé mìng ， chōng fèn fā huī qí jī jí zuò yòng ， yòu yào jiàn lì jiàn quán xiāng yìng de fǎ lǜ fǎ guī yǔ lún lǐ guī fàn ， qū lì bì hài ， ràng rén gōng zhì néng zhēn zhèng zào fú quán rén lèi 。"
+      },
+      "part3Questions": [
+        {
+          "question": "你认为人工智能的普及会给就业市场带来怎样的影响？我们应该如何应对？",
+          "pinyin": "nǐ rèn wéi rén gōng zhì néng de pǔ jí huì gěi jiù yè shì chǎng dài lái zěn yàng de yǐng xiǎng ？ wǒ men yīng gāi rú hé yìng duì ？"
+        },
+        {
+          "question": "有人担心人工智能会威胁到人类的隐私和安全，对此你怎么看？",
+          "pinyin": "yǒu rén dān xīn rén gōng zhì néng huì wēi xié dào rén lèi de yǐn sī hé ān quán ， duì cǐ nǐ zěn me kàn ？"
+        },
+        {
+          "question": "在你的日常生活或学习中，人工智能给你带来了哪些便利？请举例说明。",
+          "pinyin": "zài nǐ de rì cháng shēng huó huò xué xí zhōng ， rén gōng zhì néng gěi nǐ dài lái le nǎ xiē biàn lì ？ qǐng jǔ lì shuō míng 。"
+        }
+      ]
+    },
+    {
+      "id": "sp-HSK6-x3",
+      "title": "Bộ đề Nói HSKK cấp 6 — Chủ đề «Truyền thống và Đổi mới»",
+      "hskLevel": "HSK6",
+      "order": 53,
+      "published": true,
+      "part1Sentences": [
+        {
+          "text": "在全球化的浪潮中，如何在坚守传统文化根基的同时勇于创新，是当代社会必须面对的重大课题。",
+          "pinyin": "zài quán qiú huà de làng cháo zhōng ， rú hé zài jiān shǒu chuán tǒng wén huà gēn jī de tóng shí yǒng yú chuàng xīn ， shì dāng dài shè huì bì xū miàn duì de zhòng dà kè tí 。"
+        },
+        {
+          "text": "许多老字号企业通过融合现代科技与传统工艺，成功地焕发出了前所未有的生机与活力。",
+          "pinyin": "xǔ duō lǎo zì hào qǐ yè tōng guò róng hé xiàn dài kē jì yǔ chuán tǒng gōng yì ， chéng gōng dì huàn fā chū le qián suǒ wèi yǒu de shēng jī yǔ huó lì 。"
+        },
+        {
+          "text": "真正有远见的传承并非墨守成规，而是在尊重历史的基础上不断注入时代的新鲜血液。",
+          "pinyin": "zhēn zhèng yǒu yuǎn jiàn de chuán chéng bìng fēi mò shǒu chéng guī ， ér shì zài zūn zhòng lì shǐ de jī chǔ shàng bú duàn zhù rù shí dài de xīn xiān xuè yè 。"
+        }
+      ],
+      "part2Passage": {
+        "text": "传统与创新看似矛盾，实则相辅相成。传统是一个民族历经岁月沉淀下来的宝贵财富，它承载着先人的智慧与情感；而创新则是推动社会不断向前发展的强大动力。倘若一味固守传统而拒绝变革，文化便会逐渐失去生命力，最终沦为博物馆里的陈列品；反之，若抛弃传统而一味求新，则如同无根之木、无源之水，难以长久。因此，最理想的状态是让二者巧妙融合：既保留传统的精髓，又赋予其崭新的表现形式。唯有如此，古老的文明才能在崭新的时代里绽放出更加夺目的光彩。",
+        "pinyin": "chuán tǒng yǔ chuàng xīn kàn sì máo dùn ， shí zé xiāng fǔ xiāng chéng 。 chuán tǒng shì yí gè mín zú lì jīng suì yuè chén diàn xià lái de bǎo guì cái fù ， tā chéng zài zhe xiān rén de zhì huì yǔ qíng gǎn ； ér chuàng xīn zé shì tuī dòng shè huì bú duàn xiàng qián fā zhǎn de qiáng dà dòng lì 。 tǎng ruò yí wèi gù shǒu chuán tǒng ér jù jué biàn gé ， wén huà biàn huì zhú jiàn shī qù shēng mìng lì ， zuì zhōng lún wèi bó wù guǎn lǐ de chén liè pǐn ； fǎn zhī ， ruò pāo qì chuán tǒng ér yí wèi qiú xīn ， zé rú tóng wú gēn zhī mù 、 wú yuán zhī shuǐ ， nán yǐ cháng jiǔ 。 yīn cǐ ， zuì lǐ xiǎng de zhuàng tài shì ràng èr zhě qiǎo miào róng hé ： jì bǎo liú chuán tǒng de jīng suǐ ， yòu fù yǔ qí zhǎn xīn de biǎo xiàn xíng shì 。 wéi yǒu rú cǐ ， gǔ lǎo de wén míng cái néng zài zhǎn xīn de shí dài lǐ zhàn fàng chū gèng jiā duó mù dì guāng cǎi 。"
+      },
+      "part3Questions": [
+        {
+          "question": "你认为在现代社会中，我们应该如何处理好传统文化与创新之间的关系？请谈谈你的看法。",
+          "pinyin": "nǐ rèn wéi zài xiàn dài shè huì zhōng ， wǒ men yīng gāi rú hé chǔ lǐ hǎo chuán tǒng wén huà yǔ chuàng xīn zhī jiān de guān xì ？ qǐng tán tán nǐ de kàn fǎ 。"
+        },
+        {
+          "question": "请举一个你身边或了解到的例子，说明传统与创新是如何成功结合的。",
+          "pinyin": "qǐng jǔ yí gè nǐ shēn biān huò liǎo jiě dào de lì zǐ ， shuō míng chuán tǒng yǔ chuàng xīn shì rú hé chéng gōng jié hé de 。"
+        },
+        {
+          "question": "有人担心过度追求创新会导致传统文化的流失，对此你是否赞同？为什么？",
+          "pinyin": "yǒu rén dān xīn guò dù zhuī qiú chuàng xīn huì dǎo zhì chuán tǒng wén huà de liú shī ， duì cǐ nǐ shì fǒu zàn tóng ？ wèi shén me ？"
+        }
+      ]
+    },
+    {
+      "id": "sp-HSK6-x4",
+      "title": "Đề thi Nói HSKK Cao cấp (HSK6) — Chủ đề: Hạnh phúc là gì",
+      "hskLevel": "HSK6",
+      "order": 54,
+      "published": true,
+      "part1Sentences": [
+        {
+          "text": "幸福并不取决于你拥有多少财富，而在于你能否珍惜眼前所拥有的一切。",
+          "pinyin": "xìng fú bìng bù qǔ jué yú nǐ yōng yǒu duō shǎo cái fù ， ér zài yú nǐ néng fǒu zhēn xī yǎn qián suǒ yōng yǒu de yí qiè 。"
+        },
+        {
+          "text": "许多人一味追求物质上的满足，却忽略了内心深处对精神富足的渴望。",
+          "pinyin": "xǔ duō rén yí wèi zhuī qiú wù zhì shàng de mǎn zú ， què hū lüè le nèi xīn shēn chù duì jīng shén fù zú de kě wàng 。"
+        },
+        {
+          "text": "真正的幸福往往隐藏在平凡的日常生活中，等待着我们用心去发现和体会。",
+          "pinyin": "zhēn zhèng de xìng fú wǎng wǎng yǐn cáng zài píng fán de rì cháng shēng huó zhōng ， děng dài zhe wǒ men yòng xīn qù fā xiàn hé tǐ huì 。"
+        }
+      ],
+      "part2Passage": {
+        "text": "关于幸福的定义，自古以来众说纷纭，可谓仁者见仁，智者见智。有人认为，幸福意味着功成名就、家财万贯；也有人觉得，只要身体健康、家庭和睦，便是莫大的幸福。其实，幸福并没有一个统一的标准，它因人而异，因时而变。对于一个漂泊在外的游子而言，能够回家与亲人团聚，就是最踏实的幸福；而对于一位身患重病的老人来说，能够看到日出日落，或许就是最珍贵的幸福。由此可见，幸福并非遥不可及的奢望，而是蕴藏在生活的点点滴滴之中。只要我们怀着一颗感恩的心，学会知足常乐，就能在平凡的岁月里，收获属于自己的那份宁静与美好。",
+        "pinyin": "guān yú xìng fú de dìng yì ， zì gǔ yǐ lái zhòng shuō fēn yún ， kě wèi rén zhě jiàn rén ， zhì zhě jiàn zhì 。 yǒu rén rèn wèi ， xìng fú yì wèi zhe gōng chéng míng jiù 、 jiā cái wàn guàn ； yě yǒu rén jué de ， zhǐ yào shēn tǐ jiàn kāng 、 jiā tíng hé mù ， biàn shì mò dà de xìng fú 。 qí shí ， xìng fú bìng méi yǒu yí gè tǒng yī de biāo zhǔn ， tā yīn rén ér yì ， yīn shí ér biàn 。 duì yú yí gè piāo bó zài wài de yóu zǐ ér yán ， néng gòu huí jiā yǔ qīn rén tuán jù ， jiù shì zuì tà shí de xìng fú ； ér duì yú yí wèi shēn huàn zhòng bìng de lǎo rén lái shuō ， néng gòu kàn dào rì chū rì luò ， huò xǔ jiù shì zuì zhēn guì de xìng fú 。 yóu cǐ kě jiàn ， xìng fú bìng fēi yáo bù kě jí de shē wàng ， ér shì yùn cáng zài shēng huó de diǎn diǎn dī dī zhī zhōng 。 zhǐ yào wǒ men huái zhe yì kē gǎn ēn de xīn ， xué huì zhī zú cháng lè ， jiù néng zài píng fán de suì yuè lǐ ， shōu huò shǔ yú zì jǐ de nà fèn níng jìng yǔ měi hǎo 。"
+      },
+      "part3Questions": [
+        {
+          "question": "在你看来，幸福究竟是一种客观的状态，还是一种主观的感受？请谈谈你的理由。",
+          "pinyin": "zài nǐ kàn lái ， xìng fú jiū jìng shì yì zhǒng kè guān de zhuàng tài ， hái shì yì zhǒng zhǔ guān de gǎn shòu ？ qǐng tán tán nǐ de lǐ yóu 。"
+        },
+        {
+          "question": "有人说“金钱买不到幸福”，你是否赞同这种观点？请结合自身经历加以说明。",
+          "pinyin": "yǒu rén shuō “ jīn qián mǎi bú dào xìng fú ” ， nǐ shì fǒu zàn tóng zhè zhǒng guān diǎn ？ qǐng jié hé zì shēn jīng lì jiā yǐ shuō míng 。"
+        },
+        {
+          "question": "在如今这个竞争激烈、节奏飞快的社会里，人们应该如何才能获得并保持内心的幸福感？",
+          "pinyin": "zài rú jīn zhè ge jìng zhēng jī liè 、 jié zòu fēi kuài de shè huì lǐ ， rén men yīng gāi rú hé cái néng huò dé bìng bǎo chí nèi xīn de xìng fú gǎn ？"
+        }
+      ]
+    },
+    {
+      "id": "sp-HSK6-x5",
+      "title": "Đề thi Nói HSKK Cấp Cao (HSK6): Lý tưởng và Hiện thực (理想与现实)",
+      "hskLevel": "HSK6",
+      "order": 55,
+      "published": true,
+      "part1Sentences": [
+        {
+          "text": "理想是指引人生方向的灯塔，而现实则是我们脚下必须踏实走过的每一步路。",
+          "pinyin": "lǐ xiǎng shì zhǐ yǐn rén shēng fāng xiàng de dēng tǎ ， ér xiàn shí zé shì wǒ men jiǎo xià bì xū tà shí zǒu guò de měi yí bù lù 。"
+        },
+        {
+          "text": "许多人在追逐梦想的过程中，不得不面对理想与现实之间难以逾越的鸿沟。",
+          "pinyin": "xǔ duō rén zài zhuī zhú mèng xiǎng de guò chéng zhōng ， bù dé bú miàn duì lǐ xiǎng yǔ xiàn shí zhī jiān nán yǐ yú yuè de hóng gōu 。"
+        },
+        {
+          "text": "真正成熟的人，既不会盲目地屈从于现实，也不会不切实际地空想。",
+          "pinyin": "zhēn zhèng chéng shú de rén ， jì bú huì máng mù dì qū cóng yú xiàn shí ， yě bú huì bú qiè shí jì dì kōng xiǎng 。"
+        }
+      ],
+      "part2Passage": {
+        "text": "每个人年轻时都怀揣着美好的理想，然而当我们真正踏入社会，往往会发现现实远比想象中残酷。曾经立志改变世界的雄心，可能会在日复一日的琐碎中逐渐消磨。有人因此妥协，放弃了最初的坚持；也有人在挫折面前愈挫愈勇，脚踏实地，一步步缩短理想与现实的距离。其实，理想与现实并非水火不容。理想赋予我们前进的动力，现实则教会我们脚踏实地的智慧。只有把远大的抱负与务实的行动结合起来，才能让梦想不至于沦为空谈，也才不会让平庸的生活埋没心中的火焰。",
+        "pinyin": "měi gè rén nián qīng shí dōu huái chuāi zhe měi hǎo de lǐ xiǎng ， rán ér dāng wǒ men zhēn zhèng tà rù shè huì ， wǎng wǎng huì fā xiàn xiàn shí yuǎn bǐ xiǎng xiàng zhōng cán kù 。 céng jīng lì zhì gǎi biàn shì jiè de xióng xīn ， kě néng huì zài rì fù yí rì de suǒ suì zhōng zhú jiàn xiāo mó 。 yǒu rén yīn cǐ tuǒ xié ， fàng qì le zuì chū de jiān chí ； yě yǒu rén zài cuò zhé miàn qián yù cuò yù yǒng ， jiǎo tà shí dì ， yí bù bù suō duǎn lǐ xiǎng yǔ xiàn shí de jù lí 。 qí shí ， lǐ xiǎng yǔ xiàn shí bìng fēi shuǐ huǒ bù róng 。 lǐ xiǎng fù yǔ wǒ men qián jìn de dòng lì ， xiàn shí zé jiào huì wǒ men jiǎo tà shí dì de zhì huì 。 zhī yǒu bǎ yuǎn dà de bào fù yǔ wù shí de xíng dòng jié hé qǐ lái ， cái néng ràng mèng xiǎng bú zhì yú lún wèi kōng tán ， yě cái bú huì ràng píng yōng de shēng huó mái mò xīn zhōng de huǒ yàn 。"
+      },
+      "part3Questions": [
+        {
+          "question": "当理想与现实发生冲突时，你认为应该坚持理想还是向现实妥协？请谈谈你的看法。",
+          "pinyin": "dāng lǐ xiǎng yǔ xiàn shí fā shēng chōng tū shí ， nǐ rèn wéi yīng gāi jiān chí lǐ xiǎng hái shì xiàng xiàn shí tuǒ xié ？ qǐng tán tán nǐ de kàn fǎ 。"
+        },
+        {
+          "question": "请结合你自己的经历，谈谈你曾经为了实现某个理想而付出的努力。",
+          "pinyin": "qǐng jié hé nǐ zì jǐ de jīng lì ， tán tán nǐ céng jīng wèi le shí xiàn mǒu gè lǐ xiǎng ér fù chū de nǔ lì 。"
+        },
+        {
+          "question": "有人说“没有理想的人生是空虚的，脱离现实的理想是危险的”，你是否同意这种观点？为什么？",
+          "pinyin": "yǒu rén shuō “ méi yǒu lǐ xiǎng de rén shēng shì kōng xū de ， tuō lí xiàn shí de lǐ xiǎng shì wēi xiǎn de ” ， nǐ shì fǒu tóng yì zhè zhǒng guān diǎn ？ wèi shén me ？"
+        }
+      ]
+    }
+  ]
+}

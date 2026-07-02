@@ -1,0 +1,4097 @@
+{
+  "kind": "reading",
+  "tests": [
+    {
+      "id": "rd-HSK1-x1",
+      "title": "Tự giới thiệu bản thân",
+      "titleZh": "自我介绍",
+      "hskLevel": "HSK1",
+      "passage": "大家好，我叫王小月，今年二十岁。我是中国人，我家在北京。我有一个哥哥，他是老师。我喜欢看书，也喜欢喝茶。我会说中文和英文。我很高兴认识你们。",
+      "passagePinyin": "dà jiā hǎo ， wǒ jiào wáng xiǎo yuè ， jīn nián èr shí suì 。 wǒ shì zhōng guó rén ， wǒ jiā zài běi jīng 。 wǒ yǒu yí gè gē ge ， tā shì lǎo shī 。 wǒ xǐ huān kàn shū ， yě xǐ huan hē chá 。 wǒ huì shuō zhōng wén hé yīng wén 。 wǒ hěn gāo xìng rèn shi nǐ men 。",
+      "timeLimit": 600,
+      "order": 51,
+      "published": true,
+      "questions": [
+        {
+          "id": "rd-HSK1-x1-q1",
+          "type": "MCQ",
+          "prompt": "王小月今年多大？",
+          "promptPinyin": "wáng xiǎo yuè jīn nián duō dà ？",
+          "explanation": "Trong đoạn có câu '今年二十岁' (năm nay hai mươi tuổi), nên đáp án đúng là 二十岁. Các lựa chọn 18/19/21 tuổi đều không được đoạn nhắc tới.",
+          "order": 1,
+          "options": [
+            {
+              "text": "十八岁",
+              "pinyin": "shí bā suì"
+            },
+            {
+              "text": "十九岁",
+              "pinyin": "shí jiǔ suì"
+            },
+            {
+              "text": "二十岁",
+              "pinyin": "èr shí suì"
+            },
+            {
+              "text": "二十一岁",
+              "pinyin": "èr shí yī suì"
+            }
+          ],
+          "correctAnswer": {
+            "index": 2,
+            "text": "二十岁"
+          }
+        },
+        {
+          "id": "rd-HSK1-x1-q2",
+          "type": "MCQ",
+          "prompt": "王小月的家在哪儿？",
+          "promptPinyin": "wáng xiǎo yuè de jiā zài nǎ ér ？",
+          "explanation": "Đoạn văn viết '我家在北京' (nhà tôi ở Bắc Kinh), nên nhà của Vương Tiểu Nguyệt ở 北京. Các thành phố còn lại không xuất hiện.",
+          "order": 2,
+          "options": [
+            {
+              "text": "上海",
+              "pinyin": "shàng hǎi"
+            },
+            {
+              "text": "北京",
+              "pinyin": "běi jīng"
+            },
+            {
+              "text": "南京",
+              "pinyin": "nán jīng"
+            },
+            {
+              "text": "广州",
+              "pinyin": "guǎng zhōu"
+            }
+          ],
+          "correctAnswer": {
+            "index": 1,
+            "text": "北京"
+          }
+        },
+        {
+          "id": "rd-HSK1-x1-q3",
+          "type": "TRUE_FALSE",
+          "prompt": "王小月的哥哥是老师。",
+          "promptPinyin": "wáng xiǎo yuè de gē ge shì lǎo shī 。",
+          "explanation": "Câu '我有一个哥哥，他是老师' cho biết anh trai của cô ấy là giáo viên, nên nhận định này ĐÚNG.",
+          "order": 3,
+          "options": null,
+          "correctAnswer": {
+            "value": true
+          }
+        },
+        {
+          "id": "rd-HSK1-x1-q4",
+          "type": "TRUE_FALSE",
+          "prompt": "王小月不喜欢喝茶。",
+          "promptPinyin": "wáng xiǎo yuè bù xǐ huan hē chá 。",
+          "explanation": "Đoạn văn nói '也喜欢喝茶' (cũng thích uống trà), nên nói cô ấy KHÔNG thích uống trà là SAI.",
+          "order": 4,
+          "options": null,
+          "correctAnswer": {
+            "value": false
+          }
+        },
+        {
+          "id": "rd-HSK1-x1-q5",
+          "type": "FILL_BLANK",
+          "prompt": "王小月是＿＿人。",
+          "promptPinyin": "wáng xiǎo yuè shì ＿ ＿ rén 。",
+          "explanation": "Câu '我是中国人' cho biết cô ấy là người Trung Quốc, nên chỗ trống điền 中国 (xuất hiện nguyên văn trong đoạn).",
+          "order": 5,
+          "options": null,
+          "correctAnswer": {
+            "text": "中国",
+            "accepted": [
+              "中国"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "rd-HSK1-x2",
+      "title": "Gia đình của tôi",
+      "titleZh": "我的家庭",
+      "hskLevel": "HSK1",
+      "passage": "我家有四个人：爸爸、妈妈、我和妹妹。爸爸是医生，妈妈是老师。我今年十岁，我的妹妹五岁。我们都爱吃中国菜。我很爱我的家。",
+      "passagePinyin": "wǒ jiā yǒu sì gè rén ： bà ba 、 mā ma 、 wǒ hé mèi mei 。 bà ba shì yī shēng ， mā ma shì lǎo shī 。 wǒ jīn nián shí suì ， wǒ de mèi mei wǔ suì 。 wǒ men dōu ài chī zhōng guó cài 。 wǒ hěn ài wǒ de jiā 。",
+      "timeLimit": 600,
+      "order": 52,
+      "published": true,
+      "questions": [
+        {
+          "id": "rd-HSK1-x2-q1",
+          "type": "MCQ",
+          "prompt": "我家有几个人？",
+          "promptPinyin": "wǒ jiā yǒu jǐ gè rén ？",
+          "explanation": "Đoạn văn viết «我家有四个人» (nhà tôi có bốn người), nên đáp án là 四个人; các số khác không khớp.",
+          "order": 1,
+          "options": [
+            {
+              "text": "三个人",
+              "pinyin": "sān gè rén"
+            },
+            {
+              "text": "四个人",
+              "pinyin": "sì gè rén"
+            },
+            {
+              "text": "五个人",
+              "pinyin": "wǔ gè rén"
+            },
+            {
+              "text": "六个人",
+              "pinyin": "liù gè rén"
+            }
+          ],
+          "correctAnswer": {
+            "index": 1,
+            "text": "四个人"
+          }
+        },
+        {
+          "id": "rd-HSK1-x2-q2",
+          "type": "MCQ",
+          "prompt": "妈妈做什么工作？",
+          "promptPinyin": "mā ma zuò shén me gōng zuò ？",
+          "explanation": "Câu «妈妈是老师» cho biết mẹ là giáo viên (老师); 医生 là nghề của bố, 学生 và 工人 không được nhắc tới.",
+          "order": 2,
+          "options": [
+            {
+              "text": "医生",
+              "pinyin": "yī shēng"
+            },
+            {
+              "text": "老师",
+              "pinyin": "lǎo shī"
+            },
+            {
+              "text": "学生",
+              "pinyin": "xué shēng"
+            },
+            {
+              "text": "工人",
+              "pinyin": "gōng rén"
+            }
+          ],
+          "correctAnswer": {
+            "index": 1,
+            "text": "老师"
+          }
+        },
+        {
+          "id": "rd-HSK1-x2-q3",
+          "type": "TRUE_FALSE",
+          "prompt": "爸爸是医生。",
+          "promptPinyin": "bà ba shì yī shēng 。",
+          "explanation": "Đúng, vì đoạn văn ghi rõ «爸爸是医生» (bố là bác sĩ).",
+          "order": 3,
+          "options": null,
+          "correctAnswer": {
+            "value": true
+          }
+        },
+        {
+          "id": "rd-HSK1-x2-q4",
+          "type": "TRUE_FALSE",
+          "prompt": "妹妹今年十岁。",
+          "promptPinyin": "mèi mei jīn nián shí suì 。",
+          "explanation": "Sai, vì đoạn văn nói «我今年十岁» (tôi mười tuổi) còn «我的妹妹五岁» (em gái năm tuổi).",
+          "order": 4,
+          "options": null,
+          "correctAnswer": {
+            "value": false
+          }
+        },
+        {
+          "id": "rd-HSK1-x2-q5",
+          "type": "FILL_BLANK",
+          "prompt": "我们都爱吃中国＿＿。",
+          "promptPinyin": "wǒ men dōu ài chī zhōng guó ＿ ＿ 。",
+          "explanation": "Câu gốc là «我们都爱吃中国菜» (chúng tôi đều thích ăn món ăn Trung Quốc), nên chỗ trống điền 菜 (xuất hiện nguyên văn trong đoạn).",
+          "order": 5,
+          "options": null,
+          "correctAnswer": {
+            "text": "菜",
+            "accepted": [
+              "菜"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "rd-HSK1-x3",
+      "title": "Mua đồ ở cửa hàng",
+      "titleZh": "在商店买东西",
+      "hskLevel": "HSK1",
+      "passage": "今天下午，我和妈妈去商店买东西。我买了一些苹果，妈妈买了三个杯子。苹果很好吃，一个五块钱。商店里的东西很多，也很便宜。我们六点回家。",
+      "passagePinyin": "jīn tiān xià wǔ ， wǒ hé mā ma qù shāng diàn mǎi dōng xī 。 wǒ mǎi le yì xiē píng guǒ ， mā ma mǎi le sān gè bēi zi 。 píng guǒ hěn hǎo chī ， yí gè wǔ kuài qián 。 shāng diàn lǐ de dōng xī hěn duō ， yě hěn pián yi 。 wǒ men liù diǎn huí jiā 。",
+      "timeLimit": 600,
+      "order": 53,
+      "published": true,
+      "questions": [
+        {
+          "id": "rd-HSK1-x3-q1",
+          "type": "MCQ",
+          "prompt": "「我」买了什么？",
+          "promptPinyin": "「 wǒ 」 mǎi le shén me ？",
+          "explanation": "Đoạn văn viết「我买了一些苹果」(tôi đã mua một ít táo), nên đáp án là 苹果 (táo). Các lựa chọn khác: 杯子 là mẹ mua, còn 衣服/米饭 không xuất hiện.",
+          "order": 1,
+          "options": [
+            {
+              "text": "苹果",
+              "pinyin": "píng guǒ"
+            },
+            {
+              "text": "杯子",
+              "pinyin": "bēi zi"
+            },
+            {
+              "text": "衣服",
+              "pinyin": "yī fu"
+            },
+            {
+              "text": "米饭",
+              "pinyin": "mǐ fàn"
+            }
+          ],
+          "correctAnswer": {
+            "index": 0,
+            "text": "苹果"
+          }
+        },
+        {
+          "id": "rd-HSK1-x3-q2",
+          "type": "MCQ",
+          "prompt": "妈妈买了几个杯子？",
+          "promptPinyin": "mā ma mǎi le jǐ gè bēi zi ？",
+          "explanation": "Câu「妈妈买了三个杯子」cho biết mẹ mua 三个 (ba cái) cốc; số 五 chỉ liên quan đến giá táo, không phải số cốc.",
+          "order": 2,
+          "options": [
+            {
+              "text": "一个",
+              "pinyin": "yí gè"
+            },
+            {
+              "text": "两个",
+              "pinyin": "liǎng gè"
+            },
+            {
+              "text": "三个",
+              "pinyin": "sān gè"
+            },
+            {
+              "text": "五个",
+              "pinyin": "wǔ gè"
+            }
+          ],
+          "correctAnswer": {
+            "index": 2,
+            "text": "三个"
+          }
+        },
+        {
+          "id": "rd-HSK1-x3-q3",
+          "type": "TRUE_FALSE",
+          "prompt": "商店里的东西很便宜。",
+          "promptPinyin": "shāng diàn lǐ de dōng xī hěn pián yi 。",
+          "explanation": "Đúng, vì đoạn văn viết「商店里的东西很多，也很便宜」(đồ trong cửa hàng nhiều và cũng rẻ).",
+          "order": 3,
+          "options": null,
+          "correctAnswer": {
+            "value": true
+          }
+        },
+        {
+          "id": "rd-HSK1-x3-q4",
+          "type": "TRUE_FALSE",
+          "prompt": "「我」是一个人去商店的。",
+          "promptPinyin": "「 wǒ 」 shì yí gè rén qù shāng diàn de 。",
+          "explanation": "Sai, vì câu「我和妈妈去商店买东西」cho thấy đi cùng mẹ, không phải đi một mình.",
+          "order": 4,
+          "options": null,
+          "correctAnswer": {
+            "value": false
+          }
+        },
+        {
+          "id": "rd-HSK1-x3-q5",
+          "type": "FILL_BLANK",
+          "prompt": "一个苹果______钱。",
+          "promptPinyin": "yí gè píng guǒ _ _ _ _ _ _ qián 。",
+          "explanation": "Đoạn văn viết「一个五块钱」(một quả năm đồng), 五块 xuất hiện nguyên văn nên chỗ trống điền 五块.",
+          "order": 5,
+          "options": null,
+          "correctAnswer": {
+            "text": "五块",
+            "accepted": [
+              "五块"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "rd-HSK1-x4",
+      "title": "Thời gian và ngày tháng",
+      "titleZh": "时间和日期",
+      "hskLevel": "HSK1",
+      "passage": "我叫小明。今天是星期五，八月三号。我早上七点起床。上午我去学校，中午十二点吃饭。今天下午我不上课。晚上八点，我和爸爸妈妈看电视。我们很高兴。",
+      "passagePinyin": "wǒ jiào xiǎo míng 。 jīn tiān shì xīng qī wǔ ， bā yuè sān hào 。 wǒ zǎo shàng qī diǎn qǐ chuáng 。 shàng wǔ wǒ qù xué xiào ， zhōng wǔ shí èr diǎn chī fàn 。 jīn tiān xià wǔ wǒ bú shàng kè 。 wǎn shàng bā diǎn ， wǒ hé bà ba mā ma kàn diàn shì 。 wǒ men hěn gāo xìng 。",
+      "timeLimit": 600,
+      "order": 54,
+      "published": true,
+      "questions": [
+        {
+          "id": "rd-HSK1-x4-q1",
+          "type": "MCQ",
+          "prompt": "小明早上几点起床？",
+          "promptPinyin": "xiǎo míng zǎo shàng jǐ diǎn qǐ chuáng ？",
+          "explanation": "Đoạn văn viết «我早上七点起床» (Tôi buổi sáng bảy giờ thức dậy), nên đáp án là 七点 (bảy giờ). Các mốc giờ khác trong đoạn (十二点 ăn trưa, 八点 tối) không phải giờ thức dậy.",
+          "order": 1,
+          "options": [
+            {
+              "text": "七点",
+              "pinyin": "qī diǎn"
+            },
+            {
+              "text": "八点",
+              "pinyin": "bā diǎn"
+            },
+            {
+              "text": "十二点",
+              "pinyin": "shí èr diǎn"
+            },
+            {
+              "text": "五点",
+              "pinyin": "wǔ diǎn"
+            }
+          ],
+          "correctAnswer": {
+            "index": 0,
+            "text": "七点"
+          }
+        },
+        {
+          "id": "rd-HSK1-x4-q2",
+          "type": "MCQ",
+          "prompt": "今天是星期几？",
+          "promptPinyin": "jīn tiān shì xīng qī jǐ ？",
+          "explanation": "Câu «今天是星期五» (Hôm nay là thứ Sáu) cho thấy đáp án là 星期五 (thứ Sáu); ba lựa chọn còn lại không xuất hiện trong đoạn.",
+          "order": 2,
+          "options": [
+            {
+              "text": "星期一",
+              "pinyin": "xīng qī yī"
+            },
+            {
+              "text": "星期三",
+              "pinyin": "xīng qī sān"
+            },
+            {
+              "text": "星期五",
+              "pinyin": "xīng qī wǔ"
+            },
+            {
+              "text": "星期日",
+              "pinyin": "xīng qī rì"
+            }
+          ],
+          "correctAnswer": {
+            "index": 2,
+            "text": "星期五"
+          }
+        },
+        {
+          "id": "rd-HSK1-x4-q3",
+          "type": "TRUE_FALSE",
+          "prompt": "今天下午小明上课。",
+          "promptPinyin": "jīn tiān xià wǔ xiǎo míng shàng kè 。",
+          "explanation": "Đoạn văn nói «今天下午我不上课» (Chiều nay tôi không đi học), nên câu khẳng định «下午上课» là SAI.",
+          "order": 3,
+          "options": null,
+          "correctAnswer": {
+            "value": false
+          }
+        },
+        {
+          "id": "rd-HSK1-x4-q4",
+          "type": "TRUE_FALSE",
+          "prompt": "晚上小明和爸爸妈妈看电视。",
+          "promptPinyin": "wǎn shàng xiǎo míng hé bà ba mā ma kàn diàn shì 。",
+          "explanation": "Câu «晚上八点，我和爸爸妈妈看电视» (Tám giờ tối, tôi và bố mẹ xem tivi) khẳng định câu này ĐÚNG.",
+          "order": 4,
+          "options": null,
+          "correctAnswer": {
+            "value": true
+          }
+        },
+        {
+          "id": "rd-HSK1-x4-q5",
+          "type": "FILL_BLANK",
+          "prompt": "小明中午十二点______。",
+          "promptPinyin": "xiǎo míng zhōng wǔ shí èr diǎn _ _ _ _ _ _ 。",
+          "explanation": "Đoạn văn viết «中午十二点吃饭» (Trưa mười hai giờ ăn cơm), nên chỗ trống điền 吃饭 (ăn cơm) — xuất hiện nguyên văn trong đoạn.",
+          "order": 5,
+          "options": null,
+          "correctAnswer": {
+            "text": "吃饭",
+            "accepted": [
+              "吃饭"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "rd-HSK1-x5",
+      "title": "Sở thích của tôi",
+      "titleZh": "我的爱好",
+      "hskLevel": "HSK1",
+      "passage": "我叫小美。我今年二十岁。我很喜欢听音乐，也喜欢看书。星期六和星期天我不工作。我在家看书，听音乐。我的朋友喜欢看电影，我们星期天一起去看电影。我很高兴。",
+      "passagePinyin": "wǒ jiào xiǎo měi 。 wǒ jīn nián èr shí suì 。 wǒ hěn xǐ huan tīng yīn yuè ， yě xǐ huan kàn shū 。 xīng qī liù hé xīng qī tiān wǒ bù gōng zuò 。 wǒ zài jiā kàn shū ， tīng yīn yuè 。 wǒ de péng yǒu xǐ huan kàn diàn yǐng ， wǒ men xīng qī tiān yì qǐ qù kàn diàn yǐng 。 wǒ hěn gāo xìng 。",
+      "timeLimit": 600,
+      "order": 55,
+      "published": true,
+      "questions": [
+        {
+          "id": "rd-HSK1-x5-q1",
+          "type": "MCQ",
+          "prompt": "小美今年多大？",
+          "promptPinyin": "xiǎo měi jīn nián duō dà ？",
+          "explanation": "Đoạn văn viết \"我今年二十岁\" (Năm nay tôi hai mươi tuổi), nên đáp án là 二十岁. Các số khác không xuất hiện.",
+          "order": 1,
+          "options": [
+            {
+              "text": "十岁",
+              "pinyin": "shí suì"
+            },
+            {
+              "text": "二十岁",
+              "pinyin": "èr shí suì"
+            },
+            {
+              "text": "十二岁",
+              "pinyin": "shí èr suì"
+            },
+            {
+              "text": "三十岁",
+              "pinyin": "sān shí suì"
+            }
+          ],
+          "correctAnswer": {
+            "index": 1,
+            "text": "二十岁"
+          }
+        },
+        {
+          "id": "rd-HSK1-x5-q2",
+          "type": "MCQ",
+          "prompt": "小美星期天和朋友一起做什么？",
+          "promptPinyin": "xiǎo měi xīng qī tiān hé péng yǒu yì qǐ zuò shén me ？",
+          "explanation": "Câu \"我们星期天一起去看电影\" cho thấy Chủ nhật họ cùng nhau đi xem phim (看电影). Đọc sách/nghe nhạc là làm ở nhà một mình; cuối tuần cô không đi làm.",
+          "order": 2,
+          "options": [
+            {
+              "text": "看书",
+              "pinyin": "kàn shū"
+            },
+            {
+              "text": "听音乐",
+              "pinyin": "tīng yīn yuè"
+            },
+            {
+              "text": "看电影",
+              "pinyin": "kàn diàn yǐng"
+            },
+            {
+              "text": "工作",
+              "pinyin": "gōng zuò"
+            }
+          ],
+          "correctAnswer": {
+            "index": 2,
+            "text": "看电影"
+          }
+        },
+        {
+          "id": "rd-HSK1-x5-q3",
+          "type": "TRUE_FALSE",
+          "prompt": "小美喜欢听音乐。",
+          "promptPinyin": "xiǎo měi xǐ huan tīng yīn yuè 。",
+          "explanation": "Đúng. Đoạn văn nói \"我很喜欢听音乐\" (Tôi rất thích nghe nhạc).",
+          "order": 3,
+          "options": null,
+          "correctAnswer": {
+            "value": true
+          }
+        },
+        {
+          "id": "rd-HSK1-x5-q4",
+          "type": "TRUE_FALSE",
+          "prompt": "小美星期六工作。",
+          "promptPinyin": "xiǎo měi xīng qī liù gōng zuò 。",
+          "explanation": "Sai. Đoạn văn viết \"星期六和星期天我不工作\" (Thứ Bảy và Chủ nhật tôi không đi làm).",
+          "order": 4,
+          "options": null,
+          "correctAnswer": {
+            "value": false
+          }
+        },
+        {
+          "id": "rd-HSK1-x5-q5",
+          "type": "FILL_BLANK",
+          "prompt": "小美的朋友喜欢____。",
+          "promptPinyin": "xiǎo měi de péng yǒu xǐ huan _ _ _ _ 。",
+          "explanation": "Đoạn văn viết \"我的朋友喜欢看电影\" (Bạn của tôi thích xem phim), nên điền 看电影 (xuất hiện nguyên văn trong đoạn).",
+          "order": 5,
+          "options": null,
+          "correctAnswer": {
+            "text": "看电影",
+            "accepted": [
+              "看电影"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "rd-HSK1-x6",
+      "title": "Chuyện ăn uống mỗi ngày",
+      "titleZh": "每天的饮食",
+      "hskLevel": "HSK1",
+      "passage": "我是小李。我每天吃三次饭。早上我在家吃鸡蛋，喝牛奶。中午我和朋友在学校吃米饭。晚上我不在家吃，我在饭店吃。我很喜欢吃中国菜，也喜欢喝茶。",
+      "passagePinyin": "wǒ shì xiǎo lǐ 。 wǒ měi tiān chī sān cì fàn 。 zǎo shàng wǒ zài jiā chī jī dàn ， hē niú nǎi 。 zhōng wǔ wǒ hé péng yǒu zài xué xiào chī mǐ fàn 。 wǎn shàng wǒ bú zài jiā chī ， wǒ zài fàn diàn chī 。 wǒ hěn xǐ huan chī zhōng guó cài ， yě xǐ huan hē chá 。",
+      "timeLimit": 600,
+      "order": 56,
+      "published": true,
+      "questions": [
+        {
+          "id": "rd-HSK1-x6-q1",
+          "type": "MCQ",
+          "prompt": "小李早上在哪儿吃饭？",
+          "promptPinyin": "xiǎo lǐ zǎo shàng zài nǎ ér chī fàn ？",
+          "explanation": "Đoạn văn viết «早上我在家吃鸡蛋» (buổi sáng tôi ăn trứng gà ở nhà), nên buổi sáng Tiểu Lý ăn cơm ở nhà. Các lựa chọn khác đều sai: 在学校 là buổi trưa, 在饭店 là buổi tối, 在朋友家 không được nhắc tới.",
+          "order": 1,
+          "options": [
+            {
+              "text": "在学校",
+              "pinyin": "zài xué xiào"
+            },
+            {
+              "text": "在家",
+              "pinyin": "zài jiā"
+            },
+            {
+              "text": "在饭店",
+              "pinyin": "zài fàn diàn"
+            },
+            {
+              "text": "在朋友家",
+              "pinyin": "zài péng yǒu jiā"
+            }
+          ],
+          "correctAnswer": {
+            "index": 1,
+            "text": "在家"
+          }
+        },
+        {
+          "id": "rd-HSK1-x6-q2",
+          "type": "MCQ",
+          "prompt": "小李中午吃什么？",
+          "promptPinyin": "xiǎo lǐ zhōng wǔ chī shén me ？",
+          "explanation": "Câu «中午我和朋友在学校吃米饭» cho biết buổi trưa Tiểu Lý ăn cơm (米饭) ở trường. 鸡蛋 và 牛奶 là buổi sáng, 中国菜 chỉ là sở thích chung chung.",
+          "order": 2,
+          "options": [
+            {
+              "text": "鸡蛋",
+              "pinyin": "jī dàn"
+            },
+            {
+              "text": "牛奶",
+              "pinyin": "niú nǎi"
+            },
+            {
+              "text": "米饭",
+              "pinyin": "mǐ fàn"
+            },
+            {
+              "text": "中国菜",
+              "pinyin": "zhōng guó cài"
+            }
+          ],
+          "correctAnswer": {
+            "index": 2,
+            "text": "米饭"
+          }
+        },
+        {
+          "id": "rd-HSK1-x6-q3",
+          "type": "TRUE_FALSE",
+          "prompt": "小李每天吃三次饭。",
+          "promptPinyin": "xiǎo lǐ měi tiān chī sān cì fàn 。",
+          "explanation": "Đoạn văn nói rõ «我每天吃三次饭» (mỗi ngày tôi ăn ba bữa), nên câu này ĐÚNG.",
+          "order": 3,
+          "options": null,
+          "correctAnswer": {
+            "value": true
+          }
+        },
+        {
+          "id": "rd-HSK1-x6-q4",
+          "type": "TRUE_FALSE",
+          "prompt": "小李晚上在家吃饭。",
+          "promptPinyin": "xiǎo lǐ wǎn shàng zài jiā chī fàn 。",
+          "explanation": "Đoạn văn viết «晚上我不在家吃，我在饭店吃» (buổi tối tôi không ăn ở nhà, tôi ăn ở nhà hàng), nên câu này SAI.",
+          "order": 4,
+          "options": null,
+          "correctAnswer": {
+            "value": false
+          }
+        },
+        {
+          "id": "rd-HSK1-x6-q5",
+          "type": "FILL_BLANK",
+          "prompt": "小李很喜欢吃中国＿。",
+          "promptPinyin": "xiǎo lǐ hěn xǐ huan chī zhōng guó ＿ 。",
+          "explanation": "Câu «我很喜欢吃中国菜» cho thấy Tiểu Lý rất thích ăn món ăn Trung Quốc (中国菜), nên từ cần điền là «菜» (xuất hiện nguyên văn trong đoạn).",
+          "order": 5,
+          "options": null,
+          "correctAnswer": {
+            "text": "菜",
+            "accepted": [
+              "菜"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "rd-HSK2-x1",
+      "title": "Một chuyến du lịch",
+      "titleZh": "一次旅游",
+      "hskLevel": "HSK2",
+      "passage": "上个月，我和我的家人一起去北京旅游。我们坐了三个小时的飞机才到。北京很大，也很漂亮。第一天，我们去看了长城，长城真长啊！第二天，天气很冷，还下雪了，但是我们还是很高兴。我们吃了很多好吃的中国菜，我最喜欢北京烤鸭。这次旅游我玩得非常开心，我想明年再去一次。",
+      "passagePinyin": "shàng gè yuè ， wǒ hé wǒ de jiā rén yì qǐ qù běi jīng lǚ yóu 。 wǒ men zuò le sān gè xiǎo shí de fēi jī cái dào 。 běi jīng hěn dà ， yě hěn piào liang 。 dì yī tiān ， wǒ men qù kàn le cháng chéng ， cháng chéng zhēn cháng a ！ dì èr tiān ， tiān qì hěn lěng ， hái xià xuě le ， dàn shì wǒ men hái shì hěn gāo xìng 。 wǒ men chī le hěn duō hǎo chī de zhōng guó cài ， wǒ zuì xǐ huan běi jīng kǎo yā 。 zhè cì lǚ yóu wǒ wán dé fēi cháng kāi xīn ， wǒ xiǎng míng nián zài qù yí cì 。",
+      "timeLimit": 600,
+      "order": 51,
+      "published": true,
+      "questions": [
+        {
+          "id": "rd-HSK2-x1-q1",
+          "type": "MCQ",
+          "prompt": "他们是怎么去北京的？",
+          "promptPinyin": "tā men shì zěn me qù běi jīng de ？",
+          "explanation": "Đoạn văn viết \"我们坐了三个小时的飞机才到\" (chúng tôi đi máy bay ba tiếng mới đến), nên họ đi Bắc Kinh bằng máy bay. Các phương tiện火车/汽车/船 không được nhắc tới.",
+          "order": 1,
+          "options": [
+            {
+              "text": "坐火车",
+              "pinyin": "zuò huǒ chē"
+            },
+            {
+              "text": "坐飞机",
+              "pinyin": "zuò fēi jī"
+            },
+            {
+              "text": "坐汽车",
+              "pinyin": "zuò qì chē"
+            },
+            {
+              "text": "坐船",
+              "pinyin": "zuò chuán"
+            }
+          ],
+          "correctAnswer": {
+            "index": 1,
+            "text": "坐飞机"
+          }
+        },
+        {
+          "id": "rd-HSK2-x1-q2",
+          "type": "MCQ",
+          "prompt": "他最喜欢吃什么？",
+          "promptPinyin": "tā zuì xǐ huan chī shén me ？",
+          "explanation": "Đoạn có câu \"我最喜欢北京烤鸭\" (tôi thích nhất vịt quay Bắc Kinh). Tuy có ăn \"很多好吃的中国菜\" nhưng món anh ấy thích NHẤT là北京烤鸭; 米饭/面条 không xuất hiện.",
+          "order": 2,
+          "options": [
+            {
+              "text": "中国菜",
+              "pinyin": "zhōng guó cài"
+            },
+            {
+              "text": "北京烤鸭",
+              "pinyin": "běi jīng kǎo yā"
+            },
+            {
+              "text": "米饭",
+              "pinyin": "mǐ fàn"
+            },
+            {
+              "text": "面条",
+              "pinyin": "miàn tiáo"
+            }
+          ],
+          "correctAnswer": {
+            "index": 1,
+            "text": "北京烤鸭"
+          }
+        },
+        {
+          "id": "rd-HSK2-x1-q3",
+          "type": "TRUE_FALSE",
+          "prompt": "第二天天气很热。",
+          "promptPinyin": "dì èr tiān tiān qì hěn rè 。",
+          "explanation": "Sai. Đoạn văn viết \"第二天，天气很冷，还下雪了\" (ngày thứ hai trời rất lạnh, còn có tuyết), chứ không phải trời nóng.",
+          "order": 3,
+          "options": null,
+          "correctAnswer": {
+            "value": false
+          }
+        },
+        {
+          "id": "rd-HSK2-x1-q4",
+          "type": "TRUE_FALSE",
+          "prompt": "他想明年再去北京。",
+          "promptPinyin": "tā xiǎng míng nián zài qù běi jīng 。",
+          "explanation": "Đúng. Câu cuối viết \"我想明年再去一次\" (tôi muốn năm sau đi thêm một lần nữa), cho thấy anh ấy muốn quay lại Bắc Kinh.",
+          "order": 4,
+          "options": null,
+          "correctAnswer": {
+            "value": true
+          }
+        },
+        {
+          "id": "rd-HSK2-x1-q5",
+          "type": "FILL_BLANK",
+          "prompt": "他和家人一起去了________旅游。",
+          "promptPinyin": "tā hé jiā rén yì qǐ qù le _ _ _ _ _ _ _ _ lǚ yóu 。",
+          "explanation": "Câu đầu tiên nêu rõ \"我和我的家人一起去北京旅游\" (tôi cùng gia đình đi du lịch Bắc Kinh), nên chỗ trống điền \"北京\" (xuất hiện nguyên văn trong đoạn).",
+          "order": 5,
+          "options": null,
+          "correctAnswer": {
+            "text": "北京",
+            "accepted": [
+              "北京"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "rd-HSK2-x2",
+      "title": "Đi khám bệnh",
+      "titleZh": "看医生",
+      "hskLevel": "HSK2",
+      "passage": "昨天晚上，小王觉得头很疼，身体也不舒服。今天早上，他没有去公司，八点就去了医院。医生问他：“你怎么了？”小王说：“我头疼，还有一点儿发烧。”医生看了看，让他吃药，多喝热水，好好休息。医生说：“三天以后你会好的，别担心。”小王谢谢医生，回家休息了。他希望明天能好一点儿。",
+      "passagePinyin": "zuó tiān wǎn shàng ， xiǎo wáng jué de tóu hěn téng ， shēn tǐ yě bù shū fú 。 jīn tiān zǎo shàng ， tā méi yǒu qù gōng sī ， bā diǎn jiù qù le yī yuàn 。 yī shēng wèn tā ： “ nǐ zěn me le ？ ” xiǎo wáng shuō ： “ wǒ tóu téng ， hái yǒu yì diǎn ér fā shāo 。 ” yī shēng kàn le kàn ， ràng tā chī yào ， duō hē rè shuǐ ， hǎo hǎo xiū xi 。 yī shēng shuō ： “ sān tiān yǐ hòu nǐ huì hǎo de ， bié dān xīn 。 ” xiǎo wáng xiè xiè yī shēng ， huí jiā xiū xi le 。 tā xī wàng míng tiān néng hǎo yì diǎn ér 。",
+      "timeLimit": 600,
+      "order": 52,
+      "published": true,
+      "questions": [
+        {
+          "id": "rd-HSK2-x2-q1",
+          "type": "MCQ",
+          "prompt": "小王今天早上去了哪儿？",
+          "promptPinyin": "xiǎo wáng jīn tiān zǎo shàng qù le nǎ ér ？",
+          "explanation": "Đoạn văn viết «今天早上，他没有去公司，八点就去了医院» (sáng nay anh ấy không đi công ty mà đi bệnh viện), nên đáp án là 医院 (bệnh viện). Các lựa chọn khác (công ty, trường học, cửa hàng) đều không đúng.",
+          "order": 1,
+          "options": [
+            {
+              "text": "公司",
+              "pinyin": "gōng sī"
+            },
+            {
+              "text": "医院",
+              "pinyin": "yī yuàn"
+            },
+            {
+              "text": "学校",
+              "pinyin": "xué xiào"
+            },
+            {
+              "text": "商店",
+              "pinyin": "shāng diàn"
+            }
+          ],
+          "correctAnswer": {
+            "index": 1,
+            "text": "医院"
+          }
+        },
+        {
+          "id": "rd-HSK2-x2-q2",
+          "type": "MCQ",
+          "prompt": "医生让小王做什么？",
+          "promptPinyin": "yī shēng ràng xiǎo wáng zuò shén me ？",
+          "explanation": "Đoạn văn viết «医生看了看，让他吃药，多喝热水，好好休息» (bác sĩ bảo anh ấy uống thuốc, uống nhiều nước nóng và nghỉ ngơi), nên đáp án đúng là 吃药、多喝热水、休息. Các lựa chọn khác không được nhắc tới trong đoạn.",
+          "order": 2,
+          "options": [
+            {
+              "text": "去上班",
+              "pinyin": "qù shàng bān"
+            },
+            {
+              "text": "去买东西",
+              "pinyin": "qù mǎi dōng xī"
+            },
+            {
+              "text": "吃药、多喝热水、休息",
+              "pinyin": "chī yào 、 duō hē rè shuǐ 、 xiū xi"
+            },
+            {
+              "text": "做运动",
+              "pinyin": "zuò yùn dòng"
+            }
+          ],
+          "correctAnswer": {
+            "index": 2,
+            "text": "吃药、多喝热水、休息"
+          }
+        },
+        {
+          "id": "rd-HSK2-x2-q3",
+          "type": "TRUE_FALSE",
+          "prompt": "小王昨天晚上头很疼。",
+          "promptPinyin": "xiǎo wáng zuó tiān wǎn shàng tóu hěn téng 。",
+          "explanation": "Đúng. Câu đầu tiên viết «昨天晚上，小王觉得头很疼» (tối qua Tiểu Vương thấy đầu rất đau).",
+          "order": 3,
+          "options": null,
+          "correctAnswer": {
+            "value": true
+          }
+        },
+        {
+          "id": "rd-HSK2-x2-q4",
+          "type": "TRUE_FALSE",
+          "prompt": "医生说小王一个星期以后才会好。",
+          "promptPinyin": "yī shēng shuō xiǎo wáng yí gè xīng qī yǐ hòu cái huì hǎo 。",
+          "explanation": "Sai. Bác sĩ nói «三天以后你会好的» (ba ngày sau anh sẽ khỏe), chứ không phải một tuần (一个星期).",
+          "order": 4,
+          "options": null,
+          "correctAnswer": {
+            "value": false
+          }
+        },
+        {
+          "id": "rd-HSK2-x2-q5",
+          "type": "FILL_BLANK",
+          "prompt": "小王头疼，还有一点儿______。",
+          "promptPinyin": "xiǎo wáng tóu téng ， hái yǒu yì diǎn ér _ _ _ _ _ _ 。",
+          "explanation": "Trong đoạn, Tiểu Vương nói «我头疼，还有一点儿发烧» (tôi đau đầu, còn hơi sốt), nên chỗ trống điền 发烧 (sốt) — xuất hiện nguyên văn trong đoạn.",
+          "order": 5,
+          "options": null,
+          "correctAnswer": {
+            "text": "发烧",
+            "accepted": [
+              "发烧"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "rd-HSK2-x3",
+      "title": "Công việc của tôi",
+      "titleZh": "我的工作",
+      "hskLevel": "HSK2",
+      "passage": "我叫小明，今年二十五岁。我是一名老师，在一个学校工作。我教孩子们汉语。我每天早上八点上班，下午五点下班。我很喜欢我的工作，因为我喜欢孩子。学校里有很多老师，他们对我都很好。我家离学校不远，我每天坐公共汽车去上班，很方便。星期六和星期天我不工作，我在家休息或者和朋友一起去玩儿。",
+      "passagePinyin": "wǒ jiào xiǎo míng ， jīn nián èr shí wǔ suì 。 wǒ shì yì míng lǎo shī ， zài yí gè xué xiào gōng zuò 。 wǒ jiào hái zi men hàn yǔ 。 wǒ měi tiān zǎo shàng bā diǎn shàng bān ， xià wǔ wǔ diǎn xià bān 。 wǒ hěn xǐ huan wǒ de gōng zuò ， yīn wèi wǒ xǐ huan hái zǐ 。 xué xiào lǐ yǒu hěn duō lǎo shī ， tā men duì wǒ dōu hěn hǎo 。 wǒ jiā lí xué xiào bù yuǎn ， wǒ měi tiān zuò gōng gòng qì chē qù shàng bān ， hěn fāng biàn 。 xīng qī liù hé xīng qī tiān wǒ bù gōng zuò ， wǒ zài jiā xiū xi huò zhě hé péng yǒu yì qǐ qù wán ér 。",
+      "timeLimit": 600,
+      "order": 53,
+      "published": true,
+      "questions": [
+        {
+          "id": "rd-HSK2-x3-q1",
+          "type": "MCQ",
+          "prompt": "小明做什么工作？",
+          "promptPinyin": "xiǎo míng zuò shén me gōng zuò ？",
+          "explanation": "Đoạn văn nói rõ '我是一名老师' (Tôi là một giáo viên), nên đáp án là 老师. Các lựa chọn 医生/学生/司机 đều không được nhắc đến.",
+          "order": 1,
+          "options": [
+            {
+              "text": "医生",
+              "pinyin": "yī shēng"
+            },
+            {
+              "text": "老师",
+              "pinyin": "lǎo shī"
+            },
+            {
+              "text": "学生",
+              "pinyin": "xué shēng"
+            },
+            {
+              "text": "司机",
+              "pinyin": "sī jī"
+            }
+          ],
+          "correctAnswer": {
+            "index": 1,
+            "text": "老师"
+          }
+        },
+        {
+          "id": "rd-HSK2-x3-q2",
+          "type": "MCQ",
+          "prompt": "小明每天怎么去上班？",
+          "promptPinyin": "xiǎo míng měi tiān zěn me qù shàng bān ？",
+          "explanation": "Đoạn văn viết '我每天坐公共汽车去上班' (Tôi mỗi ngày đi xe buýt đi làm), nên đáp án là 坐公共汽车. Các cách khác không được nêu.",
+          "order": 2,
+          "options": [
+            {
+              "text": "走路",
+              "pinyin": "zǒu lù"
+            },
+            {
+              "text": "坐公共汽车",
+              "pinyin": "zuò gōng gòng qì chē"
+            },
+            {
+              "text": "开车",
+              "pinyin": "kāi chē"
+            },
+            {
+              "text": "骑自行车",
+              "pinyin": "qí zì xíng chē"
+            }
+          ],
+          "correctAnswer": {
+            "index": 1,
+            "text": "坐公共汽车"
+          }
+        },
+        {
+          "id": "rd-HSK2-x3-q3",
+          "type": "MCQ",
+          "prompt": "小明几点下班？",
+          "promptPinyin": "xiǎo míng jǐ diǎn xià bān ？",
+          "explanation": "Đoạn văn viết '下午五点下班' (5 giờ chiều tan làm), nên đáp án là 下午五点. 早上八点 là giờ đi làm, không phải giờ tan làm.",
+          "order": 3,
+          "options": [
+            {
+              "text": "早上八点",
+              "pinyin": "zǎo shàng bā diǎn"
+            },
+            {
+              "text": "下午五点",
+              "pinyin": "xià wǔ wǔ diǎn"
+            },
+            {
+              "text": "下午八点",
+              "pinyin": "xià wǔ bā diǎn"
+            },
+            {
+              "text": "中午十二点",
+              "pinyin": "zhōng wǔ shí èr diǎn"
+            }
+          ],
+          "correctAnswer": {
+            "index": 1,
+            "text": "下午五点"
+          }
+        },
+        {
+          "id": "rd-HSK2-x3-q4",
+          "type": "TRUE_FALSE",
+          "prompt": "小明不喜欢他的工作。",
+          "promptPinyin": "xiǎo míng bù xǐ huan tā de gōng zuò 。",
+          "explanation": "Sai. Đoạn văn nói '我很喜欢我的工作' (Tôi rất thích công việc của mình), nên câu này sai.",
+          "order": 4,
+          "options": null,
+          "correctAnswer": {
+            "value": false
+          }
+        },
+        {
+          "id": "rd-HSK2-x3-q5",
+          "type": "TRUE_FALSE",
+          "prompt": "小明星期六和星期天不工作。",
+          "promptPinyin": "xiǎo míng xīng qī liù hé xīng qī tiān bù gōng zuò 。",
+          "explanation": "Đúng. Đoạn văn viết '星期六和星期天我不工作' (Thứ Bảy và Chủ Nhật tôi không làm việc), nên câu này đúng.",
+          "order": 5,
+          "options": null,
+          "correctAnswer": {
+            "value": true
+          }
+        },
+        {
+          "id": "rd-HSK2-x3-q6",
+          "type": "FILL_BLANK",
+          "prompt": "小明教孩子们______。",
+          "promptPinyin": "xiǎo míng jiào hái zi men _ _ _ _ _ _ 。",
+          "explanation": "Đoạn văn viết '我教孩子们汉语' (Tôi dạy bọn trẻ tiếng Hán), nên chỗ trống điền '汉语', xuất hiện nguyên văn trong đoạn.",
+          "order": 6,
+          "options": null,
+          "correctAnswer": {
+            "text": "汉语",
+            "accepted": [
+              "汉语"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "rd-HSK2-x4",
+      "title": "Đi xe buýt",
+      "titleZh": "坐公共汽车",
+      "hskLevel": "HSK2",
+      "passage": "我家离公司很远，每天我都坐公共汽车去上班。早上七点，我从家里出来，走五分钟到车站。公共汽车上人很多，有时候没有地方坐，我就站着。坐车要四十分钟，我常常看手机或者听音乐。我觉得坐公共汽车很方便，也不太贵，一次只要两块钱。到了公司，我不累，可以马上开始工作。",
+      "passagePinyin": "wǒ jiā lí gōng sī hěn yuǎn ， měi tiān wǒ dōu zuò gōng gòng qì chē qù shàng bān 。 zǎo shàng qī diǎn ， wǒ cóng jiā lǐ chū lái ， zǒu wǔ fēn zhōng dào chē zhàn 。 gōng gòng qì chē shàng rén hěn duō ， yǒu shí hòu méi yǒu dì fāng zuò ， wǒ jiù zhàn zhe 。 zuò chē yào sì shí fēn zhōng ， wǒ cháng cháng kàn shǒu jī huò zhě tīng yīn yuè 。 wǒ jué de zuò gōng gòng qì chē hěn fāng biàn ， yě bú tài guì ， yí cì zhǐ yào liǎng kuài qián 。 dào le gōng sī ， wǒ bú lèi ， kě yǐ mǎ shàng kāi shǐ gōng zuò 。",
+      "timeLimit": 600,
+      "order": 54,
+      "published": true,
+      "questions": [
+        {
+          "id": "rd-HSK2-x4-q1",
+          "type": "MCQ",
+          "prompt": "\"我\"每天怎么去上班？",
+          "promptPinyin": "\" wǒ \" měi tiān zěn me qù shàng bān ？",
+          "explanation": "Đoạn văn viết \"每天我都坐公共汽车去上班\" (mỗi ngày tôi đều đi xe buýt đi làm), nên đáp án là 坐公共汽车. Các lựa chọn taxi, tự lái, đi bộ đều không được nhắc đến.",
+          "order": 1,
+          "options": [
+            {
+              "text": "坐出租车",
+              "pinyin": "zuò chū zū chē"
+            },
+            {
+              "text": "坐公共汽车",
+              "pinyin": "zuò gōng gòng qì chē"
+            },
+            {
+              "text": "开车",
+              "pinyin": "kāi chē"
+            },
+            {
+              "text": "走路",
+              "pinyin": "zǒu lù"
+            }
+          ],
+          "correctAnswer": {
+            "index": 1,
+            "text": "坐公共汽车"
+          }
+        },
+        {
+          "id": "rd-HSK2-x4-q2",
+          "type": "MCQ",
+          "prompt": "坐公共汽车到公司要多长时间？",
+          "promptPinyin": "zuò gōng gòng qì chē dào gōng sī yào duō cháng shí jiān ？",
+          "explanation": "Trong đoạn có câu \"坐车要四十分钟\" (đi xe mất bốn mươi phút). 五分钟 là thời gian đi bộ ra bến xe, các đáp án còn lại không có trong đoạn.",
+          "order": 2,
+          "options": [
+            {
+              "text": "五分钟",
+              "pinyin": "wǔ fēn zhōng"
+            },
+            {
+              "text": "十分钟",
+              "pinyin": "shí fēn zhōng"
+            },
+            {
+              "text": "四十分钟",
+              "pinyin": "sì shí fēn zhōng"
+            },
+            {
+              "text": "两个小时",
+              "pinyin": "liǎng gè xiǎo shí"
+            }
+          ],
+          "correctAnswer": {
+            "index": 2,
+            "text": "四十分钟"
+          }
+        },
+        {
+          "id": "rd-HSK2-x4-q3",
+          "type": "TRUE_FALSE",
+          "prompt": "\"我\"家离公司很近。",
+          "promptPinyin": "\" wǒ \" jiā lí gōng sī hěn jìn 。",
+          "explanation": "Sai. Đoạn văn nói \"我家离公司很远\" (nhà tôi cách công ty rất xa), chứ không phải gần.",
+          "order": 3,
+          "options": null,
+          "correctAnswer": {
+            "value": false
+          }
+        },
+        {
+          "id": "rd-HSK2-x4-q4",
+          "type": "TRUE_FALSE",
+          "prompt": "坐公共汽车一次要两块钱。",
+          "promptPinyin": "zuò gōng gòng qì chē yí cì yào liǎng kuài qián 。",
+          "explanation": "Đúng. Đoạn văn viết \"一次只要两块钱\" (một lần chỉ tốn hai đồng), khớp với nội dung câu hỏi.",
+          "order": 4,
+          "options": null,
+          "correctAnswer": {
+            "value": true
+          }
+        },
+        {
+          "id": "rd-HSK2-x4-q5",
+          "type": "FILL_BLANK",
+          "prompt": "\"我\"觉得坐公共汽车很＿＿。",
+          "promptPinyin": "\" wǒ \" jué de zuò gōng gòng qì chē hěn ＿ ＿ 。",
+          "explanation": "Đoạn văn có câu \"我觉得坐公共汽车很方便\" (tôi thấy đi xe buýt rất tiện lợi), từ 方便 xuất hiện nguyên văn trong đoạn.",
+          "order": 5,
+          "options": null,
+          "correctAnswer": {
+            "text": "方便",
+            "accepted": [
+              "方便"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "rd-HSK2-x5",
+      "title": "Gọi điện hẹn bạn",
+      "titleZh": "打电话约朋友",
+      "hskLevel": "HSK2",
+      "passage": "今天是星期六，天气很好。上午九点，小明给他的朋友王红打电话。他说：\"你好，王红，你今天有时间吗？我想请你去看电影。\"王红说：\"好啊，我很喜欢看电影。我们几点去？\"小明说：\"下午两点，好不好？\"王红说：\"好的，我们在电影院门口见。\"小明很高兴，因为他们很久没有一起玩了。",
+      "passagePinyin": "jīn tiān shì xīng qī liù ， tiān qì hěn hǎo 。 shàng wǔ jiǔ diǎn ， xiǎo míng gěi tā de péng yǒu wáng hóng dǎ diàn huà 。 tā shuō ： \" nǐ hǎo ， wáng hóng ， nǐ jīn tiān yǒu shí jiān ma ？ wǒ xiǎng qǐng nǐ qù kàn diàn yǐng 。 \" wáng hóng shuō ： \" hǎo a ， wǒ hěn xǐ huan kàn diàn yǐng 。 wǒ men jǐ diǎn qù ？ \" xiǎo míng shuō ： \" xià wǔ liǎng diǎn ， hǎo bu hǎo ？ \" wáng hóng shuō ： \" hǎo de ， wǒ men zài diàn yǐng yuàn mén kǒu jiàn 。 \" xiǎo míng hěn gāo xìng ， yīn wèi tā men hěn jiǔ méi yǒu yì qǐ wán le 。",
+      "timeLimit": 600,
+      "order": 55,
+      "published": true,
+      "questions": [
+        {
+          "id": "rd-HSK2-x5-q1",
+          "type": "MCQ",
+          "prompt": "小明给王红打电话是想请她做什么？",
+          "promptPinyin": "xiǎo míng gěi wáng hóng dǎ diàn huà shì xiǎng qǐng tā zuò shén me ？",
+          "explanation": "Đoạn văn viết \"我想请你去看电影\" (Tôi muốn mời bạn đi xem phim), nên Tiểu Minh gọi điện để mời Vương Hồng đi xem phim. Các lựa chọn ăn cơm, mua đồ, đi học đều không xuất hiện.",
+          "order": 1,
+          "options": [
+            {
+              "text": "去看电影",
+              "pinyin": "qù kàn diàn yǐng"
+            },
+            {
+              "text": "去吃饭",
+              "pinyin": "qù chī fàn"
+            },
+            {
+              "text": "去买东西",
+              "pinyin": "qù mǎi dōng xī"
+            },
+            {
+              "text": "去上课",
+              "pinyin": "qù shàng kè"
+            }
+          ],
+          "correctAnswer": {
+            "index": 0,
+            "text": "去看电影"
+          }
+        },
+        {
+          "id": "rd-HSK2-x5-q2",
+          "type": "MCQ",
+          "prompt": "他们打算什么时候去看电影？",
+          "promptPinyin": "tā men dǎ suàn shén me shí hòu qù kàn diàn yǐng ？",
+          "explanation": "Tiểu Minh hỏi \"下午两点，好不好？\" và Vương Hồng đáp \"好的\", nên họ đi lúc 2 giờ chiều. \"上午九点\" là giờ gọi điện, không phải giờ đi xem phim.",
+          "order": 2,
+          "options": [
+            {
+              "text": "上午九点",
+              "pinyin": "shàng wǔ jiǔ diǎn"
+            },
+            {
+              "text": "下午两点",
+              "pinyin": "xià wǔ liǎng diǎn"
+            },
+            {
+              "text": "上午两点",
+              "pinyin": "shàng wǔ liǎng diǎn"
+            },
+            {
+              "text": "下午九点",
+              "pinyin": "xià wǔ jiǔ diǎn"
+            }
+          ],
+          "correctAnswer": {
+            "index": 1,
+            "text": "下午两点"
+          }
+        },
+        {
+          "id": "rd-HSK2-x5-q3",
+          "type": "TRUE_FALSE",
+          "prompt": "王红不喜欢看电影。",
+          "promptPinyin": "wáng hóng bù xǐ huan kàn diàn yǐng 。",
+          "explanation": "Sai. Vương Hồng nói \"我很喜欢看电影\" (Tôi rất thích xem phim), ngược lại với câu hỏi.",
+          "order": 3,
+          "options": null,
+          "correctAnswer": {
+            "value": false
+          }
+        },
+        {
+          "id": "rd-HSK2-x5-q4",
+          "type": "TRUE_FALSE",
+          "prompt": "他们打算在电影院门口见面。",
+          "promptPinyin": "tā men dǎ suàn zài diàn yǐng yuàn mén kǒu jiàn miàn 。",
+          "explanation": "Đúng. Vương Hồng nói \"我们在电影院门口见\" (Chúng ta gặp nhau ở trước cửa rạp chiếu phim).",
+          "order": 4,
+          "options": null,
+          "correctAnswer": {
+            "value": true
+          }
+        },
+        {
+          "id": "rd-HSK2-x5-q5",
+          "type": "FILL_BLANK",
+          "prompt": "小明很高兴，因为他们很久没有一起______了。",
+          "promptPinyin": "xiǎo míng hěn gāo xìng ， yīn wèi tā men hěn jiǔ méi yǒu yì qǐ _ _ _ _ _ _ liǎo 。",
+          "explanation": "Câu cuối đoạn văn viết \"因为他们很久没有一起玩了\", nên chỗ trống cần điền là \"玩\" (chơi). Từ này xuất hiện nguyên văn trong đoạn.",
+          "order": 5,
+          "options": null,
+          "correctAnswer": {
+            "text": "玩",
+            "accepted": [
+              "玩"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "rd-HSK2-x6",
+      "title": "Sự thay đổi thời tiết",
+      "titleZh": "天气变化",
+      "hskLevel": "HSK2",
+      "passage": "今天早上天气很好，太阳很大，也不冷。我和妹妹想去公园玩儿。可是中午的时候，天气开始变了。先是刮风，后来下雨了，还很冷。妈妈让我们回家，别在外面玩儿。她说：\"明天可能会下雪，你们要多穿衣服。\"我很高兴，因为我最喜欢下雪。下雪的时候，我可以和朋友一起玩儿。",
+      "passagePinyin": "jīn tiān zǎo shàng tiān qì hěn hǎo ， tài yáng hěn dà ， yě bù lěng 。 wǒ hé mèi mei xiǎng qù gōng yuán wán ér 。 kě shì zhōng wǔ de shí hòu ， tiān qì kāi shǐ biàn le 。 xiān shì guā fēng ， hòu lái xià yǔ le ， hái hěn lěng 。 mā ma ràng wǒ men huí jiā ， bié zài wài miàn wán ér 。 tā shuō ： \" míng tiān kě néng huì xià xuě ， nǐ men yào duō chuān yī fu 。 \" wǒ hěn gāo xìng ， yīn wèi wǒ zuì xǐ huan xià xuě 。 xià xuě de shí hòu ， wǒ kě yǐ hé péng yǒu yì qǐ wán ér 。",
+      "timeLimit": 600,
+      "order": 56,
+      "published": true,
+      "questions": [
+        {
+          "id": "rd-HSK2-x6-q1",
+          "type": "MCQ",
+          "prompt": "今天早上的天气怎么样？",
+          "promptPinyin": "jīn tiān zǎo shàng de tiān qì zěn me yàng ？",
+          "explanation": "Đoạn văn mở đầu: \"今天早上天气很好，太阳很大，也不冷\" (Sáng nay thời tiết rất đẹp, nắng to, cũng không lạnh). Các lựa chọn 很冷/下雨/刮大风 đều là thời tiết buổi trưa nên sai.",
+          "order": 1,
+          "options": [
+            {
+              "text": "很冷",
+              "pinyin": "hěn lěng"
+            },
+            {
+              "text": "下雨",
+              "pinyin": "xià yǔ"
+            },
+            {
+              "text": "很好，太阳很大",
+              "pinyin": "hěn hǎo ， tài yáng hěn dà"
+            },
+            {
+              "text": "刮大风",
+              "pinyin": "guā dà fēng"
+            }
+          ],
+          "correctAnswer": {
+            "index": 2,
+            "text": "很好，太阳很大"
+          }
+        },
+        {
+          "id": "rd-HSK2-x6-q2",
+          "type": "MCQ",
+          "prompt": "中午的时候，天气先怎么变了？",
+          "promptPinyin": "zhōng wǔ de shí hòu ， tiān qì xiān zěn me biàn le ？",
+          "explanation": "Câu \"先是刮风，后来下雨了\" cho thấy đầu tiên là nổi gió (刮风), sau đó mới mưa. Tuyết chỉ là dự báo ngày mai, còn nắng là buổi sáng.",
+          "order": 2,
+          "options": [
+            {
+              "text": "先下雪",
+              "pinyin": "xiān xià xuě"
+            },
+            {
+              "text": "先刮风",
+              "pinyin": "xiān guā fēng"
+            },
+            {
+              "text": "先下雨",
+              "pinyin": "xiān xià yǔ"
+            },
+            {
+              "text": "先出太阳",
+              "pinyin": "xiān chū tài yáng"
+            }
+          ],
+          "correctAnswer": {
+            "index": 1,
+            "text": "先刮风"
+          }
+        },
+        {
+          "id": "rd-HSK2-x6-q3",
+          "type": "TRUE_FALSE",
+          "prompt": "妈妈让他们回家。",
+          "promptPinyin": "mā ma ràng tā men huí jiā 。",
+          "explanation": "Đúng. Đoạn viết: \"妈妈让我们回家，别在外面玩儿\" (Mẹ bảo chúng tôi về nhà, đừng chơi ở bên ngoài).",
+          "order": 3,
+          "options": null,
+          "correctAnswer": {
+            "value": true
+          }
+        },
+        {
+          "id": "rd-HSK2-x6-q4",
+          "type": "TRUE_FALSE",
+          "prompt": "\"我\"不喜欢下雪。",
+          "promptPinyin": "\" wǒ \" bù xǐ huan xià xuě 。",
+          "explanation": "Sai. Đoạn viết: \"我最喜欢下雪\" (Tôi thích nhất là tuyết rơi), nên câu nói không thích tuyết là sai.",
+          "order": 4,
+          "options": null,
+          "correctAnswer": {
+            "value": false
+          }
+        },
+        {
+          "id": "rd-HSK2-x6-q5",
+          "type": "FILL_BLANK",
+          "prompt": "妈妈说，明天可能会下______。",
+          "promptPinyin": "mā ma shuō ， míng tiān kě néng huì xià _ _ _ _ _ _ 。",
+          "explanation": "Lời mẹ nói: \"明天可能会下雪\" (Ngày mai có thể sẽ có tuyết), nên chỗ trống điền \"雪\". Từ \"雪\" xuất hiện nguyên văn trong đoạn.",
+          "order": 5,
+          "options": null,
+          "correctAnswer": {
+            "text": "雪",
+            "accepted": [
+              "雪"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "rd-HSK3-x1",
+      "title": "Kế hoạch cuối tuần",
+      "titleZh": "周末的计划",
+      "hskLevel": "HSK3",
+      "passage": "这个星期五下午，小明和同学们一起讨论周末的计划。小明打算星期六上午去图书馆看书，因为他下个月要考试，需要多复习。星期六下午，他想和朋友一起去公园打篮球。如果天气不好，下雨的话，他们就在家里看电影。星期天，小明要陪爸爸妈妈去奶奶家吃饭，奶奶做的菜很好吃，他每次都吃得很多。晚上回家以后，他还要写作业，准备下个星期的课。小明觉得这个周末又忙又快乐。",
+      "passagePinyin": "zhè gè xīng qī wǔ xià wǔ ， xiǎo míng hé tóng xué men yì qǐ tǎo lùn zhōu mò de jì huà 。 xiǎo míng dǎ suàn xīng qī liù shàng wǔ qù tú shū guǎn kàn shū ， yīn wèi tā xià gè yuè yào kǎo shì ， xū yào duō fù xí 。 xīng qī liù xià wǔ ， tā xiǎng hé péng yǒu yì qǐ qù gōng yuán dǎ lán qiú 。 rú guǒ tiān qì bù hǎo ， xià yǔ de huà ， tā men jiù zài jiā lǐ kàn diàn yǐng 。 xīng qī tiān ， xiǎo míng yào péi bà ba mā ma qù nǎi nai jiā chī fàn ， nǎi nai zuò de cài hěn hǎo chī ， tā měi cì dōu chī dé hěn duō 。 wǎn shàng huí jiā yǐ hòu ， tā hái yào xiě zuò yè ， zhǔn bèi xià gè xīng qī de kè 。 xiǎo míng jué de zhè ge zhōu mò yòu máng yòu kuài lè 。",
+      "timeLimit": 720,
+      "order": 51,
+      "published": true,
+      "questions": [
+        {
+          "id": "rd-HSK3-x1-q1",
+          "type": "MCQ",
+          "prompt": "小明星期六上午打算做什么？",
+          "promptPinyin": "xiǎo míng xīng qī liù shàng wǔ dǎ suàn zuò shén me ？",
+          "explanation": "Đoạn văn viết: '小明打算星期六上午去图书馆看书' (Tiểu Minh dự định sáng thứ Bảy đi thư viện đọc sách). Các lựa chọn khác đều sai: đánh bóng rổ là chiều thứ Bảy, đến nhà bà nội là chủ nhật, xem phim chỉ khi trời mưa.",
+          "order": 1,
+          "options": [
+            {
+              "text": "去公园打篮球",
+              "pinyin": "qù gōng yuán dǎ lán qiú"
+            },
+            {
+              "text": "去图书馆看书",
+              "pinyin": "qù tú shū guǎn kàn shū"
+            },
+            {
+              "text": "去奶奶家吃饭",
+              "pinyin": "qù nǎi nai jiā chī fàn"
+            },
+            {
+              "text": "在家里看电影",
+              "pinyin": "zài jiā lǐ kàn diàn yǐng"
+            }
+          ],
+          "correctAnswer": {
+            "index": 1,
+            "text": "去图书馆看书"
+          }
+        },
+        {
+          "id": "rd-HSK3-x1-q2",
+          "type": "MCQ",
+          "prompt": "如果星期六下午下雨，小明和朋友会做什么？",
+          "promptPinyin": "rú guǒ xīng qī liù xià wǔ xià yǔ ， xiǎo míng hé péng yǒu huì zuò shén me ？",
+          "explanation": "Đoạn văn nói: '如果天气不好，下雨的话，他们就在家里看电影' (Nếu thời tiết xấu, trời mưa thì họ sẽ ở nhà xem phim). Đánh bóng rổ chỉ khi trời đẹp; các lựa chọn còn lại không liên quan điều kiện mưa.",
+          "order": 2,
+          "options": [
+            {
+              "text": "去公园打篮球",
+              "pinyin": "qù gōng yuán dǎ lán qiú"
+            },
+            {
+              "text": "去图书馆复习",
+              "pinyin": "qù tú shū guǎn fù xí"
+            },
+            {
+              "text": "在家里看电影",
+              "pinyin": "zài jiā lǐ kàn diàn yǐng"
+            },
+            {
+              "text": "去奶奶家吃饭",
+              "pinyin": "qù nǎi nai jiā chī fàn"
+            }
+          ],
+          "correctAnswer": {
+            "index": 2,
+            "text": "在家里看电影"
+          }
+        },
+        {
+          "id": "rd-HSK3-x1-q3",
+          "type": "TRUE_FALSE",
+          "prompt": "小明下个月要考试。",
+          "promptPinyin": "xiǎo míng xià gè yuè yào kǎo shì 。",
+          "explanation": "Đúng. Đoạn văn viết: '因为他下个月要考试，需要多复习' (vì tháng sau cậu ấy phải thi, cần ôn tập nhiều).",
+          "order": 3,
+          "options": null,
+          "correctAnswer": {
+            "value": true
+          }
+        },
+        {
+          "id": "rd-HSK3-x1-q4",
+          "type": "TRUE_FALSE",
+          "prompt": "小明觉得奶奶做的菜不好吃。",
+          "promptPinyin": "xiǎo míng jué de nǎi nai zuò de cài bù hǎo chī 。",
+          "explanation": "Sai. Đoạn văn viết: '奶奶做的菜很好吃，他每次都吃得很多' (món bà nội nấu rất ngon, mỗi lần cậu ấy đều ăn rất nhiều), nên món ăn ngon chứ không phải dở.",
+          "order": 4,
+          "options": null,
+          "correctAnswer": {
+            "value": false
+          }
+        },
+        {
+          "id": "rd-HSK3-x1-q5",
+          "type": "FILL_BLANK",
+          "prompt": "星期天，小明要陪爸爸妈妈去____家吃饭。",
+          "promptPinyin": "xīng qī tiān ， xiǎo míng yào péi bà ba mā ma qù _ _ _ _ jiā chī fàn 。",
+          "explanation": "Đoạn văn viết: '星期天，小明要陪爸爸妈妈去奶奶家吃饭' (Chủ nhật, Tiểu Minh phải cùng bố mẹ đến nhà bà nội ăn cơm), nên chỗ trống điền '奶奶' (xuất hiện nguyên văn trong đoạn).",
+          "order": 5,
+          "options": null,
+          "correctAnswer": {
+            "text": "奶奶",
+            "accepted": [
+              "奶奶"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "rd-HSK3-x2",
+      "title": "Thuê nhà",
+      "titleZh": "租房子",
+      "hskLevel": "HSK3",
+      "passage": "小王大学毕业以后，在北京找到了一份工作。为了上班方便，他想在公司附近租一间房子。上个星期六，他上网找了很多房子的信息，然后给房东打了电话。房东很热情，星期天下午带他去看了房子。这间房子不太大，但是很干净，离地铁站只要走五分钟，附近还有超市和银行，非常方便。房租一个月三千块钱，虽然有点儿贵，但是小王觉得可以接受。看完以后，他就决定租下来了。现在小王每天上班只要二十分钟，他很满意。",
+      "passagePinyin": "xiǎo wáng dà xué bì yè yǐ hòu ， zài běi jīng zhǎo dào le yí fèn gōng zuò 。 wèi le shàng bān fāng biàn ， tā xiǎng zài gōng sī fù jìn zū yì jiān fáng zi 。 shàng gè xīng qī liù ， tā shàng wǎng zhǎo le hěn duō fáng zi de xìn xī ， rán hòu gěi fáng dōng dǎ le diàn huà 。 fáng dōng hěn rè qíng ， xīng qī tiān xià wǔ dài tā qù kàn le fáng zi 。 zhè jiān fáng zǐ bú tài dà ， dàn shì hěn gān jìng ， lí dì tiě zhàn zhǐ yào zǒu wǔ fēn zhōng ， fù jìn hái yǒu chāo shì hé yín háng ， fēi cháng fāng biàn 。 fáng zū yí gè yuè sān qiān kuài qián ， suī rán yǒu diǎn ér guì ， dàn shì xiǎo wáng jué de kě yǐ jiē shòu 。 kàn wán yǐ hòu ， tā jiù jué dìng zū xià lái le 。 xiàn zài xiǎo wáng měi tiān shàng bān zhǐ yào èr shí fēn zhōng ， tā hěn mǎn yì 。",
+      "timeLimit": 720,
+      "order": 52,
+      "published": true,
+      "questions": [
+        {
+          "id": "rd-HSK3-x2-q1",
+          "type": "MCQ",
+          "prompt": "小王为什么想在公司附近租房子？",
+          "promptPinyin": "xiǎo wáng wèi shén me xiǎng zài gōng sī fù jìn zū fáng zi ？",
+          "explanation": "Đoạn văn viết: 「为了上班方便，他想在公司附近租一间房子」 (Để đi làm thuận tiện, anh ấy muốn thuê một căn nhà gần công ty). Vậy lý do là để đi làm thuận tiện. Ba lựa chọn còn lại (gần bố mẹ, thuê rẻ, gần trường học) đều không được nhắc đến.",
+          "order": 1,
+          "options": [
+            {
+              "text": "为了上班方便",
+              "pinyin": "wèi le shàng bān fāng biàn"
+            },
+            {
+              "text": "为了离父母近",
+              "pinyin": "wèi le lí fù mǔ jìn"
+            },
+            {
+              "text": "为了房租便宜",
+              "pinyin": "wèi le fáng zū pián yi"
+            },
+            {
+              "text": "为了旁边有学校",
+              "pinyin": "wèi le páng biān yǒu xué xiào"
+            }
+          ],
+          "correctAnswer": {
+            "index": 0,
+            "text": "为了上班方便"
+          }
+        },
+        {
+          "id": "rd-HSK3-x2-q2",
+          "type": "MCQ",
+          "prompt": "关于这间房子，下面哪个是对的？",
+          "promptPinyin": "guān yú zhè jiān fáng zi ， xià miàn nǎ gè shì duì de ？",
+          "explanation": "Đoạn văn nói: 「这间房子不太大，但是很干净，离地铁站只要走五分钟，附近还有超市和银行，非常方便」 — nhà sạch sẽ và tiện lợi (có siêu thị, ngân hàng, gần ga tàu điện ngầm). Đáp án đúng là 又干净又方便. Các lựa chọn sai vì: nhà không lớn, ga tàu chỉ đi 5 phút (không xa), gần đó có siêu thị.",
+          "order": 2,
+          "options": [
+            {
+              "text": "房子很大也很旧",
+              "pinyin": "fáng zi hěn dà yě hěn jiù"
+            },
+            {
+              "text": "离地铁站很远",
+              "pinyin": "lí dì tiě zhàn hěn yuǎn"
+            },
+            {
+              "text": "又干净又方便",
+              "pinyin": "yòu gān jìng yòu fāng biàn"
+            },
+            {
+              "text": "附近没有超市",
+              "pinyin": "fù jìn méi yǒu chāo shì"
+            }
+          ],
+          "correctAnswer": {
+            "index": 2,
+            "text": "又干净又方便"
+          }
+        },
+        {
+          "id": "rd-HSK3-x2-q3",
+          "type": "TRUE_FALSE",
+          "prompt": "小王上班现在只要二十分钟。",
+          "promptPinyin": "xiǎo wáng shàng bān xiàn zài zhǐ yào èr shí fēn zhōng 。",
+          "explanation": "Câu cuối đoạn văn: 「现在小王每天上班只要二十分钟」 (Bây giờ mỗi ngày anh Vương đi làm chỉ mất hai mươi phút). Vậy câu này ĐÚNG.",
+          "order": 3,
+          "options": null,
+          "correctAnswer": {
+            "value": true
+          }
+        },
+        {
+          "id": "rd-HSK3-x2-q4",
+          "type": "TRUE_FALSE",
+          "prompt": "这间房子的房租每个月两千块钱。",
+          "promptPinyin": "zhè jiān fáng zi de fáng zū měi gè yuè liǎng qiān kuài qián 。",
+          "explanation": "Đoạn văn ghi rõ: 「房租一个月三千块钱」 (Tiền thuê nhà một tháng ba nghìn tệ), không phải hai nghìn. Vậy câu này SAI.",
+          "order": 4,
+          "options": null,
+          "correctAnswer": {
+            "value": false
+          }
+        },
+        {
+          "id": "rd-HSK3-x2-q5",
+          "type": "FILL_BLANK",
+          "prompt": "从这间房子到地铁站只要走____分钟。",
+          "promptPinyin": "cóng zhè jiān fáng zi dào dì tiě zhàn zhǐ yào zǒu _ _ _ _ fēn zhōng 。",
+          "explanation": "Đoạn văn viết: 「离地铁站只要走五分钟」 (cách ga tàu điện ngầm chỉ cần đi bộ năm phút). Đáp án là 五 (năm), xuất hiện nguyên văn trong đoạn.",
+          "order": 5,
+          "options": null,
+          "correctAnswer": {
+            "text": "五",
+            "accepted": [
+              "五"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "rd-HSK3-x3",
+      "title": "Xin nghỉ đi khám bệnh",
+      "titleZh": "请假看病",
+      "hskLevel": "HSK3",
+      "passage": "昨天下午，小李突然觉得头很疼，身体也没有力气。他一量体温，发现自己发烧了，有三十八度五。他很担心，因为明天上午还有一个重要的会议。\n\n晚上，他给经理打电话请假。经理说：\"身体最重要，你别担心工作，先去医院看病吧。\"\n\n今天早上，小李去医院看了医生。医生检查以后告诉他，这只是感冒，不太严重。医生让他多喝热水，多休息，还给他开了一些药。回到家以后，小李吃了药，睡了一个下午。现在他觉得好多了，打算明天就去上班。",
+      "passagePinyin": "zuó tiān xià wǔ ， xiǎo lǐ tū rán jué de tóu hěn téng ， shēn tǐ yě méi yǒu lì qi 。 tā yì liáng tǐ wēn ， fā xiàn zì jǐ fā shāo le ， yǒu sān shí bā dù wǔ 。 tā hěn dān xīn ， yīn wèi míng tiān shàng wǔ hái yǒu yí gè zhòng yào de huì yì 。 \n \n wǎn shàng ， tā gěi jīng lǐ dǎ diàn huà qǐng jià 。 jīng lǐ shuō ： \" shēn tǐ zuì zhòng yào ， nǐ bié dān xīn gōng zuò ， xiān qù yī yuàn kàn bìng ba 。 \" \n \n jīn tiān zǎo shàng ， xiǎo lǐ qù yī yuàn kàn le yī shēng 。 yī shēng jiǎn chá yǐ hòu gào sù tā ， zhè zhǐ shì gǎn mào ， bú tài yán zhòng 。 yī shēng ràng tā duō hē rè shuǐ ， duō xiū xī ， hái gěi tā kāi le yì xiē yào 。 huí dào jiā yǐ hòu ， xiǎo lǐ chī le yào ， shuì le yí gè xià wǔ 。 xiàn zài tā jué de hǎo duō le ， dǎ suàn míng tiān jiù qù shàng bān 。",
+      "timeLimit": 720,
+      "order": 53,
+      "published": true,
+      "questions": [
+        {
+          "id": "rd-HSK3-x3-q1",
+          "type": "MCQ",
+          "prompt": "小李昨天下午怎么了？",
+          "promptPinyin": "xiǎo lǐ zuó tiān xià wǔ zěn me le ？",
+          "explanation": "Đoạn văn viết '小李突然觉得头很疼' và '发现自己发烧了，有三十八度五', nghĩa là anh ấy đau đầu và bị sốt. Vì vậy đáp án đúng là 'anh ấy đau đầu, bị sốt'. Các lựa chọn khác đều sai: anh ấy lo lắng chứ không vui, cuộc họp là ngày mai, và không đi du lịch.",
+          "order": 1,
+          "options": [
+            {
+              "text": "他很高兴",
+              "pinyin": "tā hěn gāo xìng"
+            },
+            {
+              "text": "他头疼、发烧了",
+              "pinyin": "tā tóu téng 、 fā shāo le"
+            },
+            {
+              "text": "他要开会",
+              "pinyin": "tā yào kāi huì"
+            },
+            {
+              "text": "他去旅游了",
+              "pinyin": "tā qù lǚ yóu le"
+            }
+          ],
+          "correctAnswer": {
+            "index": 1,
+            "text": "他头疼、发烧了"
+          }
+        },
+        {
+          "id": "rd-HSK3-x3-q2",
+          "type": "MCQ",
+          "prompt": "医生说小李得了什么病？",
+          "promptPinyin": "yī shēng shuō xiǎo lǐ dé le shén me bìng ？",
+          "explanation": "Bác sĩ nói '这只是感冒，不太严重' (đây chỉ là cảm cúm, không nghiêm trọng lắm), nên đáp án đúng là '只是感冒'. Các lựa chọn khác sai: không phải bệnh nặng, sốt 38.5 độ chứ không phải 40 độ, và anh ấy có bệnh.",
+          "order": 2,
+          "options": [
+            {
+              "text": "很严重的病",
+              "pinyin": "hěn yán zhòng de bìng"
+            },
+            {
+              "text": "只是感冒",
+              "pinyin": "zhǐ shì gǎn mào"
+            },
+            {
+              "text": "发烧四十度",
+              "pinyin": "fā shāo sì shí dù"
+            },
+            {
+              "text": "没有病",
+              "pinyin": "méi yǒu bìng"
+            }
+          ],
+          "correctAnswer": {
+            "index": 1,
+            "text": "只是感冒"
+          }
+        },
+        {
+          "id": "rd-HSK3-x3-q3",
+          "type": "TRUE_FALSE",
+          "prompt": "小李晚上给经理打电话请假。",
+          "promptPinyin": "xiǎo lǐ wǎn shàng gěi jīng lǐ dǎ diàn huà qǐng jià 。",
+          "explanation": "Đoạn văn ghi rõ '晚上，他给经理打电话请假', nghĩa là buổi tối anh ấy gọi điện cho quản lý để xin nghỉ. Câu này ĐÚNG.",
+          "order": 3,
+          "options": null,
+          "correctAnswer": {
+            "value": true
+          }
+        },
+        {
+          "id": "rd-HSK3-x3-q4",
+          "type": "TRUE_FALSE",
+          "prompt": "经理不同意小李请假，让他来上班。",
+          "promptPinyin": "jīng lǐ bù tóng yì xiǎo lǐ qǐng jià ， ràng tā lái shàng bān 。",
+          "explanation": "Quản lý nói '身体最重要，你别担心工作，先去医院看病吧' (sức khỏe quan trọng nhất, đừng lo công việc, đi khám bệnh trước đi), tức là ông ấy ĐỒNG Ý cho nghỉ. Vì vậy câu này SAI.",
+          "order": 4,
+          "options": null,
+          "correctAnswer": {
+            "value": false
+          }
+        },
+        {
+          "id": "rd-HSK3-x3-q5",
+          "type": "FILL_BLANK",
+          "prompt": "医生让小李多喝热水，多______，还给他开了一些药。",
+          "promptPinyin": "yī shēng ràng xiǎo lǐ duō hē rè shuǐ ， duō _ _ _ _ _ _ ， hái gěi tā kāi le yì xiē yào 。",
+          "explanation": "Đoạn văn viết '医生让他多喝热水，多休息，还给他开了一些药'. Từ cần điền là '休息' (nghỉ ngơi), xuất hiện nguyên văn trong đoạn.",
+          "order": 5,
+          "options": null,
+          "correctAnswer": {
+            "text": "休息",
+            "accepted": [
+              "休息"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "rd-HSK3-x4",
+      "title": "Phương pháp học tiếng Trung",
+      "titleZh": "学习中文的方法",
+      "hskLevel": "HSK3",
+      "passage": "很多人觉得学习中文很难，其实只要方法对了，中文就会变得容易一些。首先，我们每天都要花一点时间练习，比如听中文歌、看中文电影。这样又有意思，又能记住很多新词。其次，遇到不明白的问题，一定要问老师或者同学，不要害怕说错。最后，学习中文最重要的就是多说多用。你可以试着用中文写日记，也可以跟中国朋友聊天。虽然刚开始的时候会觉得很累，但是只要每天坚持，几个月以后，你一定会发现自己进步了很多。",
+      "passagePinyin": "hěn duō rén jué de xué xí zhōng wén hěn nán ， qí shí zhǐ yào fāng fǎ duì le ， zhōng wén jiù huì biàn dé róng yì yì xiē 。 shǒu xiān ， wǒ men měi tiān dōu yào huā yì diǎn shí jiān liàn xí ， bǐ rú tīng zhōng wén gē 、 kàn zhòng wén diàn yǐng 。 zhè yàng yòu yǒu yì sī ， yòu néng jì zhù hěn duō xīn cí 。 qí cì ， yù dào bù míng bái de wèn tí ， yí dìng yào wèn lǎo shī huò zhě tóng xué ， bú yào hài pà shuō cuò 。 zuì hòu ， xué xí zhōng wén zuì zhòng yào de jiù shì duō shuō duō yòng 。 nǐ kě yǐ shì zhe yòng zhōng wén xiě rì jì ， yě kě yǐ gēn zhōng guó péng yǒu liáo tiān 。 suī rán gāng kāi shǐ de shí hòu huì jué de hěn lèi ， dàn shì zhǐ yào měi tiān jiān chí ， jǐ gè yuè yǐ hòu ， nǐ yí dìng huì fā xiàn zì jǐ jìn bù le hěn duō 。",
+      "timeLimit": 720,
+      "order": 54,
+      "published": true,
+      "questions": [
+        {
+          "id": "rd-HSK3-x4-q1",
+          "type": "MCQ",
+          "prompt": "根据短文，为什么很多人觉得学习中文难？",
+          "promptPinyin": "gēn jù duǎn wén ， wèi shén me hěn duō rén jué de xué xí zhōng wén nán ？",
+          "explanation": "Đoạn văn viết '其实只要方法对了，中文就会变得容易一些', hàm ý người ta thấy khó vì chưa tìm được phương pháp đúng, nên đáp án là 'vì chưa tìm được phương pháp tốt'.",
+          "order": 1,
+          "options": [
+            {
+              "text": "因为没有找到好方法",
+              "pinyin": "yīn wèi méi yǒu zhǎo dào hǎo fāng fǎ"
+            },
+            {
+              "text": "因为没有中文老师",
+              "pinyin": "yīn wèi méi yǒu zhōng wén lǎo shī"
+            },
+            {
+              "text": "因为中文歌太多了",
+              "pinyin": "yīn wèi zhōng wén gē tài duō le"
+            },
+            {
+              "text": "因为没有时间睡觉",
+              "pinyin": "yīn wèi méi yǒu shí jiān shuì jiào"
+            }
+          ],
+          "correctAnswer": {
+            "index": 0,
+            "text": "因为没有找到好方法"
+          }
+        },
+        {
+          "id": "rd-HSK3-x4-q2",
+          "type": "MCQ",
+          "prompt": "短文认为学习中文最重要的是什么？",
+          "promptPinyin": "duǎn wén rèn wéi xué xí zhōng wén zuì zhòng yào de shì shén me ？",
+          "explanation": "Câu '学习中文最重要的就是多说多用' nói rõ điều quan trọng nhất là nói nhiều, dùng nhiều, nên chọn '多说多用'. Các việc khác (nghe nhạc, xem phim, hỏi thầy) có được nhắc nhưng không phải điều quan trọng nhất.",
+          "order": 2,
+          "options": [
+            {
+              "text": "多听中文歌",
+              "pinyin": "duō tīng zhōng wén gē"
+            },
+            {
+              "text": "多说多用",
+              "pinyin": "duō shuō duō yòng"
+            },
+            {
+              "text": "多看电影",
+              "pinyin": "duō kàn diàn yǐng"
+            },
+            {
+              "text": "多问老师",
+              "pinyin": "duō wèn lǎo shī"
+            }
+          ],
+          "correctAnswer": {
+            "index": 1,
+            "text": "多说多用"
+          }
+        },
+        {
+          "id": "rd-HSK3-x4-q3",
+          "type": "TRUE_FALSE",
+          "prompt": "根据短文，遇到不明白的问题应该问老师或者同学。",
+          "promptPinyin": "gēn jù duǎn wén ， yù dào bù míng bái de wèn tí yīng gāi wèn lǎo shī huò zhě tóng xué 。",
+          "explanation": "Đoạn văn nêu '遇到不明白的问题，一定要问老师或者同学', khớp với câu hỏi nên đáp án là ĐÚNG.",
+          "order": 3,
+          "options": null,
+          "correctAnswer": {
+            "value": true
+          }
+        },
+        {
+          "id": "rd-HSK3-x4-q4",
+          "type": "TRUE_FALSE",
+          "prompt": "短文说，只要一个星期，你就会发现自己进步了很多。",
+          "promptPinyin": "duǎn wén shuō ， zhǐ yào yí gè xīng qī ， nǐ jiù huì fā xiàn zì jǐ jìn bù le hěn duō 。",
+          "explanation": "Đoạn văn viết '几个月以后，你一定会发现自己进步了很多', là 'vài tháng' chứ không phải 'một tuần', nên câu này SAI.",
+          "order": 4,
+          "options": null,
+          "correctAnswer": {
+            "value": false
+          }
+        },
+        {
+          "id": "rd-HSK3-x4-q5",
+          "type": "FILL_BLANK",
+          "prompt": "短文建议你可以试着用中文写＿＿，也可以跟中国朋友聊天。",
+          "promptPinyin": "duǎn wén jiàn yì nǐ kě yǐ shì zhe yòng zhōng wén xiě ＿ ＿ ， yě kě yǐ gēn zhōng guó péng yǒu liáo tiān 。",
+          "explanation": "Câu '你可以试着用中文写日记，也可以跟中国朋友聊天' cho thấy chỗ trống điền '日记' (viết nhật ký), xuất hiện nguyên văn trong đoạn.",
+          "order": 5,
+          "options": null,
+          "correctAnswer": {
+            "text": "日记",
+            "accepted": [
+              "日记"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "rd-HSK3-x5",
+      "title": "Một buổi họp mặt",
+      "titleZh": "一次聚会",
+      "hskLevel": "HSK3",
+      "passage": "上个周末，我和几个大学同学一起聚会。我们已经三年没见面了，所以大家都很高兴。这次聚会是小李安排的，他选了一家中国饭馆，因为那儿的菜又便宜又好吃。\n\n我们下午六点在饭馆见面。见面以后，大家一边吃饭，一边聊天。有的人说自己现在的工作，有的人讲自己的旅行故事。小王还带来了很多以前的照片，我们看着照片，想起了大学的很多事情，都笑了起来。\n\n时间过得真快，不知不觉已经晚上十点了。虽然大家都不想走，但是第二天还要上班，所以只好回家了。我们决定，明年春天再聚一次。",
+      "passagePinyin": "shàng gè zhōu mò ， wǒ hé jǐ gè dà xué tóng xué yì qǐ jù huì 。 wǒ men yǐ jīng sān nián méi jiàn miàn le ， suǒ yǐ dà jiā dōu hěn gāo xìng 。 zhè cì jù huì shì xiǎo lǐ ān pái de ， tā xuǎn le yì jiā zhōng guó fàn guǎn ， yīn wèi nà ér de cài yòu pián yi yòu hǎo chī 。 \n \n wǒ men xià wǔ liù diǎn zài fàn guǎn jiàn miàn 。 jiàn miàn yǐ hòu ， dà jiā yì biān chī fàn ， yì biān liáo tiān 。 yǒu de rén shuō zì jǐ xiàn zài de gōng zuò ， yǒu de rén jiǎng zì jǐ de lǚ xíng gù shì 。 xiǎo wáng hái dài lái le hěn duō yǐ qián de zhào piàn ， wǒ men kàn zhe zhào piàn ， xiǎng qǐ le dà xué de hěn duō shì qíng ， dōu xiào le qǐ lái 。 \n \n shí jiān guò dé zhēn kuài ， bù zhī bù jué yǐ jīng wǎn shàng shí diǎn le 。 suī rán dà jiā dōu bù xiǎng zǒu ， dàn shì dì èr tiān hái yào shàng bān ， suǒ yǐ zhǐ hǎo huí jiā le 。 wǒ men jué dìng ， míng nián chūn tiān zài jù yí cì 。",
+      "timeLimit": 720,
+      "order": 55,
+      "published": true,
+      "questions": [
+        {
+          "id": "rd-HSK3-x5-q1",
+          "type": "MCQ",
+          "prompt": "这次聚会是谁安排的？",
+          "promptPinyin": "zhè cì jù huì shì shuí ān pái de ？",
+          "explanation": "Đoạn văn viết rõ 「这次聚会是小李安排的」 (Buổi họp mặt này do Tiểu Lý sắp xếp), nên đáp án là Tiểu Lý. Các lựa chọn khác đều không phù hợp: Tiểu Vương chỉ mang ảnh, tác giả là người tham dự, giáo viên không được nhắc đến.",
+          "order": 1,
+          "options": [
+            {
+              "text": "小王",
+              "pinyin": "xiǎo wáng"
+            },
+            {
+              "text": "小李",
+              "pinyin": "xiǎo lǐ"
+            },
+            {
+              "text": "作者",
+              "pinyin": "zuò zhě"
+            },
+            {
+              "text": "大学老师",
+              "pinyin": "dà xué lǎo shī"
+            }
+          ],
+          "correctAnswer": {
+            "index": 1,
+            "text": "小李"
+          }
+        },
+        {
+          "id": "rd-HSK3-x5-q2",
+          "type": "MCQ",
+          "prompt": "他们为什么选了那家中国饭馆？",
+          "promptPinyin": "tā men wèi shén me xuǎn le nà jiā zhōng guó fàn guǎn ？",
+          "explanation": "Đoạn văn nêu lý do 「因为那儿的菜又便宜又好吃」 (vì món ăn ở đó vừa rẻ vừa ngon), nên đáp án đúng là 「菜又便宜又好吃」. Các lý do khác (gần nhà, phục vụ tốt, yên tĩnh) đều không được đoạn văn đề cập.",
+          "order": 2,
+          "options": [
+            {
+              "text": "离家很近",
+              "pinyin": "lí jiā hěn jìn"
+            },
+            {
+              "text": "菜又便宜又好吃",
+              "pinyin": "cài yòu pián yi yòu hǎo chī"
+            },
+            {
+              "text": "服务很好",
+              "pinyin": "fú wù hěn hǎo"
+            },
+            {
+              "text": "很安静",
+              "pinyin": "hěn ān jìng"
+            }
+          ],
+          "correctAnswer": {
+            "index": 1,
+            "text": "菜又便宜又好吃"
+          }
+        },
+        {
+          "id": "rd-HSK3-x5-q3",
+          "type": "TRUE_FALSE",
+          "prompt": "小王带来了以前的照片。",
+          "promptPinyin": "xiǎo wáng dài lái le yǐ qián de zhào piàn 。",
+          "explanation": "Đúng. Đoạn văn viết 「小王还带来了很多以前的照片」 (Tiểu Vương còn mang đến rất nhiều ảnh cũ).",
+          "order": 3,
+          "options": null,
+          "correctAnswer": {
+            "value": true
+          }
+        },
+        {
+          "id": "rd-HSK3-x5-q4",
+          "type": "TRUE_FALSE",
+          "prompt": "聚会结束后，大家决定以后不再见面了。",
+          "promptPinyin": "jù huì jié shù hòu ， dà jiā jué dìng yǐ hòu bú zài jiàn miàn le 。",
+          "explanation": "Sai. Câu cuối viết 「我们决定，明年春天再聚一次」 (chúng tôi quyết định mùa xuân năm sau sẽ họp mặt lại một lần nữa), tức là họ vẫn sẽ gặp lại.",
+          "order": 4,
+          "options": null,
+          "correctAnswer": {
+            "value": false
+          }
+        },
+        {
+          "id": "rd-HSK3-x5-q5",
+          "type": "FILL_BLANK",
+          "prompt": "他们在饭馆见面的时间是下午______点。",
+          "promptPinyin": "tā men zài fàn guǎn jiàn miàn de shí jiān shì xià wǔ _ _ _ _ _ _ diǎn 。",
+          "explanation": "Đoạn văn viết 「我们下午六点在饭馆见面」 (chúng tôi gặp nhau ở nhà hàng lúc sáu giờ chiều), nên đáp án là 「六」, xuất hiện nguyên văn trong đoạn.",
+          "order": 5,
+          "options": null,
+          "correctAnswer": {
+            "text": "六",
+            "accepted": [
+              "六"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "rd-HSK3-x6",
+      "title": "Bảo vệ môi trường",
+      "titleZh": "保护环境",
+      "hskLevel": "HSK3",
+      "passage": "现在越来越多的人开始关心环境问题。我们的城市里有很多汽车，空气不太干净，河里的水也不像以前那么清了。其实，保护环境并不难，我们从小事就可以开始做。比如，出门的时候，如果不太远，我们可以骑自行车或者走路，这样又健康又能少用汽车。在家里，我们应该记得关灯、关水，别浪费。买东西的时候，最好自己带一个包，少用塑料袋。除了这些，我们还可以多种树。树能让空气变得更新鲜，也让我们的城市更漂亮。只要每个人都努力，我们的环境一定会越来越好。",
+      "passagePinyin": "xiàn zài yuè lái yuè duō de rén kāi shǐ guān xīn huán jìng wèn tí 。 wǒ men de chéng shì lǐ yǒu hěn duō qì chē ， kōng qì bú tài gān jìng ， hé lǐ de shuǐ yě bú xiàng yǐ qián nà me qīng le 。 qí shí ， bǎo hù huán jìng bìng bù nán ， wǒ men cóng xiǎo shì jiù kě yǐ kāi shǐ zuò 。 bǐ rú ， chū mén de shí hòu ， rú guǒ bú tài yuǎn ， wǒ men kě yǐ qí zì xíng chē huò zhě zǒu lù ， zhè yàng yòu jiàn kāng yòu néng shǎo yòng qì chē 。 zài jiā lǐ ， wǒ men yīng gāi jì de guān dēng 、 guān shuǐ ， bié làng fèi 。 mǎi dōng xī de shí hòu ， zuì hǎo zì jǐ dài yí gè bāo ， shǎo yòng sù liào dài 。 chú le zhè xiē ， wǒ men hái kě yǐ duō zhòng shù 。 shù néng ràng kōng qì biàn de gēng xīn xiān ， yě ràng wǒ men de chéng shì gèng piào liang 。 zhǐ yào měi gè rén dōu nǔ lì ， wǒ men de huán jìng yí dìng huì yuè lái yuè hǎo 。",
+      "timeLimit": 720,
+      "order": 56,
+      "published": true,
+      "questions": [
+        {
+          "id": "rd-HSK3-x6-q1",
+          "type": "MCQ",
+          "prompt": "根据短文，为什么城市里的空气不太干净？",
+          "promptPinyin": "gēn jù duǎn wén ， wèi shén me chéng shì lǐ de kōng qì bú tài gān jìng ？",
+          "explanation": "Đoạn văn viết: 我们的城市里有很多汽车，空气不太干净 (thành phố có nhiều xe hơi, không khí không sạch lắm). Vì vậy đáp án đúng là 因为有很多汽车 (vì có nhiều xe hơi). Các lựa chọn mưa nhiều/cây nhiều/người ít đều không được đoạn nhắc đến.",
+          "order": 1,
+          "options": [
+            {
+              "text": "因为有很多汽车",
+              "pinyin": "yīn wèi yǒu hěn duō qì chē"
+            },
+            {
+              "text": "因为下雨太多",
+              "pinyin": "yīn wèi xià yǔ tài duō"
+            },
+            {
+              "text": "因为树太多了",
+              "pinyin": "yīn wèi shù tài duō le"
+            },
+            {
+              "text": "因为人太少了",
+              "pinyin": "yīn wèi rén tài shǎo le"
+            }
+          ],
+          "correctAnswer": {
+            "index": 0,
+            "text": "因为有很多汽车"
+          }
+        },
+        {
+          "id": "rd-HSK3-x6-q2",
+          "type": "MCQ",
+          "prompt": "下面哪个不是短文里说的保护环境的方法？",
+          "promptPinyin": "xià miàn nǎ gè bú shì duǎn wén lǐ shuō de bǎo hù huán jìng de fāng fǎ ？",
+          "explanation": "Đoạn văn nêu các cách: đi xe đạp/đi bộ, nhớ tắt đèn tắt nước, tự mang túi để ít dùng túi nilon, trồng nhiều cây. 每天开车去很远的地方 (mỗi ngày lái xe đi nơi rất xa) KHÔNG được nhắc đến và trái với ý bảo vệ môi trường, nên đây là đáp án đúng cho câu hỏi phủ định.",
+          "order": 2,
+          "options": [
+            {
+              "text": "骑自行车或者走路",
+              "pinyin": "qí zì xíng chē huò zhě zǒu lù"
+            },
+            {
+              "text": "记得关灯、关水",
+              "pinyin": "jì de guān dēng 、 guān shuǐ"
+            },
+            {
+              "text": "自己带包，少用塑料袋",
+              "pinyin": "zì jǐ dài bāo ， shǎo yòng sù liào dài"
+            },
+            {
+              "text": "每天开车去很远的地方",
+              "pinyin": "měi tiān kāi chē qù hěn yuǎn de dì fāng"
+            }
+          ],
+          "correctAnswer": {
+            "index": 3,
+            "text": "每天开车去很远的地方"
+          }
+        },
+        {
+          "id": "rd-HSK3-x6-q3",
+          "type": "TRUE_FALSE",
+          "prompt": "短文认为保护环境是一件很难的事情。",
+          "promptPinyin": "duǎn wén rèn wéi bǎo hù huán jìng shì yí jiàn hěn nán de shì qíng 。",
+          "explanation": "Đoạn văn viết rõ: 其实，保护环境并不难 (thật ra, bảo vệ môi trường không hề khó). Vì vậy nhận định này SAI.",
+          "order": 3,
+          "options": null,
+          "correctAnswer": {
+            "value": false
+          }
+        },
+        {
+          "id": "rd-HSK3-x6-q4",
+          "type": "TRUE_FALSE",
+          "prompt": "短文说多种树能让空气变得更新鲜。",
+          "promptPinyin": "duǎn wén shuō duō zhòng shù néng ràng kōng qì biàn de gēng xīn xiān 。",
+          "explanation": "Đoạn văn viết: 我们还可以多种树。树能让空气变得更新鲜 (chúng ta có thể trồng nhiều cây. Cây làm cho không khí trở nên trong lành hơn). Vì vậy nhận định này ĐÚNG.",
+          "order": 4,
+          "options": null,
+          "correctAnswer": {
+            "value": true
+          }
+        },
+        {
+          "id": "rd-HSK3-x6-q5",
+          "type": "FILL_BLANK",
+          "prompt": "买东西的时候，最好自己带一个包，少用________。",
+          "promptPinyin": "mǎi dōng xī de shí hòu ， zuì hǎo zì jǐ dài yí gè bāo ， shǎo yòng _ _ _ _ _ _ _ _ 。",
+          "explanation": "Đoạn văn viết nguyên văn: 买东西的时候，最好自己带一个包，少用塑料袋 (khi mua đồ, tốt nhất tự mang một cái túi, ít dùng túi nilon). Đáp án cần điền là 塑料袋.",
+          "order": 5,
+          "options": null,
+          "correctAnswer": {
+            "text": "塑料袋",
+            "accepted": [
+              "塑料袋"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "rd-HSK4-x1",
+      "title": "Phỏng vấn xin việc",
+      "titleZh": "求职面试",
+      "hskLevel": "HSK4",
+      "passage": "大学毕业以后，小李去了一家很有名的公司参加面试。面试那天，他特意提前半个小时到了公司，因为他觉得准时非常重要。面试的时候，经理问了他很多问题，比如为什么想来这家公司工作、以前有没有相关的经验等等。小李虽然有点儿紧张，但是回答得很认真。经理还问他：\"如果遇到困难，你会怎么办？\"小李说，他会先自己想办法解决，如果实在不行，再向同事或者领导请求帮助。经理听了很满意，觉得他是一个又努力又诚实的年轻人。面试结束的时候，经理告诉他，下个星期会给他打电话通知结果。三天以后，小李就接到了那家公司的电话，他成功地得到了这份工作。",
+      "passagePinyin": "dà xué bì yè yǐ hòu ， xiǎo lǐ qù le yì jiā hěn yǒu míng de gōng sī cān jiā miàn shì 。 miàn shì nà tiān ， tā tè yì tí qián bàn gè xiǎo shí dào le gōng sī ， yīn wèi tā jué de zhǔn shí fēi cháng zhòng yào 。 miàn shì de shí hòu ， jīng lǐ wèn le tā hěn duō wèn tí ， bǐ rú wèi shén me xiǎng lái zhè jiā gōng sī gōng zuò 、 yǐ qián yǒu méi yǒu xiāng guān de jīng yàn děng děng 。 xiǎo lǐ suī rán yǒu diǎn er jǐn zhāng ， dàn shì huí dá dé hěn rèn zhēn 。 jīng lǐ hái wèn tā ： \" rú guǒ yù dào kùn nán ， nǐ huì zěn me bàn ？ \" xiǎo lǐ shuō ， tā huì xiān zì jǐ xiǎng bàn fǎ jiě jué ， rú guǒ shí zài bù xíng ， zài xiàng tóng shì huò zhě lǐng dǎo qǐng qiú bāng zhù 。 jīng lǐ tīng le hěn mǎn yì ， jué de tā shì yí gè yòu nǔ lì yòu chéng shí de nián qīng rén 。 miàn shì jié shù de shí hòu ， jīng lǐ gào sù tā ， xià gè xīng qī huì gěi tā dǎ diàn huà tōng zhī jié guǒ 。 sān tiān yǐ hòu ， xiǎo lǐ jiù jiē dào le nà jiā gōng sī de diàn huà ， tā chéng gōng dì dé dào le zhè fèn gōng zuò 。",
+      "timeLimit": 900,
+      "order": 51,
+      "published": true,
+      "questions": [
+        {
+          "id": "rd-HSK4-x1-q1",
+          "type": "MCQ",
+          "prompt": "小李为什么提前半个小时到公司？",
+          "promptPinyin": "xiǎo lǐ wèi shén me tí qián bàn gè xiǎo shí dào gōng sī ？",
+          "explanation": "Đoạn văn viết: '他特意提前半个小时到了公司，因为他觉得准时非常重要' (anh ấy cố ý đến sớm nửa tiếng vì cho rằng đúng giờ rất quan trọng). Do đó đáp án đúng là lựa chọn thứ hai. Các lựa chọn khác (công ty xa nhà, giám đốc bảo đến sớm, đi ăn sáng) không được nhắc đến trong đoạn.",
+          "order": 1,
+          "options": [
+            {
+              "text": "因为公司离家很远",
+              "pinyin": "yīn wèi gōng sī lí jiā hěn yuǎn"
+            },
+            {
+              "text": "因为他觉得准时很重要",
+              "pinyin": "yīn wèi tā jué de zhǔn shí hěn zhòng yào"
+            },
+            {
+              "text": "因为经理让他早点儿来",
+              "pinyin": "yīn wèi jīng lǐ ràng tā zǎo diǎn ér lái"
+            },
+            {
+              "text": "因为他要先吃早饭",
+              "pinyin": "yīn wèi tā yào xiān chī zǎo fàn"
+            }
+          ],
+          "correctAnswer": {
+            "index": 1,
+            "text": "因为他觉得准时很重要"
+          }
+        },
+        {
+          "id": "rd-HSK4-x1-q2",
+          "type": "MCQ",
+          "prompt": "经理为什么对小李很满意？",
+          "promptPinyin": "jīng lǐ wèi shén me duì xiǎo lǐ hěn mǎn yì ？",
+          "explanation": "Đoạn văn viết: '经理听了很满意，觉得他是一个又努力又诚实的年轻人' (giám đốc nghe xong rất hài lòng, cho rằng anh ấy là một người trẻ vừa nỗ lực vừa trung thực). Vì vậy đáp án là 'lại chăm chỉ lại trung thực'. Lý do hài lòng gắn với câu trả lời về cách giải quyết khó khăn, không phải việc đến sớm.",
+          "order": 2,
+          "options": [
+            {
+              "text": "因为他很有名",
+              "pinyin": "yīn wèi tā hěn yǒu míng"
+            },
+            {
+              "text": "因为他去过很多公司",
+              "pinyin": "yīn wèi tā qù guò hěn duō gōng sī"
+            },
+            {
+              "text": "因为他又努力又诚实",
+              "pinyin": "yīn wèi tā yòu nǔ lì yòu chéng shí"
+            },
+            {
+              "text": "因为他提前到了公司",
+              "pinyin": "yīn wèi tā tí qián dào le gōng sī"
+            }
+          ],
+          "correctAnswer": {
+            "index": 2,
+            "text": "因为他又努力又诚实"
+          }
+        },
+        {
+          "id": "rd-HSK4-x1-q3",
+          "type": "TRUE_FALSE",
+          "prompt": "遇到困难的时候，小李会马上向领导请求帮助。",
+          "promptPinyin": "yù dào kùn nán de shí hòu ， xiǎo lǐ huì mǎ shàng xiàng lǐng dǎo qǐng qiú bāng zhù 。",
+          "explanation": "Sai. Đoạn văn nói: '他会先自己想办法解决，如果实在不行，再向同事或者领导请求帮助' (anh ấy sẽ tự tìm cách giải quyết trước, nếu thật sự không được mới nhờ đồng nghiệp hoặc lãnh đạo giúp), chứ không phải lập tức nhờ lãnh đạo.",
+          "order": 3,
+          "options": null,
+          "correctAnswer": {
+            "value": false
+          }
+        },
+        {
+          "id": "rd-HSK4-x1-q4",
+          "type": "TRUE_FALSE",
+          "prompt": "小李最后得到了这份工作。",
+          "promptPinyin": "xiǎo lǐ zuì hòu dé dào le zhè fèn gōng zuò 。",
+          "explanation": "Đúng. Câu cuối đoạn viết: '他成功地得到了这份工作' (anh ấy đã thành công có được công việc này).",
+          "order": 4,
+          "options": null,
+          "correctAnswer": {
+            "value": true
+          }
+        },
+        {
+          "id": "rd-HSK4-x1-q5",
+          "type": "FILL_BLANK",
+          "prompt": "面试结束时，经理说下个星期会给小李打电话通知______。",
+          "promptPinyin": "miàn shì jié shù shí ， jīng lǐ shuō xià gè xīng qī huì gěi xiǎo lǐ dǎ diàn huà tōng zhī _ _ _ _ _ _ 。",
+          "explanation": "Đoạn văn viết: '经理告诉他，下个星期会给他打电话通知结果' (giám đốc nói tuần sau sẽ gọi điện thông báo kết quả). Từ cần điền là '结果' (kết quả), xuất hiện nguyên văn trong đoạn.",
+          "order": 5,
+          "options": null,
+          "correctAnswer": {
+            "text": "结果",
+            "accepted": [
+              "结果"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "rd-HSK4-x2",
+      "title": "Internet và cuộc sống của chúng ta",
+      "titleZh": "网络与我们的生活",
+      "hskLevel": "HSK4",
+      "passage": "现在，网络已经成为我们生活中很重要的一部分。以前，人们想要了解新闻，只能看电视或者读报纸。可是现在不一样了，只要有一部手机，我们随时随地都能知道世界上发生的事情。\n\n网络给我们的生活带来了很多方便。比如，我们可以在网上买东西、看电影、和朋友聊天，还可以学习各种各样的知识。很多人也喜欢在网上写文章，把自己的想法和别人分享。\n\n不过，网络也有一些问题。网上的消息很多，但是并不是所有的消息都是真的。有的人为了让更多人关注，故意写一些假新闻。所以，我们看到网上的消息时，一定要认真想一想，不要马上就相信。只有这样，我们才能更好地利用网络。",
+      "passagePinyin": "xiàn zài ， wǎng luò yǐ jīng chéng wéi wǒ men shēng huó zhōng hěn zhòng yào de yí bù fen 。 yǐ qián ， rén men xiǎng yào liǎo jiě xīn wén ， zhǐ néng kàn diàn shì huò zhě dú bào zhǐ 。 kě shì xiàn zài bù yí yàng le ， zhǐ yào yǒu yí bù shǒu jī ， wǒ men suí shí suí dì dōu néng zhī dào shì jiè shàng fā shēng de shì qíng 。 \n \n wǎng luò gěi wǒ men de shēng huó dài lái le hěn duō fāng biàn 。 bǐ rú ， wǒ men kě yǐ zài wǎng shàng mǎi dōng xī 、 kàn diàn yǐng 、 hé péng yǒu liáo tiān ， hái kě yǐ xué xí gè zhǒng gè yàng de zhī shi 。 hěn duō rén yě xǐ huan zài wǎng shàng xiě wén zhāng ， bǎ zì jǐ de xiǎng fǎ hé bié rén fēn xiǎng 。 \n \n bú guò ， wǎng luò yě yǒu yì xiē wèn tí 。 wǎng shàng de xiāo xī hěn duō ， dàn shì bìng bú shì suǒ yǒu de xiāo xī dōu shì zhēn de 。 yǒu de rén wéi le ràng gèng duō rén guān zhù ， gù yì xiě yì xiē jiǎ xīn wén 。 suǒ yǐ ， wǒ men kàn dào wǎng shàng de xiāo xī shí ， yí dìng yào rèn zhēn xiǎng yi xiǎng ， bú yào mǎ shàng jiù xiāng xìn 。 zhǐ yǒu zhè yàng ， wǒ men cái néng gèng hǎo dì lì yòng wǎng luò 。",
+      "timeLimit": 900,
+      "order": 52,
+      "published": true,
+      "questions": [
+        {
+          "id": "rd-HSK4-x2-q1",
+          "type": "MCQ",
+          "prompt": "以前人们想了解新闻，只能怎么做？",
+          "promptPinyin": "yǐ qián rén men xiǎng liǎo jiě xīn wén ， zhǐ néng zěn me zuò ？",
+          "explanation": "Đoạn văn viết: '以前，人们想要了解新闻，只能看电视或者读报纸' (Trước đây, người ta muốn biết tin tức chỉ có thể xem tivi hoặc đọc báo). Các lựa chọn 上网查/问朋友/听广播 đều không được nhắc đến.",
+          "order": 1,
+          "options": [
+            {
+              "text": "上网查",
+              "pinyin": "shàng wǎng chá"
+            },
+            {
+              "text": "看电视或读报纸",
+              "pinyin": "kàn diàn shì huò dú bào zhǐ"
+            },
+            {
+              "text": "问朋友",
+              "pinyin": "wèn péng yǒu"
+            },
+            {
+              "text": "听广播",
+              "pinyin": "tīng guǎng bō"
+            }
+          ],
+          "correctAnswer": {
+            "index": 1,
+            "text": "看电视或读报纸"
+          }
+        },
+        {
+          "id": "rd-HSK4-x2-q2",
+          "type": "MCQ",
+          "prompt": "有的人为什么故意写假新闻？",
+          "promptPinyin": "yǒu de rén wèi shén me gù yì xiě jiǎ xīn wén ？",
+          "explanation": "Đoạn văn nói rõ: '有的人为了让更多人关注，故意写一些假新闻' (Có người vì muốn nhiều người quan tâm hơn nên cố ý viết tin giả). Các lý do khác không có trong đoạn.",
+          "order": 2,
+          "options": [
+            {
+              "text": "为了赚钱",
+              "pinyin": "wèi le zhuàn qián"
+            },
+            {
+              "text": "为了让更多人关注",
+              "pinyin": "wèi le ràng gèng duō rén guān zhù"
+            },
+            {
+              "text": "为了学习知识",
+              "pinyin": "wèi le xué xí zhī shi"
+            },
+            {
+              "text": "为了和朋友分享",
+              "pinyin": "wèi le hé péng yǒu fēn xiǎng"
+            }
+          ],
+          "correctAnswer": {
+            "index": 1,
+            "text": "为了让更多人关注"
+          }
+        },
+        {
+          "id": "rd-HSK4-x2-q3",
+          "type": "MCQ",
+          "prompt": "根据短文，我们看到网上的消息时应该怎么做？",
+          "promptPinyin": "gēn jù duǎn wén ， wǒ men kàn dào wǎng shàng de xiāo xī shí yīng gāi zěn me zuò ？",
+          "explanation": "Đoạn văn viết: '我们看到网上的消息时，一定要认真想一想，不要马上就相信' (Khi thấy tin trên mạng, nhất định phải suy nghĩ kỹ, đừng vội tin ngay). Các lựa chọn khác trái với ý đoạn văn.",
+          "order": 3,
+          "options": [
+            {
+              "text": "马上相信",
+              "pinyin": "mǎ shàng xiāng xìn"
+            },
+            {
+              "text": "认真想一想，不要马上相信",
+              "pinyin": "rèn zhēn xiǎng yi xiǎng ， bú yào mǎ shàng xiāng xìn"
+            },
+            {
+              "text": "不看网上的消息",
+              "pinyin": "bú kàn wǎng shàng de xiāo xī"
+            },
+            {
+              "text": "只看电视新闻",
+              "pinyin": "zhī kàn diàn shì xīn wén"
+            }
+          ],
+          "correctAnswer": {
+            "index": 1,
+            "text": "认真想一想，不要马上相信"
+          }
+        },
+        {
+          "id": "rd-HSK4-x2-q4",
+          "type": "TRUE_FALSE",
+          "prompt": "网上所有的消息都是真的。",
+          "promptPinyin": "wǎng shàng suǒ yǒu de xiāo xī dōu shì zhēn de 。",
+          "explanation": "Sai. Đoạn văn viết: '网上的消息很多，但是并不是所有的消息都是真的' (Tin trên mạng rất nhiều, nhưng không phải tất cả tin đều là thật).",
+          "order": 4,
+          "options": null,
+          "correctAnswer": {
+            "value": false
+          }
+        },
+        {
+          "id": "rd-HSK4-x2-q5",
+          "type": "TRUE_FALSE",
+          "prompt": "只要有一部手机，我们随时随地都能知道世界上发生的事情。",
+          "promptPinyin": "zhǐ yào yǒu yí bù shǒu jī ， wǒ men suí shí suí dì dōu néng zhī dào shì jiè shàng fā shēng de shì qíng 。",
+          "explanation": "Đúng. Đoạn văn viết: '只要有一部手机，我们随时随地都能知道世界上发生的事情' (Chỉ cần có một chiếc điện thoại, chúng ta bất cứ lúc nào ở bất cứ đâu đều có thể biết chuyện xảy ra trên thế giới).",
+          "order": 5,
+          "options": null,
+          "correctAnswer": {
+            "value": true
+          }
+        },
+        {
+          "id": "rd-HSK4-x2-q6",
+          "type": "FILL_BLANK",
+          "prompt": "看到网上的消息时，我们一定要认真想一想，不要马上就______。",
+          "promptPinyin": "kàn dào wǎng shàng de xiāo xī shí ， wǒ men yí dìng yào rèn zhēn xiǎng yi xiǎng ， bú yào mǎ shàng jiù _ _ _ _ _ _ 。",
+          "explanation": "Đoạn văn viết: '我们看到网上的消息时，一定要认真想一想，不要马上就相信' (Khi thấy tin trên mạng, nhất định phải suy nghĩ kỹ, đừng vội tin ngay). Từ điền vào là '相信' (tin), xuất hiện nguyên văn trong đoạn.",
+          "order": 6,
+          "options": null,
+          "correctAnswer": {
+            "text": "相信",
+            "accepted": [
+              "相信"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "rd-HSK4-x3",
+      "title": "Lối sống lành mạnh",
+      "titleZh": "健康的生活方式",
+      "hskLevel": "HSK4",
+      "passage": "现在越来越多的人开始重视健康的生活方式。其实，想要有一个健康的身体，并不像大家想的那么难。首先，我们应该按时吃饭，多吃水果和蔬菜，少吃油大的东西。其次，每天要保证有足够的睡眠，最好晚上十一点以前睡觉，因为睡得太晚对身体不好。除了饮食和睡眠，运动也非常重要。医生建议我们每个星期至少运动三次，每次三十分钟左右，比如跑步、游泳或者打篮球都可以。另外，保持愉快的心情同样值得注意，压力太大的时候，可以听听音乐，或者和朋友聊聊天。只要我们坚持这样做，就一定能让自己变得更健康。健康的生活方式看起来简单，可是真正做到并不容易，关键在于每天坚持。",
+      "passagePinyin": "xiàn zài yuè lái yuè duō de rén kāi shǐ zhòng shì jiàn kāng de shēng huó fāng shì 。 qí shí ， xiǎng yào yǒu yí gè jiàn kāng de shēn tǐ ， bìng bú xiàng dà jiā xiǎng de nà me nán 。 shǒu xiān ， wǒ men yìng gāi àn shí chī fàn ， duō chī shuǐ guǒ hé shū cài ， shǎo chī yóu dà de dōng xī 。 qí cì ， měi tiān yào bǎo zhèng yǒu zú gòu de shuì mián ， zuì hǎo wǎn shàng shí yī diǎn yǐ qián shuì jiào ， yīn wèi shuì dé tài wǎn duì shēn tǐ bù hǎo 。 chú le yǐn shí hé shuì mián ， yùn dòng yě fēi cháng zhòng yào 。 yī shēng jiàn yì wǒ men měi gè xīng qī zhì shǎo yùn dòng sān cì ， měi cì sān shí fēn zhōng zuǒ yòu ， bǐ rú pǎo bù 、 yóu yǒng huò zhě dǎ lán qiú dōu kě yǐ 。 lìng wài ， bǎo chí yú kuài de xīn qíng tóng yàng zhí dé zhù yì ， yā lì tài dà de shí hòu ， kě yǐ tīng tīng yīn yuè ， huò zhě hé péng yǒu liáo liáo tiān 。 zhǐ yào wǒ men jiān chí zhè yàng zuò ， jiù yí dìng néng ràng zì jǐ biàn de gèng jiàn kāng 。 jiàn kāng de shēng huó fāng shì kàn qǐ lái jiǎn dān ， kě shì zhēn zhèng zuò dào bìng bù róng yì ， guān jiàn zài yú měi tiān jiān chí 。",
+      "timeLimit": 900,
+      "order": 53,
+      "published": true,
+      "questions": [
+        {
+          "id": "rd-HSK4-x3-q1",
+          "type": "MCQ",
+          "prompt": "根据短文，医生建议我们每个星期运动多少次？",
+          "promptPinyin": "gēn jù duǎn wén ， yī shēng jiàn yì wǒ men měi gè xīng qī yùn dòng duō shǎo cì ？",
+          "explanation": "Đoạn văn viết '医生建议我们每个星期至少运动三次' (bác sĩ khuyên chúng ta mỗi tuần vận động ít nhất ba lần), nên đáp án là '至少三次'.",
+          "order": 1,
+          "options": [
+            {
+              "text": "至少两次",
+              "pinyin": "zhì shǎo liǎng cì"
+            },
+            {
+              "text": "至少三次",
+              "pinyin": "zhì shǎo sān cì"
+            },
+            {
+              "text": "至少四次",
+              "pinyin": "zhì shǎo sì cì"
+            },
+            {
+              "text": "至少五次",
+              "pinyin": "zhì shǎo wǔ cì"
+            }
+          ],
+          "correctAnswer": {
+            "index": 1,
+            "text": "至少三次"
+          }
+        },
+        {
+          "id": "rd-HSK4-x3-q2",
+          "type": "MCQ",
+          "prompt": "关于健康的饮食，下面哪个说法是对的？",
+          "promptPinyin": "guān yú jiàn kāng de yǐn shí ， xià miàn nǎ gè shuō fǎ shì duì de ？",
+          "explanation": "Đoạn văn nêu '我们应该按时吃饭，多吃水果和蔬菜，少吃油大的东西', do đó '应该按时吃饭' (nên ăn cơm đúng giờ) là đúng, còn các lựa chọn khác đều trái với nội dung.",
+          "order": 2,
+          "options": [
+            {
+              "text": "应该多吃油大的东西",
+              "pinyin": "yīng gāi duō chī yóu dà de dōng xī"
+            },
+            {
+              "text": "应该少吃水果和蔬菜",
+              "pinyin": "yīng gāi shǎo chī shuǐ guǒ hé shū cài"
+            },
+            {
+              "text": "应该按时吃饭",
+              "pinyin": "yīng gāi àn shí chī fàn"
+            },
+            {
+              "text": "应该不吃早饭",
+              "pinyin": "yīng gāi bù chī zǎo fàn"
+            }
+          ],
+          "correctAnswer": {
+            "index": 2,
+            "text": "应该按时吃饭"
+          }
+        },
+        {
+          "id": "rd-HSK4-x3-q3",
+          "type": "TRUE_FALSE",
+          "prompt": "短文认为睡得太晚对身体不好。",
+          "promptPinyin": "duǎn wén rèn wéi shuì dé tài wǎn duì shēn tǐ bù hǎo 。",
+          "explanation": "Đúng. Đoạn văn viết rõ '最好晚上十一点以前睡觉，因为睡得太晚对身体不好' (ngủ quá muộn không tốt cho sức khỏe).",
+          "order": 3,
+          "options": null,
+          "correctAnswer": {
+            "value": true
+          }
+        },
+        {
+          "id": "rd-HSK4-x3-q4",
+          "type": "TRUE_FALSE",
+          "prompt": "短文说，拥有健康的身体是一件非常难的事情。",
+          "promptPinyin": "duǎn wén shuō ， yōng yǒu jiàn kāng de shēn tǐ shì yí jiàn fēi cháng nán de shì qíng 。",
+          "explanation": "Sai. Đoạn văn nói '想要有一个健康的身体，并不像大家想的那么难' (không khó như mọi người nghĩ), trái với ý câu hỏi.",
+          "order": 4,
+          "options": null,
+          "correctAnswer": {
+            "value": false
+          }
+        },
+        {
+          "id": "rd-HSK4-x3-q5",
+          "type": "FILL_BLANK",
+          "prompt": "压力太大的时候，可以听听音乐，或者和朋友＿＿＿＿。",
+          "promptPinyin": "yā lì tài dà de shí hòu ， kě yǐ tīng tīng yīn yuè ， huò zhě hé péng yǒu ＿ ＿ ＿ ＿ 。",
+          "explanation": "Đoạn văn viết '压力太大的时候，可以听听音乐，或者和朋友聊聊天', nên chỗ trống điền '聊聊天' (trò chuyện).",
+          "order": 5,
+          "options": null,
+          "correctAnswer": {
+            "text": "聊聊天",
+            "accepted": [
+              "聊聊天"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "rd-HSK4-x4",
+      "title": "Học ở trường và tự học",
+      "titleZh": "在学校学习和自己学习",
+      "hskLevel": "HSK4",
+      "passage": "很多人认为，学习只是在学校里的事情。其实，离开学校以后，学习也非常重要。在学校里，老师会告诉我们应该学什么、怎么学，还会帮我们回答问题。但是走进社会以后，没有人再像老师那样每天提醒我们，所以我们必须学会自己安排时间，自己解决遇到的困难。\n\n我有一个朋友，他大学毕业以后没有停止学习。每天晚上，他都会花一个小时看书或者上网学习新知识。他说，只有不断学习，才能让自己变得更优秀，才能找到更好的工作。刚开始的时候，他也觉得很难坚持，但是慢慢地就习惯了。\n\n其实，学习并不一定要在教室里。生活中到处都是学习的机会。只要我们愿意努力，愿意花时间，无论多大年纪，都可以继续进步。",
+      "passagePinyin": "hěn duō rén rèn wéi ， xué xí zhǐ shì zài xué xiào lǐ de shì qíng 。 qí shí ， lí kāi xué xiào yǐ hòu ， xué xí yě fēi cháng zhòng yào 。 zài xué xiào lǐ ， lǎo shī huì gào sù wǒ men yīng gāi xué shén me 、 zěn me xué ， hái huì bāng wǒ men huí dá wèn tí 。 dàn shì zǒu jìn shè huì yǐ hòu ， méi yǒu rén zài xiàng lǎo shī nà yàng měi tiān tí xǐng wǒ men ， suǒ yǐ wǒ men bì xū xué huì zì jǐ ān pái shí jiān ， zì jǐ jiě jué yù dào de kùn nán 。 \n \n wǒ yǒu yí gè péng yǒu ， tā dà xué bì yè yǐ hòu méi yǒu tíng zhǐ xué xí 。 měi tiān wǎn shàng ， tā dōu huì huā yí gè xiǎo shí kàn shū huò zhě shàng wǎng xué xí xīn zhī shi 。 tā shuō ， zhǐ yǒu bú duàn xué xí ， cái néng ràng zì jǐ biàn de gèng yōu xiù ， cái néng zhǎo dào gèng hǎo de gōng zuò 。 gāng kāi shǐ de shí hòu ， tā yě jué de hěn nán jiān chí ， dàn shì màn màn dì jiù xí guàn le 。 \n \n qí shí ， xué xí bìng bù yí dìng yào zài jiào shì lǐ 。 shēng huó zhōng dào chù dōu shì xué xí de jī huì 。 zhǐ yào wǒ men yuàn yì nǔ lì ， yuàn yì huā shí jiān ， wú lùn duō dà nián jì ， dōu kě yǐ jì xù jìn bù 。",
+      "timeLimit": 900,
+      "order": 54,
+      "published": true,
+      "questions": [
+        {
+          "id": "rd-HSK4-x4-q1",
+          "type": "MCQ",
+          "prompt": "根据这篇文章，在学校里老师会做什么？",
+          "promptPinyin": "gēn jù zhè piān wén zhāng ， zài xué xiào lǐ lǎo shī huì zuò shén me ？",
+          "explanation": "Đoạn văn viết: 在学校里，老师会告诉我们应该学什么、怎么学 (ở trường, thầy cô sẽ nói cho chúng ta biết nên học gì, học thế nào). Các lựa chọn khác đều không được đoạn nhắc tới. Đáp án đúng là lựa chọn thứ hai.",
+          "order": 1,
+          "options": [
+            {
+              "text": "帮我们安排晚上的时间",
+              "pinyin": "bāng wǒ men ān pái wǎn shàng de shí jiān"
+            },
+            {
+              "text": "告诉我们应该学什么、怎么学",
+              "pinyin": "gào sù wǒ men yīng gāi xué shén me 、 zěn me xué"
+            },
+            {
+              "text": "替我们找更好的工作",
+              "pinyin": "tì wǒ men zhǎo gèng hǎo de gōng zuò"
+            },
+            {
+              "text": "每天陪我们上网学习",
+              "pinyin": "měi tiān péi wǒ men shàng wǎng xué xí"
+            }
+          ],
+          "correctAnswer": {
+            "index": 1,
+            "text": "告诉我们应该学什么、怎么学"
+          }
+        },
+        {
+          "id": "rd-HSK4-x4-q2",
+          "type": "MCQ",
+          "prompt": "那位朋友为什么大学毕业后还继续学习？",
+          "promptPinyin": "nà wèi péng yǒu wèi shén me dà xué bì yè hòu hái jì xù xué xí ？",
+          "explanation": "Người bạn nói: 只有不断学习，才能让自己变得更优秀，才能找到更好的工作 (chỉ có không ngừng học mới khiến bản thân giỏi hơn, mới tìm được công việc tốt hơn). Đáp án là lựa chọn thứ ba; các lựa chọn khác mâu thuẫn với đoạn.",
+          "order": 2,
+          "options": [
+            {
+              "text": "因为老师每天提醒他",
+              "pinyin": "yīn wèi lǎo shī měi tiān tí xǐng tā"
+            },
+            {
+              "text": "因为他觉得学习很容易",
+              "pinyin": "yīn wèi tā jué de xué xí hěn róng yì"
+            },
+            {
+              "text": "因为只有不断学习才能变得更优秀",
+              "pinyin": "yīn wèi zhǐ yǒu bú duàn xué xí cái néng biàn de gèng yōu xiù"
+            },
+            {
+              "text": "因为他没有找到工作",
+              "pinyin": "yīn wèi tā méi yǒu zhǎo dào gōng zuò"
+            }
+          ],
+          "correctAnswer": {
+            "index": 2,
+            "text": "因为只有不断学习才能变得更优秀"
+          }
+        },
+        {
+          "id": "rd-HSK4-x4-q3",
+          "type": "TRUE_FALSE",
+          "prompt": "这位朋友一开始就很容易坚持每天学习。",
+          "promptPinyin": "zhè wèi péng yǒu yì kāi shǐ jiù hěn róng yì jiān chí měi tiān xué xí 。",
+          "explanation": "Sai. Đoạn văn viết: 刚开始的时候，他也觉得很难坚持，但是慢慢地就习惯了 (lúc mới đầu anh ấy cũng thấy rất khó kiên trì, nhưng dần dần thì quen). Vậy ban đầu không hề dễ dàng.",
+          "order": 3,
+          "options": null,
+          "correctAnswer": {
+            "value": false
+          }
+        },
+        {
+          "id": "rd-HSK4-x4-q4",
+          "type": "TRUE_FALSE",
+          "prompt": "文章认为学习只能在教室里进行。",
+          "promptPinyin": "wén zhāng rèn wéi xué xí zhǐ néng zài jiào shì lǐ jìn xíng 。",
+          "explanation": "Sai. Đoạn văn viết: 学习并不一定要在教室里。生活中到处都是学习的机会 (học tập không nhất định phải ở trong lớp học; trong cuộc sống đâu đâu cũng có cơ hội học tập).",
+          "order": 4,
+          "options": null,
+          "correctAnswer": {
+            "value": false
+          }
+        },
+        {
+          "id": "rd-HSK4-x4-q5",
+          "type": "FILL_BLANK",
+          "prompt": "根据文章，那位朋友每天晚上花＿＿＿看书或者上网学习新知识。",
+          "promptPinyin": "gēn jù wén zhāng ， nà wèi péng yǒu měi tiān wǎn shàng huā ＿ ＿ ＿ kàn shū huò zhě shàng wǎng xué xí xīn zhī shi 。",
+          "explanation": "Đoạn văn viết: 每天晚上，他都会花一个小时看书或者上网学习新知识 (mỗi tối anh ấy đều dành một tiếng đồng hồ để đọc sách hoặc lên mạng học kiến thức mới). Đáp án 一个小时 xuất hiện nguyên văn trong đoạn.",
+          "order": 5,
+          "options": null,
+          "correctAnswer": {
+            "text": "一个小时",
+            "accepted": [
+              "一个小时"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "rd-HSK4-x5",
+      "title": "Một chuyến du lịch khó quên",
+      "titleZh": "一次难忘的旅行",
+      "hskLevel": "HSK4",
+      "passage": "去年夏天，我和几个大学同学一起去了云南旅行。这是我第一次去那么远的地方，所以特别激动。我们坐了十几个小时的火车才到，虽然有点累，但是一看到那里美丽的风景，就把累忘记了。\n\n云南的天气很舒服，不冷也不热。我们参观了很多有名的地方，还尝了当地的特色小吃，味道又香又辣。最让我难忘的是在山上看日出。那天早上，我们四点就起床了，爬了一个多小时才到山顶。当太阳慢慢升起来的时候，天空变得越来越红，非常漂亮。大家都拿出手机拍照，激动得说不出话来。\n\n这次旅行让我明白了，只要愿意努力，就能看到最美的风景。以后有机会，我一定还要再去一次。",
+      "passagePinyin": "qù nián xià tiān ， wǒ hé jǐ gè dà xué tóng xué yì qǐ qù le yún nán lǚ xíng 。 zhè shì wǒ dì yí cì qù nà me yuǎn de dì fāng ， suǒ yǐ tè bié jī dòng 。 wǒ men zuò le shí jǐ gè xiǎo shí de huǒ chē cái dào ， suī rán yǒu diǎn lèi ， dàn shì yí kàn dào nà lǐ měi lì de fēng jǐng ， jiù bǎ lèi wàng jì le 。 \n \n yún nán de tiān qì hěn shū fú ， bù lěng yě bú rè 。 wǒ men cān guān le hěn duō yǒu míng de dì fāng ， hái cháng le dāng dì de tè sè xiǎo chī ， wèi dào yòu xiāng yòu là 。 zuì ràng wǒ nán wàng de shì zài shān shàng kàn rì chū 。 nà tiān zǎo shàng ， wǒ men sì diǎn jiù qǐ chuáng le ， pá le yí gè duō xiǎo shí cái dào shān dǐng 。 dāng tài yáng màn màn shēng qǐ lái de shí hòu ， tiān kōng biàn de yuè lái yuè hóng ， fēi cháng piào liang 。 dà jiā dōu ná chū shǒu jī pāi zhào ， jī dòng dé shuō bù chū huà lái 。 \n \n zhè cì lǚ xíng ràng wǒ míng bái le ， zhǐ yào yuàn yì nǔ lì ， jiù néng kàn dào zuì měi de fēng jǐng 。 yǐ hòu yǒu jī huì ， wǒ yí dìng hái yào zài qù yí cì 。",
+      "timeLimit": 900,
+      "order": 55,
+      "published": true,
+      "questions": [
+        {
+          "id": "rd-HSK4-x5-q1",
+          "type": "MCQ",
+          "prompt": "作者是和谁一起去云南旅行的？",
+          "promptPinyin": "zuò zhě shì hé shuí yì qǐ qù yún nán lǚ xíng de ？",
+          "explanation": "Đoạn văn viết \"我和几个大学同学一起去了云南旅行\" (tôi và mấy người bạn đại học cùng đi du lịch Vân Nam), nên đáp án là bạn học đại học. Các lựa chọn khác (gia đình, đồng nghiệp, một mình) đều không có trong đoạn.",
+          "order": 1,
+          "options": [
+            {
+              "text": "家人",
+              "pinyin": "jiā rén"
+            },
+            {
+              "text": "大学同学",
+              "pinyin": "dà xué tóng xué"
+            },
+            {
+              "text": "同事",
+              "pinyin": "tóng shì"
+            },
+            {
+              "text": "一个人",
+              "pinyin": "yí gè rén"
+            }
+          ],
+          "correctAnswer": {
+            "index": 1,
+            "text": "大学同学"
+          }
+        },
+        {
+          "id": "rd-HSK4-x5-q2",
+          "type": "MCQ",
+          "prompt": "他们为了在山上看日出，那天早上几点起床？",
+          "promptPinyin": "tā men wèi le zài shān shàng kàn rì chū ， nà tiān zǎo shàng jǐ diǎn qǐ chuáng ？",
+          "explanation": "Đoạn văn nói \"那天早上，我们四点就起床了\" (sáng hôm đó chúng tôi bốn giờ đã dậy), vì vậy đáp án là bốn giờ; các mốc giờ khác không xuất hiện.",
+          "order": 2,
+          "options": [
+            {
+              "text": "三点",
+              "pinyin": "sān diǎn"
+            },
+            {
+              "text": "四点",
+              "pinyin": "sì diǎn"
+            },
+            {
+              "text": "五点",
+              "pinyin": "wǔ diǎn"
+            },
+            {
+              "text": "六点",
+              "pinyin": "liù diǎn"
+            }
+          ],
+          "correctAnswer": {
+            "index": 1,
+            "text": "四点"
+          }
+        },
+        {
+          "id": "rd-HSK4-x5-q3",
+          "type": "TRUE_FALSE",
+          "prompt": "他们是坐飞机去云南的。",
+          "promptPinyin": "tā men shì zuò fēi jī qù yún nán de 。",
+          "explanation": "Sai. Đoạn văn viết \"我们坐了十几个小时的火车才到\" (chúng tôi ngồi hơn mười tiếng tàu hỏa mới tới), họ đi bằng tàu hỏa chứ không phải máy bay.",
+          "order": 3,
+          "options": null,
+          "correctAnswer": {
+            "value": false
+          }
+        },
+        {
+          "id": "rd-HSK4-x5-q4",
+          "type": "TRUE_FALSE",
+          "prompt": "当地的特色小吃味道又香又辣。",
+          "promptPinyin": "dāng dì de tè sè xiǎo chī wèi dào yòu xiāng yòu là 。",
+          "explanation": "Đúng. Đoạn văn viết \"还尝了当地的特色小吃，味道又香又辣\" (còn nếm thử món ăn đặc sản địa phương, vị vừa thơm vừa cay).",
+          "order": 4,
+          "options": null,
+          "correctAnswer": {
+            "value": true
+          }
+        },
+        {
+          "id": "rd-HSK4-x5-q5",
+          "type": "FILL_BLANK",
+          "prompt": "这次旅行让作者明白：只要愿意努力，就能看到最美的______。",
+          "promptPinyin": "zhè cì lǚ xíng ràng zuò zhě míng bái ： zhǐ yào yuàn yì nǔ lì ， jiù néng kàn dào zuì měi de _ _ _ _ _ _ 。",
+          "explanation": "Câu cuối đoạn viết \"只要愿意努力，就能看到最美的风景\" (chỉ cần chịu cố gắng thì có thể nhìn thấy phong cảnh đẹp nhất), nên chỗ trống điền \"风景\" (xuất hiện nguyên văn trong đoạn).",
+          "order": 5,
+          "options": null,
+          "correctAnswer": {
+            "text": "风景",
+            "accepted": [
+              "风景"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "rd-HSK4-x6",
+      "title": "Chi tiêu hợp lý",
+      "titleZh": "合理消费",
+      "hskLevel": "HSK4",
+      "passage": "现在很多年轻人喜欢网上购物，因为又方便又便宜。但是不少人发现，虽然每次买的东西不贵，可是一个月下来花的钱却比以前多了很多。为什么会这样呢？其实，问题就在于他们没有合理消费。\n\n要想合理消费，首先应该分清楚哪些东西是自己真正需要的，哪些只是自己想要的。买东西以前，最好先想一想：这个东西我以后会经常用吗？如果答案是\"不会\"，那么就不用着急买。\n\n其次，购物的时候不要只看价格便宜。有些东西虽然当时很便宜，但是质量不好，用不了多长时间就坏了，最后反而更浪费钱。\n\n最后，可以每个月给自己定一个花钱的计划，这样就能清楚地知道自己的钱都花在了什么地方，慢慢地就会养成合理消费的好习惯。",
+      "passagePinyin": "xiàn zài hěn duō nián qīng rén xǐ huan wǎng shàng gòu wù ， yīn wèi yòu fāng biàn yòu biàn yí 。 dàn shì bù shǎo rén fā xiàn ， suī rán měi cì mǎi de dōng xī bú guì ， kě shì yí gè yuè xià lái huā de qián què bǐ yǐ qián duō le hěn duō 。 wèi shén me huì zhè yàng ne ？ qí shí ， wèn tí jiù zài yú tā men méi yǒu hé lǐ xiāo fèi 。 \n \n yào xiǎng hé lǐ xiāo fèi ， shǒu xiān yīng gāi fēn qīng chǔ nǎ xiē dōng xī shì zì jǐ zhēn zhèng xū yào de ， nǎ xiē zhī shì zì jǐ xiǎng yào de 。 mǎi dōng xī yǐ qián ， zuì hǎo xiān xiǎng yi xiǎng ： zhè ge dōng xī wǒ yǐ hòu huì jīng cháng yòng ma ？ rú guǒ dá àn shì \" bú huì \" ， nà me jiù bú yòng zháo jí mǎi 。 \n \n qí cì ， gòu wù de shí hòu bú yào zhī kàn jià gé pián yi 。 yǒu xiē dōng xī suī rán dāng shí hěn pián yi ， dàn shì zhì liàng bù hǎo ， yòng bù liǎo duō cháng shí jiān jiù huài le ， zuì hòu fǎn ér gèng làng fèi qián 。 \n \n zuì hòu ， kě yǐ měi gè yuè gěi zì jǐ dìng yí gè huā qián de jì huà ， zhè yàng jiù néng qīng chǔ dì zhī dào zì jǐ de qián dōu huā zài le shén me dì fāng ， màn màn dì jiù huì yǎng chéng hé lǐ xiāo fèi de hǎo xí guàn 。",
+      "timeLimit": 900,
+      "order": 56,
+      "published": true,
+      "questions": [
+        {
+          "id": "rd-HSK4-x6-q1",
+          "type": "MCQ",
+          "prompt": "很多年轻人喜欢网上购物的原因是什么？",
+          "promptPinyin": "hěn duō nián qīng rén xǐ huan wǎng shàng gòu wù de yuán yīn shì shén me ？",
+          "explanation": "Đoạn đầu nêu rõ: 现在很多年轻人喜欢网上购物，因为又方便又便宜 (thích mua sắm online vì vừa tiện lợi vừa rẻ). Các lựa chọn khác không được đoạn văn nhắc tới.",
+          "order": 1,
+          "options": [
+            {
+              "text": "又方便又便宜",
+              "pinyin": "yòu fāng biàn yòu pián yi"
+            },
+            {
+              "text": "东西质量很好",
+              "pinyin": "dōng xī zhì liàng hěn hǎo"
+            },
+            {
+              "text": "可以省很多时间",
+              "pinyin": "kě yǐ shěng hěn duō shí jiān"
+            },
+            {
+              "text": "朋友都在网上买",
+              "pinyin": "péng yǒu dōu zài wǎng shàng mǎi"
+            }
+          ],
+          "correctAnswer": {
+            "index": 0,
+            "text": "又方便又便宜"
+          }
+        },
+        {
+          "id": "rd-HSK4-x6-q2",
+          "type": "MCQ",
+          "prompt": "根据短文，买东西以前最好先想什么？",
+          "promptPinyin": "gēn jù duǎn wén ， mǎi dōng xī yǐ qián zuì hǎo xiān xiǎng shén me ？",
+          "explanation": "Đoạn 2 viết: 买东西以前，最好先想一想：这个东西我以后会经常用吗？ (trước khi mua nên nghĩ xem sau này có thường dùng không). Các phương án còn lại không phải điều đoạn văn khuyên nghĩ tới.",
+          "order": 2,
+          "options": [
+            {
+              "text": "东西贵不贵",
+              "pinyin": "dōng xī guì bu guì"
+            },
+            {
+              "text": "在哪儿买最好",
+              "pinyin": "zài nǎ ér mǎi zuì hǎo"
+            },
+            {
+              "text": "这个东西以后会不会经常用",
+              "pinyin": "zhè ge dōng xī yǐ hòu huì bu huì jīng cháng yòng"
+            },
+            {
+              "text": "别人有没有买过",
+              "pinyin": "bié rén yǒu méi yǒu mǎi guò"
+            }
+          ],
+          "correctAnswer": {
+            "index": 2,
+            "text": "这个东西以后会不会经常用"
+          }
+        },
+        {
+          "id": "rd-HSK4-x6-q3",
+          "type": "TRUE_FALSE",
+          "prompt": "有些东西虽然便宜，但是质量不好，反而更浪费钱。",
+          "promptPinyin": "yǒu xiē dōng xī suī rán pián yi ， dàn shì zhì liàng bù hǎo ， fǎn ér gèng làng fèi qián 。",
+          "explanation": "Đúng. Đoạn 3: 有些东西虽然当时很便宜，但是质量不好……最后反而更浪费钱 (có món tuy rẻ nhưng chất lượng kém, cuối cùng lại càng tốn tiền hơn).",
+          "order": 3,
+          "options": null,
+          "correctAnswer": {
+            "value": true
+          }
+        },
+        {
+          "id": "rd-HSK4-x6-q4",
+          "type": "TRUE_FALSE",
+          "prompt": "短文认为买东西的时候应该只看价格便宜。",
+          "promptPinyin": "duǎn wén rèn wéi mǎi dōng xī de shí hòu yīng gāi zhī kàn jià gé pián yi 。",
+          "explanation": "Sai. Đoạn 3 nói ngược lại: 购物的时候不要只看价格便宜 (khi mua sắm đừng chỉ nhìn giá rẻ).",
+          "order": 4,
+          "options": null,
+          "correctAnswer": {
+            "value": false
+          }
+        },
+        {
+          "id": "rd-HSK4-x6-q5",
+          "type": "FILL_BLANK",
+          "prompt": "每个月给自己定一个花钱的________，慢慢地就会养成合理消费的好习惯。",
+          "promptPinyin": "měi gè yuè gěi zì jǐ dìng yí gè huā qián de _ _ _ _ _ _ _ _ ， màn màn dì jiù huì yǎng chéng hé lǐ xiāo fèi de hǎo xí guàn 。",
+          "explanation": "Đoạn cuối: 可以每个月给自己定一个花钱的计划……慢慢地就会养成合理消费的好习惯 (mỗi tháng lập một kế hoạch chi tiêu). Từ cần điền là 计划, xuất hiện nguyên văn trong đoạn.",
+          "order": 5,
+          "options": null,
+          "correctAnswer": {
+            "text": "计划",
+            "accepted": [
+              "计划"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "rd-HSK5-x1",
+      "title": "Sức hút của văn hóa truyền thống",
+      "titleZh": "传统文化的魅力",
+      "hskLevel": "HSK5",
+      "passage": "近年来，越来越多的年轻人开始对传统文化产生浓厚的兴趣。过去，不少人认为传统文化又古老又无聊，跟现代生活没有什么关系。然而，随着社会的发展，人们逐渐意识到，传统文化其实包含着丰富的智慧和独特的魅力。\n\n以书法为例，它不仅是一种写字的方式，更是一门表达情感的艺术。练习书法时，人们需要保持内心的平静，这对缓解压力很有帮助。此外，像京剧、茶艺、剪纸这样的传统技艺，也重新受到大家的欢迎。许多城市专门举办各种活动，让年轻人有机会亲身体验这些文化。\n\n值得注意的是，如今传统文化的传播方式也发生了很大的变化。借助网络和短视频，一些原本不太出名的手工艺人变成了受欢迎的博主，他们把制作过程拍成视频分享给观众，吸引了成千上万的粉丝。这种方式让古老的文化以更加生动的形式走进了人们的日常生活。\n\n专家指出，保护传统文化并不意味着完全回到过去，而是要在继承的基础上不断创新。只有把传统与现代结合起来，传统文化才能真正焕发出新的活力。",
+      "passagePinyin": "jìn nián lái ， yuè lái yuè duō de nián qīng rén kāi shǐ duì chuán tǒng wén huà chǎn shēng nóng hòu de xìng qù 。 guò qù ， bù shǎo rén rèn wèi chuán tǒng wén huà yòu gǔ lǎo yòu wú liáo ， gēn xiàn dài shēng huó méi yǒu shén me guān xì 。 rán ér ， suí zhe shè huì de fā zhǎn ， rén men zhú jiàn yì shí dào ， chuán tǒng wén huà qí shí bāo hán zhe fēng fù de zhì huì hé dú tè de mèi lì 。 \n \n yǐ shū fǎ wèi lì ， tā bù jǐn shì yì zhǒng xiě zì de fāng shì ， gèng shì yì mén biǎo dá qíng gǎn de yì shù 。 liàn xí shū fǎ shí ， rén men xū yào bǎo chí nèi xīn de píng jìng ， zhè duì huǎn jiě yā lì hěn yǒu bāng zhù 。 cǐ wài ， xiàng jīng jù 、 chá yì 、 jiǎn zhǐ zhè yàng de chuán tǒng jì yì ， yě chóng xīn shòu dào dà jiā de huān yíng 。 xǔ duō chéng shì zhuān mén jǔ bàn gè zhǒng huó dòng ， ràng nián qīng rén yǒu jī huì qīn shēn tǐ yàn zhè xiē wén huà 。 \n \n zhí dé zhù yì de shì ， rú jīn chuán tǒng wén huà de chuán bō fāng shì yě fā shēng le hěn dà de biàn huà 。 jiè zhù wǎng luò hé duǎn shì pín ， yì xiē yuán běn bú tài chū míng de shǒu gōng yì rén biàn chéng le shòu huān yíng de bó zhǔ ， tā men bǎ zhì zuò guò chéng pāi chéng shì pín fēn xiǎng gěi guān zhòng ， xī yǐn le chéng qiān shàng wàn de fěn sī 。 zhè zhǒng fāng shì ràng gǔ lǎo de wén huà yǐ gèng jiā shēng dòng de xíng shì zǒu jìn le rén men de rì cháng shēng huó 。 \n \n zhuān jiā zhǐ chū ， bǎo hù chuán tǒng wén huà bìng bú yì wèi zhe wán quán huí dào guò qù ， ér shì yào zài jì chéng de jī chǔ shàng bú duàn chuàng xīn 。 zhǐ yǒu bǎ chuán tǒng yǔ xiàn dài jié hé qǐ lái ， chuán tǒng wén huà cái néng zhēn zhèng huàn fā chū xīn de huó lì 。",
+      "timeLimit": 1080,
+      "order": 51,
+      "published": true,
+      "questions": [
+        {
+          "id": "rd-HSK5-x1-q1",
+          "type": "MCQ",
+          "prompt": "根据短文，过去很多人对传统文化有什么看法？",
+          "promptPinyin": "gēn jù duǎn wén ， guò qù hěn duō rén duì chuán tǒng wén huà yǒu shén me kàn fǎ ？",
+          "explanation": "Đoạn văn viết: 过去，不少人认为传统文化又古老又无聊 (trước đây nhiều người cho rằng văn hóa truyền thống vừa cổ vừa nhàm chán), nên đáp án B đúng. Các lựa chọn khác trái ngược hoặc không được đề cập.",
+          "order": 1,
+          "options": [
+            {
+              "text": "觉得它非常有魅力",
+              "pinyin": "jué de tā fēi cháng yǒu mèi lì"
+            },
+            {
+              "text": "认为它古老而无聊",
+              "pinyin": "rèn wéi tā gǔ lǎo ér wú liáo"
+            },
+            {
+              "text": "希望多花时间学习它",
+              "pinyin": "xī wàng duō huā shí jiān xué xí tā"
+            },
+            {
+              "text": "把它看作现代艺术",
+              "pinyin": "bǎ tā kàn zuò xiàn dài yì shù"
+            }
+          ],
+          "correctAnswer": {
+            "index": 1,
+            "text": "认为它古老而无聊"
+          }
+        },
+        {
+          "id": "rd-HSK5-x1-q2",
+          "type": "MCQ",
+          "prompt": "短文提到练习书法有什么好处？",
+          "promptPinyin": "duǎn wén tí dào liàn xí shū fǎ yǒu shén me hǎo chù ？",
+          "explanation": "Đoạn văn nói: 练习书法时，人们需要保持内心的平静，这对缓解压力很有帮助 (luyện thư pháp giúp giữ nội tâm bình tĩnh, có ích cho việc giảm căng thẳng), nên đáp án B đúng. Các lựa chọn khác không được nhắc tới.",
+          "order": 2,
+          "options": [
+            {
+              "text": "能赚很多钱",
+              "pinyin": "néng zhuàn hěn duō qián"
+            },
+            {
+              "text": "有助于缓解压力",
+              "pinyin": "yǒu zhù yú huǎn jiě yā lì"
+            },
+            {
+              "text": "可以让人变得出名",
+              "pinyin": "kě yǐ ràng rén biàn de chū míng"
+            },
+            {
+              "text": "能提高写作水平",
+              "pinyin": "néng tí gāo xiě zuò shuǐ píng"
+            }
+          ],
+          "correctAnswer": {
+            "index": 1,
+            "text": "有助于缓解压力"
+          }
+        },
+        {
+          "id": "rd-HSK5-x1-q3",
+          "type": "TRUE_FALSE",
+          "prompt": "借助网络和短视频，一些手工艺人变成了受欢迎的博主。",
+          "promptPinyin": "jiè zhù wǎng luò hé duǎn shì pín ， yì xiē shǒu gōng yì rén biàn chéng le shòu huān yíng de bó zhǔ 。",
+          "explanation": "Đúng. Đoạn văn viết: 借助网络和短视频，一些原本不太出名的手工艺人变成了受欢迎的博主 (nhờ mạng và video ngắn, một số nghệ nhân trở thành blogger được yêu thích).",
+          "order": 3,
+          "options": null,
+          "correctAnswer": {
+            "value": true
+          }
+        },
+        {
+          "id": "rd-HSK5-x1-q4",
+          "type": "TRUE_FALSE",
+          "prompt": "专家认为保护传统文化就是要完全回到过去。",
+          "promptPinyin": "zhuān jiā rèn wéi bǎo hù chuán tǒng wén huà jiù shì yào wán quán huí dào guò qù 。",
+          "explanation": "Sai. Đoạn văn viết: 保护传统文化并不意味着完全回到过去，而是要在继承的基础上不断创新 (bảo vệ văn hóa truyền thống KHÔNG có nghĩa là quay hoàn toàn về quá khứ, mà phải sáng tạo trên nền tảng kế thừa).",
+          "order": 4,
+          "options": null,
+          "correctAnswer": {
+            "value": false
+          }
+        },
+        {
+          "id": "rd-HSK5-x1-q5",
+          "type": "FILL_BLANK",
+          "prompt": "专家指出，只有把传统与现代结合起来，传统文化才能真正焕发出新的______。",
+          "promptPinyin": "zhuān jiā zhǐ chū ， zhǐ yǒu bǎ chuán tǒng yǔ xiàn dài jié hé qǐ lái ， chuán tǒng wén huà cái néng zhēn zhèng huàn fā chū xīn de _ _ _ _ _ _ 。",
+          "explanation": "Câu cuối đoạn văn: 传统文化才能真正焕发出新的活力 (văn hóa truyền thống mới thực sự bừng lên sức sống mới), nên chỗ trống điền 活力.",
+          "order": 5,
+          "options": null,
+          "correctAnswer": {
+            "text": "活力",
+            "accepted": [
+              "活力"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "rd-HSK5-x2",
+      "title": "Công nghệ thay đổi cuộc sống",
+      "titleZh": "科技改变生活",
+      "hskLevel": "HSK5",
+      "passage": "近年来，科技的飞速发展正在悄悄地改变着我们的日常生活。过去，人们出门必须随身带着钱包和现金，而如今，只要一部手机就能解决几乎所有的支付问题。无论是在超市购物，还是在小小的路边摊买早饭，扫一下二维码就能轻松付款，既方便又安全。\n\n除了支付方式的变化，出行也变得更加简单了。以前想去一个陌生的地方，我们常常要提前查好地图，甚至向路人打听方向。现在，打开手机上的导航软件，它不仅会告诉你最近的路线，还能实时提醒你哪里堵车，帮你节省不少时间。\n\n不过，科技在给我们带来便利的同时，也产生了一些新的问题。有些人过分依赖手机，一有空就低头看屏幕，很少和身边的人交流，家人之间的感情反而变得越来越淡了。此外，老年人往往跟不上科技的脚步，面对复杂的操作感到十分困惑，这也提醒我们，在享受科技的时候，不应该忽视那些暂时还没能适应新变化的人。",
+      "passagePinyin": "jìn nián lái ， kē jì de fēi sù fā zhǎn zhèng zài qiāo qiāo dì gǎi biàn zhe wǒ men de rì cháng shēng huó 。 guò qù ， rén men chū mén bì xū suí shēn dài zhe qián bāo hé xiàn jīn ， ér rú jīn ， zhǐ yào yí bù shǒu jī jiù néng jiě jué jī hū suǒ yǒu de zhī fù wèn tí 。 wú lùn shì zài chāo shì gòu wù ， hái shì zài xiǎo xiǎo de lù biān tān mǎi zǎo fàn ， sǎo yí xià èr wéi mǎ jiù néng qīng sōng fù kuǎn ， jì fāng biàn yòu ān quán 。 \n \n chú le zhī fù fāng shì de biàn huà ， chū xíng yě biàn de gèng jiā jiǎn dān le 。 yǐ qián xiǎng qù yí gè mò shēng de dì fāng ， wǒ men cháng cháng yào tí qián chá hǎo dì tú ， shèn zhì xiàng lù rén dǎ tīng fāng xiàng 。 xiàn zài ， dǎ kāi shǒu jī shàng de dǎo háng ruǎn jiàn ， tā bù jǐn huì gào sù nǐ zuì jìn de lù xiàn ， hái néng shí shí tí xǐng nǐ nǎ lǐ dǔ chē ， bāng nǐ jié shěng bù shǎo shí jiān 。 \n \n bú guò ， kē jì zài gěi wǒ men dài lái biàn lì de tóng shí ， yě chǎn shēng le yì xiē xīn de wèn tí 。 yǒu xiē rén guò fèn yī lài shǒu jī ， yì yǒu kōng jiù dī tóu kàn píng mù ， hěn shǎo hé shēn biān de rén jiāo liú ， jiā rén zhī jiān de gǎn qíng fǎn ér biàn de yuè lái yuè dàn le 。 cǐ wài ， lǎo nián rén wǎng wǎng gēn bú shàng kē jì de jiǎo bù ， miàn duì fù zá de cāo zuò gǎn dào shí fēn kùn huò ， zhè yě tí xǐng wǒ men ， zài xiǎng shòu kē jì de shí hòu ， bú yīng gāi hū shì nà xiē zàn shí hái méi néng shì yìng xīn biàn huà de rén 。",
+      "timeLimit": 1080,
+      "order": 52,
+      "published": true,
+      "questions": [
+        {
+          "id": "rd-HSK5-x2-q1",
+          "type": "MCQ",
+          "prompt": "根据短文，现在人们出门只需要带什么就能解决大部分支付问题？",
+          "promptPinyin": "gēn jù duǎn wén ， xiàn zài rén men chū mén zhī xū yào dài shén me jiù néng jiě jué dà bù fen zhī fù wèn tí ？",
+          "explanation": "Đoạn văn nói: «如今，只要一部手机就能解决几乎所有的支付问题» (ngày nay chỉ cần một chiếc điện thoại là có thể giải quyết gần như mọi vấn đề thanh toán). Vì vậy đáp án là «一部手机». Các lựa chọn khác đều sai: «钱包和现金» thuộc quá khứ, «一张地图» không liên quan thanh toán, «二维码» chỉ là công cụ quét chứ không phải vật mang theo.",
+          "order": 1,
+          "options": [
+            {
+              "text": "钱包和现金",
+              "pinyin": "qián bāo hé xiàn jīn"
+            },
+            {
+              "text": "一张地图",
+              "pinyin": "yì zhāng dì tú"
+            },
+            {
+              "text": "一部手机",
+              "pinyin": "yí bù shǒu jī"
+            },
+            {
+              "text": "一个二维码",
+              "pinyin": "yí gè èr wéi mǎ"
+            }
+          ],
+          "correctAnswer": {
+            "index": 2,
+            "text": "一部手机"
+          }
+        },
+        {
+          "id": "rd-HSK5-x2-q2",
+          "type": "MCQ",
+          "prompt": "根据短文，手机上的导航软件有什么作用？",
+          "promptPinyin": "gēn jù duǎn wén ， shǒu jī shàng de dǎo háng ruǎn jiàn yǒu shén me zuò yòng ？",
+          "explanation": "Đoạn văn viết: «它不仅会告诉你最近的路线，还能实时提醒你哪里堵车» (nó không chỉ cho bạn biết tuyến đường gần nhất mà còn nhắc bạn chỗ nào tắc đường). Do đó đáp án đúng là lựa chọn về tuyến đường gần nhất và nhắc tắc đường. Ba lựa chọn còn lại đều là cách làm cũ hoặc thuộc phần thanh toán, không phải tác dụng của phần mềm dẫn đường.",
+          "order": 2,
+          "options": [
+            {
+              "text": "告诉你最近的路线并提醒堵车情况",
+              "pinyin": "gào sù nǐ zuì jìn de lù xiàn bìng tí xǐng dǔ chē qíng kuàng"
+            },
+            {
+              "text": "帮你打听路人的方向",
+              "pinyin": "bāng nǐ dǎ tīng lù rén de fāng xiàng"
+            },
+            {
+              "text": "帮你查好纸质地图",
+              "pinyin": "bāng nǐ chá hǎo zhǐ zhì dì tú"
+            },
+            {
+              "text": "帮你在路边摊买早饭",
+              "pinyin": "bāng nǐ zài lù biān tān mǎi zǎo fàn"
+            }
+          ],
+          "correctAnswer": {
+            "index": 0,
+            "text": "告诉你最近的路线并提醒堵车情况"
+          }
+        },
+        {
+          "id": "rd-HSK5-x2-q3",
+          "type": "TRUE_FALSE",
+          "prompt": "短文认为科技只给人们带来了便利，没有任何新问题。",
+          "promptPinyin": "duǎn wén rèn wéi kē jì zhī gěi rén men dài lái le biàn lì ， méi yǒu rèn hé xīn wèn tí 。",
+          "explanation": "Sai. Đoạn văn nêu rõ: «科技在给我们带来便利的同时，也产生了一些新的问题» (công nghệ trong khi mang lại tiện lợi cũng nảy sinh một số vấn đề mới), như quá phụ thuộc điện thoại và người già khó thích nghi.",
+          "order": 3,
+          "options": null,
+          "correctAnswer": {
+            "value": false
+          }
+        },
+        {
+          "id": "rd-HSK5-x2-q4",
+          "type": "TRUE_FALSE",
+          "prompt": "根据短文，老年人常常难以跟上科技发展的脚步。",
+          "promptPinyin": "gēn jù duǎn wén ， lǎo nián rén cháng cháng nán yǐ gēn shàng kē jì fā zhǎn de jiǎo bù 。",
+          "explanation": "Đúng. Đoạn văn viết: «老年人往往跟不上科技的脚步，面对复杂的操作感到十分困惑» (người già thường không theo kịp bước chân của công nghệ, cảm thấy rất bối rối trước những thao tác phức tạp).",
+          "order": 4,
+          "options": null,
+          "correctAnswer": {
+            "value": true
+          }
+        },
+        {
+          "id": "rd-HSK5-x2-q5",
+          "type": "FILL_BLANK",
+          "prompt": "在超市购物或在路边摊买早饭时，人们只要扫一下________就能轻松付款。",
+          "promptPinyin": "zài chāo shì gòu wù huò zài lù biān tān mǎi zǎo fàn shí ， rén men zhǐ yào sǎo yí xià _ _ _ _ _ _ _ _ jiù néng qīng sōng fù kuǎn 。",
+          "explanation": "Đoạn văn viết: «扫一下二维码就能轻松付款» (quét mã QR là có thể thanh toán dễ dàng). Vì vậy chỗ trống điền «二维码», xuất hiện nguyên văn trong đoạn.",
+          "order": 5,
+          "options": null,
+          "correctAnswer": {
+            "text": "二维码",
+            "accepted": [
+              "二维码"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "rd-HSK5-x3",
+      "title": "Sức khỏe tâm lý: Đừng phớt lờ tiếng nói của nội tâm",
+      "titleZh": "心理健康：别忽视内心的声音",
+      "hskLevel": "HSK5",
+      "passage": "随着生活节奏越来越快，工作和学习的压力也不断增加，越来越多的人开始关注心理健康问题。过去，人们常常认为只有身体生病才需要去医院，而心理上的痛苦往往被忽视，甚至被误解为\"想太多\"或\"意志不够坚强\"。事实上，心理健康和身体健康同样重要。\n\n研究表明，长期的焦虑和压力如果得不到及时的缓解，不仅会影响人的情绪，还可能引起失眠、头痛等身体上的不适。因此，学会调节自己的情绪十分必要。专家建议，当感到心情不好时，不要把烦恼藏在心里，而应该主动和家人或朋友交流。倾诉本身就是一种很好的减压方式。此外，坚持运动、保证充足的睡眠，以及培养一些兴趣爱好，都有助于让人保持愉快的心情。\n\n值得注意的是，如果一个人长时间情绪低落，无法通过自己的努力恢复，就应该及时向专业的心理医生寻求帮助。寻求帮助并不是软弱的表现，反而是对自己负责任的态度。只有真正重视内心的感受，我们才能拥有更加健康、幸福的生活。",
+      "passagePinyin": "suí zhe shēng huó jié zòu yuè lái yuè kuài ， gōng zuò hé xué xí de yā lì yě bú duàn zēng jiā ， yuè lái yuè duō de rén kāi shǐ guān zhù xīn lǐ jiàn kāng wèn tí 。 guò qù ， rén men cháng cháng rèn wéi zhǐ yǒu shēn tǐ shēng bìng cái xū yào qù yī yuàn ， ér xīn lǐ shàng de tòng kǔ wǎng wǎng bèi hū shì ， shèn zhì bèi wù jiě wèi \" xiǎng tài duō \" huò \" yì zhì bú gòu jiān qiáng \" 。 shì shí shàng ， xīn lǐ jiàn kāng hé shēn tǐ jiàn kāng tóng yàng zhòng yào 。 \n \n yán jiū biǎo míng ， cháng qī de jiāo lǜ hé yā lì rú guǒ dé bú dào jí shí de huǎn jiě ， bù jǐn huì yǐng xiǎng rén de qíng xù ， hái kě néng yǐn qǐ shī mián 、 tóu tòng děng shēn tǐ shàng de bú shì 。 yīn cǐ ， xué huì tiáo jié zì jǐ de qíng xù shí fēn bì yào 。 zhuān jiā jiàn yì ， dāng gǎn dào xīn qíng bù hǎo shí ， bú yào bǎ fán nǎo cáng zài xīn lǐ ， ér yīng gāi zhǔ dòng hé jiā rén huò péng yǒu jiāo liú 。 qīng sù běn shēn jiù shì yì zhǒng hěn hǎo de jiǎn yā fāng shì 。 cǐ wài ， jiān chí yùn dòng 、 bǎo zhèng chōng zú de shuì mián ， yǐ jí péi yǎng yì xiē xìng qù ài hào ， dōu yǒu zhù yú ràng rén bǎo chí yú kuài de xīn qíng 。 \n \n zhí dé zhù yì de shì ， rú guǒ yí gè rén cháng shí jiān qíng xù dī luò ， wú fǎ tōng guò zì jǐ de nǔ lì huī fù ， jiù yìng gāi jí shí xiàng zhuān yè de xīn lǐ yī shēng xún qiú bāng zhù 。 xún qiú bāng zhù bìng bú shì ruǎn ruò de biǎo xiàn ， fǎn ér shì duì zì jǐ fù zé rèn de tài dù 。 zhǐ yǒu zhēn zhèng zhòng shì nèi xīn de gǎn shòu ， wǒ men cái néng yōng yǒu gèng jiā jiàn kāng 、 xìng fú de shēng huó 。",
+      "timeLimit": 1080,
+      "order": 53,
+      "published": true,
+      "questions": [
+        {
+          "id": "rd-HSK5-x3-q1",
+          "type": "MCQ",
+          "prompt": "过去，人们对心理上的痛苦常常有什么样的看法？",
+          "promptPinyin": "guò qù ， rén men duì xīn lǐ shàng de tòng kǔ cháng cháng yǒu shén me yàng de kàn fǎ ？",
+          "explanation": "Đoạn văn nêu: \"心理上的痛苦往往被忽视，甚至被误解为'想太多'或'意志不够坚强'\", nên đáp án đúng là bị hiểu lầm là \"nghĩ quá nhiều\" hoặc ý chí không đủ mạnh. Các lựa chọn khác đều trái với đoạn: A trái với \"只有身体生病才需要去医院\"; C và D không được đề cập.",
+          "order": 1,
+          "options": [
+            {
+              "text": "认为需要马上去医院治疗",
+              "pinyin": "rèn wéi xū yào mǎ shàng qù yī yuàn zhì liáo"
+            },
+            {
+              "text": "误解为\"想太多\"或意志不坚强",
+              "pinyin": "wù jiě wèi \" xiǎng tài duō \" huò yì zhì bù jiān qiáng"
+            },
+            {
+              "text": "认为比身体疾病更严重",
+              "pinyin": "rèn wéi bǐ shēn tǐ jí bìng gèng yán zhòng"
+            },
+            {
+              "text": "觉得只有老年人才会有",
+              "pinyin": "jué de zhǐ yǒu lǎo nián rén cái huì yǒu"
+            }
+          ],
+          "correctAnswer": {
+            "index": 1,
+            "text": "误解为\"想太多\"或意志不坚强"
+          }
+        },
+        {
+          "id": "rd-HSK5-x3-q2",
+          "type": "MCQ",
+          "prompt": "根据短文，下列哪一项不属于文中提到的减压或保持好心情的方法？",
+          "promptPinyin": "gēn jù duǎn wén ， xià liè nǎ yí xiàng bù shǔ yú wén zhōng tí dào de jiǎn yā huò bǎo chí hǎo xīn qíng de fāng fǎ ？",
+          "explanation": "Đoạn văn đề cập các cách: \"主动和家人或朋友交流\", \"坚持运动、保证充足的睡眠，以及培养一些兴趣爱好\". Việc \"uống thuốc điều trị lo âu\" không được nhắc tới, nên đây là đáp án đúng (không thuộc).",
+          "order": 2,
+          "options": [
+            {
+              "text": "和家人或朋友交流倾诉",
+              "pinyin": "hé jiā rén huò péng yǒu jiāo liú qīng sù"
+            },
+            {
+              "text": "坚持运动、保证充足睡眠",
+              "pinyin": "jiān chí yùn dòng 、 bǎo zhèng chōng zú shuì mián"
+            },
+            {
+              "text": "培养一些兴趣爱好",
+              "pinyin": "péi yǎng yì xiē xìng qù ài hào"
+            },
+            {
+              "text": "服用治疗焦虑的药物",
+              "pinyin": "fú yòng zhì liáo jiāo lǜ de yào wù"
+            }
+          ],
+          "correctAnswer": {
+            "index": 3,
+            "text": "服用治疗焦虑的药物"
+          }
+        },
+        {
+          "id": "rd-HSK5-x3-q3",
+          "type": "TRUE_FALSE",
+          "prompt": "文中认为心理健康和身体健康同样重要。",
+          "promptPinyin": "wén zhōng rèn wéi xīn lǐ jiàn kāng hé shēn tǐ jiàn kāng tóng yàng zhòng yào 。",
+          "explanation": "Đúng. Đoạn văn khẳng định rõ: \"事实上，心理健康和身体健康同样重要。\"",
+          "order": 3,
+          "options": null,
+          "correctAnswer": {
+            "value": true
+          }
+        },
+        {
+          "id": "rd-HSK5-x3-q4",
+          "type": "TRUE_FALSE",
+          "prompt": "根据短文，向心理医生寻求帮助是一种软弱的表现。",
+          "promptPinyin": "gēn jù duǎn wén ， xiàng xīn lǐ yī shēng xún qiú bāng zhù shì yì zhǒng ruǎn ruò de biǎo xiàn 。",
+          "explanation": "Sai. Đoạn văn viết: \"寻求帮助并不是软弱的表现，反而是对自己负责任的态度\", tức là tìm kiếm sự giúp đỡ KHÔNG phải biểu hiện của sự yếu đuối.",
+          "order": 4,
+          "options": null,
+          "correctAnswer": {
+            "value": false
+          }
+        },
+        {
+          "id": "rd-HSK5-x3-q5",
+          "type": "FILL_BLANK",
+          "prompt": "研究表明，长期的焦虑和压力如果得不到及时的缓解，可能会引起失眠、________等身体上的不适。",
+          "promptPinyin": "yán jiū biǎo míng ， cháng qī de jiāo lǜ hé yā lì rú guǒ dé bú dào jí shí de huǎn jiě ， kě néng huì yǐn qǐ shī mián 、 _ _ _ _ _ _ _ _ děng shēn tǐ shàng de bú shì 。",
+          "explanation": "Đoạn văn viết nguyên văn: \"还可能引起失眠、头痛等身体上的不适\", nên chỗ trống điền \"头痛\" (đau đầu).",
+          "order": 5,
+          "options": null,
+          "correctAnswer": {
+            "text": "头痛",
+            "accepted": [
+              "头痛"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "rd-HSK5-x4",
+      "title": "Lập kế hoạch nghề nghiệp",
+      "titleZh": "职业规划",
+      "hskLevel": "HSK5",
+      "passage": "很多大学生在毕业前才开始考虑自己将来要做什么工作，这其实已经有点晚了。专家建议，职业规划最好从大学一年级就开始，越早越好。\n\n所谓职业规划，就是根据自己的兴趣、能力和社会的需要，为将来的职业发展制定一个合理的目标和计划。一个清楚的职业规划能够帮助我们避免盲目地选择，减少浪费时间和精力的情况。\n\n那么，怎样才能做好职业规划呢？首先，要正确地认识自己，弄清楚自己喜欢什么、擅长什么，同时也要了解自己的不足。其次，要多收集相关行业的信息，看看这个行业将来的发展前景如何。最后，制定的目标不能太高，也不能太低，应该符合自己的实际情况，并且要留出调整的空间。\n\n值得注意的是，职业规划并不是一次就能完成的，它需要随着自己的成长和环境的变化不断调整。有些人一开始的选择并不理想，但通过后来的努力和及时的调整，最终也找到了适合自己的道路。因此，与其担心自己选错了方向，不如从现在就行动起来。",
+      "passagePinyin": "hěn duō dà xué shēng zài bì yè qián cái kāi shǐ kǎo lǜ zì jǐ jiāng lái yào zuò shén me gōng zuò ， zhè qí shí yǐ jīng yǒu diǎn wǎn le 。 zhuān jiā jiàn yì ， zhí yè guī huà zuì hǎo cóng dà xué yī nián jí jiù kāi shǐ ， yuè zǎo yuè hǎo 。 \n \n suǒ wèi zhí yè guī huà ， jiù shì gēn jù zì jǐ de xīng qù 、 néng lì hé shè huì de xū yào ， wèi jiāng lái de zhí yè fā zhǎn zhì dìng yí gè hé lǐ de mù biāo hé jì huà 。 yí gè qīng chǔ de zhí yè guī huà néng gòu bāng zhù wǒ men bì miǎn máng mù dì xuǎn zé ， jiǎn shǎo làng fèi shí jiān hé jīng lì de qíng kuàng 。 \n \n nà me ， zěn yàng cái néng zuò hǎo zhí yè guī huà ne ？ shǒu xiān ， yào zhèng què dì rèn shí zì jǐ ， nòng qīng chǔ zì jǐ xǐ huan shén me 、 shàn cháng shén me ， tóng shí yě yào liǎo jiě zì jǐ de bù zú 。 qí cì ， yào duō shōu jí xiāng guān háng yè de xìn xī ， kàn kàn zhè ge háng yè jiāng lái de fā zhǎn qián jǐng rú hé 。 zuì hòu ， zhì dìng de mù biāo bù néng tài gāo ， yě bù néng tài dī ， yīng gāi fú hé zì jǐ de shí jì qíng kuàng ， bìng qiě yào liú chū tiáo zhěng de kōng jiān 。 \n \n zhí dé zhù yì de shì ， zhí yè guī huà bìng bú shì yí cì jiù néng wán chéng de ， tā xū yào suí zhe zì jǐ de chéng zhǎng hé huán jìng de biàn huà bú duàn tiáo zhěng 。 yǒu xiē rén yì kāi shǐ de xuǎn zé bìng bù lǐ xiǎng ， dàn tōng guò hòu lái de nǔ lì hé jí shí de tiáo zhěng ， zuì zhōng yě zhǎo dào le shì hé zì jǐ de dào lù 。 yīn cǐ ， yǔ qí dān xīn zì jǐ xuǎn cuò le fāng xiàng ， bù rú cóng xiàn zài jiù xíng dòng qǐ lái 。",
+      "timeLimit": 1080,
+      "order": 54,
+      "published": true,
+      "questions": [
+        {
+          "id": "rd-HSK5-x4-q1",
+          "type": "MCQ",
+          "prompt": "根据短文，专家认为职业规划最好什么时候开始？",
+          "promptPinyin": "gēn jù duǎn wén ， zhuān jiā rèn wéi zhí yè guī huà zuì hǎo shén me shí hòu kāi shǐ ？",
+          "explanation": "Đoạn văn viết: \"职业规划最好从大学一年级就开始，越早越好\" (lập kế hoạch nghề nghiệp tốt nhất bắt đầu từ năm nhất đại học, càng sớm càng tốt). Vì vậy đáp án là 'năm nhất đại học'. Ba lựa chọn còn lại (trước khi tốt nghiệp, sau khi đi làm, khi học cao học) đều không khớp với đoạn.",
+          "order": 1,
+          "options": [
+            {
+              "text": "大学毕业以前",
+              "pinyin": "dà xué bì yè yǐ qián"
+            },
+            {
+              "text": "大学一年级",
+              "pinyin": "dà xué yī nián jí"
+            },
+            {
+              "text": "工作以后",
+              "pinyin": "gōng zuò yǐ hòu"
+            },
+            {
+              "text": "读研究生的时候",
+              "pinyin": "dú yán jiū shēng de shí hòu"
+            }
+          ],
+          "correctAnswer": {
+            "index": 1,
+            "text": "大学一年级"
+          }
+        },
+        {
+          "id": "rd-HSK5-x4-q2",
+          "type": "MCQ",
+          "prompt": "下面哪一项不是文章提到的做好职业规划的做法？",
+          "promptPinyin": "xià miàn nǎ yí xiàng bú shì wén zhāng tí dào de zuò hǎo zhí yè guī huà de zuò fǎ ？",
+          "explanation": "Đoạn văn nói \"制定的目标不能太高，也不能太低\" (mục tiêu không được quá cao cũng không quá thấp), nên 'đặt mục tiêu càng cao càng tốt' là sai. Ba lựa chọn còn lại đều được nêu: 正确地认识自己, 收集相关行业的信息, 留出调整的空间.",
+          "order": 2,
+          "options": [
+            {
+              "text": "正确地认识自己",
+              "pinyin": "zhèng què dì rèn shi zì jǐ"
+            },
+            {
+              "text": "收集行业的信息",
+              "pinyin": "shōu jí háng yè de xìn xī"
+            },
+            {
+              "text": "把目标定得越高越好",
+              "pinyin": "bǎ mù biāo dìng dé yuè gāo yuè hǎo"
+            },
+            {
+              "text": "留出调整的空间",
+              "pinyin": "liú chū tiáo zhěng de kōng jiān"
+            }
+          ],
+          "correctAnswer": {
+            "index": 2,
+            "text": "把目标定得越高越好"
+          }
+        },
+        {
+          "id": "rd-HSK5-x4-q3",
+          "type": "TRUE_FALSE",
+          "prompt": "做职业规划时，只要了解自己喜欢什么、擅长什么就够了。",
+          "promptPinyin": "zuò zhí yè guī huà shí ， zhǐ yào liǎo jiě zì jǐ xǐ huan shén me 、 shàn cháng shén me jiù gòu le 。",
+          "explanation": "Sai. Đoạn văn viết \"弄清楚自己喜欢什么、擅长什么，同时也要了解自己的不足\" (đồng thời cũng phải hiểu điểm yếu của mình), chứ không chỉ biết sở thích và sở trường.",
+          "order": 3,
+          "options": null,
+          "correctAnswer": {
+            "value": false
+          }
+        },
+        {
+          "id": "rd-HSK5-x4-q4",
+          "type": "TRUE_FALSE",
+          "prompt": "职业规划做好以后就不需要再改变了。",
+          "promptPinyin": "zhí yè guī huà zuò hǎo yǐ hòu jiù bù xū yào zài gǎi biàn le 。",
+          "explanation": "Sai. Đoạn văn khẳng định \"职业规划并不是一次就能完成的，它需要随着自己的成长和环境的变化不断调整\" (không phải một lần là xong, cần liên tục điều chỉnh theo sự trưởng thành và thay đổi của môi trường).",
+          "order": 4,
+          "options": null,
+          "correctAnswer": {
+            "value": false
+          }
+        },
+        {
+          "id": "rd-HSK5-x4-q5",
+          "type": "FILL_BLANK",
+          "prompt": "文章说，一个清楚的职业规划能帮助我们避免________地选择。",
+          "promptPinyin": "wén zhāng shuō ， yí gè qīng chǔ de zhí yè guī huà néng bāng zhù wǒ men bì miǎn _ _ _ _ _ _ _ _ dì xuǎn zé 。",
+          "explanation": "Đoạn văn viết \"一个清楚的职业规划能够帮助我们避免盲目地选择\" (giúp chúng ta tránh lựa chọn một cách mù quáng). Từ cần điền là '盲目' xuất hiện nguyên văn trong đoạn.",
+          "order": 5,
+          "options": null,
+          "correctAnswer": {
+            "text": "盲目",
+            "accepted": [
+              "盲目"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "rd-HSK5-x5",
+      "title": "Thành phố và nông thôn",
+      "titleZh": "城市与乡村",
+      "hskLevel": "HSK5",
+      "passage": "随着经济的快速发展，越来越多的年轻人离开家乡，来到大城市工作和生活。城市里有更多的工作机会、更好的教育资源和更方便的交通，因此对年轻人有着巨大的吸引力。然而，城市生活也带来了不少压力。房价高、竞争激烈，很多人虽然收入不错，却仍然感到疲惫和孤独。\n\n与此相反，乡村的生活节奏比较慢。这里空气清新，环境安静，人与人之间的关系也更加亲密。过去，人们普遍认为乡村落后，年轻人都不愿意留下来。但近年来，情况正在慢慢改变。随着网络的普及和交通的改善，一些年轻人开始重新回到乡村，他们利用互联网把家乡的农产品卖到全国各地，收入不但没有减少，反而增加了。\n\n其实，城市和乡村各有各的优点，我们很难简单地说哪一个更好。重要的是，人们能够根据自己的需要和理想，自由地选择适合自己的生活方式。无论住在哪里，只要心中有目标，努力去实现，就能过上幸福的生活。",
+      "passagePinyin": "suí zhe jīng jì de kuài sù fā zhǎn ， yuè lái yuè duō de nián qīng rén lí kāi jiā xiāng ， lái dào dài chéng shì gōng zuò hé shēng huó 。 chéng shì lǐ yǒu gèng duō de gōng zuò jī huì 、 gèng hǎo de jiào yù zī yuán hé gèng fāng biàn de jiāo tōng ， yīn cǐ duì nián qīng rén yǒu zhe jù dà de xī yǐn lì 。 rán ér ， chéng shì shēng huó yě dài lái le bù shǎo yā lì 。 fáng jià gāo 、 jìng zhēng jī liè ， hěn duō rén suī rán shōu rù bú cuò ， què réng rán gǎn dào pí bèi hé gū dú 。 \n \n yǔ cǐ xiāng fǎn ， xiāng cūn de shēng huó jié zòu bǐ jiào màn 。 zhè lǐ kōng qì qīng xīn ， huán jìng ān jìng ， rén yǔ rén zhī jiān de guān xì yě gèng jiā qīn mì 。 guò qù ， rén men pǔ biàn rèn wéi xiāng cūn luò hòu ， nián qīng rén dōu bú yuàn yì liú xià lái 。 dàn jìn nián lái ， qíng kuàng zhèng zài màn màn gǎi biàn 。 suí zhe wǎng luò de pǔ jí hé jiāo tōng de gǎi shàn ， yì xiē nián qīng rén kāi shǐ chóng xīn huí dào xiāng cūn ， tā men lì yòng hù lián wǎng bǎ jiā xiāng de nóng chǎn pǐn mài dào quán guó gè dì ， shōu rù bú dàn méi yǒu jiǎn shǎo ， fǎn ér zēng jiā le 。 \n \n qí shí ， chéng shì hé xiāng cūn gè yǒu gè de yōu diǎn ， wǒ men hěn nán jiǎn dān dì shuō nǎ yí gè gèng hǎo 。 zhòng yào de shì ， rén men néng gòu gēn jù zì jǐ de xū yào hé lǐ xiǎng ， zì yóu dì xuǎn zé shì hé zì jǐ de shēng huó fāng shì 。 wú lùn zhù zài nǎ lǐ ， zhǐ yào xīn zhōng yǒu mù biāo ， nǔ lì qù shí xiàn ， jiù néng guò shàng xìng fú de shēng huó 。",
+      "timeLimit": 1080,
+      "order": 55,
+      "published": true,
+      "questions": [
+        {
+          "id": "rd-HSK5-x5-q1",
+          "type": "MCQ",
+          "prompt": "根据短文，年轻人来到大城市的主要原因是什么？",
+          "promptPinyin": "gēn jù duǎn wén ， nián qīng rén lái dào dài chéng shì de zhǔ yào yuán yīn shì shén me ？",
+          "explanation": "Đoạn văn viết: 城市里有更多的工作机会、更好的教育资源和更方便的交通，因此对年轻人有着巨大的吸引力 (thành phố có nhiều cơ hội việc làm hơn, tài nguyên giáo dục tốt hơn), nên đáp án đúng là B. Phương án A sai vì bài nói 房价高 (giá nhà cao); C và D là đặc điểm của nông thôn.",
+          "order": 1,
+          "options": [
+            {
+              "text": "城市的房价比较便宜",
+              "pinyin": "chéng shì de fáng jià bǐ jiào pián yi"
+            },
+            {
+              "text": "城市有更多机会和更好的资源",
+              "pinyin": "chéng shì yǒu gèng duō jī huì hé gèng hǎo de zī yuán"
+            },
+            {
+              "text": "城市的生活节奏比较慢",
+              "pinyin": "chéng shì de shēng huó jié zòu bǐ jiào màn"
+            },
+            {
+              "text": "城市里的人际关系更亲密",
+              "pinyin": "chéng shì lǐ de rén jì guān xì gèng qīn mì"
+            }
+          ],
+          "correctAnswer": {
+            "index": 1,
+            "text": "城市有更多机会和更好的资源"
+          }
+        },
+        {
+          "id": "rd-HSK5-x5-q2",
+          "type": "MCQ",
+          "prompt": "一些年轻人回到乡村后，收入发生了什么变化？",
+          "promptPinyin": "yì xiē nián qīng rén huí dào xiāng cūn hòu ， shōu rù fā shēng le shén me biàn huà ？",
+          "explanation": "Bài viết rõ: 收入不但没有减少，反而增加了 (thu nhập không những không giảm mà còn tăng lên). Vì vậy đáp án đúng là C.",
+          "order": 2,
+          "options": [
+            {
+              "text": "收入减少了很多",
+              "pinyin": "shōu rù jiǎn shǎo le hěn duō"
+            },
+            {
+              "text": "收入没有任何变化",
+              "pinyin": "shōu rù méi yǒu rèn hé biàn huà"
+            },
+            {
+              "text": "收入反而增加了",
+              "pinyin": "shōu rù fǎn ér zēng jiā le"
+            },
+            {
+              "text": "收入先减少后增加",
+              "pinyin": "shōu rù xiān jiǎn shǎo hòu zēng jiā"
+            }
+          ],
+          "correctAnswer": {
+            "index": 2,
+            "text": "收入反而增加了"
+          }
+        },
+        {
+          "id": "rd-HSK5-x5-q3",
+          "type": "TRUE_FALSE",
+          "prompt": "很多在城市工作的人虽然收入不错，但仍然感到疲惫和孤独。",
+          "promptPinyin": "hěn duō zài chéng shì gōng zuò de rén suī rán shōu rù bú cuò ， dàn réng rán gǎn dào pí bèi hé gū dú 。",
+          "explanation": "Đúng. Đoạn văn viết: 很多人虽然收入不错，却仍然感到疲惫和孤独 (nhiều người tuy thu nhập khá nhưng vẫn cảm thấy mệt mỏi và cô đơn).",
+          "order": 3,
+          "options": null,
+          "correctAnswer": {
+            "value": true
+          }
+        },
+        {
+          "id": "rd-HSK5-x5-q4",
+          "type": "TRUE_FALSE",
+          "prompt": "作者认为城市一定比乡村更好，人们应该都去城市生活。",
+          "promptPinyin": "zuò zhě rèn wéi chéng shì yí dìng bǐ xiāng cūn gèng hǎo ， rén men yīng gāi dōu qù chéng shì shēng huó 。",
+          "explanation": "Sai. Tác giả viết: 城市和乡村各有各的优点，我们很难简单地说哪一个更好 (thành phố và nông thôn đều có ưu điểm riêng, khó nói cái nào tốt hơn), và nhấn mạnh mọi người nên tự do lựa chọn, nên không cho rằng thành phố nhất định tốt hơn.",
+          "order": 4,
+          "options": null,
+          "correctAnswer": {
+            "value": false
+          }
+        },
+        {
+          "id": "rd-HSK5-x5-q5",
+          "type": "FILL_BLANK",
+          "prompt": "过去，人们普遍认为乡村是＿＿的，所以年轻人都不愿意留下来。",
+          "promptPinyin": "guò qù ， rén men pǔ biàn rèn wéi xiāng cūn shì ＿ ＿ de ， suǒ yǐ nián qīng rén dōu bú yuàn yì liú xià lái 。",
+          "explanation": "Đoạn văn viết: 过去，人们普遍认为乡村落后 (trước đây, người ta thường cho rằng nông thôn lạc hậu). Từ cần điền là 落后 (lạc hậu), xuất hiện nguyên văn trong đoạn.",
+          "order": 5,
+          "options": null,
+          "correctAnswer": {
+            "text": "落后",
+            "accepted": [
+              "落后"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "rd-HSK5-x6",
+      "title": "Thưởng thức nghệ thuật",
+      "titleZh": "艺术欣赏",
+      "hskLevel": "HSK5",
+      "passage": "很多人认为，欣赏艺术是一件很难的事情，只有专家才能真正看懂一幅画或者一件雕塑。其实，这种想法并不完全正确。欣赏艺术并不需要专业知识，关键在于你是否愿意用心去感受。\n\n每个人的生活经历不同，看待同一件艺术作品时，产生的感受也会不一样。比如面对一幅描绘秋天的油画，有的人想起了故乡，有的人却觉得有些伤感。这些感受没有对错之分，都是欣赏的一部分。\n\n当然，如果能够了解一些背景知识，欣赏的过程会变得更加丰富。知道画家在什么样的心情下创作，了解那个时代的社会情况，都能帮助我们理解作品想要表达的内容。不过，这些知识只是帮助，而不是必须的条件。\n\n因此，欣赏艺术最重要的是保持一颗开放的心。当你站在一件作品面前时，不要急着判断它好不好，而是先让自己慢慢地去体会。也许你会发现，艺术其实离我们的生活并不遥远。",
+      "passagePinyin": "hěn duō rén rèn wéi ， xīn shǎng yì shù shì yí jiàn hěn nán de shì qíng ， zhǐ yǒu zhuān jiā cái néng zhēn zhèng kàn dǒng yì fú huà huò zhě yí jiàn diāo sù 。 qí shí ， zhè zhǒng xiǎng fǎ bìng bù wán quán zhèng què 。 xīn shǎng yì shù bìng bù xū yào zhuān yè zhī shi ， guān jiàn zài yú nǐ shì fǒu yuàn yì yòng xīn qù gǎn shòu 。 \n \n měi gè rén de shēng huó jīng lì bù tóng ， kàn dài tóng yí jiàn yì shù zuò pǐn shí ， chǎn shēng de gǎn shòu yě huì bù yí yàng 。 bǐ rú miàn duì yì fú miáo huì qiū tiān de yóu huà ， yǒu de rén xiǎng qǐ le gù xiāng ， yǒu de rén què jué de yǒu xiē shāng gǎn 。 zhè xiē gǎn shòu méi yǒu duì cuò zhī fēn ， dōu shì xīn shǎng de yí bù fen 。 \n \n dāng rán ， rú guǒ néng gòu liǎo jiě yì xiē bèi jǐng zhī shi ， xīn shǎng de guò chéng huì biàn de gèng jiā fēng fù 。 zhī dào huà jiā zài shén me yàng de xīn qíng xià chuàng zuò ， liǎo jiě nà ge shí dài de shè huì qíng kuàng ， dōu néng bāng zhù wǒ men lǐ jiě zuò pǐn xiǎng yào biǎo dá de nèi róng 。 bú guò ， zhè xiē zhī shi zhī shì bāng zhù ， ér bú shì bì xū de tiáo jiàn 。 \n \n yīn cǐ ， xīn shǎng yì shù zuì zhòng yào de shì bǎo chí yì kē kāi fàng de xīn 。 dāng nǐ zhàn zài yí jiàn zuò pǐn miàn qián shí ， bú yào jí zhe pàn duàn tā hǎo bu hǎo ， ér shì xiān ràng zì jǐ màn màn dì qù tǐ huì 。 yě xǔ nǐ huì fā xiàn ， yì shù qí shí lí wǒ men de shēng huó bìng bù yáo yuǎn 。",
+      "timeLimit": 1080,
+      "order": 56,
+      "published": true,
+      "questions": [
+        {
+          "id": "rd-HSK5-x6-q1",
+          "type": "MCQ",
+          "prompt": "根据短文，作者认为欣赏艺术最重要的是什么？",
+          "promptPinyin": "gēn jù duǎn wén ， zuò zhě rèn wéi xīn shǎng yì shù zuì zhòng yào de shì shén me ？",
+          "explanation": "Đoạn cuối viết rõ: «欣赏艺术最重要的是保持一颗开放的心» (điều quan trọng nhất khi thưởng thức nghệ thuật là giữ một trái tim cởi mở). Ba lựa chọn còn lại đều bị đoạn văn phủ nhận hoặc không nhắc tới: kiến thức chuyên môn thì «并不需要», tên họa sĩ và bảo tàng đều không xuất hiện. Đáp án: 'giữ một trái tim cởi mở'.",
+          "order": 1,
+          "options": [
+            {
+              "text": "拥有专业的艺术知识",
+              "pinyin": "yōng yǒu zhuān yè de yì shù zhī shi"
+            },
+            {
+              "text": "保持一颗开放的心",
+              "pinyin": "bǎo chí yì kē kāi fàng de xīn"
+            },
+            {
+              "text": "记住画家的名字",
+              "pinyin": "jì zhù huà jiā de míng zì"
+            },
+            {
+              "text": "参观很多美术馆",
+              "pinyin": "cān guān hěn duō měi shù guǎn"
+            }
+          ],
+          "correctAnswer": {
+            "index": 1,
+            "text": "保持一颗开放的心"
+          }
+        },
+        {
+          "id": "rd-HSK5-x6-q2",
+          "type": "MCQ",
+          "prompt": "关于背景知识，下面哪种说法符合短文的意思？",
+          "promptPinyin": "guān yú bèi jǐng zhī shi ， xià miàn nǎ zhǒng shuō fǎ fú hé duǎn wén de yì sī ？",
+          "explanation": "Đoạn 3 nêu: «如果能够了解一些背景知识，欣赏的过程会变得更加丰富» và nhấn mạnh «这些知识只是帮助，而不是必须的条件». Do đó lựa chọn 'không bắt buộc' → loại A; đoạn không nói chỉ chuyên gia mới cần → loại C; đoạn không nói kiến thức nền ảnh hưởng cảm nhận thật → loại D. Đáp án đúng: kiến thức nền làm quá trình thưởng thức phong phú hơn.",
+          "order": 2,
+          "options": [
+            {
+              "text": "背景知识是欣赏艺术必须的条件",
+              "pinyin": "bèi jǐng zhī shi shì xīn shǎng yì shù bì xū de tiáo jiàn"
+            },
+            {
+              "text": "了解背景知识会让欣赏过程更丰富",
+              "pinyin": "liǎo jiě bèi jǐng zhī shi huì ràng xīn shǎng guò chéng gèng fēng fù"
+            },
+            {
+              "text": "只有专家才需要了解背景知识",
+              "pinyin": "zhǐ yǒu zhuān jiā cái xū yào liǎo jiě bèi jǐng zhī shi"
+            },
+            {
+              "text": "背景知识会影响我们真实的感受",
+              "pinyin": "bèi jǐng zhī shi huì yǐng xiǎng wǒ men zhēn shí de gǎn shòu"
+            }
+          ],
+          "correctAnswer": {
+            "index": 1,
+            "text": "了解背景知识会让欣赏过程更丰富"
+          }
+        },
+        {
+          "id": "rd-HSK5-x6-q3",
+          "type": "TRUE_FALSE",
+          "prompt": "作者认为只有专家才能真正欣赏艺术作品。",
+          "promptPinyin": "zuò zhě rèn wéi zhǐ yǒu zhuān jiā cái néng zhēn zhèng xīn shǎng yì shù zuò pǐn 。",
+          "explanation": "Sai. Tác giả nói nhiều người NGHĨ chỉ chuyên gia mới hiểu được, nhưng liền phản bác: «这种想法并不完全正确» và «欣赏艺术并不需要专业知识», nên đây không phải quan điểm của tác giả.",
+          "order": 3,
+          "options": null,
+          "correctAnswer": {
+            "value": false
+          }
+        },
+        {
+          "id": "rd-HSK5-x6-q4",
+          "type": "TRUE_FALSE",
+          "prompt": "面对同一件艺术作品，不同的人可能会产生不一样的感受。",
+          "promptPinyin": "miàn duì tóng yí jiàn yì shù zuò pǐn ， bù tóng de rén kě néng huì chǎn shēng bù yí yàng de gǎn shòu 。",
+          "explanation": "Đúng. Đoạn 2 viết: «看待同一件艺术作品时，产生的感受也会不一样», và nêu ví dụ người thì nhớ quê, người thì thấy buồn.",
+          "order": 4,
+          "options": null,
+          "correctAnswer": {
+            "value": true
+          }
+        },
+        {
+          "id": "rd-HSK5-x6-q5",
+          "type": "FILL_BLANK",
+          "prompt": "作者建议，当你站在一件作品面前时，不要急着______它好不好，而是先慢慢体会。",
+          "promptPinyin": "zuò zhě jiàn yì ， dāng nǐ zhàn zài yí jiàn zuò pǐn miàn qián shí ， bú yào jí zhe _ _ _ _ _ _ tā hǎo bu hǎo ， ér shì xiān màn màn tǐ huì 。",
+          "explanation": "Đoạn cuối viết nguyên văn: «不要急着判断它好不好，而是先让自己慢慢地去体会», nên chỗ trống điền «判断» (phán đoán/đánh giá), xuất hiện nguyên văn trong đoạn.",
+          "order": 5,
+          "options": null,
+          "correctAnswer": {
+            "text": "判断",
+            "accepted": [
+              "判断"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "rd-HSK6-x1",
+      "title": "Toàn cầu hóa kinh tế",
+      "titleZh": "经济全球化",
+      "hskLevel": "HSK6",
+      "passage": "经济全球化是当今世界发展的一个不可逆转的趋势。随着交通和通信技术的迅速进步，各国之间的经济联系日益紧密，商品、资本、技术乃至劳动力都在全球范围内自由流动。过去需要数月才能完成的跨国贸易，如今借助互联网在几分钟之内便可达成。这种深刻的变化，不仅重塑了世界经济的格局，也悄然改变着人们的日常生活。\n\n经济全球化给各国带来了前所未有的机遇。发展中国家可以引进先进的技术和管理经验，扩大出口，从而加快自身的现代化进程。跨国公司则通过在世界各地设立分支机构，充分利用不同地区的资源和劳动力，以较低的成本获得更高的利润。消费者也从中受益，能够以更便宜的价格买到来自世界各地的产品。\n\n然而，全球化并非只有好处。它在带来繁荣的同时，也加剧了国与国之间、以及一国内部的贫富差距。发达国家凭借雄厚的资本和技术占据主导地位，而一些落后国家则可能沦为原料的供应者，难以摆脱依附的地位。此外，一旦某个地区爆发金融危机，其影响往往会迅速蔓延到全球，任何国家都难以独善其身。\n\n面对全球化这把\"双刃剑\"，各国既不能盲目排斥，也不应完全放任。唯有加强国际合作，制定更加公平合理的规则，才能让全球化的成果惠及更多的人，实现真正意义上的共同发展。",
+      "passagePinyin": "jīng jì quán qiú huà shì dāng jīn shì jiè fā zhǎn de yí gè bù kě nì zhuǎn de qū shì 。 suí zhe jiāo tōng hé tōng xìn jì shù de xùn sù jìn bù ， gè guó zhī jiān de jīng jì lián xì rì yì jǐn mì ， shāng pǐn 、 zī běn 、 jì shù nǎi zhì láo dòng lì dōu zài quán qiú fàn wéi nèi zì yóu liú dòng 。 guò qù xū yào shù yuè cái néng wán chéng de kuà guó mào yì ， rú jīn jiè zhù hù lián wǎng zài jǐ fēn zhōng zhī nèi biàn kě dá chéng 。 zhè zhǒng shēn kè de biàn huà ， bù jǐn zhòng sù le shì jiè jīng jì de gé jú ， yě qiǎo rán gǎi biàn zhe rén men de rì cháng shēng huó 。 \n \n jīng jì quán qiú huà gěi gè guó dài lái le qián suǒ wèi yǒu de jī yù 。 fā zhǎn zhōng guó jiā kě yǐ yǐn jìn xiān jìn de jì shù hé guǎn lǐ jīng yàn ， kuò dà chū kǒu ， cóng ér jiā kuài zì shēn de xiàn dài huà jìn chéng 。 kuà guó gōng sī zé tōng guò zài shì jiè gè dì shè lì fēn zhī jī gòu ， chōng fèn lì yòng bù tóng dì qū de zī yuán hé láo dòng lì ， yǐ jiào dī de chéng běn huò dé gèng gāo de lì rùn 。 xiāo fèi zhě yě cóng zhōng shòu yì ， néng gòu yǐ gèng pián yi de jià gé mǎi dào lái zì shì jiè gè dì de chǎn pǐn 。 \n \n rán ér ， quán qiú huà bìng fēi zhī yǒu hǎo chù 。 tā zài dài lái fán róng de tóng shí ， yě jiā jù le guó yǔ guó zhī jiān 、 yǐ jí yì guó nèi bù de pín fù chā jù 。 fā dá guó jiā píng jiè xióng hòu de zī běn hé jì shù zhàn jù zhǔ dǎo dì wèi ， ér yì xiē luò hòu guó jiā zé kě néng lún wèi yuán liào de gōng yìng zhě ， nán yǐ bǎi tuō yī fù de dì wèi 。 cǐ wài ， yí dàn mǒu gè dì qū bào fā jīn róng wēi jī ， qí yǐng xiǎng wǎng wǎng huì xùn sù màn yán dào quán qiú ， rèn hé guó jiā dōu nán yǐ dú shàn qí shēn 。 \n \n miàn duì quán qiú huà zhè bǎ \" shuāng rèn jiàn \" ， gè guó jì bù néng máng mù pái chì ， yě bú yìng wán quán fàng rèn 。 wéi yǒu jiā qiáng guó jì hé zuò ， zhì dìng gèng jiā gōng píng hé lǐ de guī zé ， cái néng ràng quán qiú huà de chéng guǒ huì jí gèng duō de rén ， shí xiàn zhēn zhèng yì yì shàng de gòng tóng fā zhǎn 。",
+      "timeLimit": 1200,
+      "order": 51,
+      "published": true,
+      "questions": [
+        {
+          "id": "rd-HSK6-x1-q1",
+          "type": "MCQ",
+          "prompt": "根据短文，交通和通信技术的进步带来了什么变化？",
+          "promptPinyin": "gēn jù duǎn wén ， jiāo tōng hé tōng xìn jì shù de jìn bù dài lái le shén me biàn huà ？",
+          "explanation": "Đoạn 1 nêu rõ: 随着交通和通信技术的迅速进步，各国之间的经济联系日益紧密 (nhờ tiến bộ nhanh chóng của công nghệ giao thông và truyền thông, mối liên hệ kinh tế giữa các nước ngày càng chặt chẽ). Các đáp án B/C/D trái ngược với đoạn văn (thương mại vẫn phát triển, lao động tự do lưu thông). Đáp án A đúng.",
+          "order": 1,
+          "options": [
+            {
+              "text": "各国之间的经济联系日益紧密",
+              "pinyin": "gè guó zhī jiān de jīng jì lián xì rì yì jǐn mì"
+            },
+            {
+              "text": "各国完全停止了跨国贸易",
+              "pinyin": "gè guó wán quán tíng zhǐ le kuà guó mào yì"
+            },
+            {
+              "text": "劳动力被禁止在全球流动",
+              "pinyin": "láo dòng lì bèi jìn zhǐ zài quán qiú liú dòng"
+            },
+            {
+              "text": "商品价格普遍大幅上涨",
+              "pinyin": "shāng pǐn jià gé pǔ biàn dà fú shàng zhǎng"
+            }
+          ],
+          "correctAnswer": {
+            "index": 0,
+            "text": "各国之间的经济联系日益紧密"
+          }
+        },
+        {
+          "id": "rd-HSK6-x1-q2",
+          "type": "MCQ",
+          "prompt": "根据短文，跨国公司在世界各地设立分支机构的主要目的是什么？",
+          "promptPinyin": "gēn jù duǎn wén ， kuà guó gōng sī zài shì jiè gè dì shè lì fēn zhī jī gòu de zhǔ yào mù dì shì shén me ？",
+          "explanation": "Đoạn 2 viết: 跨国公司则通过在世界各地设立分支机构，充分利用不同地区的资源和劳动力，以较低的成本获得更高的利润 (công ty đa quốc gia lập chi nhánh khắp nơi để tận dụng tài nguyên và lao động của các vùng, dùng chi phí thấp để thu lợi nhuận cao hơn). Đáp án B khớp trực tiếp; các đáp án khác không được đoạn văn nhắc tới như mục đích.",
+          "order": 2,
+          "options": [
+            {
+              "text": "为了减少商品的出口数量",
+              "pinyin": "wèi le jiǎn shǎo shāng pǐn de chū kǒu shù liàng"
+            },
+            {
+              "text": "为了利用不同地区的资源和劳动力以获得更高利润",
+              "pinyin": "wèi le lì yòng bù tóng dì qū de zī yuán hé láo dòng lì yǐ huò dé gèng gāo lì rùn"
+            },
+            {
+              "text": "为了缩小国与国之间的贫富差距",
+              "pinyin": "wèi le suō xiǎo guó yǔ guó zhī jiān de pín fù chā jù"
+            },
+            {
+              "text": "为了帮助落后国家摆脱依附地位",
+              "pinyin": "wèi le bāng zhù luò hòu guó jiā bǎi tuō yī fù dì wèi"
+            }
+          ],
+          "correctAnswer": {
+            "index": 1,
+            "text": "为了利用不同地区的资源和劳动力以获得更高利润"
+          }
+        },
+        {
+          "id": "rd-HSK6-x1-q3",
+          "type": "TRUE_FALSE",
+          "prompt": "短文认为经济全球化只有好处，没有任何负面影响。",
+          "promptPinyin": "duǎn wén rèn wéi jīng jì quán qiú huà zhǐ yǒu hǎo chù ， méi yǒu rèn hé fù miàn yǐng xiǎng 。",
+          "explanation": "Sai. Đoạn 3 mở đầu bằng 然而，全球化并非只有好处 (tuy nhiên, toàn cầu hóa không phải chỉ có lợi ích), và chỉ ra nó làm gia tăng chênh lệch giàu nghèo cũng như lan truyền khủng hoảng tài chính. Vì vậy nhận định này sai.",
+          "order": 3,
+          "options": null,
+          "correctAnswer": {
+            "value": false
+          }
+        },
+        {
+          "id": "rd-HSK6-x1-q4",
+          "type": "TRUE_FALSE",
+          "prompt": "根据短文，一个地区爆发金融危机时，其影响可能迅速蔓延到全球。",
+          "promptPinyin": "gēn jù duǎn wén ， yí gè dì qū bào fā jīn róng wēi jī shí ， qí yǐng xiǎng kě néng xùn sù màn yán dào quán qiú 。",
+          "explanation": "Đúng. Đoạn 3 nói: 一旦某个地区爆发金融危机，其影响往往会迅速蔓延到全球，任何国家都难以独善其身 (một khi một khu vực bùng phát khủng hoảng tài chính, ảnh hưởng thường lan nhanh ra toàn cầu). Nhận định phù hợp với đoạn văn.",
+          "order": 4,
+          "options": null,
+          "correctAnswer": {
+            "value": true
+          }
+        },
+        {
+          "id": "rd-HSK6-x1-q5",
+          "type": "FILL_BLANK",
+          "prompt": "短文把全球化比作一把\"________\"，说明它既有好处也有坏处。",
+          "promptPinyin": "duǎn wén bǎ quán qiú huà bǐ zuò yì bǎ \" _ _ _ _ _ _ _ _ \" ， shuō míng tā jì yǒu hǎo chù yě yǒu huài chù 。",
+          "explanation": "Đoạn cuối viết: 面对全球化这把\"双刃剑\" (đối mặt với 'con dao hai lưỡi' là toàn cầu hóa). Từ 双刃剑 (con dao hai lưỡi) xuất hiện nguyên văn, thể hiện toàn cầu hóa vừa có lợi vừa có hại.",
+          "order": 5,
+          "options": null,
+          "correctAnswer": {
+            "text": "双刃剑",
+            "accepted": [
+              "双刃剑"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "rd-HSK6-x2",
+      "title": "Ảnh hưởng của trí tuệ nhân tạo",
+      "titleZh": "人工智能的影响",
+      "hskLevel": "HSK6",
+      "passage": "近年来，人工智能技术以惊人的速度渗透到人类生活的各个领域，其带来的深远影响引发了社会各界的广泛关注与激烈讨论。从医疗诊断到金融分析，从自动驾驶到智能翻译，人工智能正在悄然改变着传统的工作方式与生活模式。\n\n不可否认，人工智能的普及大大提高了生产效率。它能够在极短的时间内处理海量数据，完成人类难以胜任的繁重任务，从而将人们从枯燥重复的劳动中解放出来。在医学领域，借助人工智能对影像资料进行分析，医生诊断的准确率显著提升，一些疑难杂症也因此得到了及时的治疗。\n\n然而，任何技术都是一把双刃剑。随着人工智能逐步取代部分传统岗位，失业问题日益凸显，尤其是从事简单体力劳动和机械性工作的群体面临着前所未有的挑战。此外，数据隐私泄露、算法歧视以及技术被滥用等隐患也不容忽视。更令人担忧的是，一旦人们过度依赖机器做出判断，独立思考的能力或许会逐渐退化。\n\n面对这一趋势，我们既不应盲目乐观，也不必过分恐慌。关键在于如何趋利避害，让技术真正服务于人类。政府需要及时完善相关法律法规，加强对人工智能的监管；企业应当承担起相应的社会责任；而个人则要不断学习新技能，以适应时代的变化。唯有如此，人工智能才能成为推动社会进步的有力工具，而非威胁人类未来的隐患。",
+      "passagePinyin": "jìn nián lái ， rén gōng zhì néng jì shù yǐ jīng rén de sù dù shèn tòu dào rén lèi shēng huó de gè gè lǐng yù ， qí dài lái de shēn yuǎn yǐng xiǎng yǐn fā le shè huì gè jiè de guǎng fàn guān zhù yǔ jī liè tǎo lùn 。 cóng yī liáo zhěn duàn dào jīn róng fēn xī ， cóng zì dòng jià shǐ dào zhì néng fān yì ， rén gōng zhì néng zhèng zài qiǎo rán gǎi biàn zhe chuán tǒng de gōng zuò fāng shì yǔ shēng huó mó shì 。 \n \n bù kě fǒu rèn ， rén gōng zhì néng de pǔ jí dà dà tí gāo le shēng chǎn xiào lǜ 。 tā néng gòu zài jí duǎn de shí jiān nèi chǔ lǐ hǎi liàng shù jù ， wán chéng rén lèi nán yǐ shèng rèn de fán zhòng rèn wu ， cóng ér jiāng rén men cóng kū zào chóng fù de láo dòng zhōng jiě fàng chū lái 。 zài yī xué lǐng yù ， jiè zhù rén gōng zhì néng duì yǐng xiàng zī liào jìn xíng fēn xī ， yī shēng zhěn duàn de zhǔn què lǜ xiǎn zhù tí shēng ， yì xiē yí nán zá zhèng yě yīn cǐ dé dào le jí shí de zhì liáo 。 \n \n rán ér ， rèn hé jì shù dōu shì yì bǎ shuāng rèn jiàn 。 suí zhe rén gōng zhì néng zhú bù qǔ dài bù fen chuán tǒng gǎng wèi ， shī yè wèn tí rì yì tū xiǎn ， yóu qí shì cóng shì jiǎn dān tǐ lì láo dòng hé jī xiè xìng gōng zuò de qún tǐ miàn lín zhe qián suǒ wèi yǒu de tiǎo zhàn 。 cǐ wài ， shù jù yǐn sī xiè lòu 、 suàn fǎ qí shì yǐ jí jì shù bèi làn yòng děng yǐn huàn yě bù róng hū shì 。 gèng lìng rén dān yōu de shì ， yí dàn rén men guò dù yī lài jī qì zuò chū pàn duàn ， dú lì sī kǎo de néng lì huò xǔ huì zhú jiàn tuì huà 。 \n \n miàn duì zhè yì qū shì ， wǒ men jì bú yìng máng mù lè guān ， yě bú bì guò fèn kǒng huāng 。 guān jiàn zài yú rú hé qū lì bì hài ， ràng jì shù zhēn zhèng fú wù yú rén lèi 。 zhèng fǔ xū yào jí shí wán shàn xiāng guān fǎ lǜ fǎ guī ， jiā qiáng duì rén gōng zhì néng de jiān guǎn ； qǐ yè yìng dāng chéng dān qǐ xiāng yìng de shè huì zé rèn ； ér gè rén zé yào bú duàn xué xí xīn jì néng ， yǐ shì yìng shí dài de biàn huà 。 wéi yǒu rú cǐ ， rén gōng zhì néng cái néng chéng wèi tuī dòng shè huì jìn bù de yǒu lì gōng jù ， ér fēi wēi xié rén lèi wèi lái de yǐn huàn 。",
+      "timeLimit": 1200,
+      "order": 52,
+      "published": true,
+      "questions": [
+        {
+          "id": "rd-HSK6-x2-q1",
+          "type": "MCQ",
+          "prompt": "根据第二段，人工智能在医学领域的作用是什么？",
+          "promptPinyin": "gēn jù dì èr duàn ， rén gōng zhì néng zài yī xué lǐng yù de zuò yòng shì shén me ？",
+          "explanation": "Đoạn 2 nêu rõ: 借助人工智能对影像资料进行分析，医生诊断的准确率显著提升 (nhờ AI phân tích tư liệu hình ảnh, độ chính xác chẩn đoán của bác sĩ tăng rõ rệt). Đáp án B khớp trực tiếp. AI hỗ trợ bác sĩ chứ không thay thế hoàn toàn; đoạn không đề cập chi phí hay số lượng bệnh nhân nên A/C/D đều sai.",
+          "order": 1,
+          "options": [
+            {
+              "text": "彻底取代了医生的工作",
+              "pinyin": "chè dǐ qǔ dài le yī shēng de gōng zuò"
+            },
+            {
+              "text": "通过分析影像资料提高诊断准确率",
+              "pinyin": "tōng guò fèn xī yǐng xiàng zī liào tí gāo zhěn duàn zhǔn què lǜ"
+            },
+            {
+              "text": "降低了医疗成本",
+              "pinyin": "jiàng dī le yī liáo chéng běn"
+            },
+            {
+              "text": "减少了病人的数量",
+              "pinyin": "jiǎn shǎo le bìng rén de shù liàng"
+            }
+          ],
+          "correctAnswer": {
+            "index": 1,
+            "text": "通过分析影像资料提高诊断准确率"
+          }
+        },
+        {
+          "id": "rd-HSK6-x2-q2",
+          "type": "MCQ",
+          "prompt": "作者认为面对人工智能的发展趋势，我们应采取怎样的态度？",
+          "promptPinyin": "zuò zhě rèn wèi miàn duì rén gōng zhì néng de fā zhǎn qū shì ， wǒ men yìng cǎi qǔ zěn yàng de tài dù ？",
+          "explanation": "Đoạn cuối viết: 我们既不应盲目乐观，也不必过分恐慌。关键在于如何趋利避害 (chúng ta không nên lạc quan mù quáng, cũng không cần quá hoảng sợ; điều then chốt là làm sao tận dụng lợi, tránh hại). Đáp án C phản ánh đúng thái độ này; A/B/D đều trái với quan điểm tác giả.",
+          "order": 2,
+          "options": [
+            {
+              "text": "盲目乐观，全面推广",
+              "pinyin": "máng mù lè guān ， quán miàn tuī guǎng"
+            },
+            {
+              "text": "过分恐慌，加以限制",
+              "pinyin": "guò fèn kǒng huāng ， jiā yǐ xiàn zhì"
+            },
+            {
+              "text": "既不盲目乐观也不过分恐慌，趋利避害",
+              "pinyin": "jì bù máng mù lè guān yě bú guò fèn kǒng huāng ， qū lì bì hài"
+            },
+            {
+              "text": "完全拒绝，回归传统",
+              "pinyin": "wán quán jù jué ， huí guī chuán tǒng"
+            }
+          ],
+          "correctAnswer": {
+            "index": 2,
+            "text": "既不盲目乐观也不过分恐慌，趋利避害"
+          }
+        },
+        {
+          "id": "rd-HSK6-x2-q3",
+          "type": "TRUE_FALSE",
+          "prompt": "文章认为人工智能只有好处，没有任何负面影响。",
+          "promptPinyin": "wén zhāng rèn wéi rén gōng zhì néng zhǐ yǒu hǎo chù ， méi yǒu rèn hé fù miàn yǐng xiǎng 。",
+          "explanation": "Sai. Đoạn 3 chỉ ra nhiều mặt tiêu cực: 失业问题日益凸显、数据隐私泄露、算法歧视 và nguy cơ 独立思考的能力或许会逐渐退化. Tác giả gọi công nghệ là 一把双刃剑 (con dao hai lưỡi), nên khẳng định 'chỉ có lợi, không có hại' là sai.",
+          "order": 3,
+          "options": null,
+          "correctAnswer": {
+            "value": false
+          }
+        },
+        {
+          "id": "rd-HSK6-x2-q4",
+          "type": "TRUE_FALSE",
+          "prompt": "作者认为个人应当不断学习新技能来适应时代的变化。",
+          "promptPinyin": "zuò zhě rèn wéi gè rén yīng dāng bú duàn xué xí xīn jì néng lái shì yìng shí dài de biàn huà 。",
+          "explanation": "Đúng. Đoạn cuối viết: 个人则要不断学习新技能，以适应时代的变化 (cá nhân thì cần không ngừng học kỹ năng mới để thích ứng với sự thay đổi của thời đại). Câu này khớp hoàn toàn với đề.",
+          "order": 4,
+          "options": null,
+          "correctAnswer": {
+            "value": true
+          }
+        },
+        {
+          "id": "rd-HSK6-x2-q5",
+          "type": "FILL_BLANK",
+          "prompt": "文章用哪个比喻来形容任何技术都有利有弊？技术都是一把＿＿＿。",
+          "promptPinyin": "wén zhāng yòng nǎ gè bǐ yù lái xíng róng rèn hé jì shù dōu yǒu lì yǒu bì ？ jì shù dōu shì yì bǎ ＿ ＿ ＿ 。",
+          "explanation": "Đoạn 3 mở đầu bằng: 任何技术都是一把双刃剑 (bất kỳ công nghệ nào cũng là một con dao hai lưỡi). Từ '双刃剑' xuất hiện nguyên văn trong đoạn và là hình ảnh ẩn dụ chỉ việc công nghệ vừa có lợi vừa có hại.",
+          "order": 5,
+          "options": null,
+          "correctAnswer": {
+            "text": "双刃剑",
+            "accepted": [
+              "双刃剑"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "rd-HSK6-x3",
+      "title": "Sự dung hợp giữa truyền thống và hiện đại",
+      "titleZh": "传统与现代的融合",
+      "hskLevel": "HSK6",
+      "passage": "近年来，\"国潮\"一词频繁出现在人们的视野中，它指的是将中国传统文化元素与现代设计理念相结合而形成的一种时尚潮流。曾几何时，不少年轻人认为传统文化陈旧落后，甚至对其不屑一顾；而如今，越来越多的年轻人开始以拥有带有传统元素的产品为荣。这一转变的背后，反映出一个民族文化自信的逐渐觉醒。\n\n以故宫博物院为例，这座拥有六百年历史的宫殿曾一度给人以严肃、遥远的印象。然而，通过推出一系列富有创意的文创产品，故宫成功地拉近了与公众尤其是年轻群体的距离。从印有古画的笔记本，到融合了传统纹样的手机壳，这些产品既保留了浓厚的文化底蕴，又符合现代人的审美与实用需求，因而广受欢迎，供不应求。\n\n值得注意的是，传统与现代的融合并非简单地将古老符号生硬地贴在商品上。真正成功的融合，需要设计者深入理解传统文化的内涵，再用当代的语言将其重新诠释。只有把握住文化的精髓，才能避免流于表面、沦为空洞的模仿。换言之，形式上的模仿远远不够，关键在于精神上的传承与创新。\n\n不可否认，这股潮流也存在一些隐忧。部分商家为追求商业利益，盲目跟风，粗制滥造，反而损害了传统文化的形象。因此，如何在商业化与文化保护之间取得平衡，是这一潮流能否长久发展的关键所在。归根结底，传统文化的生命力，恰恰在于它能够在不断变化的时代中，找到与现代生活相融合的恰当方式。",
+      "passagePinyin": "jìn nián lái ， \" guó cháo \" yì cí pín fán chū xiàn zài rén men de shì yě zhōng ， tā zhǐ de shì jiāng zhōng guó chuán tǒng wén huà yuán sù yǔ xiàn dài shè jì lǐ niàn xiāng jié hé ér xíng chéng de yì zhǒng shí shàng cháo liú 。 céng jǐ hé shí ， bù shào nián qīng rén rèn wéi chuán tǒng wén huà chén jiù luò hòu ， shèn zhì duì qí bú xiè yí gù ； ér rú jīn ， yuè lái yuè duō de nián qīng rén kāi shǐ yǐ yōng yǒu dài yǒu chuán tǒng yuán sù de chǎn pǐn wèi róng 。 zhè yì zhuǎn biàn de bèi hòu ， fǎn yìng chū yí gè mín zú wén huà zì xìn de zhú jiàn jué xǐng 。 \n \n yǐ gù gōng bó wù yuàn wéi lì ， zhè zuò yōng yǒu liù bǎi nián lì shǐ de gōng diàn céng yí dù gěi rén yǐ yán sù 、 yáo yuǎn de yìn xiàng 。 rán ér ， tōng guò tuī chū yí xì liè fù yǒu chuàng yì de wén chuàng chǎn pǐn ， gù gōng chéng gōng dì lā jìn le yǔ gōng zhòng yóu qí shì nián qīng qún tǐ de jù lí 。 cóng yìn yǒu gǔ huà de bǐ jì běn ， dào róng hé le chuán tǒng wén yàng de shǒu jī ké ， zhè xiē chǎn pǐn jì bǎo liú le nóng hòu de wén huà dǐ yùn ， yòu fú hé xiàn dài rén de shěn měi yǔ shí yòng xū qiú ， yīn ér guǎng shòu huān yíng ， gōng bú yìng qiú 。 \n \n zhí dé zhù yì de shì ， chuán tǒng yǔ xiàn dài de róng hé bìng fēi jiǎn dān dì jiāng gǔ lǎo fú hào shēng yìng dì tiē zài shāng pǐn shàng 。 zhēn zhèng chéng gōng de róng hé ， xū yào shè jì zhě shēn rù lǐ jiě chuán tǒng wén huà de nèi hán ， zài yòng dāng dài de yǔ yán jiāng qí chóng xīn quán shì 。 zhǐ yǒu bǎ wò zhù wén huà de jīng suǐ ， cái néng bì miǎn liú yú biǎo miàn 、 lún wèi kōng dòng de mó fǎng 。 huàn yán zhī ， xíng shì shàng de mó fǎng yuǎn yuǎn bú gòu ， guān jiàn zài yú jīng shén shàng de chuán chéng yǔ chuàng xīn 。 \n \n bù kě fǒu rèn ， zhè gǔ cháo liú yě cún zài yì xiē yǐn yōu 。 bù fen shāng jiā wèi zhuī qiú shāng yè lì yì ， máng mù gēn fēng ， cū zhì làn zào ， fǎn ér sǔn hài le chuán tǒng wén huà de xíng xiàng 。 yīn cǐ ， rú hé zài shāng yè huà yǔ wén huà bǎo hù zhī jiān qǔ dé píng héng ， shì zhè yì cháo liú néng fǒu cháng jiǔ fā zhǎn de guān jiàn suǒ zài 。 guī gēn jié dǐ ， chuán tǒng wén huà de shēng mìng lì ， qià qià zài yú tā néng gòu zài bú duàn biàn huà de shí dài zhōng ， zhǎo dào yǔ xiàn dài shēng huó xiāng róng hé de qià dàng fāng shì 。",
+      "timeLimit": 1200,
+      "order": 53,
+      "published": true,
+      "questions": [
+        {
+          "id": "rd-HSK6-x3-q1",
+          "type": "MCQ",
+          "prompt": "根据第一段，年轻人对传统文化的态度发生了怎样的转变？",
+          "promptPinyin": "gēn jù dì yī duàn ， nián qīng rén duì chuán tǒng wén huà de tài dù fā shēng le zěn yàng de zhuǎn biàn ？",
+          "explanation": "Đoạn 1 viết: trước đây nhiều bạn trẻ cho rằng văn hóa truyền thống lạc hậu, thậm chí 对其不屑一顾 (không thèm để mắt), còn nay ngày càng nhiều bạn trẻ 以拥有带有传统元素的产品为荣 (lấy việc sở hữu sản phẩm mang yếu tố truyền thống làm vinh dự). Tức chuyển từ khinh thường sang tự hào. Các phương án khác (sùng bái mù quáng, hoàn toàn vô tri, chán ghét dần) đều không được đoạn văn nhắc tới.",
+          "order": 1,
+          "options": [
+            {
+              "text": "从盲目崇拜到理性看待",
+              "pinyin": "cóng máng mù chóng bài dào lǐ xìng kàn dài"
+            },
+            {
+              "text": "从不屑一顾到引以为荣",
+              "pinyin": "cóng bú xiè yí gù dào yǐn yǐ wéi róng"
+            },
+            {
+              "text": "从完全无知到深入研究",
+              "pinyin": "cóng wán quán wú zhī dào shēn rù yán jiū"
+            },
+            {
+              "text": "从热爱推崇到逐渐厌倦",
+              "pinyin": "cóng rè ài tuī chóng dào zhú jiàn yàn juàn"
+            }
+          ],
+          "correctAnswer": {
+            "index": 1,
+            "text": "从不屑一顾到引以为荣"
+          }
+        },
+        {
+          "id": "rd-HSK6-x3-q2",
+          "type": "MCQ",
+          "prompt": "故宫的文创产品为什么广受欢迎？",
+          "promptPinyin": "gù gōng de wén chuàng chǎn pǐn wèi shén me guǎng shòu huān yíng ？",
+          "explanation": "Đoạn 2 nêu các sản phẩm 既保留了浓厚的文化底蕴，又符合现代人的审美与实用需求, do đó được ưa chuộng đến mức cung không đủ cầu (供不应求). Các phương án khác trái với đoạn: giá rẻ/số lượng nhiều không nêu, sản phẩm vẫn giữ yếu tố truyền thống (không loại bỏ), và hướng tới nhóm trẻ chứ không phải chỉ người già.",
+          "order": 2,
+          "options": [
+            {
+              "text": "价格低廉且数量众多",
+              "pinyin": "jià gé dī lián qiě shù liàng zhòng duō"
+            },
+            {
+              "text": "既有文化底蕴又符合现代审美与实用需求",
+              "pinyin": "jì yǒu wén huà dǐ yùn yòu fú hé xiàn dài shěn měi yǔ shí yòng xū qiú"
+            },
+            {
+              "text": "完全摒弃了传统元素",
+              "pinyin": "wán quán bìng qì le chuán tǒng yuán sù"
+            },
+            {
+              "text": "只面向老年群体设计",
+              "pinyin": "zhī miàn xiàng lǎo nián qún tǐ shè jì"
+            }
+          ],
+          "correctAnswer": {
+            "index": 1,
+            "text": "既有文化底蕴又符合现代审美与实用需求"
+          }
+        },
+        {
+          "id": "rd-HSK6-x3-q3",
+          "type": "TRUE_FALSE",
+          "prompt": "真正成功的传统与现代融合只需把古老符号贴在商品上即可。",
+          "promptPinyin": "zhēn zhèng chéng gōng de chuán tǒng yǔ xiàn dài róng hé zhī xū bǎ gǔ lǎo fú hào tiē zài shāng pǐn shàng jí kě 。",
+          "explanation": "Sai. Đoạn 3 nói rõ sự dung hợp 并非简单地将古老符号生硬地贴在商品上, mà cần 深入理解传统文化的内涵 rồi 用当代的语言将其重新诠释, nắm được 文化的精髓 mới tránh được sự bắt chước hời hợt, rỗng tuếch.",
+          "order": 3,
+          "options": null,
+          "correctAnswer": {
+            "value": false
+          }
+        },
+        {
+          "id": "rd-HSK6-x3-q4",
+          "type": "TRUE_FALSE",
+          "prompt": "部分商家盲目跟风、粗制滥造，反而会损害传统文化的形象。",
+          "promptPinyin": "bù fen shāng jiā máng mù gēn fēng 、 cū zhì làn zào ， fǎn ér huì sǔn hài chuán tǒng wén huà de xíng xiàng 。",
+          "explanation": "Đúng. Đoạn 4 viết: một số thương gia vì lợi nhuận 盲目跟风，粗制滥造，反而损害了传统文化的形象.",
+          "order": 4,
+          "options": null,
+          "correctAnswer": {
+            "value": true
+          }
+        },
+        {
+          "id": "rd-HSK6-x3-q5",
+          "type": "FILL_BLANK",
+          "prompt": "文中把中国传统文化元素与现代设计理念相结合而形成的时尚潮流称为「____」。",
+          "promptPinyin": "wén zhōng bǎ zhōng guó chuán tǒng wén huà yuán sù yǔ xiàn dài shè jì lǐ niàn xiāng jié hé ér xíng chéng de shí shàng cháo liú chēng wéi 「 _ _ _ _ 」 。",
+          "explanation": "Câu mở đầu đoạn 1 định nghĩa 国潮 là trào lưu thời thượng hình thành từ việc kết hợp yếu tố văn hóa truyền thống Trung Quốc với lý niệm thiết kế hiện đại (将中国传统文化元素与现代设计理念相结合而形成的一种时尚潮流). Đáp án 国潮 xuất hiện nguyên văn trong đoạn.",
+          "order": 5,
+          "options": null,
+          "correctAnswer": {
+            "text": "国潮",
+            "accepted": [
+              "国潮"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "rd-HSK6-x4",
+      "title": "Chính sách bảo vệ môi trường",
+      "titleZh": "环境保护政策",
+      "hskLevel": "HSK6",
+      "passage": "近年来，随着经济的高速发展，环境污染问题日益突出，空气质量下降、水资源短缺以及垃圾围城等现象引起了社会各界的广泛关注。为了缓解这一严峻的局面，政府相继出台了一系列环境保护政策，力求在发展经济的同时兼顾生态平衡。\n\n首先，政府大力推行\"绿色发展\"理念，鼓励企业采用清洁能源和节能技术，对高污染、高能耗的产业进行严格限制。凡是不符合环保标准的工厂，都将面临停产整顿甚至关闭的处罚。与此同时，国家还通过财政补贴的方式，扶持太阳能、风能等可再生能源的开发与利用，从源头上减少对煤炭等传统能源的依赖。\n\n其次，在城市管理方面，各地陆续实施了垃圾分类制度。居民必须将生活垃圾按照可回收物、有害垃圾、厨余垃圾和其他垃圾进行分类投放。这项措施虽然在初期给人们的生活带来了一定的不便，但从长远来看，不仅有助于资源的循环利用，也大大减轻了垃圾处理的压力。\n\n然而，任何政策的落实都离不开公众的参与和支持。专家指出，环境保护并非仅仅是政府的责任，更需要每一个公民从自身做起，养成节约资源、爱护环境的良好习惯。只有政府、企业和个人三方共同努力，形成合力，才能真正实现人与自然的和谐共处，为子孙后代留下一片碧水蓝天。",
+      "passagePinyin": "jìn nián lái ， suí zhe jīng jì de gāo sù fā zhǎn ， huán jìng wū rǎn wèn tí rì yì tū chū ， kōng qì zhì liàng xià jiàng 、 shuǐ zī yuán duǎn quē yǐ jí lā jī wéi chéng děng xiàn xiàng yǐn qǐ le shè huì gè jiè de guǎng fàn guān zhù 。 wèi le huǎn jiě zhè yì yán jùn de jú miàn ， zhèng fǔ xiāng jì chū tái le yí xì liè huán jìng bǎo hù zhèng cè ， lì qiú zài fā zhǎn jīng jì de tóng shí jiān gù shēng tài píng héng 。 \n \n shǒu xiān ， zhèng fǔ dà lì tuī xíng \" lǜ sè fā zhǎn \" lǐ niàn ， gǔ lì qǐ yè cǎi yòng qīng jié néng yuán hé jié néng jì shù ， duì gāo wū rǎn 、 gāo néng hào de chǎn yè jìn xíng yán gé xiàn zhì 。 fán shì bù fú hé huán bǎo biāo zhǔn de gōng chǎng ， dōu jiāng miàn lín tíng chǎn zhěng dùn shèn zhì guān bì de chǔ fá 。 yǔ cǐ tóng shí ， guó jiā hái tōng guò cái zhèng bǔ tiē de fāng shì ， fú chí tài yáng néng 、 fēng néng děng kě zài shēng néng yuán de kāi fā yǔ lì yòng ， cóng yuán tóu shàng jiǎn shǎo duì méi tàn děng chuán tǒng néng yuán de yī lài 。 \n \n qí cì ， zài chéng shì guǎn lǐ fāng miàn ， gè dì lù xù shí shī le lā jī fēn lèi zhì dù 。 jū mín bì xū jiāng shēng huó lā jī àn zhào kě huí shōu wù 、 yǒu hài lā jī 、 chú yú lā jī hé qí tā lā jī jìn xíng fēn lèi tóu fàng 。 zhè xiàng cuò shī suī rán zài chū qī gěi rén men de shēng huó dài lái le yí dìng de bú biàn ， dàn cóng cháng yuǎn lái kàn ， bù jǐn yǒu zhù yú zī yuán de xún huán lì yòng ， yě dà dà jiǎn qīng le lā jī chǔ lǐ de yā lì 。 \n \n rán ér ， rèn hé zhèng cè de luò shí dōu lí bù kāi gōng zhòng de cān yù hé zhī chí 。 zhuān jiā zhǐ chū ， huán jìng bǎo hù bìng fēi jǐn jǐn shì zhèng fǔ de zé rèn ， gèng xū yào měi yí gè gōng mín cóng zì shēn zuò qǐ ， yǎng chéng jié yuē zī yuán 、 ài hù huán jìng de liáng hǎo xí guàn 。 zhǐ yǒu zhèng fǔ 、 qǐ yè hé gè rén sān fāng gòng tóng nǔ lì ， xíng chéng hé lì ， cái néng zhēn zhèng shí xiàn rén yǔ zì rán de hé xié gòng chǔ ， wèi zǐ sūn hòu dài liú xià yí piàn bì shuǐ lán tiān 。",
+      "timeLimit": 1200,
+      "order": 54,
+      "published": true,
+      "questions": [
+        {
+          "id": "rd-HSK6-x4-q1",
+          "type": "MCQ",
+          "prompt": "根据短文，政府对不符合环保标准的工厂采取什么措施？",
+          "promptPinyin": "gēn jù duǎn wén ， zhèng fǔ duì bù fú hé huán bǎo biāo zhǔn de gōng chǎng cǎi qǔ shén me cuò shī ？",
+          "explanation": "Đoạn 2 nêu rõ: '凡是不符合环保标准的工厂，都将面临停产整顿甚至关闭的处罚' (những nhà máy không đạt tiêu chuẩn môi trường sẽ đối mặt với việc đình chỉ sản xuất chỉnh đốn thậm chí đóng cửa), nên đáp án đúng là lựa chọn thứ 2. Các lựa chọn khác đều trái với văn bản: tài trợ tài chính dành cho năng lượng tái tạo chứ không phải nhà máy vi phạm.",
+          "order": 1,
+          "options": [
+            {
+              "text": "给予财政补贴",
+              "pinyin": "jǐ yǔ cái zhèng bǔ tiē"
+            },
+            {
+              "text": "面临停产整顿甚至关闭",
+              "pinyin": "miàn lín tíng chǎn zhěng dùn shèn zhì guān bì"
+            },
+            {
+              "text": "要求增加产量",
+              "pinyin": "yāo qiú zēng jiā chǎn liàng"
+            },
+            {
+              "text": "免除全部税收",
+              "pinyin": "miǎn chú quán bù shuì shōu"
+            }
+          ],
+          "correctAnswer": {
+            "index": 1,
+            "text": "面临停产整顿甚至关闭"
+          }
+        },
+        {
+          "id": "rd-HSK6-x4-q2",
+          "type": "MCQ",
+          "prompt": "作者认为要真正实现人与自然的和谐共处，关键在于什么？",
+          "promptPinyin": "zuò zhě rèn wéi yào zhēn zhèng shí xiàn rén yǔ zì rán de hé xié gòng chǔ ， guān jiàn zài yú shén me ？",
+          "explanation": "Đoạn cuối khẳng định: '只有政府、企业和个人三方共同努力，形成合力，才能真正实现人与自然的和谐共处' (chỉ khi chính phủ, doanh nghiệp và cá nhân cùng nỗ lực mới có thể thực sự đạt được sự chung sống hài hòa), tương ứng lựa chọn thứ 3. Các lựa chọn khác đều là quan điểm phiến diện không được văn bản ủng hộ.",
+          "order": 2,
+          "options": [
+            {
+              "text": "只依靠政府的严格管理",
+              "pinyin": "zhī yī kào zhèng fǔ de yán gé guǎn lǐ"
+            },
+            {
+              "text": "完全交给企业负责",
+              "pinyin": "wán quán jiāo gěi qǐ yè fù zé"
+            },
+            {
+              "text": "政府、企业和个人三方共同努力",
+              "pinyin": "zhèng fǔ 、 qǐ yè hé gè rén sān fāng gòng tóng nǔ lì"
+            },
+            {
+              "text": "禁止使用一切传统能源",
+              "pinyin": "jìn zhǐ shǐ yòng yí qiè chuán tǒng néng yuán"
+            }
+          ],
+          "correctAnswer": {
+            "index": 2,
+            "text": "政府、企业和个人三方共同努力"
+          }
+        },
+        {
+          "id": "rd-HSK6-x4-q3",
+          "type": "TRUE_FALSE",
+          "prompt": "国家通过财政补贴来扶持太阳能、风能等可再生能源的开发与利用。",
+          "promptPinyin": "guó jiā tōng guò cái zhèng bǔ tiē lái fú chí tài yáng néng 、 fēng néng děng kě zài shēng néng yuán de kāi fā yǔ lì yòng 。",
+          "explanation": "Đúng. Đoạn 2 viết: '国家还通过财政补贴的方式，扶持太阳能、风能等可再生能源的开发与利用', khớp hoàn toàn với nội dung câu hỏi.",
+          "order": 3,
+          "options": null,
+          "correctAnswer": {
+            "value": true
+          }
+        },
+        {
+          "id": "rd-HSK6-x4-q4",
+          "type": "TRUE_FALSE",
+          "prompt": "作者认为环境保护仅仅是政府的责任，与普通公民无关。",
+          "promptPinyin": "zuò zhě rèn wéi huán jìng bǎo hù jǐn jǐn shì zhèng fǔ de zé rèn ， yǔ pǔ tōng gōng mín wú guān 。",
+          "explanation": "Sai. Đoạn cuối nêu: '环境保护并非仅仅是政府的责任，更需要每一个公民从自身做起' (bảo vệ môi trường không chỉ là trách nhiệm của chính phủ mà còn cần mỗi công dân bắt đầu từ chính mình), trái ngược với câu hỏi.",
+          "order": 4,
+          "options": null,
+          "correctAnswer": {
+            "value": false
+          }
+        },
+        {
+          "id": "rd-HSK6-x4-q5",
+          "type": "FILL_BLANK",
+          "prompt": "在城市管理方面，各地陆续实施了________制度，要求居民将生活垃圾进行分类投放。",
+          "promptPinyin": "zài chéng shì guǎn lǐ fāng miàn ， gè dì lù xù shí shī le _ _ _ _ _ _ _ _ zhì dù ， yāo qiú jū mín jiāng shēng huó lā jī jìn xíng fēn lèi tóu fàng 。",
+          "explanation": "Đoạn 3 viết: '各地陆续实施了垃圾分类制度' (các nơi lần lượt thực hiện chế độ phân loại rác), nên chỗ trống điền '垃圾分类' xuất hiện nguyên văn trong đoạn.",
+          "order": 5,
+          "options": null,
+          "correctAnswer": {
+            "text": "垃圾分类",
+            "accepted": [
+              "垃圾分类"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "rd-HSK6-x5",
+      "title": "Thưởng thức tác phẩm văn học: Vẻ đẹp của \"Biên Thành\"",
+      "titleZh": "文学作品赏析：《边城》之美",
+      "hskLevel": "HSK6",
+      "passage": "沈从文的《边城》是中国现代文学史上一部独具魅力的小说。它以湘西边境的小城茶峒为背景，讲述了摆渡老人的孙女翠翠与船总的两个儿子之间朦胧而凄美的爱情故事。作品之所以能够打动一代又一代读者，并非因为情节曲折离奇，恰恰相反，它的动人之处在于那份质朴与含蓄。\n\n沈从文笔下的湘西，是一个近乎理想化的世界。这里的人们保持着善良淳厚的本性，重情重义，即便在利益面前也不失体面。作者并不刻意批判现实，而是用一种温柔的笔调，描绘出人性中最美好的部分。然而，这份美好背后却隐藏着淡淡的忧伤——翠翠的等待没有明确的结局，那个在她生命中留下印记的年轻人，\"也许永远不回来了，也许明天回来\"。这种含糊其辞的结尾，反而给读者留下了无穷的想象空间。\n\n在艺术手法上，《边城》最突出的特点是它诗一般的语言。沈从文善于将自然风光与人物的内心情感融为一体，山水在他的笔下不再是单纯的背景，而成了传递情绪的载体。清澈的溪流、翠绿的竹林、朦胧的暮色，无不烘托着人物细腻的心理变化。正是这种情景交融的写法，使《边城》超越了一般的乡土小说，具有了永恒的审美价值。可以说，读《边城》，读的不仅是一个故事，更是一种境界，一种对纯真人性的深深眷恋。",
+      "passagePinyin": "shěn cóng wén de 《 biān chéng 》 shì zhōng guó xiàn dài wén xué shǐ shàng yí bù dú jù mèi lì de xiǎo shuō 。 tā yǐ xiāng xī biān jìng de xiǎo chéng chá dòng wèi bèi jǐng ， jiǎng shù le bǎi dù lǎo rén de sūn nǚ cuì cuì yǔ chuán zǒng de liǎng gè ér zi zhī jiān méng lóng ér qī měi de ài qíng gù shì 。 zuò pǐn zhī suǒ yǐ néng gòu dǎ dòng yí dài yòu yí dài dú zhě ， bìng fēi yīn wèi qíng jié qǔ zhé lí qí ， qià qià xiāng fǎn ， tā de dòng rén zhī chù zài yú nà fèn zhì pǔ yǔ hán xù 。 \n \n shěn cóng wén bǐ xià de xiāng xī ， shì yí gè jìn hū lǐ xiǎng huà de shì jiè 。 zhè lǐ de rén men bǎo chí zhe shàn liáng chún hòu de běn xìng ， zhòng qíng zhòng yì ， jí biàn zài lì yì miàn qián yě bù shī tǐ miàn 。 zuò zhě bìng bú kè yì pī pàn xiàn shí ， ér shì yòng yì zhǒng wēn róu de bǐ diào ， miáo huì chū rén xìng zhōng zuì měi hǎo de bù fēn 。 rán ér ， zhè fèn měi hǎo bèi hòu què yǐn cáng zhe dàn dàn de yōu shāng — — cuì cuì de děng dài méi yǒu míng què de jié jú ， nà ge zài tā shēng mìng zhòng liú xià yìn jì de nián qīng rén ， \" yě xǔ yǒng yuǎn bù huí lái le ， yě xǔ míng tiān huí lái \" 。 zhè zhǒng hán hú qí cí de jié wěi ， fǎn ér gěi dú zhě liú xià le wú qióng de xiǎng xiàng kōng jiān 。 \n \n zài yì shù shǒu fǎ shàng ， 《 biān chéng 》 zuì tū chū de tè diǎn shì tā shī yì bān de yǔ yán 。 shěn cóng wén shàn yú jiāng zì rán fēng guāng yǔ rén wù de nèi xīn qíng gǎn róng wèi yì tǐ ， shān shuǐ zài tā de bǐ xià bú zài shì dān chún de bèi jǐng ， ér chéng le chuán dì qíng xù de zǎi tǐ 。 qīng chè de xī liú 、 cuì lǜ de zhú lín 、 méng lóng de mù sè ， wú bù hōng tuō zhe rén wù xì nì de xīn lǐ biàn huà 。 zhèng shì zhè zhǒng qíng jǐng jiāo róng de xiě fǎ ， shǐ 《 biān chéng 》 chāo yuè le yì bān de xiāng tǔ xiǎo shuō ， jù yǒu le yǒng héng de shěn měi jià zhí 。 kě yǐ shuō ， dú 《 biān chéng 》 ， dú de bù jǐn shì yí gè gù shì ， gèng shì yì zhǒng jìng jiè ， yì zhǒng duì chún zhēn rén xìng de shēn shēn juàn liàn 。",
+      "timeLimit": 1200,
+      "order": 55,
+      "published": true,
+      "questions": [
+        {
+          "id": "rd-HSK6-x5-q1",
+          "type": "MCQ",
+          "prompt": "根据文章，《边城》能够打动读者的主要原因是什么？",
+          "promptPinyin": "gēn jù wén zhāng ， 《 biān chéng 》 néng gòu dǎ dòng dú zhě de zhǔ yào yuán yīn shì shén me ？",
+          "explanation": "Đoạn văn viết «它的动人之处在于那份质朴与含蓄» (điểm cảm động của nó nằm ở sự mộc mạc và hàm súc), đồng thời nói rõ «并非因为情节曲折离奇» (không phải vì tình tiết ly kỳ). Vậy đáp án đúng là B; A bị phủ định trực tiếp, C sai vì «作者并不刻意批判现实», D không được đề cập.",
+          "order": 1,
+          "options": [
+            {
+              "text": "情节曲折离奇，充满悬念",
+              "pinyin": "qíng jié qū zhé lí qí ， chōng mǎn xuán niàn"
+            },
+            {
+              "text": "质朴与含蓄的表达方式",
+              "pinyin": "zhì pǔ yǔ hán xù de biǎo dá fāng shì"
+            },
+            {
+              "text": "对社会现实的猛烈批判",
+              "pinyin": "duì shè huì xiàn shí de měng liè pī pàn"
+            },
+            {
+              "text": "复杂宏大的历史背景",
+              "pinyin": "fù zá hóng dà de lì shǐ bèi jǐng"
+            }
+          ],
+          "correctAnswer": {
+            "index": 1,
+            "text": "质朴与含蓄的表达方式"
+          }
+        },
+        {
+          "id": "rd-HSK6-x5-q2",
+          "type": "MCQ",
+          "prompt": "关于沈从文笔下的湘西世界，下列说法正确的是：",
+          "promptPinyin": "guān yú shěn cóng wén bǐ xià de xiāng xī shì jiè ， xià liè shuō fǎ zhèng què de shì ：",
+          "explanation": "Đoạn văn ghi rõ «沈从文笔下的湘西，是一个近乎理想化的世界». A sai vì «即便在利益面前也不失体面», B sai vì «作者并不刻意批判现实», D sai vì «描绘出人性中最美好的部分». Do đó chỉ có đáp án C phù hợp.",
+          "order": 2,
+          "options": [
+            {
+              "text": "人们唯利是图，失去体面",
+              "pinyin": "rén men wéi lì shì tú ， shī qù tǐ miàn"
+            },
+            {
+              "text": "作者刻意批判社会现实",
+              "pinyin": "zuò zhě kè yì pī pàn shè huì xiàn shí"
+            },
+            {
+              "text": "是一个近乎理想化的世界",
+              "pinyin": "shì yí gè jìn hū lǐ xiǎng huà de shì jiè"
+            },
+            {
+              "text": "缺乏美好的人性描写",
+              "pinyin": "quē fá měi hǎo de rén xìng miáo xiě"
+            }
+          ],
+          "correctAnswer": {
+            "index": 2,
+            "text": "是一个近乎理想化的世界"
+          }
+        },
+        {
+          "id": "rd-HSK6-x5-q3",
+          "type": "TRUE_FALSE",
+          "prompt": "《边城》的结尾给出了翠翠爱情故事明确的结局。",
+          "promptPinyin": "《 biān chéng 》 de jié wěi gěi chū le cuì cuì ài qíng gù shì míng què de jié jú 。",
+          "explanation": "Sai. Đoạn văn nói «翠翠的等待没有明确的结局» và trích câu «也许永远不回来了，也许明天回来», cho thấy kết thúc mơ hồ, không rõ ràng.",
+          "order": 3,
+          "options": null,
+          "correctAnswer": {
+            "value": false
+          }
+        },
+        {
+          "id": "rd-HSK6-x5-q4",
+          "type": "TRUE_FALSE",
+          "prompt": "在《边城》中，山水景物不仅是背景，还成了传递情绪的载体。",
+          "promptPinyin": "zài 《 biān chéng 》 zhōng ， shān shuǐ jǐng wù bù jǐn shì bèi jǐng ， hái chéng le chuán dì qíng xù de zǎi tǐ 。",
+          "explanation": "Đúng. Đoạn văn viết «山水在他的笔下不再是单纯的背景，而成了传递情绪的载体», khớp hoàn toàn với nhận định.",
+          "order": 4,
+          "options": null,
+          "correctAnswer": {
+            "value": true
+          }
+        },
+        {
+          "id": "rd-HSK6-x5-q5",
+          "type": "FILL_BLANK",
+          "prompt": "文章认为，正是________的写法，使《边城》超越了一般的乡土小说。",
+          "promptPinyin": "wén zhāng rèn wéi ， zhèng shì _ _ _ _ _ _ _ _ de xiě fǎ ， shǐ 《 biān chéng 》 chāo yuè le yì bān de xiāng tǔ xiǎo shuō 。",
+          "explanation": "Đoạn cuối viết «正是这种情景交融的写法，使《边城》超越了一般的乡土小说», nên đáp án điền vào là «情景交融», xuất hiện nguyên văn trong đoạn.",
+          "order": 5,
+          "options": null,
+          "correctAnswer": {
+            "text": "情景交融",
+            "accepted": [
+              "情景交融"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "rd-HSK6-x6",
+      "title": "Khoa học và đạo đức: Ranh giới không thể bỏ qua",
+      "titleZh": "科学与伦理：不容忽视的界限",
+      "hskLevel": "HSK6",
+      "passage": "随着科学技术的飞速发展，人类改造自然、认识自身的能力达到了前所未有的高度。然而，科学的进步并非总是带来纯粹的福音。当基因编辑、人工智能和克隆技术等前沿领域不断取得突破时，一个深刻的问题也随之浮现：科学研究是否应当受到伦理的约束？\n\n支持者认为，科学本身是中立的，它既可以造福人类，也可能被滥用而酿成灾难。以基因编辑技术为例，它固然能够帮助人类攻克某些遗传性疾病，但若被用于随意改变胎儿的智力或外貌，就可能引发严重的社会不公，甚至动摇人类平等的根基。因此，为科学研究设立伦理底线，绝不是阻碍进步，而是确保技术真正服务于人类的整体福祉。\n\n反对者则担忧，过于严格的伦理限制会束缚科学家的创造力，延缓重大发现的诞生。他们指出，历史上许多曾被视为\"违背伦理\"的研究，最终都被证明极具价值。然而，这种观点忽略了一个关键事实：一旦某些底线被突破，其后果往往是不可逆转的。\n\n事实上，科学与伦理并非天生对立。真正成熟的科学精神，不仅追求真理，也应当心怀敬畏与责任。科学家在探索未知的同时，必须时刻反思：我们能做的，是否就是我们应该做的？唯有在理性与良知之间找到平衡，科学才能走得更远，也才能赢得社会长久的信任。",
+      "passagePinyin": "suí zhe kē xué jì shù de fēi sù fā zhǎn ， rén lèi gǎi zào zì rán 、 rèn shi zì shēn de néng lì dá dào le qián suǒ wèi yǒu de gāo dù 。 rán ér ， kē xué de jìn bù bìng fēi zǒng shì dài lái chún cuì de fú yīn 。 dāng jī yīn biān jí 、 rén gōng zhì néng hé kè lóng jì shù děng qián yán lǐng yù bú duàn qǔ dé tū pò shí ， yí gè shēn kè de wèn tí yě suí zhī fú xiàn ： kē xué yán jiū shì fǒu yīng dāng shòu dào lún lǐ de yuē shù ？ \n \n zhī chí zhě rèn wèi ， kē xué běn shēn shì zhōng lì de ， tā jì kě yǐ zào fú rén lèi ， yě kě néng bèi làn yòng ér niàng chéng zāi nàn 。 yǐ jī yīn biān jí jì shù wéi lì ， tā gù rán néng gòu bāng zhù rén lèi gōng kè mǒu xiē yí chuán xìng jí bìng ， dàn ruò bèi yòng yú suí yì gǎi biàn tāi ér de zhì lì huò wài mào ， jiù kě néng yǐn fā yán zhòng de shè huì bù gōng ， shèn zhì dòng yáo rén lèi píng děng de gēn jī 。 yīn cǐ ， wèi kē xué yán jiū shè lì lún lǐ dǐ xiàn ， jué bú shì zǔ ài jìn bù ， ér shì què bǎo jì shù zhēn zhèng fú wù yú rén lèi de zhěng tǐ fú zhǐ 。 \n \n fǎn duì zhě zé dān yōu ， guò yú yán gé de lún lǐ xiàn zhì huì shù fù kē xué jiā de chuàng zào lì ， yán huǎn zhòng dà fā xiàn de dàn shēng 。 tā men zhǐ chū ， lì shǐ shàng xǔ duō céng bèi shì wèi \" wéi bèi lún lǐ \" de yán jiū ， zuì zhōng dōu bèi zhèng míng jí jù jià zhí 。 rán ér ， zhè zhǒng guān diǎn hū lüè le yí gè guān jiàn shì shí ： yí dàn mǒu xiē dǐ xiàn bèi tū pò ， qí hòu guǒ wǎng wǎng shì bù kě nì zhuǎn de 。 \n \n shì shí shàng ， kē xué yǔ lún lǐ bìng fēi tiān shēng duì lì 。 zhēn zhèng chéng shú de kē xué jīng shén ， bù jǐn zhuī qiú zhēn lǐ ， yě yīng dāng xīn huái jìng wèi yǔ zé rèn 。 kē xué jiā zài tàn suǒ wèi zhī de tóng shí ， bì xū shí kè fǎn sī ： wǒ men néng zuò de ， shì fǒu jiù shì wǒ men yīng gāi zuò de ？ wéi yǒu zài lǐ xìng yǔ liáng zhī zhī jiān zhǎo dào píng héng ， kē xué cái néng zǒu dé gèng yuǎn ， yě cái néng yíng dé shè huì zhǎng jiǔ de xìn rèn 。",
+      "timeLimit": 1200,
+      "order": 56,
+      "published": true,
+      "questions": [
+        {
+          "id": "rd-HSK6-x6-q1",
+          "type": "MCQ",
+          "prompt": "根据文章，支持为科学研究设立伦理底线的人认为，科学本身具有什么特点？",
+          "promptPinyin": "gēn jù wén zhāng ， zhī chí wèi kē xué yán jiū shè lì lún lǐ dǐ xiàn de rén rèn wéi ， kē xué běn shēn jù yǒu shén me tè diǎn ？",
+          "explanation": "Đoạn 2 nêu rõ: 支持者认为，科学本身是中立的，它既可以造福人类，也可能被滥用而酿成灾难 (khoa học bản thân là trung lập, vừa có thể mang lại lợi ích vừa có thể bị lạm dụng). Ba lựa chọn còn lại đều sai: 'tất yếu mang lại lợi ích' và 'luôn bị lạm dụng' đều phiến diện (đoạn nói 'vừa...vừa...'), còn 'không cần ràng buộc' trái với chủ trương đặt giới hạn đạo đức.",
+          "order": 1,
+          "options": [
+            {
+              "text": "科学本身是中立的",
+              "pinyin": "kē xué běn shēn shì zhōng lì de"
+            },
+            {
+              "text": "科学必然造福人类",
+              "pinyin": "kē xué bì rán zào fú rén lèi"
+            },
+            {
+              "text": "科学总是被滥用",
+              "pinyin": "kē xué zǒng shì bèi làn yòng"
+            },
+            {
+              "text": "科学不需要任何约束",
+              "pinyin": "kē xué bù xū yào rèn hé yuē shù"
+            }
+          ],
+          "correctAnswer": {
+            "index": 0,
+            "text": "科学本身是中立的"
+          }
+        },
+        {
+          "id": "rd-HSK6-x6-q2",
+          "type": "MCQ",
+          "prompt": "文章认为，基因编辑技术若被滥用，可能带来什么后果？",
+          "promptPinyin": "wén zhāng rèn wéi ， jī yīn biān jí jì shù ruò bèi làn yòng ， kě néng dài lái shén me hòu guǒ ？",
+          "explanation": "Đoạn 2 chỉ ra nếu công nghệ chỉnh sửa gen bị dùng để tùy tiện thay đổi trí lực hay ngoại hình của thai nhi thì 就可能引发严重的社会不公，甚至动摇人类平等的根基 (có thể gây bất công xã hội nghiêm trọng, thậm chí lung lay nền tảng bình đẳng của con người). Lựa chọn 'triệt tiêu bệnh di truyền' là mặt lợi chứ không phải hậu quả của lạm dụng; hai lựa chọn còn lại là lo ngại của phe phản đối về giới hạn đạo đức, không phải hậu quả của lạm dụng công nghệ gen.",
+          "order": 2,
+          "options": [
+            {
+              "text": "延缓科学的进步",
+              "pinyin": "yán huǎn kē xué de jìn bù"
+            },
+            {
+              "text": "彻底消除遗传疾病",
+              "pinyin": "chè dǐ xiāo chú yí chuán jí bìng"
+            },
+            {
+              "text": "引发社会不公，动摇人类平等的根基",
+              "pinyin": "yǐn fā shè huì bù gōng ， dòng yáo rén lèi píng děng de gēn jī"
+            },
+            {
+              "text": "束缚科学家的创造力",
+              "pinyin": "shù fù kē xué jiā de chuàng zào lì"
+            }
+          ],
+          "correctAnswer": {
+            "index": 2,
+            "text": "引发社会不公，动摇人类平等的根基"
+          }
+        },
+        {
+          "id": "rd-HSK6-x6-q3",
+          "type": "TRUE_FALSE",
+          "prompt": "反对者认为，过于严格的伦理限制会束缚科学家的创造力。",
+          "promptPinyin": "fǎn duì zhě rèn wéi ， guò yú yán gé de lún lǐ xiàn zhì huì shù fù kē xué jiā de chuàng zào lì 。",
+          "explanation": "Đúng. Đoạn 3 viết: 反对者则担忧，过于严格的伦理限制会束缚科学家的创造力，延缓重大发现的诞生 (những người phản đối lo ngại rằng giới hạn đạo đức quá nghiêm ngặt sẽ trói buộc sức sáng tạo của nhà khoa học).",
+          "order": 3,
+          "options": null,
+          "correctAnswer": {
+            "value": true
+          }
+        },
+        {
+          "id": "rd-HSK6-x6-q4",
+          "type": "TRUE_FALSE",
+          "prompt": "文章认为，科学与伦理天生就是对立的。",
+          "promptPinyin": "wén zhāng rèn wéi ， kē xué yǔ lún lǐ tiān shēng jiù shì duì lì de 。",
+          "explanation": "Sai. Đoạn cuối khẳng định ngược lại: 科学与伦理并非天生对立 (khoa học và đạo đức không phải sinh ra đã đối lập). Vì vậy nhận định này trái với nội dung bài.",
+          "order": 4,
+          "options": null,
+          "correctAnswer": {
+            "value": false
+          }
+        },
+        {
+          "id": "rd-HSK6-x6-q5",
+          "type": "FILL_BLANK",
+          "prompt": "作者认为，只有在理性与______之间找到平衡，科学才能走得更远。",
+          "promptPinyin": "zuò zhě rèn wéi ， zhǐ yǒu zài lǐ xìng yǔ _ _ _ _ _ _ zhī jiān zhǎo dào píng héng ， kē xué cái néng zǒu dé gèng yuǎn 。",
+          "explanation": "Câu cuối đoạn văn viết: 唯有在理性与良知之间找到平衡，科学才能走得更远 (chỉ khi tìm được sự cân bằng giữa lý trí và lương tri, khoa học mới có thể tiến xa hơn). Từ '良知' xuất hiện nguyên văn trong đoạn.",
+          "order": 5,
+          "options": null,
+          "correctAnswer": {
+            "text": "良知",
+            "accepted": [
+              "良知"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}
