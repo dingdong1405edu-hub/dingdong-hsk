@@ -3,2897 +3,1569 @@
   "characters": [
     {
       "id": "hz-HSK1-x1",
-      "character": "黄",
-      "pinyin": "huáng",
-      "tone": 2,
-      "meaning": "vàng",
+      "character": "请",
+      "pinyin": "qǐng",
+      "tone": 3,
+      "meaning": "mời, xin",
       "hskLevel": "HSK1",
       "strokeCount": 0,
       "examples": [
         {
-          "sentence": "这件衣服是黄的。",
-          "pinyin": "zhè jiàn yī fu shì huáng de 。",
-          "meaning": "Cái áo này màu vàng."
+          "sentence": "请喝茶。",
+          "pinyin": "qǐng hē chá 。",
+          "meaning": "Mời uống trà."
         }
       ]
     },
     {
       "id": "hz-HSK1-x2",
-      "character": "深",
-      "pinyin": "shēn",
-      "tone": 1,
-      "meaning": "đậm, sẫm",
+      "character": "没",
+      "pinyin": "méi",
+      "tone": 2,
+      "meaning": "không (có)",
       "hskLevel": "HSK1",
       "strokeCount": 0,
       "examples": [
         {
-          "sentence": "我喜欢深蓝色。",
-          "pinyin": "wǒ xǐ huan shēn lán sè 。",
-          "meaning": "Tôi thích màu xanh đậm."
+          "sentence": "我没有书。",
+          "pinyin": "wǒ méi yǒu shū 。",
+          "meaning": "Tôi không có sách."
         }
       ]
     },
     {
       "id": "hz-HSK1-x3",
-      "character": "浅",
-      "pinyin": "qiǎn",
+      "character": "很",
+      "pinyin": "hěn",
       "tone": 3,
-      "meaning": "nhạt",
+      "meaning": "rất",
       "hskLevel": "HSK1",
       "strokeCount": 0,
       "examples": [
         {
-          "sentence": "这是浅色的衣服。",
-          "pinyin": "zhè shì qiǎn sè de yī fu 。",
-          "meaning": "Đây là quần áo màu nhạt."
+          "sentence": "我很高兴。",
+          "pinyin": "wǒ hěn gāo xìng 。",
+          "meaning": "Tôi rất vui."
         }
       ]
     },
     {
       "id": "hz-HSK1-x4",
-      "character": "点",
-      "pinyin": "diǎn",
-      "tone": 3,
-      "meaning": "giờ",
+      "character": "别",
+      "pinyin": "bié",
+      "tone": 2,
+      "meaning": "đừng, chớ",
       "hskLevel": "HSK1",
       "strokeCount": 0,
       "examples": [
         {
-          "sentence": "现在三点。",
-          "pinyin": "xiàn zài sān diǎn 。",
-          "meaning": "Bây giờ là ba giờ."
+          "sentence": "别客气。",
+          "pinyin": "bié kè qì 。",
+          "meaning": "Đừng khách sáo."
         }
       ]
     },
     {
       "id": "hz-HSK1-x5",
-      "character": "分",
-      "pinyin": "fēn",
+      "character": "一",
+      "pinyin": "yī",
       "tone": 1,
-      "meaning": "phút",
+      "meaning": "một",
       "hskLevel": "HSK1",
       "strokeCount": 0,
       "examples": [
         {
-          "sentence": "现在八点十分。",
-          "pinyin": "xiàn zài bā diǎn shí fēn 。",
-          "meaning": "Bây giờ là tám giờ mười phút."
+          "sentence": "我有一个哥哥。",
+          "pinyin": "wǒ yǒu yí gè gē ge 。",
+          "meaning": "Tôi có một anh trai."
         }
       ]
     },
     {
       "id": "hz-HSK1-x6",
-      "character": "刻",
-      "pinyin": "kè",
+      "character": "二",
+      "pinyin": "èr",
       "tone": 4,
-      "meaning": "khắc (15 phút)",
+      "meaning": "hai",
       "hskLevel": "HSK1",
       "strokeCount": 0,
       "examples": [
         {
-          "sentence": "现在三点一刻。",
-          "pinyin": "xiàn zài sān diǎn yí kè 。",
-          "meaning": "Bây giờ là ba giờ mười lăm."
+          "sentence": "二加二是四。",
+          "pinyin": "èr jiā èr shì sì 。",
+          "meaning": "Hai cộng hai là bốn."
         }
       ]
     },
     {
       "id": "hz-HSK1-x7",
-      "character": "半",
-      "pinyin": "bàn",
-      "tone": 4,
-      "meaning": "rưỡi, nửa",
+      "character": "三",
+      "pinyin": "sān",
+      "tone": 1,
+      "meaning": "ba",
       "hskLevel": "HSK1",
       "strokeCount": 0,
       "examples": [
         {
-          "sentence": "现在九点半。",
-          "pinyin": "xiàn zài jiǔ diǎn bàn 。",
-          "meaning": "Bây giờ là chín giờ rưỡi."
+          "sentence": "我家有三口人。",
+          "pinyin": "wǒ jiā yǒu sān kǒu rén 。",
+          "meaning": "Nhà tôi có ba người."
         }
       ]
     },
     {
       "id": "hz-HSK1-x8",
-      "character": "差",
-      "pinyin": "chà",
+      "character": "四",
+      "pinyin": "sì",
       "tone": 4,
-      "meaning": "kém, thiếu",
+      "meaning": "bốn",
       "hskLevel": "HSK1",
       "strokeCount": 0,
       "examples": [
         {
-          "sentence": "现在差五分八点。",
-          "pinyin": "xiàn zài chà wǔ fēn bā diǎn 。",
-          "meaning": "Bây giờ là tám giờ kém năm."
+          "sentence": "现在四点。",
+          "pinyin": "xiàn zài sì diǎn 。",
+          "meaning": "Bây giờ là bốn giờ."
         }
       ]
     },
     {
       "id": "hz-HSK1-x9",
-      "character": "钟",
-      "pinyin": "zhōng",
-      "tone": 1,
-      "meaning": "đồng hồ; giờ",
-      "hskLevel": "HSK1",
-      "strokeCount": 0,
-      "examples": [
-        {
-          "sentence": "我五点钟起床。",
-          "pinyin": "wǒ wǔ diǎn zhōng qǐ chuáng 。",
-          "meaning": "Tôi dậy lúc năm giờ."
-        }
-      ]
-    },
-    {
-      "id": "hz-HSK1-x10",
-      "character": "早",
-      "pinyin": "zǎo",
+      "character": "五",
+      "pinyin": "wǔ",
       "tone": 3,
-      "meaning": "sớm",
-      "hskLevel": "HSK1",
-      "strokeCount": 0,
-      "examples": [
-        {
-          "sentence": "你来得很早。",
-          "pinyin": "nǐ lái de hěn zǎo 。",
-          "meaning": "Bạn đến rất sớm."
-        }
-      ]
-    },
-    {
-      "id": "hz-HSK1-x11",
-      "character": "晚",
-      "pinyin": "wǎn",
-      "tone": 3,
-      "meaning": "muộn, trễ",
-      "hskLevel": "HSK1",
-      "strokeCount": 0,
-      "examples": [
-        {
-          "sentence": "他来晚了。",
-          "pinyin": "tā lái wǎn le 。",
-          "meaning": "Anh ấy đến muộn rồi."
-        }
-      ]
-    },
-    {
-      "id": "hz-HSK1-x12",
-      "character": "整",
-      "pinyin": "zhěng",
-      "tone": 3,
-      "meaning": "đúng (giờ tròn)",
-      "hskLevel": "HSK1",
-      "strokeCount": 0,
-      "examples": [
-        {
-          "sentence": "现在十点整。",
-          "pinyin": "xiàn zài shí diǎn zhěng 。",
-          "meaning": "Bây giờ là mười giờ đúng."
-        }
-      ]
-    },
-    {
-      "id": "hz-HSK1-x13",
-      "character": "鱼",
-      "pinyin": "yú",
-      "tone": 2,
-      "meaning": "cá",
-      "hskLevel": "HSK1",
-      "strokeCount": 0,
-      "examples": [
-        {
-          "sentence": "这条鱼很好吃。",
-          "pinyin": "zhè tiáo yú hěn hǎo chī 。",
-          "meaning": "Con cá này rất ngon."
-        }
-      ]
-    },
-    {
-      "id": "hz-HSK1-x14",
-      "character": "肉",
-      "pinyin": "ròu",
-      "tone": 4,
-      "meaning": "thịt",
-      "hskLevel": "HSK1",
-      "strokeCount": 0,
-      "examples": [
-        {
-          "sentence": "我不吃肉。",
-          "pinyin": "wǒ bù chī ròu 。",
-          "meaning": "Tôi không ăn thịt."
-        }
-      ]
-    },
-    {
-      "id": "hz-HSK1-x15",
-      "character": "菜",
-      "pinyin": "cài",
-      "tone": 4,
-      "meaning": "món ăn; rau",
-      "hskLevel": "HSK1",
-      "strokeCount": 0,
-      "examples": [
-        {
-          "sentence": "中国菜很好吃。",
-          "pinyin": "zhōng guó cài hěn hǎo chī 。",
-          "meaning": "Món Trung Quốc rất ngon."
-        }
-      ]
-    },
-    {
-      "id": "hz-HSK1-x16",
-      "character": "汤",
-      "pinyin": "tāng",
-      "tone": 1,
-      "meaning": "canh",
-      "hskLevel": "HSK1",
-      "strokeCount": 0,
-      "examples": [
-        {
-          "sentence": "这个汤很好喝。",
-          "pinyin": "zhè ge tāng hěn hǎo hē 。",
-          "meaning": "Bát canh này rất ngon."
-        }
-      ]
-    },
-    {
-      "id": "hz-HSK1-x17",
-      "character": "碗",
-      "pinyin": "wǎn",
-      "tone": 3,
-      "meaning": "bát (lượng từ + danh từ)",
-      "hskLevel": "HSK1",
-      "strokeCount": 0,
-      "examples": [
-        {
-          "sentence": "一碗面条",
-          "pinyin": "yì wǎn miàn tiáo",
-          "meaning": "một bát mì"
-        }
-      ]
-    },
-    {
-      "id": "hz-HSK1-x18",
-      "character": "鸡",
-      "pinyin": "jī",
-      "tone": 1,
-      "meaning": "con gà",
-      "hskLevel": "HSK1",
-      "strokeCount": 0,
-      "examples": [
-        {
-          "sentence": "他们家有鸡。",
-          "pinyin": "tā men jiā yǒu jī 。",
-          "meaning": "Nhà họ có gà."
-        }
-      ]
-    },
-    {
-      "id": "hz-HSK1-x19",
-      "character": "您",
-      "pinyin": "nín",
-      "tone": 2,
-      "meaning": "ngài, ông/bà (kính ngữ của 你)",
-      "hskLevel": "HSK1",
-      "strokeCount": 0,
-      "examples": [
-        {
-          "sentence": "您好！",
-          "pinyin": "nín hǎo ！",
-          "meaning": "Chào ngài!"
-        }
-      ]
-    },
-    {
-      "id": "hz-HSK1-x20",
-      "character": "她",
-      "pinyin": "tā",
-      "tone": 1,
-      "meaning": "cô ấy, chị ấy",
-      "hskLevel": "HSK1",
-      "strokeCount": 0,
-      "examples": [
-        {
-          "sentence": "她是我妈妈。",
-          "pinyin": "tā shì wǒ mā ma 。",
-          "meaning": "Cô ấy là mẹ tôi."
-        }
-      ]
-    },
-    {
-      "id": "hz-HSK1-x21",
-      "character": "岁",
-      "pinyin": "suì",
-      "tone": 4,
-      "meaning": "tuổi",
-      "hskLevel": "HSK1",
-      "strokeCount": 0,
-      "examples": [
-        {
-          "sentence": "他今年五岁。",
-          "pinyin": "tā jīn nián wǔ suì 。",
-          "meaning": "Năm nay nó năm tuổi."
-        }
-      ]
-    },
-    {
-      "id": "hz-HSK1-x22",
-      "character": "多",
-      "pinyin": "duō",
-      "tone": 1,
-      "meaning": "nhiều; bao nhiêu",
-      "hskLevel": "HSK1",
-      "strokeCount": 0,
-      "examples": [
-        {
-          "sentence": "这里人很多。",
-          "pinyin": "zhè lǐ rén hěn duō 。",
-          "meaning": "Ở đây rất đông người."
-        }
-      ]
-    },
-    {
-      "id": "hz-HSK1-x23",
-      "character": "年",
-      "pinyin": "nián",
-      "tone": 2,
       "meaning": "năm",
       "hskLevel": "HSK1",
       "strokeCount": 0,
       "examples": [
         {
-          "sentence": "一年有十二个月。",
-          "pinyin": "yì nián yǒu shí èr gè yuè 。",
-          "meaning": "Một năm có mười hai tháng."
+          "sentence": "我有五本书。",
+          "pinyin": "wǒ yǒu wǔ běn shū 。",
+          "meaning": "Tôi có năm quyển sách."
+        }
+      ]
+    },
+    {
+      "id": "hz-HSK1-x10",
+      "character": "六",
+      "pinyin": "liù",
+      "tone": 4,
+      "meaning": "sáu",
+      "hskLevel": "HSK1",
+      "strokeCount": 0,
+      "examples": [
+        {
+          "sentence": "他六岁了。",
+          "pinyin": "tā liù suì le 。",
+          "meaning": "Nó sáu tuổi rồi."
+        }
+      ]
+    },
+    {
+      "id": "hz-HSK1-x11",
+      "character": "七",
+      "pinyin": "qī",
+      "tone": 1,
+      "meaning": "bảy",
+      "hskLevel": "HSK1",
+      "strokeCount": 0,
+      "examples": [
+        {
+          "sentence": "一个星期有七天。",
+          "pinyin": "yí gè xīng qī yǒu qī tiān 。",
+          "meaning": "Một tuần có bảy ngày."
+        }
+      ]
+    },
+    {
+      "id": "hz-HSK1-x12",
+      "character": "八",
+      "pinyin": "bā",
+      "tone": 1,
+      "meaning": "tám",
+      "hskLevel": "HSK1",
+      "strokeCount": 0,
+      "examples": [
+        {
+          "sentence": "现在八点半。",
+          "pinyin": "xiàn zài bā diǎn bàn 。",
+          "meaning": "Bây giờ là tám giờ rưỡi."
+        }
+      ]
+    },
+    {
+      "id": "hz-HSK1-x13",
+      "character": "九",
+      "pinyin": "jiǔ",
+      "tone": 3,
+      "meaning": "chín",
+      "hskLevel": "HSK1",
+      "strokeCount": 0,
+      "examples": [
+        {
+          "sentence": "他九月来中国。",
+          "pinyin": "tā jiǔ yuè lái zhōng guó 。",
+          "meaning": "Anh ấy đến Trung Quốc vào tháng chín."
+        }
+      ]
+    },
+    {
+      "id": "hz-HSK1-x14",
+      "character": "十",
+      "pinyin": "shí",
+      "tone": 2,
+      "meaning": "mười",
+      "hskLevel": "HSK1",
+      "strokeCount": 0,
+      "examples": [
+        {
+          "sentence": "我们班有十个学生。",
+          "pinyin": "wǒ men bān yǒu shí gè xué shēng 。",
+          "meaning": "Lớp tôi có mười học sinh."
+        }
+      ]
+    },
+    {
+      "id": "hz-HSK1-x15",
+      "character": "零",
+      "pinyin": "líng",
+      "tone": 2,
+      "meaning": "không (số 0)",
+      "hskLevel": "HSK1",
+      "strokeCount": 0,
+      "examples": [
+        {
+          "sentence": "现在十点零五分。",
+          "pinyin": "xiàn zài shí diǎn líng wǔ fēn 。",
+          "meaning": "Bây giờ là mười giờ năm phút."
+        }
+      ]
+    },
+    {
+      "id": "hz-HSK1-x16",
+      "character": "本",
+      "pinyin": "běn",
+      "tone": 3,
+      "meaning": "quyển (lượng từ sách)",
+      "hskLevel": "HSK1",
+      "strokeCount": 0,
+      "examples": [
+        {
+          "sentence": "三本书",
+          "pinyin": "sān běn shū",
+          "meaning": "ba quyển sách"
+        }
+      ]
+    },
+    {
+      "id": "hz-HSK1-x17",
+      "character": "些",
+      "pinyin": "xiē",
+      "tone": 1,
+      "meaning": "một số, vài",
+      "hskLevel": "HSK1",
+      "strokeCount": 0,
+      "examples": [
+        {
+          "sentence": "这些是我的书。",
+          "pinyin": "zhè xiē shì wǒ de shū 。",
+          "meaning": "Đây là mấy quyển sách của tôi."
+        }
+      ]
+    },
+    {
+      "id": "hz-HSK1-x18",
+      "character": "加",
+      "pinyin": "jiā",
+      "tone": 1,
+      "meaning": "cộng, thêm",
+      "hskLevel": "HSK1",
+      "strokeCount": 0,
+      "examples": [
+        {
+          "sentence": "一加一是二。",
+          "pinyin": "yì jiā yī shì èr 。",
+          "meaning": "Một cộng một là hai."
+        }
+      ]
+    },
+    {
+      "id": "hz-HSK1-x19",
+      "character": "回",
+      "pinyin": "huí",
+      "tone": 2,
+      "meaning": "về, trở về",
+      "hskLevel": "HSK1",
+      "strokeCount": 0,
+      "examples": [
+        {
+          "sentence": "他回学校了。",
+          "pinyin": "tā huí xué xiào le 。",
+          "meaning": "Anh ấy về trường rồi."
+        }
+      ]
+    },
+    {
+      "id": "hz-HSK1-x20",
+      "character": "做",
+      "pinyin": "zuò",
+      "tone": 4,
+      "meaning": "làm",
+      "hskLevel": "HSK1",
+      "strokeCount": 0,
+      "examples": [
+        {
+          "sentence": "你在做什么？",
+          "pinyin": "nǐ zài zuò shén me ？",
+          "meaning": "Bạn đang làm gì?"
+        }
+      ]
+    },
+    {
+      "id": "hz-HSK1-x21",
+      "character": "先",
+      "pinyin": "xiān",
+      "tone": 1,
+      "meaning": "trước, trước tiên",
+      "hskLevel": "HSK1",
+      "strokeCount": 0,
+      "examples": [
+        {
+          "sentence": "我先吃饭。",
+          "pinyin": "wǒ xiān chī fàn 。",
+          "meaning": "Tôi ăn cơm trước."
+        }
+      ]
+    },
+    {
+      "id": "hz-HSK1-x22",
+      "character": "能",
+      "pinyin": "néng",
+      "tone": 2,
+      "meaning": "có thể",
+      "hskLevel": "HSK1",
+      "strokeCount": 0,
+      "examples": [
+        {
+          "sentence": "我能坐这儿吗？",
+          "pinyin": "wǒ néng zuò zhè ér ma ？",
+          "meaning": "Tôi ngồi đây được không?"
+        }
+      ]
+    },
+    {
+      "id": "hz-HSK1-x23",
+      "character": "进",
+      "pinyin": "jìn",
+      "tone": 4,
+      "meaning": "vào",
+      "hskLevel": "HSK1",
+      "strokeCount": 0,
+      "examples": [
+        {
+          "sentence": "请进。",
+          "pinyin": "qǐng jìn 。",
+          "meaning": "Mời vào."
         }
       ]
     },
     {
       "id": "hz-HSK1-x24",
-      "character": "高",
-      "pinyin": "gāo",
+      "character": "出",
+      "pinyin": "chū",
       "tone": 1,
-      "meaning": "cao",
+      "meaning": "ra",
       "hskLevel": "HSK1",
       "strokeCount": 0,
       "examples": [
         {
-          "sentence": "他个子很高。",
-          "pinyin": "tā gè zi hěn gāo 。",
-          "meaning": "Cậu ấy rất cao."
+          "sentence": "他出去了。",
+          "pinyin": "tā chū qù le 。",
+          "meaning": "Anh ấy ra ngoài rồi."
         }
       ]
     },
     {
       "id": "hz-HSK1-x25",
-      "character": "矮",
-      "pinyin": "ǎi",
-      "tone": 3,
-      "meaning": "thấp",
+      "character": "行",
+      "pinyin": "xíng",
+      "tone": 2,
+      "meaning": "được, ổn",
       "hskLevel": "HSK1",
       "strokeCount": 0,
       "examples": [
         {
-          "sentence": "这个人很矮。",
-          "pinyin": "zhè ge rén hěn ǎi 。",
-          "meaning": "Người này rất thấp."
+          "sentence": "这样行吗？",
+          "pinyin": "zhè yàng xíng ma ？",
+          "meaning": "Như vậy được không?"
         }
       ]
     },
     {
       "id": "hz-HSK1-x26",
-      "character": "糖",
-      "pinyin": "táng",
-      "tone": 2,
-      "meaning": "đường; kẹo",
+      "character": "借",
+      "pinyin": "jiè",
+      "tone": 4,
+      "meaning": "mượn; cho mượn",
       "hskLevel": "HSK1",
       "strokeCount": 0,
       "examples": [
         {
-          "sentence": "我不喜欢吃糖。",
-          "pinyin": "wǒ bù xǐ huan chī táng 。",
-          "meaning": "Tôi không thích ăn kẹo."
+          "sentence": "我能借你的书吗？",
+          "pinyin": "wǒ néng jiè nǐ de shū ma ？",
+          "meaning": "Tôi mượn sách của bạn được không?"
         }
       ]
     },
     {
       "id": "hz-HSK1-x27",
-      "character": "盐",
-      "pinyin": "yán",
-      "tone": 2,
-      "meaning": "muối",
+      "character": "说",
+      "pinyin": "shuō",
+      "tone": 1,
+      "meaning": "nói",
       "hskLevel": "HSK1",
       "strokeCount": 0,
       "examples": [
         {
-          "sentence": "这个菜没有盐。",
-          "pinyin": "zhè ge cài méi yǒu yán 。",
-          "meaning": "Món này không có muối."
+          "sentence": "请说慢一点儿。",
+          "pinyin": "qǐng shuō màn yì diǎn ér 。",
+          "meaning": "Xin nói chậm một chút."
         }
       ]
     },
     {
       "id": "hz-HSK1-x28",
-      "character": "甜",
-      "pinyin": "tián",
-      "tone": 2,
-      "meaning": "ngọt",
+      "character": "写",
+      "pinyin": "xiě",
+      "tone": 3,
+      "meaning": "viết",
       "hskLevel": "HSK1",
       "strokeCount": 0,
       "examples": [
         {
-          "sentence": "这个苹果很甜。",
-          "pinyin": "zhè ge píng guǒ hěn tián 。",
-          "meaning": "Quả táo này rất ngọt."
+          "sentence": "我会写汉字。",
+          "pinyin": "wǒ huì xiě hàn zì 。",
+          "meaning": "Tôi biết viết chữ Hán."
         }
       ]
     },
     {
       "id": "hz-HSK1-x29",
-      "character": "咸",
-      "pinyin": "xián",
+      "character": "读",
+      "pinyin": "dú",
       "tone": 2,
-      "meaning": "mặn",
+      "meaning": "đọc",
       "hskLevel": "HSK1",
       "strokeCount": 0,
       "examples": [
         {
-          "sentence": "这个汤太咸了。",
-          "pinyin": "zhè ge tāng tài xián le 。",
-          "meaning": "Bát canh này mặn quá."
+          "sentence": "请读这个句子。",
+          "pinyin": "qǐng dú zhè ge jù zi 。",
+          "meaning": "Xin đọc câu này."
         }
       ]
     },
     {
       "id": "hz-HSK1-x30",
-      "character": "辣",
-      "pinyin": "là",
+      "character": "叫",
+      "pinyin": "jiào",
       "tone": 4,
-      "meaning": "cay",
+      "meaning": "gọi, tên là",
       "hskLevel": "HSK1",
       "strokeCount": 0,
       "examples": [
         {
-          "sentence": "这个菜很辣。",
-          "pinyin": "zhè ge cài hěn là 。",
-          "meaning": "Món này rất cay."
+          "sentence": "我叫小明。",
+          "pinyin": "wǒ jiào xiǎo míng 。",
+          "meaning": "Tôi tên là Tiểu Minh."
         }
       ]
     },
     {
       "id": "hz-HSK1-x31",
-      "character": "酸",
-      "pinyin": "suān",
-      "tone": 1,
-      "meaning": "chua",
+      "character": "的",
+      "pinyin": "de",
+      "tone": 0,
+      "meaning": "(trợ từ sở hữu) của",
       "hskLevel": "HSK1",
       "strokeCount": 0,
       "examples": [
         {
-          "sentence": "这个橙子有点酸。",
-          "pinyin": "zhè ge chéng zǐ yǒu diǎn suān 。",
-          "meaning": "Quả cam này hơi chua."
+          "sentence": "这是我的书。",
+          "pinyin": "zhè shì wǒ de shū 。",
+          "meaning": "Đây là sách của tôi."
         }
       ]
     },
     {
       "id": "hz-HSK1-x32",
-      "character": "苦",
-      "pinyin": "kǔ",
-      "tone": 3,
-      "meaning": "đắng",
+      "character": "这",
+      "pinyin": "zhè",
+      "tone": 4,
+      "meaning": "đây, này",
       "hskLevel": "HSK1",
       "strokeCount": 0,
       "examples": [
         {
-          "sentence": "咖啡有点苦。",
-          "pinyin": "kā fēi yǒu diǎn kǔ 。",
-          "meaning": "Cà phê hơi đắng."
+          "sentence": "这是我妈妈。",
+          "pinyin": "zhè shì wǒ mā ma 。",
+          "meaning": "Đây là mẹ tôi."
         }
       ]
     },
     {
       "id": "hz-HSK1-x33",
-      "character": "饱",
-      "pinyin": "bǎo",
-      "tone": 3,
-      "meaning": "no (bụng)",
+      "character": "那",
+      "pinyin": "nà",
+      "tone": 4,
+      "meaning": "kia, đó",
       "hskLevel": "HSK1",
       "strokeCount": 0,
       "examples": [
         {
-          "sentence": "我吃饱了。",
-          "pinyin": "wǒ chī bǎo le 。",
-          "meaning": "Tôi ăn no rồi."
+          "sentence": "那是谁？",
+          "pinyin": "nà shì shuí ？",
+          "meaning": "Kia là ai?"
         }
       ]
     },
     {
       "id": "hz-HSK1-x34",
-      "character": "里",
-      "pinyin": "lǐ",
-      "tone": 3,
-      "meaning": "trong",
+      "character": "个",
+      "pinyin": "gè",
+      "tone": 4,
+      "meaning": "cái, người (lượng từ)",
       "hskLevel": "HSK1",
       "strokeCount": 0,
       "examples": [
         {
-          "sentence": "书在书包里。",
-          "pinyin": "shū zài shū bāo lǐ 。",
-          "meaning": "Sách ở trong cặp."
+          "sentence": "一个朋友",
+          "pinyin": "yí gè péng yǒu",
+          "meaning": "một người bạn"
         }
       ]
     },
     {
       "id": "hz-HSK1-x35",
-      "character": "住",
-      "pinyin": "zhù",
+      "character": "字",
+      "pinyin": "zì",
       "tone": 4,
-      "meaning": "ở, sống",
+      "meaning": "chữ",
       "hskLevel": "HSK1",
       "strokeCount": 0,
       "examples": [
         {
-          "sentence": "我住在北京。",
-          "pinyin": "wǒ zhù zài běi jīng 。",
-          "meaning": "Tôi sống ở Bắc Kinh."
+          "sentence": "这个字怎么读？",
+          "pinyin": "zhè ge zì zěn me dú ？",
+          "meaning": "Chữ này đọc thế nào?"
         }
       ]
     },
     {
       "id": "hz-HSK1-x36",
-      "character": "吗",
-      "pinyin": "ma",
-      "tone": 0,
-      "meaning": "(trợ từ nghi vấn) không, à",
+      "character": "在",
+      "pinyin": "zài",
+      "tone": 4,
+      "meaning": "ở, tại",
       "hskLevel": "HSK1",
       "strokeCount": 0,
       "examples": [
         {
-          "sentence": "你好吗？",
-          "pinyin": "nǐ hǎo ma ？",
-          "meaning": "Bạn khỏe không?"
+          "sentence": "我在中国。",
+          "pinyin": "wǒ zài zhōng guó 。",
+          "meaning": "Tôi đang ở Trung Quốc."
         }
       ]
     },
     {
       "id": "hz-HSK1-x37",
-      "character": "呢",
-      "pinyin": "ne",
-      "tone": 0,
-      "meaning": "(trợ từ nghi vấn) thì sao",
+      "character": "来",
+      "pinyin": "lái",
+      "tone": 2,
+      "meaning": "đến, tới",
       "hskLevel": "HSK1",
       "strokeCount": 0,
       "examples": [
         {
-          "sentence": "我很好，你呢？",
-          "pinyin": "wǒ hěn hǎo ， nǐ ne ？",
-          "meaning": "Tôi khỏe, còn bạn?"
+          "sentence": "他来中国了。",
+          "pinyin": "tā lái zhōng guó le 。",
+          "meaning": "Anh ấy đã đến Trung Quốc."
         }
       ]
     },
     {
       "id": "hz-HSK1-x38",
-      "character": "对",
-      "pinyin": "duì",
-      "tone": 4,
-      "meaning": "đúng",
+      "character": "书",
+      "pinyin": "shū",
+      "tone": 1,
+      "meaning": "sách",
       "hskLevel": "HSK1",
       "strokeCount": 0,
       "examples": [
         {
-          "sentence": "你说得对。",
-          "pinyin": "nǐ shuō dé duì 。",
-          "meaning": "Bạn nói đúng."
+          "sentence": "这本书很好。",
+          "pinyin": "zhè běn shū hěn hǎo 。",
+          "meaning": "Quyển sách này rất hay."
         }
       ]
     },
     {
       "id": "hz-HSK1-x39",
-      "character": "错",
-      "pinyin": "cuò",
-      "tone": 4,
-      "meaning": "sai",
+      "character": "打",
+      "pinyin": "dǎ",
+      "tone": 3,
+      "meaning": "đánh, chơi (bóng)",
       "hskLevel": "HSK1",
       "strokeCount": 0,
       "examples": [
         {
-          "sentence": "这个字写错了。",
-          "pinyin": "zhè ge zì xiě cuò le 。",
-          "meaning": "Chữ này viết sai rồi."
+          "sentence": "我们去打球。",
+          "pinyin": "wǒ men qù dǎ qiú 。",
+          "meaning": "Chúng ta đi chơi bóng."
         }
       ]
     },
     {
       "id": "hz-HSK1-x40",
-      "character": "都",
-      "pinyin": "dōu",
-      "tone": 1,
-      "meaning": "(ôn) đều",
+      "character": "球",
+      "pinyin": "qiú",
+      "tone": 2,
+      "meaning": "bóng, quả bóng",
       "hskLevel": "HSK1",
       "strokeCount": 0,
       "examples": [
         {
-          "sentence": "我们都是学生。",
-          "pinyin": "wǒ men dōu shì xué shēng 。",
-          "meaning": "Chúng tôi đều là học sinh."
+          "sentence": "这是一个球。",
+          "pinyin": "zhè shì yí gè qiú 。",
+          "meaning": "Đây là một quả bóng."
         }
       ]
     },
     {
       "id": "hz-HSK1-x41",
-      "character": "也",
-      "pinyin": "yě",
+      "character": "冷",
+      "pinyin": "lěng",
       "tone": 3,
-      "meaning": "(ôn) cũng",
+      "meaning": "lạnh",
       "hskLevel": "HSK1",
       "strokeCount": 0,
       "examples": [
         {
-          "sentence": "我也喜欢。",
-          "pinyin": "wǒ yě xǐ huan 。",
-          "meaning": "Tôi cũng thích."
+          "sentence": "今天很冷。",
+          "pinyin": "jīn tiān hěn lěng 。",
+          "meaning": "Hôm nay rất lạnh."
         }
       ]
     },
     {
       "id": "hz-HSK1-x42",
-      "character": "更",
-      "pinyin": "gèng",
-      "tone": 4,
-      "meaning": "hơn, hơn nữa",
+      "character": "雨",
+      "pinyin": "yǔ",
+      "tone": 3,
+      "meaning": "mưa (danh từ)",
       "hskLevel": "HSK1",
       "strokeCount": 0,
       "examples": [
         {
-          "sentence": "今天比昨天更冷。",
-          "pinyin": "jīn tiān bǐ zuó tiān gèng lěng 。",
-          "meaning": "Hôm nay lạnh hơn hôm qua."
+          "sentence": "雨很大。",
+          "pinyin": "yǔ hěn dà 。",
+          "meaning": "Mưa rất to."
         }
       ]
     },
     {
       "id": "hz-HSK1-x43",
-      "character": "只",
-      "pinyin": "zhǐ",
-      "tone": 1,
-      "meaning": "chỉ",
+      "character": "雪",
+      "pinyin": "xuě",
+      "tone": 3,
+      "meaning": "tuyết",
       "hskLevel": "HSK1",
       "strokeCount": 0,
       "examples": [
         {
-          "sentence": "我只有一个。",
-          "pinyin": "wǒ zhǐ yǒu yí gè 。",
-          "meaning": "Tôi chỉ có một cái."
+          "sentence": "雪是白的。",
+          "pinyin": "xuě shì bái de 。",
+          "meaning": "Tuyết màu trắng."
         }
       ]
     },
     {
       "id": "hz-HSK1-x44",
-      "character": "题",
-      "pinyin": "tí",
-      "tone": 2,
-      "meaning": "câu hỏi, đề bài",
+      "character": "风",
+      "pinyin": "fēng",
+      "tone": 1,
+      "meaning": "gió",
       "hskLevel": "HSK1",
       "strokeCount": 0,
       "examples": [
         {
-          "sentence": "这道题很难。",
-          "pinyin": "zhè dào tí hěn nán 。",
-          "meaning": "Câu này rất khó."
+          "sentence": "今天风很大。",
+          "pinyin": "jīn tiān fēng hěn dà 。",
+          "meaning": "Hôm nay gió rất to."
         }
       ]
     },
     {
       "id": "hz-HSK1-x45",
-      "character": "祝",
-      "pinyin": "zhù",
+      "character": "度",
+      "pinyin": "dù",
       "tone": 4,
-      "meaning": "chúc",
+      "meaning": "độ",
       "hskLevel": "HSK1",
       "strokeCount": 0,
       "examples": [
         {
-          "sentence": "祝你成功！",
-          "pinyin": "zhù nǐ chéng gōng ！",
-          "meaning": "Chúc bạn thành công!"
+          "sentence": "今天三十度。",
+          "pinyin": "jīn tiān sān shí dù 。",
+          "meaning": "Hôm nay ba mươi độ."
         }
       ]
     },
     {
       "id": "hz-HSK2-x1",
-      "character": "旧",
-      "pinyin": "jiù",
-      "tone": 4,
-      "meaning": "cũ",
+      "character": "哭",
+      "pinyin": "kū",
+      "tone": 1,
+      "meaning": "khóc",
       "hskLevel": "HSK2",
       "strokeCount": 0,
       "examples": [
         {
-          "sentence": "那个是旧的。",
-          "pinyin": "nà ge shì jiù de 。",
-          "meaning": "Cái kia là cái cũ."
+          "sentence": "孩子哭了。",
+          "pinyin": "hái zi kū le 。",
+          "meaning": "Đứa trẻ khóc rồi."
         }
       ]
     },
     {
       "id": "hz-HSK2-x2",
-      "character": "放",
-      "pinyin": "fàng",
-      "tone": 4,
-      "meaning": "đặt, để",
+      "character": "懂",
+      "pinyin": "dǒng",
+      "tone": 3,
+      "meaning": "hiểu",
       "hskLevel": "HSK2",
       "strokeCount": 0,
       "examples": [
         {
-          "sentence": "书放在桌子上。",
-          "pinyin": "shū fàng zài zhuō zi shàng 。",
-          "meaning": "Sách để trên bàn."
+          "sentence": "我听懂了。",
+          "pinyin": "wǒ tīng dǒng le 。",
+          "meaning": "Tôi nghe hiểu rồi."
         }
       ]
     },
     {
       "id": "hz-HSK2-x3",
-      "character": "几",
-      "pinyin": "jǐ",
-      "tone": 3,
-      "meaning": "mấy",
+      "character": "交",
+      "pinyin": "jiāo",
+      "tone": 1,
+      "meaning": "nộp",
       "hskLevel": "HSK2",
       "strokeCount": 0,
       "examples": [
         {
-          "sentence": "你要几个？",
-          "pinyin": "nǐ yào jǐ gè ？",
-          "meaning": "Bạn muốn mấy cái?"
+          "sentence": "作业交了吗？",
+          "pinyin": "zuò yè jiāo le ma ？",
+          "meaning": "Bài tập nộp chưa?"
         }
       ]
     },
     {
       "id": "hz-HSK2-x4",
-      "character": "钱",
-      "pinyin": "qián",
-      "tone": 2,
-      "meaning": "tiền",
+      "character": "遍",
+      "pinyin": "biàn",
+      "tone": 4,
+      "meaning": "lần, lượt",
       "hskLevel": "HSK2",
       "strokeCount": 0,
       "examples": [
         {
-          "sentence": "我没带钱。",
-          "pinyin": "wǒ méi dài qián 。",
-          "meaning": "Tôi không mang tiền."
+          "sentence": "我看了三遍。",
+          "pinyin": "wǒ kàn le sān biàn 。",
+          "meaning": "Tôi đọc ba lần."
         }
       ]
     },
     {
       "id": "hz-HSK2-x5",
-      "character": "块",
-      "pinyin": "kuài",
+      "character": "到",
+      "pinyin": "dào",
       "tone": 4,
-      "meaning": "đồng (tệ)",
+      "meaning": "đến, được (kết quả)",
       "hskLevel": "HSK2",
       "strokeCount": 0,
       "examples": [
         {
-          "sentence": "五块钱。",
-          "pinyin": "wǔ kuài qián 。",
-          "meaning": "Năm tệ."
+          "sentence": "我买到票了。",
+          "pinyin": "wǒ mǎi dào piào le 。",
+          "meaning": "Tôi mua được vé rồi."
         }
       ]
     },
     {
       "id": "hz-HSK2-x6",
-      "character": "百",
-      "pinyin": "bǎi",
-      "tone": 3,
-      "meaning": "trăm",
+      "character": "第",
+      "pinyin": "dì",
+      "tone": 4,
+      "meaning": "thứ (số thứ tự)",
       "hskLevel": "HSK2",
       "strokeCount": 0,
       "examples": [
         {
-          "sentence": "一百块。",
-          "pinyin": "yì bǎi kuài 。",
-          "meaning": "Một trăm tệ."
+          "sentence": "这是第几课？",
+          "pinyin": "zhè shì dì jǐ kè ？",
+          "meaning": "Đây là bài thứ mấy?"
         }
       ]
     },
     {
       "id": "hz-HSK2-x7",
-      "character": "千",
-      "pinyin": "qiān",
-      "tone": 1,
-      "meaning": "nghìn",
+      "character": "课",
+      "pinyin": "kè",
+      "tone": 4,
+      "meaning": "bài, tiết",
       "hskLevel": "HSK2",
       "strokeCount": 0,
       "examples": [
         {
-          "sentence": "两千块。",
-          "pinyin": "liǎng qiān kuài 。",
-          "meaning": "Hai nghìn tệ."
+          "sentence": "这是第五课。",
+          "pinyin": "zhè shì dì wǔ kè 。",
+          "meaning": "Đây là bài thứ năm."
         }
       ]
     },
     {
       "id": "hz-HSK2-x8",
-      "character": "张",
-      "pinyin": "zhāng",
-      "tone": 1,
-      "meaning": "tờ, tấm (lượng từ)",
+      "character": "次",
+      "pinyin": "cì",
+      "tone": 4,
+      "meaning": "lần",
       "hskLevel": "HSK2",
       "strokeCount": 0,
       "examples": [
         {
-          "sentence": "一张票。",
-          "pinyin": "yì zhāng piào 。",
-          "meaning": "Một cái vé."
+          "sentence": "这是第一次。",
+          "pinyin": "zhè shì dì yī cì 。",
+          "meaning": "Đây là lần đầu tiên."
         }
       ]
     },
     {
       "id": "hz-HSK2-x9",
-      "character": "斤",
-      "pinyin": "jīn",
-      "tone": 1,
-      "meaning": "cân (nửa ki-lô)",
+      "character": "名",
+      "pinyin": "míng",
+      "tone": 2,
+      "meaning": "hạng, vị trí",
       "hskLevel": "HSK2",
       "strokeCount": 0,
       "examples": [
         {
-          "sentence": "一斤鱼。",
-          "pinyin": "yì jīn yú 。",
-          "meaning": "Một cân cá."
+          "sentence": "他考了第一名。",
+          "pinyin": "tā kǎo le dì yī míng 。",
+          "meaning": "Anh ấy thi đứng nhất."
         }
       ]
     },
     {
       "id": "hz-HSK2-x10",
-      "character": "两",
-      "pinyin": "liǎng",
-      "tone": 3,
-      "meaning": "hai",
+      "character": "号",
+      "pinyin": "hào",
+      "tone": 4,
+      "meaning": "số",
       "hskLevel": "HSK2",
       "strokeCount": 0,
       "examples": [
         {
-          "sentence": "两个人。",
-          "pinyin": "liǎng gè rén 。",
-          "meaning": "Hai người."
+          "sentence": "我住八号。",
+          "pinyin": "wǒ zhù bā hào 。",
+          "meaning": "Tôi ở số tám."
         }
       ]
     },
     {
       "id": "hz-HSK2-x11",
-      "character": "它",
-      "pinyin": "tā",
-      "tone": 1,
-      "meaning": "nó (vật, con vật)",
+      "character": "页",
+      "pinyin": "yè",
+      "tone": 4,
+      "meaning": "trang",
       "hskLevel": "HSK2",
       "strokeCount": 0,
       "examples": [
         {
-          "sentence": "这是我的猫，它很小。",
-          "pinyin": "zhè shì wǒ de māo ， tā hěn xiǎo 。",
-          "meaning": "Đây là mèo của tôi, nó rất nhỏ."
+          "sentence": "请看第十页。",
+          "pinyin": "qǐng kàn dì shí yè 。",
+          "meaning": "Xin xem trang mười."
         }
       ]
     },
     {
       "id": "hz-HSK2-x12",
-      "character": "姓",
-      "pinyin": "xìng",
-      "tone": 4,
-      "meaning": "họ",
+      "character": "长",
+      "pinyin": "cháng",
+      "tone": 2,
+      "meaning": "dài",
       "hskLevel": "HSK2",
       "strokeCount": 0,
       "examples": [
         {
-          "sentence": "我姓王。",
-          "pinyin": "wǒ xìng wáng 。",
-          "meaning": "Tôi họ Vương."
+          "sentence": "这条路比那条长。",
+          "pinyin": "zhè tiáo lù bǐ nà tiáo cháng 。",
+          "meaning": "Con đường này dài hơn con kia."
         }
       ]
     },
     {
       "id": "hz-HSK2-x13",
-      "character": "男",
-      "pinyin": "nán",
-      "tone": 2,
-      "meaning": "nam",
+      "character": "重",
+      "pinyin": "zhòng",
+      "tone": 4,
+      "meaning": "nặng",
       "hskLevel": "HSK2",
       "strokeCount": 0,
       "examples": [
         {
-          "sentence": "他是男的。",
-          "pinyin": "tā shì nán de 。",
-          "meaning": "Anh ấy là nam."
+          "sentence": "这个比那个重。",
+          "pinyin": "zhè ge bǐ nà ge zhòng 。",
+          "meaning": "Cái này nặng hơn cái kia."
         }
       ]
     },
     {
       "id": "hz-HSK2-x14",
-      "character": "女",
-      "pinyin": "nǚ",
-      "tone": 3,
-      "meaning": "nữ",
+      "character": "最",
+      "pinyin": "zuì",
+      "tone": 4,
+      "meaning": "nhất",
       "hskLevel": "HSK2",
       "strokeCount": 0,
       "examples": [
         {
-          "sentence": "她是女的。",
-          "pinyin": "tā shì nǚ de 。",
-          "meaning": "Cô ấy là nữ."
+          "sentence": "他是最高的。",
+          "pinyin": "tā shì zuì gāo de 。",
+          "meaning": "Anh ấy cao nhất."
         }
       ]
     },
     {
       "id": "hz-HSK2-x15",
-      "character": "刚",
-      "pinyin": "gāng",
-      "tone": 1,
-      "meaning": "vừa mới",
+      "character": "得",
+      "pinyin": "de",
+      "tone": 2,
+      "meaning": "(bổ ngữ trình độ)",
       "hskLevel": "HSK2",
       "strokeCount": 0,
       "examples": [
         {
-          "sentence": "我刚来。",
-          "pinyin": "wǒ gāng lái 。",
-          "meaning": "Tôi vừa đến."
+          "sentence": "你穿得太少了。",
+          "pinyin": "nǐ chuān dé tài shǎo le 。",
+          "meaning": "Bạn mặc ít quá."
         }
       ]
     },
     {
       "id": "hz-HSK2-x16",
-      "character": "从",
-      "pinyin": "cóng",
-      "tone": 2,
-      "meaning": "từ",
+      "character": "少",
+      "pinyin": "shǎo",
+      "tone": 3,
+      "meaning": "ít",
       "hskLevel": "HSK2",
       "strokeCount": 0,
       "examples": [
         {
-          "sentence": "我从中国来的。",
-          "pinyin": "wǒ cóng zhōng guó lái de 。",
-          "meaning": "Tôi đến từ Trung Quốc."
+          "sentence": "衣服穿得太少。",
+          "pinyin": "yī fu chuān dé tài shǎo 。",
+          "meaning": "Quần áo mặc quá ít."
         }
       ]
     },
     {
       "id": "hz-HSK2-x17",
-      "character": "坐",
-      "pinyin": "zuò",
-      "tone": 4,
-      "meaning": "ngồi, đi (xe)",
+      "character": "还",
+      "pinyin": "hái",
+      "tone": 2,
+      "meaning": "còn, vẫn",
       "hskLevel": "HSK2",
       "strokeCount": 0,
       "examples": [
         {
-          "sentence": "我是坐飞机来的。",
-          "pinyin": "wǒ shì zuò fēi jī lái de 。",
-          "meaning": "Tôi đến bằng máy bay đấy."
+          "sentence": "他比我还高。",
+          "pinyin": "tā bǐ wǒ hái gāo 。",
+          "meaning": "Anh ấy còn cao hơn tôi."
         }
       ]
     },
     {
       "id": "hz-HSK2-x18",
-      "character": "跟",
-      "pinyin": "gēn",
-      "tone": 1,
-      "meaning": "với, cùng",
+      "character": "带",
+      "pinyin": "dài",
+      "tone": 4,
+      "meaning": "mang theo",
       "hskLevel": "HSK2",
       "strokeCount": 0,
       "examples": [
         {
-          "sentence": "我跟朋友一起来的。",
-          "pinyin": "wǒ gēn péng yǒu yì qǐ lái de 。",
-          "meaning": "Tôi đến cùng bạn."
+          "sentence": "带上雨伞吧。",
+          "pinyin": "dài shàng yǔ sǎn ba 。",
+          "meaning": "Mang theo ô đi."
         }
       ]
     },
     {
       "id": "hz-HSK2-x19",
-      "character": "吧",
-      "pinyin": "ba",
+      "character": "着",
+      "pinyin": "zhe",
       "tone": 0,
-      "meaning": "đi, nhé (đề nghị)",
+      "meaning": "(đang, trạng thái)",
       "hskLevel": "HSK2",
       "strokeCount": 0,
       "examples": [
         {
-          "sentence": "买这件衣服吧。",
-          "pinyin": "mǎi zhè jiàn yī fu ba 。",
-          "meaning": "Mua cái áo này đi."
+          "sentence": "门开着呢。",
+          "pinyin": "mén kāi zhe ne 。",
+          "meaning": "Cửa đang mở đấy."
         }
       ]
     },
     {
       "id": "hz-HSK2-x20",
-      "character": "件",
-      "pinyin": "jiàn",
+      "character": "戴",
+      "pinyin": "dài",
       "tone": 4,
-      "meaning": "cái (lượng từ áo)",
+      "meaning": "đeo, đội",
       "hskLevel": "HSK2",
       "strokeCount": 0,
       "examples": [
         {
-          "sentence": "一件衣服。",
-          "pinyin": "yí jiàn yī fu 。",
-          "meaning": "Một cái áo."
+          "sentence": "他戴着帽子。",
+          "pinyin": "tā dài zhe mào zi 。",
+          "meaning": "Anh ấy đội mũ."
         }
       ]
     },
     {
       "id": "hz-HSK2-x21",
-      "character": "条",
-      "pinyin": "tiáo",
-      "tone": 2,
-      "meaning": "cái (lượng từ quần, váy)",
+      "character": "躺",
+      "pinyin": "tǎng",
+      "tone": 3,
+      "meaning": "nằm",
       "hskLevel": "HSK2",
       "strokeCount": 0,
       "examples": [
         {
-          "sentence": "一条裤子。",
-          "pinyin": "yì tiáo kù zǐ 。",
-          "meaning": "Một cái quần."
+          "sentence": "他躺着休息。",
+          "pinyin": "tā tǎng zhe xiū xi 。",
+          "meaning": "Anh ấy nằm nghỉ."
         }
       ]
     },
     {
       "id": "hz-HSK2-x22",
-      "character": "鞋",
-      "pinyin": "xié",
-      "tone": 2,
-      "meaning": "giày",
+      "character": "手",
+      "pinyin": "shǒu",
+      "tone": 3,
+      "meaning": "tay",
       "hskLevel": "HSK2",
       "strokeCount": 0,
       "examples": [
         {
-          "sentence": "这双鞋很贵。",
-          "pinyin": "zhè shuāng xié hěn guì 。",
-          "meaning": "Đôi giày này rất đắt."
+          "sentence": "他手里拿着书。",
+          "pinyin": "tā shǒu lǐ ná zhe shū 。",
+          "meaning": "Trong tay anh ấy cầm sách."
         }
       ]
     },
     {
       "id": "hz-HSK2-x23",
-      "character": "双",
-      "pinyin": "shuāng",
-      "tone": 1,
-      "meaning": "đôi",
+      "character": "过",
+      "pinyin": "guò",
+      "tone": 4,
+      "meaning": "(đã) từng",
       "hskLevel": "HSK2",
       "strokeCount": 0,
       "examples": [
         {
-          "sentence": "一双鞋。",
-          "pinyin": "yì shuāng xié 。",
-          "meaning": "Một đôi giày."
+          "sentence": "你看过那个电影吗？",
+          "pinyin": "nǐ kàn guò nà ge diàn yǐng ma ？",
+          "meaning": "Bạn đã xem phim đó chưa?"
         }
       ]
     },
     {
       "id": "hz-HSK2-x24",
-      "character": "穿",
-      "pinyin": "chuān",
-      "tone": 1,
-      "meaning": "mặc, đi (giày)",
+      "character": "每",
+      "pinyin": "měi",
+      "tone": 3,
+      "meaning": "mỗi",
       "hskLevel": "HSK2",
       "strokeCount": 0,
       "examples": [
         {
-          "sentence": "你穿这件吧。",
-          "pinyin": "nǐ chuān zhè jiàn ba 。",
-          "meaning": "Bạn mặc cái này đi."
+          "sentence": "我每天看书。",
+          "pinyin": "wǒ měi tiān kàn shū 。",
+          "meaning": "Mỗi ngày tôi đọc sách."
         }
       ]
     },
     {
       "id": "hz-HSK2-x25",
-      "character": "试",
-      "pinyin": "shì",
-      "tone": 4,
-      "meaning": "thử",
+      "character": "洗",
+      "pinyin": "xǐ",
+      "tone": 3,
+      "meaning": "rửa, giặt",
       "hskLevel": "HSK2",
       "strokeCount": 0,
       "examples": [
         {
-          "sentence": "你试试吧。",
-          "pinyin": "nǐ shì shì ba 。",
-          "meaning": "Bạn thử xem."
+          "sentence": "我洗衣服。",
+          "pinyin": "wǒ xǐ yī fu 。",
+          "meaning": "Tôi giặt quần áo."
         }
       ]
     },
     {
       "id": "hz-HSK2-x26",
-      "character": "卖",
-      "pinyin": "mài",
-      "tone": 4,
-      "meaning": "bán",
+      "character": "头",
+      "pinyin": "tóu",
+      "tone": 2,
+      "meaning": "đầu",
       "hskLevel": "HSK2",
       "strokeCount": 0,
       "examples": [
         {
-          "sentence": "这儿卖鞋。",
-          "pinyin": "zhè ér mài xié 。",
-          "meaning": "Ở đây bán giày."
+          "sentence": "我头疼。",
+          "pinyin": "wǒ tóu téng 。",
+          "meaning": "Tôi đau đầu."
         }
       ]
     },
     {
       "id": "hz-HSK2-x27",
-      "character": "买",
-      "pinyin": "mǎi",
-      "tone": 3,
-      "meaning": "mua",
+      "character": "就",
+      "pinyin": "jiù",
+      "tone": 4,
+      "meaning": "thì, liền, ngay",
       "hskLevel": "HSK2",
       "strokeCount": 0,
       "examples": [
         {
-          "sentence": "我买一件。",
-          "pinyin": "wǒ mǎi yí jiàn 。",
-          "meaning": "Tôi mua một cái."
+          "sentence": "太贵就别买。",
+          "pinyin": "tài guì jiù bié mǎi 。",
+          "meaning": "Đắt quá thì đừng mua."
         }
       ]
     },
     {
       "id": "hz-HSK2-x28",
-      "character": "等",
-      "pinyin": "děng",
+      "character": "给",
+      "pinyin": "gěi",
       "tone": 3,
-      "meaning": "đợi",
+      "meaning": "đưa, cho",
       "hskLevel": "HSK2",
       "strokeCount": 0,
       "examples": [
         {
-          "sentence": "请等一下。",
-          "pinyin": "qǐng děng yí xià 。",
-          "meaning": "Xin đợi một lát."
+          "sentence": "我给你便宜点儿。",
+          "pinyin": "wǒ gěi nǐ pián yi diǎn ér 。",
+          "meaning": "Tôi để rẻ cho bạn."
         }
       ]
     },
     {
       "id": "hz-HSK2-x29",
-      "character": "用",
-      "pinyin": "yòng",
-      "tone": 4,
-      "meaning": "dùng",
+      "character": "种",
+      "pinyin": "zhǒng",
+      "tone": 3,
+      "meaning": "loại",
       "hskLevel": "HSK2",
       "strokeCount": 0,
       "examples": [
         {
-          "sentence": "我用一下。",
-          "pinyin": "wǒ yòng yí xià 。",
-          "meaning": "Tôi dùng một chút."
+          "sentence": "这种我喜欢。",
+          "pinyin": "zhè zhǒng wǒ xǐ huan 。",
+          "meaning": "Loại này tôi thích."
         }
       ]
     },
     {
       "id": "hz-HSK2-x30",
-      "character": "帮",
-      "pinyin": "bāng",
-      "tone": 1,
-      "meaning": "giúp",
+      "character": "饿",
+      "pinyin": "è",
+      "tone": 4,
+      "meaning": "đói",
       "hskLevel": "HSK2",
       "strokeCount": 0,
       "examples": [
         {
-          "sentence": "帮我一下。",
-          "pinyin": "bāng wǒ yí xià 。",
-          "meaning": "Giúp tôi một chút."
+          "sentence": "我不饿。",
+          "pinyin": "wǒ bú è 。",
+          "meaning": "Tôi không đói."
         }
       ]
     },
     {
       "id": "hz-HSK2-x31",
-      "character": "看",
-      "pinyin": "kàn",
-      "tone": 4,
-      "meaning": "xem, nhìn",
+      "character": "离",
+      "pinyin": "lí",
+      "tone": 2,
+      "meaning": "cách",
       "hskLevel": "HSK2",
       "strokeCount": 0,
       "examples": [
         {
-          "sentence": "你看一下。",
-          "pinyin": "nǐ kàn yí xià 。",
-          "meaning": "Bạn xem một chút."
+          "sentence": "你家离公司远吗？",
+          "pinyin": "nǐ jiā lí gōng sī yuǎn ma ？",
+          "meaning": "Nhà bạn cách công ty xa không?"
         }
       ]
     },
     {
       "id": "hz-HSK2-x32",
-      "character": "听",
-      "pinyin": "tīng",
-      "tone": 1,
-      "meaning": "nghe",
+      "character": "远",
+      "pinyin": "yuǎn",
+      "tone": 3,
+      "meaning": "xa",
       "hskLevel": "HSK2",
       "strokeCount": 0,
       "examples": [
         {
-          "sentence": "你听一下。",
-          "pinyin": "nǐ tīng yí xià 。",
-          "meaning": "Bạn nghe thử."
+          "sentence": "学校很远。",
+          "pinyin": "xué xiào hěn yuǎn 。",
+          "meaning": "Trường rất xa."
         }
       ]
     },
     {
       "id": "hz-HSK2-x33",
-      "character": "找",
-      "pinyin": "zhǎo",
-      "tone": 3,
-      "meaning": "tìm",
+      "character": "车",
+      "pinyin": "chē",
+      "tone": 1,
+      "meaning": "xe",
       "hskLevel": "HSK2",
       "strokeCount": 0,
       "examples": [
         {
-          "sentence": "我找一下。",
-          "pinyin": "wǒ zhǎo yí xià 。",
-          "meaning": "Để tôi tìm một chút."
+          "sentence": "车来了。",
+          "pinyin": "chē lái le 。",
+          "meaning": "Xe đến rồi."
         }
       ]
     },
     {
       "id": "hz-HSK2-x34",
-      "character": "拿",
-      "pinyin": "ná",
-      "tone": 2,
-      "meaning": "cầm, lấy",
+      "character": "票",
+      "pinyin": "piào",
+      "tone": 4,
+      "meaning": "vé",
       "hskLevel": "HSK2",
       "strokeCount": 0,
       "examples": [
         {
-          "sentence": "你拿一下。",
-          "pinyin": "nǐ ná yí xià 。",
-          "meaning": "Bạn cầm hộ một chút."
+          "sentence": "我买票了。",
+          "pinyin": "wǒ mǎi piào le 。",
+          "meaning": "Tôi mua vé rồi."
         }
       ]
     },
     {
       "id": "hz-HSK2-x35",
-      "character": "问",
-      "pinyin": "wèn",
-      "tone": 4,
-      "meaning": "hỏi",
+      "character": "往",
+      "pinyin": "wǎng",
+      "tone": 3,
+      "meaning": "về phía, hướng",
       "hskLevel": "HSK2",
       "strokeCount": 0,
       "examples": [
         {
-          "sentence": "我问一下。",
-          "pinyin": "wǒ wèn yí xià 。",
-          "meaning": "Để tôi hỏi một chút."
+          "sentence": "往前走。",
+          "pinyin": "wǎng qián zǒu 。",
+          "meaning": "Đi thẳng về phía trước."
         }
       ]
     },
     {
       "id": "hz-HSK2-x36",
-      "character": "真",
-      "pinyin": "zhēn",
-      "tone": 1,
-      "meaning": "thật, thật là",
+      "character": "前",
+      "pinyin": "qián",
+      "tone": 2,
+      "meaning": "trước, phía trước",
       "hskLevel": "HSK2",
       "strokeCount": 0,
       "examples": [
         {
-          "sentence": "这个真漂亮！",
-          "pinyin": "zhè ge zhēn piào liang ！",
-          "meaning": "Cái này thật đẹp!"
+          "sentence": "往前走。",
+          "pinyin": "wǎng qián zǒu 。",
+          "meaning": "Đi về phía trước."
         }
       ]
     },
     {
       "id": "hz-HSK2-x37",
-      "character": "太",
-      "pinyin": "tài",
-      "tone": 4,
-      "meaning": "quá",
+      "character": "左",
+      "pinyin": "zuǒ",
+      "tone": 3,
+      "meaning": "trái",
       "hskLevel": "HSK2",
       "strokeCount": 0,
       "examples": [
         {
-          "sentence": "太好了！",
-          "pinyin": "tài hǎo le ！",
-          "meaning": "Tốt quá!"
+          "sentence": "往左拐。",
+          "pinyin": "wǎng zuǒ guǎi 。",
+          "meaning": "Rẽ trái."
         }
       ]
     },
     {
       "id": "hz-HSK2-x38",
-      "character": "棒",
-      "pinyin": "bàng",
+      "character": "右",
+      "pinyin": "yòu",
       "tone": 4,
-      "meaning": "giỏi, cừ",
+      "meaning": "phải",
       "hskLevel": "HSK2",
       "strokeCount": 0,
       "examples": [
         {
-          "sentence": "你真棒！",
-          "pinyin": "nǐ zhēn bàng ！",
-          "meaning": "Bạn thật giỏi!"
+          "sentence": "往右拐。",
+          "pinyin": "wǎng yòu guǎi 。",
+          "meaning": "Rẽ phải."
         }
       ]
     },
     {
       "id": "hz-HSK2-x39",
-      "character": "胖",
-      "pinyin": "pàng",
-      "tone": 4,
-      "meaning": "mập, béo",
+      "character": "拐",
+      "pinyin": "guǎi",
+      "tone": 3,
+      "meaning": "rẽ, quẹo",
       "hskLevel": "HSK2",
       "strokeCount": 0,
       "examples": [
         {
-          "sentence": "他有点儿胖。",
-          "pinyin": "tā yǒu diǎn er pàng 。",
-          "meaning": "Anh ấy hơi béo."
+          "sentence": "到路口往左拐。",
+          "pinyin": "dào lù kǒu wǎng zuǒ guǎi 。",
+          "meaning": "Đến ngã tư rẽ trái."
         }
       ]
     },
     {
       "id": "hz-HSK2-x40",
-      "character": "瘦",
-      "pinyin": "shòu",
+      "character": "忘",
+      "pinyin": "wàng",
       "tone": 4,
-      "meaning": "gầy",
+      "meaning": "quên",
       "hskLevel": "HSK2",
       "strokeCount": 0,
       "examples": [
         {
-          "sentence": "你太瘦了。",
-          "pinyin": "nǐ tài shòu le 。",
-          "meaning": "Bạn gầy quá."
-        }
-      ]
-    },
-    {
-      "id": "hz-HSK2-x41",
-      "character": "脸",
-      "pinyin": "liǎn",
-      "tone": 3,
-      "meaning": "mặt",
-      "hskLevel": "HSK2",
-      "strokeCount": 0,
-      "examples": [
-        {
-          "sentence": "他洗脸了。",
-          "pinyin": "tā xǐ liǎn le 。",
-          "meaning": "Anh ấy rửa mặt rồi."
-        }
-      ]
-    },
-    {
-      "id": "hz-HSK2-x42",
-      "character": "要",
-      "pinyin": "yào",
-      "tone": 4,
-      "meaning": "muốn, định, cần",
-      "hskLevel": "HSK2",
-      "strokeCount": 0,
-      "examples": [
-        {
-          "sentence": "我要去北京。",
-          "pinyin": "wǒ yào qù běi jīng 。",
-          "meaning": "Tôi định đi Bắc Kinh."
-        }
-      ]
-    },
-    {
-      "id": "hz-HSK2-x43",
-      "character": "美",
-      "pinyin": "měi",
-      "tone": 3,
-      "meaning": "đẹp",
-      "hskLevel": "HSK2",
-      "strokeCount": 0,
-      "examples": [
-        {
-          "sentence": "这儿的风景很美。",
-          "pinyin": "zhè ér de fēng jǐng hěn měi 。",
-          "meaning": "Phong cảnh ở đây rất đẹp."
-        }
-      ]
-    },
-    {
-      "id": "hz-HSK2-x44",
-      "character": "玩",
-      "pinyin": "wán",
-      "tone": 2,
-      "meaning": "chơi",
-      "hskLevel": "HSK2",
-      "strokeCount": 0,
-      "examples": [
-        {
-          "sentence": "我们去公园玩。",
-          "pinyin": "wǒ men qù gōng yuán wán 。",
-          "meaning": "Chúng ta đi công viên chơi."
-        }
-      ]
-    },
-    {
-      "id": "hz-HSK2-x45",
-      "character": "让",
-      "pinyin": "ràng",
-      "tone": 4,
-      "meaning": "để, bảo, nhường",
-      "hskLevel": "HSK2",
-      "strokeCount": 0,
-      "examples": [
-        {
-          "sentence": "老板让我休息。",
-          "pinyin": "lǎo bǎn ràng wǒ xiū xi 。",
-          "meaning": "Sếp bảo tôi nghỉ."
+          "sentence": "我忘了放哪儿了。",
+          "pinyin": "wǒ wàng le fàng nǎ ér le 。",
+          "meaning": "Tôi quên để đâu rồi."
         }
       ]
     },
     {
       "id": "hz-HSK3-x1",
-      "character": "难",
-      "pinyin": "nán",
+      "character": "蓝",
+      "pinyin": "lán",
       "tone": 2,
-      "meaning": "khó",
+      "meaning": "xanh da trời",
       "hskLevel": "HSK3",
       "strokeCount": 0,
       "examples": [
         {
-          "sentence": "这个题很难。",
-          "pinyin": "zhè ge tí hěn nán 。",
-          "meaning": "Câu hỏi này rất khó."
+          "sentence": "天空很蓝。",
+          "pinyin": "tiān kōng hěn lán 。",
+          "meaning": "Bầu trời rất xanh."
         }
       ]
     },
     {
       "id": "hz-HSK3-x2",
-      "character": "搬",
-      "pinyin": "bān",
-      "tone": 1,
-      "meaning": "chuyển, dời",
+      "character": "亮",
+      "pinyin": "liàng",
+      "tone": 4,
+      "meaning": "sáng",
       "hskLevel": "HSK3",
       "strokeCount": 0,
       "examples": [
         {
-          "sentence": "这个桌子我搬不动。",
-          "pinyin": "zhè ge zhuō zi wǒ bān bú dòng 。",
-          "meaning": "Tôi không di chuyển được cái bàn này."
+          "sentence": "月亮很亮。",
+          "pinyin": "yuè liàng hěn liàng 。",
+          "meaning": "Trăng rất sáng."
         }
       ]
     },
     {
       "id": "hz-HSK3-x3",
-      "character": "笑",
-      "pinyin": "xiào",
-      "tone": 4,
-      "meaning": "cười",
+      "character": "脚",
+      "pinyin": "jiǎo",
+      "tone": 3,
+      "meaning": "chân",
       "hskLevel": "HSK3",
       "strokeCount": 0,
       "examples": [
         {
-          "sentence": "他高兴地笑了。",
-          "pinyin": "tā gāo xìng dì xiào le 。",
-          "meaning": "Anh ấy cười một cách vui vẻ."
+          "sentence": "我的脚很疼。",
+          "pinyin": "wǒ de jiǎo hěn téng 。",
+          "meaning": "Chân của tôi rất đau."
         }
       ]
     },
     {
       "id": "hz-HSK3-x4",
-      "character": "包",
-      "pinyin": "bāo",
-      "tone": 1,
-      "meaning": "túi xách",
+      "character": "嘴",
+      "pinyin": "zuǐ",
+      "tone": 3,
+      "meaning": "miệng",
       "hskLevel": "HSK3",
       "strokeCount": 0,
       "examples": [
         {
-          "sentence": "我买了一个新包。",
-          "pinyin": "wǒ mǎi le yí gè xīn bāo 。",
-          "meaning": "Tôi đã mua một chiếc túi mới."
+          "sentence": "他的嘴很大。",
+          "pinyin": "tā de zuǐ hěn dà 。",
+          "meaning": "Miệng anh ấy rất to."
         }
       ]
     },
     {
       "id": "hz-HSK3-x5",
-      "character": "越",
-      "pinyin": "yuè",
-      "tone": 4,
-      "meaning": "càng",
+      "character": "腿",
+      "pinyin": "tuǐ",
+      "tone": 3,
+      "meaning": "đùi / chân",
       "hskLevel": "HSK3",
       "strokeCount": 0,
       "examples": [
         {
-          "sentence": "他越说越高兴。",
-          "pinyin": "tā yuè shuō yuè gāo xìng 。",
-          "meaning": "Anh ấy càng nói càng vui."
+          "sentence": "我的腿很疼。",
+          "pinyin": "wǒ de tuǐ hěn téng 。",
+          "meaning": "Chân của tôi rất đau."
         }
       ]
     },
     {
       "id": "hz-HSK3-x6",
-      "character": "疼",
-      "pinyin": "téng",
+      "character": "牙",
+      "pinyin": "yá",
       "tone": 2,
-      "meaning": "đau",
+      "meaning": "răng",
       "hskLevel": "HSK3",
       "strokeCount": 0,
       "examples": [
         {
-          "sentence": "我的头很疼。",
-          "pinyin": "wǒ de tóu hěn téng 。",
-          "meaning": "Đầu của tôi rất đau."
+          "sentence": "每天早上我刷牙。",
+          "pinyin": "měi tiān zǎo shàng wǒ shuā yá 。",
+          "meaning": "Mỗi sáng tôi đều đánh răng."
         }
       ]
     },
     {
       "id": "hz-HSK3-x7",
-      "character": "讲",
-      "pinyin": "jiǎng",
-      "tone": 3,
-      "meaning": "giảng, nói",
+      "character": "画",
+      "pinyin": "huà",
+      "tone": 4,
+      "meaning": "vẽ",
       "hskLevel": "HSK3",
       "strokeCount": 0,
       "examples": [
         {
-          "sentence": "他讲得很好。",
-          "pinyin": "tā jiǎng dé hěn hǎo 。",
-          "meaning": "Anh ấy nói rất hay."
+          "sentence": "他喜欢画画。",
+          "pinyin": "tā xǐ huan huà huà 。",
+          "meaning": "Anh ấy thích vẽ tranh."
         }
       ]
     },
     {
       "id": "hz-HSK3-x8",
-      "character": "久",
-      "pinyin": "jiǔ",
-      "tone": 3,
-      "meaning": "lâu",
+      "character": "按",
+      "pinyin": "àn",
+      "tone": 4,
+      "meaning": "theo",
       "hskLevel": "HSK3",
       "strokeCount": 0,
       "examples": [
         {
-          "sentence": "我等了很久。",
-          "pinyin": "wǒ děng le hěn jiǔ 。",
-          "meaning": "Tôi đã đợi rất lâu."
+          "sentence": "按学校的计划，明天期末考试。",
+          "pinyin": "àn xué xiào de jì huà ， míng tiān qī mò kǎo shì 。",
+          "meaning": "Theo kế hoạch của nhà trường, ngày mai thi cuối kỳ."
         }
       ]
     },
     {
       "id": "hz-HSK3-x9",
-      "character": "万",
-      "pinyin": "wàn",
-      "tone": 4,
-      "meaning": "mười nghìn",
+      "character": "板",
+      "pinyin": "bǎn",
+      "tone": 3,
+      "meaning": "tấm, phiến",
       "hskLevel": "HSK3",
       "strokeCount": 0,
       "examples": [
         {
-          "sentence": "这里有一万人。",
-          "pinyin": "zhè lǐ yǒu yí wàn rén 。",
-          "meaning": "Ở đây có mười nghìn người."
+          "sentence": "哥哥用锯子把木板切割开了。",
+          "pinyin": "gē ge yòng jù zǐ bǎ mù bǎn qiē gē kāi le 。",
+          "meaning": "Anh trai dùng cái cưa để cắt miếng gỗ này."
         }
       ]
     },
     {
       "id": "hz-HSK3-x10",
-      "character": "把",
-      "pinyin": "bǎ",
+      "character": "保",
+      "pinyin": "bǎo",
       "tone": 3,
-      "meaning": "đặt, đem",
+      "meaning": "bảo đảm",
       "hskLevel": "HSK3",
       "strokeCount": 0,
       "examples": [
         {
-          "sentence": "我把书放桌子上了。",
-          "pinyin": "wǒ bǎ shū fàng zhuō zi shàng le 。",
-          "meaning": "Tôi đặt sách ở trên bàn rồi."
+          "sentence": "他们还修路以保交通。",
+          "pinyin": "tā men hái xiū lù yǐ bǎo jiāo tōng 。",
+          "meaning": "Họ vẫn sửa đường để đảm bảo giao thông."
         }
       ]
     },
     {
       "id": "hz-HSK3-x11",
-      "character": "门",
-      "pinyin": "mén",
-      "tone": 2,
-      "meaning": "cửa",
+      "character": "报",
+      "pinyin": "bào",
+      "tone": 4,
+      "meaning": "báo",
       "hskLevel": "HSK3",
       "strokeCount": 0,
       "examples": [
         {
-          "sentence": "请把门关上。",
-          "pinyin": "qǐng bǎ mén guān shàng 。",
-          "meaning": "Hãy đóng cửa vào."
+          "sentence": "今天晚报有什么内容？",
+          "pinyin": "jīn tiān wǎn bào yǒu shén me nèi róng ？",
+          "meaning": "Nội dung của báo muộn hôm nay có gì?"
         }
       ]
     },
     {
       "id": "hz-HSK3-x12",
-      "character": "灯",
-      "pinyin": "dēng",
+      "character": "冰",
+      "pinyin": "bīng",
       "tone": 1,
-      "meaning": "đèn",
+      "meaning": "băng, đá",
       "hskLevel": "HSK3",
       "strokeCount": 0,
       "examples": [
         {
-          "sentence": "请把灯打开。",
-          "pinyin": "qǐng bǎ dēng dǎ kāi 。",
-          "meaning": "Hãy bật đèn lên."
+          "sentence": "冰箱里有很多冰。",
+          "pinyin": "bīng xiāng lǐ yǒu hěn duō bīng 。",
+          "meaning": "Trong tủ lạnh có rất nhiều đá."
         }
       ]
     },
     {
       "id": "hz-HSK3-x13",
-      "character": "像",
-      "pinyin": "xiàng",
-      "tone": 4,
-      "meaning": "giống như",
-      "hskLevel": "HSK3",
-      "strokeCount": 0,
-      "examples": [
-        {
-          "sentence": "你长得像你妈妈。",
-          "pinyin": "nǐ cháng dé xiàng nǐ mā ma 。",
-          "meaning": "Bạn trông giống mẹ của bạn."
-        }
-      ]
-    },
-    {
-      "id": "hz-HSK3-x14",
-      "character": "送",
-      "pinyin": "sòng",
-      "tone": 4,
-      "meaning": "tặng",
-      "hskLevel": "HSK3",
-      "strokeCount": 0,
-      "examples": [
-        {
-          "sentence": "我送你一份礼物。",
-          "pinyin": "wǒ sòng nǐ yí fèn lǐ wù 。",
-          "meaning": "Tôi tặng bạn một món quà."
-        }
-      ]
-    },
-    {
-      "id": "hz-HSK3-x15",
-      "character": "想",
-      "pinyin": "xiǎng",
+      "character": "走",
+      "pinyin": "zǒu",
       "tone": 3,
-      "meaning": "muốn",
+      "meaning": "đi",
       "hskLevel": "HSK3",
       "strokeCount": 0,
       "examples": [
         {
-          "sentence": "我想睡觉。",
-          "pinyin": "wǒ xiǎng shuì jiào 。",
-          "meaning": "Tôi muốn đi ngủ."
-        }
-      ]
-    },
-    {
-      "id": "hz-HSK3-x16",
-      "character": "渴",
-      "pinyin": "kě",
-      "tone": 3,
-      "meaning": "khát",
-      "hskLevel": "HSK3",
-      "strokeCount": 0,
-      "examples": [
-        {
-          "sentence": "我渴了，想喝水。",
-          "pinyin": "wǒ kě le ， xiǎng hē shuǐ 。",
-          "meaning": "Tôi khát rồi, muốn uống nước."
-        }
-      ]
-    },
-    {
-      "id": "hz-HSK3-x17",
-      "character": "谁",
-      "pinyin": "shéi",
-      "tone": 2,
-      "meaning": "ai",
-      "hskLevel": "HSK3",
-      "strokeCount": 0,
-      "examples": [
-        {
-          "sentence": "谁都知道。",
-          "pinyin": "shuí dōu zhī dào 。",
-          "meaning": "Ai cũng biết."
-        }
-      ]
-    },
-    {
-      "id": "hz-HSK3-x18",
-      "character": "会",
-      "pinyin": "huì",
-      "tone": 4,
-      "meaning": "sẽ / biết",
-      "hskLevel": "HSK3",
-      "strokeCount": 0,
-      "examples": [
-        {
-          "sentence": "我一定会来的。",
-          "pinyin": "wǒ yí dìng huì lái de 。",
-          "meaning": "Tôi nhất định sẽ tới."
-        }
-      ]
-    },
-    {
-      "id": "hz-HSK3-x19",
-      "character": "站",
-      "pinyin": "zhàn",
-      "tone": 4,
-      "meaning": "đứng",
-      "hskLevel": "HSK3",
-      "strokeCount": 0,
-      "examples": [
-        {
-          "sentence": "请站起来说话。",
-          "pinyin": "qǐng zhàn qǐ lái shuō huà 。",
-          "meaning": "Mời đứng dậy nói chuyện."
-        }
-      ]
-    },
-    {
-      "id": "hz-HSK3-x20",
-      "character": "被",
-      "pinyin": "bèi",
-      "tone": 4,
-      "meaning": "bị",
-      "hskLevel": "HSK3",
-      "strokeCount": 0,
-      "examples": [
-        {
-          "sentence": "他被车撞了。",
-          "pinyin": "tā bèi chē zhuàng le 。",
-          "meaning": "Anh ta bị xe đâm rồi."
-        }
-      ]
-    },
-    {
-      "id": "hz-HSK3-x21",
-      "character": "船",
-      "pinyin": "chuán",
-      "tone": 2,
-      "meaning": "thuyền",
-      "hskLevel": "HSK3",
-      "strokeCount": 0,
-      "examples": [
-        {
-          "sentence": "我坐船去。",
-          "pinyin": "wǒ zuò chuán qù 。",
-          "meaning": "Tôi đi bằng thuyền."
-        }
-      ]
-    },
-    {
-      "id": "hz-HSK3-x22",
-      "character": "骑",
-      "pinyin": "qí",
-      "tone": 2,
-      "meaning": "cưỡi, đi (xe đạp/ngựa)",
-      "hskLevel": "HSK3",
-      "strokeCount": 0,
-      "examples": [
-        {
-          "sentence": "我喜欢骑自行车。",
-          "pinyin": "wǒ xǐ huan qí zì xíng chē 。",
-          "meaning": "Tôi thích đi xe đạp."
-        }
-      ]
-    },
-    {
-      "id": "hz-HSK3-x23",
-      "character": "辆",
-      "pinyin": "liàng",
-      "tone": 4,
-      "meaning": "chiếc (xe)",
-      "hskLevel": "HSK3",
-      "strokeCount": 0,
-      "examples": [
-        {
-          "sentence": "我有一辆车。",
-          "pinyin": "wǒ yǒu yí liàng chē 。",
-          "meaning": "Tôi có một chiếc xe."
-        }
-      ]
-    },
-    {
-      "id": "hz-HSK3-x24",
-      "character": "慢",
-      "pinyin": "màn",
-      "tone": 4,
-      "meaning": "chậm",
-      "hskLevel": "HSK3",
-      "strokeCount": 0,
-      "examples": [
-        {
-          "sentence": "请骑慢一点。",
-          "pinyin": "qǐng qí màn yì diǎn 。",
-          "meaning": "Xin hãy đi chậm một chút."
-        }
-      ]
-    },
-    {
-      "id": "hz-HSK3-x25",
-      "character": "路",
-      "pinyin": "lù",
-      "tone": 4,
-      "meaning": "đường",
-      "hskLevel": "HSK3",
-      "strokeCount": 0,
-      "examples": [
-        {
-          "sentence": "这条路有100米长。",
-          "pinyin": "zhè tiáo lù yǒu 1 0 0 mǐ cháng 。",
-          "meaning": "Con đường này dài 100 mét."
-        }
-      ]
-    },
-    {
-      "id": "hz-HSK3-x26",
-      "character": "春",
-      "pinyin": "chūn",
-      "tone": 1,
-      "meaning": "mùa xuân",
-      "hskLevel": "HSK3",
-      "strokeCount": 0,
-      "examples": [
-        {
-          "sentence": "春天来了。",
-          "pinyin": "chūn tiān lái le 。",
-          "meaning": "Mùa xuân đến rồi."
-        }
-      ]
-    },
-    {
-      "id": "hz-HSK3-x27",
-      "character": "夏",
-      "pinyin": "xià",
-      "tone": 4,
-      "meaning": "mùa hè",
-      "hskLevel": "HSK3",
-      "strokeCount": 0,
-      "examples": [
-        {
-          "sentence": "夏天很热。",
-          "pinyin": "xià tiān hěn rè 。",
-          "meaning": "Mùa hè rất nóng."
-        }
-      ]
-    },
-    {
-      "id": "hz-HSK3-x28",
-      "character": "秋",
-      "pinyin": "qiū",
-      "tone": 1,
-      "meaning": "mùa thu",
-      "hskLevel": "HSK3",
-      "strokeCount": 0,
-      "examples": [
-        {
-          "sentence": "秋天是收获的季节。",
-          "pinyin": "qiū tiān shì shōu huò de jì jié 。",
-          "meaning": "Mùa thu là mùa thu hoạch."
-        }
-      ]
-    },
-    {
-      "id": "hz-HSK3-x29",
-      "character": "冬",
-      "pinyin": "dōng",
-      "tone": 1,
-      "meaning": "mùa đông",
-      "hskLevel": "HSK3",
-      "strokeCount": 0,
-      "examples": [
-        {
-          "sentence": "冬天很冷。",
-          "pinyin": "dōng tiān hěn lěng 。",
-          "meaning": "Mùa đông rất lạnh."
-        }
-      ]
-    },
-    {
-      "id": "hz-HSK3-x30",
-      "character": "阴",
-      "pinyin": "yīn",
-      "tone": 1,
-      "meaning": "âm (trời u ám)",
-      "hskLevel": "HSK3",
-      "strokeCount": 0,
-      "examples": [
-        {
-          "sentence": "今天是阴天。",
-          "pinyin": "jīn tiān shì yīn tiān 。",
-          "meaning": "Hôm nay trời u ám."
-        }
-      ]
-    },
-    {
-      "id": "hz-HSK3-x31",
-      "character": "伞",
-      "pinyin": "sǎn",
-      "tone": 3,
-      "meaning": "cái ô",
-      "hskLevel": "HSK3",
-      "strokeCount": 0,
-      "examples": [
-        {
-          "sentence": "下雨了请带伞。",
-          "pinyin": "xià yǔ le qǐng dài sǎn 。",
-          "meaning": "Mưa rồi xin hãy mang ô."
-        }
-      ]
-    },
-    {
-      "id": "hz-HSK3-x32",
-      "character": "云",
-      "pinyin": "yún",
-      "tone": 2,
-      "meaning": "mây",
-      "hskLevel": "HSK3",
-      "strokeCount": 0,
-      "examples": [
-        {
-          "sentence": "天上有很多云。",
-          "pinyin": "tiān shàng yǒu hěn duō yún 。",
-          "meaning": "Trên trời có rất nhiều mây."
-        }
-      ]
-    },
-    {
-      "id": "hz-HSK3-x33",
-      "character": "热",
-      "pinyin": "rè",
-      "tone": 4,
-      "meaning": "nóng",
-      "hskLevel": "HSK3",
-      "strokeCount": 0,
-      "examples": [
-        {
-          "sentence": "夏天很热。",
-          "pinyin": "xià tiān hěn rè 。",
-          "meaning": "Mùa hè rất nóng."
-        }
-      ]
-    },
-    {
-      "id": "hz-HSK3-x34",
-      "character": "元",
-      "pinyin": "yuán",
-      "tone": 2,
-      "meaning": "đồng (tiền)",
-      "hskLevel": "HSK3",
-      "strokeCount": 0,
-      "examples": [
-        {
-          "sentence": "这本书要50元。",
-          "pinyin": "zhè běn shū yào 5 0 yuán 。",
-          "meaning": "Cuốn sách này giá 50 tệ."
-        }
-      ]
-    },
-    {
-      "id": "hz-HSK3-x35",
-      "character": "换",
-      "pinyin": "huàn",
-      "tone": 4,
-      "meaning": "đổi",
-      "hskLevel": "HSK3",
-      "strokeCount": 0,
-      "examples": [
-        {
-          "sentence": "我想换一件衣服。",
-          "pinyin": "wǒ xiǎng huàn yí jiàn yī fu 。",
-          "meaning": "Tôi muốn đổi một bộ quần áo."
-        }
-      ]
-    },
-    {
-      "id": "hz-HSK3-x36",
-      "character": "楼",
-      "pinyin": "lóu",
-      "tone": 2,
-      "meaning": "tầng, tòa nhà",
-      "hskLevel": "HSK3",
-      "strokeCount": 0,
-      "examples": [
-        {
-          "sentence": "我住在五楼。",
-          "pinyin": "wǒ zhù zài wǔ lóu 。",
-          "meaning": "Tôi sống ở tầng 5."
-        }
-      ]
-    },
-    {
-      "id": "hz-HSK3-x37",
-      "character": "层",
-      "pinyin": "céng",
-      "tone": 2,
-      "meaning": "tầng",
-      "hskLevel": "HSK3",
-      "strokeCount": 0,
-      "examples": [
-        {
-          "sentence": "我住在三层。",
-          "pinyin": "wǒ zhù zài sān céng 。",
-          "meaning": "Tôi ở tầng 3."
-        }
-      ]
-    },
-    {
-      "id": "hz-HSK3-x38",
-      "character": "鸟",
-      "pinyin": "niǎo",
-      "tone": 3,
-      "meaning": "chim",
-      "hskLevel": "HSK3",
-      "strokeCount": 0,
-      "examples": [
-        {
-          "sentence": "树上有很多鸟。",
-          "pinyin": "shù shàng yǒu hěn duō niǎo 。",
-          "meaning": "Trên cây có rất nhiều chim."
-        }
-      ]
-    },
-    {
-      "id": "hz-HSK3-x39",
-      "character": "草",
-      "pinyin": "cǎo",
-      "tone": 3,
-      "meaning": "cỏ",
-      "hskLevel": "HSK3",
-      "strokeCount": 0,
-      "examples": [
-        {
-          "sentence": "草地很绿。",
-          "pinyin": "cǎo dì hěn lǜ 。",
-          "meaning": "Thảm cỏ rất xanh."
-        }
-      ]
-    },
-    {
-      "id": "hz-HSK3-x40",
-      "character": "树",
-      "pinyin": "shù",
-      "tone": 4,
-      "meaning": "cây",
-      "hskLevel": "HSK3",
-      "strokeCount": 0,
-      "examples": [
-        {
-          "sentence": "树上有很多鸟。",
-          "pinyin": "shù shàng yǒu hěn duō niǎo 。",
-          "meaning": "Trên cây có rất nhiều chim."
-        }
-      ]
-    },
-    {
-      "id": "hz-HSK3-x41",
-      "character": "花",
-      "pinyin": "huā",
-      "tone": 1,
-      "meaning": "hoa",
-      "hskLevel": "HSK3",
-      "strokeCount": 0,
-      "examples": [
-        {
-          "sentence": "花园里有很多花。",
-          "pinyin": "huā yuán lǐ yǒu hěn duō huā 。",
-          "meaning": "Trong vườn có rất nhiều hoa."
-        }
-      ]
-    },
-    {
-      "id": "hz-HSK3-x42",
-      "character": "园",
-      "pinyin": "yuán",
-      "tone": 2,
-      "meaning": "vườn",
-      "hskLevel": "HSK3",
-      "strokeCount": 0,
-      "examples": [
-        {
-          "sentence": "花园里有很多花。",
-          "pinyin": "huā yuán lǐ yǒu hěn duō huā 。",
-          "meaning": "Trong vườn có rất nhiều hoa."
-        }
-      ]
-    },
-    {
-      "id": "hz-HSK3-x43",
-      "character": "河",
-      "pinyin": "hé",
-      "tone": 2,
-      "meaning": "sông",
-      "hskLevel": "HSK3",
-      "strokeCount": 0,
-      "examples": [
-        {
-          "sentence": "黄河是中国的母亲河。",
-          "pinyin": "huáng hé shì zhōng guó de mǔ qīn hé 。",
-          "meaning": "Hoàng Hà là con sông mẹ của Trung Quốc."
-        }
-      ]
-    },
-    {
-      "id": "hz-HSK3-x44",
-      "character": "山",
-      "pinyin": "shān",
-      "tone": 1,
-      "meaning": "núi",
-      "hskLevel": "HSK3",
-      "strokeCount": 0,
-      "examples": [
-        {
-          "sentence": "我们周末去爬山。",
-          "pinyin": "wǒ men zhōu mò qù pá shān 。",
-          "meaning": "Cuối tuần chúng tôi đi leo núi."
-        }
-      ]
-    },
-    {
-      "id": "hz-HSK3-x45",
-      "character": "绿",
-      "pinyin": "lǜ",
-      "tone": 4,
-      "meaning": "xanh lá",
-      "hskLevel": "HSK3",
-      "strokeCount": 0,
-      "examples": [
-        {
-          "sentence": "草地很绿。",
-          "pinyin": "cǎo dì hěn lǜ 。",
-          "meaning": "Thảm cỏ rất xanh."
-        }
-      ]
-    },
-    {
-      "id": "hz-HSK4-x1",
-      "character": "京",
-      "pinyin": "jīng",
-      "tone": 1,
-      "meaning": "kinh đô, thủ đô",
-      "hskLevel": "HSK4",
-      "strokeCount": 0,
-      "examples": [
-        {
-          "sentence": "北京的京字有首都的意思。",
-          "pinyin": "běi jīng de jīng zì yǒu shǒu dū de yì sī 。",
-          "meaning": "Chữ 'kinh' trong Bắc Kinh có nghĩa là thủ đô."
-        }
-      ]
-    },
-    {
-      "id": "hz-HSK4-x2",
-      "character": "戏",
-      "pinyin": "xì",
-      "tone": 4,
-      "meaning": "tuồng, kịch (hí kịch)",
-      "hskLevel": "HSK4",
-      "strokeCount": 0,
-      "examples": [
-        {
-          "sentence": "爷爷最喜欢看中国的地方戏。",
-          "pinyin": "yé ye zuì xǐ huan kàn zhòng guó de dì fāng xì 。",
-          "meaning": "Ông nội thích nhất là xem các loại tuồng địa phương của Trung Quốc."
-        }
-      ]
-    },
-    {
-      "id": "hz-HSK5-x1",
-      "character": "摊",
-      "pinyin": "tān",
-      "tone": 1,
-      "meaning": "quầy, sạp",
-      "hskLevel": "HSK5",
-      "strokeCount": 0,
-      "examples": [
-        {
-          "sentence": "出现了从事租书业务的小人书摊。",
-          "pinyin": "chū xiàn le cóng shì zū shū yè wù de xiǎo rén shū tān 。",
-          "meaning": "Đã xuất hiện những quầy truyện tranh làm dịch vụ cho thuê sách."
-        }
-      ]
-    },
-    {
-      "id": "hz-HSK5-x2",
-      "character": "支",
-      "pinyin": "zhī",
-      "tone": 1,
-      "meaning": "chống, đỡ",
-      "hskLevel": "HSK5",
-      "strokeCount": 0,
-      "examples": [
-        {
-          "sentence": "里面用几块砖头支着粗糙的木头板子。",
-          "pinyin": "lǐ miàn yòng jǐ kuài zhuān tóu zhī zhe cū cāo de mù tou bǎn zǐ 。",
-          "meaning": "Bên trong dùng vài viên gạch để chống những tấm ván gỗ thô ráp lên."
-        }
-      ]
-    },
-    {
-      "id": "hz-HSK5-x3",
-      "character": "翻",
-      "pinyin": "fān",
-      "tone": 1,
-      "meaning": "lật, giở",
-      "hskLevel": "HSK5",
-      "strokeCount": 0,
-      "examples": [
-        {
-          "sentence": "一本书翻开搭在上面。",
-          "pinyin": "yì běn shū fān kāi dā zài shàng miàn 。",
-          "meaning": "Một cuốn sách được giở ra rồi vắt lên trên."
-        }
-      ]
-    },
-    {
-      "id": "hz-HSK5-x4",
-      "character": "搭",
-      "pinyin": "dā",
-      "tone": 1,
-      "meaning": "vắt, mắc",
-      "hskLevel": "HSK5",
-      "strokeCount": 0,
-      "examples": [
-        {
-          "sentence": "一本书翻开搭在上面。",
-          "pinyin": "yì běn shū fān kāi dā zài shàng miàn 。",
-          "meaning": "Một cuốn sách được giở ra rồi vắt lên trên."
-        }
-      ]
-    },
-    {
-      "id": "hz-HSK5-x5",
-      "character": "册",
-      "pinyin": "cè",
-      "tone": 4,
-      "meaning": "cuốn, quyển",
-      "hskLevel": "HSK5",
-      "strokeCount": 0,
-      "examples": [
-        {
-          "sentence": "这套连环画一共有十册。",
-          "pinyin": "zhè tào lián huán huà yí gòng yǒu shí cè 。",
-          "meaning": "Bộ truyện tranh liên hoàn này tổng cộng có mười cuốn."
-        }
-      ]
-    },
-    {
-      "id": "hz-HSK5-x6",
-      "character": "凭",
-      "pinyin": "píng",
-      "tone": 2,
-      "meaning": "dựa vào",
-      "hskLevel": "HSK5",
-      "strokeCount": 0,
-      "examples": [
-        {
-          "sentence": "全凭信用。",
-          "pinyin": "quán píng xìn yòng 。",
-          "meaning": "Hoàn toàn dựa vào uy tín."
-        }
-      ]
-    },
-    {
-      "id": "hz-HSK5-x7",
-      "character": "涨",
-      "pinyin": "zhǎng",
-      "tone": 3,
-      "meaning": "lên cao, tăng",
-      "hskLevel": "HSK5",
-      "strokeCount": 0,
-      "examples": [
-        {
-          "sentence": "一些印刷精美、有特色的作品则身价大涨。",
-          "pinyin": "yì xiē yìn shuā jīng měi 、 yǒu tè sè de zuò pǐn zé shēn jià dà zhǎng 。",
-          "meaning": "Một số tác phẩm in ấn tinh xảo, đặc sắc thì giá trị tăng vọt."
-        }
-      ]
-    },
-    {
-      "id": "hz-HSK5-x8",
-      "character": "青",
-      "pinyin": "qīng",
-      "tone": 1,
-      "meaning": "xanh",
-      "hskLevel": "HSK5",
-      "strokeCount": 0,
-      "examples": [
-        {
-          "sentence": "青的甜中带点儿辣。",
-          "pinyin": "qīng de tián zhōng dài diǎn ér là 。",
-          "meaning": "Loại màu xanh có vị ngọt pha chút cay."
-        }
-      ]
-    },
-    {
-      "id": "hz-HSK5-x9",
-      "character": "紫",
-      "pinyin": "zǐ",
-      "tone": 3,
-      "meaning": "tím",
-      "hskLevel": "HSK5",
-      "strokeCount": 0,
-      "examples": [
-        {
-          "sentence": "紫的像山泉般清淡可口。",
-          "pinyin": "zǐ de xiàng shān quán bān qīng dàn kě kǒu 。",
-          "meaning": "Loại màu tím thanh đạm và ngon miệng như nước suối nguồn."
-        }
-      ]
-    },
-    {
-      "id": "hz-HSK5-x10",
-      "character": "般",
-      "pinyin": "bān",
-      "tone": 1,
-      "meaning": "giống như",
-      "hskLevel": "HSK5",
-      "strokeCount": 0,
-      "examples": [
-        {
-          "sentence": "紫的像山泉般清淡可口。",
-          "pinyin": "zǐ de xiàng shān quán bān qīng dàn kě kǒu 。",
-          "meaning": "Loại màu tím thanh đạm và ngon miệng như nước suối nguồn."
-        }
-      ]
-    },
-    {
-      "id": "hz-HSK5-x11",
-      "character": "夸",
-      "pinyin": "kuā",
-      "tone": 1,
-      "meaning": "khen ngợi",
-      "hskLevel": "HSK5",
-      "strokeCount": 0,
-      "examples": [
-        {
-          "sentence": "父老乡亲们夸它说：“橘子、葡萄、梨，比不上咱的萝卜皮。”",
-          "pinyin": "fù lǎo xiāng qīn men kuā tā shuō ： “ jú zǐ 、 pú táo 、 lí ， bǐ bú shàng zán de luó bo pí 。 ”",
-          "meaning": "Bà con lối xóm khen ngợi nó rằng: \"Quýt, nho, lê không bằng vỏ củ cải nhà mình.\""
-        }
-      ]
-    },
-    {
-      "id": "hz-HSK5-x12",
-      "character": "梨",
-      "pinyin": "lí",
-      "tone": 2,
-      "meaning": "quả lê",
-      "hskLevel": "HSK5",
-      "strokeCount": 0,
-      "examples": [
-        {
-          "sentence": "橘子、葡萄、梨，比不上咱的萝卜皮。",
-          "pinyin": "jú zǐ 、 pú táo 、 lí ， bǐ bú shàng zán de luó bo pí 。",
-          "meaning": "Quýt, nho, lê không bằng vỏ củ cải nhà mình."
-        }
-      ]
-    },
-    {
-      "id": "hz-HSK5-x13",
-      "character": "炒",
-      "pinyin": "chǎo",
-      "tone": 3,
-      "meaning": "xào",
-      "hskLevel": "HSK5",
-      "strokeCount": 0,
-      "examples": [
-        {
-          "sentence": "既不必炒或煮，也不用油炸。",
-          "pinyin": "jì bú bì chǎo huò zhǔ ， yě bú yòng yóu zhà 。",
-          "meaning": "Vừa không cần xào hay nấu, cũng không cần chiên qua dầu."
-        }
-      ]
-    },
-    {
-      "id": "hz-HSK5-x14",
-      "character": "煮",
-      "pinyin": "zhǔ",
-      "tone": 3,
-      "meaning": "nấu, luộc",
-      "hskLevel": "HSK5",
-      "strokeCount": 0,
-      "examples": [
-        {
-          "sentence": "既不必炒或煮，也不用油炸。",
-          "pinyin": "jì bú bì chǎo huò zhǔ ， yě bú yòng yóu zhà 。",
-          "meaning": "Vừa không cần xào hay nấu, cũng không cần chiên qua dầu."
-        }
-      ]
-    },
-    {
-      "id": "hz-HSK5-x15",
-      "character": "切",
-      "pinyin": "qiē",
-      "tone": 4,
-      "meaning": "cắt, thái",
-      "hskLevel": "HSK5",
-      "strokeCount": 0,
-      "examples": [
-        {
-          "sentence": "先把三色萝卜洗净切丝。",
-          "pinyin": "xiān bǎ sān sè luó bo xǐ jìng qiè sī 。",
-          "meaning": "Trước hết rửa sạch ba loại củ cải rồi thái sợi."
-        }
-      ]
-    },
-    {
-      "id": "hz-HSK5-x16",
-      "character": "丝",
-      "pinyin": "sī",
-      "tone": 1,
-      "meaning": "sợi",
-      "hskLevel": "HSK5",
-      "strokeCount": 0,
-      "examples": [
-        {
-          "sentence": "先把三色萝卜洗净切丝。",
-          "pinyin": "xiān bǎ sān sè luó bo xǐ jìng qiè sī 。",
-          "meaning": "Trước hết rửa sạch ba loại củ cải rồi thái sợi."
-        }
-      ]
-    },
-    {
-      "id": "hz-HSK5-x17",
-      "character": "擀",
-      "pinyin": "gǎn",
-      "tone": 3,
-      "meaning": "cán (bột)",
-      "hskLevel": "HSK5",
-      "strokeCount": 0,
-      "examples": [
-        {
-          "sentence": "高手往往把面擀得薄如白纸。",
-          "pinyin": "gāo shǒu wǎng wǎng bǎ miàn gǎn dé báo rú bái zhǐ 。",
-          "meaning": "Cao thủ thường cán bột mỏng như tờ giấy trắng."
-        }
-      ]
-    },
-    {
-      "id": "hz-HSK5-x18",
-      "character": "薄",
-      "pinyin": "báo",
-      "tone": 2,
-      "meaning": "mỏng",
-      "hskLevel": "HSK5",
-      "strokeCount": 0,
-      "examples": [
-        {
-          "sentence": "高手往往把面擀得薄如白纸。",
-          "pinyin": "gāo shǒu wǎng wǎng bǎ miàn gǎn dé báo rú bái zhǐ 。",
-          "meaning": "Cao thủ thường cán bột mỏng như tờ giấy trắng."
-        }
-      ]
-    },
-    {
-      "id": "hz-HSK5-x19",
-      "character": "淋",
-      "pinyin": "lín",
-      "tone": 2,
-      "meaning": "rưới, xối",
-      "hskLevel": "HSK5",
-      "strokeCount": 0,
-      "examples": [
-        {
-          "sentence": "先在锅里淋一圈油。",
-          "pinyin": "xiān zài guō lǐ lín yì quān yóu 。",
-          "meaning": "Trước tiên rưới một vòng dầu vào nồi."
-        }
-      ]
-    },
-    {
-      "id": "hz-HSK5-x20",
-      "character": "圈",
-      "pinyin": "quān",
-      "tone": 1,
-      "meaning": "vòng",
-      "hskLevel": "HSK5",
-      "strokeCount": 0,
-      "examples": [
-        {
-          "sentence": "先在锅里淋一圈油。",
-          "pinyin": "xiān zài guō lǐ lín yì quān yóu 。",
-          "meaning": "Trước tiên rưới một vòng dầu vào nồi."
-        }
-      ]
-    },
-    {
-      "id": "hz-HSK5-x21",
-      "character": "烫",
-      "pinyin": "tàng",
-      "tone": 4,
-      "meaning": "bỏng, nóng",
-      "hskLevel": "HSK5",
-      "strokeCount": 0,
-      "examples": [
-        {
-          "sentence": "待油锅烫手时。",
-          "pinyin": "dài yóu guō tàng shǒu shí 。",
-          "meaning": "Chờ đến khi chảo dầu nóng bỏng tay."
-        }
-      ]
-    },
-    {
-      "id": "hz-HSK5-x22",
-      "character": "盖",
-      "pinyin": "gài",
-      "tone": 4,
-      "meaning": "đậy, nắp",
-      "hskLevel": "HSK5",
-      "strokeCount": 0,
-      "examples": [
-        {
-          "sentence": "盖锅前须放进一些温水。",
-          "pinyin": "gài guō qián xū fàng jìn yì xiē wēn shuǐ 。",
-          "meaning": "Trước khi đậy nắp nồi cần phải cho vào một ít nước ấm."
-        }
-      ]
-    },
-    {
-      "id": "hz-HSK5-x23",
-      "character": "糊",
-      "pinyin": "hú",
-      "tone": 2,
-      "meaning": "khét, cháy",
-      "hskLevel": "HSK5",
-      "strokeCount": 0,
-      "examples": [
-        {
-          "sentence": "放进一些温水，预防糊底。",
-          "pinyin": "fàng jìn yì xiē wēn shuǐ ， yù fáng hú dǐ 。",
-          "meaning": "Cho vào một ít nước ấm để ngăn ngừa bị cháy khét ở đáy."
-        }
-      ]
-    },
-    {
-      "id": "hz-HSK5-x24",
-      "character": "闻",
-      "pinyin": "wén",
-      "tone": 2,
-      "meaning": "ngửi",
-      "hskLevel": "HSK5",
-      "strokeCount": 0,
-      "examples": [
-        {
-          "sentence": "等能闻到香味时，便可开锅了。",
-          "pinyin": "děng néng wén dào xiāng wèi shí ， biàn kě kāi guō le 。",
-          "meaning": "Đợi đến khi ngửi thấy mùi thơm là có thể mở nồi."
-        }
-      ]
-    },
-    {
-      "id": "hz-HSK5-x25",
-      "character": "趁",
-      "pinyin": "chèn",
-      "tone": 4,
-      "meaning": "nhân lúc",
-      "hskLevel": "HSK5",
-      "strokeCount": 0,
-      "examples": [
-        {
-          "sentence": "萝卜饼要趁热吃。",
-          "pinyin": "luó bo bǐng yào chèn rè chī 。",
-          "meaning": "Bánh củ cải phải ăn nhân lúc còn nóng."
-        }
-      ]
-    },
-    {
-      "id": "hz-HSK5-x26",
-      "character": "醋",
-      "pinyin": "cù",
-      "tone": 4,
-      "meaning": "giấm",
-      "hskLevel": "HSK5",
-      "strokeCount": 0,
-      "examples": [
-        {
-          "sentence": "还可以加少许酱油和醋。",
-          "pinyin": "hái kě yǐ jiā shǎo xǔ jiàng yóu hé cù 。",
-          "meaning": "Còn có thể thêm một chút nước tương và giấm."
-        }
-      ]
-    },
-    {
-      "id": "hz-HSK5-x27",
-      "character": "焦",
-      "pinyin": "jiāo",
-      "tone": 1,
-      "meaning": "cháy (vàng)",
-      "hskLevel": "HSK5",
-      "strokeCount": 0,
-      "examples": [
-        {
-          "sentence": "外焦里嫩。",
-          "pinyin": "wài jiāo lǐ nèn 。",
-          "meaning": "Ngoài cháy vàng trong mềm mại."
-        }
-      ]
-    },
-    {
-      "id": "hz-HSK5-x28",
-      "character": "嫩",
-      "pinyin": "nèn",
-      "tone": 4,
-      "meaning": "mềm, non",
-      "hskLevel": "HSK5",
-      "strokeCount": 0,
-      "examples": [
-        {
-          "sentence": "外焦里嫩。",
-          "pinyin": "wài jiāo lǐ nèn 。",
-          "meaning": "Ngoài cháy vàng trong mềm mại."
-        }
-      ]
-    },
-    {
-      "id": "hz-HSK5-x29",
-      "character": "痰",
-      "pinyin": "tán",
-      "tone": 2,
-      "meaning": "đờm",
-      "hskLevel": "HSK5",
-      "strokeCount": 0,
-      "examples": [
-        {
-          "sentence": "鱼生火，肉生痰。",
-          "pinyin": "yú shēng huǒ ， ròu shēng tán 。",
-          "meaning": "Cá gây nhiệt, thịt sinh đờm."
-        }
-      ]
-    },
-    {
-      "id": "hz-HSK5-x30",
-      "character": "由",
-      "pinyin": "yóu",
-      "tone": 2,
-      "meaning": "do, bởi",
-      "hskLevel": "HSK5",
-      "strokeCount": 0,
-      "examples": [
-        {
-          "sentence": "这个故事是由古代传说演变而来的。",
-          "pinyin": "zhè ge gù shì shì yóu gǔ dài chuán shuō yǎn biàn ér lái de 。",
-          "meaning": "Câu chuyện này được diễn biến từ truyền thuyết cổ đại."
-        }
-      ]
-    },
-    {
-      "id": "hz-HSK5-x31",
-      "character": "害",
-      "pinyin": "hài",
-      "tone": 4,
-      "meaning": "hại",
-      "hskLevel": "HSK5",
-      "strokeCount": 0,
-      "examples": [
-        {
-          "sentence": "“夕”经常出来害人。",
-          "pinyin": "“ xī ” jīng cháng chū lái hài rén 。",
-          "meaning": "\"Xi\" thường xuyên ra ngoài hại người."
-        }
-      ]
-    },
-    {
-      "id": "hz-HSK5-x32",
-      "character": "劝",
-      "pinyin": "quàn",
-      "tone": 4,
-      "meaning": "khuyên bảo",
-      "hskLevel": "HSK5",
-      "strokeCount": 0,
-      "examples": [
-        {
-          "sentence": "老人劝大家不要惊慌。",
-          "pinyin": "lǎo rén quàn dà jiā bú yào jīng huāng 。",
-          "meaning": "Ông lão khuyên mọi người đừng hoảng sợ."
-        }
-      ]
-    },
-    {
-      "id": "hz-HSK5-x33",
-      "character": "守",
-      "pinyin": "shǒu",
-      "tone": 3,
-      "meaning": "trông coi, canh giữ",
-      "hskLevel": "HSK5",
-      "strokeCount": 0,
-      "examples": [
-        {
-          "sentence": "守岁是除夕的重要习俗。",
-          "pinyin": "shǒu suì shì chú xī de zhòng yào xí sú 。",
-          "meaning": "Đón giao thừa (thức canh) là phong tục quan trọng của đêm Giao thừa."
-        }
-      ]
-    },
-    {
-      "id": "hz-HSK5-x34",
-      "character": "硬",
-      "pinyin": "yìng",
-      "tone": 4,
-      "meaning": "cứng; máy móc, gượng ép",
-      "hskLevel": "HSK5",
-      "strokeCount": 0,
-      "examples": [
-        {
-          "sentence": "只能死记硬背。",
-          "pinyin": "zhǐ néng sǐ jì yìng bèi 。",
-          "meaning": "Chỉ có thể học thuộc lòng một cách máy móc."
-        }
-      ]
-    },
-    {
-      "id": "hz-HSK5-x35",
-      "character": "库",
-      "pinyin": "kù",
-      "tone": 4,
-      "meaning": "kho",
-      "hskLevel": "HSK5",
-      "strokeCount": 0,
-      "examples": [
-        {
-          "sentence": "进入了他的资料库。",
-          "pinyin": "jìn rù le tā de zī liào kù 。",
-          "meaning": "Đưa vào kho dữ liệu của ông ấy."
-        }
-      ]
-    },
-    {
-      "id": "hz-HSK5-x36",
-      "character": "灰",
-      "pinyin": "huī",
-      "tone": 1,
-      "meaning": "tro; xám",
-      "hskLevel": "HSK5",
-      "strokeCount": 0,
-      "examples": [
-        {
-          "sentence": "讨论过灰姑娘的故事。",
-          "pinyin": "tǎo lùn guò huī gū niáng de gù shì 。",
-          "meaning": "Đã thảo luận về câu chuyện Cô bé Lọ Lem."
-        }
-      ]
-    },
-    {
-      "id": "hz-HSK5-x37",
-      "character": "乖",
-      "pinyin": "guāi",
-      "tone": 1,
-      "meaning": "ngoan ngoãn",
-      "hskLevel": "HSK5",
-      "strokeCount": 0,
-      "examples": [
-        {
-          "sentence": "乖乖女的各种规矩。",
-          "pinyin": "guāi guāi nǚ de gè zhǒng guī jǔ 。",
-          "meaning": "Các loại quy tắc của một cô bé ngoan."
-        }
-      ]
-    },
-    {
-      "id": "hz-HSK5-x38",
-      "character": "念",
-      "pinyin": "niàn",
-      "tone": 4,
-      "meaning": "đọc; học",
-      "hskLevel": "HSK5",
-      "strokeCount": 0,
-      "examples": [
-        {
-          "sentence": "她想去国外念书。",
-          "pinyin": "tā xiǎng qù guó wài niàn shū 。",
-          "meaning": "Cô ấy muốn đi nước ngoài du học."
-        }
-      ]
-    },
-    {
-      "id": "hz-HSK5-x39",
-      "character": "系",
-      "pinyin": "xì",
-      "tone": 4,
-      "meaning": "khoa (đại học)",
-      "hskLevel": "HSK5",
-      "strokeCount": 0,
-      "examples": [
-        {
-          "sentence": "她放弃了本系保送研究生。",
-          "pinyin": "tā fàng qì le běn xì bǎo sòng yán jiū shēng 。",
-          "meaning": "Cô ấy từ bỏ việc được tuyển thẳng làm nghiên cứu sinh của khoa mình."
-        }
-      ]
-    },
-    {
-      "id": "hz-HSK5-x40",
-      "character": "某",
-      "pinyin": "mǒu",
-      "tone": 3,
-      "meaning": "nào đó",
-      "hskLevel": "HSK5",
-      "strokeCount": 0,
-      "examples": [
-        {
-          "sentence": "交换了某种身份。",
-          "pinyin": "jiāo huàn le mǒu zhǒng shēn fèn 。",
-          "meaning": "Đã trao đổi một thân phận nào đó."
-        }
-      ]
-    },
-    {
-      "id": "hz-HSK5-x41",
-      "character": "横",
-      "pinyin": "héng",
-      "tone": 2,
-      "meaning": "ngang, ngang qua",
-      "hskLevel": "HSK5",
-      "strokeCount": 0,
-      "examples": [
-        {
-          "sentence": "最后竟然独自把美国横穿了一遍。",
-          "pinyin": "zuì hòu jìng rán dú zì bǎ měi guó héng chuān le yí biàn 。",
-          "meaning": "Cuối cùng lại có thể tự mình đi xuyên ngang qua cả nước Mỹ."
-        }
-      ]
-    },
-    {
-      "id": "hz-HSK5-x42",
-      "character": "吻",
-      "pinyin": "wěn",
-      "tone": 3,
-      "meaning": "hôn",
-      "hskLevel": "HSK5",
-      "strokeCount": 0,
-      "examples": [
-        {
-          "sentence": "最后吻了妈妈一下。",
-          "pinyin": "zuì hòu wěn le mā ma yí xià 。",
-          "meaning": "Cuối cùng đã hôn mẹ một cái."
-        }
-      ]
-    },
-    {
-      "id": "hz-HSK5-x43",
-      "character": "暗",
-      "pinyin": "àn",
-      "tone": 4,
-      "meaning": "tối",
-      "hskLevel": "HSK5",
-      "strokeCount": 0,
-      "examples": [
-        {
-          "sentence": "幸亏那晚天色很暗。",
-          "pinyin": "xìng kuī nà wǎn tiān sè hěn àn 。",
-          "meaning": "May mà tối đó trời rất tối."
-        }
-      ]
-    },
-    {
-      "id": "hz-HSK5-x44",
-      "character": "闯",
-      "pinyin": "chuǎng",
-      "tone": 3,
-      "meaning": "bôn ba, xông pha",
-      "hskLevel": "HSK5",
-      "strokeCount": 0,
-      "examples": [
-        {
-          "sentence": "都出去闯世界。",
-          "pinyin": "dōu chū qù chuǎng shì jiè 。",
-          "meaning": "Đều ra ngoài bôn ba khắp thế giới."
+          "sentence": "他向我走过来。",
+          "pinyin": "tā xiàng wǒ zǒu guò lái 。",
+          "meaning": "Anh ấy đi về phía tôi."
         }
       ]
     }

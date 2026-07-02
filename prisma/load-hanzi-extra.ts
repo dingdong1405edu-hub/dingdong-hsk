@@ -85,7 +85,9 @@ async function main() {
     await prisma.hanziCharacter.upsert({
       where: { character: c.character },
       update: {}, // KHÔNG đụng chữ đã có (chỉ tạo mới) — an toàn
-      create: { id: c.id, character: c.character, ...data },
+      // Không set id thủ công: để @default(cuid()) tự sinh, tránh trùng id giữa
+      // các lần chạy (id vị trí `hz-<level>-x<n>` không ổn định khi tập chữ đổi).
+      create: { character: c.character, ...data },
     });
   }
   const after = await prisma.hanziCharacter.count();
